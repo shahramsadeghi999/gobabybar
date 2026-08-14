@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- iPad Fullscreen / PWA Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GoBabyBar">
+    <title>California Baby Bar (FYLSX) - 25 Torts Practice Exam (Set 9)</title>
+    <style>
+        :root {
+            --primary: #1B365D;
+            --primary-light: #4B6B94;
+            --accent: #D97706;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text: #1E293B;
+            --text-muted: #64748B;
+            --border: #CBD5E1;
+            --success: #16A34A;
+            --danger: #DC2626;
+            --flag: #E11D48;
+            --badge-blue: #BAE6FD;
+            --badge-blue-hover: #7DD3FC;
+        }
+
+        /* Persistent Multiple Highlighting Feature */
+        mark.user-highlight {
+            background-color: #FEF08A;
+            color: #713F12;
+            padding: 0.1rem 0.2rem;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        mark.user-highlight:hover {
+            background-color: #FDE047;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 1rem;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.3rem;
+            margin-bottom: 0.2rem;
+        }
+
+        header p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Tracker and Progress Bar Container */
+        .tracker-wrapper {
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            margin-bottom: 1.2rem;
+        }
+
+        .tracker-bar {
+            background: var(--card-bg);
+            padding: 0.75rem 1rem;
+            border-radius: 10px 10px 0 0;
+            border: 1px solid var(--border);
+            border-bottom: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        /* Live Progress Bar with Clean Numeric Counters */
+        .progress-bar-container {
+            display: flex;
+            width: 100%;
+            height: 22px;
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            font-size: 0.8rem;
+            font-weight: 700;
+            line-height: 22px;
+            text-align: center;
+        }
+
+        .progress-segment {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: width 0.3s ease;
+        }
+
+        .segment-correct {
+            background: var(--success);
+            color: #FFFFFF;
+            width: 0%;
+        }
+
+        .segment-missed {
+            background: var(--danger);
+            color: #FFFFFF;
+            width: 0%;
+        }
+
+        .segment-unattempted {
+            background: #FFFFFF;
+            color: #0F172A;
+            flex-grow: 1;
+        }
+
+        .score-box {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background: var(--primary-light);
+            color: white;
+            padding: 0.25rem 0.65rem;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .action-group {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-action-tool {
+            padding: 0.35rem 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            transition: all 0.15s ease;
+        }
+
+        .btn-history {
+            background: var(--primary-light);
+            color: white;
+            border-color: var(--primary-light);
+        }
+
+        .btn-export-session {
+            background: #0284C7;
+            color: white;
+            border-color: #0284C7;
+        }
+
+        .btn-import-session {
+            background: #475569;
+            color: white;
+            border-color: #475569;
+        }
+
+        .btn-elimination-toggle {
+            background: #F1F5F9;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-elimination-toggle:hover {
+            background: #E2E8F0;
+            color: var(--text);
+        }
+
+        .btn-elimination-toggle.active {
+            background: #FEF3C7;
+            color: #B45309;
+            border-color: #F59E0B;
+            font-weight: bold;
+        }
+
+        .dropdown-menu {
+            padding: 0.35rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-size: 0.8rem;
+            background: white;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .dropdown-flag {
+            color: var(--flag);
+            border-color: #FECDD3;
+            background: #FFF1F2;
+        }
+
+        .dropdown-missed {
+            color: var(--accent);
+            border-color: #FED7AA;
+            background: #FFFBEB;
+        }
+
+        .filter-status-banner {
+            display: none;
+            background: #FEF3C7;
+            border: 1px solid #FCD34D;
+            color: #92400E;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-status-banner.visible {
+            display: flex;
+        }
+
+        .btn-banner-reset {
+            background: #B45309;
+            color: white;
+            border: none;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .q-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .q-header {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        .btn-flag {
+            background: #F1F5F9;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-flag.active {
+            background: #FFE4E6;
+            color: var(--flag);
+            border-color: var(--flag);
+            font-weight: bold;
+        }
+
+        .fact-pattern {
+            background: #F1F5F9;
+            border-left: 4px solid var(--primary-light);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .q-text {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .option-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .option-btn {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 1;
+            user-select: none;
+        }
+
+        .option-btn:hover:not(:disabled):not(.eliminated) {
+            background: #F0F9FF;
+            border-color: #38BDF8;
+        }
+
+        .option-btn:hover:not(:disabled):not(.eliminated) .letter-circle {
+            background: var(--badge-blue-hover);
+        }
+
+        .option-btn:disabled {
+            cursor: default;
+        }
+
+        .option-btn.eliminated {
+            opacity: 0.45;
+            background: #F1F5F9;
+            border-color: #E2E8F0;
+            text-decoration: line-through;
+        }
+
+        .option-btn.eliminated .letter-circle {
+            background: #CBD5E1;
+            color: #64748B;
+        }
+
+        .letter-circle {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--badge-blue);
+            color: #0F172A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .option-btn.correct {
+            border-color: var(--success);
+            background: #DCFCE7;
+            color: #14532D;
+            font-weight: 500;
+            opacity: 1 !important;
+        }
+
+        .option-btn.correct .letter-circle {
+            background: var(--success);
+            color: #FFFFFF;
+        }
+
+        .option-btn.incorrect {
+            border-color: var(--danger);
+            background: #FEE2E2;
+            color: #7F1D1D;
+            opacity: 0.75;
+        }
+
+        .option-btn.incorrect .letter-circle {
+            background: var(--danger);
+            color: #FFFFFF;
+        }
+
+        .btn-eliminate-choice {
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .btn-eliminate-choice:hover {
+            background: #FEE2E2;
+            border-color: var(--danger);
+            color: var(--danger);
+        }
+
+        .btn-eliminate-choice.active {
+            background: #DC2626;
+            color: white;
+            border-color: #DC2626;
+        }
+
+        .explanation-box {
+            display: none;
+            background: #F0F9FF;
+            border: 1px solid #BAE6FD;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #0369A1;
+            margin-top: 1rem;
+        }
+
+        .explanation-box.visible {
+            display: block;
+        }
+
+        .dropdown-analysis {
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #BAE6FD;
+            font-size: 0.8rem;
+            background: #E0F2FE;
+            color: #0369A1;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            gap: 0.5rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            user-select: none;
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .btn-reset {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            font-weight: normal;
+        }
+
+        .btn-reset:hover {
+            background: #F1F5F9;
+            color: var(--danger);
+            border-color: var(--danger);
+        }
+
+        .modal-box {
+            display: none;
+            background: white;
+            border: 2px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .modal-box.visible {
+            display: block;
+        }
+
+        textarea {
+            width: 100%;
+            height: 240px;
+            margin-top: 0.8rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 0.5rem; }
+            .tracker-bar { flex-direction: column; align-items: stretch; }
+            .action-group { justify-content: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <a href="index.html" style="background: rgba(255,255,255,0.2); color: white; padding: 0.3rem 0.7rem; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: bold;">← Back to Menu</a>
+            <span style="font-size: 0.8rem; opacity: 0.8;">GoBabyBar Exam Suite</span>
+        </div>
+        <h1>California Baby Bar (FYLSX) Practice Exam - Set 9</h1>
+        <p>25 Deep Strict Liability & Negligence Scenarios & Analytics</p>
+    </header>
+
+    <div class="tracker-wrapper">
+        <div class="tracker-bar">
+            <div class="score-box">
+                <span>Question <strong id="current-q-num">1</strong> of 25</span>
+                <span class="badge" id="score-badge">Score: 0 / 0 (0%)</span>
+            </div>
+
+            <div class="action-group">
+                <!-- History Button -->
+                <button class="btn-action-tool btn-history" onclick="showStudentHistory()" title="View Past Test History">
+                    📊 History
+                </button>
+
+                <!-- Export Session Button -->
+                <button class="btn-action-tool btn-export-session" onclick="exportFullStudentSession()" title="Export your answers and highlights to share">
+                    📤 Export
+                </button>
+
+                <!-- Import Session Button -->
+                <button class="btn-action-tool btn-import-session" onclick="promptImportSession()" title="Import another student's test session to review">
+                    📥 Import
+                </button>
+
+                <!-- Process of Elimination Toggle -->
+                <button class="btn-elimination-toggle active" id="elimination-toggle-btn" title="Disable Elimination Mode" onclick="toggleEliminationMode()">
+                    ✂️
+                </button>
+
+                <!-- Flagged Dropdown Menu -->
+                <select id="flag-dropdown" class="dropdown-menu dropdown-flag" onchange="handleFlagDropdown(this.value)">
+                    <option value="" disabled selected>🚩 Flagged (0) ▾</option>
+                    <option value="all">🌐 Show All Questions (Full Set)</option>
+                    <option value="filter">Show Flagged Only</option>
+                    <option value="retry">Retry Flagged</option>
+                    <option value="summary">Flagged Rule Analysis</option>
+                    <option value="export">Export Flagged (JSON)</option>
+                </select>
+
+                <!-- Missed Dropdown Menu -->
+                <select id="missed-dropdown" class="dropdown-menu dropdown-missed" onchange="handleMissedDropdown(this.value)">
+                    <option value="" disabled selected>❌ Missed (0) ▾</option>
+                    <option value="all">🌐 Show All Questions (Full Set)</option>
+                    <option value="filter">Show Missed Only</option>
+                    <option value="retry">Retry Missed</option>
+                    <option value="summary">Missed Rule Analysis</option>
+                    <option value="export">Export Missed (JSON)</option>
+                </select>
+
+                <!-- Jump Selector -->
+                <select id="jump-select" class="dropdown-menu" onchange="jumpToQuestion(this.value)">
+                    <!-- Populated dynamically -->
+                </select>
+            </div>
+        </div>
+
+        <!-- Live Progress Bar with Clean Numeric Counters -->
+        <div class="progress-bar-container">
+            <div class="progress-segment segment-correct" id="bar-correct" title="Correct"></div>
+            <div class="progress-segment segment-missed" id="bar-missed" title="Missed"></div>
+            <div class="progress-segment segment-unattempted" id="bar-unattempted" title="Unattempted">25</div>
+        </div>
+    </div>
+
+    <!-- Active Filter Indicator Banner -->
+    <div class="filter-status-banner" id="filter-banner">
+        <span id="filter-banner-text">Viewing filtered subset</span>
+        <button class="btn-banner-reset" onclick="returnToFullSet()">Return to Full Exam (25 Qs)</button>
+    </div>
+
+    <div id="quiz-container">
+        <!-- Question Card Populated via JS -->
+    </div>
+
+    <div class="nav-controls">
+        <button class="btn" id="prev-btn" onclick="navigate(-1)">← Previous</button>
+        <button class="btn btn-reset" onclick="resetProgress()">Reset Set</button>
+        <button class="btn" id="next-btn" onclick="navigate(1)">Next →</button>
+    </div>
+
+    <!-- Universal Display / Export Modal Box -->
+    <div class="modal-box" id="info-modal-box">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 id="modal-title" style="color: var(--primary);">Analysis / Export</h3>
+            <button class="btn btn-reset" style="padding:0.2rem 0.6rem;" onclick="closeModal()">✕ Close</button>
+        </div>
+        <p id="modal-desc" style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.3rem;"></p>
+        <textarea id="modal-textarea" readonly></textarea>
+        <button class="btn" id="modal-copy-btn" style="margin-top: 0.8rem;" onclick="copyModalContent()">Copy Content to Clipboard</button>
+    </div>
+
+    <script>
+        // 25 Unique, Advanced-Tier Torts Questions Focused on Strict Liability & Negligence
+        const examData = [
+            {
+                id: 1,
+                topic: "Strict Products Liability / Enhanced Injury & Crashworthiness Doctrine",
+                fp: "Questions 1–2 are based on the following fact situation:\nDriver was operating a compact sedan at 45 mph when another motorist negligently ran a stop sign, causing a severe broadside collision. Although the initial impact caused only minor bruises, the sedan's driver-side seatbelt assembly spontaneously unlatched due to an internal design defect. Driver was thrown violently against the steering column, suffering severe traumatic brain injury. Undisputed biomechanical testimony proved that had the seatbelt remained latched, Driver would have walked away with zero head injury.",
+                q: "In Driver's strict products liability design defect action against Automaker under the 'Crashworthiness' (Second Collision) doctrine:",
+                opts: [
+                    "Automaker is strictly liable for the enhanced brain injury, because manufacturers must design vehicles to survive foreseeable collisions.",
+                    "Automaker is completely relieved of liability, because the other motorist's negligent failure to yield was the original proximate cause.",
+                    "Automaker is liable only in ordinary negligence, because strict products liability applies exclusively to defects causing the initial crash.",
+                    "Driver's recovery is barred under primary assumption of risk for operating motor vehicles on public multi-lane thoroughfares."
+                ],
+                ans: 0,
+                exp: "Under the Crashworthiness / Second Collision doctrine (Larsen v. General Motors / Camacho v. Honda), motor vehicle collisions are foreseeable. A manufacturer is strictly liable for design defects that fail to protect occupants in foreseeable crashes, causing enhanced or aggravated injuries beyond what would have occurred absent the defect, even if the defect did not cause the initial accident."
+            },
+            {
+                id: 2,
+                topic: "Joint Tortfeasors / Comparative Fault Allocation in Crashworthiness Cases",
+                fp: "Questions 1–2 are based on the following fact situation:\nDriver was operating a compact sedan at 45 mph when another motorist negligently ran a stop sign, causing a severe broadside collision. Although the initial impact caused only minor bruises, the sedan's driver-side seatbelt assembly spontaneously unlatched due to an internal design defect. Driver was thrown violently against the steering column, suffering severe traumatic brain injury. Undisputed biomechanical testimony proved that had the seatbelt remained latched, Driver would have walked away with zero head injury.",
+                q: "If the jury finds Other Motorist 60% at fault for causing the initial crash and Automaker 40% at fault for the defective seatbelt design, under California's Proposition 51:",
+                opts: [
+                    "Automaker is jointly and severally liable for 100% of Driver's economic medical damages, and severally liable for 40% of non-economic pain damages.",
+                    "Automaker is liable strictly and exclusively for 40% of all economic damages under pure comparative fault allocation rules.",
+                    "Other Motorist must pay 100% of the entire judgment, because original joint tortfeasors bear complete indemnification liability.",
+                    "Automaker is completely discharged from non-economic damages under statutory motor vehicle crashworthiness preemption rules."
+                ],
+                ans: 0,
+                exp: "Under California Civil Code § 1431.2 (Proposition 51) and crashworthiness precedents, liability for economic damages (hospital bills, lost earnings) remains joint and several (Driver can collect 100% of economic damages from Automaker), whereas liability for non-economic damages (pain and suffering) is several only, limited strictly to Automaker's 40% allocated fault."
+            },
+            {
+                id: 3,
+                topic: "Strict Products Liability / Foreseeable Alteration vs. Substantial Modification Defense",
+                q: "Manufacturer produced a commercial industrial meat grinder with an easily detachable plastic safety lid. Meat Plant employees routinely removed the lid to speed up carcass feeding, a practice well-documented in industry trade journals and known to Manufacturer. Worker was operating the grinder without the lid when his arm was drawn into the grinding auger. Manufacturer raised the defense of product alteration. Under California law (Ceja v. J.R. Wood):",
+                opts: [
+                    "Manufacturer remains strictly liable, because post-sale alterations that are reasonably foreseeable do not cut off strict design liability.",
+                    "Manufacturer is completely exonerated, because any post-sale removal of a safety guard constitutes a substantial modification as a matter of law.",
+                    "Manufacturer is liable only if Worker was in direct contractual privity with the retail dealer who sold the meat processing machinery.",
+                    "Worker's claim is completely barred under the doctrine of primary assumption of risk for operating heavy industrial food machinery."
+                ],
+                ans: 0,
+                exp: "Under California strict products liability law (Barker v. Lull / Ceja v. J.R. Wood, Inc.), a post-sale modification or alteration defeats strict liability ONLY if the alteration was unforeseeable and was the sole cause of the harm. Where the removal or bypassing of a safety device is reasonably foreseeable to the manufacturer, the manufacturer remains strictly liable for failing to design a guard that prevents operation when removed."
+            },
+            {
+                id: 4,
+                topic: "Strict Products Liability / Failure to Warn & The Heeding Presumption",
+                q: "Chemical Co. packaged a highly toxic commercial degreaser without including any warning that skin contact caused immediate systemic liver toxicity. Mechanic used the solvent with bare hands and suffered permanent acute liver failure. At trial, Chemical Co. argued that Mechanic failed to prove that he would have read or obeyed a warning label had one been printed. Under the 'Heeding Presumption' recognized in products liability:",
+                opts: [
+                    "The law presumes that had an adequate warning been provided, the user would have read and heeded it, shifting the rebuttal burden to Chemical Co.",
+                    "The plaintiff bears an unyielding affirmative burden to introduce psychological behavioral testimony proving he always obeys printed product warnings.",
+                    "Chemical Co. is entitled to a directed verdict, because proximate cause in failure-to-warn cases cannot rest upon hypothetical human obedience.",
+                    "Mechanic's claim is converted automatically into an action for strict deceit under the California Consumers Legal Remedies Act."
+                ],
+                ans: 0,
+                exp: "In strict products liability failure-to-warn cases, the majority of jurisdictions (and California evidentiary doctrine) apply the 'Heeding Presumption': where a warning is inadequate or absent, the law presumes that had an adequate warning been given, the consumer would have read and heeded it. The burden shifts to the defendant manufacturer to rebut this presumption."
+            },
+            {
+                id: 5,
+                topic: "Strict Liability / Escape of Wild Animals Due to Third-Party Vandalism",
+                q: "Owner kept a 500-pound wild African lion on his private estate in a secure, reinforced steel cage meeting all state zoological containment standards. At midnight, an unknown third-party vandal cut the lock with an acetylene torch and opened the cage door to steal property. The lion walked out into the neighborhood and severely mauled Pedestrian on the public sidewalk. In Pedestrian's strict liability suit against Owner:",
+                opts: [
+                    "Owner is strictly liable, because keepers of wild animals are subject to absolute liability for species dangers notwithstanding third-party vandalism.",
+                    "Owner is completely relieved of liability, because the criminal act of the third-party vandal was an independent superseding cause.",
+                    "Owner is liable only if Pedestrian proves Owner was actively negligent in failing to maintain armed 24-hour security guards at the cage.",
+                    "Owner is immune from liability under the common law doctrine of private residential zoological licensing."
+                ],
+                ans: 0,
+                exp: "Under Restatement (Second) of Torts § 510, the possessor of a wild animal (ferae naturae) is strictly liable for harm done by the animal resulting from its dangerous propensities, even if the escape was brought about by the unexpectable, unauthorized, or intentional intervening act of a third person."
+            },
+            {
+                id: 6,
+                topic: "Strict Liability / Abnormally Dangerous Activities & Derailment of Toxic Rail Shipments",
+                q: "Chemical Corp. manufactured 30,000 gallons of deadly liquid chlorine gas and shipped it in pressurized rail tanker cars across a major metropolitan railroad corridor. Train derailed at 40 mph due to an unexpected track metal fatigue crack, releasing toxic chlorine vapor that blinded 50 residents. Chemical Corp. argued common carrier transport of essential commodities cannot be strictly liable. In residents' strict liability action:",
+                opts: [
+                    "Chemical Corp. is strictly liable, because shipping massive quantities of lethal toxic gas through dense urban populations is an ultrahazardous activity.",
+                    "Chemical Corp. is not liable under strict liability, because rail transit of hazardous materials is an ordinary matter of common commercial usage.",
+                    "Chemical Corp. is immune under the federal Interstate Commerce Commission Termination Act, which preempts state ultrahazardous tort claims.",
+                    "Chemical Corp. is liable only if the railroad company had formally declared bankruptcy prior to the hazardous derailment."
+                ],
+                ans: 0,
+                exp: "Under Restatement (Second) of Torts §§ 519–520 (and Indiana Harbor Belt R.R. v. American Cyanamid Co. analysis), bulk transportation and storage of ultra-hazardous, highly toxic, volatile chemicals through densely populated metropolitan areas constitutes an Abnormally Dangerous Activity subjecting the enterprise to strict liability for escape of the toxic substance."
+            },
+            {
+                id: 7,
+                topic: "Strict Liability / Non-Natural Accumulation of Subterranean Waters (Rylands v. Fletcher)",
+                q: "Mining Corp. constructed a massive 100-million-gallon artificial water reservoir on its land above an abandoned coal mine network to wash gravel. The reservoir bottom gave way into hidden subterranean vertical shafts, flooding Neighbor's operating active coal mine on adjoining lower land. Mining Corp. exercised utmost non-negligent care in building the reservoir. Under the rule of Rylands v. Fletcher:",
+                opts: [
+                    "Mining Corp. is strictly liable, because one who brings an artificial, non-natural accumulation of water onto land is strictly liable if it escapes.",
+                    "Mining Corp. is not liable, because water is a natural substance classified as a common law Act of God excusing landowner liability.",
+                    "Mining Corp. is liable only if Neighbor proves Mining Corp. had actual geological knowledge of the hidden vertical coal shafts.",
+                    "Mining Corp. is immune from liability under the statutory California Surface Water Common Enemy doctrine."
+                ],
+                ans: 0,
+                exp: "Under Rylands v. Fletcher (and Restatement (Second) of Torts § 519), a landowner who brings onto their land an artificial, non-natural accumulation of a substance (such as a massive artificial water reservoir) that is likely to do mischief if it escapes is STRICTLY LIABLE for all natural consequences of its escape, regardless of the absence of negligence."
+            },
+            {
+                id: 8,
+                topic: "Negligence / Medical Malpractice & Pharmacist Generic Substitution Duties",
+                q: "Physician prescribed Brand-Name Anticonvulsant Drug to Patient suffering from severe epilepsy, writing 'DISPENSE AS WRITTEN / DO NOT SUBSTITUTE.' Pharmacist negligently overlooked the notation and substituted a cheaper generic formulation that had an erratic bioavailability absorption rate in severe epileptics. Patient suffered a major seizure while driving, causing a crash. In Patient's suit against Pharmacist:",
+                opts: [
+                    "Pharmacist is liable in professional negligence, because pharmacists breach their standard of care by violating express physician non-substitution commands.",
+                    "Pharmacist is completely shielded from civil liability under statutory generic substitution safe-harbor pharmaceutical laws.",
+                    "Pharmacist is not liable, because prescribing physicians bear sole exclusive legal responsibility for adverse chemical reactions.",
+                    "Patient's claim is completely barred under the doctrine of secondary implied assumption of risk for operating vehicles with epilepsy."
+                ],
+                ans: 0,
+                exp: "Pharmacists are healthcare professionals held to a professional standard of care. Violating a clear, unambiguous statutory and medical command ('Dispense as Written') by substituting an unauthorized generic formulation that predictably alters therapeutic drug levels breaches the pharmacist's duty of care, rendering the pharmacist liable for foreseeable resulting harm."
+            },
+            {
+                id: 9,
+                topic: "Negligence / Negligent Entrustment of Commercial Power Tools to Unqualified Workers",
+                q: "General Contractor handed a high-powered, industrial pneumatic powder-actuated concrete nail gun to Day Laborer, knowing Laborer had zero training, could not read safety warnings, and had never operated powder-actuated tools. While attempting to clear a jam, Laborer discharged a 3-inch steel stud through a drywall partition into Electrician's shoulder. In Electrician's negligence lawsuit against General Contractor:",
+                opts: [
+                    "General Contractor is directly liable for Negligent Entrustment for supplying a dangerous instrumentality to a known untrained worker.",
+                    "General Contractor is immune from liability under the independent contractor Privette doctrine governing construction jobsite injuries.",
+                    "General Contractor is not liable, because Day Laborer's operational firing error was an independent superseding cause.",
+                    "Electrician is restricted exclusively to statutory workers' compensation death and disability benefit schedules."
+                ],
+                ans: 0,
+                exp: "Under Restatement (Second) of Torts § 390, Negligent Entrustment applies to chattels: one who supplies directly or through a third person a chattel for the use of another whom the supplier knows or has reason to know to be incompetent, inexperienced, or untrained is directly liable for physical harm caused by the incompetent user."
+            },
+            {
+                id: 10,
+                topic: "Negligence / Heightened Standard of Care for Common Carriers (Cal. Civ. Code § 2100)",
+                q: "Bus Co. operated a commercial public transit bus. While driving in light rain at the posted speed limit, Bus Driver tapped the brakes on a known slick bridge deck, causing the bus to skid sideways and jar Passenger, dislocating Passenger's shoulder. In Passenger's negligence suit under California Civil Code § 2100, the jury should be instructed that Bus Co.:",
+                opts: [
+                    "Must use the utmost care and diligence of very cautious persons, and is responsible for any slight negligence.",
+                    "Is held to an ordinary reasonable person standard of care identical to drivers of private passenger passenger vehicles.",
+                    "Is strictly liable as an absolute insurer of passenger physical safety during commercial passenger transit.",
+                    "Is immune from liability unless Passenger establishes gross criminal recklessness on the part of the bus operator."
+                ],
+                ans: 0,
+                exp: "Under California Civil Code § 2100 (and common law common carrier doctrines), common carriers of passengers for reward must use the 'utmost care and diligence of very cautious persons,' and are liable for injuries caused by even 'slight negligence' regarding the carriage of passengers."
+            },
+            {
+                id: 11,
+                topic: "Landowner Duty / Open and Obvious Hazards with Coerced Invitee Encounter",
+                q: "Hospital maintained its only public emergency room pedestrian entrance across an icy exterior concrete ramp. Although the thick ice was completely open, obvious, and visible in broad daylight, Patient (suffering from severe abdominal pain) had no alternative entrance into the building. Patient carefully attempted to walk across the ice, slipped, and broke his hip. In Patient's premises liability suit against Hospital:",
+                opts: [
+                    "Hospital is liable, because a landowner remains liable for open and obvious hazards where the invitee has practical necessity to encounter the danger.",
+                    "Hospital is completely immune from liability, because open and obvious physical hazards extinguish all premises duties of care as a matter of law.",
+                    "Patient is barred from all recovery under the doctrine of primary assumption of risk for walking on visible icy ramps.",
+                    "Hospital is strictly liable under commercial premises safety rules for failing to maintain heated exterior hospital entranceways."
+                ],
+                ans: 0,
+                exp: "Under Restatement (Second) of Torts § 343A (and California law), the fact that a danger is 'open and obvious' does NOT relieve a landowner of duty where the possessor should anticipate the harm despite such knowledge or obviousness—especially where the invitee has no reasonable alternative and is practically coerced or required to encounter the hazard to access the building."
+            },
+            {
+                id: 12,
+                topic: "Negligence / Landowner Negligent Security & Prior Similar Incidents (Ann M. v. Pacific Plaza)",
+                q: "Shopper was assaulted and robbed at 2:00 PM inside an outdoor shopping mall common walkway. In the preceding three years, Mall had zero reported violent physical assaults on premises, having experienced only minor daytime shoplifting incidents. Shopper sued Mall Owner for negligence in failing to deploy armed security guards. Under California law (Ann M. v. Pacific Plaza Shopping Center):",
+                opts: [
+                    "Mall Owner is not liable, because imposing a duty to hire security guards requires a high degree of foreseeability shown by prior similar violent crimes on premises.",
+                    "Mall Owner is directly liable, because commercial retail mall owners owe an absolute non-delegable duty to guarantee customer safety from crimes.",
+                    "Mall Owner is strictly liable under enterprise liability principles for all violent felonies occurring inside commercial shopping centers.",
+                    "Shopper is entitled to a directed verdict under res ipsa loquitur, because violent physical muggings do not occur absent premises neglect."
+                ],
+                ans: 0,
+                exp: "Under the landmark California Supreme Court precedent Ann M. v. Pacific Plaza Shopping Center (6 Cal.4th 666) and Sharon P. v. Arman, Ltd., a commercial landowner's duty to take burdensome security measures (such as hiring security guards) requires a HIGH degree of foreseeability, which can rarely be established in the absence of prior similar violent criminal incidents on the premises."
+            },
+            {
+                id: 13,
+                topic: "Negligence / Primary vs. Secondary Assumption of Risk in Commercial Bungee Jumping",
+                q: "Participant paid $100 to jump from a 200-foot tower operated by Commercial Bungee Co., signing an express acknowledgment of the inherent risks of jumping. Unknown to Participant, Bungee Co.'s operator committed active negligence by improperly measuring the bungee cord length, using a cord that was 20 feet too long for Participant's body weight. Participant impacted the ground, suffering paralysis. In Participant's negligence suit:",
+                opts: [
+                    "Bungee Co. is liable, because commercial operators owe a duty not to increase the inherent risks of the sport through improper equipment measurement.",
+                    "Bungee Co. is completely immune under Primary Assumption of Risk, because hitting the ground is an inherent risk of commercial bungee jumping.",
+                    "Bungee Co. is strictly liable, because commercial bungee jumping is classified as an abnormally dangerous ultrahazardous activity.",
+                    "Participant's recovery is completely barred under the doctrine of secondary implied assumption of risk for engaging in extreme sports."
+                ],
+                ans: 0,
+                exp: "Under Knight v. Jewett and commercial sports precedents, Primary Assumption of Risk bars claims for risks INHERENT in the sport. However, an extreme sport facility operator owes a duty of reasonable care NOT to increase the risks inherent in the sport beyond those that are ordinary (e.g., improperly measuring cord length is operational negligence that creates liability)."
+            },
+            {
+                id: 14,
+                topic: "Strict Products Liability / The Economic Loss Rule (Seely v. White Motor Co.)",
+                q: "Trucker purchased a commercial heavy-duty semi-truck from Manufacturer. Because of a defectively manufactured transmission gear, the transmission suddenly seized while parked at a loading dock. The transmission was completely ruined ($15,000 to replace), but the truck never crashed, caused zero physical injury to any person, and damaged no other separate property. Trucker sued Manufacturer in Strict Products Liability. Under California law (Seely v. White Motor Co.):",
+                opts: [
+                    "Trucker cannot recover in strict products liability, because the Economic Loss Rule restricts purely economic damage to the product itself to contract/warranty law.",
+                    "Trucker recovers full replacement damages in strict products liability, because selling a product with a defective transmission is actionable in tort per se.",
+                    "Trucker recovers under strict products liability only if Manufacturer was in direct vertical privity of contract with the commercial end user.",
+                    "Trucker is entitled to treble punitive damages under the statutory provisions of the California Commercial Uniform Sales Code."
+                ],
+                ans: 0,
+                exp: "Under the seminal California doctrine of Seely v. White Motor Co. (63 Cal.2d 9), the Economic Loss Rule provides that strict products liability in tort does NOT apply where a defective product causes purely economic loss (damage to the product itself, lost profits, replacement costs) without causing personal physical injury or damage to other separate property; such claims must be brought under contract and warranty law."
+            },
+            {
+                id: 15,
+                topic: "Strict Products Liability / Definition of Commercial Seller vs. Casual Private Seller",
+                q: "Accountant sold her 10-year-old personal used car to Neighbor for $3,000. Unknown to Accountant, the car's steering tie rod had developed a microscopic metal fatigue fracture. On Neighbor's first drive, the tie rod snapped, causing the car to veer off the road and injure Neighbor. Neighbor sued Accountant under Strict Products Liability. Accountant is:",
+                opts: [
+                    "Not strictly liable, because strict products liability applies exclusively to commercial sellers engaged in the regular business of selling such products.",
+                    "Strictly liable, because any seller who places an unreasonably dangerous defective product into the stream of commerce is strictly liable.",
+                    "Strictly liable under the implied warranty of merchantability under Article 2 of the Uniform Commercial Code.",
+                    "Liable under res ipsa loquitur, because steering tie rods do not snap on private passenger automobiles absent mechanical neglect."
+                ],
+                ans: 0,
+                exp: "Under Restatement (Second) of Torts § 402A(1)(a), Strict Products Liability applies ONLY to a seller who is 'engaged in the business of selling such a product' (a commercial manufacturer, distributor, wholesaler, or retail merchant). An isolated, casual, non-commercial sale by a private individual (like selling one's personal used car) is NOT subject to strict products liability in tort."
+            },
+            {
+                id: 16,
+                topic: "Negligence / Medical Malpractice & National Specialist Standard of Care",
+                q: "Board-Certified Radiologist practicing in a small rural clinic misread Patient's chest CT scan, failing to diagnose an obvious 3-centimeter malignant lung mass that certified radiologists nationwide routinely identify. Radiologist proved that general family practice doctors in that rural county commonly missed such scans. In Patient's medical malpractice suit, the legal standard of care applicable to Radiologist is:",
+                opts: [
+                    "The degree of skill, knowledge, and care ordinarily exercised by certified radiology specialists in good standing nationwide.",
+                    "The standard of professional care exercised by medical practitioners in the same local rural geographic community (the strict locality rule).",
+                    "An objective reasonable person standard without regard to specialized board certifications or radiological training.",
+                    "Strict liability, because interpreting radiological imaging involving ionizing radiation constitutes an ultrahazardous medical practice."
+                ],
+                ans: 0,
+                exp: "Medical specialists who hold themselves out as board-certified specialists (like radiologists, cardiologists, or surgeons) are held to a NATIONAL specialist standard of care—the skill, care, and learning ordinarily possessed and exercised by certified specialists in the same field nationwide—rather than a local geographic rule."
+            },
+            {
+                id: 17,
+                topic: "Negligence / Landowner Attractive Nuisance & Utility vs. Risk Balancing",
+                q: "Excavation Co. dug a 20-foot-deep vertical construction trench in an unfenced suburban lot located across the street from an elementary school. Excavation Co. knew that dozens of young children played in the lot daily after school. Excavation Co. left the trench completely uncovered and unbarricaded overnight because installing a $50 plywood cover was inconvenient. A 6-year-old child fell into the trench and was injured. Excavation Co. is:",
+                opts: [
+                    "Liable under Attractive Nuisance, because the utility of eliminating the hazard ($50 cover) was slight compared to the foreseeable risk to children.",
+                    "Not liable, because a trespassing child takes real property in the condition in which it is found under common law trespass rules.",
+                    "Immune from liability under the statutory California recreational trail immunity provisions of Civil Code § 846.",
+                    "Strictly liable under public nuisance for creating subterranean excavations within municipal educational school zones."
+                ],
+                ans: 0,
+                exp: "Under the Attractive Nuisance Doctrine (Restatement (Second) of Torts § 339), a possessor of land is liable for physical harm to trespassing children caused by an artificial condition if: (1) children are likely to trespass; (2) condition involves unreasonable risk of death/serious harm; (3) children do not discover or realize the risk; and (4) the utility to the possessor of maintaining the condition and the burden of eliminating the danger are slight as compared with the risk to children."
+            },
+            {
+                id: 18,
+                topic: "Strict Products Liability / Prescription Drugs & Restatement (Third) § 6(b) Super-Design Defect Standard",
+                q: "Pharma Corp. manufactured an FDA-approved prescription medication for high blood pressure. In a strict products liability design defect suit by Patient who suffered a stroke, Pharma Corp. proved that for a significant, identifiable class of hypertensive patients, the drug was the ONLY effective medication that reduced blood pressure without fatal allergic reactions. Under Restatement (Third) of Torts: Products Liability § 6(b):",
+                opts: [
+                    "The drug is not defectively designed if reasonable healthcare providers would prescribe it for any class of patients with knowledge of its risks and benefits.",
+                    "The drug is defectively designed per se under the consumer expectation test if it causes a stroke in any patient taking the prescribed dosage.",
+                    "Pharma Corp. is held strictly liable under absolute enterprise liability for all adverse neurological pharmaceutical side effects.",
+                    "Patient is entitled to a directed verdict unless Pharma Corp. can prove that all prescribing physicians signed advance commercial indemnity waivers."
+                ],
+                ans: 0,
+                exp: "Under Restatement (Third) of Torts: Products Liability § 6(b), a prescription drug is defectively designed ONLY if the foreseeable risks of harm are sufficiently great in relation to its foreseeable therapeutic benefits that reasonable healthcare providers, knowing of such foreseeable risks and benefits, would not prescribe the drug for ANY class of patients."
+            },
+            {
+                id: 19,
+                topic: "Negligence / Firefighter's Rule & Independent Third-Party Vehicle Collisions on Scene",
+                q: "Homeowner negligently dropped a candle, setting her living room on fire. Police Officer responded to the emergency, parked her patrol cruiser at the curb outside the house, and was directing traffic away from the fire trucks. Drunk Driver sped down the street, ignored police barricades, and struck Police Officer. Police Officer sued Drunk Driver for negligence. Drunk Driver raised the Firefighter's Rule. Result?",
+                opts: [
+                    "Police Officer wins, because the Firefighter's Rule does not protect an independent third-party tortfeasor whose negligence was not the cause of the original emergency.",
+                    "Drunk Driver wins, because the Firefighter's Rule bars all on-duty emergency first responders from recovering for traffic collisions on public streets.",
+                    "Drunk Driver wins, because directing traffic around emergency scenes is an inherent professional risk assumed by sworn police officers.",
+                    "Police Officer wins only if Officer was physically operating an active emergency siren at the exact moment of the physical vehicular impact."
+                ],
+                ans: 0,
+                exp: "The Firefighter's Rule bars an action against the person whose original negligence created the emergency (Homeowner). It does NOT bar an action against an independent, separate third-party tortfeasor (Drunk Driver) whose independent negligent act on the scene causes injury to the responding officer."
+            },
+            {
+                id: 20,
+                topic: "Strict Liability / Abnormally Dangerous Activities & Fireworks Displays in Urban Centers",
+                q: "Pyrotechnics Co. conducted a major commercial municipal 4th of July fireworks display in a downtown waterfront park. Despite state-of-the-art electronic firing computers and utmost non-negligent care, a freak microburst wind gust blew a burning mortar shell 500 feet off course into Spectator's yard, igniting Spectator's roof. In Spectator's strict liability action against Pyrotechnics Co.:",
+                opts: [
+                    "Pyrotechnics Co. is strictly liable, because conducting high-explosive fireworks displays in urban areas constitutes an abnormally dangerous activity.",
+                    "Pyrotechnics Co. is not liable, because the sudden microburst wind gust was an extraordinary Act of God that completely severed proximate causation.",
+                    "Pyrotechnics Co. is liable only if Spectator proves Pyrotechnics Co. violated a mandatory municipal fireworks safety ordinance.",
+                    "Spectator's claim is completely barred under primary assumption of risk for residing within one mile of an authorized municipal fireworks zone."
+                ],
+                ans: 0,
+                exp: "Under established California and common law precedents (Klein v. Pyrodyne Corp.), conducting public fireworks displays in close proximity to urban residential structures involves a high risk of serious harm that cannot be eliminated by the exercise of utmost care, and is classified as an Abnormally Dangerous Activity subjecting the operator to strict liability."
+            },
+            {
+                id: 21,
+                topic: "Negligence / Affirmative Duty of Voluntary Rescuers to Not Prevent Third-Party Aid (Soldano v. O'Daniels)",
+                q: "A violent patron threatened to shoot Victim inside a bar. Good Samaritan ran across the street into Hotel lobby, informed Hotel Bartender of the active deadly threat, and requested permission to use the lobby telephone to dial 911 emergency dispatch. Bartender refused to allow Samaritan to touch the phone and refused to dial 911 himself. Victim was shot. In the wrongful death suit against Hotel (Soldano v. O'Daniels):",
+                opts: [
+                    "Hotel is liable in negligence, because a commercial business open to the public may not interfere with a third party's reasonable attempt to summon emergency police aid.",
+                    "Hotel is not liable, because common law imposes zero affirmative legal duty upon private commercial property owners to render emergency aid to strangers.",
+                    "Hotel is completely immune from civil liability under the statutory emergency commercial telephone privacy acts.",
+                    "Victim's estate is restricted exclusively to an intentional tort action for civil aiding and abetting against Hotel Bartender."
+                ],
+                ans: 0,
+                exp: "In the landmark California precedent Soldano v. O'Daniels (141 Cal.App.3d 443), the court held that while there is generally no duty to rescue, a commercial business open to the public owes a duty of reasonable care NOT to actively prevent or interfere with a third party's reasonable attempt to summon emergency assistance (like refusing the use of a public phone to dial 911 during an ongoing crime)."
+            },
+            {
+                id: 22,
+                topic: "Strict Products Liability / Obvious Inherent Product Dangers vs. Feasible Safety Guards",
+                q: "Worker operated an industrial power table saw with an exposed, unshielded circular steel blade. Manufacturer omitted an automatic blade-stopping safety sensor (which cost $25 and stopped the blade instantly upon touching human skin without diminishing saw utility). Worker's hand slipped on wet wood, severing two fingers. Manufacturer argued that the spinning blade was an open and obvious danger. Under California law:",
+                opts: [
+                    "Manufacturer is strictly liable under the Risk-Benefit test, because the obviousness of a danger does not insulate a design where a feasible safety device was omitted.",
+                    "Manufacturer is not liable as a matter of law, because open and obvious machine hazards completely eliminate strict products liability design duties.",
+                    "Worker's claim is completely barred under traditional common law contributory negligence for operating power tools with wet hands.",
+                    "Manufacturer is liable only under the express warranty provisions of Article 2 of the Uniform Commercial Code."
+                ],
+                ans: 0,
+                exp: "In California strict products liability law, the fact that a product's danger is 'open and obvious' (e.g., an exposed spinning saw blade) does NOT insulate the manufacturer from design defect liability under the Risk-Benefit test if an inexpensive, feasible alternative safety device (like a flesh-detecting automatic braking mechanism) was available to eliminate the danger without impairing product utility."
+            },
+            {
+                id: 23,
+                topic: "Negligence / Seatbelt Defense Biomechanical Apportionment in California",
+                q: "Driver was operating her car lawfully when she was broadsided by Negligent Trucker. Driver was not wearing an available, operational three-point seatbelt. Total proven personal injury damages equaled $200,000. Undisputed expert biomechanical testimony proved that wearing the seatbelt would have prevented exactly $80,000 of the injuries (the remaining $120,000 would have occurred regardless). In California (Truman v. Vargas):",
+                opts: [
+                    "Driver collects $120,000, because the failure to wear a seatbelt reduces damage recovery strictly by the amount of injury the seatbelt would have prevented.",
+                    "Driver collects $0, because failing to wear a mandatory statutory seatbelt operates as an absolute total bar under contributory negligence per se.",
+                    "Driver collects the full $200,000, because evidence of seatbelt non-use is categorically inadmissible in California civil tort trials.",
+                    "Driver collects $100,000 under a statutory mandatory fifty percent comparative fault reduction penalty."
+                ],
+                ans: 0,
+                exp: "In California (Truman v. Vargas / Housley v. Godinez), failure to wear a seatbelt does not bar the action, but is admissible as comparative fault / failure to mitigate damages. The defendant has the burden of proving with expert biomechanical testimony the specific proportion of injuries that wearing the seatbelt would have avoided, reducing the award accordingly ($200,000 - $80,000 = $120,000)."
+            },
+            {
+                id: 24,
+                topic: "Strict Liability / Domestic Livestock Trespass on Public Highways vs. Private Land",
+                q: "Horse Owner kept a stallion inside a well-fenced pasture. A severe windstorm blew a tree onto the fence, allowing the horse to wander onto an adjacent public state highway. Motorist collided with the horse at night. Motorist sued Horse Owner in Strict Liability for livestock trespass. Under established common law rules:",
+                opts: [
+                    "Horse Owner is judged under a Negligence standard, because strict liability for livestock trespass applies to invasions of private land, not highway collisions.",
+                    "Horse Owner is strictly liable, because common law strict livestock trespass applies unconditionally to all public and private geographical locations.",
+                    "Horse Owner is immune from all liability under the statutory California Open Range Livestock Grazing Act.",
+                    "Motorist's claim is completely barred under the doctrine of primary assumption of risk for night highway driving in rural areas."
+                ],
+                ans: 0,
+                exp: "Strict liability for livestock trespass applies to the invasion of PRIVATE REAL PROPERTY (eating crops, trampling soil). When domestic animals escape onto a PUBLIC HIGHWAY and collide with motor vehicles, strict liability does NOT apply; the animal owner's liability is governed strictly by the principles of ordinary NEGLIGENCE (did the owner exercise reasonable care in maintaining enclosures)."
+            },
+            {
+                id: 25,
+                topic: "Negligence / Strict Liability Intervening Gross Negligence in Product Design",
+                q: "Auto Corp. designed a vehicle with a defectively weak roof that collapsed in rollover crashes. While driving, Motorist was struck by Drunk Trucker driving 100 mph on the wrong side of the highway (gross negligence), causing a violent rollover where the roof collapsed, paralyzing Motorist. Auto Corp. argued Trucker's gross negligence was a superseding cause. Auto Corp.'s argument will:",
+                opts: [
+                    "Fail, because the foreseeable scope of risk of a defective roof is protection against rollover crashes, regardless of how the crash was initiated.",
+                    "Succeed, because gross criminal vehicular negligence operates as an automatic superseding cause breaking all product liability causation chains.",
+                    "Succeed under the doctrine of extraordinary intervening force under Restatement (Second) of Torts § 447.",
+                    "Fail only if Motorist proves that Auto Corp. executives had actual knowledge of Drunk Trucker's prior driving record."
+                ],
+                ans: 0,
+                exp: "In strict products liability crashworthiness cases, the manufacturer's duty is to design a vehicle that protects occupants in foreseeable rollover collisions. The fact that the initial collision was triggered by the gross negligence or criminal conduct of a third party does NOT act as a superseding cause, because the exact risk against which the product was designed to protect (roof collapse in a rollover) occurred."
+            }
+        ];
+
+        let currentIndex = 0;
+        let userAnswers = {};
+        let flaggedQuestions = {};
+        let eliminatedOptions = {};
+        let retrySessionList = [];
+        let totalCorrect = 0;
+        let activeFilter = "all";
+        let isEliminationMode = true;
+        const currentSetKey = "torts_set9";
+
+        const STORAGE_KEY_ANSWERS = "fylsx_torts_set9_answers_v25";
+        const STORAGE_KEY_FLAGS = "fylsx_torts_set9_flags_v25";
+        const STORAGE_KEY_ELIM = "fylsx_torts_set9_elim_v25";
+        const STORAGE_KEY_INDEX = "fylsx_torts_set9_index_v25";
+        const STORAGE_KEY_SCORE = "fylsx_torts_set9_score_v25";
+        const STORAGE_KEY_FILTER = "fylsx_torts_set9_filter_v25";
+        const STORAGE_KEY_RETRY = "fylsx_torts_set9_retry_v25";
+        const STORAGE_KEY_HIGHLIGHTS = "fylsx_torts_set9_text_highlights_v25";
+
+        let userHighlights = {};
+
+        const letterLabels = ["A", "B", "C", "D"];
+
+        function initApp() {
+            loadProgress();
+            populateJumpMenu();
+            renderQuestion();
+            updateScore();
+            updateDropdownLabels();
+            updateEliminationToggleStyle();
+            updateFilterBanner();
+        }
+
+        function getMissedIndices() {
+            return Object.keys(userAnswers).filter(idx => {
+                let qIdx = Number(idx);
+                return userAnswers[qIdx] !== examData[qIdx].ans;
+            }).map(Number);
+        }
+
+        function getFlaggedIndices() {
+            return Object.keys(flaggedQuestions).filter(idx => flaggedQuestions[idx]).map(Number);
+        }
+
+        function getActiveQuestionList() {
+            if (activeFilter === "flagged") return getFlaggedIndices();
+            if (activeFilter === "missed") return getMissedIndices();
+            if (activeFilter === "retry") return retrySessionList;
+            return examData.map((_, idx) => idx);
+        }
+
+        function toggleEliminationMode() {
+            isEliminationMode = !isEliminationMode;
+            updateEliminationToggleStyle();
+            renderQuestion();
+        }
+
+        function updateEliminationToggleStyle() {
+            const btn = document.getElementById("elimination-toggle-btn");
+            if (isEliminationMode) {
+                btn.classList.add("active");
+                btn.title = "Disable Elimination Mode";
+            } else {
+                btn.classList.remove("active");
+                btn.title = "Enable Elimination";
+            }
+        }
+
+        function updateFilterBanner() {
+            const banner = document.getElementById("filter-banner");
+            const bannerText = document.getElementById("filter-banner-text");
+
+            if (activeFilter === "all") {
+                banner.classList.remove("visible");
+            } else {
+                banner.classList.add("visible");
+                if (activeFilter === "flagged") bannerText.textContent = `🚩 Filter Active: Showing Flagged Questions Only (${getFlaggedIndices().length})`;
+                else if (activeFilter === "missed") bannerText.textContent = `❌ Filter Active: Showing Missed Questions Only (${getMissedIndices().length})`;
+                else if (activeFilter === "retry") bannerText.textContent = `🔄 Retry Mode Active: Practicing ${retrySessionList.length} Selected Question(s)`;
+            }
+        }
+
+        function returnToFullSet() {
+            activeFilter = "all";
+            retrySessionList = [];
+            saveProgress();
+            updateFilterBanner();
+            populateJumpMenu();
+            renderQuestion();
+            updateDropdownLabels();
+        }
+
+        function updateDropdownLabels() {
+            const flagCount = getFlaggedIndices().length;
+            const missedCount = getMissedIndices().length;
+
+            const flagSelect = document.getElementById("flag-dropdown");
+            const missedSelect = document.getElementById("missed-dropdown");
+
+            flagSelect.options[0].textContent = `🚩 Flagged (${flagCount}) ▾`;
+            missedSelect.options[0].textContent = `❌ Missed (${missedCount}) ▾`;
+
+            flagSelect.selectedIndex = 0;
+            missedSelect.selectedIndex = 0;
+        }
+
+        function handleFlagDropdown(val) {
+            if (val === "all") {
+                returnToFullSet();
+            } else if (val === "filter") {
+                activeFilter = (activeFilter === "flagged") ? "all" : "flagged";
+                populateJumpMenu();
+                renderQuestion();
+                updateFilterBanner();
+            } else if (val === "retry") {
+                retryFlaggedQuestions();
+            } else if (val === "summary") {
+                showFlaggedSummary();
+            } else if (val === "export") {
+                exportFlaggedQuestions();
+            }
+            updateDropdownLabels();
+        }
+
+        function handleMissedDropdown(val) {
+            if (val === "all") {
+                returnToFullSet();
+            } else if (val === "filter") {
+                activeFilter = (activeFilter === "missed") ? "all" : "missed";
+                populateJumpMenu();
+                renderQuestion();
+                updateFilterBanner();
+            } else if (val === "retry") {
+                retryMissedQuestions();
+            } else if (val === "summary") {
+                showMissedSummary();
+            } else if (val === "export") {
+                exportMissedQuestions();
+            }
+            updateDropdownLabels();
+        }
+
+        function retryMissedQuestions() {
+            const missed = getMissedIndices();
+            if (missed.length === 0) {
+                alert("No missed questions to retry!");
+                return;
+            }
+
+            if (confirm(`Clear answers and crossed-out choices for all ${missed.length} missed question(s) and retry them?`)) {
+                retrySessionList = [...missed];
+                
+                missed.forEach(qIdx => {
+                    delete userAnswers[qIdx];
+                    delete eliminatedOptions[qIdx];
+                });
+
+                totalCorrect = 0;
+                Object.keys(userAnswers).forEach(idx => {
+                    if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+                });
+
+                activeFilter = "retry";
+                currentIndex = retrySessionList[0];
+                saveProgress();
+                populateJumpMenu();
+                renderQuestion();
+                updateScore();
+                updateDropdownLabels();
+                updateFilterBanner();
+            }
+        }
+
+        function retryFlaggedQuestions() {
+            const flagged = getFlaggedIndices();
+            if (flagged.length === 0) {
+                alert("No flagged questions to retry!");
+                return;
+            }
+
+            if (confirm(`Clear answers and crossed-out choices for all ${flagged.length} flagged question(s) and retry them?`)) {
+                retrySessionList = [...flagged];
+                
+                flagged.forEach(qIdx => {
+                    delete userAnswers[qIdx];
+                    delete eliminatedOptions[qIdx];
+                });
+
+                totalCorrect = 0;
+                Object.keys(userAnswers).forEach(idx => {
+                    if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+                });
+
+                activeFilter = "retry";
+                currentIndex = retrySessionList[0];
+                saveProgress();
+                populateJumpMenu();
+                renderQuestion();
+                updateScore();
+                updateDropdownLabels();
+                updateFilterBanner();
+            }
+        }
+
+        function populateJumpMenu() {
+            const select = document.getElementById("jump-select");
+            select.innerHTML = "";
+            const activeList = getActiveQuestionList();
+
+            if (activeList.length === 0) {
+                let opt = document.createElement("option");
+                opt.value = 0;
+                opt.textContent = activeFilter === "flagged" ? "No Flagged Questions" : activeFilter === "missed" ? "No Missed Questions" : "No Questions";
+                select.appendChild(opt);
+                return;
+            }
+
+            activeList.forEach((qIdx) => {
+                let opt = document.createElement("option");
+                opt.value = qIdx;
+                let flagMark = flaggedQuestions[qIdx] ? "🚩 " : "";
+                let missedMark = (userAnswers[qIdx] !== undefined && userAnswers[qIdx] !== examData[qIdx].ans) ? "❌ " : "";
+                opt.textContent = `${flagMark}${missedMark}Q${qIdx + 1} [${examData[qIdx].topic.split('/')[0].trim()}]`;
+                select.appendChild(opt);
+            });
+        }
+
+        function renderQuestion() {
+            const activeList = getActiveQuestionList();
+            
+            if (activeList.length === 0) {
+                let filterName = activeFilter === "flagged" ? "Flagged" : "Missed";
+                document.getElementById("quiz-container").innerHTML = `
+                    <div class="question-card" style="text-align: center; padding: 3rem 1rem;">
+                        <h3>No ${filterName} Questions Found!</h3>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">You have no active questions in this filter.</p>
+                        <button class="btn" style="margin-top: 1rem;" onclick="returnToFullSet()">Return to Full Exam</button>
+                    </div>
+                `;
+                document.getElementById("prev-btn").disabled = true;
+                document.getElementById("next-btn").disabled = true;
+                return;
+            }
+
+            if (!activeList.includes(currentIndex)) {
+                currentIndex = activeList[0] || 0;
+            }
+
+            const q = examData[currentIndex];
+            document.getElementById("current-q-num").textContent = currentIndex + 1;
+            document.getElementById("jump-select").value = currentIndex;
+
+            const isFlagged = Boolean(flaggedQuestions[currentIndex]);
+            const flagBtnText = isFlagged ? "🚩 Flagged" : "🏳️ Flag Question";
+            const flagBtnClass = isFlagged ? "btn-flag active" : "btn-flag";
+
+            let fpContent = (userHighlights[currentIndex] && userHighlights[currentIndex].fp) 
+                ? userHighlights[currentIndex].fp 
+                : (q.fp ? q.fp.replace(/\n/g, '<br>') : "");
+
+            let qContent = (userHighlights[currentIndex] && userHighlights[currentIndex].q) 
+                ? userHighlights[currentIndex].q 
+                : q.q;
+
+            let html = `<div class="question-card">`;
+            
+            html += `<div class="q-top-row">
+                        <div class="q-header">Question ${q.id} <span style="font-size:0.8rem; color: var(--text-muted); font-weight:normal;">[Topic: ${q.topic}]</span></div>
+                        <button class="${flagBtnClass}" onclick="toggleFlagCurrentQuestion()">${flagBtnText}</button>
+                     </div>`;
+
+            if (q.fp) {
+                html += `<div class="fact-pattern" id="fp-container">${fpContent}</div>`;
+            }
+            html += `<div class="q-text" id="q-container">${qContent}</div>`;
+            html += `<div class="options-grid">`;
+
+            const currentElimMap = eliminatedOptions[currentIndex] || {};
+
+            q.opts.forEach((optText, i) => {
+                let isAnswered = userAnswers[currentIndex] !== undefined;
+                let isEliminated = Boolean(currentElimMap[i]);
+
+                let btnClass = "option-btn";
+                if (isAnswered) {
+                    if (i === q.ans) btnClass += " correct";
+                    else if (i === userAnswers[currentIndex]) btnClass += " incorrect";
+                }
+                
+                if (isEliminated) {
+                    btnClass += " eliminated";
+                }
+
+                let cleanOptText = optText.replace(/^\([A-Da-d]\)\s*/, '');
+                let disabled = isAnswered ? "disabled" : "";
+
+                html += `<div class="option-container">
+                            <button class="${btnClass}" ${disabled} onclick="handleOptionClick(${i})">
+                                <span class="letter-circle">${letterLabels[i]}</span>
+                                <span>${cleanOptText}</span>
+                            </button>`;
+
+                if (isEliminationMode) {
+                    let elimBtnClass = isEliminated ? "btn-eliminate-choice active" : "btn-eliminate-choice";
+                    html += `<button class="${elimBtnClass}" title="Toggle Elimination for choice ${letterLabels[i]}" onclick="toggleEliminateChoice(event, ${i})">✕</button>`;
+                }
+
+                html += `</div>`;
+            });
+
+            html += `</div>`;
+
+            let expClass = userAnswers[currentIndex] !== undefined ? "explanation-box visible" : "explanation-box";
+            html += `<div class="${expClass}">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <strong>Legal Analysis:</strong>
+                            <select class="dropdown-analysis" onchange="handleAnalysisExport(this.value)">
+                                <option value="" disabled selected>📋 Export Rules ▾</option>
+                                <option value="all">Export All Rules</option>
+                                <option value="missed">Export Missed Rules</option>
+                                <option value="flagged">Export Flagged Rules</option>
+                            </select>
+                        </div>
+                        <div>${q.exp}</div>
+                     </div>`;
+            html += `</div>`;
+
+            document.getElementById("quiz-container").innerHTML = html;
+
+            const currentPosInList = activeList.indexOf(currentIndex);
+            document.getElementById("prev-btn").disabled = currentPosInList <= 0;
+            document.getElementById("next-btn").disabled = currentPosInList >= activeList.length - 1;
+
+            saveProgress();
+        }
+
+        // Dedicated text highlighting
+        document.addEventListener("mouseup", function(e) {
+            if (e.target.closest("button") || e.target.closest("select") || e.target.closest("textarea")) {
+                return;
+            }
+            const selection = window.getSelection();
+            if (!selection.isCollapsed && selection.toString().trim().length > 0) {
+                let range = selection.getRangeAt(0);
+                let fpEl = document.getElementById("fp-container");
+                let qEl = document.getElementById("q-container");
+                
+                let container = range.commonAncestorContainer;
+                let isInsideFP = fpEl && fpEl.contains(container);
+                let isInsideQ = qEl && qEl.contains(container);
+                
+                if (isInsideFP || isInsideQ) {
+                    let mark = document.createElement("mark");
+                    mark.className = "user-highlight";
+                    mark.title = "Click to remove highlight";
+                    mark.setAttribute("onclick", "removeHighlight(event, this)");
+
+                    try {
+                        mark.appendChild(range.extractContents());
+                        range.insertNode(mark);
+                        selection.removeAllRanges();
+                        saveTextHighlightState();
+                    } catch (err) {
+                        console.error("Highlighting error:", err);
+                    }
+                }
+            }
+        });
+
+        function removeHighlight(e, markEl) {
+            e.stopPropagation();
+            let parent = markEl.parentNode;
+            while (markEl.firstChild) {
+                parent.insertBefore(markEl.firstChild, markEl);
+            }
+            parent.removeChild(markEl);
+            parent.normalize();
+            saveTextHighlightState();
+        }
+
+        function saveTextHighlightState() {
+            let fpEl = document.getElementById("fp-container");
+            let qEl = document.getElementById("q-container");
+            if (!userHighlights[currentIndex]) userHighlights[currentIndex] = {};
+            if (fpEl) userHighlights[currentIndex].fp = fpEl.innerHTML;
+            if (qEl) userHighlights[currentIndex].q = qEl.innerHTML;
+            saveProgress();
+        }
+
+        function handleOptionClick(optIndex) {
+            const currentElimMap = eliminatedOptions[currentIndex] || {};
+            if (currentElimMap[optIndex]) {
+                delete currentElimMap[optIndex];
+                saveProgress();
+                renderQuestion();
+                return;
+            }
+            selectAnswer(optIndex);
+        }
+
+        function toggleEliminateChoice(event, optIndex) {
+            event.stopPropagation();
+            if (!eliminatedOptions[currentIndex]) {
+                eliminatedOptions[currentIndex] = {};
+            }
+            if (eliminatedOptions[currentIndex][optIndex]) {
+                delete eliminatedOptions[currentIndex][optIndex];
+            } else {
+                eliminatedOptions[currentIndex][optIndex] = true;
+            }
+            saveProgress();
+            renderQuestion();
+        }
+
+        function toggleFlagCurrentQuestion() {
+            if (flaggedQuestions[currentIndex]) {
+                delete flaggedQuestions[currentIndex];
+            } else {
+                flaggedQuestions[currentIndex] = true;
+            }
+            updateDropdownLabels();
+            populateJumpMenu();
+            renderQuestion();
+            saveProgress();
+        }
+
+        function selectAnswer(optIndex) {
+            if (window.getSelection) {
+                window.getSelection().removeAllRanges();
+            }
+
+            userAnswers[currentIndex] = optIndex;
+            totalCorrect = 0;
+            Object.keys(userAnswers).forEach(idx => {
+                if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+            });
+            updateScore();
+            updateDropdownLabels();
+            saveProgress();
+            renderQuestion();
+
+            if (Object.keys(userAnswers).length === examData.length) {
+                let percentage = Math.round((totalCorrect / examData.length) * 100);
+                saveStudentHistory(totalCorrect, examData.length, percentage);
+            }
+        }
+
+        function updateScore() {
+            const totalExamQuestions = examData.length;
+            const answeredCount = Object.keys(userAnswers).length;
+            const missedCount = getMissedIndices().length;
+            const unattemptedCount = totalExamQuestions - answeredCount;
+            const percentage = answeredCount > 0 ? Math.round((totalCorrect / answeredCount) * 100) : 0;
+            
+            document.getElementById("score-badge").textContent = `Score: ${totalCorrect} / ${answeredCount} (${percentage}%)`;
+
+            const correctPercent = (totalCorrect / totalExamQuestions) * 100;
+            const missedPercent = (missedCount / totalExamQuestions) * 100;
+
+            const barCorrect = document.getElementById("bar-correct");
+            const barMissed = document.getElementById("bar-missed");
+            const barUnattempted = document.getElementById("bar-unattempted");
+
+            barCorrect.style.width = `${correctPercent}%`;
+            barMissed.style.width = `${missedPercent}%`;
+
+            barCorrect.textContent = totalCorrect >= 1 ? totalCorrect : "";
+            barMissed.textContent = missedCount >= 1 ? missedCount : "";
+            barUnattempted.textContent = unattemptedCount >= 1 ? unattemptedCount : "";
+        }
+
+        function navigate(dir) {
+            const activeList = getActiveQuestionList();
+            const currentPos = activeList.indexOf(currentIndex);
+            const targetPos = currentPos + dir;
+
+            if (targetPos >= 0 && targetPos < activeList.length) {
+                currentIndex = activeList[targetPos];
+                renderQuestion();
+            }
+        }
+
+        function jumpToQuestion(index) {
+            currentIndex = parseInt(index);
+            renderQuestion();
+        }
+
+        function saveProgress() {
+            localStorage.setItem(STORAGE_KEY_ANSWERS, JSON.stringify(userAnswers));
+            localStorage.setItem(STORAGE_KEY_FLAGS, JSON.stringify(flaggedQuestions));
+            localStorage.setItem(STORAGE_KEY_ELIM, JSON.stringify(eliminatedOptions));
+            localStorage.setItem(STORAGE_KEY_INDEX, currentIndex);
+            localStorage.setItem(STORAGE_KEY_SCORE, totalCorrect);
+            localStorage.setItem(STORAGE_KEY_FILTER, activeFilter);
+            localStorage.setItem(STORAGE_KEY_RETRY, JSON.stringify(retrySessionList));
+            localStorage.setItem(STORAGE_KEY_HIGHLIGHTS, JSON.stringify(userHighlights));
+        }
+
+        function loadProgress() {
+            try {
+                const savedAnswers = localStorage.getItem(STORAGE_KEY_ANSWERS);
+                const savedFlags = localStorage.getItem(STORAGE_KEY_FLAGS);
+                const savedElim = localStorage.getItem(STORAGE_KEY_ELIM);
+                const savedIndex = localStorage.getItem(STORAGE_KEY_INDEX);
+                const savedScore = localStorage.getItem(STORAGE_KEY_SCORE);
+                const savedFilter = localStorage.getItem(STORAGE_KEY_FILTER);
+                const savedRetry = localStorage.getItem(STORAGE_KEY_RETRY);
+                const savedHighlights = localStorage.getItem(STORAGE_KEY_HIGHLIGHTS);
+
+                if (savedAnswers) userAnswers = JSON.parse(savedAnswers);
+                if (savedFlags) flaggedQuestions = JSON.parse(savedFlags);
+                if (savedElim) eliminatedOptions = JSON.parse(savedElim);
+                if (savedIndex !== null) currentIndex = parseInt(savedIndex);
+                if (savedScore !== null) totalCorrect = parseInt(savedScore);
+                if (savedFilter !== null) activeFilter = savedFilter;
+                if (savedRetry) retrySessionList = JSON.parse(savedRetry);
+                if (savedHighlights) userHighlights = JSON.parse(savedHighlights);
+            } catch (e) {
+                console.error("Could not load saved progress", e);
+            }
+        }
+
+        function resetProgress() {
+            if (confirm("Are you sure you want to clear your saved progress, answers, flags, and highlights?")) {
+                localStorage.removeItem(STORAGE_KEY_ANSWERS);
+                localStorage.removeItem(STORAGE_KEY_FLAGS);
+                localStorage.removeItem(STORAGE_KEY_ELIM);
+                localStorage.removeItem(STORAGE_KEY_INDEX);
+                localStorage.removeItem(STORAGE_KEY_SCORE);
+                localStorage.removeItem(STORAGE_KEY_FILTER);
+                localStorage.removeItem(STORAGE_KEY_RETRY);
+                localStorage.removeItem(STORAGE_KEY_HIGHLIGHTS);
+                userAnswers = {};
+                flaggedQuestions = {};
+                eliminatedOptions = {};
+                retrySessionList = [];
+                userHighlights = {};
+                currentIndex = 0;
+                totalCorrect = 0;
+                activeFilter = "all";
+                initApp();
+            }
+        }
+
+        function handleAnalysisExport(val) {
+            if (!val) return;
+            if (val === "all") exportRulesForFilter(examData.map((_, idx) => idx), "All Rules");
+            if (val === "missed") exportRulesForFilter(getMissedIndices(), "Missed Rules");
+            if (val === "flagged") exportRulesForFilter(getFlaggedIndices(), "Flagged Rules");
+        }
+
+        // Bold category formatting in Word Table export
+        function exportRulesForFilter(indices, titleName) {
+            if (indices.length === 0) {
+                openModal(`Export ${titleName}`, `No questions match the "${titleName}" criteria.`, `No rules to export for ${titleName}.`);
+                return;
+            }
+
+            const uniqueMap = new Map();
+            indices.forEach(idx => {
+                const item = examData[idx];
+                const cleanTopic = item.topic.trim();
+                const cleanExp = item.exp.trim();
+                if (!uniqueMap.has(cleanTopic)) {
+                    uniqueMap.set(cleanTopic, new Set());
+                }
+                uniqueMap.get(cleanTopic).add(cleanExp);
+            });
+
+            const sortedTopics = Array.from(uniqueMap.keys()).sort((a, b) => a.localeCompare(b));
+
+            let tableOutput = "**Legal Topic Category**\t**Black Letter Law Analysis / Core Rule**\n";
+            let displayOutput = `${titleName.toUpperCase()} - CATEGORIZED & SORTED (WORD TABLE COMPATIBLE):\n`;
+            displayOutput += `========================================================================\n\n`;
+
+            sortedTopics.forEach(topic => {
+                const rules = Array.from(uniqueMap.get(topic));
+                rules.forEach(rule => {
+                    let safeRule = rule.replace(/[\r\n]+/g, " ");
+                    tableOutput += `**${topic}**\t${safeRule}\n`;
+                    displayOutput += `• [**${topic}**]\n  ${safeRule}\n\n`;
+                });
+            });
+
+            navigator.clipboard.writeText(tableOutput).then(() => {
+                openModal(
+                    `${titleName} Exported & Sorted!`,
+                    `${titleName} have been CATEGORIZED (IN BOLD), SORTED & COPIED TO YOUR CLIPBOARD in Tab-Delimited Table format!\n\nTo make a table in Microsoft Word:\n1. Open Word and press Paste (Ctrl+V or Cmd+V)\n2. Highlight the pasted text\n3. Click Insert > Table > Convert Text to Table... (Separate at Tabs)`,
+                    displayOutput
+                );
+            }).catch(err => {
+                openModal(
+                    `${titleName} Export`,
+                    "Copy the text below manually, or click 'Copy Content to Clipboard':",
+                    tableOutput
+                );
+            });
+        }
+
+        function showMissedSummary() {
+            let summary = "MISSED QUESTIONS SUMMARY (TORTS SET 9):\n========================================\n\n";
+            let missedIndices = getMissedIndices();
+
+            if (missedIndices.length === 0) {
+                summary += "No missed questions yet! Great job.";
+            } else {
+                missedIndices.forEach(qIdx => {
+                    let q = examData[qIdx];
+                    let userChoice = userAnswers[qIdx];
+                    summary += `• Question ${q.id} [Topic: **${q.topic}**]\n`;
+                    summary += `  Your Selected Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n`;
+                    summary += `  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n`;
+                    summary += `  Core Rule: ${q.exp}\n\n`;
+                });
+            }
+
+            openModal("Missed Questions Rule Analysis", "Review the legal rules for questions you answered incorrectly, or copy and paste them back into our chat for drill sets.", summary);
+        }
+
+        function showFlaggedSummary() {
+            let summary = "FLAGGED QUESTIONS SUMMARY (TORTS SET 9):\n========================================\n\n";
+            let flaggedIndices = getFlaggedIndices();
+
+            if (flaggedIndices.length === 0) {
+                summary += "No flagged questions yet!";
+            } else {
+                flaggedIndices.forEach(qIdx => {
+                    let q = examData[qIdx];
+                    let userChoice = userAnswers[qIdx];
+                    summary += `• Question ${q.id} [Topic: **${q.topic}**]\n`;
+                    if (userChoice !== undefined) {
+                        summary += `  Your Selected Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n`;
+                    }
+                    summary += `  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n`;
+                    summary += `  Core Rule: ${q.exp}\n\n`;
+                });
+            }
+
+            openModal("Flagged Questions Rule Analysis", "Review the legal rules for questions you flagged for extra study and review.", summary);
+        }
+
+        function exportFlaggedQuestions() {
+            const flagged = getFlaggedIndices().map(idx => {
+                const item = examData[idx];
+                return {
+                    originalSet: "Torts Set 9",
+                    originalId: item.id,
+                    topic: item.topic,
+                    factPattern: item.fp,
+                    question: item.q,
+                    options: item.opts,
+                    correctAnswer: item.ans,
+                    explanation: item.exp
+                };
+            });
+
+            const content = flagged.length > 0 ? JSON.stringify(flagged, null, 2) : "No questions are currently flagged in this set.";
+            openModal("Export Flagged Questions (JSON)", "Copy this JSON block and paste it into our chat to combine flagged questions across multiple sets into custom exams.", content);
+        }
+
+        function exportMissedQuestions() {
+            const missed = getMissedIndices().map(idx => {
+                const item = examData[idx];
+                return {
+                    originalSet: "Torts Set 9",
+                    originalId: item.id,
+                    topic: item.topic,
+                    factPattern: item.fp,
+                    question: item.q,
+                    options: item.opts,
+                    correctAnswer: item.ans,
+                    explanation: item.exp
+                };
+            });
+
+            const content = missed.length > 0 ? JSON.stringify(missed, null, 2) : "No questions are currently marked as missed.";
+            openModal("Export Missed Questions (JSON)", "Copy this JSON block and paste it into our chat to build an automated re-test quiz solely from your missed questions.", content);
+        }
+
+        // Export Full Session Tool
+        function exportFullStudentSession() {
+            const sessionData = {
+                version: "1.0",
+                examSet: currentSetKey,
+                exportDate: new Date().toLocaleString(),
+                userAnswers: userAnswers,
+                flaggedQuestions: flaggedQuestions,
+                eliminatedOptions: eliminatedOptions,
+                userHighlights: userHighlights,
+                score: totalCorrect,
+                totalAttempted: Object.keys(userAnswers).length,
+                totalQuestions: examData.length
+            };
+
+            const jsonString = JSON.stringify(sessionData, null, 2);
+            openModal(
+                "Export Test Session",
+                "Copy this code block and send it to your classmate, tutor, or study partner. They can click '📥 Import' on their screen to review your exact test results, missed questions, and highlights:",
+                jsonString
+            );
+        }
+
+        // Import Full Session Tool
+        function promptImportSession() {
+            let rawInput = prompt("Paste the student's Export Session code block below:");
+            if (!rawInput) return;
+
+            try {
+                const imported = JSON.parse(rawInput.trim());
+
+                if (imported.examSet && imported.examSet !== currentSetKey) {
+                    alert(`Warning: This session belongs to ${imported.examSet.toUpperCase()}, but you are currently on ${currentSetKey.toUpperCase()}. Please open the matching exam set before importing.`);
+                    return;
+                }
+
+                if (!imported.userAnswers) {
+                    alert("Invalid session data format.");
+                    return;
+                }
+
+                if (confirm(`Load session from ${imported.exportDate || "another student"} (Score: ${imported.score || 0} / ${imported.totalAttempted || 0})?\n\nNote: This will display their answers, highlights, and missed questions on your screen.`)) {
+                    userAnswers = imported.userAnswers || {};
+                    flaggedQuestions = imported.flaggedQuestions || {};
+                    eliminatedOptions = imported.eliminatedOptions || {};
+                    userHighlights = imported.userHighlights || {};
+                    
+                    totalCorrect = 0;
+                    Object.keys(userAnswers).forEach(idx => {
+                        if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+                    });
+
+                    currentIndex = 0;
+                    saveProgress();
+                    populateJumpMenu();
+                    renderQuestion();
+                    updateScore();
+                    updateDropdownLabels();
+                    
+                    alert("Session imported successfully! You can now browse their answers, click 'Missed (X)' to see questions they got wrong, or inspect their highlighted notes.");
+                }
+            } catch (err) {
+                alert("Error parsing import code. Please ensure you copied the complete code block.");
+            }
+        }
+
+        function saveStudentHistory(score, total, percentage) {
+            let historyKey = `fylsx_history_${currentSetKey}`;
+            let history = JSON.parse(localStorage.getItem(historyKey) || "[]");
+            
+            let sessionRecord = {
+                date: new Date().toLocaleDateString(),
+                time: new Date().toLocaleTimeString(),
+                score: score,
+                total: total,
+                percentage: percentage
+            };
+            
+            history.push(sessionRecord);
+            if (history.length > 10) history.shift();
+            localStorage.setItem(historyKey, JSON.stringify(history));
+        }
+
+        function showStudentHistory() {
+            let historyKey = `fylsx_history_${currentSetKey}`;
+            let history = JSON.parse(localStorage.getItem(historyKey) || "[]");
+            
+            let summary = `PAST TEST PERFORMANCE HISTORY (${currentSetKey.toUpperCase()}):\n==================================================\n\n`;
+            if (history.length === 0) {
+                summary += "No completed past test history recorded for this set yet.";
+            } else {
+                history.forEach((record, idx) => {
+                    summary += `Attempt #${idx + 1} — Date: ${record.date} at ${record.time}\n`;
+                    summary += `  Score: ${record.score} / ${record.total} (${record.percentage}%)\n\n`;
+                });
+            }
+            openModal("Student Test History", "Review previous attempts and score progression:", summary);
+        }
+
+        function openModal(title, desc, content) {
+            document.getElementById("modal-title").textContent = title;
+            document.getElementById("modal-desc").textContent = desc;
+            document.getElementById("modal-textarea").value = content;
+            document.getElementById("info-modal-box").classList.add("visible");
+            document.getElementById("info-modal-box").scrollIntoView({ behavior: "smooth" });
+        }
+
+        function closeModal() {
+            document.getElementById("info-modal-box").classList.remove("visible");
+        }
+
+        function copyModalContent() {
+            const text = document.getElementById("modal-textarea");
+            text.select();
+            document.execCommand("copy");
+            alert("Copied to clipboard!");
+        }
+
+        window.onload = initApp;
+    </script>
+</body>
+</html>

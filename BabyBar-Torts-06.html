@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- iPad Fullscreen / PWA Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GoBabyBar">
+    <title>California Baby Bar (FYLSX) - 25 Torts Practice Exam (Set 6)</title>
+    <style>
+        :root {
+            --primary: #1B365D;
+            --primary-light: #4B6B94;
+            --accent: #D97706;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text: #1E293B;
+            --text-muted: #64748B;
+            --border: #CBD5E1;
+            --success: #16A34A;
+            --danger: #DC2626;
+            --flag: #E11D48;
+            --badge-blue: #BAE6FD;
+            --badge-blue-hover: #7DD3FC;
+        }
+
+        /* Persistent Multiple Highlighting Feature */
+        mark.user-highlight {
+            background-color: #FEF08A;
+            color: #713F12;
+            padding: 0.1rem 0.2rem;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        mark.user-highlight:hover {
+            background-color: #FDE047;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 1rem;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.3rem;
+            margin-bottom: 0.2rem;
+        }
+
+        header p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Tracker and Progress Bar Container */
+        .tracker-wrapper {
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            margin-bottom: 1.2rem;
+        }
+
+        .tracker-bar {
+            background: var(--card-bg);
+            padding: 0.75rem 1rem;
+            border-radius: 10px 10px 0 0;
+            border: 1px solid var(--border);
+            border-bottom: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        /* Live Progress Bar with Clean Numeric Counters */
+        .progress-bar-container {
+            display: flex;
+            width: 100%;
+            height: 22px;
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            font-size: 0.8rem;
+            font-weight: 700;
+            line-height: 22px;
+            text-align: center;
+        }
+
+        .progress-segment {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: width 0.3s ease;
+        }
+
+        .segment-correct {
+            background: var(--success);
+            color: #FFFFFF;
+            width: 0%;
+        }
+
+        .segment-missed {
+            background: var(--danger);
+            color: #FFFFFF;
+            width: 0%;
+        }
+
+        .segment-unattempted {
+            background: #FFFFFF;
+            color: #0F172A;
+            flex-grow: 1;
+        }
+
+        .score-box {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background: var(--primary-light);
+            color: white;
+            padding: 0.25rem 0.65rem;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .action-group {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-action-tool {
+            padding: 0.35rem 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            transition: all 0.15s ease;
+        }
+
+        .btn-history {
+            background: var(--primary-light);
+            color: white;
+            border-color: var(--primary-light);
+        }
+
+        .btn-export-session {
+            background: #0284C7;
+            color: white;
+            border-color: #0284C7;
+        }
+
+        .btn-import-session {
+            background: #475569;
+            color: white;
+            border-color: #475569;
+        }
+
+        .btn-elimination-toggle {
+            background: #F1F5F9;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-elimination-toggle:hover {
+            background: #E2E8F0;
+            color: var(--text);
+        }
+
+        .btn-elimination-toggle.active {
+            background: #FEF3C7;
+            color: #B45309;
+            border-color: #F59E0B;
+            font-weight: bold;
+        }
+
+        .dropdown-menu {
+            padding: 0.35rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-size: 0.8rem;
+            background: white;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .dropdown-flag {
+            color: var(--flag);
+            border-color: #FECDD3;
+            background: #FFF1F2;
+        }
+
+        .dropdown-missed {
+            color: var(--accent);
+            border-color: #FED7AA;
+            background: #FFFBEB;
+        }
+
+        .filter-status-banner {
+            display: none;
+            background: #FEF3C7;
+            border: 1px solid #FCD34D;
+            color: #92400E;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-status-banner.visible {
+            display: flex;
+        }
+
+        .btn-banner-reset {
+            background: #B45309;
+            color: white;
+            border: none;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .q-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .q-header {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        .btn-flag {
+            background: #F1F5F9;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-flag.active {
+            background: #FFE4E6;
+            color: var(--flag);
+            border-color: var(--flag);
+            font-weight: bold;
+        }
+
+        .fact-pattern {
+            background: #F1F5F9;
+            border-left: 4px solid var(--primary-light);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .q-text {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .option-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .option-btn {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 1;
+            user-select: none;
+        }
+
+        .option-btn:hover:not(:disabled):not(.eliminated) {
+            background: #F0F9FF;
+            border-color: #38BDF8;
+        }
+
+        .option-btn:hover:not(:disabled):not(.eliminated) .letter-circle {
+            background: var(--badge-blue-hover);
+        }
+
+        .option-btn:disabled {
+            cursor: default;
+        }
+
+        .option-btn.eliminated {
+            opacity: 0.45;
+            background: #F1F5F9;
+            border-color: #E2E8F0;
+            text-decoration: line-through;
+        }
+
+        .option-btn.eliminated .letter-circle {
+            background: #CBD5E1;
+            color: #64748B;
+        }
+
+        .letter-circle {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--badge-blue);
+            color: #0F172A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .option-btn.correct {
+            border-color: var(--success);
+            background: #DCFCE7;
+            color: #14532D;
+            font-weight: 500;
+            opacity: 1 !important;
+        }
+
+        .option-btn.correct .letter-circle {
+            background: var(--success);
+            color: #FFFFFF;
+        }
+
+        .option-btn.incorrect {
+            border-color: var(--danger);
+            background: #FEE2E2;
+            color: #7F1D1D;
+            opacity: 0.75;
+        }
+
+        .option-btn.incorrect .letter-circle {
+            background: var(--danger);
+            color: #FFFFFF;
+        }
+
+        .btn-eliminate-choice {
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .btn-eliminate-choice:hover {
+            background: #FEE2E2;
+            border-color: var(--danger);
+            color: var(--danger);
+        }
+
+        .btn-eliminate-choice.active {
+            background: #DC2626;
+            color: white;
+            border-color: #DC2626;
+        }
+
+        .explanation-box {
+            display: none;
+            background: #F0F9FF;
+            border: 1px solid #BAE6FD;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #0369A1;
+            margin-top: 1rem;
+        }
+
+        .explanation-box.visible {
+            display: block;
+        }
+
+        .dropdown-analysis {
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #BAE6FD;
+            font-size: 0.8rem;
+            background: #E0F2FE;
+            color: #0369A1;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            gap: 0.5rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            user-select: none;
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .btn-reset {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            font-weight: normal;
+        }
+
+        .btn-reset:hover {
+            background: #F1F5F9;
+            color: var(--danger);
+            border-color: var(--danger);
+        }
+
+        .modal-box {
+            display: none;
+            background: white;
+            border: 2px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .modal-box.visible {
+            display: block;
+        }
+
+        textarea {
+            width: 100%;
+            height: 240px;
+            margin-top: 0.8rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 0.5rem; }
+            .tracker-bar { flex-direction: column; align-items: stretch; }
+            .action-group { justify-content: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <a href="index.html" style="background: rgba(255,255,255,0.2); color: white; padding: 0.3rem 0.7rem; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: bold;">← Back to Menu</a>
+            <span style="font-size: 0.8rem; opacity: 0.8;">GoBabyBar Exam Suite</span>
+        </div>
+        <h1>California Baby Bar (FYLSX) Practice Exam - Set 6</h1>
+        <p>25 Completely Unique Advanced Torts Scenarios & Complete Analytics</p>
+    </header>
+
+    <div class="tracker-wrapper">
+        <div class="tracker-bar">
+            <div class="score-box">
+                <span>Question <strong id="current-q-num">1</strong> of 25</span>
+                <span class="badge" id="score-badge">Score: 0 / 0 (0%)</span>
+            </div>
+
+            <div class="action-group">
+                <!-- History Button -->
+                <button class="btn-action-tool btn-history" onclick="showStudentHistory()" title="View Past Test History">
+                    📊 History
+                </button>
+
+                <!-- Export Session Button -->
+                <button class="btn-action-tool btn-export-session" onclick="exportFullStudentSession()" title="Export your answers and highlights to share">
+                    📤 Export
+                </button>
+
+                <!-- Import Session Button -->
+                <button class="btn-action-tool btn-import-session" onclick="promptImportSession()" title="Import another student's test session to review">
+                    📥 Import
+                </button>
+
+                <!-- Process of Elimination Toggle -->
+                <button class="btn-elimination-toggle active" id="elimination-toggle-btn" title="Disable Elimination Mode" onclick="toggleEliminationMode()">
+                    ✂️
+                </button>
+
+                <!-- Flagged Dropdown Menu -->
+                <select id="flag-dropdown" class="dropdown-menu dropdown-flag" onchange="handleFlagDropdown(this.value)">
+                    <option value="" disabled selected>🚩 Flagged (0) ▾</option>
+                    <option value="all">🌐 Show All Questions (Full Set)</option>
+                    <option value="filter">Show Flagged Only</option>
+                    <option value="retry">Retry Flagged</option>
+                    <option value="summary">Flagged Rule Analysis</option>
+                    <option value="export">Export Flagged (JSON)</option>
+                </select>
+
+                <!-- Missed Dropdown Menu -->
+                <select id="missed-dropdown" class="dropdown-menu dropdown-missed" onchange="handleMissedDropdown(this.value)">
+                    <option value="" disabled selected>❌ Missed (0) ▾</option>
+                    <option value="all">🌐 Show All Questions (Full Set)</option>
+                    <option value="filter">Show Missed Only</option>
+                    <option value="retry">Retry Missed</option>
+                    <option value="summary">Missed Rule Analysis</option>
+                    <option value="export">Export Missed (JSON)</option>
+                </select>
+
+                <!-- Jump Selector -->
+                <select id="jump-select" class="dropdown-menu" onchange="jumpToQuestion(this.value)">
+                    <!-- Populated dynamically -->
+                </select>
+            </div>
+        </div>
+
+        <!-- Live Progress Bar with Clean Numeric Counters -->
+        <div class="progress-bar-container">
+            <div class="progress-segment segment-correct" id="bar-correct" title="Correct"></div>
+            <div class="progress-segment segment-missed" id="bar-missed" title="Missed"></div>
+            <div class="progress-segment segment-unattempted" id="bar-unattempted" title="Unattempted">25</div>
+        </div>
+    </div>
+
+    <!-- Active Filter Indicator Banner -->
+    <div class="filter-status-banner" id="filter-banner">
+        <span id="filter-banner-text">Viewing filtered subset</span>
+        <button class="btn-banner-reset" onclick="returnToFullSet()">Return to Full Exam (25 Qs)</button>
+    </div>
+
+    <div id="quiz-container">
+        <!-- Question Card Populated via JS -->
+    </div>
+
+    <div class="nav-controls">
+        <button class="btn" id="prev-btn" onclick="navigate(-1)">← Previous</button>
+        <button class="btn btn-reset" onclick="resetProgress()">Reset Set</button>
+        <button class="btn" id="next-btn" onclick="navigate(1)">Next →</button>
+    </div>
+
+    <!-- Universal Display / Export Modal Box -->
+    <div class="modal-box" id="info-modal-box">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 id="modal-title" style="color: var(--primary);">Analysis / Export</h3>
+            <button class="btn btn-reset" style="padding:0.2rem 0.6rem;" onclick="closeModal()">✕ Close</button>
+        </div>
+        <p id="modal-desc" style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.3rem;"></p>
+        <textarea id="modal-textarea" readonly></textarea>
+        <button class="btn" id="modal-copy-btn" style="margin-top: 0.8rem;" onclick="copyModalContent()">Copy Content to Clipboard</button>
+    </div>
+
+    <script>
+        // 25 Completely Unique, Advanced-Tier Torts Questions for Set 6
+        const examData = [
+            {
+                id: 1,
+                topic: "Joint Tortfeasors / California Proposition 51 (Civil Code § 1431.2)",
+                fp: "Questions 1–2 are based on the following fact situation:\nPlaintiff suffered catastrophic physical injuries in a multiple-vehicle collision caused by the joint negligence of Trucker (80% at fault) and Motorist (20% at fault). Plaintiff proved $100,000 in economic damages (medical bills and lost earnings) and $500,000 in non-economic damages (pain, suffering, and emotional distress). Trucker is completely bankrupt and has zero insurance or assets.",
+                q: "Under California Civil Code § 1431.2 (Proposition 51), what is the maximum total financial amount Plaintiff can legally collect from Motorist?",
+                opts: [
+                    "$200,000, consisting of 100% of economic damages ($100,000) plus Motorist's 20% proportional share of non-economic damages ($100,000).",
+                    "$600,000, because California joint and several liability applies unconditionally to all components of a personal injury judgment.",
+                    "$120,000, because pure comparative fault restricts a joint tortfeasor's liability strictly to their exact 20% allocation of total fault.",
+                    "$100,000, because Proposition 51 completely abolishes all joint liability for economic damages when a co-defendant is insolvent."
+                ],
+                ans: 0,
+                exp: "Under California Civil Code § 1431.2 (Proposition 51), liability for economic damages remains joint and several (allowing Plaintiff to collect 100% of the $100,000 from Motorist), but liability for non-economic damages (pain and suffering) is several only, allocated strictly according to each defendant's percentage of fault (20% of $500,000 = $100,000). Total recoverable from Motorist = $200,000."
+            },
+            {
+                id: 2,
+                topic: "Joint Tortfeasors / Proposition 51 & Intentional Tortfeasor Exception",
+                fp: "Questions 1–2 are based on the following fact situation:\nPlaintiff suffered catastrophic physical injuries in a multiple-vehicle collision caused by the joint negligence of Trucker (80% at fault) and Motorist (20% at fault). Plaintiff proved $100,000 in economic damages (medical bills and lost earnings) and $500,000 in non-economic damages (pain, suffering, and emotional distress). Trucker is completely bankrupt and has zero insurance or assets.",
+                q: "If the jury had found that Trucker acted intentionally by ramming Plaintiff in a road-rage assault while Motorist acted with ordinary negligence, Motorist's liability for non-economic damages would be:",
+                opts: [
+                    "Still restricted strictly to Motorist's 20% several share ($100,000) under California Civil Code § 1431.2.",
+                    "Converted to 100% joint and several liability ($500,000) because intentional torts extinguish all statutory protections for co-defendants.",
+                    "Completely extinguished, because an intentional criminal act acts as a superseding cause eliminating all negligent co-defendant liability.",
+                    "Increased to fifty percent under the equitable joint enterprise allocation rules governing civil highway assault cases."
+                ],
+                ans: 0,
+                exp: "Under California law (Thomas v. Duggins Construction Co. / B.B. v. County of Los Angeles), an intentional tortfeasor cannot use Proposition 51 to reduce their own non-economic liability, but a NEGLIGENT defendant (Motorist) remains entitled to the protection of § 1431.2, limiting Motorist's non-economic damage exposure strictly to Motorist's proportional percentage of fault (20%)."
+            },
+            {
+                id: 3,
+                topic: "Strict Products Liability / Barker v. Lull Design Defect Burden Shifting",
+                q: "Operator was injured when a commercial loader machine tipped over sideways on a standard construction slope. In Operator's strict products liability design defect lawsuit against Manufacturer under California law (Barker v. Lull Engineering Co.), once Operator proves that the loader's design was a proximate cause of the tipping injury:",
+                opts: [
+                    "The burden shifts to Manufacturer to prove that the benefits of the design outweighed the inherent risk of danger under the Risk-Utility test.",
+                    "The burden remains on Operator to prove that the product failed to perform as safely as an ordinary consumer would expect under consumer expectation rules.",
+                    "Operator is entitled to a directed verdict on strict liability without regard to engineering feasibility or alternative mechanical designs.",
+                    "The burden shifts to Operator to establish that Manufacturer was actively negligent in drafting the original mechanical blueprint specifications."
+                ],
+                ans: 0,
+                exp: "Under California's seminal design defect doctrine (Barker v. Lull Engineering Co., 20 Cal.3d 413), under the Risk-Benefit / Risk-Utility prong, once the plaintiff establishes a prima facie case that the product's design proximately caused the injury, the burden of proof SHIFTS to the defendant manufacturer to prove, in light of relevant factors (feasibility, cost, adverse consequences), that the benefits of the challenged design outweigh the risk of danger inherent in such design."
+            },
+            {
+                id: 4,
+                topic: "Privacy / Intrusion Upon Seclusion in Semi-Public Workplaces (Sanders v. ABC)",
+                q: "Employee worked in a large commercial telemarketing room divided into 50 open cubicles where coworkers could overhear phone calls, but which was closed to the general public. Reporter posed as an employee, covertly wore a hidden camera and microphone, and secretly videotaped private conversations with Employee regarding personal finances and published them on national television. In Employee's suit for Intrusion Upon Seclusion under California law (Sanders v. ABC):",
+                opts: [
+                    "Employee can prevail, because an employee has a reasonable expectation of privacy against covert electronic recording by journalists even in a semi-public workplace.",
+                    "Employee loses, because an employee has zero legally recognized expectation of privacy in an open-plan workplace where coworkers can overhear conversations.",
+                    "Employee loses, because news gathering in commercial offices is protected by absolute First Amendment investigative press privileges.",
+                    "Employee can prevail only if Employee can prove that Reporter committed a simultaneous physical common law trespass to real property."
+                ],
+                ans: 0,
+                exp: "Under Sanders v. American Broadcasting Companies (20 Cal.4th 907), privacy is not an 'all-or-nothing' concept. In a workplace office or cubicle not open to the general public, an employee may have a reasonable expectation of visual and auditory privacy against covert electronic video/audio recording by news journalists, even though the employee had no expectation of complete privacy from coworkers."
+            },
+            {
+                id: 5,
+                topic: "Negligence / California Social Host & Dram Shop Immunity (Cal. Civ. Code § 1714)",
+                q: "Host served 8 alcoholic drinks to Adult Guest at a private residential party. Guest became visibly and obviously intoxicated. Host watched Guest stumble to his car and drive away. Guest ran a red light and struck Pedestrian. In Pedestrian's negligence suit against Host under California Civil Code § 1714 and Business & Professions Code § 25602:",
+                opts: [
+                    "Host is immune from civil tort liability, because California law provides broad immunity to social hosts, declaring the consumption of alcohol to be the proximate cause of injuries.",
+                    "Host is directly liable in negligence, because a social host owes a common law duty of reasonable care to prevent visibly intoxicated guests from driving.",
+                    "Host is strictly liable under the statutory Dram Shop doctrine for furnishing intoxicating beverages to an obviously impaired motor vehicle operator.",
+                    "Host is liable only if Pedestrian proves Host charged an entry fee or sold alcohol for commercial consideration at the residential party."
+                ],
+                ans: 0,
+                exp: "Under California Civil Code § 1714(b)-(c) and Business & Professions Code § 25602, California provides sweeping statutory immunity to social hosts and commercial vendors: the furnishing of alcoholic beverages is NOT the proximate cause of injuries resulting from intoxication; the consumption is. The sole statutory exception applies to furnishing alcohol to an obviously intoxicated MINOR (Cal. Civ. Code § 1714(d))."
+            },
+            {
+                id: 6,
+                topic: "Trespass to Land / Navigable Airspace vs. Immediate Reaches (United States v. Causby)",
+                q: "Drone Operator repeatedly flew a commercial surveillance drone at an altitude of 25 feet directly above Homeowner's private suburban backyard, making loud buzzing noises and peering into patio windows. The FAA designates 'navigable public airspace' as beginning at 500 feet. Homeowner sued Drone Operator for Trespass to Land. Drone Operator argued flight in the air cannot constitute trespass. Result?",
+                opts: [
+                    "Homeowner wins, because flights within the immediate reaches of the land that invade the airspace below navigable limits constitute actionable trespass (United States v. Causby).",
+                    "Drone Operator wins, because common law trespass strictly requires physical tactile contact with the surface soil of the real property.",
+                    "Drone Operator wins under federal preemption, because the FAA possesses exclusive plenary authority over all airspace down to the blade of grass.",
+                    "Homeowner wins under the tort of conversion, because Drone Operator exercised substantial unlawful dominion over Homeowner's atmospheric gases."
+                ],
+                ans: 0,
+                exp: "Under United States v. Causby and Restatement (Second) of Torts § 159(2), flight by aircraft (or drones) in the airspace above the land of another constitutes a Trespass to Land if: (a) it enters into the immediate reaches of the airspace next to the land; and (b) it interferes substantially with the landowner's actual use and enjoyment."
+            },
+            {
+                id: 7,
+                topic: "Economic Torts / Malicious Prosecution vs. Abuse of Process Distinction",
+                q: "Creditor lawfully filed a valid debt collection lawsuit against Debtor, supported by undisputed probable cause. However, after the summons was served, Creditor maliciously scheduled 15 consecutive daily depositions in remote counties solely to coerce Debtor into signing a separate real estate transfer completely unrelated to the debt. Debtor sued Creditor for Malicious Prosecution and Abuse of Process. Debtor will prevail for:",
+                opts: [
+                    "Abuse of Process only, because the original lawsuit was supported by probable cause, but Creditor misused subsequent legal process for an improper collateral purpose.",
+                    "Malicious Prosecution only, because scheduling oppressive depositions establishes lack of probable cause and legal malice at the inception of the action.",
+                    "Both torts, because any misuse of discovery during civil litigation converts a lawful complaint into an actionable malicious prosecution retroactively.",
+                    "Neither tort, because discovery scheduling disputes are protected by absolute litigation privilege under California Civil Code § 47(b)."
+                ],
+                ans: 0,
+                exp: "Malicious Prosecution requires establishing that the proceeding was initiated WITHOUT probable cause. If the initial suit was validly filed with probable cause, malicious prosecution is barred. In contrast, Abuse of Process occurs when a party uses a properly issued judicial process (like depositions or subpoenas) for an improper, ulterior collateral objective not intended by law."
+            },
+            {
+                id: 8,
+                topic: "Negligence / Firefighter's Rule Statutory Exception (Cal. Civ. Code § 1714.9)",
+                q: "Firefighter arrived at a residential kitchen grease fire caused by Homeowner's ordinary kitchen negligence. While Firefighter was spraying foam on the stove inside the kitchen, Homeowner intentionally shoved Firefighter out of the way to grab a jewelry box, knocking Firefighter into burning grease and causing severe burns. Under California Civil Code § 1714.9, Firefighter's personal injury claim against Homeowner is:",
+                opts: [
+                    "Not barred by the Firefighter's Rule, because the rule does not protect an actor whose intentional or independent tortious conduct occurs after the firefighter arrives at the scene.",
+                    "Completely barred by the Firefighter's Rule, because professional emergency first responders assume all risks of physical altercations on fire scenes.",
+                    "Permitted only if Firefighter establishes that Homeowner acted with the specific premeditated criminal intent to commit second-degree murder.",
+                    "Barred under the doctrine of primary assumption of risk governing all emergency structural building operations."
+                ],
+                ans: 0,
+                exp: "Under California Civil Code § 1714.9, an exception to the Firefighter's Rule explicitly allows a firefighter or police officer to recover where the conduct causing the injury occurs AFTER the person knows or should know of the presence of the firefighter/officer, and involves willful acts or independent subsequent tortious conduct."
+            },
+            {
+                id: 9,
+                topic: "Negligence / Res Ipsa Loquitur Failure in Multi-Vehicle Chain Collisions",
+                q: "In heavy dense fog on a highway, a 10-car chain-reaction pileup occurred involving Drivers 1 through 10. Passenger in Car 5 was severely injured when Car 5 was struck from the front and rear simultaneously. Passenger could not determine which driver struck whom first or who committed what driving error. Passenger sued all 10 drivers under Res Ipsa Loquitur. Passenger's res ipsa claim will:",
+                opts: [
+                    "Fail, because res ipsa loquitur cannot be invoked where multiple independent actors each controlled separate instrumentalities that could have caused the accident.",
+                    "Succeed under the doctrine of Ybarra v. Spangard, shifting the burden of proof to all 10 drivers to exculpate themselves or face joint liability.",
+                    "Succeed, because multi-vehicle chain reaction pileups do not ordinarily occur on public highways in the absence of actionable driver negligence.",
+                    "Fail only if the highway patrol accident reconstruction report concludes that the dense fog constituted an extraordinary Act of God."
+                ],
+                ans: 0,
+                exp: "Res ipsa loquitur requires that the instrumentality causing the injury be in the EXCLUSIVE control of the defendant. In a multi-vehicle pileup involving multiple independent drivers, the plaintiff cannot establish exclusive control in any single defendant (or a cohesive medical team as in Ybarra), meaning res ipsa loquitur cannot be used against the aggregate group."
+            },
+            {
+                id: 10,
+                topic: "Strict Liability / Wild Animals in Public Municipal Educational Zoos",
+                q: "City operated a municipal public zoological garden. Bear was housed in a standard, secure, double-fenced concrete enclosure. An earthquake cracked the outer cage, and Bear escaped, injuring Visitor on the zoo sidewalk before handlers could tranquilize it. City exercised utmost reasonable care in cage inspection and maintenance. In Visitor's tort suit against City:",
+                opts: [
+                    "City is judged under a Negligence standard, because public entities operating educational municipal zoos are exempt from strict liability for wild animals.",
+                    "City is strictly liable, because possessors of wild animals (ferae naturae) are subject to absolute strict liability regardless of public educational purpose.",
+                    "City is completely immune from all civil liability under the recreational trail immunity provisions of the California Government Tort Claims Act.",
+                    "City is strictly liable under the doctrine of res ipsa loquitur because dangerous wild bears do not escape absent supervisory operational neglect."
+                ],
+                ans: 0,
+                exp: "Under Restatement (Second) of Torts § 517 (and modern California law), while private owners of wild animals are strictly liable, public entities or institutions (like authorized public zoos or educational facilities) that maintain wild animals pursuant to a public duty or statutory authorization are held to a standard of REASONABLE CARE (negligence), not strict liability."
+            },
+            {
+                id: 11,
+                topic: "Economic Torts / Fiduciary & Professional Advisor Justification Privilege",
+                q: "Client was bound by an executory commercial lease to pay $10,000 monthly for warehouse space. Attorney, after reviewing Client's financial collapse, advised Client in good faith that it was in Client's best economic interest to breach the lease and negotiate a debt settlement. Client breached. Landlord sued Attorney for Intentional Interference with Contractual Relations. Attorney will:",
+                opts: [
+                    "Prevail, because an attorney or professional advisor acting in good faith within the scope of a professional relationship is privileged to advise a client to breach.",
+                    "Be held liable, because intentionally advising a party to repudiate an existing valid contract is an independently actionable business tort per se.",
+                    "Be held liable, because the privilege of professional advice extends exclusively to certified public accountants and registered investment advisors.",
+                    "Prevail only if Attorney proves that Landlord was guilty of contemporaneous commercial lease code violations."
+                ],
+                ans: 0,
+                exp: "Under Restatement (Second) of Torts § 772, an attorney, accountant, or professional advisor is protected by a qualified privilege of advice: one who gives honest, good-faith advice to a client within the scope of a professional request does not commit intentional interference with contract, even if the advice directly causes the client to breach."
+            },
+            {
+                id: 12,
+                topic: "Defamation / Slander of Title & Absolute Lis Pendens Privilege",
+                q: "Buyer and Seller entered a contract for the purchase of Blackacre. Seller improperly refused to close. Buyer filed a lawful specific performance lawsuit against Seller and recorded a formal Notice of Lis Pendens in the county land registry. As a direct result, Seller's attempt to sell Blackacre to another party was blocked. Seller sued Buyer for Slander of Title. Buyer's defense of privilege will:",
+                opts: [
+                    "Succeed, because recording a notice of lis pendens in connection with a pending civil lawsuit is protected by the absolute litigation privilege (Cal. Civ. Code § 47(b)).",
+                    "Fail, because publishing clouding encumbrances against real property title is subject to strict civil liability under slander of title doctrines.",
+                    "Fail, because the litigation privilege protects in-court oral testimony but categorically excludes recorded public county real estate filings.",
+                    "Succeed only if Buyer posted a $100,000 cash surety bond with the county clerk prior to the recordation of the lis pendens."
+                ],
+                ans: 0,
+                exp: "Under California Civil Code § 47(b) and established case law (Albertson v. Raboff), the recordation of a Notice of Lis Pendens is an integral publication in the course of a judicial proceeding and is protected by the ABSOLUTE Litigation Privilege, completely barring an action for Slander of Title."
+            },
+            {
+                id: 13,
+                topic: "NIED / Pre-existing Contractual Relationship Direct Victim (Molien v. Kaiser)",
+                q: "Physician negligently misdiagnosed Wife as having an advanced, contagious venereal disease and instructed Wife to tell Husband so he could be tested. In reality, Physician's laboratory test was erroneous. When Wife informed Husband, the accusation caused severe emotional distress, suspicion of infidelity, and the permanent breakup of the marriage. Under California law (Molien v. Kaiser Foundation Hospitals), Husband:",
+                opts: [
+                    "Can recover for NIED as a 'Direct Victim,' because Physician's negligent advice was directed at Husband through a foreseeable pre-existing relationship.",
+                    "Cannot recover for NIED, because Husband was never placed within the physical zone of danger of physical impact from the misdiagnosis.",
+                    "Cannot recover for NIED, because healthcare professionals owe duties of care strictly and exclusively to the individual patient tested.",
+                    "Can recover only under intentional fraud and deceit for the publication of an erroneous medical diagnostic laboratory report."
+                ],
+                ans: 0,
+                exp: "Under Molien v. Kaiser Foundation Hospitals (27 Cal.3d 916), California established the 'Direct Victim' theory of NIED: where a physician negligently diagnoses a communicable disease and instructs the patient to warn her spouse, the physician owes a direct duty of care to the spouse as a direct victim, permitting recovery without physical injury or zone-of-danger presence."
+            },
+            {
+                id: 14,
+                topic: "Landowner Duty / California Recreational Use Immunity (Cal. Civ. Code § 846)",
+                q: "Rancher owned 5,000 acres of scenic mountain land. Rancher permitted the general public to enter the land for free recreational hiking and camping. While hiking on an unpaved trail, Hiker stepped into an uninspected, natural subterranean animal burrow, breaking his ankle. Under California Civil Code § 846 (Recreational Use Immunity), Rancher is:",
+                opts: [
+                    "Immune from negligence liability, because landowners who permit free public recreational access owe no duty to keep premises safe or warn of hazards.",
+                    "Liable in ordinary negligence, because a landowner owes permissive recreational licensees a duty to inspect trails for hidden defects.",
+                    "Strictly liable under public premises doctrines for maintaining public recreational hiking trails on private open-space land.",
+                    "Immune only if Rancher filed a formal recreational dedication easement with the county board of supervisors."
+                ],
+                ans: 0,
+                exp: "Under California Civil Code § 846, private property owners who allow the public to enter their land for recreational purposes without charging a fee or consideration owe NO duty of care to keep the premises safe or warn of hazardous conditions, and are immune from negligence lawsuits (liability attaches only for willful or malicious failure to guard/warn)."
+            },
+            {
+                id: 15,
+                topic: "Vicarious Liability / Respondeat Superior 'Special Errand' Exception",
+                q: "Accountant was driving home from her regular office job at 6:00 PM along her standard commuting route. While driving, Employer called Accountant and directed her to immediately detour to the airport post office to mail an urgent tax filing. While turning toward the airport, Accountant negligently struck Pedestrian. In Pedestrian's suit against Employer:",
+                opts: [
+                    "Employer is vicariously liable under the 'Special Errand' exception to the Going-and-Coming rule.",
+                    "Employer is not liable, because the Going-and-Coming rule categorically shields employers from employee commuting collisions.",
+                    "Employer is not liable, because Accountant was operating her own private vehicle and was not on corporate premises.",
+                    "Employer is strictly liable under statutory workers' compensation provisions for all commercial highway transportation."
+                ],
+                ans: 0,
+                exp: "While the 'Going-and-Coming Rule' generally excludes employee commutes from respondeat superior liability, the 'Special Errand Exception' applies when an employee is performing a special errand, mission, or task for the employer's benefit during the commute. The employee remains within the scope of employment during the entire special errand."
+            },
+            {
+                id: 16,
+                topic: "Negligence / Pharmacist Duty to Warn of Fatal Drug-Drug Interactions",
+                q: "Patient presented two valid prescriptions to Pharmacist from two different doctors: Drug A and Drug B. Pharmacist's commercial computer system flagged a severe, well-documented, potentially fatal chemical interaction between the two drugs. Pharmacist ignored the alert, filled both prescriptions without warning Patient or contacting the doctors, and Patient suffered cardiac arrest. In Patient's suit against Pharmacist:",
+                opts: [
+                    "Pharmacist is liable in negligence, because pharmacists owe an independent duty of care to intercept and warn of clear, fatal drug-drug interactions.",
+                    "Pharmacist is completely shielded from liability under the Learned Intermediary Doctrine, which places the sole duty to warn upon prescribing doctors.",
+                    "Pharmacist is strictly liable under strict products liability for dispensing an unreasonably dangerous pharmaceutical chemical combination.",
+                    "Pharmacist is not liable, because filling a facially valid, licensed physician prescription is protected by qualified professional immunity."
+                ],
+                ans: 0,
+                exp: "While the Learned Intermediary Doctrine shields drug manufacturers, pharmacists owe an independent professional duty of care to patients. Where a pharmacist has actual notice of a clear, potentially lethal contraindication or drug-drug interaction on the face of the prescriptions, the pharmacist is negligent for failing to warn or consult the prescribing physician."
+            },
+            {
+                id: 17,
+                topic: "IIED / Debt Collection Outrageousness Standards",
+                q: "Creditor called Debtor (a known heart patient) at 3:30 AM every night for two weeks, screaming obscenities, falsely threatening to send armed gang members to Debtor's house to drag him to prison, and stating: 'You will leave this house in a body bag unless you pay $500.' Debtor suffered a severe stress-induced heart attack. In Debtor's suit for IIED:",
+                opts: [
+                    "Debtor will prevail, because Creditor engaged in extreme and outrageous conduct that exceeds all possible bounds of decency in a civilized community.",
+                    "Creditor will prevail, because commercial creditors enjoy broad constitutional privileges to demand payment of legitimate delinquent debts.",
+                    "Creditor will prevail, because the intentional tort of IIED requires contemporaneous physical battery or physical impact.",
+                    "Debtor will prevail only under the statutory provisions of the Federal Fair Debt Collection Practices Act, which preempts state common law torts."
+                ],
+                ans: 0,
+                exp: "While creditors have a right to demand payment, using extreme, harassing, highly abusive tactics—such as 3:30 AM threatening calls and threats of physical violence—constitutes Extreme and Outrageous conduct supporting common law Intentional Infliction of Emotional Distress (IIED)."
+            },
+            {
+                id: 18,
+                topic: "Trespass to Chattels vs. Conversion in Digital Systems (Intel v. Hamidi)",
+                q: "Former Employee sent six mass unsolicited email broadcasts criticizing corporate management to 30,000 current employee inboxes over a two-year period. The emails caused zero physical damage, slowdown, crash, or loss of memory functionality to Employer's computer servers, though employees spent time reading them. Employer sued Former Employee for Trespass to Chattels under California law (Intel Corp. v. Hamidi). Result?",
+                opts: [
+                    "Employer loses, because electronic trespass to digital chattels requires physical damage, dispossession, or functional impairment of the hardware system.",
+                    "Employer wins, because any unauthorized transmission of digital electronic signals across a private computer network constitutes trespass per se.",
+                    "Employer wins under conversion, requiring Former Employee to pay the full fair market replacement value of the central corporate email server.",
+                    "Employer wins, because employee distraction and lost work productivity satisfy the common law damage requirement for trespass to chattels."
+                ],
+                ans: 0,
+                exp: "Under Intel Corp. v. Hamidi (30 Cal.4th 1342), California held that Trespass to Chattels does NOT encompass the unauthorized sending of electronic communications (like bulk emails) across a computer system in the absence of actual physical damage, functional disruption, or impairment to the hardware/machinery itself (lost employee productivity alone does not suffice)."
+            },
+            {
+                id: 19,
+                topic: "Strict Products Liability / Assumption of Risk as Pure Comparative Fault (Daly v. General Motors)",
+                q: "Driver was operating a car with a defectively designed door latch that flew open in collisions. Driver discovered the defect when the door popped open while parked, but chose to drive at 80 mph without wearing a seatbelt while intoxicated. In a rollover crash, the door flew open and Driver was ejected. In Driver's strict products liability suit under California law (Daly v. General Motors Corp.):",
+                opts: [
+                    "Driver's recovery is reduced under Pure Comparative Fault principles according to Driver's percentage of fault, but is not completely barred.",
+                    "Driver's claim is completely barred under traditional assumption of risk, which operates as an absolute total defense in strict liability.",
+                    "Manufacturer is held 100% strictly liable without any reduction, because consumer comparative fault is inapplicable in strict products liability.",
+                    "Driver's claim is completely barred under the doctrine of primary assumption of risk for operating motor vehicles while intoxicated."
+                ],
+                ans: 0,
+                exp: "Under Daly v. General Motors Corp. (20 Cal.3d 725), California applied Pure Comparative Fault to Strict Products Liability. A plaintiff's comparative negligence (including secondary assumption of risk, intoxication, or failure to wear a seatbelt) reduces their damage recovery proportionally, but does NOT completely bar the strict liability cause of action."
+            },
+            {
+                id: 20,
+                topic: "Negligence / Affirmative Duty of Voluntary Rescuers (Zelenko v. Gimbel Bros.)",
+                q: "Customer collapsed from a stroke inside Department Store. Store Manager took charge of Customer, carried Customer into an isolated back storage room, and promised to call an ambulance. Store Manager forgot to call the ambulance and left Customer alone for four hours in the locked room where other shoppers or doctors could not render aid. Customer died. In the wrongful death suit against Store:",
+                opts: [
+                    "Store is liable in negligence, because a voluntary rescuer who takes charge of a helpless person owes a duty of reasonable care not to worsen their position or isolate them from other aid.",
+                    "Store is not liable, because common law imposing zero affirmative duty to rescue protects commercial store managers from medical liabilities.",
+                    "Store is completely shielded from civil liability under the statutory emergency roadside Good Samaritan immunity statutes.",
+                    "Store is liable only under the intentional tort of false imprisonment for secluding Customer inside the back storage room."
+                ],
+                ans: 0,
+                exp: "Under Restatement (Second) of Torts § 324 and Zelenko v. Gimbel Bros., although there is generally no duty to rescue, one who voluntarily takes custody of a helpless person owes a duty of reasonable care, and is liable if they worsen the person's position or isolate them from potential third-party assistance."
+            },
+            {
+                id: 21,
+                topic: "Defamation / Libel Per Se in Professional Competence vs. Single Mistake Rule",
+                q: "Newspaper published an editorial stating: 'Chief Mechanical Engineer at Aero Corp. made an honest calculation error in designing the wing flap on the prototype plane.' Engineer proved the statement was false, but showed zero out-of-pocket financial loss. In Engineer's defamation action under the 'Single Mistake Rule':",
+                opts: [
+                    "Engineer cannot recover without proving special damages, because falsely charging a professional with a single isolated mistake does not impute general professional incompetence.",
+                    "Engineer recovers presumed general damages automatically, because any false published statement regarding a person's profession constitutes libel per se.",
+                    "Engineer's claim is completely barred under the absolute First Amendment opinion privilege applicable to newspaper editorial pages.",
+                    "Engineer is entitled to a mandatory directed verdict for punitive damages under statutory trade disparagement rules."
+                ],
+                ans: 0,
+                exp: "Under the 'Single Mistake Rule' recognized in defamation law, a statement that charges a professional with making a single, isolated mistake or error in judgment is NOT libel per se (it does not impute general unfitness, ignorance, or incompetence in their profession), and thus requires pleading and proof of special pecuniary damages."
+            },
+            {
+                id: 22,
+                topic: "False Imprisonment / Police Officer Arrest under Facially Valid Warrant",
+                q: "Police Officer arrested Citizen pursuant to a formal judicial arrest warrant valid and regular on its face, issued by a magistrate. Citizen proved that the prosecuting complainant had procured the warrant through perjury and that Citizen was innocent. Citizen sued Police Officer for False Imprisonment. Police Officer is:",
+                opts: [
+                    "Privileged, because a police officer who executes an arrest warrant valid on its face is immune from civil liability for false imprisonment.",
+                    "Liable for False Imprisonment, because arresting an innocent citizen constitutes unlawful non-consensual physical confinement per se.",
+                    "Liable for Malicious Prosecution, because executing a fraudulent warrant creates an irrebuttable presumption of officer malice.",
+                    "Privileged only if Police Officer conducted an independent forensic investigation verifying the underlying criminal allegations prior to arrest."
+                ],
+                ans: 0,
+                exp: "A police officer who arrests a person pursuant to a judicial warrant that is 'fair and valid on its face' (issued by a court of competent jurisdiction with no facial invalidity) is privileged against civil claims for False Imprisonment, even if the warrant was obtained through fraud by the complainant."
+            },
+            {
+                id: 23,
+                topic: "Battery / Consent Obtained through Fraudulent Collateral Inducement",
+                q: "Defendant paid Prostitute with a crisp counterfeit $100 bill to engage in consensual sexual relations. Prostitute consented to the physical contact based on the belief that the bill was genuine legal tender. Upon discovering the bill was counterfeit, Prostitute sued Defendant for Battery. Result?",
+                opts: [
+                    "Defendant is not liable for Battery, because fraud as to a collateral matter (payment) does not vitiate consent to the physical touching itself.",
+                    "Defendant is liable for Battery, because any fraudulent misrepresentation completely destroys legal consent in all intentional tort contexts.",
+                    "Defendant is liable under strict products liability for placing counterfeit negotiable commercial instruments into circulation.",
+                    "Defendant is not liable only if Defendant possessed a good-faith subjective belief that the $100 bill was genuine currency."
+                ],
+                ans: 0,
+                exp: "Under established common law (Restatement (Second) of Torts § 892B), fraud as to a collateral matter (such as payment with counterfeit money or misrepresenting wealth) does NOT invalidate consent for the purpose of an intentional tort of Battery, because the plaintiff understood and consented to the exact physical contact that occurred (though it supports an action for Fraud/Deceit)."
+            },
+            {
+                id: 24,
+                topic: "Strict Products Liability / Federal Implied Conflict Preemption (Geier v. Honda)",
+                q: "Auto Corp. manufactured a car that complied with Federal Motor Vehicle Safety Standard 208, which deliberately gave manufacturers a phased choice between installing airbags or automatic seatbelts. Auto Corp. chose automatic seatbelts. Driver was injured in a collision and sued Auto Corp. under state strict products liability for design defect for omitting an airbag. Under Geier v. American Honda Motor Co.:",
+                opts: [
+                    "Driver's state tort lawsuit is preempted by federal law, because imposing state tort liability would conflict with the federal regulatory policy of manufacturer choice.",
+                    "Driver's state lawsuit is not preempted, because federal motor safety regulations establish only minimum baselines that state tort law can freely increase.",
+                    "Auto Corp. is strictly liable as a matter of law for failing to adopt the safest available alternative mechanical design.",
+                    "Driver's claim is preempted only if Auto Corp. held an express statutory patent license issued by the federal Department of Transportation."
+                ],
+                ans: 0,
+                exp: "Under Geier v. American Honda Motor Co. (529 U.S. 861), where federal safety regulations deliberately grant manufacturers a choice between safety alternatives (airbags vs. seatbelts) to foster technological development, state common law tort lawsuits alleging design defect for choosing one approved option are preempted under implied conflict preemption."
+            },
+            {
+                id: 25,
+                topic: "Nuisance / Stray Voltage & Electromagnetic Sensitivity",
+                q: "Power Co. operated high-voltage electrical transmission lines along a public utility easement. A specialized scientific laboratory moved into an adjacent building and claimed that ambient electromagnetic fields from the power lines disrupted ultra-sensitive microscopic quantum computer sensors. The electromagnetic fields were completely imperceptible to humans and ordinary businesses. In Laboratory's private nuisance suit:",
+                opts: [
+                    "Power Co. is not liable, because nuisance liability is judged by the standard of an ordinary person in the community, not the extraordinary hypersensitivity of a specialized business.",
+                    "Power Co. is strictly liable, because transmitting high-voltage electrical energy constitutes an ultrahazardous dangerous activity.",
+                    "Laboratory is entitled to an automatic permanent injunction under the constitutional property protections of the Fifth Amendment.",
+                    "Power Co. is liable in negligence per se for emitting non-ionizing electromagnetic radiation across commercial property boundaries."
+                ],
+                ans: 0,
+                exp: "Private nuisance requires a substantial and unreasonable interference with the use and enjoyment of land. Interference is judged by the standard of an ordinary, normal person in the community. Where the interference exists solely because of the plaintiff's unique, extraordinary, specialized hypersensitivity (like quantum sensors), a private nuisance action will not lie."
+            }
+        ];
+
+        let currentIndex = 0;
+        let userAnswers = {};
+        let flaggedQuestions = {};
+        let eliminatedOptions = {};
+        let retrySessionList = [];
+        let totalCorrect = 0;
+        let activeFilter = "all";
+        let isEliminationMode = true;
+        const currentSetKey = "torts_set6";
+
+        const STORAGE_KEY_ANSWERS = "fylsx_torts_set6_answers_v25";
+        const STORAGE_KEY_FLAGS = "fylsx_torts_set6_flags_v25";
+        const STORAGE_KEY_ELIM = "fylsx_torts_set6_elim_v25";
+        const STORAGE_KEY_INDEX = "fylsx_torts_set6_index_v25";
+        const STORAGE_KEY_SCORE = "fylsx_torts_set6_score_v25";
+        const STORAGE_KEY_FILTER = "fylsx_torts_set6_filter_v25";
+        const STORAGE_KEY_RETRY = "fylsx_torts_set6_retry_v25";
+        const STORAGE_KEY_HIGHLIGHTS = "fylsx_torts_set6_text_highlights_v25";
+
+        let userHighlights = {};
+
+        const letterLabels = ["A", "B", "C", "D"];
+
+        function initApp() {
+            loadProgress();
+            populateJumpMenu();
+            renderQuestion();
+            updateScore();
+            updateDropdownLabels();
+            updateEliminationToggleStyle();
+            updateFilterBanner();
+        }
+
+        function getMissedIndices() {
+            return Object.keys(userAnswers).filter(idx => {
+                let qIdx = Number(idx);
+                return userAnswers[qIdx] !== examData[qIdx].ans;
+            }).map(Number);
+        }
+
+        function getFlaggedIndices() {
+            return Object.keys(flaggedQuestions).filter(idx => flaggedQuestions[idx]).map(Number);
+        }
+
+        function getActiveQuestionList() {
+            if (activeFilter === "flagged") return getFlaggedIndices();
+            if (activeFilter === "missed") return getMissedIndices();
+            if (activeFilter === "retry") return retrySessionList;
+            return examData.map((_, idx) => idx);
+        }
+
+        function toggleEliminationMode() {
+            isEliminationMode = !isEliminationMode;
+            updateEliminationToggleStyle();
+            renderQuestion();
+        }
+
+        function updateEliminationToggleStyle() {
+            const btn = document.getElementById("elimination-toggle-btn");
+            if (isEliminationMode) {
+                btn.classList.add("active");
+                btn.title = "Disable Elimination Mode";
+            } else {
+                btn.classList.remove("active");
+                btn.title = "Enable Elimination";
+            }
+        }
+
+        function updateFilterBanner() {
+            const banner = document.getElementById("filter-banner");
+            const bannerText = document.getElementById("filter-banner-text");
+
+            if (activeFilter === "all") {
+                banner.classList.remove("visible");
+            } else {
+                banner.classList.add("visible");
+                if (activeFilter === "flagged") bannerText.textContent = `🚩 Filter Active: Showing Flagged Questions Only (${getFlaggedIndices().length})`;
+                else if (activeFilter === "missed") bannerText.textContent = `❌ Filter Active: Showing Missed Questions Only (${getMissedIndices().length})`;
+                else if (activeFilter === "retry") bannerText.textContent = `🔄 Retry Mode Active: Practicing ${retrySessionList.length} Selected Question(s)`;
+            }
+        }
+
+        function returnToFullSet() {
+            activeFilter = "all";
+            retrySessionList = [];
+            saveProgress();
+            updateFilterBanner();
+            populateJumpMenu();
+            renderQuestion();
+            updateDropdownLabels();
+        }
+
+        function updateDropdownLabels() {
+            const flagCount = getFlaggedIndices().length;
+            const missedCount = getMissedIndices().length;
+
+            const flagSelect = document.getElementById("flag-dropdown");
+            const missedSelect = document.getElementById("missed-dropdown");
+
+            flagSelect.options[0].textContent = `🚩 Flagged (${flagCount}) ▾`;
+            missedSelect.options[0].textContent = `❌ Missed (${missedCount}) ▾`;
+
+            flagSelect.selectedIndex = 0;
+            missedSelect.selectedIndex = 0;
+        }
+
+        function handleFlagDropdown(val) {
+            if (val === "all") {
+                returnToFullSet();
+            } else if (val === "filter") {
+                activeFilter = (activeFilter === "flagged") ? "all" : "flagged";
+                populateJumpMenu();
+                renderQuestion();
+                updateFilterBanner();
+            } else if (val === "retry") {
+                retryFlaggedQuestions();
+            } else if (val === "summary") {
+                showFlaggedSummary();
+            } else if (val === "export") {
+                exportFlaggedQuestions();
+            }
+            updateDropdownLabels();
+        }
+
+        function handleMissedDropdown(val) {
+            if (val === "all") {
+                returnToFullSet();
+            } else if (val === "filter") {
+                activeFilter = (activeFilter === "missed") ? "all" : "missed";
+                populateJumpMenu();
+                renderQuestion();
+                updateFilterBanner();
+            } else if (val === "retry") {
+                retryMissedQuestions();
+            } else if (val === "summary") {
+                showMissedSummary();
+            } else if (val === "export") {
+                exportMissedQuestions();
+            }
+            updateDropdownLabels();
+        }
+
+        function retryMissedQuestions() {
+            const missed = getMissedIndices();
+            if (missed.length === 0) {
+                alert("No missed questions to retry!");
+                return;
+            }
+
+            if (confirm(`Clear answers and crossed-out choices for all ${missed.length} missed question(s) and retry them?`)) {
+                retrySessionList = [...missed];
+                
+                missed.forEach(qIdx => {
+                    delete userAnswers[qIdx];
+                    delete eliminatedOptions[qIdx];
+                });
+
+                totalCorrect = 0;
+                Object.keys(userAnswers).forEach(idx => {
+                    if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+                });
+
+                activeFilter = "retry";
+                currentIndex = retrySessionList[0];
+                saveProgress();
+                populateJumpMenu();
+                renderQuestion();
+                updateScore();
+                updateDropdownLabels();
+                updateFilterBanner();
+            }
+        }
+
+        function retryFlaggedQuestions() {
+            const flagged = getFlaggedIndices();
+            if (flagged.length === 0) {
+                alert("No flagged questions to retry!");
+                return;
+            }
+
+            if (confirm(`Clear answers and crossed-out choices for all ${flagged.length} flagged question(s) and retry them?`)) {
+                retrySessionList = [...flagged];
+                
+                flagged.forEach(qIdx => {
+                    delete userAnswers[qIdx];
+                    delete eliminatedOptions[qIdx];
+                });
+
+                totalCorrect = 0;
+                Object.keys(userAnswers).forEach(idx => {
+                    if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+                });
+
+                activeFilter = "retry";
+                currentIndex = retrySessionList[0];
+                saveProgress();
+                populateJumpMenu();
+                renderQuestion();
+                updateScore();
+                updateDropdownLabels();
+                updateFilterBanner();
+            }
+        }
+
+        function populateJumpMenu() {
+            const select = document.getElementById("jump-select");
+            select.innerHTML = "";
+            const activeList = getActiveQuestionList();
+
+            if (activeList.length === 0) {
+                let opt = document.createElement("option");
+                opt.value = 0;
+                opt.textContent = activeFilter === "flagged" ? "No Flagged Questions" : activeFilter === "missed" ? "No Missed Questions" : "No Questions";
+                select.appendChild(opt);
+                return;
+            }
+
+            activeList.forEach((qIdx) => {
+                let opt = document.createElement("option");
+                opt.value = qIdx;
+                let flagMark = flaggedQuestions[qIdx] ? "🚩 " : "";
+                let missedMark = (userAnswers[qIdx] !== undefined && userAnswers[qIdx] !== examData[qIdx].ans) ? "❌ " : "";
+                opt.textContent = `${flagMark}${missedMark}Q${qIdx + 1} [${examData[qIdx].topic.split('/')[0].trim()}]`;
+                select.appendChild(opt);
+            });
+        }
+
+        function renderQuestion() {
+            const activeList = getActiveQuestionList();
+            
+            if (activeList.length === 0) {
+                let filterName = activeFilter === "flagged" ? "Flagged" : "Missed";
+                document.getElementById("quiz-container").innerHTML = `
+                    <div class="question-card" style="text-align: center; padding: 3rem 1rem;">
+                        <h3>No ${filterName} Questions Found!</h3>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">You have no active questions in this filter.</p>
+                        <button class="btn" style="margin-top: 1rem;" onclick="returnToFullSet()">Return to Full Exam</button>
+                    </div>
+                `;
+                document.getElementById("prev-btn").disabled = true;
+                document.getElementById("next-btn").disabled = true;
+                return;
+            }
+
+            if (!activeList.includes(currentIndex)) {
+                currentIndex = activeList[0] || 0;
+            }
+
+            const q = examData[currentIndex];
+            document.getElementById("current-q-num").textContent = currentIndex + 1;
+            document.getElementById("jump-select").value = currentIndex;
+
+            const isFlagged = Boolean(flaggedQuestions[currentIndex]);
+            const flagBtnText = isFlagged ? "🚩 Flagged" : "🏳️ Flag Question";
+            const flagBtnClass = isFlagged ? "btn-flag active" : "btn-flag";
+
+            let fpContent = (userHighlights[currentIndex] && userHighlights[currentIndex].fp) 
+                ? userHighlights[currentIndex].fp 
+                : (q.fp ? q.fp.replace(/\n/g, '<br>') : "");
+
+            let qContent = (userHighlights[currentIndex] && userHighlights[currentIndex].q) 
+                ? userHighlights[currentIndex].q 
+                : q.q;
+
+            let html = `<div class="question-card">`;
+            
+            html += `<div class="q-top-row">
+                        <div class="q-header">Question ${q.id} <span style="font-size:0.8rem; color: var(--text-muted); font-weight:normal;">[Topic: ${q.topic}]</span></div>
+                        <button class="${flagBtnClass}" onclick="toggleFlagCurrentQuestion()">${flagBtnText}</button>
+                     </div>`;
+
+            if (q.fp) {
+                html += `<div class="fact-pattern" id="fp-container">${fpContent}</div>`;
+            }
+            html += `<div class="q-text" id="q-container">${qContent}</div>`;
+            html += `<div class="options-grid">`;
+
+            const currentElimMap = eliminatedOptions[currentIndex] || {};
+
+            q.opts.forEach((optText, i) => {
+                let isAnswered = userAnswers[currentIndex] !== undefined;
+                let isEliminated = Boolean(currentElimMap[i]);
+
+                let btnClass = "option-btn";
+                if (isAnswered) {
+                    if (i === q.ans) btnClass += " correct";
+                    else if (i === userAnswers[currentIndex]) btnClass += " incorrect";
+                }
+                
+                if (isEliminated) {
+                    btnClass += " eliminated";
+                }
+
+                let cleanOptText = optText.replace(/^\([A-Da-d]\)\s*/, '');
+                let disabled = isAnswered ? "disabled" : "";
+
+                html += `<div class="option-container">
+                            <button class="${btnClass}" ${disabled} onclick="handleOptionClick(${i})">
+                                <span class="letter-circle">${letterLabels[i]}</span>
+                                <span>${cleanOptText}</span>
+                            </button>`;
+
+                if (isEliminationMode) {
+                    let elimBtnClass = isEliminated ? "btn-eliminate-choice active" : "btn-eliminate-choice";
+                    html += `<button class="${elimBtnClass}" title="Toggle Elimination for choice ${letterLabels[i]}" onclick="toggleEliminateChoice(event, ${i})">✕</button>`;
+                }
+
+                html += `</div>`;
+            });
+
+            html += `</div>`;
+
+            let expClass = userAnswers[currentIndex] !== undefined ? "explanation-box visible" : "explanation-box";
+            html += `<div class="${expClass}">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <strong>Legal Analysis:</strong>
+                            <select class="dropdown-analysis" onchange="handleAnalysisExport(this.value)">
+                                <option value="" disabled selected>📋 Export Rules ▾</option>
+                                <option value="all">Export All Rules</option>
+                                <option value="missed">Export Missed Rules</option>
+                                <option value="flagged">Export Flagged Rules</option>
+                            </select>
+                        </div>
+                        <div>${q.exp}</div>
+                     </div>`;
+            html += `</div>`;
+
+            document.getElementById("quiz-container").innerHTML = html;
+
+            const currentPosInList = activeList.indexOf(currentIndex);
+            document.getElementById("prev-btn").disabled = currentPosInList <= 0;
+            document.getElementById("next-btn").disabled = currentPosInList >= activeList.length - 1;
+
+            saveProgress();
+        }
+
+        // Dedicated text highlighting
+        document.addEventListener("mouseup", function(e) {
+            if (e.target.closest("button") || e.target.closest("select") || e.target.closest("textarea")) {
+                return;
+            }
+            const selection = window.getSelection();
+            if (!selection.isCollapsed && selection.toString().trim().length > 0) {
+                let range = selection.getRangeAt(0);
+                let fpEl = document.getElementById("fp-container");
+                let qEl = document.getElementById("q-container");
+                
+                let container = range.commonAncestorContainer;
+                let isInsideFP = fpEl && fpEl.contains(container);
+                let isInsideQ = qEl && qEl.contains(container);
+                
+                if (isInsideFP || isInsideQ) {
+                    let mark = document.createElement("mark");
+                    mark.className = "user-highlight";
+                    mark.title = "Click to remove highlight";
+                    mark.setAttribute("onclick", "removeHighlight(event, this)");
+
+                    try {
+                        mark.appendChild(range.extractContents());
+                        range.insertNode(mark);
+                        selection.removeAllRanges();
+                        saveTextHighlightState();
+                    } catch (err) {
+                        console.error("Highlighting error:", err);
+                    }
+                }
+            }
+        });
+
+        function removeHighlight(e, markEl) {
+            e.stopPropagation();
+            let parent = markEl.parentNode;
+            while (markEl.firstChild) {
+                parent.insertBefore(markEl.firstChild, markEl);
+            }
+            parent.removeChild(markEl);
+            parent.normalize();
+            saveTextHighlightState();
+        }
+
+        function saveTextHighlightState() {
+            let fpEl = document.getElementById("fp-container");
+            let qEl = document.getElementById("q-container");
+            if (!userHighlights[currentIndex]) userHighlights[currentIndex] = {};
+            if (fpEl) userHighlights[currentIndex].fp = fpEl.innerHTML;
+            if (qEl) userHighlights[currentIndex].q = qEl.innerHTML;
+            saveProgress();
+        }
+
+        function handleOptionClick(optIndex) {
+            const currentElimMap = eliminatedOptions[currentIndex] || {};
+            if (currentElimMap[optIndex]) {
+                delete currentElimMap[optIndex];
+                saveProgress();
+                renderQuestion();
+                return;
+            }
+            selectAnswer(optIndex);
+        }
+
+        function toggleEliminateChoice(event, optIndex) {
+            event.stopPropagation();
+            if (!eliminatedOptions[currentIndex]) {
+                eliminatedOptions[currentIndex] = {};
+            }
+            if (eliminatedOptions[currentIndex][optIndex]) {
+                delete eliminatedOptions[currentIndex][optIndex];
+            } else {
+                eliminatedOptions[currentIndex][optIndex] = true;
+            }
+            saveProgress();
+            renderQuestion();
+        }
+
+        function toggleFlagCurrentQuestion() {
+            if (flaggedQuestions[currentIndex]) {
+                delete flaggedQuestions[currentIndex];
+            } else {
+                flaggedQuestions[currentIndex] = true;
+            }
+            updateDropdownLabels();
+            populateJumpMenu();
+            renderQuestion();
+            saveProgress();
+        }
+
+        function selectAnswer(optIndex) {
+            if (window.getSelection) {
+                window.getSelection().removeAllRanges();
+            }
+
+            userAnswers[currentIndex] = optIndex;
+            totalCorrect = 0;
+            Object.keys(userAnswers).forEach(idx => {
+                if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+            });
+            updateScore();
+            updateDropdownLabels();
+            saveProgress();
+            renderQuestion();
+
+            if (Object.keys(userAnswers).length === examData.length) {
+                let percentage = Math.round((totalCorrect / examData.length) * 100);
+                saveStudentHistory(totalCorrect, examData.length, percentage);
+            }
+        }
+
+        function updateScore() {
+            const totalExamQuestions = examData.length;
+            const answeredCount = Object.keys(userAnswers).length;
+            const missedCount = getMissedIndices().length;
+            const unattemptedCount = totalExamQuestions - answeredCount;
+            const percentage = answeredCount > 0 ? Math.round((totalCorrect / answeredCount) * 100) : 0;
+            
+            document.getElementById("score-badge").textContent = `Score: ${totalCorrect} / ${answeredCount} (${percentage}%)`;
+
+            const correctPercent = (totalCorrect / totalExamQuestions) * 100;
+            const missedPercent = (missedCount / totalExamQuestions) * 100;
+
+            const barCorrect = document.getElementById("bar-correct");
+            const barMissed = document.getElementById("bar-missed");
+            const barUnattempted = document.getElementById("bar-unattempted");
+
+            barCorrect.style.width = `${correctPercent}%`;
+            barMissed.style.width = `${missedPercent}%`;
+
+            barCorrect.textContent = totalCorrect >= 1 ? totalCorrect : "";
+            barMissed.textContent = missedCount >= 1 ? missedCount : "";
+            barUnattempted.textContent = unattemptedCount >= 1 ? unattemptedCount : "";
+        }
+
+        function navigate(dir) {
+            const activeList = getActiveQuestionList();
+            const currentPos = activeList.indexOf(currentIndex);
+            const targetPos = currentPos + dir;
+
+            if (targetPos >= 0 && targetPos < activeList.length) {
+                currentIndex = activeList[targetPos];
+                renderQuestion();
+            }
+        }
+
+        function jumpToQuestion(index) {
+            currentIndex = parseInt(index);
+            renderQuestion();
+        }
+
+        function saveProgress() {
+            localStorage.setItem(STORAGE_KEY_ANSWERS, JSON.stringify(userAnswers));
+            localStorage.setItem(STORAGE_KEY_FLAGS, JSON.stringify(flaggedQuestions));
+            localStorage.setItem(STORAGE_KEY_ELIM, JSON.stringify(eliminatedOptions));
+            localStorage.setItem(STORAGE_KEY_INDEX, currentIndex);
+            localStorage.setItem(STORAGE_KEY_SCORE, totalCorrect);
+            localStorage.setItem(STORAGE_KEY_FILTER, activeFilter);
+            localStorage.setItem(STORAGE_KEY_RETRY, JSON.stringify(retrySessionList));
+            localStorage.setItem(STORAGE_KEY_HIGHLIGHTS, JSON.stringify(userHighlights));
+        }
+
+        function loadProgress() {
+            try {
+                const savedAnswers = localStorage.getItem(STORAGE_KEY_ANSWERS);
+                const savedFlags = localStorage.getItem(STORAGE_KEY_FLAGS);
+                const savedElim = localStorage.getItem(STORAGE_KEY_ELIM);
+                const savedIndex = localStorage.getItem(STORAGE_KEY_INDEX);
+                const savedScore = localStorage.getItem(STORAGE_KEY_SCORE);
+                const savedFilter = localStorage.getItem(STORAGE_KEY_FILTER);
+                const savedRetry = localStorage.getItem(STORAGE_KEY_RETRY);
+                const savedHighlights = localStorage.getItem(STORAGE_KEY_HIGHLIGHTS);
+
+                if (savedAnswers) userAnswers = JSON.parse(savedAnswers);
+                if (savedFlags) flaggedQuestions = JSON.parse(savedFlags);
+                if (savedElim) eliminatedOptions = JSON.parse(savedElim);
+                if (savedIndex !== null) currentIndex = parseInt(savedIndex);
+                if (savedScore !== null) totalCorrect = parseInt(savedScore);
+                if (savedFilter !== null) activeFilter = savedFilter;
+                if (savedRetry) retrySessionList = JSON.parse(savedRetry);
+                if (savedHighlights) userHighlights = JSON.parse(savedHighlights);
+            } catch (e) {
+                console.error("Could not load saved progress", e);
+            }
+        }
+
+        function resetProgress() {
+            if (confirm("Are you sure you want to clear your saved progress, answers, flags, and highlights?")) {
+                localStorage.removeItem(STORAGE_KEY_ANSWERS);
+                localStorage.removeItem(STORAGE_KEY_FLAGS);
+                localStorage.removeItem(STORAGE_KEY_ELIM);
+                localStorage.removeItem(STORAGE_KEY_INDEX);
+                localStorage.removeItem(STORAGE_KEY_SCORE);
+                localStorage.removeItem(STORAGE_KEY_FILTER);
+                localStorage.removeItem(STORAGE_KEY_RETRY);
+                localStorage.removeItem(STORAGE_KEY_HIGHLIGHTS);
+                userAnswers = {};
+                flaggedQuestions = {};
+                eliminatedOptions = {};
+                retrySessionList = [];
+                userHighlights = {};
+                currentIndex = 0;
+                totalCorrect = 0;
+                activeFilter = "all";
+                initApp();
+            }
+        }
+
+        function handleAnalysisExport(val) {
+            if (!val) return;
+            if (val === "all") exportRulesForFilter(examData.map((_, idx) => idx), "All Rules");
+            if (val === "missed") exportRulesForFilter(getMissedIndices(), "Missed Rules");
+            if (val === "flagged") exportRulesForFilter(getFlaggedIndices(), "Flagged Rules");
+        }
+
+        // Bold category formatting in Word Table export
+        function exportRulesForFilter(indices, titleName) {
+            if (indices.length === 0) {
+                openModal(`Export ${titleName}`, `No questions match the "${titleName}" criteria.`, `No rules to export for ${titleName}.`);
+                return;
+            }
+
+            const uniqueMap = new Map();
+            indices.forEach(idx => {
+                const item = examData[idx];
+                const cleanTopic = item.topic.trim();
+                const cleanExp = item.exp.trim();
+                if (!uniqueMap.has(cleanTopic)) {
+                    uniqueMap.set(cleanTopic, new Set());
+                }
+                uniqueMap.get(cleanTopic).add(cleanExp);
+            });
+
+            const sortedTopics = Array.from(uniqueMap.keys()).sort((a, b) => a.localeCompare(b));
+
+            let tableOutput = "**Legal Topic Category**\t**Black Letter Law Analysis / Core Rule**\n";
+            let displayOutput = `${titleName.toUpperCase()} - CATEGORIZED & SORTED (WORD TABLE COMPATIBLE):\n`;
+            displayOutput += `========================================================================\n\n`;
+
+            sortedTopics.forEach(topic => {
+                const rules = Array.from(uniqueMap.get(topic));
+                rules.forEach(rule => {
+                    let safeRule = rule.replace(/[\r\n]+/g, " ");
+                    tableOutput += `**${topic}**\t${safeRule}\n`;
+                    displayOutput += `• [**${topic}**]\n  ${safeRule}\n\n`;
+                });
+            });
+
+            navigator.clipboard.writeText(tableOutput).then(() => {
+                openModal(
+                    `${titleName} Exported & Sorted!`,
+                    `${titleName} have been CATEGORIZED (IN BOLD), SORTED & COPIED TO YOUR CLIPBOARD in Tab-Delimited Table format!\n\nTo make a table in Microsoft Word:\n1. Open Word and press Paste (Ctrl+V or Cmd+V)\n2. Highlight the pasted text\n3. Click Insert > Table > Convert Text to Table... (Separate at Tabs)`,
+                    displayOutput
+                );
+            }).catch(err => {
+                openModal(
+                    `${titleName} Export`,
+                    "Copy the text below manually, or click 'Copy Content to Clipboard':",
+                    tableOutput
+                );
+            });
+        }
+
+        function showMissedSummary() {
+            let summary = "MISSED QUESTIONS SUMMARY (TORTS SET 6):\n========================================\n\n";
+            let missedIndices = getMissedIndices();
+
+            if (missedIndices.length === 0) {
+                summary += "No missed questions yet! Great job.";
+            } else {
+                missedIndices.forEach(qIdx => {
+                    let q = examData[qIdx];
+                    let userChoice = userAnswers[qIdx];
+                    summary += `• Question ${q.id} [Topic: **${q.topic}**]\n`;
+                    summary += `  Your Selected Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n`;
+                    summary += `  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n`;
+                    summary += `  Core Rule: ${q.exp}\n\n`;
+                });
+            }
+
+            openModal("Missed Questions Rule Analysis", "Review the legal rules for questions you answered incorrectly, or copy and paste them back into our chat for drill sets.", summary);
+        }
+
+        function showFlaggedSummary() {
+            let summary = "FLAGGED QUESTIONS SUMMARY (TORTS SET 6):\n========================================\n\n";
+            let flaggedIndices = getFlaggedIndices();
+
+            if (flaggedIndices.length === 0) {
+                summary += "No flagged questions yet!";
+            } else {
+                flaggedIndices.forEach(qIdx => {
+                    let q = examData[qIdx];
+                    let userChoice = userAnswers[qIdx];
+                    summary += `• Question ${q.id} [Topic: **${q.topic}**]\n`;
+                    if (userChoice !== undefined) {
+                        summary += `  Your Selected Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n`;
+                    }
+                    summary += `  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n`;
+                    summary += `  Core Rule: ${q.exp}\n\n`;
+                });
+            }
+
+            openModal("Flagged Questions Rule Analysis", "Review the legal rules for questions you flagged for extra study and review.", summary);
+        }
+
+        function exportFlaggedQuestions() {
+            const flagged = getFlaggedIndices().map(idx => {
+                const item = examData[idx];
+                return {
+                    originalSet: "Torts Set 6",
+                    originalId: item.id,
+                    topic: item.topic,
+                    factPattern: item.fp,
+                    question: item.q,
+                    options: item.opts,
+                    correctAnswer: item.ans,
+                    explanation: item.exp
+                };
+            });
+
+            const content = flagged.length > 0 ? JSON.stringify(flagged, null, 2) : "No questions are currently flagged in this set.";
+            openModal("Export Flagged Questions (JSON)", "Copy this JSON block and paste it into our chat to combine flagged questions across multiple sets into custom exams.", content);
+        }
+
+        function exportMissedQuestions() {
+            const missed = getMissedIndices().map(idx => {
+                const item = examData[idx];
+                return {
+                    originalSet: "Torts Set 6",
+                    originalId: item.id,
+                    topic: item.topic,
+                    factPattern: item.fp,
+                    question: item.q,
+                    options: item.opts,
+                    correctAnswer: item.ans,
+                    explanation: item.exp
+                };
+            });
+
+            const content = missed.length > 0 ? JSON.stringify(missed, null, 2) : "No questions are currently marked as missed.";
+            openModal("Export Missed Questions (JSON)", "Copy this JSON block and paste it into our chat to build an automated re-test quiz solely from your missed questions.", content);
+        }
+
+        // Export Full Session Tool
+        function exportFullStudentSession() {
+            const sessionData = {
+                version: "1.0",
+                examSet: currentSetKey,
+                exportDate: new Date().toLocaleString(),
+                userAnswers: userAnswers,
+                flaggedQuestions: flaggedQuestions,
+                eliminatedOptions: eliminatedOptions,
+                userHighlights: userHighlights,
+                score: totalCorrect,
+                totalAttempted: Object.keys(userAnswers).length,
+                totalQuestions: examData.length
+            };
+
+            const jsonString = JSON.stringify(sessionData, null, 2);
+            openModal(
+                "Export Test Session",
+                "Copy this code block and send it to your classmate, tutor, or study partner. They can click '📥 Import' on their screen to review your exact test results, missed questions, and highlights:",
+                jsonString
+            );
+        }
+
+        // Import Full Session Tool
+        function promptImportSession() {
+            let rawInput = prompt("Paste the student's Export Session code block below:");
+            if (!rawInput) return;
+
+            try {
+                const imported = JSON.parse(rawInput.trim());
+
+                if (imported.examSet && imported.examSet !== currentSetKey) {
+                    alert(`Warning: This session belongs to ${imported.examSet.toUpperCase()}, but you are currently on ${currentSetKey.toUpperCase()}. Please open the matching exam set before importing.`);
+                    return;
+                }
+
+                if (!imported.userAnswers) {
+                    alert("Invalid session data format.");
+                    return;
+                }
+
+                if (confirm(`Load session from ${imported.exportDate || "another student"} (Score: ${imported.score || 0} / ${imported.totalAttempted || 0})?\n\nNote: This will display their answers, highlights, and missed questions on your screen.`)) {
+                    userAnswers = imported.userAnswers || {};
+                    flaggedQuestions = imported.flaggedQuestions || {};
+                    eliminatedOptions = imported.eliminatedOptions || {};
+                    userHighlights = imported.userHighlights || {};
+                    
+                    totalCorrect = 0;
+                    Object.keys(userAnswers).forEach(idx => {
+                        if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+                    });
+
+                    currentIndex = 0;
+                    saveProgress();
+                    populateJumpMenu();
+                    renderQuestion();
+                    updateScore();
+                    updateDropdownLabels();
+                    
+                    alert("Session imported successfully! You can now browse their answers, click 'Missed (X)' to see questions they got wrong, or inspect their highlighted notes.");
+                }
+            } catch (err) {
+                alert("Error parsing import code. Please ensure you copied the complete code block.");
+            }
+        }
+
+        function saveStudentHistory(score, total, percentage) {
+            let historyKey = `fylsx_history_${currentSetKey}`;
+            let history = JSON.parse(localStorage.getItem(historyKey) || "[]");
+            
+            let sessionRecord = {
+                date: new Date().toLocaleDateString(),
+                time: new Date().toLocaleTimeString(),
+                score: score,
+                total: total,
+                percentage: percentage
+            };
+            
+            history.push(sessionRecord);
+            if (history.length > 10) history.shift();
+            localStorage.setItem(historyKey, JSON.stringify(history));
+        }
+
+        function showStudentHistory() {
+            let historyKey = `fylsx_history_${currentSetKey}`;
+            let history = JSON.parse(localStorage.getItem(historyKey) || "[]");
+            
+            let summary = `PAST TEST PERFORMANCE HISTORY (${currentSetKey.toUpperCase()}):\n==================================================\n\n`;
+            if (history.length === 0) {
+                summary += "No completed past test history recorded for this set yet.";
+            } else {
+                history.forEach((record, idx) => {
+                    summary += `Attempt #${idx + 1} — Date: ${record.date} at ${record.time}\n`;
+                    summary += `  Score: ${record.score} / ${record.total} (${record.percentage}%)\n\n`;
+                });
+            }
+            openModal("Student Test History", "Review previous attempts and score progression:", summary);
+        }
+
+        function openModal(title, desc, content) {
+            document.getElementById("modal-title").textContent = title;
+            document.getElementById("modal-desc").textContent = desc;
+            document.getElementById("modal-textarea").value = content;
+            document.getElementById("info-modal-box").classList.add("visible");
+            document.getElementById("info-modal-box").scrollIntoView({ behavior: "smooth" });
+        }
+
+        function closeModal() {
+            document.getElementById("info-modal-box").classList.remove("visible");
+        }
+
+        function copyModalContent() {
+            const text = document.getElementById("modal-textarea");
+            text.select();
+            document.execCommand("copy");
+            alert("Copied to clipboard!");
+        }
+
+        window.onload = initApp;
+    </script>
+</body>
+</html>
