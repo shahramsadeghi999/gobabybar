@@ -20,6 +20,7 @@
             --text-muted: #64748B;
             --border: #CBD5E1;
             --success: #16A34A;
+            --danger: #DC2626;
         }
 
         * {
@@ -39,6 +40,90 @@
             margin: 0 auto;
         }
 
+        /* Login Overlay */
+        #login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .login-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .login-card h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1.5px solid var(--border);
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn-login {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-login:hover {
+            background: var(--primary-light);
+        }
+
+        .login-error {
+            color: var(--danger);
+            font-size: 0.82rem;
+            margin-top: 0.6rem;
+            display: none;
+            font-weight: 500;
+        }
+
+        /* Main App Interface */
+        #main-content {
+            display: none;
+        }
+
         header {
             background: var(--primary);
             color: white;
@@ -47,6 +132,7 @@
             text-align: center;
             margin-bottom: 2rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         header h1 {
@@ -57,6 +143,24 @@
         header p {
             font-size: 0.95rem;
             opacity: 0.9;
+        }
+
+        .btn-logout {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-logout:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
 
         .section-title {
@@ -133,116 +237,176 @@
 </head>
 <body>
 
-    <header>
-        <h1>GoBabyBar Exam Center</h1>
-        <p>California First-Year Law Students' Examination (FYLSX) Preparation Suite</p>
-    </header>
-
-    <!-- TORTS -->
-    <div class="section-title">⚖️ Torts Practice Sets (Sets 01–10)</div>
-    <div class="exam-grid">
-        <a href="BabyBar-Torts-01.html" class="exam-card">
-            <div>
-                <h3>Torts - Set 01</h3>
-                <p>Core Torts Practice Exam & Analytics</p>
-            </div>
-            <div class="btn-launch">Launch Exam →</div>
-        </a>
-        <a href="BabyBar-Torts-02.html" class="exam-card">
-            <div>
-                <h3>Torts - Set 02</h3>
-                <p>Targeted Practice & Rule Analysis</p>
-            </div>
-            <div class="btn-launch">Launch Exam →</div>
-        </a>
-        <a href="BabyBar-Torts-03.html" class="exam-card">
-            <div><h3>Torts - Set 03</h3><p>Targeted Practice & Rule Analysis</p></div>
-            <div class="btn-launch">Launch Exam →</div>
-        </a>
-        <a href="BabyBar-Torts-04.html" class="exam-card">
-            <div><h3>Torts - Set 04</h3><p>Targeted Practice & Rule Analysis</p></div>
-            <div class="btn-launch">Launch Exam →</div>
-        </a>
-        <a href="BabyBar-Torts-05.html" class="exam-card">
-            <div><h3>Torts - Set 05</h3><p>Targeted Practice & Rule Analysis</p></div>
-            <div class="btn-launch">Launch Exam →</div>
-        </a>
-        <a href="BabyBar-Torts-06.html" class="exam-card">
-            <div><h3>Torts - Set 06</h3><p>Targeted Practice & Rule Analysis</p></div>
-            <div class="btn-launch">Launch Exam →</div>
-        </a>
-        <a href="BabyBar-Torts-07.html" class="exam-card">
-            <div><h3>Torts - Set 07</h3><p>Targeted Practice & Rule Analysis</p></div>
-            <div class="btn-launch">Launch Exam →</div>
-        </a>
-        <a href="BabyBar-Torts-08.html" class="exam-card">
-            <div><h3>Torts - Set 08</h3><p>Targeted Practice & Rule Analysis</p></div>
-            <div class="btn-launch">Launch Exam →</div>
-        </a>
-        <a href="BabyBar-Torts-09.html" class="exam-card">
-            <div><h3>Torts - Set 09</h3><p>Targeted Practice & Rule Analysis</p></div>
-            <div class="btn-launch">Launch Exam →</div>
-        </a>
-        <a href="BabyBar-Torts-10.html" class="exam-card">
-            <div><h3>Torts - Set 10</h3><p>Comprehensive Torts Review</p></div>
-            <div class="btn-launch">Launch Exam →</div>
-        </a>
+    <!-- Access Gate Modal -->
+    <div id="login-overlay">
+        <div class="login-card">
+            <h2>🔒 Student Access Required</h2>
+            <p>Please enter your access passcode to view the FYLSX practice suite.</p>
+            <form onsubmit="handleLogin(event)">
+                <input type="password" id="passcode-input" class="login-input" placeholder="Enter Passcode" autocomplete="current-password" autofocus required>
+                <button type="submit" class="btn-login">Unlock Exam Suite</button>
+                <div id="login-error" class="login-error">Incorrect passcode. Please try again.</div>
+            </form>
+        </div>
     </div>
 
-    <!-- CRIMINAL LAW -->
-    <div class="section-title">🏛️ Criminal Law Practice Sets (Sets 01–10)</div>
-    <div class="exam-grid">
-        <a href="BabyBar-CriminalLaw-01.html" class="exam-card"><div><h3>Criminal Law - Set 01</h3><p>Homicide, Crimes Against Person</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-CriminalLaw-02.html" class="exam-card"><div><h3>Criminal Law - Set 02</h3><p>Property Crimes & Inchoate Offenses</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-CriminalLaw-03.html" class="exam-card"><div><h3>Criminal Law - Set 03</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-CriminalLaw-04.html" class="exam-card"><div><h3>Criminal Law - Set 04</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-CriminalLaw-05.html" class="exam-card"><div><h3>Criminal Law - Set 05</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-CriminalLaw-06.html" class="exam-card"><div><h3>Criminal Law - Set 06</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-CriminalLaw-07.html" class="exam-card"><div><h3>Criminal Law - Set 07</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-CriminalLaw-08.html" class="exam-card"><div><h3>Criminal Law - Set 08</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-CriminalLaw-09.html" class="exam-card"><div><h3>Criminal Law - Set 09</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-CriminalLaw-10.html" class="exam-card"><div><h3>Criminal Law - Set 10</h3><p>Comprehensive Crim Law Review</p></div><div class="btn-launch">Launch Exam →</div></a>
+    <!-- Main Content (Shown after login) -->
+    <div id="main-content">
+        <header>
+            <button class="btn-logout" onclick="handleLogout()">🔒 Log Out</button>
+            <h1>GoBabyBar Exam Center</h1>
+            <p>California First-Year Law Students' Examination (FYLSX) Preparation Suite</p>
+        </header>
+
+        <!-- TORTS -->
+        <div class="section-title">⚖️ Torts Practice Sets (Sets 01–10)</div>
+        <div class="exam-grid">
+            <a href="BabyBar-Torts-01.html" class="exam-card">
+                <div>
+                    <h3>Torts - Set 01</h3>
+                    <p>Core Torts Practice Exam & Analytics</p>
+                </div>
+                <div class="btn-launch">Launch Exam →</div>
+            </a>
+            <a href="BabyBar-Torts-02.html" class="exam-card">
+                <div>
+                    <h3>Torts - Set 02</h3>
+                    <p>Targeted Practice & Rule Analysis</p>
+                </div>
+                <div class="btn-launch">Launch Exam →</div>
+            </a>
+            <a href="BabyBar-Torts-03.html" class="exam-card">
+                <div><h3>Torts - Set 03</h3><p>Targeted Practice & Rule Analysis</p></div>
+                <div class="btn-launch">Launch Exam →</div>
+            </a>
+            <a href="BabyBar-Torts-04.html" class="exam-card">
+                <div><h3>Torts - Set 04</h3><p>Targeted Practice & Rule Analysis</p></div>
+                <div class="btn-launch">Launch Exam →</div>
+            </a>
+            <a href="BabyBar-Torts-05.html" class="exam-card">
+                <div><h3>Torts - Set 05</h3><p>Targeted Practice & Rule Analysis</p></div>
+                <div class="btn-launch">Launch Exam →</div>
+            </a>
+            <a href="BabyBar-Torts-06.html" class="exam-card">
+                <div><h3>Torts - Set 06</h3><p>Targeted Practice & Rule Analysis</p></div>
+                <div class="btn-launch">Launch Exam →</div>
+            </a>
+            <a href="BabyBar-Torts-07.html" class="exam-card">
+                <div><h3>Torts - Set 07</h3><p>Targeted Practice & Rule Analysis</p></div>
+                <div class="btn-launch">Launch Exam →</div>
+            </a>
+            <a href="BabyBar-Torts-08.html" class="exam-card">
+                <div><h3>Torts - Set 08</h3><p>Targeted Practice & Rule Analysis</p></div>
+                <div class="btn-launch">Launch Exam →</div>
+            </a>
+            <a href="BabyBar-Torts-09.html" class="exam-card">
+                <div><h3>Torts - Set 09</h3><p>Targeted Practice & Rule Analysis</p></div>
+                <div class="btn-launch">Launch Exam →</div>
+            </a>
+            <a href="BabyBar-Torts-10.html" class="exam-card">
+                <div><h3>Torts - Set 10</h3><p>Comprehensive Torts Review</p></div>
+                <div class="btn-launch">Launch Exam →</div>
+            </a>
+        </div>
+
+        <!-- CRIMINAL LAW -->
+        <div class="section-title">🏛️ Criminal Law Practice Sets (Sets 01–10)</div>
+        <div class="exam-grid">
+            <a href="BabyBar-CriminalLaw-01.html" class="exam-card"><div><h3>Criminal Law - Set 01</h3><p>Homicide, Crimes Against Person</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-CriminalLaw-02.html" class="exam-card"><div><h3>Criminal Law - Set 02</h3><p>Property Crimes & Inchoate Offenses</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-CriminalLaw-03.html" class="exam-card"><div><h3>Criminal Law - Set 03</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-CriminalLaw-04.html" class="exam-card"><div><h3>Criminal Law - Set 04</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-CriminalLaw-05.html" class="exam-card"><div><h3>Criminal Law - Set 05</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-CriminalLaw-06.html" class="exam-card"><div><h3>Criminal Law - Set 06</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-CriminalLaw-07.html" class="exam-card"><div><h3>Criminal Law - Set 07</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-CriminalLaw-08.html" class="exam-card"><div><h3>Criminal Law - Set 08</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-CriminalLaw-09.html" class="exam-card"><div><h3>Criminal Law - Set 09</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-CriminalLaw-10.html" class="exam-card"><div><h3>Criminal Law - Set 10</h3><p>Comprehensive Crim Law Review</p></div><div class="btn-launch">Launch Exam →</div></a>
+        </div>
+
+        <!-- CONTRACTS -->
+        <div class="section-title">📜 Contracts Practice Sets (Sets 01–10)</div>
+        <div class="exam-grid">
+            <a href="BabyBar-Contracts-01.html" class="exam-card"><div><h3>Contracts - Set 01</h3><p>Formation, Consideration, UCC</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-Contracts-02.html" class="exam-card"><div><h3>Contracts - Set 02</h3><p>Performance, Breach & Remedies</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-Contracts-03.html" class="exam-card"><div><h3>Contracts - Set 03</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-Contracts-04.html" class="exam-card"><div><h3>Contracts - Set 04</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-Contracts-05.html" class="exam-card"><div><h3>Contracts - Set 05</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-Contracts-06.html" class="exam-card"><div><h3>Contracts - Set 06</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-Contracts-07.html" class="exam-card"><div><h3>Contracts - Set 07</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-Contracts-08.html" class="exam-card"><div><h3>Contracts - Set 08</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-Contracts-09.html" class="exam-card"><div><h3>Contracts - Set 09</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+            <a href="BabyBar-Contracts-10.html" class="exam-card"><div><h3>Contracts - Set 10</h3><p>Comprehensive Contracts Review</p></div><div class="btn-launch">Launch Exam →</div></a>
+        </div>
+
+        <!-- MIXED SETS -->
+        <div class="section-title">📝 Mixed Subject Sets (Sets 01–20)</div>
+        <div class="exam-grid">
+            <script>
+                for(let i = 1; i <= 20; i++) {
+                    let padNum = String(i).padStart(2, '0');
+                    document.write(`
+                        <a href="BabyBar-Mixed-${padNum}.html" class="exam-card">
+                            <div>
+                                <h3>Mixed Set ${padNum}</h3>
+                                <p>Multi-Subject FYLSX Practice Exam</p>
+                            </div>
+                            <div class="btn-launch">Launch Exam →</div>
+                        </a>
+                    `);
+                }
+            </script>
+        </div>
+
+        <footer>
+            gobabybar.com • Built for iPad & Offline Study
+        </footer>
     </div>
 
-    <!-- CONTRACTS -->
-    <div class="section-title">📜 Contracts Practice Sets (Sets 01–10)</div>
-    <div class="exam-grid">
-        <a href="BabyBar-Copntracts-01.html" class="exam-card"><div><h3>Contracts - Set 01</h3><p>Formation, Consideration, UCC</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-Copntracts-02.html" class="exam-card"><div><h3>Contracts - Set 02</h3><p>Performance, Breach & Remedies</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-Copntracts-03.html" class="exam-card"><div><h3>Contracts - Set 03</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-Copntracts-04.html" class="exam-card"><div><h3>Contracts - Set 04</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-Copntracts-05.html" class="exam-card"><div><h3>Contracts - Set 05</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-Copntracts-06.html" class="exam-card"><div><h3>Contracts - Set 06</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-Copntracts-07.html" class="exam-card"><div><h3>Contracts - Set 07</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-Copntracts-08.html" class="exam-card"><div><h3>Contracts - Set 08</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-Copntracts-09.html" class="exam-card"><div><h3>Contracts - Set 09</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
-        <a href="BabyBar-Copnt4s-10.html" class="exam-card" style="display:none"></a> <!-- placeholder spacing if needed -->
-        <a href="BabyBar-Copntracts-10.html" class="exam-card"><div><h3>Contracts - Set 10</h3><p>Comprehensive Contracts Review</p></div><div class="btn-launch">Launch Exam →</div></a>
-    </div>
+    <script>
+        // Set the active access passcode:
+        const CORRECT_PASSCODE = "DibaNasr#2026";
+        const AUTH_SESSION_KEY = "gobabybar_auth_session";
 
-    <!-- MIXED SETS -->
-    <div class="section-title">📝 Mixed Subject Sets (Sets 01–20)</div>
-    <div class="exam-grid">
-        <script>
-            // Automatically generate links for mixed sets 1 to 20
-            for(let i = 1; i <= 20; i++) {
-                let padNum = String(i).padStart(2, '0');
-                document.write(`
-                    <a href="BabyBar-Mixed-${padNum}.html" class="exam-card">
-                        <div>
-                            <h3>Mixed Set ${padNum}</h3>
-                            <p>Multi-Subject FYLSX Practice Exam</p>
-                        </div>
-                        <div class="btn-launch">Launch Exam →</div>
-                    </a>
-                `);
+        function checkAuth() {
+            // sessionStorage clears automatically whenever the browser tab/window is closed
+            const isVerified = sessionStorage.getItem(AUTH_SESSION_KEY);
+            const overlay = document.getElementById("login-overlay");
+            const content = document.getElementById("main-content");
+
+            if (isVerified === "true") {
+                overlay.style.display = "none";
+                content.style.display = "block";
+            } else {
+                overlay.style.display = "flex";
+                content.style.display = "none";
             }
-        </script>
-    </div>
+        }
 
-    <footer>
-        gobabybar.com • Built for iPad & Offline Study
-    </footer>
+        function handleLogin(event) {
+            event.preventDefault();
+            const enteredPasscode = document.getElementById("passcode-input").value.trim();
+            const errorElement = document.getElementById("login-error");
+
+            if (enteredPasscode === CORRECT_PASSCODE) {
+                sessionStorage.setItem(AUTH_SESSION_KEY, "true");
+                errorElement.style.display = "none";
+                checkAuth();
+            } else {
+                errorElement.style.display = "block";
+                document.getElementById("passcode-input").select();
+            }
+        }
+
+        function handleLogout() {
+            sessionStorage.removeItem(AUTH_SESSION_KEY);
+            document.getElementById("passcode-input").value = "";
+            checkAuth();
+        }
+
+        // Initialize on page load
+        window.addEventListener("DOMContentLoaded", checkAuth);
+    </script>
 
 </body>
 </html>
