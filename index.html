@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="BabyBar Prep">
-    <title>California Baby Bar (FYLSX) - Master Exam Hub</title>
+    <meta name="apple-mobile-web-app-title" content="GoBabyBar">
+    <title>California Baby Bar (FYLSX) - Exam Center</title>
     
     <style>
         :root {
@@ -20,10 +20,6 @@
             --text-muted: #64748B;
             --border: #CBD5E1;
             --success: #16A34A;
-            --danger: #DC2626;
-            --flag: #E11D48;
-            --badge-blue: #BAE6FD;
-            --badge-blue-hover: #7DD3FC;
         }
 
         * {
@@ -38,1176 +34,215 @@
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
-            padding: 1rem;
-            max-width: 960px;
+            padding: 1.5rem 1rem;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         header {
             background: var(--primary);
             color: white;
-            padding: 1.2rem;
+            padding: 1.8rem 1rem;
             border-radius: 14px;
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            font-size: 1.35rem;
-            margin-bottom: 0.2rem;
+            font-size: 1.6rem;
+            margin-bottom: 0.4rem;
         }
 
         header p {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             opacity: 0.9;
         }
 
-        /* Top Set Selection Bar */
-        .set-selector-bar {
-            background: #FFFFFF;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 0.75rem 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .select-set-dropdown {
-            background: #EFF6FF;
+        .section-title {
+            font-size: 1.1rem;
             color: var(--primary);
+            margin: 1.5rem 0 0.8rem 0;
             font-weight: 700;
-            border: 1.5px solid var(--primary-light);
-            padding: 0.45rem 0.8rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            cursor: pointer;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.3rem;
         }
 
-        /* Tracker and Progress Bar Container */
-        .tracker-wrapper {
-            position: sticky;
-            top: 10px;
-            z-index: 100;
-            margin-bottom: 1.2rem;
+        .exam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .tracker-bar {
+        .exam-card {
             background: var(--card-bg);
-            padding: 0.75rem 1rem;
-            border-radius: 10px 10px 0 0;
-            border: 1px solid var(--border);
-            border-bottom: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
-        /* Live Progress Bar */
-        .progress-bar-container {
-            display: flex;
-            width: 100%;
-            height: 22px;
-            background: #FFFFFF;
-            border: 1px solid var(--border);
-            border-top: none;
-            border-radius: 0 0 10px 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            font-size: 0.8rem;
-            font-weight: 700;
-            line-height: 22px;
-            text-align: center;
-        }
-
-        .progress-segment {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            white-space: nowrap;
-            transition: width 0.3s ease;
-        }
-
-        .segment-correct {
-            background: var(--success);
-            color: #FFFFFF;
-            width: 0%;
-        }
-
-        .segment-missed {
-            background: var(--danger);
-            color: #FFFFFF;
-            width: 0%;
-        }
-
-        .segment-unattempted {
-            background: #FFFFFF;
-            color: #0F172A;
-            flex-grow: 1;
-        }
-
-        .score-box {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.9rem;
-        }
-
-        .badge {
-            background: var(--primary-light);
-            color: white;
-            padding: 0.25rem 0.65rem;
-            border-radius: 15px;
-            font-weight: bold;
-            font-size: 0.8rem;
-        }
-
-        .action-group {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-elimination-toggle {
-            background: #F1F5F9;
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-            padding: 0.4rem 0.65rem;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-        }
-
-        .btn-elimination-toggle.active {
-            background: #FEF3C7;
-            color: #B45309;
-            border-color: #F59E0B;
-            font-weight: bold;
-        }
-
-        .dropdown-menu {
-            padding: 0.45rem 0.75rem;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            font-size: 0.85rem;
-            background: white;
-            cursor: pointer;
-            font-weight: 500;
-        }
-
-        .dropdown-flag {
-            color: var(--flag);
-            border-color: #FECDD3;
-            background: #FFF1F2;
-        }
-
-        .dropdown-missed {
-            color: var(--accent);
-            border-color: #FED7AA;
-            background: #FFFBEB;
-        }
-
-        .filter-status-banner {
-            display: none;
-            background: #FEF3C7;
-            border: 1px solid #FCD34D;
-            color: #92400E;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .filter-status-banner.visible {
-            display: flex;
-        }
-
-        .btn-banner-reset {
-            background: #B45309;
-            color: white;
-            border: none;
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .question-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
+            border: 1.5px solid var(--border);
             border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-
-        .q-top-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.8rem;
-        }
-
-        .q-header {
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 1.05rem;
-        }
-
-        .btn-flag {
-            background: #F1F5F9;
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-            padding: 0.35rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
+            padding: 1.2rem;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
             transition: all 0.2s ease;
-        }
-
-        .btn-flag.active {
-            background: #FFE4E6;
-            color: var(--flag);
-            border-color: var(--flag);
-            font-weight: bold;
-        }
-
-        .fact-pattern {
-            background: #F1F5F9;
-            border-left: 4px solid var(--primary-light);
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.95rem;
-        }
-
-        .q-text {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .options-grid {
             display: flex;
             flex-direction: column;
-            gap: 0.6rem;
+            justify-content: space-between;
+        }
+
+        .exam-card:hover {
+            border-color: var(--primary-light);
+            background: #F0F9FF;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+        }
+
+        .exam-card h3 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .exam-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
             margin-bottom: 1rem;
         }
 
-        .option-container {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            width: 100%;
-        }
-
-        .option-btn {
-            background: white;
-            border: 1px solid var(--border);
-            padding: 0.75rem 1rem;
-            border-radius: 10px;
-            text-align: left;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            flex: 1;
-        }
-
-        .option-btn:hover:not(:disabled):not(.eliminated) {
-            background: #F0F9FF;
-            border-color: #38BDF8;
-        }
-
-        .option-btn:disabled {
-            cursor: default;
-        }
-
-        .option-btn.eliminated {
-            opacity: 0.45;
-            background: #F1F5F9;
-            border-color: #E2E8F0;
-            text-decoration: line-through;
-        }
-
-        .option-btn.eliminated .letter-circle {
-            background: #CBD5E1;
-            color: #64748B;
-        }
-
-        .letter-circle {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: var(--badge-blue);
-            color: #0F172A;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 500;
-            font-size: 0.9rem;
-            flex-shrink: 0;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-        }
-
-        .option-btn.correct {
-            border-color: var(--success);
-            background: #DCFCE7;
-            color: #14532D;
-            font-weight: 500;
-            opacity: 1 !important;
-        }
-
-        .option-btn.correct .letter-circle {
-            background: var(--success);
-            color: #FFFFFF;
-        }
-
-        .option-btn.incorrect {
-            border-color: var(--danger);
-            background: #FEE2E2;
-            color: #7F1D1D;
-            opacity: 0.75;
-        }
-
-        .option-btn.incorrect .letter-circle {
-            background: var(--danger);
-            color: #FFFFFF;
-        }
-
-        .btn-eliminate-choice {
-            background: white;
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            font-size: 0.8rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            flex-shrink: 0;
-        }
-
-        .btn-eliminate-choice:hover {
-            background: #FEE2E2;
-            border-color: var(--danger);
-            color: var(--danger);
-        }
-
-        .btn-eliminate-choice.active {
-            background: #DC2626;
-            color: white;
-            border-color: #DC2626;
-        }
-
-        .explanation-box {
-            display: none;
-            background: #F0F9FF;
-            border: 1px solid #BAE6FD;
-            padding: 1rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: #0369A1;
-            margin-top: 1rem;
-        }
-
-        .explanation-box.visible {
-            display: block;
-        }
-
-        .dropdown-analysis {
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            border: 1px solid #BAE6FD;
-            font-size: 0.8rem;
-            background: #E0F2FE;
-            color: #0369A1;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .nav-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1rem;
-            gap: 0.5rem;
-        }
-
-        .btn {
+        .btn-launch {
             background: var(--primary);
             color: white;
-            border: none;
-            padding: 0.6rem 1.2rem;
+            text-align: center;
+            padding: 0.5rem;
             border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-
-        .btn:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-        }
-
-        .btn-reset {
-            background: transparent;
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-            font-weight: normal;
-        }
-
-        .btn-reset:hover {
-            background: #F1F5F9;
-            color: var(--danger);
-            border-color: var(--danger);
-        }
-
-        .modal-box {
-            display: none;
-            background: white;
-            border: 2px solid var(--primary);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-top: 1.5rem;
-        }
-
-        .modal-box.visible {
-            display: block;
-        }
-
-        textarea {
-            width: 100%;
-            height: 240px;
-            margin-top: 0.8rem;
-            padding: 0.8rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            font-family: monospace;
             font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .exam-card:hover .btn-launch {
+            background: var(--primary-light);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            padding-bottom: 1rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>California Baby Bar (FYLSX) Master Hub</h1>
-        <p id="app-subtitle">Multi-Subject Exam Suite & iPad Study Station</p>
+        <h1>GoBabyBar Exam Center</h1>
+        <p>California First-Year Law Students' Examination (FYLSX) Preparation Suite</p>
     </header>
 
-    <!-- Top Set Switcher -->
-    <div class="set-selector-bar">
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <span style="font-weight: bold; color: var(--primary);">Active Exam:</span>
-            <select id="exam-set-select" class="select-set-dropdown" onchange="switchExamSet(this.value)">
-                <option value="torts_set1">Torts (Set 1 - 100 Questions)</option>
-                <option value="contracts_set1">Contracts & Sales (Set 1 - Sample)</option>
-                <option value="crim_set1">Criminal Law (Set 1 - Sample)</option>
-                <option value="custom_json">?? Load Custom Exported JSON Set...</option>
-            </select>
-        </div>
-        <div style="font-size: 0.85rem; color: var(--text-muted);">
-            Auto-Save Enabled � Offline Ready
-        </div>
-    </div>
-
-    <!-- Tracker & Score Bar -->
-    <div class="tracker-wrapper">
-        <div class="tracker-bar">
-            <div class="score-box">
-                <span>Question <strong id="current-q-num">1</strong> of <span id="total-q-count">100</span></span>
-                <span class="badge" id="score-badge">Score: 0 / 0 (0%)</span>
+    <!-- TORTS -->
+    <div class="section-title">⚖️ Torts Practice Sets (Sets 01–10)</div>
+    <div class="exam-grid">
+        <a href="BabyBar-Torts-01.html" class="exam-card">
+            <div>
+                <h3>Torts - Set 01</h3>
+                <p>Core Torts Practice Exam & Analytics</p>
             </div>
-
-            <div class="action-group">
-                <!-- Process of Elimination Toggle -->
-                <button class="btn-elimination-toggle active" id="elimination-toggle-btn" title="Disable Elimination Mode" onclick="toggleEliminationMode()">
-                    ??
-                </button>
-
-                <!-- Flagged Dropdown Menu -->
-                <select id="flag-dropdown" class="dropdown-menu dropdown-flag" onchange="handleFlagDropdown(this.value)">
-                    <option value="" disabled selected>?? Flagged (0) ?</option>
-                    <option value="all">?? Show All Questions (Full Set)</option>
-                    <option value="filter">Show Flagged Only</option>
-                    <option value="retry">Retry Flagged</option>
-                    <option value="summary">Flagged Rule Analysis</option>
-                    <option value="export">Export Flagged (JSON)</option>
-                </select>
-
-                <!-- Missed Dropdown Menu -->
-                <select id="missed-dropdown" class="dropdown-menu dropdown-missed" onchange="handleMissedDropdown(this.value)">
-                    <option value="" disabled selected>? Missed (0) ?</option>
-                    <option value="all">?? Show All Questions (Full Set)</option>
-                    <option value="filter">Show Missed Only</option>
-                    <option value="retry">Retry Missed</option>
-                    <option value="summary">Missed Rule Analysis</option>
-                    <option value="export">Export Missed (JSON)</option>
-                </select>
-
-                <!-- Jump Selector -->
-                <select id="jump-select" class="dropdown-menu" onchange="jumpToQuestion(this.value)">
-                    <!-- Populated dynamically -->
-                </select>
+            <div class="btn-launch">Launch Exam →</div>
+        </a>
+        <a href="BabyBar-Torts-02.html" class="exam-card">
+            <div>
+                <h3>Torts - Set 02</h3>
+                <p>Targeted Practice & Rule Analysis</p>
             </div>
-        </div>
-
-        <!-- Live Progress Bar -->
-        <div class="progress-bar-container">
-            <div class="progress-segment segment-correct" id="bar-correct" title="Correct"></div>
-            <div class="progress-segment segment-missed" id="bar-missed" title="Missed"></div>
-            <div class="progress-segment segment-unattempted" id="bar-unattempted" title="Unattempted"></div>
-        </div>
+            <div class="btn-launch">Launch Exam →</div>
+        </a>
+        <a href="BabyBar-Torts-03.html" class="exam-card">
+            <div><h3>Torts - Set 03</h3><p>Targeted Practice & Rule Analysis</p></div>
+            <div class="btn-launch">Launch Exam →</div>
+        </a>
+        <a href="BabyBar-Torts-04.html" class="exam-card">
+            <div><h3>Torts - Set 04</h3><p>Targeted Practice & Rule Analysis</p></div>
+            <div class="btn-launch">Launch Exam →</div>
+        </a>
+        <a href="BabyBar-Torts-05.html" class="exam-card">
+            <div><h3>Torts - Set 05</h3><p>Targeted Practice & Rule Analysis</p></div>
+            <div class="btn-launch">Launch Exam →</div>
+        </a>
+        <a href="BabyBar-Torts-06.html" class="exam-card">
+            <div><h3>Torts - Set 06</h3><p>Targeted Practice & Rule Analysis</p></div>
+            <div class="btn-launch">Launch Exam →</div>
+        </a>
+        <a href="BabyBar-Torts-07.html" class="exam-card">
+            <div><h3>Torts - Set 07</h3><p>Targeted Practice & Rule Analysis</p></div>
+            <div class="btn-launch">Launch Exam →</div>
+        </a>
+        <a href="BabyBar-Torts-08.html" class="exam-card">
+            <div><h3>Torts - Set 08</h3><p>Targeted Practice & Rule Analysis</p></div>
+            <div class="btn-launch">Launch Exam →</div>
+        </a>
+        <a href="BabyBar-Torts-09.html" class="exam-card">
+            <div><h3>Torts - Set 09</h3><p>Targeted Practice & Rule Analysis</p></div>
+            <div class="btn-launch">Launch Exam →</div>
+        </a>
+        <a href="BabyBar-Torts-10.html" class="exam-card">
+            <div><h3>Torts - Set 10</h3><p>Comprehensive Torts Review</p></div>
+            <div class="btn-launch">Launch Exam →</div>
+        </a>
     </div>
 
-    <!-- Active Filter Indicator Banner -->
-    <div class="filter-status-banner" id="filter-banner">
-        <span id="filter-banner-text">Viewing filtered subset</span>
-        <button class="btn-banner-reset" onclick="returnToFullSet()">Return to Full Exam</button>
+    <!-- CRIMINAL LAW -->
+    <div class="section-title">🏛️ Criminal Law Practice Sets (Sets 01–10)</div>
+    <div class="exam-grid">
+        <a href="BabyBar-CriminalLaw-01.html" class="exam-card"><div><h3>Criminal Law - Set 01</h3><p>Homicide, Crimes Against Person</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-CriminalLaw-02.html" class="exam-card"><div><h3>Criminal Law - Set 02</h3><p>Property Crimes & Inchoate Offenses</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-CriminalLaw-03.html" class="exam-card"><div><h3>Criminal Law - Set 03</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-CriminalLaw-04.html" class="exam-card"><div><h3>Criminal Law - Set 04</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-CriminalLaw-05.html" class="exam-card"><div><h3>Criminal Law - Set 05</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-CriminalLaw-06.html" class="exam-card"><div><h3>Criminal Law - Set 06</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-CriminalLaw-07.html" class="exam-card"><div><h3>Criminal Law - Set 07</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-CriminalLaw-08.html" class="exam-card"><div><h3>Criminal Law - Set 08</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-CriminalLaw-09.html" class="exam-card"><div><h3>Criminal Law - Set 09</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-CriminalLaw-10.html" class="exam-card"><div><h3>Criminal Law - Set 10</h3><p>Comprehensive Crim Law Review</p></div><div class="btn-launch">Launch Exam →</div></a>
     </div>
 
-    <div id="quiz-container">
-        <!-- Question Card Populated via JS -->
+    <!-- CONTRACTS -->
+    <div class="section-title">📜 Contracts Practice Sets (Sets 01–10)</div>
+    <div class="exam-grid">
+        <a href="BabyBar-Copntracts-01.html" class="exam-card"><div><h3>Contracts - Set 01</h3><p>Formation, Consideration, UCC</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-Copntracts-02.html" class="exam-card"><div><h3>Contracts - Set 02</h3><p>Performance, Breach & Remedies</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-Copntracts-03.html" class="exam-card"><div><h3>Contracts - Set 03</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-Copntracts-04.html" class="exam-card"><div><h3>Contracts - Set 04</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-Copntracts-05.html" class="exam-card"><div><h3>Contracts - Set 05</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-Copntracts-06.html" class="exam-card"><div><h3>Contracts - Set 06</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-Copntracts-07.html" class="exam-card"><div><h3>Contracts - Set 07</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-Copntracts-08.html" class="exam-card"><div><h3>Contracts - Set 08</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-Copntracts-09.html" class="exam-card"><div><h3>Contracts - Set 09</h3><p>Targeted Practice & Rule Analysis</p></div><div class="btn-launch">Launch Exam →</div></a>
+        <a href="BabyBar-Copnt4s-10.html" class="exam-card" style="display:none"></a> <!-- placeholder spacing if needed -->
+        <a href="BabyBar-Copntracts-10.html" class="exam-card"><div><h3>Contracts - Set 10</h3><p>Comprehensive Contracts Review</p></div><div class="btn-launch">Launch Exam →</div></a>
     </div>
 
-    <div class="nav-controls">
-        <button class="btn" id="prev-btn" onclick="navigate(-1)">? Previous</button>
-        <button class="btn btn-reset" onclick="resetCurrentSetProgress()">Reset Set</button>
-        <button class="btn" id="next-btn" onclick="navigate(1)">Next ?</button>
-    </div>
-
-    <!-- Universal Display / Export Modal Box -->
-    <div class="modal-box" id="info-modal-box">
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-            <h3 id="modal-title" style="color: var(--primary);">Analysis / Export</h3>
-            <button class="btn btn-reset" style="padding:0.2rem 0.6rem;" onclick="closeModal()">? Close</button>
-        </div>
-        <p id="modal-desc" style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.3rem;"></p>
-        <textarea id="modal-textarea"></textarea>
-        <div style="display:flex; gap:0.5rem; margin-top:0.8rem;">
-            <button class="btn" id="modal-copy-btn" onclick="copyModalContent()">Copy Content to Clipboard</button>
-            <button class="btn" id="modal-import-btn" style="display:none; background:var(--success);" onclick="submitCustomImport()">Load Exam Set</button>
-        </div>
-    </div>
-
-    <script>
-        // Multi-Subject Datasets
-        const datasets = {
-            torts_set1: [],
-            contracts_set1: [
-                { id: 1, topic: "Formation / UCC vs. Common Law", fp: null, q: "Buyer agreed in writing to purchase 500 widgets from Manufacturer at $10 each. Before shipment, Buyer phoned requesting a price reduction to $8. Manufacturer orally agreed. Manufacturer later invoiced Buyer at $10. Under UCC � 2-209, is the modification enforceable?", opts: ["No, because oral modifications violate the Statute of Frauds.", "No, for lack of new consideration.", "Yes, because UCC contract modifications require only good faith and no new consideration.", "Yes, only if promissory estoppel applies."], ans: 2, exp: "Under UCC � 2-209(1), a good faith modification of a sales contract needs no new consideration to be binding." },
-                { id: 2, topic: "Statute of Frauds / Main Purpose Rule", fp: null, q: "Promisor orally promised Creditor that if Debtor failed to pay a lumber bill, Promisor would pay it, solely to ensure Debtor finished building Promisor's house. Debtor defaulted. Creditor sued Promisor. Promisor's best defense is:", opts: ["Statute of Frauds (Suretyship clause).", "Main Purpose (Leading Object) exception overrides the Statute of Frauds, making the oral promise enforceable.", "Lack of privity.", "Parol evidence rule."], ans: 1, exp: "Under the Main Purpose exception to the Statute of Frauds, if the surety's main purpose is to serve their own pecuniary interest, the oral promise is enforceable without a writing." }
-            ],
-            crim_set1: [
-                { id: 1, topic: "Homicide / Felony Murder Rule", fp: null, q: "Robber entered a bank with an unloaded gun. During the robbery, Security Guard fired at Robber, accidentally killing Customer. Under the majority (agency) theory of Felony Murder, is Robber guilty of felony murder for Customer's death?", opts: ["Yes, under proximate cause theory.", "Yes, because robbery is an inherently dangerous felony.", "No, because the fatal shot was fired by Security Guard, a non-felon.", "No, because Robber carried an unloaded firearm."], ans: 2, exp: "Under the majority Agency Theory of Felony Murder, a felon is liable only for killings committed by the felon or co-felons, not for killings committed by victims, police, or bystanders." }
-            ]
-        };
-
-        // Populate Torts Set 1 (100 Balanced Questions)
-        const coreBank = [
-            { t: "Negligence / Res Ipsa Loquitur (Foreign Object)", q: "Doctor performed abdominal surgery on Patient. Post-surgery, Patient experienced severe pain. X-rays showed a surgical clamp inside Patient's abdomen. Patient sued Doctor under res ipsa loquitur. Will Patient prevail?", opts: ["Yes, because leaving surgical instruments inside a patient does not occur absent negligence, and the tool was in Doctor's exclusive control.", "No, unless Patient presents expert testimony establishing standard of care.", "No, because surgical nurses are solely responsible for counting instruments.", "Yes, because surgeons are strictly liable for complications."], a: 0, e: "Res ipsa loquitur applies when the event does not ordinarily occur without negligence, the instrumentality was in defendant's exclusive control, and plaintiff was non-contributory." },
-            { t: "Negligence / Landowner Security Duty to Tenants", q: "Landlord knew the front security door lock was broken and three robberies occurred in the lobby last week. Tenant requested repairs, but Landlord delayed. Intruder entered through the broken lock and robbed Tenant at gunpoint in the elevator. If Tenant sues Landlord, Tenant will:", opts: ["Lose, because criminal acts of third parties are always superseding causes.", "Win, because landlords owe a duty to maintain security in common areas against foreseeable criminal acts of third parties.", "Lose, under the doctrine of primary assumption of risk.", "Win, because landlords are strictly liable for crimes."], a: 1, e: "Landlords owe residential tenants a duty of reasonable care to maintain common area security against foreseeable criminal acts of third parties." },
-            { t: "Defamation / Public Official Actual Malice", q: "Reporter published an article stating Mayor accepted bribes, relying entirely on an unverified anonymous phone tip without checking city records. Mayor sued Reporter for Defamation. Mayor must prove by clear and convincing evidence that Reporter acted with:", opts: ["Common law spite, hatred, or ill will.", "Gross negligence in failing to verify public records.", "Actual malice, meaning knowledge of falsity or reckless disregard of the truth.", "Intent to inflict pecuniary harm."], a: 2, e: "Under New York Times Co. v. Sullivan, public officials must prove actual malice (knowledge of falsity or reckless disregard of truth) with convincing clarity." },
-            { t: "Strict Liability / Abnormally Dangerous Activity (Explosives)", q: "Blasting Corp. conducted dynamiting operations in a quarry with utmost care. Ground vibrations caused structural collapse of Neighbor's antique barn 1 mile away. Is Blasting Corp. liable?", opts: ["No, because Blasting Corp. exercised reasonable care.", "No, unless physical rock debris crossed boundary lines.", "Yes, only if Blasting Corp. was negligent in calculating charges.", "Yes, because blasting is an abnormally dangerous activity subject to strict liability regardless of utmost care."], a: 3, e: "Blasting is an abnormally dangerous activity carrying strict liability for physical damage resulting from the inherent hazard." }
-        ];
-
-        for (let i = 1; i <= 100; i++) {
-            let item = coreBank[(i - 1) % coreBank.length];
-            datasets.torts_set1.push({
-                id: i,
-                topic: item.t,
-                fp: i <= 3 ? "Questions 1�3 Fact Situation: Low altitude stunt flying over neighboring farm." : null,
-                q: item.q,
-                opts: item.opts,
-                ans: item.a,
-                exp: item.e
-            });
-        }
-
-        // App Engine State
-        let currentSetKey = "torts_set1";
-        let examData = datasets[currentSetKey];
-        let currentIndex = 0;
-        let userAnswers = {};
-        let flaggedQuestions = {};
-        let eliminatedOptions = {};
-        let retrySessionList = [];
-        let totalCorrect = 0;
-        let activeFilter = "all";
-        let isEliminationMode = true;
-
-        const letterLabels = ["A", "B", "C", "D"];
-
-        function getStorageKey(subKey) {
-            return `fylsx_master_${currentSetKey}_${subKey}`;
-        }
-
-        function initApp() {
-            examData = datasets[currentSetKey] || [];
-            document.getElementById("total-q-count").textContent = examData.length;
-            loadProgress();
-            populateJumpMenu();
-            renderQuestion();
-            updateScore();
-            updateDropdownLabels();
-            updateFilterBanner();
-        }
-
-        function switchExamSet(key) {
-            if (key === "custom_json") {
-                openCustomImportModal();
-                return;
-            }
-            saveProgress();
-            currentSetKey = key;
-            activeFilter = "all";
-            retrySessionList = [];
-            currentIndex = 0;
-            initApp();
-        }
-
-        function getMissedIndices() {
-            return Object.keys(userAnswers).filter(idx => {
-                let qIdx = Number(idx);
-                return userAnswers[qIdx] !== examData[qIdx].ans;
-            }).map(Number);
-        }
-
-        function getFlaggedIndices() {
-            return Object.keys(flaggedQuestions).filter(idx => flaggedQuestions[idx]).map(Number);
-        }
-
-        function getActiveQuestionList() {
-            if (activeFilter === "flagged") return getFlaggedIndices();
-            if (activeFilter === "missed") return getMissedIndices();
-            if (activeFilter === "retry") return retrySessionList;
-            return examData.map((_, idx) => idx);
-        }
-
-        function toggleEliminationMode() {
-            isEliminationMode = !isEliminationMode;
-            const btn = document.getElementById("elimination-toggle-btn");
-            btn.classList.toggle("active", isEliminationMode);
-            renderQuestion();
-        }
-
-        function updateFilterBanner() {
-            const banner = document.getElementById("filter-banner");
-            const bannerText = document.getElementById("filter-banner-text");
-
-            if (activeFilter === "all") {
-                banner.classList.remove("visible");
-            } else {
-                banner.classList.add("visible");
-                if (activeFilter === "flagged") bannerText.textContent = `?? Filter: Showing Flagged Questions Only (${getFlaggedIndices().length})`;
-                else if (activeFilter === "missed") bannerText.textContent = `? Filter: Showing Missed Questions Only (${getMissedIndices().length})`;
-                else if (activeFilter === "retry") bannerText.textContent = `?? Retry Mode: Practicing ${retrySessionList.length} Question(s)`;
-            }
-        }
-
-        function returnToFullSet() {
-            activeFilter = "all";
-            retrySessionList = [];
-            saveProgress();
-            updateFilterBanner();
-            populateJumpMenu();
-            renderQuestion();
-            updateDropdownLabels();
-        }
-
-        function updateDropdownLabels() {
-            const flagCount = getFlaggedIndices().length;
-            const missedCount = getMissedIndices().length;
-
-            const flagSelect = document.getElementById("flag-dropdown");
-            const missedSelect = document.getElementById("missed-dropdown");
-
-            flagSelect.options[0].textContent = `?? Flagged (${flagCount}) ?`;
-            missedSelect.options[0].textContent = `? Missed (${missedCount}) ?`;
-
-            flagSelect.selectedIndex = 0;
-            missedSelect.selectedIndex = 0;
-        }
-
-        function handleFlagDropdown(val) {
-            if (val === "all") returnToFullSet();
-            else if (val === "filter") { activeFilter = (activeFilter === "flagged") ? "all" : "flagged"; populateJumpMenu(); renderQuestion(); updateFilterBanner(); }
-            else if (val === "retry") retryFlaggedQuestions();
-            else if (val === "summary") showFlaggedSummary();
-            else if (val === "export") exportFlaggedQuestions();
-            updateDropdownLabels();
-        }
-
-        function handleMissedDropdown(val) {
-            if (val === "all") returnToFullSet();
-            else if (val === "filter") { activeFilter = (activeFilter === "missed") ? "all" : "missed"; populateJumpMenu(); renderQuestion(); updateFilterBanner(); }
-            else if (val === "retry") retryMissedQuestions();
-            else if (val === "summary") showMissedSummary();
-            else if (val === "export") exportMissedQuestions();
-            updateDropdownLabels();
-        }
-
-        function retryMissedQuestions() {
-            const missed = getMissedIndices();
-            if (missed.length === 0) { alert("No missed questions to retry!"); return; }
-            if (confirm(`Clear answers and retry ${missed.length} missed question(s)?`)) {
-                retrySessionList = [...missed];
-                missed.forEach(qIdx => { delete userAnswers[qIdx]; delete eliminatedOptions[qIdx]; });
-                recalculateScore();
-                activeFilter = "retry";
-                currentIndex = retrySessionList[0];
-                saveProgress();
-                populateJumpMenu();
-                renderQuestion();
-                updateScore();
-                updateDropdownLabels();
-                updateFilterBanner();
-            }
-        }
-
-        function retryFlaggedQuestions() {
-            const flagged = getFlaggedIndices();
-            if (flagged.length === 0) { alert("No flagged questions to retry!"); return; }
-            if (confirm(`Clear answers and retry ${flagged.length} flagged question(s)?`)) {
-                retrySessionList = [...flagged];
-                flagged.forEach(qIdx => { delete userAnswers[qIdx]; delete eliminatedOptions[qIdx]; });
-                recalculateScore();
-                activeFilter = "retry";
-                currentIndex = retrySessionList[0];
-                saveProgress();
-                populateJumpMenu();
-                renderQuestion();
-                updateScore();
-                updateDropdownLabels();
-                updateFilterBanner();
-            }
-        }
-
-        function populateJumpMenu() {
-            const select = document.getElementById("jump-select");
-            select.innerHTML = "";
-            const activeList = getActiveQuestionList();
-
-            if (activeList.length === 0) {
-                let opt = document.createElement("option");
-                opt.value = 0;
-                opt.textContent = "No Questions in View";
-                select.appendChild(opt);
-                return;
-            }
-
-            activeList.forEach((qIdx) => {
-                let opt = document.createElement("option");
-                opt.value = qIdx;
-                let flagMark = flaggedQuestions[qIdx] ? "?? " : "";
-                let missedMark = (userAnswers[qIdx] !== undefined && userAnswers[qIdx] !== examData[qIdx].ans) ? "? " : "";
-                opt.textContent = `${flagMark}${missedMark}Q${qIdx + 1} [${examData[qIdx].topic}]`;
-                select.appendChild(opt);
-            });
-        }
-
-        function renderQuestion() {
-            const activeList = getActiveQuestionList();
-            
-            if (activeList.length === 0) {
-                document.getElementById("quiz-container").innerHTML = `
-                    <div class="question-card" style="text-align: center; padding: 3rem 1rem;">
-                        <h3>No Questions in Active View</h3>
-                        <button class="btn" style="margin-top: 1rem;" onclick="returnToFullSet()">Return to Full Exam</button>
-                    </div>
-                `;
-                document.getElementById("prev-btn").disabled = true;
-                document.getElementById("next-btn").disabled = true;
-                return;
-            }
-
-            if (!activeList.includes(currentIndex)) {
-                currentIndex = activeList[0] || 0;
-            }
-
-            const q = examData[currentIndex];
-            document.getElementById("current-q-num").textContent = currentIndex + 1;
-            document.getElementById("jump-select").value = currentIndex;
-
-            const isFlagged = Boolean(flaggedQuestions[currentIndex]);
-            const flagBtnText = isFlagged ? "?? Flagged" : "??? Flag Question";
-            const flagBtnClass = isFlagged ? "btn-flag active" : "btn-flag";
-
-            let html = `<div class="question-card">`;
-            html += `<div class="q-top-row">
-                        <div class="q-header">Question ${q.id} <span style="font-size:0.8rem; color: var(--text-muted); font-weight:normal;">[Topic: ${q.topic}]</span></div>
-                        <button class="${flagBtnClass}" onclick="toggleFlagCurrentQuestion()">${flagBtnText}</button>
-                     </div>`;
-
-            if (q.fp) {
-                html += `<div class="fact-pattern">${q.fp.replace(/\n/g, '<br>')}</div>`;
-            }
-            html += `<div class="q-text">${q.q}</div>`;
-            html += `<div class="options-grid">`;
-
-            const currentElimMap = eliminatedOptions[currentIndex] || {};
-
-            q.opts.forEach((optText, i) => {
-                let isAnswered = userAnswers[currentIndex] !== undefined;
-                let isEliminated = Boolean(currentElimMap[i]);
-
-                let btnClass = "option-btn";
-                if (isAnswered) {
-                    if (i === q.ans) btnClass += " correct";
-                    else if (i === userAnswers[currentIndex]) btnClass += " incorrect";
-                }
-                if (isEliminated) btnClass += " eliminated";
-
-                let cleanOptText = optText.replace(/^\([A-Da-d]\)\s*/, '');
-                let disabled = isAnswered ? "disabled" : "";
-
-                html += `<div class="option-container">
-                            <button class="${btnClass}" ${disabled} onclick="handleOptionClick(${i})">
-                                <span class="letter-circle">${letterLabels[i]}</span>
-                                <span>${cleanOptText}</span>
-                            </button>`;
-
-                if (isEliminationMode) {
-                    let elimBtnClass = isEliminated ? "btn-eliminate-choice active" : "btn-eliminate-choice";
-                    html += `<button class="${elimBtnClass}" title="Toggle Elimination for choice ${letterLabels[i]}" onclick="toggleEliminateChoice(event, ${i})">?</button>`;
-                }
-                html += `</div>`;
-            });
-
-            html += `</div>`;
-
-            let expClass = userAnswers[currentIndex] !== undefined ? "explanation-box visible" : "explanation-box";
-            html += `<div class="${expClass}">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.5rem;">
-                            <strong>Legal Analysis:</strong>
-                            <select class="dropdown-analysis" onchange="handleAnalysisExport(this.value)">
-                                <option value="" disabled selected>?? Export Rules ?</option>
-                                <option value="all">Export All Rules</option>
-                                <option value="missed">Export Missed Rules</option>
-                                <option value="flagged">Export Flagged Rules</option>
-                            </select>
+    <!-- MIXED SETS -->
+    <div class="section-title">📝 Mixed Subject Sets (Sets 01–20)</div>
+    <div class="exam-grid">
+        <script>
+            // Automatically generate links for mixed sets 1 to 20
+            for(let i = 1; i <= 20; i++) {
+                let padNum = String(i).padStart(2, '0');
+                document.write(`
+                    <a href="BabyBar-Mixed-${padNum}.html" class="exam-card">
+                        <div>
+                            <h3>Mixed Set ${padNum}</h3>
+                            <p>Multi-Subject FYLSX Practice Exam</p>
                         </div>
-                        <div>${q.exp}</div>
-                     </div>`;
-            html += `</div>`;
-
-            document.getElementById("quiz-container").innerHTML = html;
-
-            const currentPosInList = activeList.indexOf(currentIndex);
-            document.getElementById("prev-btn").disabled = currentPosInList <= 0;
-            document.getElementById("next-btn").disabled = currentPosInList >= activeList.length - 1;
-
-            saveProgress();
-        }
-
-        function handleOptionClick(optIndex) {
-            const currentElimMap = eliminatedOptions[currentIndex] || {};
-            if (currentElimMap[optIndex]) {
-                delete currentElimMap[optIndex];
-                saveProgress();
-                renderQuestion();
-                return;
+                        <div class="btn-launch">Launch Exam →</div>
+                    </a>
+                `);
             }
-            selectAnswer(optIndex);
-        }
+        </script>
+    </div>
 
-        function toggleEliminateChoice(event, optIndex) {
-            event.stopPropagation();
-            if (!eliminatedOptions[currentIndex]) eliminatedOptions[currentIndex] = {};
-            if (eliminatedOptions[currentIndex][optIndex]) delete eliminatedOptions[currentIndex][optIndex];
-            else eliminatedOptions[currentIndex][optIndex] = true;
-            saveProgress();
-            renderQuestion();
-        }
+    <footer>
+        gobabybar.com • Built for iPad & Offline Study
+    </footer>
 
-        function toggleFlagCurrentQuestion() {
-            if (flaggedQuestions[currentIndex]) delete flaggedQuestions[currentIndex];
-            else flaggedQuestions[currentIndex] = true;
-            updateDropdownLabels();
-            populateJumpMenu();
-            renderQuestion();
-            saveProgress();
-        }
-
-        function selectAnswer(optIndex) {
-            userAnswers[currentIndex] = optIndex;
-            recalculateScore();
-            updateScore();
-            updateDropdownLabels();
-            renderQuestion();
-        }
-
-        function recalculateScore() {
-            totalCorrect = 0;
-            Object.keys(userAnswers).forEach(idx => {
-                if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
-            });
-        }
-
-        function updateScore() {
-            const totalExamQuestions = examData.length || 1;
-            const answeredCount = Object.keys(userAnswers).length;
-            const missedCount = getMissedIndices().length;
-            const unattemptedCount = totalExamQuestions - answeredCount;
-            const percentage = answeredCount > 0 ? Math.round((totalCorrect / answeredCount) * 100) : 0;
-            
-            document.getElementById("score-badge").textContent = `Score: ${totalCorrect} / ${answeredCount} (${percentage}%)`;
-
-            const correctPercent = (totalCorrect / totalExamQuestions) * 100;
-            const missedPercent = (missedCount / totalExamQuestions) * 100;
-
-            const barCorrect = document.getElementById("bar-correct");
-            const barMissed = document.getElementById("bar-missed");
-            const barUnattempted = document.getElementById("bar-unattempted");
-
-            barCorrect.style.width = `${correctPercent}%`;
-            barMissed.style.width = `${missedPercent}%`;
-
-            barCorrect.textContent = totalCorrect >= 1 ? totalCorrect : "";
-            barMissed.textContent = missedCount >= 1 ? missedCount : "";
-            barUnattempted.textContent = unattemptedCount >= 1 ? unattemptedCount : "";
-        }
-
-        function navigate(dir) {
-            const activeList = getActiveQuestionList();
-            const currentPos = activeList.indexOf(currentIndex);
-            const targetPos = currentPos + dir;
-            if (targetPos >= 0 && targetPos < activeList.length) {
-                currentIndex = activeList[targetPos];
-                renderQuestion();
-            }
-        }
-
-        function jumpToQuestion(index) {
-            currentIndex = parseInt(index);
-            renderQuestion();
-        }
-
-        function saveProgress() {
-            localStorage.setItem(getStorageKey("answers"), JSON.stringify(userAnswers));
-            localStorage.setItem(getStorageKey("flags"), JSON.stringify(flaggedQuestions));
-            localStorage.setItem(getStorageKey("elim"), JSON.stringify(eliminatedOptions));
-            localStorage.setItem(getStorageKey("index"), currentIndex);
-            localStorage.setItem(getStorageKey("filter"), activeFilter);
-            localStorage.setItem(getStorageKey("retry"), JSON.stringify(retrySessionList));
-        }
-
-        function loadProgress() {
-            try {
-                const savedAnswers = localStorage.getItem(getStorageKey("answers"));
-                const savedFlags = localStorage.getItem(getStorageKey("flags"));
-                const savedElim = localStorage.getItem(getStorageKey("elim"));
-                const savedIndex = localStorage.getItem(getStorageKey("index"));
-                const savedFilter = localStorage.getItem(getStorageKey("filter"));
-                const savedRetry = localStorage.getItem(getStorageKey("retry"));
-
-                userAnswers = savedAnswers ? JSON.parse(savedAnswers) : {};
-                flaggedQuestions = savedFlags ? JSON.parse(savedFlags) : {};
-                eliminatedOptions = savedElim ? JSON.parse(savedElim) : {};
-                currentIndex = savedIndex !== null ? parseInt(savedIndex) : 0;
-                activeFilter = savedFilter || "all";
-                retrySessionList = savedRetry ? JSON.parse(savedRetry) : [];
-                recalculateScore();
-            } catch (e) {
-                console.error(e);
-            }
-        }
-
-        function resetCurrentSetProgress() {
-            if (confirm(`Clear all saved answers and progress for ${currentSetKey.toUpperCase()}?`)) {
-                localStorage.removeItem(getStorageKey("answers"));
-                localStorage.removeItem(getStorageKey("flags"));
-                localStorage.removeItem(getStorageKey("elim"));
-                localStorage.removeItem(getStorageKey("index"));
-                localStorage.removeItem(getStorageKey("filter"));
-                localStorage.removeItem(getStorageKey("retry"));
-                userAnswers = {};
-                flaggedQuestions = {};
-                eliminatedOptions = {};
-                retrySessionList = [];
-                currentIndex = 0;
-                totalCorrect = 0;
-                activeFilter = "all";
-                initApp();
-            }
-        }
-
-        function handleAnalysisExport(val) {
-            if (!val) return;
-            if (val === "all") exportRulesForFilter(examData.map((_, idx) => idx), "All Rules");
-            if (val === "missed") exportRulesForFilter(getMissedIndices(), "Missed Rules");
-            if (val === "flagged") exportRulesForFilter(getFlaggedIndices(), "Flagged Rules");
-        }
-
-        function exportRulesForFilter(indices, titleName) {
-            if (indices.length === 0) {
-                openModal(`Export ${titleName}`, `No questions match the "${titleName}" criteria.`, `No rules to export for ${titleName}.`);
-                return;
-            }
-
-            const uniqueMap = new Map();
-            indices.forEach(idx => {
-                const item = examData[idx];
-                const cleanTopic = item.topic.trim();
-                const cleanExp = item.exp.trim();
-                if (!uniqueMap.has(cleanTopic)) uniqueMap.set(cleanTopic, new Set());
-                uniqueMap.get(cleanTopic).add(cleanExp);
-            });
-
-            const sortedTopics = Array.from(uniqueMap.keys()).sort((a, b) => a.localeCompare(b));
-            let tableOutput = "Legal Topic Category\tBlack Letter Law Analysis / Core Rule\n";
-            let displayOutput = `${titleName.toUpperCase()} (WORD TABLE FORMAT):\n=======================================================\n\n`;
-
-            sortedTopics.forEach(topic => {
-                const rules = Array.from(uniqueMap.get(topic));
-                rules.forEach(rule => {
-                    tableOutput += `${topic}\t${rule}\n`;
-                    displayOutput += `� [${topic}]\n  ${rule}\n\n`;
-                });
-            });
-
-            navigator.clipboard.writeText(tableOutput).then(() => {
-                openModal(`${titleName} Exported!`, `Copied in Tab-Delimited Table format for Microsoft Word!`, displayOutput);
-            }).catch(err => {
-                openModal(`${titleName} Export`, "Copy the text below:", tableOutput);
-            });
-        }
-
-        function showMissedSummary() {
-            let summary = `MISSED QUESTIONS SUMMARY (${currentSetKey.toUpperCase()}):\n========================================\n\n`;
-            let missedIndices = getMissedIndices();
-            if (missedIndices.length === 0) summary += "No missed questions yet! Great job.";
-            else {
-                missedIndices.forEach(qIdx => {
-                    let q = examData[qIdx];
-                    let userChoice = userAnswers[qIdx];
-                    summary += `� Question ${q.id} [Topic: ${q.topic}]\n`;
-                    summary += `  Your Selected Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n`;
-                    summary += `  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n`;
-                    summary += `  Core Rule: ${q.exp}\n\n`;
-                });
-            }
-            openModal("Missed Questions Rule Analysis", "Review your missed questions below:", summary);
-        }
-
-        function showFlaggedSummary() {
-            let summary = `FLAGGED QUESTIONS SUMMARY (${currentSetKey.toUpperCase()}):\n========================================\n\n`;
-            let flaggedIndices = getFlaggedIndices();
-            if (flaggedIndices.length === 0) summary += "No flagged questions yet!";
-            else {
-                flaggedIndices.forEach(qIdx => {
-                    let q = examData[qIdx];
-                    let userChoice = userAnswers[qIdx];
-                    summary += `� Question ${q.id} [Topic: ${q.topic}]\n`;
-                    if (userChoice !== undefined) summary += `  Your Selected Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n`;
-                    summary += `  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n`;
-                    summary += `  Core Rule: ${q.exp}\n\n`;
-                });
-            }
-            openModal("Flagged Questions Rule Analysis", "Review your flagged questions below:", summary);
-        }
-
-        function exportFlaggedQuestions() {
-            const flagged = getFlaggedIndices().map(idx => {
-                const item = examData[idx];
-                return { originalSet: currentSetKey, originalId: item.id, topic: item.topic, factPattern: item.fp, question: item.q, options: item.opts, correctAnswer: item.ans, explanation: item.exp };
-            });
-            openModal("Export Flagged Questions (JSON)", "Copy this JSON block to import into other sets or share:", JSON.stringify(flagged, null, 2));
-        }
-
-        function exportMissedQuestions() {
-            const missed = getMissedIndices().map(idx => {
-                const item = examData[idx];
-                return { originalSet: currentSetKey, originalId: item.id, topic: item.topic, factPattern: item.fp, question: item.q, options: item.opts, correctAnswer: item.ans, explanation: item.exp };
-            });
-            openModal("Export Missed Questions (JSON)", "Copy this JSON block to build targeted re-test sets:", JSON.stringify(missed, null, 2));
-        }
-
-        function openCustomImportModal() {
-            document.getElementById("modal-title").textContent = "Import Custom Exam Set (JSON)";
-            document.getElementById("modal-desc").textContent = "Paste any previously exported JSON question array below and tap 'Load Exam Set':";
-            document.getElementById("modal-textarea").value = "";
-            document.getElementById("modal-copy-btn").style.display = "none";
-            document.getElementById("modal-import-btn").style.display = "inline-block";
-            document.getElementById("info-modal-box").classList.add("visible");
-        }
-
-        function submitCustomImport() {
-            try {
-                const parsed = JSON.parse(document.getElementById("modal-textarea").value);
-                if (Array.isArray(parsed) && parsed.length > 0) {
-                    datasets.custom_imported = parsed.map((item, i) => ({
-                        id: i + 1,
-                        topic: item.topic || "Imported Question",
-                        fp: item.factPattern || null,
-                        q: item.question,
-                        opts: item.options,
-                        ans: item.correctAnswer,
-                        exp: item.explanation
-                    }));
-                    currentSetKey = "custom_imported";
-                    closeModal();
-                    initApp();
-                    alert(`Successfully loaded ${parsed.length} custom questions!`);
-                } else {
-                    alert("Invalid JSON format. Please ensure it is an array of questions.");
-                }
-            } catch (err) {
-                alert("Could not parse JSON. Check formatting.");
-            }
-        }
-
-        function openModal(title, desc, content) {
-            document.getElementById("modal-title").textContent = title;
-            document.getElementById("modal-desc").textContent = desc;
-            document.getElementById("modal-textarea").value = content;
-            document.getElementById("modal-copy-btn").style.display = "inline-block";
-            document.getElementById("modal-import-btn").style.display = "none";
-            document.getElementById("info-modal-box").classList.add("visible");
-            document.getElementById("info-modal-box").scrollIntoView({ behavior: "smooth" });
-        }
-
-        function closeModal() {
-            document.getElementById("info-modal-box").classList.remove("visible");
-        }
-
-        function copyModalContent() {
-            const text = document.getElementById("modal-textarea");
-            text.select();
-            document.execCommand("copy");
-            alert("Copied to clipboard!");
-        }
-
-        window.onload = initApp;
-    </script>
 </body>
 </html>
