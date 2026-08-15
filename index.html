@@ -19,7 +19,7 @@
             --text: #1E293B;
             --text-muted: #64748B;
             --border: #CBD5E1;
-            --success: #16A34A;
+            --success-dark: #15803D; /* Darker green */
             --danger: #DC2626;
             --flag: #E11D48;
         }
@@ -187,6 +187,7 @@
             display: flex;
             gap: 0.4rem;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .btn-cat-export {
@@ -200,6 +201,15 @@
             gap: 0.25rem;
             border: 1px solid var(--border);
             transition: all 0.15s ease;
+        }
+
+        .btn-cat-rules {
+            background: #F0F9FF;
+            color: #0369A1;
+            border-color: #BAE6FD;
+        }
+        .btn-cat-rules:hover {
+            background: #E0F2FE;
         }
 
         .btn-cat-missed {
@@ -262,21 +272,21 @@
             margin: 0;
         }
 
-        /* Bold Green Score Percentage */
+        /* Non-Bold, Darker Green Score Percentage */
         .score-display-badge {
-            color: var(--success);
-            font-weight: 800;
-            font-size: 0.95rem;
-            background: #DCFCE7;
+            color: var(--success-dark);
+            font-weight: 600; /* Not bold */
+            font-size: 0.92rem;
+            background: #F0FDF4;
             padding: 0.15rem 0.5rem;
             border-radius: 6px;
-            border: 1px solid #BBF7D0;
+            border: 1px solid #DCFCE7;
             white-space: nowrap;
         }
 
         .score-display-badge.unattempted {
             color: var(--text-muted);
-            font-weight: 600;
+            font-weight: normal;
             font-size: 0.8rem;
             background: #F1F5F9;
             border-color: #E2E8F0;
@@ -335,7 +345,7 @@
 
         textarea {
             width: 100%;
-            height: 260px;
+            height: 280px;
             margin-top: 0.8rem;
             padding: 0.8rem;
             border-radius: 8px;
@@ -374,6 +384,7 @@
         @media (max-width: 600px) {
             body { padding: 0.5rem; }
             .category-header-bar { flex-direction: column; align-items: flex-start; }
+            .category-actions { width: 100%; justify-content: flex-start; }
         }
     </style>
 </head>
@@ -410,7 +421,7 @@
             <textarea id="modal-textarea" readonly></textarea>
             <div class="modal-btn-row">
                 <button class="btn-action-primary" onclick="copyCategoryModalContent()">📋 Copy to Clipboard</button>
-                <button class="btn-cat-export btn-cat-missed" id="btn-toggle-json" onclick="toggleExportFormat()">🔀 Switch to JSON Format</button>
+                <button class="btn-cat-export btn-cat-rules" id="btn-toggle-json" onclick="toggleExportFormat()">🔀 Switch to JSON Format</button>
             </div>
         </div>
 
@@ -418,6 +429,9 @@
         <div class="category-header-bar">
             <div class="section-title">⚖️ Torts Practice Sets (Sets 01–20)</div>
             <div class="category-actions">
+                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('torts', 'Torts', 20)" title="Export all unique black letter law rules for Torts">
+                    📋 Export Rules
+                </button>
                 <button class="btn-cat-export btn-cat-missed" onclick="exportCategoryData('torts', 'Torts', 20, 'missed')" title="Export all missed Torts questions across all 20 sets">
                     ❌ Export Missed
                 </button>
@@ -432,6 +446,9 @@
         <div class="category-header-bar">
             <div class="section-title">🏛️ Criminal Law Practice Sets (Sets 01–20)</div>
             <div class="category-actions">
+                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('criminal', 'Criminal Law', 20)" title="Export all unique black letter law rules for Criminal Law">
+                    📋 Export Rules
+                </button>
                 <button class="btn-cat-export btn-cat-missed" onclick="exportCategoryData('criminal', 'Criminal Law', 20, 'missed')" title="Export all missed Criminal Law questions across all 20 sets">
                     ❌ Export Missed
                 </button>
@@ -446,6 +463,9 @@
         <div class="category-header-bar">
             <div class="section-title">📜 Contracts Practice Sets (Sets 01–20)</div>
             <div class="category-actions">
+                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('contracts', 'Contracts', 20)" title="Export all unique black letter law rules for Contracts">
+                    📋 Export Rules
+                </button>
                 <button class="btn-cat-export btn-cat-missed" onclick="exportCategoryData('contracts', 'Contracts', 20, 'missed')" title="Export all missed Contracts questions across all 20 sets">
                     ❌ Export Missed
                 </button>
@@ -460,6 +480,9 @@
         <div class="category-header-bar">
             <div class="section-title">📝 Mixed Subject Sets (Sets 01–40)</div>
             <div class="category-actions">
+                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('mixed', 'Mixed Subjects', 40)" title="Export all unique black letter law rules for Mixed Subjects">
+                    📋 Export Rules
+                </button>
                 <button class="btn-cat-export btn-cat-missed" onclick="exportCategoryData('mixed', 'Mixed Subjects', 40, 'missed')" title="Export all missed Mixed questions across all 40 sets">
                     ❌ Export Missed
                 </button>
@@ -483,7 +506,85 @@
         let currentExportDataJSON = "";
         let isShowingJSON = false;
 
-        // Helper function to extract saved score percentage from localStorage
+        // Comprehensive Static Rule Library for Instant Category Exports
+        const masterRuleDatabase = {
+            torts: [
+                { topic: "Assault", exp: "Assault requires an intentional act by the defendant creating reasonable apprehension of imminent harmful or offensive contact. Apparent present ability is sufficient; conditional future threats lack required imminence." },
+                { topic: "Battery", exp: "Battery requires an intentional act causing harmful or offensive contact with the plaintiff's person or items intimately connected thereto, without consent or lawful privilege." },
+                { topic: "Battery / Transferred Intent", exp: "Under the transferred intent doctrine, an intent to commit an intentional tort (battery, assault, false imprisonment, trespass to land/chattels) transfers to any unintended third party who suffers the resulting harm." },
+                { topic: "False Imprisonment", exp: "False Imprisonment requires an intentional act causing complete physical confinement within bounded limits without reasonable means of escape known to the plaintiff, where plaintiff is conscious of confinement or harmed." },
+                { topic: "Intentional Infliction of Emotional Distress (IIED)", exp: "IIED requires intentional or reckless extreme and outrageous conduct exceeding all bounds of decency tolerated by a civilized society, causing severe emotional distress to the plaintiff." },
+                { topic: "Trespass to Land", exp: "Trespass to Land requires an intentional physical invasion or entry upon real property owned or possessed by another; mistake of boundary lines is no defense." },
+                { topic: "Trespass to Chattels", exp: "Trespass to Chattels occurs when an actor intentionally intermeddles with chattel in possession of another, causing actual damage, dispossession, or physical impairment of condition or value." },
+                { topic: "Conversion", exp: "Conversion is an intentional exercise of substantial dominion or control over chattel that seriously interferes with the owner's right to control it, justifying a forced judicial sale for fair market value." },
+                { topic: "Defense of Property", exp: "A possessor of land or chattel may use reasonable non-deadly force to defend property; mechanical spring guns or deadly force capable of causing death or serious bodily injury are strictly prohibited." },
+                { topic: "Private Necessity", exp: "Private necessity creates an incomplete privilege allowing entry onto another's property to avoid imminent disaster; the actor is immune from trespass liability but must pay for actual damage caused." },
+                { topic: "Public Necessity", exp: "Public necessity provides a complete, absolute privilege to destroy or damage private property to avert an imminent public disaster, relieving the actor of compensatory damages in tort." },
+                { topic: "Negligence / Standard of Care", exp: "An actor owes a duty to conform to the standard of an ordinary, reasonably prudent person under like circumstances; children in adult activities are held to adult standards." },
+                { topic: "Negligence Per Se", exp: "A defendant's violation of an applicable safety statute establishes conclusive breach of duty if the plaintiff is within the protected class and the harm is of the type the statute aimed to prevent." },
+                { topic: "Res Ipsa Loquitur", exp: "Res Ipsa Loquitur creates an inference of negligence if the accident ordinarily does not occur without negligence, the instrumentality was in defendant's exclusive control, and plaintiff was non-contributory." },
+                { topic: "Causation / But-For & Substantial Factor", exp: "Causation requires proving but-for causation; where multiple concurrent independent causes combine to cause an indivisible injury, the substantial factor test applies." },
+                { topic: "Proximate Cause & Foreseeability", exp: "Proximate cause limits liability to harms resulting from the foreseeable risks created by defendant's conduct; subsequent ordinary medical malpractice is deemed foreseeable as a matter of law." },
+                { topic: "Landowner Duty to Entrants", exp: "Possessors of land owe invitees a duty to inspect and make safe; licensees must be warned of known concealed dangers; known/anticipated trespassers must be warned of dangerous artificial conditions." },
+                { topic: "Attractive Nuisance", exp: "Landowners owe trespassing children a duty of reasonable care regarding artificial conditions if children are likely to trespass, the condition involves serious risk, children cannot appreciate risk, and burden to eliminate danger is slight." },
+                { topic: "Negligent Infliction of Emotional Distress (NIED)", exp: "Bystander NIED (Thing v. La Chusa) requires being closely related to the victim, present at the scene and contemporaneously aware of the injury-producing event, and suffering severe emotional distress." },
+                { topic: "Strict Products Liability / Manufacturing Defect", exp: "A manufacturing defect exists when a product departs from its intended design specifications when leaving the manufacturer's custody, imposing strict liability regardless of all possible care." },
+                { topic: "Strict Products Liability / Design Defect (Barker v. Lull)", exp: "A design defect is proven under the Consumer Expectation test (failure to perform as safely as expected) or the Risk-Utility test (benefits of design outweighed by inherent risk and feasible alternative design)." },
+                { topic: "Strict Products Liability / Failure to Warn", exp: "A product is defective for lack of warning if foreseeable risks of harm could have been avoided by reasonable instructions or warnings; adequate warnings cure unavoidable inherent product risks." },
+                { topic: "Strict Liability / Abnormally Dangerous Activities", exp: "An enterprise is strictly liable for conducting an abnormally dangerous activity that involves high risk of serious harm unable to be eliminated by reasonable care and is not of common usage." },
+                { topic: "Strict Liability / Animals", exp: "Keepers of wild animals are strictly liable for species propensities; domestic animal owners are strictly liable only if on notice of dangerous or vicious propensities abnormal to the class." },
+                { topic: "Defamation", exp: "Defamation requires publication of a false defamatory statement concerning plaintiff; public figures must prove constitutional actual malice (knowledge of falsity or reckless disregard) with convincing clarity." },
+                { topic: "Privacy / False Light", exp: "False light requires publicizing false, highly offensive portrayals before the public with actual malice." },
+                { topic: "Privacy / Intrusion Upon Seclusion", exp: "Intrusion upon seclusion is complete upon intentional, highly offensive technological or physical intrusion into a private sphere where plaintiff has a reasonable expectation of privacy." },
+                { topic: "Privacy / Public Disclosure of Private Facts", exp: "Public disclosure requires publicity of private, highly offensive non-newsworthy facts." },
+                { topic: "Privacy / Commercial Misappropriation", exp: "Commercial misappropriation is the unauthorized commercial use of plaintiff's name, likeness, or identity for advertising advantage." },
+                { topic: "Vicarious Liability / Respondeat Superior", exp: "An employer is vicariously liable for employee torts committed within the scope of employment; minor detours are within the scope, whereas substantial frolics fall outside." },
+                { topic: "California Proposition 51 (Civil Code § 1431.2)", exp: "In California personal injury actions, liability for economic damages remains joint and several, while liability for non-economic damages (pain and suffering) is several only, allocated by fault percentage." }
+            ],
+            criminal: [
+                { topic: "Homicide / Common Law Murder", exp: "Murder is the unlawful killing of a human being with malice aforethought, proven by: (1) intent to kill; (2) intent to inflict grievous bodily harm; (3) depraved heart reckless indifference to human life; or (4) felony murder." },
+                { topic: "Homicide / First-Degree Premeditated Murder", exp: "First-degree murder requires willful, deliberate, and premeditated killing with a cool, dispassionate reflection before the fatal act." },
+                { topic: "Homicide / Voluntary Manslaughter", exp: "Voluntary manslaughter is an intentional homicide committed in the heat of passion upon adequate provocation that would obscure the reason of an ordinary reasonable person, before a cooling-off period." },
+                { topic: "Homicide / Involuntary Manslaughter", exp: "Involuntary manslaughter is an unintentional killing caused by criminal negligence (gross deviation from reasonable care) or during the commission of an unlawful misdemeanor." },
+                { topic: "Felony Murder Doctrine", exp: "An unintentional death occurring during the commission or attempted commission of an inherently dangerous felony (BARRK: Burglary, Arson, Robbery, Rape, Kidnapping) is murder." },
+                { topic: "Larceny", exp: "Larceny is the trespassory taking and carrying away of the personal property of another with the specific intent to permanently deprive the owner thereof." },
+                { topic: "Embezzlement", exp: "Embezzlement is the fraudulent conversion of the property of another by one who is already in lawful possession of the property." },
+                { topic: "False Pretenses", exp: "False Pretenses requires obtaining title to the property of another by an intentional false representation of past or existing material fact, with intent to defraud." },
+                { topic: "Larceny by Trick", exp: "Larceny by Trick occurs when the defendant obtains mere possession (not title) of personal property through an intentional fraudulent misrepresentation." },
+                { topic: "Robbery", exp: "Robbery is a larceny committed from the person or immediate presence of another by means of force or threat of immediate physical harm." },
+                { topic: "Burglary", exp: "Common law burglary requires breaking and entering the dwelling of another at nighttime with the specific intent to commit a felony therein." },
+                { topic: "Arson", exp: "Arson is the malicious burning of the dwelling of another; charring of the structural wood fibers is required, whereas mere scorching or smoking is insufficient." },
+                { topic: "Attempt", exp: "Attempt requires the specific intent to commit the target crime accompanied by an overt act in furtherance beyond mere preparation (a substantial step under modern law)." },
+                { topic: "Conspiracy", exp: "Conspiracy is an agreement between two or more persons to accomplish an unlawful objective, with specific intent to agree and commit the crime, plus an overt act under modern statutes." },
+                { topic: "Solicitation", exp: "Solicitation is enticing, encouraging, requesting, or commanding another to commit a felony with the specific intent that the crime be committed; merges into completed conspiracy or crime." },
+                { topic: "Self-Defense", exp: "An actor is privileged to use proportional non-deadly force when reasonably believing unlawful physical force is imminent; deadly force requires reasonable belief of imminent death or serious bodily harm." },
+                { topic: "Insanity / M'Naghten Rule", exp: "Under the M'Naghten rule, a defendant is legally insane if, due to mental disease or defect at the time of the act, they did not know the nature and quality of the act or did not know the act was wrong." }
+            ],
+            contracts: [
+                { topic: "Contract Formation / Mutual Assent", exp: "Formation requires mutual assent (a valid offer and acceptance) supported by sufficient legal consideration or an enforceable substitute." },
+                { topic: "Offer Requirements", exp: "An offer is a manifestation of willingness to enter into a bargain, sufficiently definite in terms so that a reasonable person would understand assent creates a binding contract." },
+                { topic: "Revocation of Offers", exp: "An offeror may revoke an ordinary offer at any time prior to acceptance; firm offers under UCC § 2-205 require signed writings by merchants holding an offer open up to 3 months without consideration." },
+                { topic: "Acceptance / Mirror Image vs. UCC § 2-207", exp: "Under common law, acceptance must mirror the exact terms of the offer; under UCC § 2-207, a definite expression of acceptance operates as acceptance even if stating additional or different terms." },
+                { topic: "Consideration", exp: "Consideration requires a bargained-for exchange of legal value; past consideration or moral obligation cannot support a binding contract." },
+                { topic: "Promissory Estoppel", exp: "Under Restatement (Second) § 90, a promise lacking consideration is enforceable if the promisor reasonably expected detrimental reliance, actual reliance occurred, and injustice can only be avoided by enforcement." },
+                { topic: "Statute of Frauds", exp: "Contracts within the Statute of Frauds (MY LEGS: Marriage, Year+, Land, Executor, Goods $500+, Suretyship) require a writing signed by the party to be charged indicating essential terms." },
+                { topic: "Parol Evidence Rule", exp: "The Parol Evidence Rule bars prior or contemporaneous extrinsic oral or written agreements that contradict or alter an integrated written agreement." },
+                { topic: "Anticipatory Repudiation", exp: "Anticipatory Repudiation occurs when a party makes an unequivocal, unambiguous statement before performance is due that they will not perform, allowing immediate suit for breach." },
+                { topic: "Material vs. Minor Breach", exp: "A material breach deprives the non-breaching party of the substantial benefit of the bargain, discharging the non-breaching party's duties; a minor breach allows damages but requires continued performance." },
+                { topic: "Expectation Damages", exp: "Expectation damages place the injured party in the financial position they would have occupied had the contract been fully performed without breach." },
+                { topic: "Mitigation of Damages", exp: "An injured party cannot recover damages that could have been avoided or prevented through reasonable efforts without undue risk or burden." }
+            ],
+            mixed: [
+                { topic: "Torts / Core Negligence", exp: "Negligence requires proof of duty, breach under the reasonable person standard, actual but-for cause, proximate causation within the scope of foreseeable risk, and legally cognizable damages." },
+                { topic: "Torts / Strict Products Liability", exp: "Commercial distributors and sellers are strictly liable for injuries caused by products sold in a defective condition (manufacturing, design, or warning defect) that is unreasonably dangerous." },
+                { topic: "Criminal Law / Malice Murder", exp: "Murder requires an unlawful homicide committed with malice aforethought (intent to kill, intent to commit grievous bodily harm, depraved-heart recklessness, or felony murder)." },
+                { topic: "Criminal Law / Inchoate Offenses", exp: "Attempt requires specific intent and an overt act beyond preparation; conspiracy requires agreement and intent; solicitation merges into completed conspiracy or attempt." },
+                { topic: "Contracts / UCC Article 2 vs. Common Law", exp: "UCC Article 2 governs transactions in goods (movable personal property); common law governs real estate, services, and construction contracts." },
+                { topic: "Contracts / Remedies & Breach", exp: "Remedies include expectation damages, reliance damages, restitution, and specific performance for unique goods or real estate." }
+            ]
+        };
+
+        // Extract saved score percentage from localStorage
         function getSetPercentage(categoryKey, setNumber) {
             const padNum = String(setNumber).padStart(2, '0');
             const possibleHistoryKeys = [
@@ -508,7 +609,6 @@
                 }
             }
 
-            // Check direct stored score/answers key
             const directScore = localStorage.getItem(`fylsx_${categoryKey}_set${setNumber}_score_v25`) ||
                                 localStorage.getItem(`fylsx_${categoryKey}_set${setNumber}_score_v100`) ||
                                 localStorage.getItem(`fylsx_${categoryKey}_set${setNumber}_score_v23`);
@@ -529,7 +629,7 @@
             return null;
         }
 
-        // Render card with live percentage badge
+        // Render card with lighter-weight, darker green percentage
         function renderExamSection(gridId, categoryKey, filePrefix, displayName, totalSets, defaultSubtitle) {
             const container = document.getElementById(gridId);
             if (!container) return;
@@ -541,7 +641,7 @@
                 
                 let scoreBadgeHtml = `<span class="score-display-badge unattempted">—</span>`;
                 if (percent !== null) {
-                    scoreBadgeHtml = `<span class="score-display-badge"><strong>${percent}%</strong></span>`;
+                    scoreBadgeHtml = `<span class="score-display-badge">${percent}%</span>`;
                 }
 
                 html += `
@@ -567,7 +667,94 @@
             renderExamSection("mixed-grid", "mixed", "Mixed", "Mixed Exam", 40, "Multi-Subject FYLSX Practice Exam");
         }
 
-        // Category-Wide Export Engine (Aggregates across all sets in a subject)
+        // Category-Wide Unique Rules Exporter (Always Exports Comprehensive Rules)
+        function exportCategoryRules(categoryKey, categoryTitle, totalSets) {
+            const uniqueRulesMap = new Map();
+
+            // 1. Populate from Master Database
+            const staticList = masterRuleDatabase[categoryKey] || masterRuleDatabase.torts;
+            staticList.forEach(item => {
+                const cleanTopic = item.topic.trim();
+                const cleanExp = item.exp.trim().replace(/[\r\n]+/g, " ");
+                if (!uniqueRulesMap.has(cleanTopic)) {
+                    uniqueRulesMap.set(cleanTopic, new Set());
+                }
+                uniqueRulesMap.get(cleanTopic).add(cleanExp);
+            });
+
+            // 2. Scan localStorage to supplement with any additional live student snapshot rules
+            for (let i = 1; i <= totalSets; i++) {
+                const versions = ["v25", "v100", "v23", "v24"];
+                for (let v of versions) {
+                    const snapKey = `fylsx_${categoryKey}_set${i}_exam_data_${v}`;
+                    const raw = localStorage.getItem(snapKey);
+                    if (raw) {
+                        try {
+                            const parsed = JSON.parse(raw);
+                            if (Array.isArray(parsed)) {
+                                parsed.forEach(item => {
+                                    if (item.topic && item.exp) {
+                                        const cleanTopic = item.topic.trim();
+                                        const cleanExp = item.exp.trim().replace(/[\r\n]+/g, " ");
+                                        if (!uniqueRulesMap.has(cleanTopic)) {
+                                            uniqueRulesMap.set(cleanTopic, new Set());
+                                        }
+                                        uniqueRulesMap.get(cleanTopic).add(cleanExp);
+                                    }
+                                });
+                            }
+                        } catch (e) {}
+                    }
+                }
+            }
+
+            const sortedTopics = Array.from(uniqueRulesMap.keys()).sort((a, b) => a.localeCompare(b));
+
+            let tableOutput = "**Legal Topic Category**\t**Black Letter Law Analysis / Core Rule**\n";
+            let displayOutput = `**${categoryTitle.toUpperCase()} - COMPLETE UNIQUE RULES DIRECTORY (ACROSS SETS 01–${String(totalSets).padStart(2, '0')})**\n`;
+            displayOutput += `========================================================================================\n\n`;
+
+            sortedTopics.forEach(topic => {
+                const rules = Array.from(uniqueRulesMap.get(topic));
+                rules.forEach(rule => {
+                    tableOutput += `**${topic}**\t${rule}\n`;
+                    displayOutput += `• [**${topic}**]\n  ${rule}\n\n`;
+                });
+            });
+
+            const exportBundle = {
+                category: categoryTitle,
+                categoryKey: categoryKey,
+                exportType: "unique_rules",
+                exportDate: new Date().toLocaleString(),
+                totalSetsScanned: totalSets,
+                totalUniqueTopics: sortedTopics.length,
+                rules: Array.from(uniqueRulesMap.entries()).map(([topic, set]) => ({
+                    topic: topic,
+                    explanations: Array.from(set)
+                }))
+            };
+
+            currentExportDataText = tableOutput;
+            currentExportDataJSON = JSON.stringify(exportBundle, null, 2);
+            isShowingJSON = false;
+
+            navigator.clipboard.writeText(tableOutput).then(() => {
+                openCategoryModal(
+                    `Export All ${categoryTitle} Rules`,
+                    `All unique Black Letter Law rules for ${categoryTitle} have been sorted and copied to your clipboard in Tab-Delimited format.\n\nTo make a table in Word:\n1. Paste into Word (Cmd+V / Ctrl+V)\n2. Highlight text > Click Insert > Table > Convert Text to Table (Separate at Tabs)`,
+                    displayOutput
+                );
+            }).catch(() => {
+                openCategoryModal(
+                    `Export All ${categoryTitle} Rules`,
+                    `Review or copy the unique rules compiled across all ${categoryTitle} sets:`,
+                    displayOutput
+                );
+            });
+        }
+
+        // Category-Wide Export Engine (Aggregates Missed / Flagged across all sets)
         function exportCategoryData(categoryKey, categoryTitle, totalSets, mode) {
             const isMissedMode = mode === "missed";
             const typeLabel = isMissedMode ? "Missed Questions" : "Flagged Questions";
@@ -576,8 +763,6 @@
 
             for (let i = 1; i <= totalSets; i++) {
                 const padNum = String(i).padStart(2, '0');
-                
-                // Scan stored answers, flags, and exam snapshots
                 const versions = ["v25", "v100", "v23", "v24"];
                 let foundAnswers = null;
                 let foundFlags = null;
@@ -593,7 +778,6 @@
                     if (savedFlags) foundFlags = JSON.parse(savedFlags);
                 }
 
-                // Check stored history for snapshot diagnostics
                 if (isMissedMode && foundAnswers) {
                     Object.keys(foundAnswers).forEach(qIdx => {
                         totalFound++;
@@ -618,7 +802,6 @@
                 }
             }
 
-            // Build Tab-Delimited / Word Table compatible text output with BOLD categories
             let outputText = `**${categoryTitle.toUpperCase()} - ALL ${typeLabel.toUpperCase()} (ACROSS SETS 01–${String(totalSets).padStart(2, '0')})**\n`;
             outputText += `========================================================================================\n\n`;
             outputText += `**Set Number**\t**Question Ref**\t**Legal Category / Topic**\t**Status**\n`;
@@ -632,7 +815,6 @@
                 });
             }
 
-            // Build JSON structured export block
             const exportBundle = {
                 category: categoryTitle,
                 categoryKey: categoryKey,
