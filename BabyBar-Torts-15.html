@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="GoBabyBar">
-    <title>California Baby Bar (FYLSX) - 25 Torts Practice Exam (Set 10)</title>
+    <title>California Baby Bar (FYLSX) - 25 Advanced Torts Practice Exam (Set 15)</title>
     <style>
         :root {
             --primary: #1B365D;
@@ -25,7 +25,6 @@
             --badge-blue-hover: #7DD3FC;
         }
 
-        /* Persistent Multiple Highlighting Feature */
         mark.user-highlight {
             background-color: #FEF08A;
             color: #713F12;
@@ -74,7 +73,6 @@
             opacity: 0.9;
         }
 
-        /* Tracker and Progress Bar Container */
         .tracker-wrapper {
             position: sticky;
             top: 10px;
@@ -96,7 +94,6 @@
             gap: 0.6rem;
         }
 
-        /* Live Progress Bar with Clean Numeric Counters */
         .progress-bar-container {
             display: flex;
             width: 100%;
@@ -558,8 +555,8 @@
             <a href="index.html" style="background: rgba(255,255,255,0.2); color: white; padding: 0.3rem 0.7rem; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: bold;">← Back to Menu</a>
             <span style="font-size: 0.8rem; opacity: 0.8;">GoBabyBar Exam Suite</span>
         </div>
-        <h1>California Baby Bar (FYLSX) Practice Exam - Set 10</h1>
-        <p>25 Deep Strict Liability, Intentional Torts & Negligence Analytics</p>
+        <h1>California Baby Bar (FYLSX) Practice Exam - Set 15</h1>
+        <p>25 Advanced Master-Level Torts Scenarios & Complete Analytics</p>
     </header>
 
     <div class="tracker-wrapper">
@@ -570,27 +567,18 @@
             </div>
 
             <div class="action-group">
-                <!-- History Button -->
                 <button class="btn-action-tool btn-history" onclick="showStudentHistory()" title="View Past Test History">
                     📊 History
                 </button>
-
-                <!-- Export Session Button -->
                 <button class="btn-action-tool btn-export-session" onclick="exportFullStudentSession()" title="Export your answers and highlights to share">
                     📤 Export
                 </button>
-
-                <!-- Import Session Button -->
                 <button class="btn-action-tool btn-import-session" onclick="promptImportSession()" title="Import another student's test session to review">
                     📥 Import
                 </button>
-
-                <!-- Process of Elimination Toggle -->
                 <button class="btn-elimination-toggle active" id="elimination-toggle-btn" title="Disable Elimination Mode" onclick="toggleEliminationMode()">
                     ✂️
                 </button>
-
-                <!-- Flagged Dropdown Menu -->
                 <select id="flag-dropdown" class="dropdown-menu dropdown-flag" onchange="handleFlagDropdown(this.value)">
                     <option value="" disabled selected>🚩 Flagged (0) ▾</option>
                     <option value="all">🌐 Show All Questions (Full Set)</option>
@@ -599,8 +587,6 @@
                     <option value="summary">Flagged Rule Analysis</option>
                     <option value="export">Export Flagged (JSON)</option>
                 </select>
-
-                <!-- Missed Dropdown Menu -->
                 <select id="missed-dropdown" class="dropdown-menu dropdown-missed" onchange="handleMissedDropdown(this.value)">
                     <option value="" disabled selected>❌ Missed (0) ▾</option>
                     <option value="all">🌐 Show All Questions (Full Set)</option>
@@ -609,15 +595,10 @@
                     <option value="summary">Missed Rule Analysis</option>
                     <option value="export">Export Missed (JSON)</option>
                 </select>
-
-                <!-- Jump Selector -->
-                <select id="jump-select" class="dropdown-menu" onchange="jumpToQuestion(this.value)">
-                    <!-- Populated dynamically -->
-                </select>
+                <select id="jump-select" class="dropdown-menu" onchange="jumpToQuestion(this.value)"></select>
             </div>
         </div>
 
-        <!-- Live Progress Bar with Clean Numeric Counters -->
         <div class="progress-bar-container">
             <div class="progress-segment segment-correct" id="bar-correct" title="Correct"></div>
             <div class="progress-segment segment-missed" id="bar-missed" title="Missed"></div>
@@ -625,15 +606,12 @@
         </div>
     </div>
 
-    <!-- Active Filter Indicator Banner -->
     <div class="filter-status-banner" id="filter-banner">
         <span id="filter-banner-text">Viewing filtered subset</span>
         <button class="btn-banner-reset" onclick="returnToFullSet()">Return to Full Exam (25 Qs)</button>
     </div>
 
-    <div id="quiz-container">
-        <!-- Question Card Populated via JS -->
-    </div>
+    <div id="quiz-container"></div>
 
     <div class="nav-controls">
         <button class="btn" id="prev-btn" onclick="navigate(-1)">← Previous</button>
@@ -641,7 +619,6 @@
         <button class="btn" id="next-btn" onclick="navigate(1)">Next →</button>
     </div>
 
-    <!-- Universal Display / Export Modal Box -->
     <div class="modal-box" id="info-modal-box">
         <div style="display:flex; justify-content:space-between; align-items:center;">
             <h3 id="modal-title" style="color: var(--primary);">Analysis / Export</h3>
@@ -653,334 +630,334 @@
     </div>
 
     <script>
-        // 25 Unique Advanced Torts Questions with Balanced Random Answer Keys (A, B, C, D)
+        // 25 Master-Level Torts Questions with Balanced Randomized Answer Keys (A, B, C, D)
         const examData = [
             {
                 id: 1,
-                topic: "Battery / Non-Consensual Physician Substitution ('Ghost Surgery')",
-                fp: "Questions 1–2 are based on the following fact situation:\nPatient specifically retained Chief Surgeon, a renowned specialist, to perform a complex elective spinal fusion surgery after executing a consent form naming Chief Surgeon exclusively. After Patient was placed under general anesthesia, Chief Surgeon left the hospital to attend a golf tournament and directed Surgical Associate to perform the entire operation. Surgical Associate performed the surgery with flawless technical skill, causing zero medical complications or physical defects.",
-                q: "In Patient's civil tort action against Surgical Associate under the doctrine of Perna v. Pirozzi, Patient will:",
+                topic: "IIED / Debt Collection Exploiting Known Vulnerabilities",
+                fp: "Debtor owed $500 on a medical bill. Collector knew Debtor had recently been discharged from psychiatric inpatient care following a severe suicide attempt and was under strict medical orders to avoid severe stress. Collector called Debtor's workplace ten times in one hour, announced to coworkers over speakerphone that Debtor was a deadbeat lunatic, and told Debtor: 'You should have finished the job in the hospital if you can't pay your bills.' Debtor suffered an acute psychiatric relapse requiring emergency hospitalization.",
+                q: "In Debtor's action against Collector for Intentional Infliction of Emotional Distress (IIED), Debtor will most likely:",
                 opts: [
-                    "Lose, because Surgical Associate performed the surgery with utmost technical skill and caused no physical bodily harm.",
-                    "Lose, because general hospital admission consent forms authorize attending surgeons to delegate procedures to associates.",
-                    "Prevail for Battery, because an operation performed by a substituted surgeon without patient consent is battery.",
-                    "Prevail only under professional medical malpractice upon proving measurable out-of-pocket financial loss."
+                    "Lose, because verbal insults regarding delinquent financial obligations are classified as common indignities.",
+                    "Prevail, because deliberately weaponizing a known psychiatric vulnerability exceeds all bounds of civilized decency.",
+                    "Lose, because statutory debt collection remedies preempt common law emotional distress actions.",
+                    "Prevail only if Debtor proves Collector made unauthorized physical entries onto Debtor's residential curtilage."
                 ],
-                ans: 2, // C
-                exp: "Under Perna v. Pirozzi and California law, when a patient consents to surgery by a specific physician, an operation performed by a substituted 'ghost surgeon' without the patient's knowledge or consent constitutes an intentional Battery as a matter of law."
+                ans: 1, // B
+                exp: "Under Restatement (Second) of Torts § 46 cmt. f, conduct that might otherwise be considered mere insult becomes Extreme and Outrageous when the actor has knowledge of the plaintiff's peculiar susceptibility or mental vulnerability and proceeds to exploit it recklessly or intentionally."
             },
             {
                 id: 2,
-                topic: "Battery / Measure of Damages in Non-Consensual Ghost Surgery",
-                fp: "Questions 1–2 are based on the following fact situation:\nPatient specifically retained Chief Surgeon, a renowned specialist, to perform a complex elective spinal fusion surgery after executing a consent form naming Chief Surgeon exclusively. After Patient was placed under general anesthesia, Chief Surgeon left the hospital to attend a golf tournament and directed Surgical Associate to perform the entire operation. Surgical Associate performed the surgery with flawless technical skill, causing zero medical complications or physical defects.",
-                q: "If Patient sues Chief Surgeon for intentional deceit and battery, what damages is Patient legally entitled to recover?",
+                topic: "False Imprisonment / Forfeiture of Shopkeeper's Privilege via Excessive Force",
+                fp: "Store Guard had reasonable grounds to believe Shopper concealed an unpaid $5 compact disc in her jacket. Guard sprinted across the parking lot, tackled Shopper from behind onto concrete, knelt on her neck, and handcuffed her to a metal pipe in an unventilated basement boiler room for 3 hours while shouting profanities. Shopper actually possessed the unpaid disc.",
+                q: "If Shopper sues Store for False Imprisonment and Battery, Store's defense of Shopkeeper's Privilege will:",
                 opts: [
-                    "Strictly nominal damages capped at $1.00, because the surgery successfully cured Patient's underlying condition.",
-                    "Restitution of surgical fees paid, nominal damages for battery, and compensation for mental anguish and dignitary harm.",
-                    "Zero damages, because the doctrine of avoidable consequences requires Patient to offset health improvements against harm.",
-                    "Treble statutory damages under the California Consumers Legal Remedies Act for fraudulent medical advertising."
+                    "Succeed, because catching an actual guilty thief grants commercial merchants absolute immunity.",
+                    "Succeed, provided Store summoned local law enforcement dispatch before the 3-hour window expired.",
+                    "Fail, because using excessive physical force and an unreasonable manner of confinement forfeits the privilege.",
+                    "Fail only if Shopper tenders payment for the concealed compact disc prior to the formal filing of the complaint."
                 ],
-                ans: 1, // B
-                exp: "In a ghost surgery battery action, even where no physical injury occurred, the patient is entitled to recover nominal damages for the unpermitted physical invasion, compensatory damages for mental anguish and dignitary offense, and full restitution of professional fees."
+                ans: 2, // C
+                exp: "The Shopkeeper's Privilege (Cal. Penal Code § 490.5 / Restatement (Second) of Torts § 120A) requires: (1) reasonable grounds, (2) reasonable duration, and (3) a REASONABLE MANNER of detention. Deploying excessive force, violent physical tackling, or abusive confinement forfeits the privilege entirely, even if the suspect is guilty."
             },
             {
                 id: 3,
-                topic: "False Imprisonment / De Facto Confinement via Withholding Essential Property",
-                q: "Driver drove Passenger to an isolated desert location 25 miles from the nearest town in 105-degree heat. After an argument, Driver stepped out of the vehicle, took the car keys, cellular phone, and water bottles from Passenger's bag, locked the car, and drove away in a companion's truck, leaving Passenger stranded. Passenger was uninjured but forced to wait 6 hours until a ranger passed. In Passenger's suit for False Imprisonment:",
+                topic: "Battery / Offensive Touching of Objects Intimately Connected to Person",
+                q: "Protester stood quietly holding a wooden political placard resting against his chest. Counter-Protester approached, spat directly onto the placard, and violently wrenched the sign out of Protester's hands without touching Protester's physical skin, shouting racial epithets. Protester suffered no physical pain but was deeply humiliated. In Protester's action for Battery:",
                 opts: [
-                    "Driver will prevail, because Passenger was situated in an open, unfenced desert expanse with unrestricted physical egress.",
-                    "Driver will prevail, because the tort of false imprisonment requires physical locking of four walls or threats of battery.",
-                    "Passenger will prevail only under trespass to chattels for the temporary unauthorized taking of the cellular phone.",
-                    "Passenger will prevail, because taking essential property in a remote hostile environment creates de facto complete confinement."
+                    "Protester will prevail, because intentional unpermitted contact with an object intimately connected to the body constitutes battery.",
+                    "Counter-Protester will prevail, because the tort of battery strictly requires direct anatomical flesh-to-flesh physical contact.",
+                    "Counter-Protester will prevail, because political placards displayed in public parks are subject to qualified speech fair use.",
+                    "Protester will prevail only under trespass to chattels, capping recovery at the fair market replacement value of the wooden placard."
                 ],
-                ans: 3, // D
-                exp: "False Imprisonment can be accomplished without physical walls or locks where the defendant removes the plaintiff's essential means of travel or survival (such as car keys or water) in a remote, dangerous environment where walking away presents an unreasonable hazard."
+                ans: 0, // A
+                exp: "Under Fisher v. Carrousel Motor Hotel, the tort of Battery encompasses intentional offensive or harmful contact not only with the naked body, but with anything intimately connected or attached to the person (such as clothing, a cane, an umbrella, or an object held in the hands)."
             },
             {
                 id: 4,
-                topic: "Trespass to Land / Subsurface Hydraulic Fracturing Migrations (Fracking)",
-                q: "Gas Corp. owned mineral rights on Blackacre. To extract natural gas, Gas Corp. conducted hydraulic fracturing (fracking) operations 8,000 feet beneath the surface. The high-pressure fracking fluids and proppant sand crossed the vertical subterranean boundary line 8,000 feet deep into Neighbor's adjoining Whiteacre parcel, draining $500,000 in natural gas reserves. In Neighbor's suit for Trespass to Land and Conversion against Gas Corp.:",
+                topic: "Trespass to Land / Low-Altitude Drone Invasions Beneath Navigable Airspace",
+                q: "Drone Pilot flew a commercial aerial camera drone repeatedly at an altitude of 15 feet directly above Homeowner's private enclosed backyard, hovering outside bedroom windows and blowing patio furniture with rotor wash. Federal aviation regulations designate navigable public airspace as beginning at 500 feet. Homeowner sued Pilot for Trespass to Land. Pilot argued flight through atmospheric air is never trespass. Result?",
                 opts: [
-                    "Gas Corp. is liable for Trespass to Land, because intentionally projecting pressurized fluids across subsurface boundaries is tortious.",
-                    "Gas Corp. is completely shielded from liability under the traditional 'Rule of Capture' governing hydrocarbon reservoirs.",
-                    "Gas Corp. is not liable, because subsurface property rights terminate at 500 feet beneath the ground under mining statutes.",
-                    "Neighbor's claim is completely preempted by the federal Energy Policy Act of 2005 governing hydraulic fracturing."
+                    "Pilot wins, because trespass to real property strictly requires physical tactile contact with the surface topsoil.",
+                    "Pilot wins under federal preemption, because the FAA holds exclusive plenary control over all air down to the ground.",
+                    "Homeowner is restricted exclusively to an action for private nuisance upon proving substantial physical property damage.",
+                    "Homeowner wins, because intrusions into the immediate reaches of airspace that interfere with enjoyment constitute trespass."
                 ],
-                ans: 0, // A
-                exp: "Intentionally causing physical fluids, proppants, and fractures to cross subterranean property lines onto an adjoining owner's land constitutes an actionable physical invasion supporting Trespass to Land."
+                ans: 3, // D
+                exp: "Under United States v. Causby and Restatement (Second) of Torts § 159(2), flights through the airspace above another's land constitute Trespass to Land if they enter into the immediate reaches of the airspace next to the land and interfere substantially with the owner's actual use and enjoyment."
             },
             {
                 id: 5,
-                topic: "Strict Products Liability / The 'Malfunction Theory' of Circumstantial Defect (Cassisi)",
-                q: "Buyer purchased a brand-new clothes dryer from Retailer. On the third day of normal residential use, while drying a single towel, the dryer spontaneously erupted into flames, completely destroying Buyer's laundry room. Because the fire consumed the entire dryer, expert engineers could not identify the specific electrical wire that shorted out. In Buyer's strict products liability lawsuit against Manufacturer (Cassisi v. Maytag Co.):",
+                topic: "Conversion / Dominion Over Electronic Intangibles & Commercial Accounts",
+                q: "Software Engineer created a proprietary cloud database containing unique, unbacked-up customer lists. Disgruntled Partner logged in with administrative credentials, changed all encryption keys, locked Engineer out, and wiped the primary servers, permanently destroying the data. Engineer sued Partner for Conversion. Partner argued intangible digital code is not chattel. Result?",
                 opts: [
-                    "Buyer's claim is barred as a matter of law, because strict products liability requires direct expert proof of the specific component.",
-                    "Buyer can establish a defect under the 'Malfunction Theory' through circumstantial evidence of normal use and failure.",
-                    "Manufacturer is entitled to a directed verdict under the economic loss rule for accidental thermal appliance destruction.",
-                    "Buyer is restricted exclusively to an action for breach of the implied warranty of fitness under the Uniform Commercial Code."
+                    "Partner wins, because common law conversion applies strictly to physical, tangible movable personal property.",
+                    "Engineer wins, because intangible electronic property rights merged into identifiable digital systems are subject to conversion.",
+                    "Engineer is restricted exclusively to statutory trade secret misappropriation under the California Uniform Trade Secrets Act.",
+                    "Partner wins, because joint business partners enjoy absolute common law immunity from property torts between partners."
                 ],
                 ans: 1, // B
-                exp: "Under the 'Malfunction Theory' (Restatement (Third) of Torts: Products Liability § 3 / Cassisi v. Maytag Co.), a plaintiff may prove a product defect circumstantially if the incident was of a kind that ordinarily occurs as a result of product defect and was not solely the result of other causes."
+                exp: "Under modern conversion doctrine (Kremen v. Cohen), intangible property rights that are defined, capable of exclusive possession, and merged into an electronic or digital medium (like domain names, digital ledgers, and database accounts) are fully subject to the tort of Conversion."
             },
             {
                 id: 6,
-                topic: "Strict Products Liability / Duty to Warn Idiosyncratic Allergic Reactions in Population Subgroups",
-                q: "Cosmetics Co. manufactured a hair dye containing a chemical compound that was completely harmless to 99.9% of the population, but predictably caused severe, permanent blindness in an identifiable subgroup of approximately 1 in 10,000 consumers with a specific genetic enzyme trait. Cosmetics Co. included zero warnings on the packaging. Consumer, who possessed the genetic trait, used the dye and was blinded. In Consumer's strict products liability failure-to-warn suit:",
+                topic: "Negligence / Scope of Rescue Doctrine & Reckless Interventions",
+                q: "Driver negligently crashed into a utility pole, causing power lines to spark on the car roof. Driver sat safely inside the insulated vehicle waiting for utility crews. Bystander saw the sparks, panicked, sprinted across active highway lanes without looking, and was struck by a speeding truck. Bystander sued Driver under the Rescue Doctrine ('danger invites rescue'). Driver's best defense is:",
                 opts: [
-                    "Cosmetics Co. is not liable, because a manufacturer owes no legal duty to warn of risks that affect under one percent of users.",
-                    "Consumer's claim is completely barred under the doctrine of primary assumption of risk for using chemical hair agents.",
-                    "Cosmetics Co. is strictly liable for failure to warn, because a manufacturer must warn of known risks to an identifiable subgroup.",
-                    "Cosmetics Co. is liable only if Consumer can prove that Cosmetics Co. executives possessed actual subjective malice."
+                    "Bystander's rescue attempt was rash, reckless, and wanton under the circumstances, severing proximate causation.",
+                    "The Rescue Doctrine applies exclusively to sworn professional first responders such as municipal firefighters.",
+                    "Driver was completely free from negligence because utility poles are maintained by independent public utilities.",
+                    "Bystander suffered no direct physical impact from the downed electrical power lines or Driver's vehicle."
                 ],
-                ans: 2, // C
-                exp: "Under Restatement (Second) of Torts § 402A cmt. j, a manufacturer is strictly liable for failure to warn of an allergic or idiosyncratic reaction if the product contains an ingredient to which an identifiable, appreciable number of people are allergic, and the danger is not generally known."
+                ans: 0, // A
+                exp: "Under the Rescue Doctrine (Wagner v. International Railway Co.), while 'danger invites rescue' and ordinary contributory negligence does not bar a rescuer, a rescuer IS barred from recovery if their rescue attempt was rash, reckless, or executed in a wanton manner under the circumstances."
             },
             {
                 id: 7,
-                topic: "Negligence / California Toxic Exposure Substantial Factor Standard (Rutherford)",
-                q: "Worker developed mesothelioma after working for 30 years in shipyards where he was exposed to airborne asbestos fibers from products manufactured by 20 different companies. Medical science established that all inhaled asbestos fibers cumulatively contributed to the cellular DNA damage causing cancer, but it was scientifically impossible to prove which specific manufacturer's fiber triggered the final malignancy. In Worker's suit under California law (Rutherford v. Owens-Illinois):",
+                topic: "Landowner Duty / Recreational Use Immunity & Willful Failure to Warn",
+                q: "Rancher allowed the public to hike across his scenic mountain acreage without charging a fee. Rancher knew that an abandoned 100-foot vertical mine shaft situated directly adjacent to the main hiking trail had collapsed and was concealed by thin brush, creating a lethal trap. Rancher posted zero warning signs. Hiker fell into the shaft, suffering paralysis. In Hiker's suit against Rancher under California Civil Code § 846:",
                 opts: [
-                    "Worker's lawsuit fails against all defendants, because Worker cannot prove which asbestos fiber was the 'but-for' cause.",
-                    "Worker must join 100% of all global asbestos manufacturers under the mandatory market share rules of Sindell v. Abbott Labs.",
-                    "Worker is restricted exclusively to workers' compensation statutory death and disability benefits against the shipyard.",
-                    "Worker establishes causation by proving the defendant's product was a substantial factor contributing to aggregate risk."
+                    "Rancher is completely immune from all liability, because recreational use immunity bars all claims by free recreational entrants.",
+                    "Hiker is barred from recovery under primary assumption of risk for hiking on unimproved rural wilderness terrain.",
+                    "Rancher is liable, because recreational use immunity does not shield a landowner's willful or malicious failure to guard or warn.",
+                    "Rancher is strictly liable under the doctrine of Rylands v. Fletcher for maintaining non-natural mining excavations on real property."
                 ],
-                ans: 3, // D
-                exp: "In Rutherford v. Owens-Illinois, Inc. (16 Cal.4th 953), California held that in asbestos cancer cases where individual fiber causation is unprovable, the plaintiff satisfies causation by showing the defendant's product was a 'substantial factor' contributing to the aggregate dose and resulting biological risk."
+                ans: 2, // C
+                exp: "Under California Civil Code § 846, while landowners generally owe no duty of care to keep premises safe for free recreational entrants, an explicit statutory exception provides that immunity does NOT apply to 'willful or malicious failure to guard or warn against a dangerous condition, use, structure or activity.'"
             },
             {
                 id: 8,
-                topic: "Landowner Duty / The 'Mode of Operation' Rule in Self-Service Retail Stores",
-                q: "Customer was shopping in the self-service produce section of Grocery Store, where customers routinely bagged their own slippery grapes from open bins. Customer slipped on a loose grape and broke her hip. Customer could not prove how long the grape had been on the floor before the fall. In a jurisdiction following the 'Mode of Operation' rule (and California retail slip-and-fall standards):",
+                topic: "Negligence / Negligent Entrustment Requirements",
+                q: "Parent gave car keys to 22-year-old Adult Child. Parent knew Child had a valid driver's license, had never received a traffic citation, and had zero history of collisions or substance abuse. While driving lawfully, Child momentarily looked at a billboard, ran a red light, and struck Pedestrian. In Pedestrian's negligent entrustment suit against Parent:",
                 opts: [
-                    "Customer can establish premises liability without proving notice, because the mode of operation created continuous hazard.",
-                    "Customer loses as a matter of law, because premises liability strictly requires proof that the grape was on the floor for a long time.",
-                    "Grocery Store is strictly liable as an absolute commercial insurer of all floor safety conditions within retail establishments.",
-                    "Customer's claim is completely barred under the doctrine of secondary implied assumption of risk for walking in produce aisles."
+                    "Parent is vicariously liable under the common law Family Car Doctrine for all household vehicular operations.",
+                    "Parent is strictly liable as the registered vehicle owner under absolute automobile bailment principles.",
+                    "Parent is liable under res ipsa loquitur, because parents owe non-delegable duties regarding adult children driving family cars.",
+                    "Parent is not liable, because negligent entrustment requires proof that the entrustor knew or should have known of incompetence."
                 ],
-                ans: 0, // A
-                exp: "Under the 'Mode of Operation' rule, a customer in a self-service retail store is NOT required to prove that the merchant had actual or constructive notice of the specific dropped item if the merchant's chosen method of business operation inherently creates a continuous, foreseeable risk of spillage."
+                ans: 3, // D
+                exp: "Negligent Entrustment requires proving that the supplier of a chattel knew or had reason to know that the person to whom it was supplied was incompetent, reckless, or inexperienced. Entrusting a vehicle to a licensed driver with an unblemished record cannot constitute negligent entrustment."
             },
             {
                 id: 9,
-                topic: "Negligence / Standard of Care for Cognitively Impaired / Mentally Disabled Adults",
-                q: "Adult Driver, who had an IQ of 65 and severe chronic cognitive impairment, was operating a motor vehicle at 50 mph on a rainy highway. Because of his impaired cognitive reflexes and delayed mental processing speed, Driver failed to brake for stopped traffic and rear-ended Victim. In Victim's negligence lawsuit against Driver, Driver's mental disability:",
+                topic: "Negligence / Sudden Medical Emergency Defense & Forewarning",
+                q: "Driver had suffered three unprovoked epileptic grand mal seizures during the preceding month and had been explicitly warned by his neurologist not to drive. Disregarding the warning, Driver drove to work. While driving at 35 mph, Driver suffered an instantaneous seizure, lost consciousness, and struck Pedestrian on the sidewalk. Driver asserted the Sudden Medical Incapacity defense. Result?",
                 opts: [
-                    "Lowers the applicable standard of care to that of an ordinary person with like mental capacity, intelligence, and experience.",
-                    "Is completely disregarded, because adult tortfeasors with mental or cognitive disabilities are held to reasonable person standards.",
-                    "Completely shields Driver from all civil tort liability under the common law doctrine of non compos mentis insanity immunity.",
-                    "Shifts legal tort liability automatically to Driver's legal guardian under the doctrine of absolute conservator vicarious liability."
+                    "Driver is completely exonerated, because involuntary physical actions during an unconscious seizure lack actionable volitional conduct.",
+                    "Driver is liable in negligence, because the sudden incapacity was reasonably foreseeable based on prior recent unprovoked seizures.",
+                    "Driver is strictly liable, because operating a motor vehicle with an active neurological disorder is an ultrahazardous activity.",
+                    "Driver is liable only if Pedestrian proves Driver failed to take prescribed anti-seizure medication on the morning of the collision."
                 ],
                 ans: 1, // B
-                exp: "Under Restatement (Third) of Torts § 11(c) and Williams v. Kearbey, an adult defendant's mental illness or cognitive impairment is NOT taken into account in determining whether conduct is negligent; adult defendants are held strictly to the objective standard of a reasonable person of ordinary prudence."
+                exp: "While an unforeseen, sudden loss of consciousness is a defense to negligence, the defense FAILS where the actor had prior notice, warning symptoms, or pre-existing clinical diagnoses that made a sudden incapacitating medical event reasonably foreseeable."
             },
             {
                 id: 10,
-                topic: "Defense of Others / The Modern Reasonable Mistake Rule vs. Traditional Alter-Ego Rule",
-                q: "Plainclothes Police Officer tackled Suspect to the ground on a sidewalk to execute a lawful arrest warrant. Good Samaritan walked around the corner, saw an unidentified man in street clothes wrestling Suspect to the ground with a raised knife, and reasonably and honestly believed Suspect was being murdered. Samaritan struck Officer with a heavy wooden board to protect Suspect. In Officer's battery suit against Samaritan:",
+                topic: "Negligence / Professional Malpractice & 'Trial-Within-a-Trial' Causation",
+                q: "Attorney negligently failed to file Client's valid breach of contract complaint before the statute of limitations expired, causing the action to be permanently barred. In Client's legal malpractice action against Attorney, Attorney proved that even if the contract action had been timely filed, the underlying defendant was completely bankrupt and possessed zero attachable assets. Under the 'trial-within-a-trial' doctrine:",
                 opts: [
-                    "Samaritan is liable for battery under the traditional 'alter-ego' rule, because Suspect had no legal privilege to resist lawful arrest.",
-                    "Samaritan is strictly liable, because striking a sworn law enforcement officer carrying out official duties is a tort per se.",
-                    "Samaritan is privileged under the modern majority rule, because Samaritan made a reasonable, honest mistake in defense of another.",
-                    "Samaritan is privileged only if Suspect verbally shouted a specific request for third-party rescue assistance prior to the blow."
+                    "Client is entitled to presumed general damages, because missing a statutory filing deadline establishes negligence per se.",
+                    "Attorney is held strictly liable for the full face value of the unfiled breach of contract claim as a disciplinary penalty.",
+                    "Client cannot recover compensatory damages, because Client cannot prove that a timely action would have resulted in a collectible judgment.",
+                    "Client recovers full damages under res ipsa loquitur, because procedural litigation errors create an irrebuttable presumption of loss."
                 ],
                 ans: 2, // C
-                exp: "Under the modern majority rule for Defense of Others (Restatement (Second) of Torts § 76), an actor is privileged to use reasonable force to defend a third person if the actor REASONABLY BELIEVES that the third person is in imminent danger of unlawful attack, even if that belief is based on an honest, reasonable mistake of fact."
+                exp: "In legal malpractice, causation requires proving the 'case within a case' (trial-within-a-trial): the client must prove that but for the attorney's negligence, the client would have prevailed in the underlying action AND collected a judgment. If the underlying claim was uncollectible due to insolvency, causation fails."
             },
             {
                 id: 11,
-                topic: "Public Necessity / Municipal Firebreak Demolition and Eminent Domain Immunity",
-                q: "A massive, uncontrolled urban conflagration was sweeping through a city, threatening to consume 5,000 homes. To save the city, Mayor ordered the Fire Department to dynamite Homeowner's expensive mansion to create a firebreak. The firebreak successfully halted the fire and saved thousands of structures. Homeowner sued Mayor and City for Trespass to Land and Conversion. Under the doctrine of Public Necessity (Surocco v. Geary):",
+                topic: "Negligence Per Se / Excused Statutory Violation for Greater Hazard Avoidance",
+                q: "A state safety statute required all pedestrians to walk exclusively on the left sidewalk facing oncoming vehicular traffic. Pedestrian walked on the right sidewalk because the left sidewalk was blocked by an active, violent street shootout between armed felons. While on the right sidewalk, Pedestrian was struck by a vehicle that hopped the curb. Driver asserted Pedestrian was contributorily negligent per se. Result?",
                 opts: [
-                    "City is liable for the full fair market value of the mansion under the incomplete privilege doctrine of private necessity (Vincent v. Lake Erie).",
-                    "Homeowner is entitled to treble punitive damages under state statutory civil rights acts for the unauthorized demolition of residential real estate.",
-                    "Mayor and City are completely immune from all tort damages, because public necessity is an absolute privilege protecting property destruction.",
-                    "Mayor is personally liable for conversion unless Mayor obtained an emergency judicial search and seizure warrant prior to demolition."
+                    "Pedestrian's statutory violation is excused, because compliance would have involved a greater, immediate danger to life (Tedla v. Ellman).",
+                    "Pedestrian is contributorily negligent per se, because safety statutes admit no judicial exceptions or situational excuses.",
+                    "Pedestrian is barred from all recovery under primary assumption of risk for walking near active metropolitan traffic lanes.",
+                    "Driver is relieved of all ordinary duties of care the moment Pedestrian steps onto the non-statutory sidewalk side."
                 ],
-                ans: 2, // C
-                exp: "Under the doctrine of Public Necessity (Surocco v. Geary, 3 Cal. 69), when an actor destroys or damages private property to prevent an imminent public disaster or catastrophe, the privilege is ABSOLUTE and COMPLETE, and the actor is not liable for compensatory damages in tort."
+                ans: 0, // A
+                exp: "Under Tedla v. Ellman and Restatement (Second) of Torts § 288A, a statutory safety violation is EXCUSED—and Negligence Per Se does not apply—where compliance with the statute would involve a greater risk of harm to the actor or third persons than violation."
             },
             {
                 id: 12,
-                topic: "Negligence / Proximate Cause - Thin Skull Rule vs. Unforeseeable Type of Harm (Wagon Mound)",
-                q: "Factory negligently spilled a small puddle of non-flammable oil into a marine harbor. Tanker Captain threw a red-hot metal rivet into the harbor, which landed on a floating piece of cotton waste in the oil, miraculously igniting a chemical fire that destroyed Harbor's wooden dock. Undisputed scientific testimony proved that nobody could have reasonably foreseen that oil floating on cold sea water could ever be ignited. In Harbor's negligence suit against Factory (Wagon Mound No. 1):",
+                topic: "Res Ipsa Loquitur / Exclusive Control in Dual Defendant Contexts",
+                q: "Passenger entered an elevator maintained jointly under contract by Building Owner and Elevator Service Co. The elevator cables snapped, and the car plummeted into the basement pit, injuring Passenger. Passenger proved that elevator cables do not snap absent maintenance negligence, but could not identify whether Owner or Elevator Co. was specifically at fault. In Passenger's res ipsa loquitur suit against both defendants:",
                 opts: [
-                    "Factory is liable under the direct causation test of Polemis, because the fire was a direct, unbroken physical consequence of the oil discharge.",
-                    "Factory is not liable, because proximate causation requires that the general type of harm (fire) be a foreseeable consequence of the spill.",
-                    "Factory is strictly liable under the doctrine of Rylands v. Fletcher for discharging non-natural industrial oils into navigable waters.",
-                    "Harbor's claim is completely barred under the doctrine of primary assumption of risk for constructing wooden piers in commercial harbors."
+                    "Passenger loses against both, because res ipsa loquitur strictly requires a single, solitary defendant exercising exclusive control.",
+                    "Passenger is restricted exclusively to workers' compensation statutory remedy schedules against Building Owner.",
+                    "Both defendants are completely dismissed unless Passenger introduces direct eyewitness testimony from an elevator mechanic.",
+                    "Passenger can invoke res ipsa loquitur, because shared exclusive control among defendants with joint maintenance duties satisfies the doctrine."
                 ],
-                ans: 1, // B
-                exp: "Under Overseas Tankship (UK) Ltd. v. Morts Dock & Engineering Co. (The Wagon Mound No. 1) and Restatement (Third) of Torts § 29, an actor's liability is limited to physical harms resulting from risks that made the conduct tortious (foreseeable TYPE of harm). Unforeseeable types of harm fall outside the scope of liability."
+                ans: 3, // D
+                exp: "Under modern res ipsa loquitur doctrine (and California law), the 'exclusive control' requirement is satisfied where multiple defendants share joint responsibility or collective control over the maintenance and inspection of the injury-causing instrumentality (such as a building owner and its exclusive maintenance contractor)."
             },
             {
                 id: 13,
-                topic: "Negligence / Social Host Furnishing Car Keys to Known Intoxicated Driver",
-                q: "Host hosted a residential dinner party. Guest became heavily intoxicated. When Guest prepared to leave, Host handed Guest the keys to Guest's own car, walked Guest to the driver's seat, and said: 'Drive safe.' Guest drove through an intersection at 80 mph, striking Pedestrian. In Pedestrian's negligence suit against Host in California under Civil Code § 1714:",
+                topic: "Causation / Toxic Exposure Substantial Factor Standard (Rutherford)",
+                q: "Insulator developed mesothelioma after 30 years of shipyard work where he was exposed to asbestos insulation manufactured by 12 different companies. Scientific medical consensus proved that every inhaled asbestos fiber cumulatively increased the biological risk of cellular malignancy, but it was impossible to identify which specific company's fiber triggered the terminal tumor. Under California law (Rutherford v. Owens-Illinois):",
                 opts: [
-                    "Host is directly liable for negligent entrustment, because handing car keys to an intoxicated adult is an independent actionable tort.",
-                    "Host is strictly liable under the statutory Dram Shop doctrine for aiding and abetting an impaired motor vehicle transit operation.",
-                    "Host is immune from civil liability under California Civil Code § 1714 social host immunity for returning a vehicle to its rightful owner.",
-                    "Host is liable only if Pedestrian proves Host charged an admission fee or commercial cover charge for dinner at the residence."
+                    "Insulator's lawsuit fails, because Insulator cannot satisfy the traditional mechanical 'but-for' causation standard against any defendant.",
+                    "Insulator establishes causation by proving the defendant's asbestos product was a substantial factor contributing to aggregate cancer risk.",
+                    "Insulator must join 100% of all global asbestos manufacturers under the mandatory market share rules of Sindell v. Abbott Labs.",
+                    "Insulator is restricted exclusively to statutory workers' compensation death and disability schedules against the shipyard."
                 ],
-                ans: 2, // C
-                exp: "Under California Civil Code § 1714 and established case law (Blake v. Moore), returning an intoxicated owner's own car keys does NOT constitute actionable Negligent Entrustment (the owner has a legal right to their own property), and social host immunity broadly shields hosts from guest vehicular crashes."
+                ans: 1, // B
+                exp: "In Rutherford v. Owens-Illinois, Inc. (16 Cal.4th 953), California established that in asbestos cancer cases where individual fiber causation is scientifically unprovable, the plaintiff satisfies causation by showing the defendant's product was a 'substantial factor' contributing to the aggregate dose and resulting biological risk."
             },
             {
                 id: 14,
-                topic: "Landowner Duty / Landlord Duty to Protect Tenants Against Crime in Common Areas (Kline)",
-                q: "Tenant leased an apartment in an urban residential complex. Over a six-month period, five tenants were assaulted and robbed at gunpoint in the unlocked, unlit common entrance lobby. Landlord knew of all five armed robberies, but refused to repair the broken front security door lock or replace burned-out lobby light bulbs. Intruder walked through the broken door and robbed Tenant at gunpoint in the lobby. In Tenant's suit against Landlord (Kline v. 1500 Mass. Ave.):",
+                topic: "Proximate Cause / Foreseeable Medical Malpractice vs. Grossly Reckless Care",
+                q: "Driver negligently struck Pedestrian, fracturing Pedestrian's leg. At the hospital, Treating Doctor arrived visibly intoxicated, amputated the wrong (healthy) leg, and left surgical sponges inside the abdomen, causing septic shock. Pedestrian sued Driver for the loss of both legs. Driver argued Doctor's gross malpractice was a superseding cause. Result?",
                 opts: [
-                    "Landlord is completely shielded from liability, because the intentional violent armed robbery was an independent superseding criminal cause.",
-                    "Tenant's claim is completely barred under the doctrine of secondary implied assumption of risk for leasing urban residential rental units.",
-                    "Landlord is strictly liable under the statutory warranty of habitability for all violent criminal acts committed on leased premises.",
-                    "Landlord is liable in negligence, because residential landlords owe a duty of reasonable care to maintain common areas against crime."
+                    "Driver is liable for all injuries, because any medical treatment following a car accident is foreseeable as a matter of law.",
+                    "Doctor is completely immune from civil liability under statutory emergency Good Samaritan healthcare safe harbors.",
+                    "Doctor's extraordinary, grossly reckless medical malpractice constitutes an unforeseeable superseding cause cutting off Driver's liability for the amputation.",
+                    "Driver and Doctor must each pay exactly 50% of the total damages under mandatory California joint contribution rules."
                 ],
-                ans: 3, // D
-                exp: "Under Kline v. 1500 Massachusetts Ave. Apartment Corp. and California premises law, a residential landlord who retains control over common areas owes a duty of reasonable care to take protective measures against foreseeable criminal acts of third parties, especially where prior violent crimes put the landlord on notice."
+                ans: 2, // C
+                exp: "While ORDINARY subsequent medical malpractice is foreseeable as a matter of law, extraordinary, anomalous, or grossly reckless medical treatment (such as operating while heavily intoxicated and amputating the wrong healthy limb) constitutes an unforeseeable superseding cause cutting off the original tortfeasor's liability for the enhanced injury."
             },
             {
                 id: 15,
-                topic: "Strict Products Liability / Design Defect & Open Machinery (Micallef v. Miehle Co.)",
-                q: "Machinist operated a high-speed commercial printing press. In order to chase ink hickeys (a customary task), operators were required to hand-scrape rollers while moving at high RPMs. Manufacturer knew of the practice, but omitted a $30 automatic electronic interlock safety shield that would have eliminated the danger without impairing press operation. Machinist's hand was crushed. Manufacturer argued the danger was open and obvious. Under Micallef v. Miehle Co.:",
+                topic: "NIED / Direct Victim Relationship via Pre-Existing Relationship",
+                q: "Therapist provided joint family counseling to Mother and Daughter to treat adolescent behavioral trauma. During private sessions, Therapist committed intentional unlawful sexual abuse against Daughter. Mother discovered the abuse six months later and suffered severe psychiatric shock requiring hospitalization. In Mother's NIED suit against Therapist under California law (Marlene F.):",
                 opts: [
-                    "Machinist can prevail, because the open and obvious nature of a machine danger does not bar design defect liability if a safety device was omitted.",
-                    "Manufacturer prevails as a matter of law, because the patent and obvious danger of a moving printing roller completely negates all design duties.",
-                    "Machinist's claim is completely barred under the doctrine of primary assumption of risk for commercial industrial printing employment.",
-                    "Manufacturer is liable only under the express warranty provisions of Article 2 of the Uniform Commercial Code."
+                    "Mother can recover as a Direct Victim, because Therapist owed an independent duty of care directly to Mother in joint family treatment.",
+                    "Mother cannot recover, because Mother was not present at the scene to witness the injury-producing event contemporaneously.",
+                    "Mother cannot recover, because NIED requires physical impact or positioning within the physical zone of danger of impact.",
+                    "Mother can recover only if Daughter was permanently physically incapacitated as a result of the psychological trauma."
                 ],
                 ans: 0, // A
-                exp: "Under Micallef v. Miehle Co. (39 N.Y.2d 376) and modern California products liability law, the fact that a machine danger is open and obvious does NOT automatically relieve the manufacturer of design defect liability if the manufacturer could have feasibly eliminated the danger with a reasonable alternative safety device."
+                exp: "Under Marlene F. v. Affiliated Psychiatric Medical Clinic, when a healthcare provider enters a direct professional relationship with a parent to treat a family unit, the professional owes an independent duty of care to the parent. Breach causing emotional harm permits Direct Victim NIED recovery without satisfying bystander rules."
             },
             {
                 id: 16,
-                topic: "Strict Liability / Abnormally Dangerous Activity & Bulk Gasoline Tanker Transport",
-                q: "Petroleum Co. operated a 10,000-gallon articulated gasoline tanker truck through a crowded downtown metropolitan retail shopping corridor at noon. Despite non-negligent, careful driving by the driver, a localized sinkhole collapsed under the street, causing the tanker to flip, rupture, and ignite an immense fireball that destroyed 10 storefronts. In storefront owners' strict liability lawsuit against Petroleum Co. (Siegler v. Kuhlman):",
+                topic: "Strict Products Liability / Crashworthiness & Enhanced Injury Burden Allocation",
+                q: "Motorist was driving at 40 mph when she was broadsided by a negligent driver. While the initial collision caused only bruises, the driver-side airbag defectively failed to deploy, causing Motorist's head to strike the steering wheel, resulting in permanent traumatic brain damage. Expert testimony proved the brain damage was entirely preventable by an airbag. Under the Crashworthiness (Second Collision) doctrine:",
                 opts: [
-                    "Petroleum Co. is completely relieved of liability, because the street sinkhole collapse operated as an extraordinary Act of God superseding cause.",
-                    "Petroleum Co. is strictly liable, because transporting massive bulk volumes of volatile gasoline on public roads is an abnormally dangerous activity.",
-                    "Petroleum Co. is not liable, because the transport of gasoline is an ordinary matter of common commercial usage in modern vehicular society.",
-                    "Storefront owners are restricted exclusively to statutory environmental claims under the federal Comprehensive Environmental Response Act (CERCLA)."
+                    "Automaker is completely relieved of liability, because the broadside driver was the initial proximate cause of the crash.",
+                    "Automaker is liable only in ordinary negligence, because strict products liability applies exclusively to defects causing collisions.",
+                    "Motorist's recovery is completely barred under primary assumption of risk for driving passenger automobiles on public streets.",
+                    "Automaker is strictly liable for the enhanced brain injury, because manufacturers must design vehicles to survive foreseeable crashes."
                 ],
-                ans: 1, // B
-                exp: "Under Siegler v. Kuhlman (81 Wash. 2d 748) and Restatement (Second) of Torts § 519, hauling massive bulk quantities of highly volatile and explosive materials (such as 10,000 gallons of gasoline) on public highways in urban areas involves high risk of catastrophic harm and is an Abnormally Dangerous Activity."
+                ans: 3, // D
+                exp: "Under the Crashworthiness / Enhanced Injury doctrine (Larsen v. General Motors), a manufacturer is strictly liable for design defects that fail to protect occupants in foreseeable collisions, causing enhanced or aggravated injuries, even if the defect did not initiate the original accident."
             },
             {
                 id: 17,
-                topic: "Defamation / Slander Per Se of Independent Contractor / Trade Incompetence",
-                q: "Architect worked as a self-employed independent consulting building designer. Competitor verbally stated to a group of commercial real estate developers: 'Architect is completely unqualified, has zero structural engineering skills, and constantly designs buildings that collapse.' Architect proved the statements were completely false, but showed zero out-of-pocket financial loss. In Architect's slander suit against Competitor:",
+                topic: "Strict Products Liability / Component Part Maker & Bulk Raw Materials Doctrine",
+                q: "Chemical Supplier manufactured standard, non-defective commercial raw hydrochloric acid and sold 1,000 gallons in bulk tanker containers to Manufacturer. Manufacturer used the acid to formulate a commercial drain cleaner in consumer glass bottles that lacked pressure vents, causing a bottle to burst on a retail shelf and blind Shopper. In Shopper's strict products liability suit against Chemical Supplier:",
                 opts: [
-                    "Architect will lose, because spoken defamation (slander) strictly and universally requires proof of actual special pecuniary financial loss.",
-                    "Architect will lose, because the slander per se professional category applies exclusively to licensed medical physicians and attorneys.",
-                    "Architect will prevail without proving special damages, because false spoken words imputing incompetence in trade constitute slander per se.",
-                    "Competitor is completely protected under the absolute commercial competition privilege governing trade negotiations."
+                    "Chemical Supplier is strictly liable, because all commercial chemical suppliers in the stream of commerce are strictly liable.",
+                    "Chemical Supplier is not strictly liable, because suppliers of non-defective bulk raw materials are not liable for downstream packaging designs.",
+                    "Chemical Supplier is liable under the consumer expectation test, because ordinary consumers expect drain cleaner acid to be safe.",
+                    "Chemical Supplier is strictly liable under the statutory express warranty provisions of Article 2 of the Uniform Commercial Code."
                 ],
-                ans: 2, // C
-                exp: "Under common law and California Civil Code § 46, Slander Per Se allows recovery of presumed general damages without pleading or proving special damages when the spoken statement directly injures the plaintiff in respect to their office, profession, trade, or business by imputing general incompetence."
+                ans: 1, // B
+                exp: "Under the Raw Materials / Bulk Supplier Doctrine (Restatement (Third) of Torts: Products Liability § 5), a supplier of a non-defective raw material or bulk component is NOT liable for injuries resulting from the downstream integration of the material into a finished product unless the supplier participated in the finished design."
             },
             {
                 id: 18,
-                topic: "Privacy / Intrusion Upon Seclusion via Advanced Thermal Infrared Surveillance",
-                q: "Investigator used a specialized, military-grade thermal infrared imaging scanner from a public street sidewalk to peer through the closed wooden exterior walls of Homeowner's private bedroom, recording detailed thermal imaging of Homeowner's intimate, private bodily activities without physical trespass. Homeowner discovered the recording and sued Investigator for Intrusion Upon Seclusion. Result?",
+                topic: "Strict Products Liability / Consumer Expectation Test Inapplicability (Soule)",
+                q: "Driver was injured in a complex highway collision when the vehicle's left front wheel assembly collapsed rearward into the footwell under extreme torsional multi-axial crash forces. Driver sued Automaker for design defect, requesting a jury instruction solely on the Consumer Expectation Test. Automaker objected, arguing the complex crash physics required the Risk-Benefit test. Under California law (Soule v. General Motors):",
                 opts: [
-                    "Investigator wins, because standing on a public street sidewalk looking across public airspace is protected by absolute First Amendment immunity.",
-                    "Investigator wins, because the tort of intrusion upon seclusion strictly requires a simultaneous physical common law trespass to real property.",
-                    "Homeowner is restricted exclusively to statutory eavesdropping remedies under the California Wiretap and Privacy Act.",
-                    "Homeowner wins, because non-physical technological surveillance into private intimate zones that is highly offensive is an actionable intrusion."
+                    "The court must grant the Consumer Expectation instruction, because consumers expect car frames never to collapse in collisions.",
+                    "The court must grant a directed verdict for Automaker, because automotive frame collapse claims cannot be maintained in tort.",
+                    "The court should refuse the Consumer Expectation instruction, because the technical mechanics of frame collision physics are beyond everyday consumer experience.",
+                    "The court must submit the case to the jury under a gross negligence standard of automotive metallurgical manufacturing."
                 ],
-                ans: 3, // D
-                exp: "Under Restatement (Second) of Torts § 652B and California privacy law, Intrusion Upon Seclusion does NOT require a physical trespass; it encompasses intentional non-physical technological intrusions that invade a sphere where plaintiff has a reasonable expectation of privacy in a manner highly offensive to a reasonable person."
+                ans: 2, // C
+                exp: "Under Soule v. General Motors Corp. (8 Cal.4th 548), the Consumer Expectation Test is reserved for cases where everyday consumer experience permits a conclusion about safety. Where the technical mechanics of a product's behavior in a complex collision involve specialized engineering and expert crash physics beyond ordinary consumer experience, the case MUST be tried under the Risk-Benefit test."
             },
             {
                 id: 19,
-                topic: "Negligence / Medical Emergency Roadside Good Samaritan Statutory Immunity Limits",
-                q: "Surgeon stopped at a highway crash to render emergency first aid to an injured motorist. While applying a splint, Surgeon committed simple ordinary negligence, worsening a fracture. The state has a typical Good Samaritan statute (Cal. Health & Safety Code § 1799.102). Motorist sued Surgeon for medical malpractice. Result?",
+                topic: "Strict Liability / Abnormally Dangerous Activity & Location Factor (Restatement § 520)",
+                q: "Pyrotechnics Co. conducted a high-explosive commercial fireworks exhibition in a dense downtown urban stadium surrounded by wooden residential rooftops. Despite state-of-the-art electronic firing systems and utmost care, a freak wind gust carried burning magnesium onto Neighbor's roof, causing a fire. Pyrotechnics Co. proved utmost care. In Neighbor's strict liability suit:",
                 opts: [
-                    "Surgeon is immune from liability, because Good Samaritan statutes shield licensed physicians rendering gratuitous roadside aid from ordinary negligence.",
-                    "Surgeon is liable under standard medical malpractice rules, because licensed physicians owe an unyielding national specialist standard of care at all times.",
-                    "Surgeon is strictly liable, because voluntary rescuers who touch bodily fractures are held to an absolute guarantee of non-injurious medical outcomes.",
-                    "Motorist is entitled to a directed verdict under res ipsa loquitur, because properly applied roadside splints do not worsen fractures absent malpractice."
+                    "Pyrotechnics Co. is strictly liable, because staging high-explosive fireworks in a dense urban area is an abnormally dangerous activity.",
+                    "Pyrotechnics Co. is not liable, because the sudden wind gust was an extraordinary Act of God severing proximate causation.",
+                    "Pyrotechnics Co. is not liable, because fireworks displays are a matter of common commercial usage on national holidays.",
+                    "Neighbor's claim is completely barred under primary assumption of risk for living near an authorized municipal stadium."
                 ],
                 ans: 0, // A
-                exp: "Under standard Good Samaritan statutes (including California Health & Safety Code § 1799.102), medical professionals and citizens who in good faith render emergency medical care at the scene of an emergency outside of a medical clinic are IMMUNE from civil liability for ordinary negligence."
+                exp: "Under Restatement (Second) of Torts §§ 519–520, conducting high-explosive fireworks displays in close proximity to densely populated urban structures involves a high risk of catastrophic fire that cannot be eliminated by utmost care, and is inappropriate to the location, imposing Strict Liability."
             },
             {
                 id: 20,
-                topic: "Conversion / Pledgee Unauthorized Transfer of Stock Pledged as Collateral",
-                q: "Debtor pledged 1,000 shares of stock to Lender as collateral for a 1-year loan. Prior to loan maturity and while Debtor was completely current on all payments, Lender secretly transferred the pledged stock to a third party to satisfy Lender's own unrelated corporate debts. Debtor repaid the loan in full on maturity and demanded the stock. In Debtor's suit against Lender for Conversion:",
+                topic: "Strict Liability / Domestic Animals & California Dog Bite Statute (Cal. Civ. Code § 3342)",
+                q: "Burglar broke into Homeowner's locked residential dwelling at 2:00 AM to steal jewelry. Homeowner's domestic Golden Retriever, which had zero prior history of aggression, bit Burglar on the leg, inflicting puncture wounds. Burglar sued Homeowner under California Civil Code § 3342 (California Dog Bite Statute). Result?",
                 opts: [
-                    "Lender is not liable for conversion, because corporate stock shares are fungible commercial instruments that can be replaced with equivalent market shares.",
-                    "Lender is liable for Conversion, because unauthorized disposition or sale of pledged collateral by a bailee/pledgee constitutes conversion.",
-                    "Lender is liable exclusively under breach of the security contract under Article 9 of the Uniform Commercial Code, precluding all tort claims.",
-                    "Debtor's recovery is strictly limited to nominal statutory damages of $1.00 because Debtor suffered no lost investment dividends during the loan term."
+                    "Burglar wins, because California Civil Code § 3342 imposes absolute strict liability upon dog owners for all bites regardless of location.",
+                    "Burglar wins, because homeowners owe known nighttime trespassers an affirmative duty to securely leash all domestic pets.",
+                    "Homeowner is strictly liable under the doctrine of Katko v. Briney for using biological mechanical devices to defend property.",
+                    "Homeowner wins, because California Civil Code § 3342 applies only if the victim was in a public place or lawfully on private property."
                 ],
-                ans: 1, // B
-                exp: "Under established conversion law (Restatement (Second) of Torts § 223), an unauthorized transfer, re-pledge, or sale of collateral by a pledgee/bailee before the debtor's default constitutes an actionable Conversion as a matter of law, forcing the converter to pay full fair market value."
+                ans: 3, // D
+                exp: "Under California Civil Code § 3342, the owner of a dog is strictly liable for bite damages ONLY if the person bitten was in a public place or 'lawfully in or on a private place.' An unlawful trespasser or burglar cannot recover under the dog bite strict liability statute."
             },
             {
                 id: 21,
-                topic: "Negligence / Landowner Invitee Slip-and-Fall & Constructive Notice Time Rules",
-                q: "Customer was shopping in Supermarket. Customer slipped on a puddle of dark, dirty, gritty melted ice cream in the dairy aisle that contained multiple grocery cart tire tracks and footprint impressions running through it. Store manager testified that store sweep logs had not been signed or inspected for four hours. In Customer's premises negligence lawsuit against Supermarket (Ortega v. Kmart Corp.):",
+                topic: "Vicarious Liability / Respondeat Superior 'Special Errand' Exception",
+                q: "Accountant was driving home from her regular office job along her standard commuting route at 6:00 PM. While driving, Employer called Accountant and directed her to immediately detour 5 miles to the airport cargo terminal to drop off urgent corporate tax filings. While turning toward the airport, Accountant negligently struck Pedestrian. In Pedestrian's suit against Employer under respondeat superior:",
                 opts: [
-                    "Customer loses as a matter of law, because premises liability strictly requires direct eyewitness testimony identifying the exact second the ice cream dropped.",
-                    "Supermarket is strictly liable as an absolute commercial insurer of all floor cleanliness under municipal public health retail licensing codes.",
-                    "Customer can establish constructive notice through circumstantial physical evidence showing the hazard existed for a sufficient duration.",
-                    "Customer's claim is completely barred under the doctrine of secondary implied assumption of risk for shopping in self-service grocery dairy aisles."
+                    "Employer is not liable, because the Going-and-Coming rule categorically shields employers from employee vehicular commutes.",
+                    "Employer is vicariously liable under the 'Special Errand' exception to the Going-and-Coming rule.",
+                    "Employer is not liable, because Accountant was operating her own private vehicle and was not on corporate property.",
+                    "Employer is strictly liable under statutory workers' compensation provisions for all commercial highway transportation."
                 ],
-                ans: 2, // C
-                exp: "Under Ortega v. Kmart Corp. (26 Cal.4th 1200), a plaintiff in a premises slip-and-fall action can establish constructive notice through circumstantial evidence—such as the condition of the substance (dirty, tracked through) or failure to inspect for an extended period—permitting the jury to infer sufficient duration."
+                ans: 1, // B
+                exp: "While the 'Going-and-Coming Rule' generally excludes employee commutes from respondeat superior, the 'Special Errand Exception' applies when an employee is performing a special mission, task, or errand for the employer's benefit during the commute, keeping the employee within the scope of employment."
             },
             {
                 id: 22,
-                topic: "Strict Products Liability / Component Part Manufacturers & Non-Defective Raw Glass",
-                q: "Glass Co. manufactured flat, non-defective commercial tempered glass panes according to standard industry dimensions and sold 500 panes to Table Corp. Table Corp. incorporated the glass into an outdoor patio table using an unstable, defectively designed frame that placed uneven torsional stress on the glass, causing a pane to shatter and injure Consumer. Glass Co. had no role in designing the table. In Consumer's strict products liability suit:",
+                topic: "Defamation / Qualified Privilege Forfeiture via Actual Malice",
+                q: "Former Employer wrote a reference letter to Prospective Employer stating: 'Employee was fired for forging payroll checks.' In truth, Employer knew Employee had never forged checks, but made the false accusation solely out of personal spite because Employee refused to work overtime. Employee was denied the job. In Employee's defamation action against Employer:",
                 opts: [
-                    "Glass Co. is strictly liable, because all commercial component suppliers in the chain of distribution are strictly liable for finished product failures.",
-                    "Glass Co. is liable under the consumer expectation test, because ordinary consumers do not expect tempered patio table glass to shatter under torsion.",
-                    "Glass Co. is strictly liable under the statutory express warranty provisions of Article 2 of the Uniform Commercial Code.",
-                    "Glass Co. is not strictly liable under the Component Parts Doctrine, because the raw glass pane was not defective when it left Glass Co.'s custody."
+                    "Employer is protected by an absolute employment reference privilege that cannot be overcome by malice.",
+                    "Employer is immune under First Amendment commercial speech doctrines governing hiring references.",
+                    "Employer's qualified common-interest privilege is defeated, because Employer published the statement with knowledge of falsity and ill will.",
+                    "Employee is restricted to nominal damages of $1.00 unless Employee proves special out-of-pocket medical psychiatric expenses."
                 ],
-                ans: 3, // D
-                exp: "Under the Component Parts Doctrine (Restatement (Third) of Torts: Products Liability § 5 / Jimenez v. Superior Court), a component part manufacturer is NOT strictly liable for defects in a finished integrated product if the component itself was non-defective when supplied and the component maker did not participate in integrating it into the defective design."
+                ans: 2, // C
+                exp: "While employment reference communications enjoy a Qualified Common Interest Privilege, the privilege is FORFEITED if the plaintiff proves the speaker acted with common-law malice (spite/ill will) or constitutional actual malice (knowledge of falsity or reckless disregard for truth)."
             },
             {
                 id: 23,
-                topic: "Assault / Imminence & Threat of Future Harm Coupled with Weapon Display",
-                q: "Defendant confronted Victim in a restaurant, pointed a large hunting knife at Victim's face from two inches away, and snarled: 'If you don't pay me the $500 you owe me by tomorrow at 5:00 PM, I will slit your throat with this knife.' Victim felt terrified. In Victim's civil tort action against Defendant for Assault:",
+                topic: "Privacy / Intrusion Upon Seclusion in Hospital Rooms",
+                q: "Patient was recovering from emergency surgery in a private, closed hospital room. Reporter, disguised as an orderly, sneaked into the room with a hidden camera, took photographs of Patient's surgical wounds while Patient was asleep, and uploaded them to a celebrity gossip website. Patient sued Reporter for Intrusion Upon Seclusion. Result?",
                 opts: [
-                    "Victim will prevail, because pointing a deadly weapon at a victim's face creates reasonable apprehension of immediate bodily contact despite future words.",
-                    "Defendant will prevail, because explicit threats of future harm (tomorrow at 5:00 PM) negate the required imminence of assault as a matter of law.",
-                    "Defendant will prevail, because words alone accompanied by conditional payment demands cannot constitute an actionable assault.",
-                    "Victim will prevail exclusively under the tort of intentional infliction of emotional distress for verbal harassment in public restaurants."
+                    "Patient will prevail, because an intentional non-consensual technological intrusion into a private hospital room is highly offensive.",
+                    "Reporter will prevail, because newsworthy photographs of hospitalized public figures are protected by absolute First Amendment immunity.",
+                    "Reporter will prevail, because the tort of intrusion upon seclusion strictly requires a simultaneous common law trespass to real property.",
+                    "Patient is restricted to an action for commercial misappropriation, limiting recovery to reasonable model licensing fees."
                 ],
                 ans: 0, // A
-                exp: "Where defendant's words threatening future harm are accompanied by an overt physical act demonstrating immediate capability of violence (holding a knife two inches from the victim's face), the physical act creates reasonable apprehension of immediate battery, satisfying Assault."
+                exp: "Intrusion Upon Seclusion (Restatement (Second) of Torts § 652B) requires: (1) intentional intrusion into a private place, conversation, or matter, (2) where the plaintiff has a reasonable expectation of privacy, (3) in a manner highly offensive to a reasonable person. A private hospital room is a zone of privacy where covert photography is tortious."
             },
             {
                 id: 24,
-                topic: "Negligence / Sudden Emergency Doctrine in Motor Vehicle Operations",
-                q: "Driver was operating her vehicle with ordinary care at 45 mph on a rural highway. Suddenly, a 500-pound wild deer leaped out of dense brush directly in front of Driver's bumper. Confronted with immediate sudden peril, Driver instinctively swerved into the oncoming lane and sideswiped Motorist. Driver raised the Emergency Doctrine. In Motorist's negligence suit against Driver:",
+                topic: "Economic Torts / Intentional Interference with Prospective Economic Advantage (Independently Wrongful Act)",
+                q: "Contractor was negotiating a lucrative commercial construction contract with Developer, with agreement imminent. Rival, intending solely to secure the job, falsely told Developer that Contractor's engineering license was suspended for fraud. Developer immediately cancelled negotiations and hired Rival. Contractor sued Rival. Under California law (Korea Supply Co. v. Lockheed Martin):",
                 opts: [
-                    "Driver is strictly liable, because crossing the center dividing line of a highway constitutes negligence per se that admits no emergency excuses.",
-                    "Driver is judged by how a reasonable person would react when confronted with sudden emergency peril not created by the driver's own neglect.",
-                    "Driver is completely immune from civil liability under the statutory wildlife collision governmental immunity acts.",
-                    "Motorist is entitled to a directed verdict under res ipsa loquitur, because rural highway collisions do not occur absent driver operational neglect."
+                    "Contractor will lose, because the absolute privilege of commercial competition protects rivals during active bidding.",
+                    "Contractor will prevail only under breach of the implied covenant of good faith and fair dealing.",
+                    "Contractor will lose, because prospective economic relationships do not create legally enforceable property rights.",
+                    "Contractor will prevail, because Rival intentionally disrupted the prospective relationship through independently wrongful acts (defamation)."
                 ],
-                ans: 1, // B
-                exp: "Under the Sudden Emergency Doctrine (Restatement (Third) of Torts § 15 / Leo v. Dunham), an actor who is confronted with a sudden, unexpected emergency peril not of their own making is judged by whether their reaction was reasonable under the emergency circumstances."
+                ans: 3, // D
+                exp: "Under California law (Korea Supply Co. v. Lockheed Martin Corp. / Della Penna), Intentional Interference with Prospective Economic Advantage requires that the defendant's interference be 'independently wrongful'—proscribed by some constitutional, statutory, regulatory, common law, or other legal standard (such as defamation or fraud) beyond the interference itself."
             },
             {
                 id: 25,
-                topic: "Strict Liability / Assumption of Risk Defense to Abnormally Dangerous Activities",
-                q: "Toxic Corp. conducted highly dangerous commercial fumigation of a grain warehouse using lethal cyanide gas, posting skull-and-crossbones warning signs at all exits. Employee of an independent pest control company, fully certified in fumigation risks, deliberately climbed through a marked warning barrier into the fumigation chamber without wearing his required gas mask to retrieve his personal sunglasses, suffering severe lung injury. In Employee's strict liability suit:",
+                topic: "Joint Tortfeasors / Proposition 51 (Civil Code § 1431.2) Several Liability",
+                q: "Pedestrian was injured in an intersection collision caused by Driver A (70% at fault) and Driver B (30% at fault). Pedestrian suffered $60,000 in economic damages (hospital bills) and $300,000 in non-economic damages (pain and suffering). Driver A is completely insolvent and uninsured. Under California Civil Code § 1431.2 (Proposition 51), what is the maximum total amount Pedestrian can collect from Driver B?",
                 opts: [
-                    "Toxic Corp. is held 100% strictly liable without defense, because common law strict liability completely bars all affirmative defenses.",
-                    "Employee is entitled to a directed verdict, because commercial cyanide fumigation carries non-delegable absolute public enterprise liability.",
-                    "Toxic Corp. is not liable, because Employee knowingly and unreasonably subjected himself to the known danger (Secondary Assumption of Risk).",
-                    "Toxic Corp. is liable only for economic damages under California Proposition 51 proportional fault allocation rules."
+                    "$108,000, representing Driver B's 30% proportional share of the total $360,000 aggregate personal injury judgment.",
+                    "$150,000, consisting of 100% of economic damages ($60,000) plus Driver B's 30% several share of non-economic damages ($90,000).",
+                    "$360,000, because joint and several liability applies to all damages under traditional California common law.",
+                    "$90,000, because Proposition 51 limits solvent co-defendants strictly and exclusively to non-economic damages."
                 ],
-                ans: 2, // C
-                exp: "Under Restatement (Second) of Torts § 523, the plaintiff's ASSUMPTION OF THE RISK (knowingly, voluntarily, and unreasonably encountering the specific known danger of an ultrahazardous activity) operates as an affirmative defense reducing or barring recovery under comparative fault."
+                ans: 1, // B
+                exp: "Under California Civil Code § 1431.2 (Proposition 51), liability for economic damages remains joint and several (allowing Pedestrian to collect 100% of the $60,000 from Driver B), while liability for non-economic damages is several only, limited strictly to Driver B's 30% allocated fault (30% of $300,000 = $90,000). Total recoverable from Driver B = $60,000 + $90,000 = $150,000."
             }
         ];
 
@@ -992,19 +969,18 @@
         let totalCorrect = 0;
         let activeFilter = "all";
         let isEliminationMode = true;
-        const currentSetKey = "torts_set10";
+        const currentSetKey = "torts_set15";
 
-        const STORAGE_KEY_ANSWERS = "fylsx_torts_set10_answers_v25";
-        const STORAGE_KEY_FLAGS = "fylsx_torts_set10_flags_v25";
-        const STORAGE_KEY_ELIM = "fylsx_torts_set10_elim_v25";
-        const STORAGE_KEY_INDEX = "fylsx_torts_set10_index_v25";
-        const STORAGE_KEY_SCORE = "fylsx_torts_set10_score_v25";
-        const STORAGE_KEY_FILTER = "fylsx_torts_set10_filter_v25";
-        const STORAGE_KEY_RETRY = "fylsx_torts_set10_retry_v25";
-        const STORAGE_KEY_HIGHLIGHTS = "fylsx_torts_set10_text_highlights_v25";
+        const STORAGE_KEY_ANSWERS = "fylsx_torts_set15_answers_v25";
+        const STORAGE_KEY_FLAGS = "fylsx_torts_set15_flags_v25";
+        const STORAGE_KEY_ELIM = "fylsx_torts_set15_elim_v25";
+        const STORAGE_KEY_INDEX = "fylsx_torts_set15_index_v25";
+        const STORAGE_KEY_SCORE = "fylsx_torts_set15_score_v25";
+        const STORAGE_KEY_FILTER = "fylsx_torts_set15_filter_v25";
+        const STORAGE_KEY_RETRY = "fylsx_torts_set15_retry_v25";
+        const STORAGE_KEY_HIGHLIGHTS = "fylsx_torts_set15_text_highlights_v25";
 
         let userHighlights = {};
-
         const letterLabels = ["A", "B", "C", "D"];
 
         function initApp() {
@@ -1135,7 +1111,6 @@
 
             if (confirm(`Clear answers and crossed-out choices for all ${missed.length} missed question(s) and retry them?`)) {
                 retrySessionList = [...missed];
-                
                 missed.forEach(qIdx => {
                     delete userAnswers[qIdx];
                     delete eliminatedOptions[qIdx];
@@ -1166,7 +1141,6 @@
 
             if (confirm(`Clear answers and crossed-out choices for all ${flagged.length} flagged question(s) and retry them?`)) {
                 retrySessionList = [...flagged];
-                
                 flagged.forEach(qIdx => {
                     delete userAnswers[qIdx];
                     delete eliminatedOptions[qIdx];
@@ -1249,7 +1223,6 @@
                 : q.q;
 
             let html = `<div class="question-card">`;
-            
             html += `<div class="q-top-row">
                         <div class="q-header">Question ${q.id} <span style="font-size:0.8rem; color: var(--text-muted); font-weight:normal;">[Topic: ${q.topic}]</span></div>
                         <button class="${flagBtnClass}" onclick="toggleFlagCurrentQuestion()">${flagBtnText}</button>
@@ -1320,7 +1293,6 @@
             saveProgress();
         }
 
-        // Dedicated text highlighting
         document.addEventListener("mouseup", function(e) {
             if (e.target.closest("button") || e.target.closest("select") || e.target.closest("textarea")) {
                 return;
@@ -1535,7 +1507,6 @@
             if (val === "flagged") exportRulesForFilter(getFlaggedIndices(), "Flagged Rules");
         }
 
-        // Bold category formatting in Word Table export
         function exportRulesForFilter(indices, titleName) {
             if (indices.length === 0) {
                 openModal(`Export ${titleName}`, `No questions match the "${titleName}" criteria.`, `No rules to export for ${titleName}.`);
@@ -1584,7 +1555,7 @@
         }
 
         function showMissedSummary() {
-            let summary = "MISSED QUESTIONS SUMMARY (TORTS SET 10):\n========================================\n\n";
+            let summary = "MISSED QUESTIONS SUMMARY (TORTS SET 15):\n========================================\n\n";
             let missedIndices = getMissedIndices();
 
             if (missedIndices.length === 0) {
@@ -1604,7 +1575,7 @@
         }
 
         function showFlaggedSummary() {
-            let summary = "FLAGGED QUESTIONS SUMMARY (TORTS SET 10):\n========================================\n\n";
+            let summary = "FLAGGED QUESTIONS SUMMARY (TORTS SET 15):\n========================================\n\n";
             let flaggedIndices = getFlaggedIndices();
 
             if (flaggedIndices.length === 0) {
@@ -1629,7 +1600,7 @@
             const flagged = getFlaggedIndices().map(idx => {
                 const item = examData[idx];
                 return {
-                    originalSet: "Torts Set 10",
+                    originalSet: "Torts Set 15",
                     originalId: item.id,
                     topic: item.topic,
                     factPattern: item.fp,
@@ -1648,7 +1619,7 @@
             const missed = getMissedIndices().map(idx => {
                 const item = examData[idx];
                 return {
-                    originalSet: "Torts Set 10",
+                    originalSet: "Torts Set 15",
                     originalId: item.id,
                     topic: item.topic,
                     factPattern: item.fp,
@@ -1663,7 +1634,6 @@
             openModal("Export Missed Questions (JSON)", "Copy this JSON block and paste it into our chat to build an automated re-test quiz solely from your missed questions.", content);
         }
 
-        // Export Full Session Tool
         function exportFullStudentSession() {
             const sessionData = {
                 version: "1.0",
@@ -1686,7 +1656,6 @@
             );
         }
 
-        // Import Full Session Tool
         function promptImportSession() {
             let rawInput = prompt("Paste the student's Export Session code block below:");
             if (!rawInput) return;
