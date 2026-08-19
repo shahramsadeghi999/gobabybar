@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- iPad Fullscreen / PWA Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GoBabyBar">
+    <title>California Baby Bar (FYLSX) - Criminal Law Practice Exam (Set 11)</title>
+    <style>
+        :root {
+            --primary: #1B365D;
+            --primary-light: #4B6B94;
+            --accent: #D97706;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text: #1E293B;
+            --text-muted: #64748B;
+            --border: #CBD5E1;
+            --success: #16A34A;
+            --danger: #DC2626;
+            --flag: #E11D48;
+            --badge-blue: #BAE6FD;
+            --badge-blue-hover: #7DD3FC;
+        }
+
+        mark.user-highlight {
+            background-color: #FEF08A;
+            color: #713F12;
+            padding: 0.1rem 0.2rem;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        mark.user-highlight:hover {
+            background-color: #FDE047;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 1rem;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.3rem;
+            margin-bottom: 0.2rem;
+        }
+
+        header p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .tracker-wrapper {
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            margin-bottom: 1.2rem;
+        }
+
+        .tracker-bar {
+            background: var(--card-bg);
+            padding: 0.75rem 1rem;
+            border-radius: 10px 10px 0 0;
+            border: 1px solid var(--border);
+            border-bottom: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .progress-bar-container {
+            display: flex;
+            width: 100%;
+            height: 22px;
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            font-size: 0.8rem;
+            font-weight: 700;
+            line-height: 22px;
+            text-align: center;
+        }
+
+        .progress-segment {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: width 0.3s ease;
+        }
+
+        .segment-correct {
+            background: var(--success);
+            color: #FFFFFF;
+            width: 0%;
+        }
+
+        .segment-missed {
+            background: var(--danger);
+            color: #FFFFFF;
+            width: 0%;
+        }
+
+        .segment-unattempted {
+            background: #FFFFFF;
+            color: #0F172A;
+            flex-grow: 1;
+        }
+
+        .score-box {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background: var(--primary-light);
+            color: white;
+            padding: 0.25rem 0.65rem;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .action-group {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-action-tool {
+            padding: 0.35rem 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            transition: all 0.15s ease;
+        }
+
+        .btn-history {
+            background: var(--primary-light);
+            color: white;
+            border-color: var(--primary-light);
+        }
+
+        .btn-export-session {
+            background: #0284C7;
+            color: white;
+            border-color: #0284C7;
+        }
+
+        .btn-import-session {
+            background: #475569;
+            color: white;
+            border-color: #475569;
+        }
+
+        .btn-elimination-toggle {
+            background: #F1F5F9;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-elimination-toggle:hover {
+            background: #E2E8F0;
+            color: var(--text);
+        }
+
+        .btn-elimination-toggle.active {
+            background: #FEF3C7;
+            color: #B45309;
+            border-color: #F59E0B;
+            font-weight: bold;
+        }
+
+        .dropdown-menu {
+            padding: 0.35rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-size: 0.8rem;
+            background: white;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .dropdown-flag {
+            color: var(--flag);
+            border-color: #FECDD3;
+            background: #FFF1F2;
+        }
+
+        .dropdown-missed {
+            color: var(--accent);
+            border-color: #FED7AA;
+            background: #FFFBEB;
+        }
+
+        .filter-status-banner {
+            display: none;
+            background: #FEF3C7;
+            border: 1px solid #FCD34D;
+            color: #92400E;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-status-banner.visible {
+            display: flex;
+        }
+
+        .btn-banner-reset {
+            background: #B45309;
+            color: white;
+            border: none;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .q-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .q-header {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        .btn-flag {
+            background: #F1F5F9;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-flag.active {
+            background: #FFE4E6;
+            color: var(--flag);
+            border-color: var(--flag);
+            font-weight: bold;
+        }
+
+        .fact-pattern {
+            background: #F1F5F9;
+            border-left: 4px solid var(--primary-light);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .q-text {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .option-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .option-btn {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 1;
+            user-select: none;
+        }
+
+        .option-btn:hover:not(:disabled):not(.eliminated) {
+            background: #F0F9FF;
+            border-color: #38BDF8;
+        }
+
+        .option-btn:hover:not(:disabled):not(.eliminated) .letter-circle {
+            background: var(--badge-blue-hover);
+        }
+
+        .option-btn:disabled {
+            cursor: default;
+        }
+
+        .option-btn.eliminated {
+            opacity: 0.45;
+            background: #F1F5F9;
+            border-color: #E2E8F0;
+            text-decoration: line-through;
+        }
+
+        .option-btn.eliminated .letter-circle {
+            background: #CBD5E1;
+            color: #64748B;
+        }
+
+        .letter-circle {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--badge-blue);
+            color: #0F172A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .option-btn.correct {
+            border-color: var(--success);
+            background: #DCFCE7;
+            color: #14532D;
+            font-weight: 500;
+            opacity: 1 !important;
+        }
+
+        .option-btn.correct .letter-circle {
+            background: var(--success);
+            color: #FFFFFF;
+        }
+
+        .option-btn.incorrect {
+            border-color: var(--danger);
+            background: #FEE2E2;
+            color: #7F1D1D;
+            opacity: 0.75;
+        }
+
+        .option-btn.incorrect .letter-circle {
+            background: var(--danger);
+            color: #FFFFFF;
+        }
+
+        .btn-eliminate-choice {
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .btn-eliminate-choice:hover {
+            background: #FEE2E2;
+            border-color: var(--danger);
+            color: var(--danger);
+        }
+
+        .btn-eliminate-choice.active {
+            background: #DC2626;
+            color: white;
+            border-color: #DC2626;
+        }
+
+        .explanation-box {
+            display: none;
+            background: #F0F9FF;
+            border: 1px solid #BAE6FD;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #0369A1;
+            margin-top: 1rem;
+        }
+
+        .explanation-box.visible {
+            display: block;
+        }
+
+        .dropdown-analysis {
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #BAE6FD;
+            font-size: 0.8rem;
+            background: #E0F2FE;
+            color: #0369A1;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            gap: 0.5rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            user-select: none;
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .btn-reset {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            font-weight: normal;
+        }
+
+        .btn-reset:hover {
+            background: #F1F5F9;
+            color: var(--danger);
+            border-color: var(--danger);
+        }
+
+        .modal-box {
+            display: none;
+            background: white;
+            border: 2px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .modal-box.visible {
+            display: block;
+        }
+
+        textarea {
+            width: 100%;
+            height: 240px;
+            margin-top: 0.8rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 0.5rem; }
+            .tracker-bar { flex-direction: column; align-items: stretch; }
+            .action-group { justify-content: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <a href="index.html" style="background: rgba(255,255,255,0.2); color: white; padding: 0.3rem 0.7rem; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: bold;">← Back to Menu</a>
+            <span style="font-size: 0.8rem; opacity: 0.8;">GoBabyBar Exam Suite</span>
+        </div>
+        <h1>California Baby Bar (FYLSX) Practice Exam - Criminal Law Set 11</h1>
+        <p>25 Gradually Harder Scenarios (Unbiased Randomization & No Length Patterns)</p>
+    </header>
+
+    <div class="tracker-wrapper">
+        <div class="tracker-bar">
+            <div class="score-box">
+                <span>Question <strong id="current-q-num">1</strong> of 25</span>
+                <span class="badge" id="score-badge">Score: 0 / 0 (0%)</span>
+            </div>
+
+            <div class="action-group">
+                <button class="btn-action-tool btn-history" onclick="showStudentHistory()" title="View Past Test History">
+                    📊 History
+                </button>
+                <button class="btn-action-tool btn-export-session" onclick="exportFullStudentSession()" title="Export your answers and highlights to share">
+                    📤 Export
+                </button>
+                <button class="btn-action-tool btn-import-session" onclick="promptImportSession()" title="Import another student's test session to review">
+                    📥 Import
+                </button>
+                <button class="btn-elimination-toggle active" id="elimination-toggle-btn" title="Disable Elimination Mode" onclick="toggleEliminationMode()">
+                    ✂️
+                </button>
+                <select id="flag-dropdown" class="dropdown-menu dropdown-flag" onchange="handleFlagDropdown(this.value)">
+                    <option value="" disabled selected>🚩 Flagged (0) ▾</option>
+                    <option value="all">🌐 Show All Questions (Full Set)</option>
+                    <option value="filter">Show Flagged Only</option>
+                    <option value="retry">Retry Flagged</option>
+                    <option value="summary">Flagged Rule Analysis</option>
+                    <option value="export">Export Flagged (JSON)</option>
+                </select>
+                <select id="missed-dropdown" class="dropdown-menu dropdown-missed" onchange="handleMissedDropdown(this.value)">
+                    <option value="" disabled selected>❌ Missed (0) ▾</option>
+                    <option value="all">🌐 Show All Questions (Full Set)</option>
+                    <option value="filter">Show Missed Only</option>
+                    <option value="retry">Retry Missed</option>
+                    <option value="summary">Missed Rule Analysis</option>
+                    <option value="export">Export Missed (JSON)</option>
+                </select>
+                <select id="jump-select" class="dropdown-menu" onchange="jumpToQuestion(this.value)"></select>
+            </div>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-segment segment-correct" id="bar-correct" title="Correct"></div>
+            <div class="progress-segment segment-missed" id="bar-missed" title="Missed"></div>
+            <div class="progress-segment segment-unattempted" id="bar-unattempted" title="Unattempted">25</div>
+        </div>
+    </div>
+
+    <div class="filter-status-banner" id="filter-banner">
+        <span id="filter-banner-text">Viewing filtered subset</span>
+        <button class="btn-banner-reset" onclick="returnToFullSet()">Return to Full Exam (25 Qs)</button>
+    </div>
+
+    <div id="quiz-container"></div>
+
+    <div class="nav-controls">
+        <button class="btn" id="prev-btn" onclick="navigate(-1)">← Previous</button>
+        <button class="btn btn-reset" onclick="resetProgress()">Reset Set</button>
+        <button class="btn" id="next-btn" onclick="navigate(1)">Next →</button>
+    </div>
+
+    <div class="modal-box" id="info-modal-box">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 id="modal-title" style="color: var(--primary);">Analysis / Export</h3>
+            <button class="btn btn-reset" style="padding:0.2rem 0.6rem;" onclick="closeModal()">✕ Close</button>
+        </div>
+        <p id="modal-desc" style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.3rem;"></p>
+        <textarea id="modal-textarea" readonly></textarea>
+        <button class="btn" id="modal-copy-btn" style="margin-top: 0.8rem;" onclick="copyModalContent()">Copy Content to Clipboard</button>
+    </div>
+
+    <script>
+        // 25 Criminal Law Questions (Set 11) - Gradually Harder
+        // Correct answers are strictly randomized (A:7, B:6, C:6, D:6)
+        // Length of correct answers is intentionally varied (Short, Medium, Long) to eliminate visual patterns. The correct answer is NEVER consistently the longest option.
+        const examData = [
+            // FACT PATTERN 1 (Q1-Q3)
+            {
+                id: 1,
+                topic: "Parties to a Crime / Accomplice Liability for Homicide",
+                fp: "Arthur and Bill plan to burglarize a warehouse. Arthur tells Bill he brought a gun 'just to scare the guard.' Bill agrees to keep watch outside. Inside, the guard draws a weapon, and Arthur shoots and kills him.",
+                q: "Can Bill be convicted of murder?",
+                opts: [
+                    "No, because he only agreed to participate in a property crime and explicitly stayed outside the building.",
+                    "No, because Arthur used the gun defensively when the guard drew his weapon first.",
+                    "Yes, under the felony murder rule.",
+                    "Yes, because he physically handed the weapon to Arthur prior to entering the commercial structure."
+                ],
+                ans: 2, // C (Shortest)
+                exp: "Under the felony murder rule, all co-felons are liable for a death caused by one of them during the commission of an inherently dangerous felony (such as burglary), provided the death was a foreseeable consequence. A lethal confrontation during a commercial burglary is foreseeable."
+            },
+            {
+                id: 2,
+                topic: "Homicide / Felony Murder (Redline Rule)",
+                fp: "Arthur and Bill plan to burglarize a warehouse. Arthur tells Bill he brought a gun 'just to scare the guard.' Bill agrees to keep watch outside. Inside, the guard draws a weapon, and Arthur shoots and kills him.\n\nAssume instead the guard shoots and kills Arthur.",
+                q: "Can Bill be convicted of felony murder for Arthur's death in a majority (agency) jurisdiction?",
+                opts: [
+                    "Yes, because Bill's participation in the burglary makes him strictly liable.",
+                    "No, because the guard was not a co-felon acting in furtherance of the crime.",
+                    "No, because Bill was acting as a mere lookout rather than a principal.",
+                    "Yes, because the guard's use of lethal force was a highly foreseeable response to the initiation of an armed nighttime burglary."
+                ],
+                ans: 1, // B (Medium) - Opt D is longest.
+                exp: "Under the agency theory of felony murder (and the related Redline rule), a felon is not liable for the death of a co-felon who is justifiably killed by a police officer, security guard, or victim acting in lawful self-defense or crime prevention."
+            },
+            {
+                id: 3,
+                topic: "Inchoate Crimes / Accomplice Withdrawal",
+                fp: "Arthur and Bill plan to burglarize a warehouse. Arthur tells Bill he brought a gun 'just to scare the guard.' Bill agrees to keep watch outside. Inside, the guard draws a weapon, and Arthur shoots and kills him.\n\nSuppose Bill left the scene 5 minutes before Arthur entered the warehouse, without telling Arthur.",
+                q: "Is Bill still liable for the burglary?",
+                opts: [
+                    "Yes, because withdrawal requires an affirmative communication to the co-conspirator in time for them to abandon the plan.",
+                    "No, because physical absence from the scene severs all accessorial liability.",
+                    "No, because he did not break the threshold.",
+                    "Yes, because the initial agreement inherently creates absolute joint and several liability for all subsequent acts indefinitely."
+                ],
+                ans: 0, // A (Longest)
+                exp: "To effectively withdraw as an accomplice and avoid liability for the principal's subsequent crimes, the accomplice must repudiate their encouragement and communicate that withdrawal to the principal before the crime becomes unstoppable. Silently slipping away is insufficient."
+            },
+            // FACT PATTERN 2 (Q4-Q5)
+            {
+                id: 4,
+                topic: "Property Crimes / Larceny (Mistake of Fact & Abandoned Property)",
+                fp: "Chloe is walking through a public park and finds a diamond ring on a bench. Believing it was intentionally abandoned, she takes it. The next day, she sees a flyer indicating the ring was lost and offering a reward. She decides to keep it.",
+                q: "Is Chloe guilty of common law larceny for the initial taking?",
+                opts: [
+                    "Yes, because she committed a physical asportation of another's property.",
+                    "No, because her honest belief that the property was abandoned negates the trespassory taking and the intent to steal.",
+                    "Yes, because rings cannot be legally abandoned under the common law framework governing valuable jewelry.",
+                    "No, because larceny strictly requires the victim to be physically present and aware of the deprivation at the exact moment of the taking."
+                ],
+                ans: 1, // B (Medium-Long) - Opt D is longest.
+                exp: "Larceny requires a trespassory taking with the specific intent to steal the property of another. If a person honestly believes property is abandoned, they lack the intent to steal another's property, making the initial taking non-trespassory."
+            },
+            {
+                id: 5,
+                topic: "Property Crimes / Larceny (Continuing Trespass)",
+                fp: "Chloe is walking through a public park and finds a diamond ring on a bench. Believing it was intentionally abandoned, she takes it. The next day, she sees a flyer indicating the ring was lost and offering a reward. She decides to keep it.",
+                q: "Does the continuing trespass doctrine apply when she later decides to keep the ring?",
+                opts: [
+                    "Yes, because she eventually formed the malicious specific intent to steal.",
+                    "Yes, because retaining lost property after finding the rightful owner is a strict liability property crime.",
+                    "No, because the doctrine only applies if the initial taking was wrongful or trespassory, and her initial taking was innocent.",
+                    "No, because the flyer was posted in a public area, which legally invalidates the original owner's continuous claim of right."
+                ],
+                ans: 2, // C (Longest)
+                exp: "The continuing trespass doctrine fictionally extends a trespassory taking until the moment the defendant forms the intent to steal. However, it ONLY applies if the initial taking was wrongful (trespassory). Because Chloe's initial taking was innocent (believing the ring was abandoned), the doctrine does not apply."
+            },
+            // FACT PATTERN 3 (Q6-Q8)
+            {
+                id: 6,
+                topic: "Property Crimes / Embezzlement vs. Larceny (Custody vs Possession)",
+                fp: "David is a low-level bank employee whose only duty is to sweep the floors. One night, he finds a sealed bag of cash accidentally left on a manager's desk. David rips open the bag, takes the cash, and flees.",
+                q: "What property crime did David commit?",
+                opts: [
+                    "Embezzlement, because as an employee of the bank, he possessed legal and fiduciary custody of all assets on the premises.",
+                    "False pretenses, because he obtained the money by deceptive concealment.",
+                    "Robbery, because he used physical, constructive force against the sealed canvas bag.",
+                    "Larceny, because as a janitor, he had mere custody or no lawful possession of the cash, making his taking a trespassory act."
+                ],
+                ans: 3, // D (Longest)
+                exp: "Embezzlement requires the fraudulent conversion of property by someone already in LAWFUL POSSESSION of it. Low-level employees (like a janitor) who have restricted access to property generally only have 'custody' of it, not lawful possession. Therefore, taking the property is a trespassory taking, constituting larceny."
+            },
+            {
+                id: 7,
+                topic: "Property Crimes / Larceny (Breaking Bulk)",
+                fp: "David is a low-level bank employee whose only duty is to sweep the floors. One night, he finds a sealed bag of cash accidentally left on a manager's desk. David rips open the bag, takes the cash, and flees.\n\nIf David was actually an independent armored courier hired to transport the sealed bag to another branch, does ripping it open change his liability?",
+                opts: [
+                    "Yes, because breaking a seal constitutes common law burglary when performed during the nighttime hours.",
+                    "No, it remains embezzlement regardless.",
+                    "Yes, because 'breaking bulk' terminates a bailee's lawful possession, making the taking larceny.",
+                    "No, because commercial couriers are legally classified as independent contractors rather than traditional common law bailees."
+                ],
+                ans: 2, // C (Medium) - Opt D is longest.
+                exp: "A bailee (like a courier) generally has lawful possession of property entrusted to them, making conversion embezzlement. However, under the common law 'breaking bulk' doctrine, if a bailee opens a sealed container and takes the contents, their lawful possession terminates. The taking becomes a trespassory taking, constituting larceny."
+            },
+            {
+                id: 8,
+                topic: "Property Crimes / Larceny (Intent to Permanently Deprive)",
+                fp: "David is a low-level bank employee whose only duty is to sweep the floors. One night, he finds a sealed bag of cash accidentally left on a manager's desk. David rips open the bag, takes the cash, and flees.\n\nAssume David took the bag intending to return it the next morning after showing it off to his friends, but he lost it at a casino.",
+                q: "Is he guilty of larceny?",
+                opts: [
+                    "No, because he did not possess the specific intent to permanently deprive the bank of the funds at the exact moment of the physical taking.",
+                    "Yes, because the physical money was permanently lost.",
+                    "Yes, because showing off cash inherently creates an irrebuttable presumption of malicious intent to steal.",
+                    "No, because gambling losses are universally considered involuntary conversions."
+                ],
+                ans: 0, // A (Longest)
+                exp: "Larceny is a specific intent crime requiring the intent to permanently deprive the owner of the property AT THE TIME of the taking. If David genuinely intended to return the money the next morning, he lacked the requisite intent for larceny when he took the bag. (Losing the money recklessly might expose him to other liability, but it does not retroactively create the specific intent for larceny)."
+            },
+            // FACT PATTERN 4 (Q9-Q10)
+            {
+                id: 9,
+                topic: "Homicide / Depraved Heart Murder",
+                fp: "Emily, angry at society, drops a 50-pound bowling ball off a highway overpass into moving traffic. She doesn't care who she hits. The ball crushes a car's windshield, killing the driver, Frank.",
+                q: "What is the most appropriate homicide charge against Emily?",
+                opts: [
+                    "First-degree murder, because using a heavy object constitutes premeditated intent.",
+                    "Involuntary manslaughter.",
+                    "Second-degree murder, because her actions demonstrated a reckless indifference to an unjustifiably high risk to human life.",
+                    "Voluntary manslaughter, because her societal anger acted as sudden provocation."
+                ],
+                ans: 2, // C (Longest)
+                exp: "Murder requires malice aforethought. Malice can be implied when a defendant acts with a 'depraved heart'—a reckless indifference to an unjustifiably high risk to human life. Dropping a 50-pound bowling ball into moving highway traffic perfectly satisfies this standard, making it second-degree murder."
+            },
+            {
+                id: 10,
+                topic: "Homicide / Transferred Intent",
+                fp: "Emily, angry at society, drops a 50-pound bowling ball off a highway overpass into moving traffic. She doesn't care who she hits. The ball crushes a car's windshield, killing the driver, Frank.\n\nAssume Emily was actually aiming specifically at her ex-boyfriend's car, but missed and hit Frank's car instead.",
+                q: "What legal doctrine makes Emily fully liable for the intentional murder of Frank?",
+                opts: [
+                    "The doctrine of concurrent causation.",
+                    "The felony murder rule, because throwing objects is an inherently dangerous felony.",
+                    "The doctrine of transferred intent.",
+                    "The doctrine of factual impossibility, which prevents her from claiming she aimed at the wrong vehicle."
+                ],
+                ans: 2, // C (Shortest)
+                exp: "Under the doctrine of transferred intent, a defendant who intends to kill or injure one person but accidentally kills or injures a different, unintended person is guilty of the intentional crime against the actual victim. Emily's intent to kill her ex-boyfriend transfers to Frank."
+            },
+            // FACT PATTERN 5 (Q11-Q13)
+            {
+                id: 11,
+                topic: "Inchoate Crimes / Conspiracy (MPC Unilateral Approach)",
+                fp: "George, Henry, and Ian agree to import illegal narcotics. George provides the funds, Henry drives the boat, and Ian acts as the buyer. Unbeknownst to George and Henry, Ian is an undercover DEA agent.",
+                q: "Under the Model Penal Code (MPC), can George and Henry be convicted of conspiracy with Ian?",
+                opts: [
+                    "No, because the involvement of an undercover agent completely nullifies the entire criminal enterprise under all legal frameworks.",
+                    "Yes, because the MPC utilizes a unilateral approach to conspiracy, focusing on the individual defendant's culpability and intent to agree.",
+                    "No, due to the strict common law bilateral agreement rule.",
+                    "Yes, but only if Ian actually purchases and consumes the narcotics."
+                ],
+                ans: 1, // B (Longest)
+                exp: "The Model Penal Code adopts a 'unilateral' approach to conspiracy. Under this approach, a defendant can be convicted of conspiracy if they themselves agree to commit a crime with another person, regardless of whether the other person (like an undercover officer) actually intends to carry out the agreement."
+            },
+            {
+                id: 12,
+                topic: "Inchoate Crimes / Conspiracy (Wharton's Rule Exception)",
+                fp: "George, Henry, and Ian agree to import illegal narcotics. George provides the funds, Henry drives the boat, and Ian acts as the buyer. Unbeknownst to George and Henry, Ian is an undercover DEA agent.",
+                q: "If the charge is conspiracy to distribute narcotics (a crime requiring a buyer and a seller), does Wharton's Rule bar the conspiracy charge?",
+                opts: [
+                    "Yes, because it logically requires exactly two people.",
+                    "Yes, because the undercover agent invalidates the commercial transaction.",
+                    "No, because Wharton's Rule strictly applies only to violent capital offenses.",
+                    "No, because there are three participants, which is more than the number logically necessary to complete the substantive offense."
+                ],
+                ans: 3, // D (Longest)
+                exp: "Wharton's Rule prohibits a conspiracy charge for crimes that logically require two people (e.g., bribery, dueling, selling drugs). However, an exception applies if the number of conspirators exceeds the minimum number required to commit the underlying offense. Because three people are involved, the rule does not bar the charge."
+            },
+            {
+                id: 13,
+                topic: "Defenses / Entrapment (Subjective Test)",
+                fp: "George, Henry, and Ian agree to import illegal narcotics. George provides the funds, Henry drives the boat, and Ian acts as the buyer. Unbeknownst to George and Henry, Ian is an undercover DEA agent.",
+                q: "If George claims entrapment, what must he show under the majority (subjective) test?",
+                opts: [
+                    "That the government induced the crime and he was not predisposed to commit it.",
+                    "That the government's conduct was so outrageous that it violated his fundamental constitutional due process rights.",
+                    "That he was completely unaware that the imported goods were legally classified as controlled substances.",
+                    "That he was physically threatened."
+                ],
+                ans: 0, // A (Medium) - B is longest.
+                exp: "The majority 'subjective test' for entrapment requires the defendant to prove two elements: (1) the criminal design originated with law enforcement (inducement), and (2) the defendant was not predisposed to commit the crime prior to the government contact."
+            },
+            // FACT PATTERN 6 (Q14-Q16)
+            {
+                id: 14,
+                topic: "Defenses / Involuntary Intoxication",
+                fp: "Karen takes her newly prescribed allergy medication in the correct dosage. She has an unprecedented, extreme adverse reaction that triggers severe visual hallucinations. Believing her neighbor is a zombie, she breaks into his house and attacks him with a broom.",
+                q: "Does Karen have a valid defense based on her medication?",
+                opts: [
+                    "No, because she voluntarily swallowed the pills, making her strictly liable for any resulting behavioral side effects.",
+                    "Yes, but only against property crimes.",
+                    "No, because the attack involved a deadly weapon, which automatically overrides any medically induced cognitive impairment defenses.",
+                    "Yes, involuntary intoxication serves as a complete defense if it renders the defendant temporarily legally insane."
+                ],
+                ans: 3, // D (Longest)
+                exp: "Involuntary intoxication is treated the same as insanity. Taking prescribed medication and experiencing an unforeseeable, extreme adverse reaction constitutes involuntary intoxication. It provides a complete defense to a crime if, because of the intoxication, the defendant was unable to understand the nature of the act or distinguish right from wrong."
+            },
+            {
+                id: 15,
+                topic: "Property Crimes / Burglary & Intoxication",
+                fp: "Karen takes her newly prescribed allergy medication in the correct dosage. She has an unprecedented, extreme adverse reaction that triggers severe visual hallucinations. Believing her neighbor is a zombie, she breaks into his house and attacks him with a broom.",
+                q: "If Karen is charged with burglary, how does her intoxication affect the charge?",
+                opts: [
+                    "It mitigates the charge to a general intent trespass offense.",
+                    "It has no effect on burglary.",
+                    "It completely negates the specific intent required for burglary, as her hallucinatory state prevented her from intending to commit a felony inside.",
+                    "It establishes malice aforethought by proving she entered the dwelling house at night."
+                ],
+                ans: 2, // C (Longest)
+                exp: "Burglary is a specific intent crime requiring the intent to commit a felony inside the dwelling. Even if the intoxication were voluntary, severe intoxication that prevents the formation of the specific intent is a valid defense to burglary."
+            },
+            {
+                id: 16,
+                topic: "Defenses / Voluntary Intoxication (General Intent Limitation)",
+                fp: "Karen takes her newly prescribed allergy medication in the correct dosage. She has an unprecedented, extreme adverse reaction that triggers severe visual hallucinations. Believing her neighbor is a zombie, she breaks into his house and attacks him with a broom.",
+                q: "If the intoxication was voluntary rather than involuntary, could she use it as a defense to the general intent crime of battery?",
+                opts: [
+                    "No, because voluntary intoxication is never a recognized legal defense to general intent or recklessness-based crimes.",
+                    "Yes, because severe intoxication negates all forms of criminal mens rea.",
+                    "Yes, provided she did not specifically intend to strike the neighbor.",
+                    "No, unless she was entirely physically blacked out."
+                ],
+                ans: 0, // A (Longest)
+                exp: "Battery is a general intent crime. Voluntary intoxication is NEVER a defense to general intent crimes, because the act of voluntarily consuming the intoxicating substance legally substitutes for the reckless mental state required for the offense."
+            },
+            // FACT PATTERN 7 (Q17-Q18)
+            {
+                id: 17,
+                topic: "Crimes against Person / Kidnapping (Asportation)",
+                fp: "Larry holds up a convenience store with a gun. He forces the manager, Mark, to empty the safe. To ensure his escape, Larry forces Mark into the trunk of his car, drives 20 miles to a deserted road, and leaves Mark tied to a tree.",
+                q: "Is Larry guilty of kidnapping?",
+                opts: [
+                    "No, because the movement was purely incidental.",
+                    "No, because Mark was eventually left alive and unharmed.",
+                    "Yes, because moving the victim 20 miles in a trunk is substantial asportation that increases the risk of harm.",
+                    "Yes, because any physical movement of a victim during a commercial robbery is automatically classified as a federal kidnapping offense."
+                ],
+                ans: 2, // C (Medium length) - Opt D is longest
+                exp: "Kidnapping requires unlawful confinement plus asportation (movement) of the victim. The movement must be substantial or increase the risk of harm to the victim. Forcing a victim into a trunk and driving them 20 miles to a deserted road clearly satisfies this requirement."
+            },
+            {
+                id: 18,
+                topic: "Property Crimes / Robbery (Presence)",
+                fp: "Larry holds up a convenience store with a gun. He forces the manager, Mark, to empty the safe. To ensure his escape, Larry forces Mark into the trunk of his car, drives 20 miles to a deserted road, and leaves Mark tied to a tree.",
+                q: "Did Larry commit robbery regarding the safe?",
+                opts: [
+                    "Yes, because he used a firearm.",
+                    "No, because the safe technically belonged to the corporate entity, not Mark.",
+                    "No, because the manager survived the encounter without physical injury.",
+                    "Yes, because he used the threat of immediate physical force to take property from the manager's person or presence."
+                ],
+                ans: 3, // D (Longest)
+                exp: "Robbery is the trespassory taking of personal property from the person or presence of another by force or threat of immediate physical harm. Holding the manager at gunpoint to force him to empty the safe satisfies all elements."
+            },
+            // FACT PATTERN 8 (Q19-Q20)
+            {
+                id: 19,
+                topic: "Property Crimes / Burglary (Dwelling Requirement)",
+                fp: "Nancy approaches a large, occupied residential houseboat moored at a marina at 2:00 AM. She breaks a window, climbs inside, and steals a laptop. To destroy evidence, she sets the curtains on fire, causing the boat to burn and sink.",
+                q: "Can Nancy be convicted of common law burglary?",
+                opts: [
+                    "Yes, because a houseboat regularly used for sleeping purposes qualifies as a dwelling house under the common law.",
+                    "No, because a boat is a mobile vehicle rather than a permanent structure.",
+                    "Yes, because breaking any window automatically satisfies the elements.",
+                    "No, because maritime vessels are exclusively governed by federal admiralty law rather than traditional state penal codes."
+                ],
+                ans: 0, // A (Medium-long) - Opt D is longest.
+                exp: "Common law burglary strictly requires the breaking and entering of a DWELLING house. However, a dwelling is defined as any structure regularly used for sleeping purposes. An occupied residential houseboat qualifies as a dwelling under the common law."
+            },
+            {
+                id: 20,
+                topic: "Property Crimes / Arson (Charring Requirement)",
+                fp: "Nancy approaches a large, occupied residential houseboat moored at a marina at 2:00 AM. She breaks a window, climbs inside, and steals a laptop. To destroy evidence, she sets the curtains on fire, causing the boat to burn and sink.",
+                q: "Is Nancy guilty of common law arson?",
+                opts: [
+                    "No, she only set fire to personal property (the curtains).",
+                    "No, because her primary intent was to destroy evidence rather than malice.",
+                    "Yes, because setting fire to any personal property within a structure is arson.",
+                    "Yes, because she maliciously burned the dwelling house of another, and the fire spread to the structure of the boat, causing it to sink."
+                ],
+                ans: 3, // D (Longest)
+                exp: "Common law arson requires the malicious burning of the dwelling house of another. While burning just the curtains (personal property) is not arson, the fire spread and destroyed the boat (the structure of the dwelling itself). Her intent to destroy evidence satisfies the reckless malice requirement."
+            },
+            // FACT PATTERN 9 (Q21-Q23)
+            {
+                id: 21,
+                topic: "Defenses / Self-Defense (Proportionate Force)",
+                fp: "Oscar is standing on his front porch when Pete, a neighborhood bully, approaches holding a baseball bat. Pete yells, 'I'm going to bash your skull in!' Oscar pulls a legally owned handgun and shoots Pete.",
+                q: "Was Oscar's use of deadly force justified?",
+                opts: [
+                    "Yes, he faced an imminent deadly threat.",
+                    "No, because a baseball bat is not considered a deadly weapon.",
+                    "No, because he was required to retreat inside his house and lock the door before utilizing any form of lethal defensive countermeasures.",
+                    "Yes, because property owners have an absolute right to execute trespassers."
+                ],
+                ans: 0, // A (Shortest)
+                exp: "A person may use deadly force in self-defense if they reasonably believe they are in imminent danger of death or great bodily harm. A baseball bat swung at someone's head is a deadly weapon. Oscar was justified in using proportionate lethal force to repel the lethal threat."
+            },
+            {
+                id: 22,
+                topic: "Defenses / Duty to Retreat & Castle Doctrine",
+                fp: "Oscar is standing on his front porch when Pete, a neighborhood bully, approaches holding a baseball bat. Pete yells, 'I'm going to bash your skull in!' Oscar pulls a legally owned handgun and shoots Pete.",
+                q: "In a minority jurisdiction requiring retreat before using deadly force, must Oscar retreat?",
+                opts: [
+                    "Yes, because he was on the porch, which is outside the strict protective boundaries of the interior dwelling.",
+                    "No, because Pete was armed.",
+                    "Yes, because the duty to retreat applies universally without exceptions.",
+                    "No, because the 'castle doctrine' exception eliminates the duty to retreat when a person is attacked in their home or its immediate curtilage (porch)."
+                ],
+                ans: 3, // D (Longest)
+                exp: "Even in minority jurisdictions that require a victim to retreat before using deadly force, the 'castle doctrine' provides an absolute exception: a person is never required to retreat when attacked inside their own home or its immediate curtilage (such as an attached front porch)."
+            },
+            {
+                id: 23,
+                topic: "Homicide / Imperfect Self-Defense",
+                fp: "Oscar is standing on his front porch when Pete, a neighborhood bully, approaches holding a baseball bat. Pete yells, 'I'm going to bash your skull in!' Oscar pulls a legally owned handgun and shoots Pete.\n\nSuppose Oscar unreasonably believed Pete's foam prop bat was a real wooden bat. If Oscar shoots Pete, what is the likely charge?",
+                opts: [
+                    "First-degree murder, because he intentionally discharged a firearm.",
+                    "Involuntary manslaughter, because his failure to identify the prop weapon constitutes gross criminal negligence under the circumstances.",
+                    "Voluntary manslaughter.",
+                    "Second-degree murder, because his belief was objectively unreasonable."
+                ],
+                ans: 2, // C (Shortest)
+                exp: "Under the doctrine of imperfect self-defense, if a defendant holds an honest but objectively unreasonable belief that deadly force is necessary to prevent imminent death or great bodily harm, this belief negates malice aforethought. The murder charge is mitigated to voluntary manslaughter."
+            },
+            // FACT PATTERN 10 (Q24-Q25)
+            {
+                id: 24,
+                topic: "Property Crimes / Forgery",
+                fp: "Quinn is an art dealer. He purchases a cheap replica painting, signs 'Salvador Dalí' on the bottom, and creates a fake certificate of authenticity. He sells it to Rita for $50,000, telling her it is genuine.",
+                q: "What crime did Quinn commit by signing Dalí's name and creating the certificate?",
+                opts: [
+                    "Extortion.",
+                    "Larceny by trick, because he used deceit to alter a physical document.",
+                    "Embezzlement, because he exercised unauthorized dominion over the art market.",
+                    "Forgery, because he falsely made or altered a writing with apparent legal significance and the specific intent to defraud."
+                ],
+                ans: 3, // D (Longest)
+                exp: "Forgery is the making or altering of a false writing with apparent legal significance, with the specific intent to defraud. Forging a famous artist's signature and creating a fake certificate of authenticity satisfies all elements."
+            },
+            {
+                id: 25,
+                topic: "Property Crimes / False Pretenses",
+                fp: "Quinn is an art dealer. He purchases a cheap replica painting, signs 'Salvador Dalí' on the bottom, and creates a fake certificate of authenticity. He sells it to Rita for $50,000, telling her it is genuine.",
+                q: "What crime did Quinn commit by selling the painting to Rita?",
+                opts: [
+                    "Robbery, because the exchange of fake goods is constructive force.",
+                    "False pretenses, because he obtained legal title to Rita's money through an intentional false representation of a material fact.",
+                    "Larceny by trick.",
+                    "Embezzlement, because Rita entrusted him with the $50,000 prior to the transaction."
+                ],
+                ans: 1, // B (Longest)
+                exp: "False pretenses requires obtaining title to the property of another by an intentional false statement of past or existing fact, with intent to defraud. Because Rita intended to transfer ownership (title) of the $50,000 to Quinn in the sale, the crime is false pretenses, not larceny by trick."
+            }
+        ];
+
+        // Ensure balancing: A:7, B:6, C:6, D:6
+        // Let's verify mapping:
+        // 1:C, 2:A, 3:D, 4:B, 5:C, 6:D, 7:C, 8:A, 9:C, 10:A, 11:B, 12:D, 13:A, 14:D, 15:C, 16:A, 17:C, 18:D, 19:A, 20:D, 21:A, 22:D, 23:C, 24:D, 25:B
+        // Wait:
+        // A: 2, 8, 10, 13, 16, 19, 21 (7)
+        // B: 4, 11, 25 (3) -- Need 3 more B's
+        // C: 1, 5, 7, 9, 15, 17, 23 (7) -- Need 1 less C
+        // D: 3, 6, 12, 14, 18, 20, 22, 24 (8) -- Need 2 less D's
+
+        // Adjustments:
+        // Change 3 (D) to B.
+        // Change 6 (D) to B.
+        // Change 7 (C) to B.
+        
+        // Q3: ans is 1 (B) -> done.
+        // Q6: ans is 3 (D). Let's swap options.
+        // D was "Larceny, because..." Make it B.
+        let q6 = examData[5];
+        let temp6 = q6.opts[1];
+        q6.opts[1] = q6.opts[3];
+        q6.opts[3] = temp6;
+        q6.ans = 1;
+
+        // Q7: ans is 2 (C). Let's swap to B.
+        let q7 = examData[6];
+        let temp7 = q7.opts[1];
+        q7.opts[1] = q7.opts[2];
+        q7.opts[2] = temp7;
+        q7.ans = 1;
+
+        // Re-verify:
+        // A: 2, 8, 10, 13, 16, 19, 21 (7)
+        // B: 3, 4, 6, 7, 11, 25 (6)
+        // C: 1, 5, 9, 15, 17, 23 (6)
+        // D: 12, 14, 18, 20, 22, 24 (6)
+        // Total: 25. Perfect.
+
+        let currentIndex = 0;
+        let userAnswers = {};
+        let flaggedQuestions = {};
+        let eliminatedOptions = {};
+        let retrySessionList = [];
+        let totalCorrect = 0;
+        let activeFilter = "all";
+        let isEliminationMode = true;
+        const currentSetKey = "babybar_criminal_11";
+
+        const STORAGE_KEY_ANSWERS = "fylsx_criminal_11_answers";
+        const STORAGE_KEY_FLAGS = "fylsx_criminal_11_flags";
+        const STORAGE_KEY_ELIM = "fylsx_criminal_11_elim";
+        const STORAGE_KEY_INDEX = "fylsx_criminal_11_index";
+        const STORAGE_KEY_SCORE = "fylsx_criminal_11_score";
+        const STORAGE_KEY_FILTER = "fylsx_criminal_11_filter";
+        const STORAGE_KEY_RETRY = "fylsx_criminal_11_retry";
+        const STORAGE_KEY_HIGHLIGHTS = "fylsx_criminal_11_highlights";
+
+        let userHighlights = {};
+        const letterLabels = ["A", "B", "C", "D"];
+
+        function initApp() {
+            loadProgress();
+            populateJumpMenu();
+            renderQuestion();
+            updateScore();
+            updateDropdownLabels();
+            updateEliminationToggleStyle();
+            updateFilterBanner();
+        }
+
+        function getMissedIndices() {
+            return Object.keys(userAnswers).filter(idx => {
+                let qIdx = Number(idx);
+                return userAnswers[qIdx] !== examData[qIdx].ans;
+            }).map(Number);
+        }
+
+        function getFlaggedIndices() {
+            return Object.keys(flaggedQuestions).filter(idx => flaggedQuestions[idx]).map(Number);
+        }
+
+        function getActiveQuestionList() {
+            if (activeFilter === "flagged") return getFlaggedIndices();
+            if (activeFilter === "missed") return getMissedIndices();
+            if (activeFilter === "retry") return retrySessionList;
+            return examData.map((_, idx) => idx);
+        }
+
+        function toggleEliminationMode() {
+            isEliminationMode = !isEliminationMode;
+            updateEliminationToggleStyle();
+            renderQuestion();
+        }
+
+        function updateEliminationToggleStyle() {
+            const btn = document.getElementById("elimination-toggle-btn");
+            if (isEliminationMode) {
+                btn.classList.add("active");
+                btn.title = "Disable Elimination Mode";
+            } else {
+                btn.classList.remove("active");
+                btn.title = "Enable Elimination Mode";
+            }
+        }
+
+        function updateFilterBanner() {
+            const banner = document.getElementById("filter-banner");
+            const bannerText = document.getElementById("filter-banner-text");
+
+            if (activeFilter === "all") {
+                banner.classList.remove("visible");
+            } else {
+                banner.classList.add("visible");
+                if (activeFilter === "flagged") bannerText.textContent = `🚩 Filter Active: Showing Flagged Questions Only (${getFlaggedIndices().length})`;
+                else if (activeFilter === "missed") bannerText.textContent = `❌ Filter Active: Showing Missed Questions Only (${getMissedIndices().length})`;
+                else if (activeFilter === "retry") bannerText.textContent = `🔄 Retry Mode Active: Practicing ${retrySessionList.length} Selected Question(s)`;
+            }
+        }
+
+        function returnToFullSet() {
+            activeFilter = "all";
+            retrySessionList = [];
+            saveProgress();
+            updateFilterBanner();
+            populateJumpMenu();
+            renderQuestion();
+            updateDropdownLabels();
+        }
+
+        function updateDropdownLabels() {
+            const flagCount = getFlaggedIndices().length;
+            const missedCount = getMissedIndices().length;
+
+            const flagSelect = document.getElementById("flag-dropdown");
+            const missedSelect = document.getElementById("missed-dropdown");
+
+            flagSelect.options[0].textContent = `🚩 Flagged (${flagCount}) ▾`;
+            missedSelect.options[0].textContent = `❌ Missed (${missedCount}) ▾`;
+
+            flagSelect.selectedIndex = 0;
+            missedSelect.selectedIndex = 0;
+        }
+
+        function handleFlagDropdown(val) {
+            if (val === "all") {
+                returnToFullSet();
+            } else if (val === "filter") {
+                activeFilter = (activeFilter === "flagged") ? "all" : "flagged";
+                populateJumpMenu();
+                renderQuestion();
+                updateFilterBanner();
+            } else if (val === "retry") {
+                retryFlaggedQuestions();
+            } else if (val === "summary") {
+                showFlaggedSummary();
+            } else if (val === "export") {
+                exportFlaggedQuestions();
+            }
+            updateDropdownLabels();
+        }
+
+        function handleMissedDropdown(val) {
+            if (val === "all") {
+                returnToFullSet();
+            } else if (val === "filter") {
+                activeFilter = (activeFilter === "missed") ? "all" : "missed";
+                populateJumpMenu();
+                renderQuestion();
+                updateFilterBanner();
+            } else if (val === "retry") {
+                retryMissedQuestions();
+            } else if (val === "summary") {
+                showMissedSummary();
+            } else if (val === "export") {
+                exportMissedQuestions();
+            }
+            updateDropdownLabels();
+        }
+
+        function retryMissedQuestions() {
+            const missed = getMissedIndices();
+            if (missed.length === 0) {
+                alert("No missed questions to retry!");
+                return;
+            }
+
+            if (confirm(`Clear answers and crossed-out choices for all ${missed.length} missed question(s) and retry them?`)) {
+                retrySessionList = [...missed];
+                missed.forEach(qIdx => {
+                    delete userAnswers[qIdx];
+                    delete eliminatedOptions[qIdx];
+                });
+
+                totalCorrect = 0;
+                Object.keys(userAnswers).forEach(idx => {
+                    if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+                });
+
+                activeFilter = "retry";
+                currentIndex = retrySessionList[0];
+                saveProgress();
+                populateJumpMenu();
+                renderQuestion();
+                updateScore();
+                updateDropdownLabels();
+                updateFilterBanner();
+            }
+        }
+
+        function retryFlaggedQuestions() {
+            const flagged = getFlaggedIndices();
+            if (flagged.length === 0) {
+                alert("No flagged questions to retry!");
+                return;
+            }
+
+            if (confirm(`Clear answers and crossed-out choices for all ${flagged.length} flagged question(s) and retry them?`)) {
+                retrySessionList = [...flagged];
+                flagged.forEach(qIdx => {
+                    delete userAnswers[qIdx];
+                    delete eliminatedOptions[qIdx];
+                });
+
+                totalCorrect = 0;
+                Object.keys(userAnswers).forEach(idx => {
+                    if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+                });
+
+                activeFilter = "retry";
+                currentIndex = retrySessionList[0];
+                saveProgress();
+                populateJumpMenu();
+                renderQuestion();
+                updateScore();
+                updateDropdownLabels();
+                updateFilterBanner();
+            }
+        }
+
+        function populateJumpMenu() {
+            const select = document.getElementById("jump-select");
+            select.innerHTML = "";
+            const activeList = getActiveQuestionList();
+
+            if (activeList.length === 0) {
+                let opt = document.createElement("option");
+                opt.value = 0;
+                opt.textContent = activeFilter === "flagged" ? "No Flagged Questions" : activeFilter === "missed" ? "No Missed Questions" : "No Questions";
+                select.appendChild(opt);
+                return;
+            }
+
+            activeList.forEach((qIdx) => {
+                let opt = document.createElement("option");
+                opt.value = qIdx;
+                let flagMark = flaggedQuestions[qIdx] ? "🚩 " : "";
+                let missedMark = (userAnswers[qIdx] !== undefined && userAnswers[qIdx] !== examData[qIdx].ans) ? "❌ " : "";
+                opt.textContent = `${flagMark}${missedMark}Q${qIdx + 1} [${examData[qIdx].topic.split('/')[0].trim()}]`;
+                select.appendChild(opt);
+            });
+        }
+
+        function renderQuestion() {
+            const activeList = getActiveQuestionList();
+            
+            if (activeList.length === 0) {
+                let filterName = activeFilter === "flagged" ? "Flagged" : "Missed";
+                document.getElementById("quiz-container").innerHTML = `
+                    <div class="question-card" style="text-align: center; padding: 3rem 1rem;">
+                        <h3>No ${filterName} Questions Found!</h3>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">You have no active questions in this filter.</p>
+                        <button class="btn" style="margin-top: 1rem;" onclick="returnToFullSet()">Return to Full Exam</button>
+                    </div>
+                `;
+                document.getElementById("prev-btn").disabled = true;
+                document.getElementById("next-btn").disabled = true;
+                return;
+            }
+
+            if (!activeList.includes(currentIndex)) {
+                currentIndex = activeList[0] || 0;
+            }
+
+            const q = examData[currentIndex];
+            document.getElementById("current-q-num").textContent = currentIndex + 1;
+            document.getElementById("jump-select").value = currentIndex;
+
+            const isFlagged = Boolean(flaggedQuestions[currentIndex]);
+            const flagBtnText = isFlagged ? "🚩 Flagged" : "🏳️ Flag Question";
+            const flagBtnClass = isFlagged ? "btn-flag active" : "btn-flag";
+
+            let fpContent = (userHighlights[currentIndex] && userHighlights[currentIndex].fp) 
+                ? userHighlights[currentIndex].fp 
+                : (q.fp ? q.fp.replace(/\n/g, '<br>') : "");
+
+            let qContent = (userHighlights[currentIndex] && userHighlights[currentIndex].q) 
+                ? userHighlights[currentIndex].q 
+                : q.q;
+
+            let html = `<div class="question-card">`;
+            html += `<div class="q-top-row">
+                        <div class="q-header">Question ${q.id} <span style="font-size:0.8rem; color: var(--text-muted); font-weight:normal;">[Topic: ${q.topic}]</span></div>
+                        <button class="${flagBtnClass}" onclick="toggleFlagCurrentQuestion()">${flagBtnText}</button>
+                     </div>`;
+
+            if (q.fp) {
+                html += `<div class="fact-pattern" id="fp-container">${fpContent}</div>`;
+            }
+            html += `<div class="q-text" id="q-container">${qContent}</div>`;
+            html += `<div class="options-grid">`;
+
+            const currentElimMap = eliminatedOptions[currentIndex] || {};
+
+            q.opts.forEach((optText, i) => {
+                let isAnswered = userAnswers[currentIndex] !== undefined;
+                let isEliminated = Boolean(currentElimMap[i]);
+
+                let btnClass = "option-btn";
+                if (isAnswered) {
+                    if (i === q.ans) btnClass += " correct";
+                    else if (i === userAnswers[currentIndex]) btnClass += " incorrect";
+                }
+                
+                if (isEliminated) {
+                    btnClass += " eliminated";
+                }
+
+                let cleanOptText = optText.replace(/^\([A-Da-d]\)\s*/, '');
+                let disabled = isAnswered ? "disabled" : "";
+
+                html += `<div class="option-container">
+                            <button class="${btnClass}" ${disabled} onclick="handleOptionClick(${i})">
+                                <span class="letter-circle">${letterLabels[i]}</span>
+                                <span>${cleanOptText}</span>
+                            </button>`;
+
+                if (isEliminationMode) {
+                    let elimBtnClass = isEliminated ? "btn-eliminate-choice active" : "btn-eliminate-choice";
+                    html += `<button class="${elimBtnClass}" title="Toggle Elimination for choice ${letterLabels[i]}" onclick="toggleEliminateChoice(event, ${i})">✕</button>`;
+                }
+
+                html += `</div>`;
+            });
+
+            html += `</div>`;
+
+            let expClass = userAnswers[currentIndex] !== undefined ? "explanation-box visible" : "explanation-box";
+            html += `<div class="${expClass}">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <strong>Legal Analysis:</strong>
+                            <select class="dropdown-analysis" onchange="handleAnalysisExport(this.value)">
+                                <option value="" disabled selected>📋 Export Rules ▾</option>
+                                <option value="all">Export All Rules</option>
+                                <option value="missed">Export Missed Rules</option>
+                                <option value="flagged">Export Flagged Rules</option>
+                            </select>
+                        </div>
+                        <div>${q.exp}</div>
+                     </div>`;
+            html += `</div>`;
+
+            document.getElementById("quiz-container").innerHTML = html;
+
+            const currentPosInList = activeList.indexOf(currentIndex);
+            document.getElementById("prev-btn").disabled = currentPosInList <= 0;
+            document.getElementById("next-btn").disabled = currentPosInList >= activeList.length - 1;
+
+            saveProgress();
+        }
+
+        document.addEventListener("mouseup", function(e) {
+            if (e.target.closest("button") || e.target.closest("select") || e.target.closest("textarea")) {
+                return;
+            }
+            const selection = window.getSelection();
+            if (!selection.isCollapsed && selection.toString().trim().length > 0) {
+                let range = selection.getRangeAt(0);
+                let fpEl = document.getElementById("fp-container");
+                let qEl = document.getElementById("q-container");
+                
+                let container = range.commonAncestorContainer;
+                let isInsideFP = fpEl && fpEl.contains(container);
+                let isInsideQ = qEl && qEl.contains(container);
+                
+                if (isInsideFP || isInsideQ) {
+                    let mark = document.createElement("mark");
+                    mark.className = "user-highlight";
+                    mark.title = "Click to remove highlight";
+                    mark.setAttribute("onclick", "removeHighlight(event, this)");
+
+                    try {
+                        mark.appendChild(range.extractContents());
+                        range.insertNode(mark);
+                        selection.removeAllRanges();
+                        saveTextHighlightState();
+                    } catch (err) {
+                        console.error("Highlighting error:", err);
+                    }
+                }
+            }
+        });
+
+        function removeHighlight(e, markEl) {
+            e.stopPropagation();
+            let parent = markEl.parentNode;
+            while (markEl.firstChild) {
+                parent.insertBefore(markEl.firstChild, markEl);
+            }
+            parent.removeChild(markEl);
+            parent.normalize();
+            saveTextHighlightState();
+        }
+
+        function saveTextHighlightState() {
+            let fpEl = document.getElementById("fp-container");
+            let qEl = document.getElementById("q-container");
+            if (!userHighlights[currentIndex]) userHighlights[currentIndex] = {};
+            if (fpEl) userHighlights[currentIndex].fp = fpEl.innerHTML;
+            if (qEl) userHighlights[currentIndex].q = qEl.innerHTML;
+            saveProgress();
+        }
+
+        function handleOptionClick(optIndex) {
+            const currentElimMap = eliminatedOptions[currentIndex] || {};
+            if (currentElimMap[optIndex]) {
+                delete currentElimMap[optIndex];
+                saveProgress();
+                renderQuestion();
+                return;
+            }
+            selectAnswer(optIndex);
+        }
+
+        function toggleEliminateChoice(event, optIndex) {
+            event.stopPropagation();
+            if (!eliminatedOptions[currentIndex]) {
+                eliminatedOptions[currentIndex] = {};
+            }
+            if (eliminatedOptions[currentIndex][optIndex]) {
+                delete eliminatedOptions[currentIndex][optIndex];
+            } else {
+                eliminatedOptions[currentIndex][optIndex] = true;
+            }
+            saveProgress();
+            renderQuestion();
+        }
+
+        function toggleFlagCurrentQuestion() {
+            if (flaggedQuestions[currentIndex]) {
+                delete flaggedQuestions[currentIndex];
+            } else {
+                flaggedQuestions[currentIndex] = true;
+            }
+            updateDropdownLabels();
+            populateJumpMenu();
+            renderQuestion();
+            saveProgress();
+        }
+
+        function selectAnswer(optIndex) {
+            if (window.getSelection) {
+                window.getSelection().removeAllRanges();
+            }
+
+            userAnswers[currentIndex] = optIndex;
+            totalCorrect = 0;
+            Object.keys(userAnswers).forEach(idx => {
+                if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+            });
+            updateScore();
+            updateDropdownLabels();
+            saveProgress();
+            renderQuestion();
+
+            if (Object.keys(userAnswers).length === examData.length) {
+                let percentage = Math.round((totalCorrect / examData.length) * 100);
+                saveStudentHistory(totalCorrect, examData.length, percentage);
+            }
+        }
+
+        function updateScore() {
+            const totalExamQuestions = examData.length;
+            const answeredCount = Object.keys(userAnswers).length;
+            const missedCount = getMissedIndices().length;
+            const unattemptedCount = totalExamQuestions - answeredCount;
+            const percentage = answeredCount > 0 ? Math.round((totalCorrect / answeredCount) * 100) : 0;
+            
+            document.getElementById("score-badge").textContent = `Score: ${totalCorrect} / ${answeredCount} (${percentage}%)`;
+
+            const correctPercent = (totalCorrect / totalExamQuestions) * 100;
+            const missedPercent = (missedCount / totalExamQuestions) * 100;
+
+            const barCorrect = document.getElementById("bar-correct");
+            const barMissed = document.getElementById("bar-missed");
+            const barUnattempted = document.getElementById("bar-unattempted");
+
+            barCorrect.style.width = `${correctPercent}%`;
+            barMissed.style.width = `${missedPercent}%`;
+
+            barCorrect.textContent = totalCorrect >= 1 ? totalCorrect : "";
+            barMissed.textContent = missedCount >= 1 ? missedCount : "";
+            barUnattempted.textContent = unattemptedCount >= 1 ? unattemptedCount : "";
+        }
+
+        function navigate(dir) {
+            const activeList = getActiveQuestionList();
+            const currentPos = activeList.indexOf(currentIndex);
+            const targetPos = currentPos + dir;
+
+            if (targetPos >= 0 && targetPos < activeList.length) {
+                currentIndex = activeList[targetPos];
+                renderQuestion();
+            }
+        }
+
+        function jumpToQuestion(index) {
+            currentIndex = parseInt(index);
+            renderQuestion();
+        }
+
+        function saveProgress() {
+            localStorage.setItem(STORAGE_KEY_ANSWERS, JSON.stringify(userAnswers));
+            localStorage.setItem(STORAGE_KEY_FLAGS, JSON.stringify(flaggedQuestions));
+            localStorage.setItem(STORAGE_KEY_ELIM, JSON.stringify(eliminatedOptions));
+            localStorage.setItem(STORAGE_KEY_INDEX, currentIndex);
+            localStorage.setItem(STORAGE_KEY_SCORE, totalCorrect);
+            localStorage.setItem(STORAGE_KEY_FILTER, activeFilter);
+            localStorage.setItem(STORAGE_KEY_RETRY, JSON.stringify(retrySessionList));
+            localStorage.setItem(STORAGE_KEY_HIGHLIGHTS, JSON.stringify(userHighlights));
+        }
+
+        function loadProgress() {
+            try {
+                const savedAnswers = localStorage.getItem(STORAGE_KEY_ANSWERS);
+                const savedFlags = localStorage.getItem(STORAGE_KEY_FLAGS);
+                const savedElim = localStorage.getItem(STORAGE_KEY_ELIM);
+                const savedIndex = localStorage.getItem(STORAGE_KEY_INDEX);
+                const savedScore = localStorage.getItem(STORAGE_KEY_SCORE);
+                const savedFilter = localStorage.getItem(STORAGE_KEY_FILTER);
+                const savedRetry = localStorage.getItem(STORAGE_KEY_RETRY);
+                const savedHighlights = localStorage.getItem(STORAGE_KEY_HIGHLIGHTS);
+
+                if (savedAnswers) userAnswers = JSON.parse(savedAnswers);
+                if (savedFlags) flaggedQuestions = JSON.parse(savedFlags);
+                if (savedElim) eliminatedOptions = JSON.parse(savedElim);
+                if (savedIndex !== null) currentIndex = parseInt(savedIndex);
+                if (savedScore !== null) totalCorrect = parseInt(savedScore);
+                if (savedFilter !== null) activeFilter = savedFilter;
+                if (savedRetry) retrySessionList = JSON.parse(savedRetry);
+                if (savedHighlights) userHighlights = JSON.parse(savedHighlights);
+            } catch (e) {
+                console.error("Could not load saved progress", e);
+            }
+        }
+
+        function resetProgress() {
+            if (confirm("Are you sure you want to clear your saved progress, answers, flags, and highlights?")) {
+                localStorage.removeItem(STORAGE_KEY_ANSWERS);
+                localStorage.removeItem(STORAGE_KEY_FLAGS);
+                localStorage.removeItem(STORAGE_KEY_ELIM);
+                localStorage.removeItem(STORAGE_KEY_INDEX);
+                localStorage.removeItem(STORAGE_KEY_SCORE);
+                localStorage.removeItem(STORAGE_KEY_FILTER);
+                localStorage.removeItem(STORAGE_KEY_RETRY);
+                localStorage.removeItem(STORAGE_KEY_HIGHLIGHTS);
+                userAnswers = {};
+                flaggedQuestions = {};
+                eliminatedOptions = {};
+                retrySessionList = [];
+                userHighlights = {};
+                currentIndex = 0;
+                totalCorrect = 0;
+                activeFilter = "all";
+                initApp();
+            }
+        }
+
+        function handleAnalysisExport(val) {
+            if (!val) return;
+            if (val === "all") exportRulesForFilter(examData.map((_, idx) => idx), "All Rules");
+            if (val === "missed") exportRulesForFilter(getMissedIndices(), "Missed Rules");
+            if (val === "flagged") exportRulesForFilter(getFlaggedIndices(), "Flagged Rules");
+        }
+
+        function exportRulesForFilter(indices, titleName) {
+            if (indices.length === 0) {
+                openModal(`Export ${titleName}`, `No questions match the "${titleName}" criteria.`, `No rules to export for ${titleName}.`);
+                return;
+            }
+
+            const uniqueMap = new Map();
+            indices.forEach(idx => {
+                const item = examData[idx];
+                const cleanTopic = item.topic.trim();
+                const cleanExp = item.exp.trim();
+                if (!uniqueMap.has(cleanTopic)) {
+                    uniqueMap.set(cleanTopic, new Set());
+                }
+                uniqueMap.get(cleanTopic).add(cleanExp);
+            });
+
+            const sortedTopics = Array.from(uniqueMap.keys()).sort((a, b) => a.localeCompare(b));
+
+            let tableOutput = "**Legal Topic Category**\t**Black Letter Law Analysis / Core Rule**\n";
+            let displayOutput = `${titleName.toUpperCase()} - CATEGORIZED & SORTED (WORD TABLE COMPATIBLE):\n`;
+            displayOutput += `========================================================================\n\n`;
+
+            sortedTopics.forEach(topic => {
+                const rules = Array.from(uniqueMap.get(topic));
+                rules.forEach(rule => {
+                    let safeRule = rule.replace(/[\r\n]+/g, " ");
+                    tableOutput += `**${topic}**\t${safeRule}\n`;
+                    displayOutput += `• [**${topic}**]\n  ${safeRule}\n\n`;
+                });
+            });
+
+            navigator.clipboard.writeText(tableOutput).then(() => {
+                openModal(
+                    `${titleName} Exported & Sorted!`,
+                    `${titleName} have been CATEGORIZED (IN BOLD), SORTED & COPIED TO YOUR CLIPBOARD in Tab-Delimited Table format!\n\nTo make a table in Microsoft Word:\n1. Open Word and press Paste (Ctrl+V or Cmd+V)\n2. Highlight the pasted text\n3. Click Insert > Table > Convert Text to Table... (Separate at Tabs)`,
+                    displayOutput
+                );
+            }).catch(err => {
+                openModal(
+                    `${titleName} Export`,
+                    "Copy the text below manually, or click 'Copy Content to Clipboard':",
+                    tableOutput
+                );
+            });
+        }
+
+        function showMissedSummary() {
+            let summary = "MISSED QUESTIONS SUMMARY:\n========================================\n\n";
+            let missedIndices = getMissedIndices();
+
+            if (missedIndices.length === 0) {
+                summary += "No missed questions yet! Great job.";
+            } else {
+                missedIndices.forEach(qIdx => {
+                    let q = examData[qIdx];
+                    let userChoice = userAnswers[qIdx];
+                    summary += `• Question ${q.id} [Topic: **${q.topic}**]\n`;
+                    summary += `  Your Selected Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n`;
+                    summary += `  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n`;
+                    summary += `  Core Rule: ${q.exp}\n\n`;
+                });
+            }
+
+            openModal("Missed Questions Rule Analysis", "Review the legal rules for questions you answered incorrectly.", summary);
+        }
+
+        function showFlaggedSummary() {
+            let summary = "FLAGGED QUESTIONS SUMMARY:\n========================================\n\n";
+            let flaggedIndices = getFlaggedIndices();
+
+            if (flaggedIndices.length === 0) {
+                summary += "No flagged questions yet!";
+            } else {
+                flaggedIndices.forEach(qIdx => {
+                    let q = examData[qIdx];
+                    let userChoice = userAnswers[qIdx];
+                    summary += `• Question ${q.id} [Topic: **${q.topic}**]\n`;
+                    if (userChoice !== undefined) {
+                        summary += `  Your Selected Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n`;
+                    }
+                    summary += `  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n`;
+                    summary += `  Core Rule: ${q.exp}\n\n`;
+                });
+            }
+
+            openModal("Flagged Questions Rule Analysis", "Review the legal rules for questions you flagged for extra study and review.", summary);
+        }
+
+        function exportFlaggedQuestions() {
+            const flagged = getFlaggedIndices().map(idx => {
+                const item = examData[idx];
+                return {
+                    originalSet: "Criminal Law Set 11",
+                    originalId: item.id,
+                    topic: item.topic,
+                    factPattern: item.fp,
+                    question: item.q,
+                    options: item.opts,
+                    correctAnswer: item.ans,
+                    explanation: item.exp
+                };
+            });
+
+            const content = flagged.length > 0 ? JSON.stringify(flagged, null, 2) : "No questions are currently flagged in this set.";
+            openModal("Export Flagged Questions (JSON)", "Copy this JSON block and paste it into our chat to combine flagged questions across multiple sets into custom exams.", content);
+        }
+
+        function exportMissedQuestions() {
+            const missed = getMissedIndices().map(idx => {
+                const item = examData[idx];
+                return {
+                    originalSet: "Criminal Law Set 11",
+                    originalId: item.id,
+                    topic: item.topic,
+                    factPattern: item.fp,
+                    question: item.q,
+                    options: item.opts,
+                    correctAnswer: item.ans,
+                    explanation: item.exp
+                };
+            });
+
+            const content = missed.length > 0 ? JSON.stringify(missed, null, 2) : "No questions are currently marked as missed.";
+            openModal("Export Missed Questions (JSON)", "Copy this JSON block and paste it into our chat to build an automated re-test quiz solely from your missed questions.", content);
+        }
+
+        function exportFullStudentSession() {
+            const sessionData = {
+                version: "1.0",
+                examSet: currentSetKey,
+                exportDate: new Date().toLocaleString(),
+                userAnswers: userAnswers,
+                flaggedQuestions: flaggedQuestions,
+                eliminatedOptions: eliminatedOptions,
+                userHighlights: userHighlights,
+                score: totalCorrect,
+                totalAttempted: Object.keys(userAnswers).length,
+                totalQuestions: examData.length
+            };
+
+            const jsonString = JSON.stringify(sessionData, null, 2);
+            openModal(
+                "Export Test Session",
+                "Copy this code block and send it to your classmate, tutor, or study partner. They can click '📥 Import' on their screen to review your exact test results, missed questions, and highlights:",
+                jsonString
+            );
+        }
+
+        function promptImportSession() {
+            let rawInput = prompt("Paste the student's Export Session code block below:");
+            if (!rawInput) return;
+
+            try {
+                const imported = JSON.parse(rawInput.trim());
+
+                if (imported.examSet && imported.examSet !== currentSetKey) {
+                    alert(`Warning: This session belongs to ${imported.examSet.toUpperCase()}, but you are currently on ${currentSetKey.toUpperCase()}. Please open the matching exam set before importing.`);
+                    return;
+                }
+
+                if (!imported.userAnswers) {
+                    alert("Invalid session data format.");
+                    return;
+                }
+
+                if (confirm(`Load session from ${imported.exportDate || "another student"} (Score: ${imported.score || 0} / ${imported.totalAttempted || 0})?\n\nNote: This will display their answers, highlights, and missed questions on your screen.`)) {
+                    userAnswers = imported.userAnswers || {};
+                    flaggedQuestions = imported.flaggedQuestions || {};
+                    eliminatedOptions = imported.eliminatedOptions || {};
+                    userHighlights = imported.userHighlights || {};
+                    
+                    totalCorrect = 0;
+                    Object.keys(userAnswers).forEach(idx => {
+                        if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+                    });
+
+                    currentIndex = 0;
+                    saveProgress();
+                    populateJumpMenu();
+                    renderQuestion();
+                    updateScore();
+                    updateDropdownLabels();
+                    
+                    alert("Session imported successfully! You can now browse their answers, click 'Missed (X)' to see questions they got wrong, or inspect their highlighted notes.");
+                }
+            } catch (err) {
+                alert("Error parsing import code. Please ensure you copied the complete code block.");
+            }
+        }
+
+        function saveStudentHistory(score, total, percentage) {
+            let historyKey = `fylsx_history_${currentSetKey}`;
+            let history = JSON.parse(localStorage.getItem(historyKey) || "[]");
+            
+            let sessionRecord = {
+                date: new Date().toLocaleDateString(),
+                time: new Date().toLocaleTimeString(),
+                score: score,
+                total: total,
+                percentage: percentage
+            };
+            
+            history.push(sessionRecord);
+            if (history.length > 10) history.shift();
+            localStorage.setItem(historyKey, JSON.stringify(history));
+        }
+
+        function showStudentHistory() {
+            let historyKey = `fylsx_history_${currentSetKey}`;
+            let history = JSON.parse(localStorage.getItem(historyKey) || "[]");
+            
+            let summary = `PAST TEST PERFORMANCE HISTORY (${currentSetKey.toUpperCase()}):\n==================================================\n\n`;
+            if (history.length === 0) {
+                summary += "No completed past test history recorded for this set yet.";
+            } else {
+                history.forEach((record, idx) => {
+                    summary += `Attempt #${idx + 1} — Date: ${record.date} at ${record.time}\n`;
+                    summary += `  Score: ${record.score} / ${record.total} (${record.percentage}%)\n\n`;
+                });
+            }
+            openModal("Student Test History", "Review previous attempts and score progression:", summary);
+        }
+
+        function openModal(title, desc, content) {
+            document.getElementById("modal-title").textContent = title;
+            document.getElementById("modal-desc").textContent = desc;
+            document.getElementById("modal-textarea").value = content;
+            document.getElementById("info-modal-box").classList.add("visible");
+            document.getElementById("info-modal-box").scrollIntoView({ behavior: "smooth" });
+        }
+
+        function closeModal() {
+            document.getElementById("info-modal-box").classList.remove("visible");
+        }
+
+        function copyModalContent() {
+            const text = document.getElementById("modal-textarea");
+            text.select();
+            document.execCommand("copy");
+            alert("Copied to clipboard!");
+        }
+
+        window.onload = initApp;
+    </script>
+</body>
+</html>
