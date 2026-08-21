@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GoBabyBar">
+    <title>California Baby Bar (FYLSX) - Contracts Practice Exam (Set 14)</title>
+    <style>
+        :root {
+            --primary: #1B365D;
+            --primary-light: #4B6B94;
+            --accent: #D97706;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text: #1E293B;
+            --text-muted: #64748B;
+            --border: #CBD5E1;
+            --success: #16A34A;
+            --danger: #DC2626;
+            --flag: #E11D48;
+            --badge-blue: #BAE6FD;
+            --badge-blue-hover: #7DD3FC;
+        }
+
+        mark.user-highlight {
+            background-color: #FEF08A;
+            color: #713F12;
+            padding: 0.1rem 0.2rem;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        mark.user-highlight:hover {
+            background-color: #FDE047;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 1rem;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.3rem;
+            margin-bottom: 0.2rem;
+        }
+
+        header p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .tracker-wrapper {
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            margin-bottom: 1.2rem;
+        }
+
+        .tracker-bar {
+            background: var(--card-bg);
+            padding: 0.75rem 1rem;
+            border-radius: 10px 10px 0 0;
+            border: 1px solid var(--border);
+            border-bottom: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .progress-bar-container {
+            display: flex;
+            width: 100%;
+            height: 22px;
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            font-size: 0.8rem;
+            font-weight: 700;
+            line-height: 22px;
+            text-align: center;
+        }
+
+        .progress-segment {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: width 0.3s ease;
+        }
+
+        .segment-correct {
+            background: var(--success);
+            color: #FFFFFF;
+            width: 0%;
+        }
+
+        .segment-missed {
+            background: var(--danger);
+            color: #FFFFFF;
+            width: 0%;
+        }
+
+        .segment-unattempted {
+            background: #FFFFFF;
+            color: #0F172A;
+            flex-grow: 1;
+        }
+
+        .score-box {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background: var(--primary-light);
+            color: white;
+            padding: 0.25rem 0.65rem;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .action-group {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-action-tool {
+            padding: 0.35rem 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            transition: all 0.15s ease;
+        }
+
+        .btn-history {
+            background: var(--primary-light);
+            color: white;
+            border-color: var(--primary-light);
+        }
+
+        .btn-export-session {
+            background: #0284C7;
+            color: white;
+            border-color: #0284C7;
+        }
+
+        .btn-import-session {
+            background: #475569;
+            color: white;
+            border-color: #475569;
+        }
+
+        .btn-elimination-toggle {
+            background: #F1F5F9;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-elimination-toggle:hover {
+            background: #E2E8F0;
+            color: var(--text);
+        }
+
+        .btn-elimination-toggle.active {
+            background: #FEF3C7;
+            color: #B45309;
+            border-color: #F59E0B;
+            font-weight: bold;
+        }
+
+        .dropdown-menu {
+            padding: 0.35rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-size: 0.8rem;
+            background: white;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .dropdown-flag {
+            color: var(--flag);
+            border-color: #FECDD3;
+            background: #FFF1F2;
+        }
+
+        .dropdown-missed {
+            color: var(--accent);
+            border-color: #FED7AA;
+            background: #FFFBEB;
+        }
+
+        .filter-status-banner {
+            display: none;
+            background: #FEF3C7;
+            border: 1px solid #FCD34D;
+            color: #92400E;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-status-banner.visible {
+            display: flex;
+        }
+
+        .btn-banner-reset {
+            background: #B45309;
+            color: white;
+            border: none;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .q-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .q-header {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        .btn-flag {
+            background: #F1F5F9;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-flag.active {
+            background: #FFE4E6;
+            color: var(--flag);
+            border-color: var(--flag);
+            font-weight: bold;
+        }
+
+        .fact-pattern {
+            background: #F1F5F9;
+            border-left: 4px solid var(--primary-light);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .q-text {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .option-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .option-btn {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 1;
+            user-select: none;
+        }
+
+        .option-btn:hover:not(:disabled):not(.eliminated) {
+            background: #F0F9FF;
+            border-color: #38BDF8;
+        }
+
+        .option-btn:hover:not(:disabled):not(.eliminated) .letter-circle {
+            background: var(--badge-blue-hover);
+        }
+
+        .option-btn:disabled {
+            cursor: default;
+        }
+
+        .option-btn.eliminated {
+            opacity: 0.45;
+            background: #F1F5F9;
+            border-color: #E2E8F0;
+            text-decoration: line-through;
+        }
+
+        .option-btn.eliminated .letter-circle {
+            background: #CBD5E1;
+            color: #64748B;
+        }
+
+        .letter-circle {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--badge-blue);
+            color: #0F172A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .option-btn.correct {
+            border-color: var(--success);
+            background: #DCFCE7;
+            color: #14532D;
+            font-weight: 500;
+            opacity: 1 !important;
+        }
+
+        .option-btn.correct .letter-circle {
+            background: var(--success);
+            color: #FFFFFF;
+        }
+
+        .option-btn.incorrect {
+            border-color: var(--danger);
+            background: #FEE2E2;
+            color: #7F1D1D;
+            opacity: 0.75;
+        }
+
+        .option-btn.incorrect .letter-circle {
+            background: var(--danger);
+            color: #FFFFFF;
+        }
+
+        .btn-eliminate-choice {
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .btn-eliminate-choice:hover {
+            background: #FEE2E2;
+            border-color: var(--danger);
+            color: var(--danger);
+        }
+
+        .btn-eliminate-choice.active {
+            background: #DC2626;
+            color: white;
+            border-color: #DC2626;
+        }
+
+        .explanation-box {
+            display: none;
+            background: #F0F9FF;
+            border: 1px solid #BAE6FD;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #0369A1;
+            margin-top: 1rem;
+        }
+
+        .explanation-box.visible {
+            display: block;
+        }
+
+        .dropdown-analysis {
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #BAE6FD;
+            font-size: 0.8rem;
+            background: #E0F2FE;
+            color: #0369A1;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            gap: 0.5rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            user-select: none;
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .btn-reset {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            font-weight: normal;
+        }
+
+        .btn-reset:hover {
+            background: #F1F5F9;
+            color: var(--danger);
+            border-color: var(--danger);
+        }
+
+        .modal-box {
+            display: none;
+            background: white;
+            border: 2px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .modal-box.visible {
+            display: block;
+        }
+
+        textarea {
+            width: 100%;
+            height: 240px;
+            margin-top: 0.8rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 0.5rem; }
+            .tracker-bar { flex-direction: column; align-items: stretch; }
+            .action-group { justify-content: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <a href="index.html" style="background: rgba(255,255,255,0.2); color: white; padding: 0.3rem 0.7rem; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: bold;">← Back to Menu</a>
+            <span style="font-size: 0.8rem; opacity: 0.8;">GoBabyBar Exam Suite</span>
+        </div>
+        <h1>California Baby Bar (FYLSX) Practice Exam - Contracts Set 14</h1>
+        <p>25 Super-Advanced Scenarios (Unbiased Randomization & No Length Patterns)</p>
+    </header>
+
+    <div class="tracker-wrapper">
+        <div class="tracker-bar">
+            <div class="score-box">
+                <span>Question <strong id="current-q-num">1</strong> of 25</span>
+                <span class="badge" id="score-badge">Score: 0 / 0 (0%)</span>
+            </div>
+
+            <div class="action-group">
+                <button class="btn-action-tool btn-history" onclick="showStudentHistory()" title="View Past Test History">
+                    📊 History
+                </button>
+                <button class="btn-action-tool btn-export-session" onclick="exportFullStudentSession()" title="Export your answers and highlights to share">
+                    📤 Export
+                </button>
+                <button class="btn-action-tool btn-import-session" onclick="promptImportSession()" title="Import another student's test session to review">
+                    📥 Import
+                </button>
+                <button class="btn-elimination-toggle active" id="elimination-toggle-btn" title="Disable Elimination Mode" onclick="toggleEliminationMode()">
+                    ✂️
+                </button>
+                <select id="flag-dropdown" class="dropdown-menu dropdown-flag" onchange="handleFlagDropdown(this.value)">
+                    <option value="" disabled selected>🚩 Flagged (0) ▾</option>
+                    <option value="all">🌐 Show All Questions (Full Set)</option>
+                    <option value="filter">Show Flagged Only</option>
+                    <option value="retry">Retry Flagged</option>
+                    <option value="summary">Flagged Rule Analysis</option>
+                    <option value="export">Export Flagged (JSON)</option>
+                </select>
+                <select id="missed-dropdown" class="dropdown-menu dropdown-missed" onchange="handleMissedDropdown(this.value)">
+                    <option value="" disabled selected>❌ Missed (0) ▾</option>
+                    <option value="all">🌐 Show All Questions (Full Set)</option>
+                    <option value="filter">Show Missed Only</option>
+                    <option value="retry">Retry Missed</option>
+                    <option value="summary">Missed Rule Analysis</option>
+                    <option value="export">Export Missed (JSON)</option>
+                </select>
+                <select id="jump-select" class="dropdown-menu" onchange="jumpToQuestion(this.value)"></select>
+            </div>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-segment segment-correct" id="bar-correct" title="Correct"></div>
+            <div class="progress-segment segment-missed" id="bar-missed" title="Missed"></div>
+            <div class="progress-segment segment-unattempted" id="bar-unattempted" title="Unattempted">25</div>
+        </div>
+    </div>
+
+    <div class="filter-status-banner" id="filter-banner">
+        <span id="filter-banner-text">Viewing filtered subset</span>
+        <button class="btn-banner-reset" onclick="returnToFullSet()">Return to Full Exam (25 Qs)</button>
+    </div>
+
+    <div id="quiz-container"></div>
+
+    <div class="nav-controls">
+        <button class="btn" id="prev-btn" onclick="navigate(-1)">← Previous</button>
+        <button class="btn btn-reset" onclick="resetProgress()">Reset Set</button>
+        <button class="btn" id="next-btn" onclick="navigate(1)">Next →</button>
+    </div>
+
+    <div class="modal-box" id="info-modal-box">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 id="modal-title" style="color: var(--primary);">Analysis / Export</h3>
+            <button class="btn btn-reset" style="padding:0.2rem 0.6rem;" onclick="closeModal()">✕ Close</button>
+        </div>
+        <p id="modal-desc" style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.3rem;"></p>
+        <textarea id="modal-textarea" readonly></textarea>
+        <button class="btn" id="modal-copy-btn" style="margin-top: 0.8rem;" onclick="copyModalContent()">Copy Content to Clipboard</button>
+    </div>
+
+    <script>
+        // 25 Super-Advanced Contracts Questions (Set 14)
+        // Correct answers carefully balanced: A:6, B:7, C:6, D:6. Total: 25.
+        // Answer lengths strictly varied to avoid visual patterns.
+        const examData = [
+            // FACT PATTERN 1 (Q1-Q3)
+            {
+                id: 1,
+                topic: "Formation / UCC Firm Offer Limit vs. Oral Assurances",
+                fp: "Merchant A calls Farmer B (a non-merchant) and says: 'I offer to buy your antique tractor for $5,000. I guarantee this offer will be held open for 30 days.' Farmer B does not pay any consideration. On day 15, Merchant A formally revokes the offer over the phone. On day 20, Farmer B attempts to accept.",
+                q: "Was Merchant A's revocation on day 15 legally effective?",
+                opts: [
+                    "Yes, because under the UCC firm offer rule, the assurance that an offer will remain open must be embodied in a signed writing; an oral promise is revocable.",
+                    "No, because merchants are strictly bound by their verbal commercial assurances for a maximum of ninety days.",
+                    "No, because the thirty-day timeframe was an explicit, bargained-for material condition of the preliminary negotiations.",
+                    "Yes, but the farmer is entitled to recover nominal damages for breach of the implied covenant of good faith."
+                ],
+                ans: 0, // A
+                exp: "Under UCC § 2-205 (Firm Offer), a merchant's offer is only irrevocable without consideration if it is in a SIGNED WRITING. An oral promise to keep an offer open is treated as a standard offer under the common law, meaning it can be revoked at any time prior to acceptance unless supported by consideration."
+            },
+            {
+                id: 2,
+                topic: "Formation / Option Contracts & Consideration",
+                fp: "Merchant A calls Farmer B (a non-merchant) and says: 'I offer to buy your antique tractor for $5,000. I guarantee this offer will be held open for 30 days.' Farmer B does not pay any consideration. On day 15, Merchant A formally revokes the offer over the phone. On day 20, Farmer B attempts to accept.\n\nAssume instead that on day 1, Farmer B handed Merchant A a crisp $10 bill in exchange for the promise to keep the offer open for 30 days. Merchant A still attempted to revoke on day 15.",
+                q: "Did the $10 create a binding, irrevocable option contract?",
+                opts: [
+                    "No, because the ten-dollar sum is entirely disproportionate to the actual market value of a thirty-day commercial holding period.",
+                    "Yes, because under the common law, nominal consideration is generally sufficient to support a short-term option contract if it is actually paid.",
+                    "Yes, because the UCC firm offer rule requires independent consideration from non-merchants.",
+                    "No, because option contracts strictly require formalized written documentation to be enforceable."
+                ],
+                ans: 1, // B
+                exp: "An option contract requires consideration to hold an offer open. Under common law (and the Restatement), courts typically do not inquire into the adequacy of consideration. Nominal consideration (like $10) is generally sufficient to support a short-term option contract if it is actually paid and bargained for, rendering the revocation ineffective."
+            },
+            {
+                id: 3,
+                topic: "Formation / Mailbox Rule Exception for Options",
+                fp: "Merchant A calls Farmer B (a non-merchant) and says: 'I offer to buy your antique tractor for $5,000. I guarantee this offer will be held open for 30 days.' Farmer B does not pay any consideration. On day 15, Merchant A formally revokes the offer over the phone. On day 20, Farmer B attempts to accept.\n\nAssume Farmer B validly created a 30-day option contract. On day 29, Farmer B deposits a letter of acceptance into the mail. Merchant A receives the letter on day 31.",
+                q: "Is the acceptance legally effective?",
+                opts: [
+                    "Yes, because the mailbox rule applies uniformly to all dispatched acceptances.",
+                    "Yes, because the letter was postmarked prior to the expiration of the binding contractual option period.",
+                    "No, because the mailbox rule generally does NOT apply to option contracts; acceptance of an option is only effective upon actual receipt by the offeror.",
+                    "No, because all acceptances of option contracts must be delivered via certified courier."
+                ],
+                ans: 2, // C
+                exp: "This is a highly tested exception: The 'mailbox rule' (which makes an acceptance effective upon dispatch) generally does NOT apply to option contracts. To effectively exercise an option, the acceptance must be RECEIVED by the offeror before the option period expires. Because it was received on day 31, the acceptance was too late."
+            },
+            // FACT PATTERN 2 (Q4-Q6)
+            {
+                id: 4,
+                topic: "Formation / UCC 2-207 (Subject To vs Expressly Conditional)",
+                fp: "Retailer (a merchant) sends an offer to Manufacturer (a merchant) to buy 5,000 shirts. Manufacturer responds with an acknowledgment form that states: 'We accept your order. This acceptance is subject to the terms and conditions printed on the reverse side.' The reverse side includes a binding arbitration clause. Retailer receives the form, says nothing, and accepts the shipped shirts.",
+                q: "Did Manufacturer's acknowledgment form operate as an acceptance or a counteroffer?",
+                opts: [
+                    "It constitutes a strict counteroffer because the additional terms were explicitly printed on the reverse side of the document.",
+                    "It acts as a rejection under the rigid application of the mirror image rule.",
+                    "It is merely an invitation to negotiate further terms.",
+                    "It operates as a valid acceptance; the phrase 'subject to' is generally insufficient to make the acceptance expressly conditional on assent to the new terms under UCC § 2-207(1)."
+                ],
+                ans: 3, // D
+                exp: "Under UCC § 2-207(1), an acceptance containing new terms is still a valid acceptance UNLESS it is 'expressly made conditional on assent to the additional or different terms.' Courts typically hold that vague language like 'subject to our terms' is insufficient. It must use the magic words 'expressly conditional' to be deemed a counteroffer."
+            },
+            {
+                id: 5,
+                topic: "Formation / UCC 2-207 (Material Alteration)",
+                fp: "Retailer (a merchant) sends an offer to Manufacturer (a merchant) to buy 5,000 shirts. Manufacturer responds with an acknowledgment form that states: 'We accept your order. This acceptance is subject to the terms and conditions printed on the reverse side.' The reverse side includes a binding arbitration clause. Retailer receives the form, says nothing, and accepts the shipped shirts.",
+                q: "Given that the form operated as a valid acceptance between merchants, does the arbitration clause become part of the contract?",
+                opts: [
+                    "No, because an arbitration clause is almost universally considered a material alteration that does not automatically become part of the contract under UCC § 2-207(2).",
+                    "Yes, because the retailer's physical acceptance of the shirts constitutes absolute ratification of all enclosed terms.",
+                    "No, because the terms were printed on the reverse side of the document.",
+                    "Yes, because the retailer failed to object to the additional terms within a reasonable ten-day period."
+                ],
+                ans: 0, // A
+                exp: "Under UCC § 2-207(2), between merchants, additional terms in the acceptance become part of the contract UNLESS: they materially alter it, the offer expressly limits acceptance, or the offeror objects. Adding a binding arbitration clause is widely considered a material alteration. Thus, it drops out of the contract."
+            },
+            {
+                id: 6,
+                topic: "Formation / UCC 2-207 (Merchant vs Non-Merchant)",
+                fp: "Retailer (a merchant) sends an offer to Manufacturer (a merchant) to buy 5,000 shirts. Manufacturer responds with an acknowledgment form that states: 'We accept your order. This acceptance is subject to the terms and conditions printed on the reverse side.' The reverse side includes a binding arbitration clause. Retailer receives the form, says nothing, and accepts the shipped shirts.\n\nAssume instead that Retailer was just a private consumer buying 5 shirts for personal use. Manufacturer's acceptance form included a minor, non-material additional term regarding standard shipping logistics.",
+                q: "Does the minor additional term become part of the contract in this consumer scenario?",
+                opts: [
+                    "Yes, because the term was objectively non-material and the consumer failed to promptly object.",
+                    "No, because when at least one party is not a merchant, additional terms are construed merely as proposals for addition to the contract and do not automatically become part of it.",
+                    "Yes, because the UCC gap-fillers inherently favor shipping logistics drafted by the seller.",
+                    "No, because any modification to a consumer transaction strictly requires a formal signature."
+                ],
+                ans: 1, // B
+                exp: "Under UCC § 2-207(2), the rule that additional terms automatically enter the contract applies ONLY 'between merchants.' If either party is not a merchant (e.g., a private consumer), the additional terms are treated merely as proposals for addition and do not become part of the contract unless expressly agreed to."
+            },
+            // FACT PATTERN 3 (Q7-Q9)
+            {
+                id: 7,
+                topic: "Terms / Implied Warranty of Fitness for a Particular Purpose",
+                fp: "Buyer goes to a hardware store seeking paint specifically formulated to withstand continuous saltwater submersion for his wooden boat. Seller (the store owner) is a merchant of house paint but has never sold marine supplies. Buyer explains his specific need and says, 'I trust your judgment, pick a can for me.' Seller hands him a can of standard exterior house paint. The paint washes off immediately.",
+                q: "Did Seller breach the implied warranty of fitness for a particular purpose?",
+                opts: [
+                    "No, because Seller is not a merchant specifically dealing in marine or boat-related goods.",
+                    "No, because the buyer failed to independently verify the chemical composition of the product.",
+                    "Yes, because the seller had reason to know of the buyer's particular purpose and that the buyer was relying on the seller's skill or judgment to select suitable goods.",
+                    "Yes, but only if the seller acted with malicious intent to defraud the consumer."
+                ],
+                ans: 2, // C
+                exp: "Under UCC § 2-315, the implied warranty of fitness for a particular purpose arises when the seller (merchant or not) has reason to know of any particular purpose for which the goods are required AND that the buyer is relying on the seller's skill to select them. Since Buyer stated his purpose and reliance, and Seller picked the wrong paint, the warranty was breached."
+            },
+            {
+                id: 8,
+                topic: "Terms / Disclaiming Implied Warranties",
+                fp: "Buyer goes to a hardware store seeking paint specifically formulated to withstand continuous saltwater submersion for his wooden boat. Seller (the store owner) is a merchant of house paint but has never sold marine supplies. Buyer explains his specific need and says, 'I trust your judgment, pick a can for me.' Seller hands him a can of standard exterior house paint. The paint washes off immediately.\n\nAssume Seller wanted to legally disclaim the implied warranty of fitness for a particular purpose before the sale.",
+                q: "What are the strict UCC requirements for effectively disclaiming the implied warranty of fitness for a particular purpose?",
+                opts: [
+                    "It can be done orally, but must explicitly use the phrase 'fitness for a particular purpose.'",
+                    "It must be in a writing and it must be conspicuous.",
+                    "It must be notarized and signed by the purchaser.",
+                    "It can be done verbally, provided the buyer is given an opportunity to inspect the goods."
+                ],
+                ans: 1, // B (Short) - Let's make sure length is varied.
+                // Opt D is longer. Let's make D the correct answer for something else, B is 51 chars.
+            },
+            {
+                id: 8, // Redone to match planned D
+                topic: "Terms / Disclaiming Implied Warranties",
+                fp: "Buyer goes to a hardware store seeking paint specifically formulated to withstand continuous saltwater submersion for his wooden boat. Seller (the store owner) is a merchant of house paint but has never sold marine supplies. Buyer explains his specific need and says, 'I trust your judgment, pick a can for me.' Seller hands him a can of standard exterior house paint. The paint washes off immediately.\n\nAssume Seller wanted to legally disclaim the implied warranty of fitness for a particular purpose before the sale.",
+                q: "What are the strict UCC requirements for effectively disclaiming the implied warranty of fitness for a particular purpose?",
+                opts: [
+                    "It can be done orally, but must explicitly use the exact phrase 'fitness for a particular purpose.'",
+                    "It requires a formally executed liability waiver endorsed by independent legal counsel.",
+                    "It can be done verbally, provided the buyer is given an adequate opportunity to physically inspect the goods.",
+                    "The disclaimer must be executed in a physical writing and the exclusionary language must be conspicuous."
+                ],
+                ans: 3, // D
+                exp: "Under UCC § 2-316(2), to exclude or modify any implied warranty of fitness for a particular purpose, the exclusion must be by a writing and must be conspicuous. (Unlike the implied warranty of merchantability, which can sometimes be oral if it mentions 'merchantability')."
+            },
+            {
+                id: 9,
+                topic: "Terms / 'As Is' Disclaimers",
+                fp: "Buyer goes to a hardware store seeking paint specifically formulated to withstand continuous saltwater submersion for his wooden boat. Seller (the store owner) is a merchant of house paint but has never sold marine supplies. Buyer explains his specific need and says, 'I trust your judgment, pick a can for me.' Seller hands him a can of standard exterior house paint. The paint washes off immediately.\n\nAssume instead that the can of paint had a highly conspicuous, bold sticker on the lid that simply said: 'SOLD AS IS WITH ALL FAULTS.'",
+                q: "Does this sticker effectively disclaim the implied warranty of fitness for a particular purpose?",
+                opts: [
+                    "Yes, because under the UCC, expressions like 'as is' or 'with all faults' effectively exclude all implied warranties, including fitness and merchantability.",
+                    "No, because it failed to explicitly mention the word 'fitness' in the exclusionary language.",
+                    "No, because the sticker was attached to the product rather than embedded in a separate written contract.",
+                    "Yes, but only if the buyer explicitly initialed the sticker prior to leaving the premises."
+                ],
+                ans: 0, // A
+                exp: "Under UCC § 2-316(3)(a), unless the circumstances indicate otherwise, ALL implied warranties (both merchantability and fitness for a particular purpose) are completely excluded by expressions like 'as is', 'with all faults', or other language which in common understanding calls the buyer's attention to the exclusion of warranties."
+            },
+            // FACT PATTERN 4 (Q10-Q12)
+            {
+                id: 10,
+                topic: "Discharge / Accord & Satisfaction (Good Faith Dispute)",
+                fp: "Landlord hires Roofer to fix a roof for $10,000. Roofer finishes, but Landlord complains the shingles are uneven and refuses to pay the full amount, claiming in good faith that the work is only worth $7,000. Roofer insists he is owed $10,000. Landlord sends a check for $8,500 marked 'payment in full.'",
+                q: "If Roofer cashes the check, does the preexisting duty rule allow him to sue for the remaining $1,500?",
+                opts: [
+                    "Yes, because a debt cannot be discharged by partial payment unless supported by completely distinct, independent consideration.",
+                    "No, because the good faith dispute over the quality of the work renders the entire debt unliquidated, meaning the compromise provides valid consideration for an accord and satisfaction.",
+                    "Yes, because the memo line notation on a personal check lacks the formal legal weight required to alter a primary service contract.",
+                    "No, because the roofer's physical endorsement of the banking instrument universally waives all subsequent appellate rights."
+                ],
+                ans: 1, // B
+                exp: "If a debt is liquidated (undisputed), partial payment lacks consideration under the preexisting duty rule. HOWEVER, if there is a good-faith dispute over the amount owed (unliquidated debt), an agreement to accept a lesser amount in full settlement IS supported by consideration. Cashing the 'payment in full' check forms a binding accord and satisfaction."
+            },
+            {
+                id: 11,
+                topic: "Discharge / UCC 3-311 'Under Protest'",
+                fp: "Landlord hires Roofer to fix a roof for $10,000. Roofer finishes, but Landlord complains the shingles are uneven and refuses to pay the full amount, claiming in good faith that the work is only worth $7,000. Roofer insists he is owed $10,000. Landlord sends a check for $8,500 marked 'payment in full.'\n\nAssume Roofer receives the $8,500 check. Furious, Roofer crosses out 'payment in full' and writes 'Cashed UNDER PROTEST, reserving all rights to the remaining $1,500' on the back before cashing it. Roofer then sues Landlord.",
+                q: "Under the UCC, what is the legal effect of Roofer writing 'under protest' before cashing the check?",
+                opts: [
+                    "It successfully preserves his right to sue for the remaining balance under UCC § 1-308.",
+                    "It converts the transaction into an implied-in-law contract for the remainder.",
+                    "It still completely discharges the debt; under UCC § 3-311, cashing a full-payment check for an unliquidated debt discharges the obligation regardless of any restrictive endorsements or words of protest added by the creditor.",
+                    "It renders the check entirely void, requiring the landlord to issue a replacement draft."
+                ],
+                ans: 2, // C
+                exp: "This is a highly tested, advanced nuance. While UCC § 1-308 generally allows parties to perform 'under protest' and reserve rights, UCC § 3-311 explicitly overrides this for 'payment in full' checks on disputed debts. If a creditor cashes a full-payment check on a disputed debt, the debt is discharged, PERIOD. Words of protest written on the check are entirely ineffective."
+            },
+            {
+                id: 12,
+                topic: "Consideration / Preexisting Duty (Third Party Exception)",
+                fp: "Landlord hires Roofer to fix a roof for $10,000. Roofer finishes, but Landlord complains the shingles are uneven and refuses to pay the full amount, claiming in good faith that the work is only worth $7,000. Roofer insists he is owed $10,000. Landlord sends a check for $8,500 marked 'payment in full.'\n\nAssume instead there was no dispute, but Roofer simply refused to finish the roof halfway through unless he got more money. Landlord's neighbor, wanting the neighborhood to look nice, orally promised to pay Roofer $2,000 if Roofer finished the roof. Roofer finished the roof.",
+                q: "Is the Neighbor's promise to pay Roofer $2,000 supported by valid consideration?",
+                opts: [
+                    "No, because the roofer was already legally bound to complete the exact same task under his primary contract with the landlord.",
+                    "No, because the neighbor did not receive a direct, tangible financial benefit from the completion of the roofing project.",
+                    "Yes, but only under the equitable doctrine of promissory estoppel.",
+                    "Yes, because a promise made to a third party to perform a preexisting contractual duty owed to another person generally constitutes valid and sufficient consideration."
+                ],
+                ans: 3, // D
+                exp: "A major exception to the preexisting duty rule occurs when the preexisting duty is owed to a different person. Promising a THIRD PARTY (Neighbor) to perform a duty already owed to a second party (Landlord) constitutes valid consideration to support the third party's new promise to pay."
+            },
+            // FACT PATTERN 5 (Q13-Q15)
+            {
+                id: 13,
+                topic: "Third Parties / Promisor Asserting Promisee's Personal Defense",
+                fp: "Ann (a 16-year-old minor) buys a car from Dealer. Instead of paying Dealer, Ann contracts with Bob. Ann gives Bob her rare baseball card collection, and in exchange, Bob promises to pay the $5,000 car debt directly to Dealer. Before Bob pays, Ann decides to disaffirm the car contract with Dealer due to her minority. Dealer sues Bob for the $5,000.",
+                q: "Can Bob (the promisor) refuse to pay Dealer (the beneficiary) by asserting Ann's defense of infancy?",
+                opts: [
+                    "No, because the promisor cannot assert defenses that are strictly personal to the promisee, such as infancy or mental incapacity.",
+                    "Yes, because third-party beneficiaries take their rights completely subject to all defects in the underlying transactional formation.",
+                    "No, because automotive debt operates as a strict necessity.",
+                    "Yes, because the disaffirmance completely invalidates the foundational contract ab initio."
+                ],
+                ans: 0, // A
+                exp: "This is a super-advanced third-party beneficiary nuance. While a promisor (Bob) can generally raise defenses arising from the contract (like fraud or failure of consideration), the promisor CANNOT raise defenses that are strictly PERSONAL to the promisee (Ann). Infancy is a personal defense belonging only to the minor. Bob cannot use Ann's infancy to avoid his own promise to pay Dealer."
+            },
+            {
+                id: 14,
+                topic: "Terms / Parol Evidence (Condition to Performance vs Formation)",
+                fp: "Ann (a 16-year-old minor) buys a car from Dealer. Instead of paying Dealer, Ann contracts with Bob. Ann gives Bob her rare baseball card collection, and in exchange, Bob promises to pay the $5,000 car debt directly to Dealer. Before Bob pays, Ann decides to disaffirm the car contract with Dealer due to her minority. Dealer sues Bob for the $5,000.\n\nAssume Ann was an adult. Ann and Bob signed a fully integrated contract stating 'Bob will pay Dealer $5,000 on Tuesday.' Prior to signing, Bob orally stated, 'I'll only pay on Tuesday if the stock market goes up on Monday.' It did not go up.",
+                q: "Can Bob introduce evidence of the oral statement to avoid paying on Tuesday?",
+                opts: [
+                    "Yes, because it is a condition precedent to formation.",
+                    "No, because evidence of a condition to a specific performance duty that contradicts the absolute obligation in the integrated writing is strictly barred by the Parol Evidence Rule.",
+                    "Yes, because financial contingencies are exempt from the four corners rule.",
+                    "No, unless the dealer formally assented to the modification."
+                ],
+                ans: 1, // B
+                exp: "Extrinsic evidence is admissible to show an oral condition precedent to the FORMATION of the entire contract. However, evidence of an oral condition precedent to a specific PERFORMANCE duty (e.g., 'I won't pay unless X happens') contradicts an absolute duty written in the contract ('Bob will pay on Tuesday') and is barred by the Parol Evidence Rule."
+            },
+            {
+                id: 15,
+                topic: "Third Parties / Beneficiary Rights Vesting (Assent vs Knowledge)",
+                fp: "Ann (a 16-year-old minor) buys a car from Dealer. Instead of paying Dealer, Ann contracts with Bob. Ann gives Bob her rare baseball card collection, and in exchange, Bob promises to pay the $5,000 car debt directly to Dealer. Before Bob pays, Ann decides to disaffirm the car contract with Dealer due to her minority. Dealer sues Bob for the $5,000.\n\nAssume Ann and Bob legally canceled their contract on Wednesday. On Monday, Dealer had received an anonymous email informing him of the arrangement, but Dealer did nothing. Dealer claims his rights had vested on Monday.",
+                q: "Had Dealer's rights legally vested prior to the Wednesday cancellation?",
+                opts: [
+                    "Yes, because the transmission of electronic correspondence conclusively establishes the vesting of commercial obligations.",
+                    "Yes, because a creditor beneficiary's rights vest instantly upon the creation of the underlying third-party agreement.",
+                    "No, because rights only vest when the beneficiary materially relies on the promise, brings suit, or explicitly assents to it at the request of the parties; mere knowledge is completely insufficient.",
+                    "No, because the cancellation was executed within the standard five-day rescission window."
+                ],
+                ans: 2, // C
+                exp: "The original contracting parties can modify or cancel a contract without the third-party beneficiary's consent UNTIL the beneficiary's rights have 'vested.' Rights vest only when the beneficiary (1) materially relies on the promise, (2) brings suit upon it, or (3) assents to it at the request of the promisor or promisee. Mere knowledge of the contract does not vest the rights."
+            },
+            // FACT PATTERN 6 (Q16-Q18)
+            {
+                id: 16,
+                topic: "Performance / Risk of Loss (Non-Merchant Seller)",
+                fp: "Neighbor (a non-merchant) sells his used couch to Buyer for $100. They agree Buyer will pick it up on Saturday. On Saturday morning, Neighbor moves the couch to his driveway, texts Buyer 'It's ready for pickup,' and goes inside. An hour later, a freak lightning strike destroys the couch. Buyer refuses to pay.",
+                q: "Who bears the risk of loss for the destroyed couch?",
+                opts: [
+                    "The seller, because he failed to physically load the item into the buyer's transport vehicle.",
+                    "The seller, because the risk of loss never passes until the buyer actually takes physical possession of the goods.",
+                    "The risk is split evenly because the destruction resulted from an unforeseeable act of God.",
+                    "The buyer, because for a non-merchant seller, the risk of loss passes to the buyer strictly upon the tender of delivery, which occurred when the seller made the goods available and provided notice."
+                ],
+                ans: 3, // D
+                exp: "This is a highly tested UCC nuance. Under UCC § 2-509(3), if the seller is a MERCHANT, the risk of loss passes to the buyer only on the buyer's actual receipt of the goods. But if the seller is NOT a merchant (like Neighbor), the risk passes to the buyer upon TENDER of delivery. Putting it in the driveway and texting 'it's ready' constitutes tender, so the Buyer bears the risk and must pay."
+            },
+            {
+                id: 17,
+                topic: "Performance / Risk of Loss (Merchant Seller)",
+                fp: "Neighbor (a non-merchant) sells his used couch to Buyer for $100. They agree Buyer will pick it up on Saturday. On Saturday morning, Neighbor moves the couch to his driveway, texts Buyer 'It's ready for pickup,' and goes inside. An hour later, a freak lightning strike destroys the couch. Buyer refuses to pay.\n\nAssume instead the seller was a commercial Furniture Store. The store called Buyer and said 'Your couch is ready for pickup.' While Buyer was driving to the store, lightning struck the warehouse, destroying the couch.",
+                q: "Who bears the risk of loss in this scenario?",
+                opts: [
+                    "The buyer, because the store successfully completed the tender of delivery by notifying the customer.",
+                    "The seller, because for a merchant seller, the risk of loss does not pass to the buyer until the buyer takes actual physical receipt of the goods.",
+                    "The buyer, because driving to the location establishes constructive possession.",
+                    "The seller, but only if they failed to maintain adequate commercial property insurance."
+                ],
+                ans: 1, // B
+                exp: "Under UCC § 2-509(3), if the seller IS a merchant (like the Furniture Store), the risk of loss passes to the buyer ONLY on the buyer's actual physical receipt of the goods. Tender is not enough. Because the Buyer had not yet received the couch, the merchant Seller bears the risk."
+            },
+            {
+                id: 18,
+                topic: "Performance / Frustration of Purpose vs Impracticability",
+                fp: "Neighbor (a non-merchant) sells his used couch to Buyer for $100. They agree Buyer will pick it up on Saturday. On Saturday morning, Neighbor moves the couch to his driveway, texts Buyer 'It's ready for pickup,' and goes inside. An hour later, a freak lightning strike destroys the couch. Buyer refuses to pay.\n\nAssume Buyer was renting the couch specifically to use as a prop in a play that night. The theater burned down that morning, so the play was canceled. The couch itself was perfectly fine.",
+                q: "What doctrine provides Buyer the best argument to escape paying the rental fee?",
+                opts: [
+                    "Frustration of purpose, because a supervening event fundamentally destroyed the mutually understood core purpose of the contract, even though the physical item remains perfectly intact.",
+                    "Objective impossibility, because the play cannot occur.",
+                    "Mutual mistake of fact.",
+                    "Anticipatory repudiation."
+                ],
+                ans: 0, // A
+                exp: "Frustration of purpose applies when a supervening, unforeseeable event completely destroys the mutually understood, core purpose of the contract. The couch is still perfectly fine and accessible (so it's not 'impossible' to rent it), but the theater burning down completely destroyed the sole purpose of renting it as a prop."
+            },
+            // FACT PATTERN 7 (Q19-Q21)
+            {
+                id: 19,
+                topic: "Performance / Retraction of Anticipatory Repudiation (Filing Suit)",
+                fp: "Supplier agrees to deliver lumber to Builder on June 1. On May 1, Supplier clearly and unequivocally repudiates the contract. On May 15, Builder files a formal lawsuit against Supplier for total breach of contract. On May 20, Supplier emails Builder: 'I retract my repudiation; I will deliver on June 1.' Builder had not hired a replacement supplier yet.",
+                q: "Was Supplier's May 20 retraction legally effective?",
+                opts: [
+                    "Yes, because the retraction occurred prior to the established June 1 deadline.",
+                    "No, because filing a lawsuit constitutes an objective manifestation of treating the repudiation as final, immediately terminating the repudiating party's power to retract.",
+                    "Yes, because the builder had not yet materially changed his position by securing a substitute commercial vendor.",
+                    "No, because written communications cannot override formal judicial filings."
+                ],
+                ans: 1, // B
+                exp: "A party can retract an anticipatory repudiation before their performance is due, UNLESS the aggrieved party has canceled the contract, materially changed their position, OR indicated they consider the repudiation final. Filing a lawsuit is the ultimate indication of treating the repudiation as final, cutting off the right to retract."
+            },
+            {
+                id: 20,
+                topic: "Performance / Demanding Assurances (Improper Suspension)",
+                fp: "Supplier agrees to deliver lumber to Builder on June 1. On May 1, Supplier clearly and unequivocally repudiates the contract. On May 15, Builder files a formal lawsuit against Supplier for total breach of contract. On May 20, Supplier emails Builder: 'I retract my repudiation; I will deliver on June 1.' Builder had not hired a replacement supplier yet.\n\nAssume Supplier never repudiated. On May 1, Builder felt anxious because of a vague news article about industry shortages. Builder emailed Supplier demanding assurances and instantly suspended his own advance payments.",
+                q: "What is the legal effect of Builder immediately suspending payments?",
+                opts: [
+                    "It is legally protected under the UCC gap-fillers.",
+                    "It constitutes a mutual rescission.",
+                    "It constitutes a breach of contract by the builder, because a party must have objectively reasonable grounds for insecurity and must grant the other party a reasonable time to respond before treating the contract as breached.",
+                    "It forces the supplier to immediately accelerate all pending shipments."
+                ],
+                ans: 2, // C
+                exp: "Under UCC § 2-609, a party may demand adequate assurances ONLY IF they have 'reasonable grounds for insecurity' (vague anxiety isn't enough). Even if justified, they must give the other party a reasonable time (up to 30 days) to respond. Suspending performance immediately without giving a reasonable time to respond is a breach by the demanding party."
+            },
+            {
+                id: 21,
+                topic: "Performance / Anticipatory Repudiation by Conduct",
+                fp: "Supplier agrees to deliver lumber to Builder on June 1. On May 1, Supplier clearly and unequivocally repudiates the contract. On May 15, Builder files a formal lawsuit against Supplier for total breach of contract. On May 20, Supplier emails Builder: 'I retract my repudiation; I will deliver on June 1.' Builder had not hired a replacement supplier yet.\n\nAssume instead that Supplier never said anything to Builder. The contract was for a specific, unique antique saw. On May 10, Builder saw Supplier sell and deliver that exact antique saw to a different customer.",
+                q: "Did Supplier's action constitute an anticipatory repudiation?",
+                opts: [
+                    "No, because the supplier did not issue a formal, written declaration of intent.",
+                    "Yes, but only if the secondary buyer was a recognized merchant.",
+                    "No, because the June 1 deadline had not yet elapsed.",
+                    "Yes, because voluntarily committing an affirmative act that renders actual performance objectively impossible constitutes an immediate anticipatory repudiation by conduct."
+                ],
+                ans: 3, // D
+                exp: "Anticipatory repudiation can occur by words OR by conduct. If a promisor voluntarily commits an affirmative act that makes it actually or apparently impossible for them to perform their contractual duties (such as selling unique, specific goods to a third party), it operates as an immediate anticipatory repudiation."
+            },
+            // FACT PATTERN 8 (Q22-Q25)
+            {
+                id: 22,
+                topic: "Remedies / Peevyhouse Doctrine (Diminution in Value)",
+                fp: "Contractor builds a house for Owner. The contract requires all interior plumbing pipes to be 'Brand A'. Contractor accidentally uses 'Brand B', which are absolutely identical in quality and lifespan. Replacing the pipes would require tearing down the entire house, costing $200,000. The use of Brand B instead of Brand A reduces the total market value of the house by exactly $0. Owner sues Contractor for the $200,000 cost of completion.",
+                q: "What damages will the court likely award to the Owner?",
+                opts: [
+                    "The full $200,000 cost of completion to strictly enforce the explicit terms of the contract.",
+                    "Zero dollars (or nominal damages), because when a breach is incidental and the cost of completion is grossly disproportionate to the economic benefit, damages are strictly limited to the diminution in market value.",
+                    "A mandatory specific performance injunction.",
+                    "$100,000, splitting the difference under comparative fault principles."
+                ],
+                ans: 1, // B
+                exp: "This is the classic rule from Jacob & Youngs v. Kent (and Peevyhouse). While expectation damages normally award the 'cost of completion,' if the breach is incidental/unintentional and the cost to fix it is grossly disproportionate to the actual economic benefit it would provide, courts limit damages to the 'diminution in market value' (which is $0 here) to prevent extreme economic waste."
+            },
+            {
+                id: 23,
+                topic: "Remedies / Lost Volume Seller",
+                fp: "Contractor builds a house for Owner. The contract requires all interior plumbing pipes to be 'Brand A'. Contractor accidentally uses 'Brand B', which are absolutely identical in quality and lifespan. Replacing the pipes would require tearing down the entire house, costing $200,000. The use of Brand B instead of Brand A reduces the total market value of the house by exactly $0. Owner sues Contractor for the $200,000 cost of completion.\n\nAssume instead the dispute involved a major electronics Retailer with an infinite supply of standard televisions. Buyer breaches a contract to buy one for $1,000. Retailer resells it to someone else for $1,000.",
+                q: "Can the Retailer recover damages from the breaching Buyer?",
+                opts: [
+                    "No, because the successful mitigation completely erased any expectation damages.",
+                    "Yes, but only incidental storage fees.",
+                    "Yes, as a lost volume seller, the retailer is entitled to the lost profit from the breached sale because they would have made two separate sales and two profits if the buyer had not breached.",
+                    "No, because double recovery is strictly prohibited."
+                ],
+                ans: 2, // C
+                exp: "Under UCC § 2-708(2), if the standard measure of damages is inadequate to put the seller in as good a position as performance would have done, a 'lost volume seller' (one with unlimited supply) can recover their lost profit. Had Buyer not breached, Retailer would have sold TWO TVs and made TWO profits, not one."
+            },
+            {
+                id: 24,
+                topic: "Remedies / Buyer's Damages for Accepted Defective Goods (UCC 2-714)",
+                fp: "Contractor builds a house for Owner. The contract requires all interior plumbing pipes to be 'Brand A'. Contractor accidentally uses 'Brand B', which are absolutely identical in quality and lifespan. Replacing the pipes would require tearing down the entire house, costing $200,000. The use of Brand B instead of Brand A reduces the total market value of the house by exactly $0. Owner sues Contractor for the $200,000 cost of completion.\n\nAssume a commercial Baker bought an oven for $10,000. It arrived defective. Baker decided to keep it anyway but notified the Seller of the defect. A flawless oven is worth $10,000. The defective oven is only worth $6,000.",
+                q: "What is Baker's primary measure of damages under the UCC?",
+                opts: [
+                    "The difference between the value of the goods as warranted and the value of the goods as accepted ($4,000), provided the buyer gave notice of the breach within a reasonable time.",
+                    "The full $10,000 contract price.",
+                    "Zero, because accepting defective goods absolutely waives all subsequent claims for financial damages.",
+                    "The cost to completely replace the commercial oven with a brand new unit."
+                ],
+                ans: 0, // A
+                exp: "Under UCC § 2-714, a buyer who accepts non-conforming goods and gives timely notice of the breach may recover damages for breach of warranty. The standard measure is the difference at the time and place of acceptance between the value of the goods accepted ($6k) and the value they would have had if they had been as warranted ($10k), which is $4,000."
+            },
+            {
+                id: 25,
+                topic: "Performance / Substantial Performance vs Willful Breach",
+                fp: "Contractor builds a house for Owner. The contract requires all interior plumbing pipes to be 'Brand A'. Contractor accidentally uses 'Brand B', which are absolutely identical in quality and lifespan. Replacing the pipes would require tearing down the entire house, costing $200,000. The use of Brand B instead of Brand A reduces the total market value of the house by exactly $0. Owner sues Contractor for the $200,000 cost of completion.\n\nAssume instead that the Contractor realized Brand B pipes were cheaper, and intentionally, willfully, and maliciously installed them to spite the Owner and save money.",
+                q: "Is Contractor entitled to payment under the doctrine of substantial performance?",
+                opts: [
+                    "Yes, because the pipes were identical in quality, resulting in zero diminution in value.",
+                    "Yes, but only after replacing the pipes at his own expense.",
+                    "No, because the perfect tender rule explicitly applies to all residential construction agreements.",
+                    "No, because a deliberate, willful, and malicious deviation from the contractual specifications generally precludes the application of substantial performance, acting as a material breach."
+                ],
+                ans: 3, // D
+                exp: "The doctrine of substantial performance (which prevents forfeiture for minor, immaterial defects) generally requires that the breach be INNOCENT or trivial. A deliberate, willful, and malicious breach of the contract specifications is typically deemed a 'material breach,' precluding the builder from recovering under the contract's substantial performance doctrine."
+            }
+        ];
+
+        let currentIndex = 0;
+        let userAnswers = {};
+        let flaggedQuestions = {};
+        let eliminatedOptions = {};
+        let retrySessionList = [];
+        let totalCorrect = 0;
+        let activeFilter = "all";
+        let isEliminationMode = true;
+        const currentSetKey = "babybar_contracts_14";
+
+        const STORAGE_KEY_ANSWERS = "fylsx_contracts_14_answers";
+        const STORAGE_KEY_FLAGS = "fylsx_contracts_14_flags";
+        const STORAGE_KEY_ELIM = "fylsx_contracts_14_elim";
+        const STORAGE_KEY_INDEX = "fylsx_contracts_14_index";
+        const STORAGE_KEY_SCORE = "fylsx_contracts_14_score";
+        const STORAGE_KEY_FILTER = "fylsx_contracts_14_filter";
+        const STORAGE_KEY_RETRY = "fylsx_contracts_14_retry";
+        const STORAGE_KEY_HIGHLIGHTS = "fylsx_contracts_14_highlights";
+
+        let userHighlights = {};
+        const letterLabels = ["A", "B", "C", "D"];
+
+        function initApp() {
+            loadProgress();
+            populateJumpMenu();
+            renderQuestion();
+            updateScore();
+            updateDropdownLabels();
+            updateEliminationToggleStyle();
+            updateFilterBanner();
+        }
+
+        function getMissedIndices() {
+            return Object.keys(userAnswers).filter(idx => {
+                let qIdx = Number(idx);
+                return userAnswers[qIdx] !== examData[qIdx].ans;
+            }).map(Number);
+        }
+
+        function getFlaggedIndices() {
+            return Object.keys(flaggedQuestions).filter(idx => flaggedQuestions[idx]).map(Number);
+        }
+
+        function getActiveQuestionList() {
+            if (activeFilter === "flagged") return getFlaggedIndices();
+            if (activeFilter === "missed") return getMissedIndices();
+            if (activeFilter === "retry") return retrySessionList;
+            return examData.map((_, idx) => idx);
+        }
+
+        function toggleEliminationMode() {
+            isEliminationMode = !isEliminationMode;
+            updateEliminationToggleStyle();
+            renderQuestion();
+        }
+
+        function updateEliminationToggleStyle() {
+            const btn = document.getElementById("elimination-toggle-btn");
+            if (isEliminationMode) {
+                btn.classList.add("active");
+                btn.title = "Disable Elimination Mode";
+            } else {
+                btn.classList.remove("active");
+                btn.title = "Enable Elimination Mode";
+            }
+        }
+
+        function updateFilterBanner() {
+            const banner = document.getElementById("filter-banner");
+            const bannerText = document.getElementById("filter-banner-text");
+
+            if (activeFilter === "all") {
+                banner.classList.remove("visible");
+            } else {
+                banner.classList.add("visible");
+                if (activeFilter === "flagged") bannerText.textContent = `🚩 Filter Active: Showing Flagged Questions Only (${getFlaggedIndices().length})`;
+                else if (activeFilter === "missed") bannerText.textContent = `❌ Filter Active: Showing Missed Questions Only (${getMissedIndices().length})`;
+                else if (activeFilter === "retry") bannerText.textContent = `🔄 Retry Mode Active: Practicing ${retrySessionList.length} Selected Question(s)`;
+            }
+        }
+
+        function returnToFullSet() {
+            activeFilter = "all";
+            retrySessionList = [];
+            saveProgress();
+            updateFilterBanner();
+            populateJumpMenu();
+            renderQuestion();
+            updateDropdownLabels();
+        }
+
+        function updateDropdownLabels() {
+            const flagCount = getFlaggedIndices().length;
+            const missedCount = getMissedIndices().length;
+
+            const flagSelect = document.getElementById("flag-dropdown");
+            const missedSelect = document.getElementById("missed-dropdown");
+
+            flagSelect.options[0].textContent = `🚩 Flagged (${flagCount}) ▾`;
+            missedSelect.options[0].textContent = `❌ Missed (${missedCount}) ▾`;
+
+            flagSelect.selectedIndex = 0;
+            missedSelect.selectedIndex = 0;
+        }
+
+        function handleFlagDropdown(val) {
+            if (val === "all") {
+                returnToFullSet();
+            } else if (val === "filter") {
+                activeFilter = (activeFilter === "flagged") ? "all" : "flagged";
+                populateJumpMenu();
+                renderQuestion();
+                updateFilterBanner();
+            } else if (val === "retry") {
+                retryFlaggedQuestions();
+            } else if (val === "summary") {
+                showFlaggedSummary();
+            } else if (val === "export") {
+                exportFlaggedQuestions();
+            }
+            updateDropdownLabels();
+        }
+
+        function handleMissedDropdown(val) {
+            if (val === "all") {
+                returnToFullSet();
+            } else if (val === "filter") {
+                activeFilter = (activeFilter === "missed") ? "all" : "missed";
+                populateJumpMenu();
+                renderQuestion();
+                updateFilterBanner();
+            } else if (val === "retry") {
+                retryMissedQuestions();
+            } else if (val === "summary") {
+                showMissedSummary();
+            } else if (val === "export") {
+                exportMissedQuestions();
+            }
+            updateDropdownLabels();
+        }
+
+        function retryMissedQuestions() {
+            const missed = getMissedIndices();
+            if (missed.length === 0) {
+                alert("No missed questions to retry!");
+                return;
+            }
+
+            if (confirm(`Clear answers and crossed-out choices for all ${missed.length} missed question(s) and retry them?`)) {
+                retrySessionList = [...missed];
+                missed.forEach(qIdx => {
+                    delete userAnswers[qIdx];
+                    delete eliminatedOptions[qIdx];
+                });
+
+                totalCorrect = 0;
+                Object.keys(userAnswers).forEach(idx => {
+                    if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+                });
+
+                activeFilter = "retry";
+                currentIndex = retrySessionList[0];
+                saveProgress();
+                populateJumpMenu();
+                renderQuestion();
+                updateScore();
+                updateDropdownLabels();
+                updateFilterBanner();
+            }
+        }
+
+        function retryFlaggedQuestions() {
+            const flagged = getFlaggedIndices();
+            if (flagged.length === 0) {
+                alert("No flagged questions to retry!");
+                return;
+            }
+
+            if (confirm(`Clear answers and crossed-out choices for all ${flagged.length} flagged question(s) and retry them?`)) {
+                retrySessionList = [...flagged];
+                flagged.forEach(qIdx => {
+                    delete userAnswers[qIdx];
+                    delete eliminatedOptions[qIdx];
+                });
+
+                totalCorrect = 0;
+                Object.keys(userAnswers).forEach(idx => {
+                    if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+                });
+
+                activeFilter = "retry";
+                currentIndex = retrySessionList[0];
+                saveProgress();
+                populateJumpMenu();
+                renderQuestion();
+                updateScore();
+                updateDropdownLabels();
+                updateFilterBanner();
+            }
+        }
+
+        function populateJumpMenu() {
+            const select = document.getElementById("jump-select");
+            select.innerHTML = "";
+            const activeList = getActiveQuestionList();
+
+            if (activeList.length === 0) {
+                let opt = document.createElement("option");
+                opt.value = 0;
+                opt.textContent = activeFilter === "flagged" ? "No Flagged Questions" : activeFilter === "missed" ? "No Missed Questions" : "No Questions";
+                select.appendChild(opt);
+                return;
+            }
+
+            activeList.forEach((qIdx) => {
+                let opt = document.createElement("option");
+                opt.value = qIdx;
+                let flagMark = flaggedQuestions[qIdx] ? "🚩 " : "";
+                let missedMark = (userAnswers[qIdx] !== undefined && userAnswers[qIdx] !== examData[qIdx].ans) ? "❌ " : "";
+                opt.textContent = `${flagMark}${missedMark}Q${qIdx + 1} [${examData[qIdx].topic.split('/')[0].trim()}]`;
+                select.appendChild(opt);
+            });
+        }
+
+        function renderQuestion() {
+            const activeList = getActiveQuestionList();
+            
+            if (activeList.length === 0) {
+                let filterName = activeFilter === "flagged" ? "Flagged" : "Missed";
+                document.getElementById("quiz-container").innerHTML = `
+                    <div class="question-card" style="text-align: center; padding: 3rem 1rem;">
+                        <h3>No ${filterName} Questions Found!</h3>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">You have no active questions in this filter.</p>
+                        <button class="btn" style="margin-top: 1rem;" onclick="returnToFullSet()">Return to Full Exam</button>
+                    </div>
+                `;
+                document.getElementById("prev-btn").disabled = true;
+                document.getElementById("next-btn").disabled = true;
+                return;
+            }
+
+            if (!activeList.includes(currentIndex)) {
+                currentIndex = activeList[0] || 0;
+            }
+
+            const q = examData[currentIndex];
+            document.getElementById("current-q-num").textContent = currentIndex + 1;
+            document.getElementById("jump-select").value = currentIndex;
+
+            const isFlagged = Boolean(flaggedQuestions[currentIndex]);
+            const flagBtnText = isFlagged ? "🚩 Flagged" : "🏳️ Flag Question";
+            const flagBtnClass = isFlagged ? "btn-flag active" : "btn-flag";
+
+            let fpContent = (userHighlights[currentIndex] && userHighlights[currentIndex].fp) 
+                ? userHighlights[currentIndex].fp 
+                : (q.fp ? q.fp.replace(/\n/g, '<br>') : "");
+
+            let qContent = (userHighlights[currentIndex] && userHighlights[currentIndex].q) 
+                ? userHighlights[currentIndex].q 
+                : q.q;
+
+            let html = `<div class="question-card">`;
+            html += `<div class="q-top-row">
+                        <div class="q-header">Question ${q.id} <span style="font-size:0.8rem; color: var(--text-muted); font-weight:normal;">[Topic: ${q.topic}]</span></div>
+                        <button class="${flagBtnClass}" onclick="toggleFlagCurrentQuestion()">${flagBtnText}</button>
+                     </div>`;
+
+            if (q.fp) {
+                html += `<div class="fact-pattern" id="fp-container">${fpContent}</div>`;
+            }
+            html += `<div class="q-text" id="q-container">${qContent}</div>`;
+            html += `<div class="options-grid">`;
+
+            const currentElimMap = eliminatedOptions[currentIndex] || {};
+
+            q.opts.forEach((optText, i) => {
+                let isAnswered = userAnswers[currentIndex] !== undefined;
+                let isEliminated = Boolean(currentElimMap[i]);
+
+                let btnClass = "option-btn";
+                if (isAnswered) {
+                    if (i === q.ans) btnClass += " correct";
+                    else if (i === userAnswers[currentIndex]) btnClass += " incorrect";
+                }
+                
+                if (isEliminated) {
+                    btnClass += " eliminated";
+                }
+
+                let cleanOptText = optText.replace(/^\([A-Da-d]\)\s*/, '');
+                let disabled = isAnswered ? "disabled" : "";
+
+                html += `<div class="option-container">
+                            <button class="${btnClass}" ${disabled} onclick="handleOptionClick(${i})">
+                                <span class="letter-circle">${letterLabels[i]}</span>
+                                <span>${cleanOptText}</span>
+                            </button>`;
+
+                if (isEliminationMode) {
+                    let elimBtnClass = isEliminated ? "btn-eliminate-choice active" : "btn-eliminate-choice";
+                    html += `<button class="${elimBtnClass}" title="Toggle Elimination for choice ${letterLabels[i]}" onclick="toggleEliminateChoice(event, ${i})">✕</button>`;
+                }
+
+                html += `</div>`;
+            });
+
+            html += `</div>`;
+
+            let expClass = userAnswers[currentIndex] !== undefined ? "explanation-box visible" : "explanation-box";
+            html += `<div class="${expClass}">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <strong>Legal Analysis:</strong>
+                            <select class="dropdown-analysis" onchange="handleAnalysisExport(this.value)">
+                                <option value="" disabled selected>📋 Export Rules ▾</option>
+                                <option value="all">Export All Rules</option>
+                                <option value="missed">Export Missed Rules</option>
+                                <option value="flagged">Export Flagged Rules</option>
+                            </select>
+                        </div>
+                        <div>${q.exp}</div>
+                     </div>`;
+            html += `</div>`;
+
+            document.getElementById("quiz-container").innerHTML = html;
+
+            const currentPosInList = activeList.indexOf(currentIndex);
+            document.getElementById("prev-btn").disabled = currentPosInList <= 0;
+            document.getElementById("next-btn").disabled = currentPosInList >= activeList.length - 1;
+
+            saveProgress();
+        }
+
+        document.addEventListener("mouseup", function(e) {
+            if (e.target.closest("button") || e.target.closest("select") || e.target.closest("textarea")) {
+                return;
+            }
+            const selection = window.getSelection();
+            if (!selection.isCollapsed && selection.toString().trim().length > 0) {
+                let range = selection.getRangeAt(0);
+                let fpEl = document.getElementById("fp-container");
+                let qEl = document.getElementById("q-container");
+                
+                let container = range.commonAncestorContainer;
+                let isInsideFP = fpEl && fpEl.contains(container);
+                let isInsideQ = qEl && qEl.contains(container);
+                
+                if (isInsideFP || isInsideQ) {
+                    let mark = document.createElement("mark");
+                    mark.className = "user-highlight";
+                    mark.title = "Click to remove highlight";
+                    mark.setAttribute("onclick", "removeHighlight(event, this)");
+
+                    try {
+                        mark.appendChild(range.extractContents());
+                        range.insertNode(mark);
+                        selection.removeAllRanges();
+                        saveTextHighlightState();
+                    } catch (err) {
+                        console.error("Highlighting error:", err);
+                    }
+                }
+            }
+        });
+
+        function removeHighlight(e, markEl) {
+            e.stopPropagation();
+            let parent = markEl.parentNode;
+            while (markEl.firstChild) {
+                parent.insertBefore(markEl.firstChild, markEl);
+            }
+            parent.removeChild(markEl);
+            parent.normalize();
+            saveTextHighlightState();
+        }
+
+        function saveTextHighlightState() {
+            let fpEl = document.getElementById("fp-container");
+            let qEl = document.getElementById("q-container");
+            if (!userHighlights[currentIndex]) userHighlights[currentIndex] = {};
+            if (fpEl) userHighlights[currentIndex].fp = fpEl.innerHTML;
+            if (qEl) userHighlights[currentIndex].q = qEl.innerHTML;
+            saveProgress();
+        }
+
+        function handleOptionClick(optIndex) {
+            const currentElimMap = eliminatedOptions[currentIndex] || {};
+            if (currentElimMap[optIndex]) {
+                delete currentElimMap[optIndex];
+                saveProgress();
+                renderQuestion();
+                return;
+            }
+            selectAnswer(optIndex);
+        }
+
+        function toggleEliminateChoice(event, optIndex) {
+            event.stopPropagation();
+            if (!eliminatedOptions[currentIndex]) {
+                eliminatedOptions[currentIndex] = {};
+            }
+            if (eliminatedOptions[currentIndex][optIndex]) {
+                delete eliminatedOptions[currentIndex][optIndex];
+            } else {
+                eliminatedOptions[currentIndex][optIndex] = true;
+            }
+            saveProgress();
+            renderQuestion();
+        }
+
+        function toggleFlagCurrentQuestion() {
+            if (flaggedQuestions[currentIndex]) {
+                delete flaggedQuestions[currentIndex];
+            } else {
+                flaggedQuestions[currentIndex] = true;
+            }
+            updateDropdownLabels();
+            populateJumpMenu();
+            renderQuestion();
+            saveProgress();
+        }
+
+        function selectAnswer(optIndex) {
+            if (window.getSelection) {
+                window.getSelection().removeAllRanges();
+            }
+
+            userAnswers[currentIndex] = optIndex;
+            totalCorrect = 0;
+            Object.keys(userAnswers).forEach(idx => {
+                if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+            });
+            updateScore();
+            updateDropdownLabels();
+            saveProgress();
+            renderQuestion();
+
+            if (Object.keys(userAnswers).length === examData.length) {
+                let percentage = Math.round((totalCorrect / examData.length) * 100);
+                saveStudentHistory(totalCorrect, examData.length, percentage);
+            }
+        }
+
+        function updateScore() {
+            const totalExamQuestions = examData.length;
+            const answeredCount = Object.keys(userAnswers).length;
+            const missedCount = getMissedIndices().length;
+            const unattemptedCount = totalExamQuestions - answeredCount;
+            const percentage = answeredCount > 0 ? Math.round((totalCorrect / answeredCount) * 100) : 0;
+            
+            document.getElementById("score-badge").textContent = `Score: ${totalCorrect} / ${answeredCount} (${percentage}%)`;
+
+            const correctPercent = (totalCorrect / totalExamQuestions) * 100;
+            const missedPercent = (missedCount / totalExamQuestions) * 100;
+
+            const barCorrect = document.getElementById("bar-correct");
+            const barMissed = document.getElementById("bar-missed");
+            const barUnattempted = document.getElementById("bar-unattempted");
+
+            barCorrect.style.width = `${correctPercent}%`;
+            barMissed.style.width = `${missedPercent}%`;
+
+            barCorrect.textContent = totalCorrect >= 1 ? totalCorrect : "";
+            barMissed.textContent = missedCount >= 1 ? missedCount : "";
+            barUnattempted.textContent = unattemptedCount >= 1 ? unattemptedCount : "";
+        }
+
+        function navigate(dir) {
+            const activeList = getActiveQuestionList();
+            const currentPos = activeList.indexOf(currentIndex);
+            const targetPos = currentPos + dir;
+
+            if (targetPos >= 0 && targetPos < activeList.length) {
+                currentIndex = activeList[targetPos];
+                renderQuestion();
+            }
+        }
+
+        function jumpToQuestion(index) {
+            currentIndex = parseInt(index);
+            renderQuestion();
+        }
+
+        function saveProgress() {
+            localStorage.setItem(STORAGE_KEY_ANSWERS, JSON.stringify(userAnswers));
+            localStorage.setItem(STORAGE_KEY_FLAGS, JSON.stringify(flaggedQuestions));
+            localStorage.setItem(STORAGE_KEY_ELIM, JSON.stringify(eliminatedOptions));
+            localStorage.setItem(STORAGE_KEY_INDEX, currentIndex);
+            localStorage.setItem(STORAGE_KEY_SCORE, totalCorrect);
+            localStorage.setItem(STORAGE_KEY_FILTER, activeFilter);
+            localStorage.setItem(STORAGE_KEY_RETRY, JSON.stringify(retrySessionList));
+            localStorage.setItem(STORAGE_KEY_HIGHLIGHTS, JSON.stringify(userHighlights));
+        }
+
+        function loadProgress() {
+            try {
+                const savedAnswers = localStorage.getItem(STORAGE_KEY_ANSWERS);
+                const savedFlags = localStorage.getItem(STORAGE_KEY_FLAGS);
+                const savedElim = localStorage.getItem(STORAGE_KEY_ELIM);
+                const savedIndex = localStorage.getItem(STORAGE_KEY_INDEX);
+                const savedScore = localStorage.getItem(STORAGE_KEY_SCORE);
+                const savedFilter = localStorage.getItem(STORAGE_KEY_FILTER);
+                const savedRetry = localStorage.getItem(STORAGE_KEY_RETRY);
+                const savedHighlights = localStorage.getItem(STORAGE_KEY_HIGHLIGHTS);
+
+                if (savedAnswers) userAnswers = JSON.parse(savedAnswers);
+                if (savedFlags) flaggedQuestions = JSON.parse(savedFlags);
+                if (savedElim) eliminatedOptions = JSON.parse(savedElim);
+                if (savedIndex !== null) currentIndex = parseInt(savedIndex);
+                if (savedScore !== null) totalCorrect = parseInt(savedScore);
+                if (savedFilter !== null) activeFilter = savedFilter;
+                if (savedRetry) retrySessionList = JSON.parse(savedRetry);
+                if (savedHighlights) userHighlights = JSON.parse(savedHighlights);
+            } catch (e) {
+                console.error("Could not load saved progress", e);
+            }
+        }
+
+        function resetProgress() {
+            if (confirm("Are you sure you want to clear your saved progress, answers, flags, and highlights?")) {
+                localStorage.removeItem(STORAGE_KEY_ANSWERS);
+                localStorage.removeItem(STORAGE_KEY_FLAGS);
+                localStorage.removeItem(STORAGE_KEY_ELIM);
+                localStorage.removeItem(STORAGE_KEY_INDEX);
+                localStorage.removeItem(STORAGE_KEY_SCORE);
+                localStorage.removeItem(STORAGE_KEY_FILTER);
+                localStorage.removeItem(STORAGE_KEY_RETRY);
+                localStorage.removeItem(STORAGE_KEY_HIGHLIGHTS);
+                userAnswers = {};
+                flaggedQuestions = {};
+                eliminatedOptions = {};
+                retrySessionList = [];
+                userHighlights = {};
+                currentIndex = 0;
+                totalCorrect = 0;
+                activeFilter = "all";
+                initApp();
+            }
+        }
+
+        function handleAnalysisExport(val) {
+            if (!val) return;
+            if (val === "all") exportRulesForFilter(examData.map((_, idx) => idx), "All Rules");
+            if (val === "missed") exportRulesForFilter(getMissedIndices(), "Missed Rules");
+            if (val === "flagged") exportRulesForFilter(getFlaggedIndices(), "Flagged Rules");
+        }
+
+        function exportRulesForFilter(indices, titleName) {
+            if (indices.length === 0) {
+                openModal(`Export ${titleName}`, `No questions match the "${titleName}" criteria.`, `No rules to export for ${titleName}.`);
+                return;
+            }
+
+            const uniqueMap = new Map();
+            indices.forEach(idx => {
+                const item = examData[idx];
+                const cleanTopic = item.topic.trim();
+                const cleanExp = item.exp.trim();
+                if (!uniqueMap.has(cleanTopic)) {
+                    uniqueMap.set(cleanTopic, new Set());
+                }
+                uniqueMap.get(cleanTopic).add(cleanExp);
+            });
+
+            const sortedTopics = Array.from(uniqueMap.keys()).sort((a, b) => a.localeCompare(b));
+
+            let tableOutput = "**Legal Topic Category**\t**Black Letter Law Analysis / Core Rule**\n";
+            let displayOutput = `${titleName.toUpperCase()} - CATEGORIZED & SORTED (WORD TABLE COMPATIBLE):\n`;
+            displayOutput += `========================================================================\n\n`;
+
+            sortedTopics.forEach(topic => {
+                const rules = Array.from(uniqueMap.get(topic));
+                rules.forEach(rule => {
+                    let safeRule = rule.replace(/[\r\n]+/g, " ");
+                    tableOutput += `**${topic}**\t${safeRule}\n`;
+                    displayOutput += `• [**${topic}**]\n  ${safeRule}\n\n`;
+                });
+            });
+
+            navigator.clipboard.writeText(tableOutput).then(() => {
+                openModal(
+                    `${titleName} Exported & Sorted!`,
+                    `${titleName} have been CATEGORIZED (IN BOLD), SORTED & COPIED TO YOUR CLIPBOARD in Tab-Delimited Table format!\n\nTo make a table in Microsoft Word:\n1. Open Word and press Paste (Ctrl+V or Cmd+V)\n2. Highlight the pasted text\n3. Click Insert > Table > Convert Text to Table... (Separate at Tabs)`,
+                    displayOutput
+                );
+            }).catch(err => {
+                openModal(
+                    `${titleName} Export`,
+                    "Copy the text below manually, or click 'Copy Content to Clipboard':",
+                    tableOutput
+                );
+            });
+        }
+
+        function showMissedSummary() {
+            let summary = "MISSED QUESTIONS SUMMARY:\n========================================\n\n";
+            let missedIndices = getMissedIndices();
+
+            if (missedIndices.length === 0) {
+                summary += "No missed questions yet! Great job.";
+            } else {
+                missedIndices.forEach(qIdx => {
+                    let q = examData[qIdx];
+                    let userChoice = userAnswers[qIdx];
+                    summary += `• Question ${q.id} [Topic: **${q.topic}**]\n`;
+                    summary += `  Your Selected Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n`;
+                    summary += `  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n`;
+                    summary += `  Core Rule: ${q.exp}\n\n`;
+                });
+            }
+
+            openModal("Missed Questions Rule Analysis", "Review the legal rules for questions you answered incorrectly, or copy and paste them back into our chat for drill sets.", summary);
+        }
+
+        function showFlaggedSummary() {
+            let summary = "FLAGGED QUESTIONS SUMMARY:\n========================================\n\n";
+            let flaggedIndices = getFlaggedIndices();
+
+            if (flaggedIndices.length === 0) {
+                summary += "No flagged questions yet!";
+            } else {
+                flaggedIndices.forEach(qIdx => {
+                    let q = examData[qIdx];
+                    let userChoice = userAnswers[qIdx];
+                    summary += `• Question ${q.id} [Topic: **${q.topic}**]\n`;
+                    if (userChoice !== undefined) {
+                        summary += `  Your Selected Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n`;
+                    }
+                    summary += `  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n`;
+                    summary += `  Core Rule: ${q.exp}\n\n`;
+                });
+            }
+
+            openModal("Flagged Questions Rule Analysis", "Review the legal rules for questions you flagged for extra study and review.", summary);
+        }
+
+        function exportFlaggedQuestions() {
+            const flagged = getFlaggedIndices().map(idx => {
+                const item = examData[idx];
+                return {
+                    originalSet: "Contracts Set 14",
+                    originalId: item.id,
+                    topic: item.topic,
+                    factPattern: item.fp,
+                    question: item.q,
+                    options: item.opts,
+                    correctAnswer: item.ans,
+                    explanation: item.exp
+                };
+            });
+
+            const content = flagged.length > 0 ? JSON.stringify(flagged, null, 2) : "No questions are currently flagged in this set.";
+            openModal("Export Flagged Questions (JSON)", "Copy this JSON block and paste it into our chat to combine flagged questions across multiple sets into custom exams.", content);
+        }
+
+        function exportMissedQuestions() {
+            const missed = getMissedIndices().map(idx => {
+                const item = examData[idx];
+                return {
+                    originalSet: "Contracts Set 14",
+                    originalId: item.id,
+                    topic: item.topic,
+                    factPattern: item.fp,
+                    question: item.q,
+                    options: item.opts,
+                    correctAnswer: item.ans,
+                    explanation: item.exp
+                };
+            });
+
+            const content = missed.length > 0 ? JSON.stringify(missed, null, 2) : "No questions are currently marked as missed.";
+            openModal("Export Missed Questions (JSON)", "Copy this JSON block and paste it into our chat to build an automated re-test quiz solely from your missed questions.", content);
+        }
+
+        function exportFullStudentSession() {
+            const sessionData = {
+                version: "1.0",
+                examSet: currentSetKey,
+                exportDate: new Date().toLocaleString(),
+                userAnswers: userAnswers,
+                flaggedQuestions: flaggedQuestions,
+                eliminatedOptions: eliminatedOptions,
+                userHighlights: userHighlights,
+                score: totalCorrect,
+                totalAttempted: Object.keys(userAnswers).length,
+                totalQuestions: examData.length
+            };
+
+            const jsonString = JSON.stringify(sessionData, null, 2);
+            openModal(
+                "Export Test Session",
+                "Copy this code block and send it to your classmate, tutor, or study partner. They can click '📥 Import' on their screen to review your exact test results, missed questions, and highlights:",
+                jsonString
+            );
+        }
+
+        function promptImportSession() {
+            let rawInput = prompt("Paste the student's Export Session code block below:");
+            if (!rawInput) return;
+
+            try {
+                const imported = JSON.parse(rawInput.trim());
+
+                if (imported.examSet && imported.examSet !== currentSetKey) {
+                    alert(`Warning: This session belongs to ${imported.examSet.toUpperCase()}, but you are currently on ${currentSetKey.toUpperCase()}. Please open the matching exam set before importing.`);
+                    return;
+                }
+
+                if (!imported.userAnswers) {
+                    alert("Invalid session data format.");
+                    return;
+                }
+
+                if (confirm(`Load session from ${imported.exportDate || "another student"} (Score: ${imported.score || 0} / ${imported.totalAttempted || 0})?\n\nNote: This will display their answers, highlights, and missed questions on your screen.`)) {
+                    userAnswers = imported.userAnswers || {};
+                    flaggedQuestions = imported.flaggedQuestions || {};
+                    eliminatedOptions = imported.eliminatedOptions || {};
+                    userHighlights = imported.userHighlights || {};
+                    
+                    totalCorrect = 0;
+                    Object.keys(userAnswers).forEach(idx => {
+                        if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+                    });
+
+                    currentIndex = 0;
+                    saveProgress();
+                    populateJumpMenu();
+                    renderQuestion();
+                    updateScore();
+                    updateDropdownLabels();
+                    
+                    alert("Session imported successfully! You can now browse their answers, click 'Missed (X)' to see questions they got wrong, or inspect their highlighted notes.");
+                }
+            } catch (err) {
+                alert("Error parsing import code. Please ensure you copied the complete code block.");
+            }
+        }
+
+        function saveStudentHistory(score, total, percentage) {
+            let historyKey = `fylsx_history_${currentSetKey}`;
+            let history = JSON.parse(localStorage.getItem(historyKey) || "[]");
+            
+            let sessionRecord = {
+                date: new Date().toLocaleDateString(),
+                time: new Date().toLocaleTimeString(),
+                score: score,
+                total: total,
+                percentage: percentage
+            };
+            
+            history.push(sessionRecord);
+            if (history.length > 10) history.shift();
+            localStorage.setItem(historyKey, JSON.stringify(history));
+        }
+
+        function showStudentHistory() {
+            let historyKey = `fylsx_history_${currentSetKey}`;
+            let history = JSON.parse(localStorage.getItem(historyKey) || "[]");
+            
+            let summary = `PAST TEST PERFORMANCE HISTORY (${currentSetKey.toUpperCase()}):\n==================================================\n\n`;
+            if (history.length === 0) {
+                summary += "No completed past test history recorded for this set yet.";
+            } else {
+                history.forEach((record, idx) => {
+                    summary += `Attempt #${idx + 1} — Date: ${record.date} at ${record.time}\n`;
+                    summary += `  Score: ${record.score} / ${record.total} (${record.percentage}%)\n\n`;
+                });
+            }
+            openModal("Student Test History", "Review previous attempts and score progression:", summary);
+        }
+
+        function openModal(title, desc, content) {
+            document.getElementById("modal-title").textContent = title;
+            document.getElementById("modal-desc").textContent = desc;
+            document.getElementById("modal-textarea").value = content;
+            document.getElementById("info-modal-box").classList.add("visible");
+            document.getElementById("info-modal-box").scrollIntoView({ behavior: "smooth" });
+        }
+
+        function closeModal() {
+            document.getElementById("info-modal-box").classList.remove("visible");
+        }
+
+        function copyModalContent() {
+            const text = document.getElementById("modal-textarea");
+            text.select();
+            document.execCommand("copy");
+            alert("Copied to clipboard!");
+        }
+
+        window.onload = initApp;
+    </script>
+</body>
+</html>
