@@ -276,6 +276,16 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.06);
         }
 
+        .exam-card.special-missed-card {
+            border: 2px solid #F59E0B;
+            background: #FFFBEB;
+        }
+
+        .exam-card.special-missed-card:hover {
+            background: #FEF3C7;
+            border-color: #D97706;
+        }
+
         .card-header-row {
             display: flex;
             justify-content: space-between;
@@ -309,6 +319,12 @@
             border-color: #E2E8F0;
         }
 
+        .score-display-badge.missed-badge {
+            color: #B45309;
+            background: #FEF3C7;
+            border-color: #FDE68A;
+        }
+
         .exam-card p {
             font-size: 0.82rem;
             color: var(--text-muted);
@@ -325,8 +341,16 @@
             font-weight: 600;
         }
 
+        .exam-card.special-missed-card .btn-launch {
+            background: #D97706;
+        }
+
         .exam-card:hover .btn-launch {
             background: var(--primary-light);
+        }
+
+        .exam-card.special-missed-card:hover .btn-launch {
+            background: #B45309;
         }
 
         /* Universal Modal Styles */
@@ -458,8 +482,8 @@
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('torts', 'Torts', 20)" title="Export all unique black letter law rules for Torts">
                     📋 Export Rules
                 </button>
-                <button class="btn-cat-export btn-cat-missed" onclick="exportCategoryData('torts', 'Torts', 20, 'missed')" title="Export all missed Torts questions across all 20 sets">
-                    ❌ Export Missed
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet('torts', 'Torts', 'Torts', 20)" title="Compile all currently missed Torts questions into a fresh practice exam set">
+                    ❌ All Missed Questions
                 </button>
                 <button class="btn-cat-export btn-cat-flagged" onclick="exportCategoryData('torts', 'Torts', 20, 'flagged')" title="Export all flagged Torts questions across all 20 sets">
                     🚩 Export Flags
@@ -481,8 +505,8 @@
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('criminal', 'Criminal Law', 20)" title="Export all unique black letter law rules for Criminal Law">
                     📋 Export Rules
                 </button>
-                <button class="btn-cat-export btn-cat-missed" onclick="exportCategoryData('criminal', 'Criminal Law', 20, 'missed')" title="Export all missed Criminal Law questions across all 20 sets">
-                    ❌ Export Missed
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet('criminal', 'CriminalLaw', 'Criminal Law', 20)" title="Compile all currently missed Criminal Law questions into a fresh practice exam set">
+                    ❌ All Missed Questions
                 </button>
                 <button class="btn-cat-export btn-cat-flagged" onclick="exportCategoryData('criminal', 'Criminal Law', 20, 'flagged')" title="Export all flagged Criminal Law questions across all 20 sets">
                     🚩 Export Flags
@@ -504,8 +528,8 @@
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('contracts', 'Contracts', 20)" title="Export all unique black letter law rules for Contracts">
                     📋 Export Rules
                 </button>
-                <button class="btn-cat-export btn-cat-missed" onclick="exportCategoryData('contracts', 'Contracts', 20, 'missed')" title="Export all missed Contracts questions across all 20 sets">
-                    ❌ Export Missed
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet('contracts', 'Contracts', 'Contracts', 20)" title="Compile all currently missed Contracts questions into a fresh practice exam set">
+                    ❌ All Missed Questions
                 </button>
                 <button class="btn-cat-export btn-cat-flagged" onclick="exportCategoryData('contracts', 'Contracts', 20, 'flagged')" title="Export all flagged Contracts questions across all 20 sets">
                     🚩 Export Flags
@@ -527,8 +551,8 @@
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('mixed', 'Mixed Subjects', 40)" title="Export all unique black letter law rules for Mixed Subjects">
                     📋 Export Rules
                 </button>
-                <button class="btn-cat-export btn-cat-missed" onclick="exportCategoryData('mixed', 'Mixed Subjects', 40, 'missed')" title="Export all missed Mixed questions across all 40 sets">
-                    ❌ Export Missed
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet('mixed', 'Mixed', 'Mixed Subjects', 40)" title="Compile all currently missed Mixed questions into a fresh practice exam set">
+                    ❌ All Missed Questions
                 </button>
                 <button class="btn-cat-export btn-cat-flagged" onclick="exportCategoryData('mixed', 'Mixed Subjects', 40, 'flagged')" title="Export all flagged Mixed questions across all 40 sets">
                     🚩 Export Flags
@@ -674,11 +698,45 @@
             return null;
         }
 
-        // Render card with score badge
+        // Render exam grids including special "All Missed Questions" card if active
         function renderExamSection(gridId, categoryKey, filePrefix, displayName, totalSets, defaultSubtitle) {
             const container = document.getElementById(gridId);
             if (!container) return;
             let html = "";
+
+            // Check if special "All Missed Questions" set exists for this category
+            const missedSetData = localStorage.getItem(`fylsx_${categoryKey}_missed_set_exam_data`);
+            if (missedSetData) {
+                try {
+                    const parsedMissed = JSON.parse(missedSetData);
+                    if (Array.isArray(parsedMissed) && parsedMissed.length > 0) {
+                        const directScore = localStorage.getItem(`fylsx_${categoryKey}_setmissed_score_v25`);
+                        const directAnswers = localStorage.getItem(`fylsx_${categoryKey}_setmissed_answers_v25`);
+                        let missedScoreHtml = `<span class="score-display-badge missed-badge">${parsedMissed.length} Qs</span>`;
+
+                        if (directScore !== null && directAnswers !== null) {
+                            const ansCount = Object.keys(JSON.parse(directAnswers)).length;
+                            if (ansCount > 0) {
+                                const p = Math.round((parseInt(directScore, 10) / ansCount) * 100);
+                                missedScoreHtml = `<span class="score-display-badge">${p}% (${ansCount}/${parsedMissed.length})</span>`;
+                            }
+                        }
+
+                        html += `
+                            <a href="BabyBar-${filePrefix}-Missed.html" class="exam-card special-missed-card">
+                                <div>
+                                    <div class="card-header-row">
+                                        <h3>🔥 ${displayName} - All Missed Questions</h3>
+                                        ${missedScoreHtml}
+                                    </div>
+                                    <p>Active custom drill set compiled from all your missed ${displayName} questions.</p>
+                                </div>
+                                <div class="btn-launch">Practice Missed Set (${parsedMissed.length} Qs) →</div>
+                            </a>
+                        `;
+                    }
+                } catch (e) {}
+            }
 
             for (let i = 1; i <= totalSets; i++) {
                 const padNum = String(i).padStart(2, '0');
@@ -712,19 +770,81 @@
             renderExamSection("mixed-grid", "mixed", "Mixed", "Mixed Exam", 40, "Multi-Subject FYLSX Practice Exam");
         }
 
+        // GENERATE / OVERWRITE "ALL MISSED QUESTIONS" SET (Collects actual question objects across sets)
+        function generateAllMissedSet(categoryKey, filePrefix, categoryTitle, totalSets) {
+            const proceed = confirm("Overwrite Missed Questions Set?");
+            if (!proceed) return;
+
+            let collectedMissedQuestions = [];
+            const versions = ["v25", "v100", "v23", "v24"];
+
+            for (let i = 1; i <= totalSets; i++) {
+                let foundAnswers = null;
+                let foundExamData = null;
+
+                for (let v of versions) {
+                    const ansKey = `fylsx_${categoryKey}_set${i}_answers_${v}`;
+                    const snapKey = `fylsx_${categoryKey}_set${i}_exam_data_${v}`;
+                    
+                    const savedAns = localStorage.getItem(ansKey);
+                    const savedSnap = localStorage.getItem(snapKey);
+
+                    if (savedAns && !foundAnswers) {
+                        try { foundAnswers = JSON.parse(savedAns); } catch (e) {}
+                    }
+                    if (savedSnap && !foundExamData) {
+                        try { foundExamData = JSON.parse(savedSnap); } catch (e) {}
+                    }
+                }
+
+                if (foundAnswers && foundExamData && Array.isArray(foundExamData)) {
+                    Object.keys(foundAnswers).forEach(idxStr => {
+                        const qIdx = Number(idxStr);
+                        const qObj = foundExamData[qIdx];
+                        if (qObj && foundAnswers[qIdx] !== qObj.ans) {
+                            collectedMissedQuestions.push({
+                                ...qObj,
+                                originalSet: `Set ${String(i).padStart(2, '0')}`,
+                                originalSetIndex: i,
+                                id: collectedMissedQuestions.length + 1
+                            });
+                        }
+                    });
+                }
+            }
+
+            if (collectedMissedQuestions.length === 0) {
+                alert(`No missed questions recorded for ${categoryTitle} across Sets 01–${String(totalSets).padStart(2, '0')}.\n\nAs you take and miss questions on practice exams, this feature will automatically gather their full question objects here.`);
+                return;
+            }
+
+            // Save fresh exam data and clear prior answers for the missed set
+            localStorage.setItem(`fylsx_${categoryKey}_missed_set_exam_data`, JSON.stringify(collectedMissedQuestions));
+            localStorage.removeItem(`fylsx_${categoryKey}_setmissed_answers_v25`);
+            localStorage.removeItem(`fylsx_${categoryKey}_setmissed_flags_v25`);
+            localStorage.removeItem(`fylsx_${categoryKey}_setmissed_elim_v25`);
+            localStorage.removeItem(`fylsx_${categoryKey}_setmissed_index_v25`);
+            localStorage.removeItem(`fylsx_${categoryKey}_setmissed_score_v25`);
+            localStorage.removeItem(`fylsx_${categoryKey}_setmissed_filter_v25`);
+            localStorage.removeItem(`fylsx_${categoryKey}_setmissed_retry_v25`);
+            localStorage.removeItem(`fylsx_${categoryKey}_setmissed_text_highlights_v25`);
+
+            populateAllExams();
+            alert(`✅ Successfully created new 'All Missed Questions' set for ${categoryTitle} with ${collectedMissedQuestions.length} questions!\n\nYou can now click the gold card on your dashboard to practice this set.`);
+        }
+
         // GROUP EXPORT JSON (Full answers, flags, highlights, scores, eliminations, and history for all sets in category)
         function exportGroupJSON(categoryKey, categoryTitle, totalSets) {
             const storageItems = {};
             let setsWithData = 0;
 
             const versions = ["v25", "v100", "v23", "v24"];
-            const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights", "highlights"];
+            const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights", "highlights", "exam_data"];
 
             for (let i = 1; i <= totalSets; i++) {
                 let hasSetData = false;
                 const padNum = String(i).padStart(2, '0');
 
-                // Check versioned keys
                 for (let v of versions) {
                     for (let p of prefixes) {
                         const k1 = `fylsx_${categoryKey}_set${i}_${p}_${v}`;
@@ -738,7 +858,6 @@
                     }
                 }
 
-                // Check history keys
                 const histKeys = [
                     `fylsx_history_${categoryKey}_set${i}`,
                     `fylsx_history_${categoryKey}_set${padNum}`,
@@ -751,6 +870,12 @@
                 }
 
                 if (hasSetData) setsWithData++;
+            }
+
+            // Include custom missed set data if present
+            const missedSnap = localStorage.getItem(`fylsx_${categoryKey}_missed_set_exam_data`);
+            if (missedSnap !== null) {
+                storageItems[`fylsx_${categoryKey}_missed_set_exam_data`] = missedSnap;
             }
 
             const exportPayload = {
@@ -809,7 +934,7 @@
 
                     // 1. Purge existing keys for this category to ensure clean overwrite
                     const versions = ["v25", "v100", "v23", "v24"];
-                    const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights", "highlights"];
+                    const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights", "highlights", "exam_data"];
 
                     for (let i = 1; i <= targetSets; i++) {
                         const padNum = String(i).padStart(2, '0');
@@ -824,6 +949,7 @@
                         localStorage.removeItem(`fylsx_history_${targetCat}${i}`);
                         localStorage.removeItem(`fylsx_history_${targetCat}${padNum}`);
                     }
+                    localStorage.removeItem(`fylsx_${targetCat}_missed_set_exam_data`);
 
                     // 2. Write imported dataset into localStorage
                     let keysImported = 0;
@@ -930,7 +1056,7 @@
             });
         }
 
-        // Category-Wide Export Engine (Aggregates Missed / Flagged across all sets)
+        // Category-Wide Export Engine (Aggregates Flagged across all sets)
         function exportCategoryData(categoryKey, categoryTitle, totalSets, mode) {
             const isMissedMode = mode === "missed";
             const typeLabel = isMissedMode ? "Missed Questions" : "Flagged Questions";
