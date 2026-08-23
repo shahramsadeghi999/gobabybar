@@ -219,15 +219,15 @@
         </div>
         <div class="exam-grid" id="crim-grid"></div>
 
-        <!-- CONTRACTS -->
+        <!-- CONTRACTS (Now covers 1 through 25) -->
         <div class="category-header-bar">
-            <div class="section-title">📜 Contracts Practice Sets (Sets 01–20)</div>
+            <div class="section-title">📜 Contracts Practice Sets (Sets 01–25)</div>
             <div class="category-actions">
-                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('contracts', 'Contracts', 20)">📤 Export</button>
-                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('contracts', 'Contracts', 20)">📥 Import</button>
-                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('contracts', 'Contracts', 20)">📋 Export Rules</button>
-                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'contracts', 'Contracts', 'Contracts', 20)">❌ Compile Missed</button>
-                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'contracts', 'Contracts', 'Contracts', 20)">🚩 Compile Flagged</button>
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('contracts', 'Contracts', 25)">📤 Export</button>
+                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('contracts', 'Contracts', 25)">📥 Import</button>
+                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('contracts', 'Contracts', 25)">📋 Export Rules</button>
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'contracts', 'Contracts', 'Contracts', 25)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'contracts', 'Contracts', 'Contracts', 25)">🚩 Compile Flagged</button>
             </div>
         </div>
         <div class="exam-grid" id="contracts-grid"></div>
@@ -370,7 +370,7 @@
         function populateAllExams() {
             renderExamSection("torts-grid", "torts", "Torts", "Torts", 20, "Targeted Practice & Rule Analysis");
             renderExamSection("crim-grid", "criminal", "CriminalLaw", "Criminal Law", 20, "Crimes, Defenses & Analytics");
-            renderExamSection("contracts-grid", "contracts", "Contracts", "Contracts", 20, "Formation, Breach & Remedies");
+            renderExamSection("contracts-grid", "contracts", "Contracts", "Contracts", 25, "Formation, Breach & Remedies"); // Updated to 25 sets
             renderExamSection("mixed-grid", "mixed", "Mixed", "Mixed Exam", 40, "Multi-Subject FYLSX Practice Exam");
         }
 
@@ -406,7 +406,7 @@
                                 });
                             }
                         }
-                    } catch (err) { console.warn(`Fetch blocked for Set ${padNum}.`); }
+                    } catch (err) { console.warn(`Fetch blocked for Set ${padNum}. Run local server.`); }
                 }
             }
             btn.innerHTML = originalBtnText; btn.disabled = false;
@@ -452,7 +452,7 @@
                                 });
                             }
                         }
-                    } catch (err) { console.warn(`Fetch blocked for Set ${padNum}.`); }
+                    } catch (err) { console.warn(`Fetch blocked for Set ${padNum}. Run local server.`); }
                 }
             }
             btn.innerHTML = originalBtnText; btn.disabled = false;
