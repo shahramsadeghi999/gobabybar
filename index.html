@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- iPad Fullscreen / PWA Optimization -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -19,49 +20,101 @@
             --text-muted: #64748B;
             --border: #CBD5E1;
             --success-dark: #15803D;
+            --success: #16A34A;
             --danger: #DC2626;
             --flag: #E11D48;
+            --badge-blue: #BAE6FD;
+            --badge-blue-hover: #7DD3FC;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 1.5rem 1rem; max-width: 960px; margin: 0 auto; }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 1.5rem 1rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
 
-        #login-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); z-index: 3000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+        /* Login Overlay */
+        #login-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px);
+            z-index: 3000; display: flex; align-items: center; justify-content: center; padding: 1rem;
+        }
         .login-card { background: white; border-radius: 16px; padding: 2rem; max-width: 400px; width: 100%; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); text-align: center; }
         .login-card h2 { color: var(--primary); font-size: 1.4rem; margin-bottom: 0.5rem; }
         .login-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem; }
         .login-input { width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1.5px solid var(--border); font-size: 1rem; margin-bottom: 0.8rem; text-align: center; letter-spacing: 2px; }
         .login-input:focus { outline: none; border-color: var(--primary); }
-        .btn-login { width: 100%; background: var(--primary); color: white; padding: 0.75rem; border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; }
+        .btn-login { width: 100%; background: var(--primary); color: white; padding: 0.75rem; border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
         .btn-login:hover { background: var(--primary-light); }
         .login-error { color: var(--danger); font-size: 0.82rem; margin-top: 0.6rem; display: none; font-weight: 500; }
 
+        /* Main App Interface */
         #main-content { display: none; }
 
-        header { background: var(--primary); color: white; padding: 1.8rem 1rem; border-radius: 14px; text-align: center; margin-bottom: 2rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); position: relative; }
+        header {
+            background: var(--primary); color: white; padding: 1.8rem 1rem;
+            border-radius: 14px; text-align: center; margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); position: relative;
+        }
         header h1 { font-size: 1.6rem; margin-bottom: 0.4rem; }
         header p { font-size: 0.95rem; opacity: 0.9; }
-        .btn-logout { position: absolute; top: 1rem; right: 1rem; background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid rgba(255, 255, 255, 0.4); padding: 0.35rem 0.75rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; font-weight: 600; }
+        .btn-logout {
+            position: absolute; top: 1rem; right: 1rem; background: rgba(255, 255, 255, 0.2);
+            color: white; border: 1px solid rgba(255, 255, 255, 0.4); padding: 0.35rem 0.75rem;
+            border-radius: 6px; font-size: 0.8rem; cursor: pointer; font-weight: 600;
+        }
+        .btn-logout:hover { background: rgba(255, 255, 255, 0.3); }
 
-        .category-header-bar { display: flex; justify-content: space-between; align-items: center; margin: 1.8rem 0 0.9rem 0; border-bottom: 2px solid var(--border); padding-bottom: 0.4rem; flex-wrap: wrap; gap: 0.6rem; }
+        /* Category Header Bar */
+        .category-header-bar {
+            display: flex; justify-content: space-between; align-items: center;
+            margin: 1.8rem 0 0.9rem 0; border-bottom: 2px solid var(--border);
+            padding-bottom: 0.4rem; flex-wrap: wrap; gap: 0.6rem;
+        }
         .section-title { font-size: 1.15rem; color: var(--primary); font-weight: 700; margin: 0; }
         .category-actions { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; }
 
-        .btn-cat-export { padding: 0.3rem 0.65rem; border-radius: 6px; font-size: 0.78rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.25rem; border: 1px solid var(--border); transition: all 0.15s ease; }
+        .btn-cat-export {
+            padding: 0.3rem 0.65rem; border-radius: 6px; font-size: 0.78rem; font-weight: 600;
+            cursor: pointer; display: flex; align-items: center; gap: 0.25rem;
+            border: 1px solid var(--border); transition: all 0.15s ease;
+        }
         .btn-cat-group-export { background: #0284C7; color: white; border-color: #0284C7; }
+        .btn-cat-group-export:hover { background: #0369A1; }
         .btn-cat-group-import { background: #475569; color: white; border-color: #475569; }
+        .btn-cat-group-import:hover { background: #334155; }
         .btn-cat-rules { background: #F0F9FF; color: #0369A1; border-color: #BAE6FD; }
+        .btn-cat-rules:hover { background: #E0F2FE; }
         .btn-cat-missed { background: #FFFBEB; color: #B45309; border-color: #FCD34D; }
+        .btn-cat-missed:hover { background: #FEF3C7; }
         .btn-cat-flagged { background: #FFF1F2; color: var(--flag); border-color: #FECDD3; }
+        .btn-cat-flagged:hover { background: #FFE4E6; }
 
         .exam-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
 
-        .exam-card { background: var(--card-bg); border: 1.5px solid var(--border); border-radius: 12px; padding: 1.1rem; text-decoration: none; color: var(--text); box-shadow: 0 2px 4px rgba(0,0,0,0.03); transition: all 0.2s ease; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; }
+        .exam-card {
+            background: var(--card-bg); border: 1.5px solid var(--border);
+            border-radius: 12px; padding: 1.1rem; text-decoration: none; color: var(--text);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03); transition: all 0.2s ease;
+            display: flex; flex-direction: column; justify-content: space-between; cursor: pointer;
+        }
         .exam-card:hover { border-color: var(--primary-light); background: #F0F9FF; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
         
+        /* Custom Deck Card Styles */
         .exam-card.special-missed-card { border: 2px solid #F59E0B; background: #FFFBEB; }
         .exam-card.special-missed-card:hover { background: #FEF3C7; border-color: #D97706; }
+
         .exam-card.special-flagged-card { border: 2px solid #E11D48; background: #FFF1F2; }
         .exam-card.special-flagged-card:hover { background: #FFE4E6; border-color: #BE123C; }
 
@@ -74,24 +127,39 @@
         .score-display-badge.missed-badge { color: #B45309; background: #FEF3C7; border-color: #FDE68A; }
         .score-display-badge.flagged-badge { color: #BE123C; background: #FFE4E6; border-color: #FECDD3; }
 
-        .btn-launch { background: var(--primary); color: white; text-align: center; padding: 0.45rem; border-radius: 6px; font-size: 0.82rem; font-weight: 600; }
+        .btn-launch { background: var(--primary); color: white; text-align: center; padding: 0.45rem; border-radius: 6px; font-size: 0.82rem; font-weight: 600; transition: all 0.2s ease; }
+        .exam-card:hover .btn-launch { background: var(--primary-light); }
+        
         .exam-card.special-missed-card .btn-launch { background: #D97706; }
+        .exam-card.special-missed-card:hover .btn-launch { background: #B45309; }
+        
         .exam-card.special-flagged-card .btn-launch { background: #E11D48; }
+        .exam-card.special-flagged-card:hover .btn-launch { background: #BE123C; }
 
+        /* Modals */
         .modal-box { display: none; background: white; border: 2px solid var(--primary); padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; margin-bottom: 2rem; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15); }
         .modal-box.visible { display: block; }
-        .btn-modal-close { background: transparent; color: var(--text-muted); border: 1px solid var(--border); padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; }
+        .btn-modal-close { background: transparent; color: var(--text-muted); border: 1px solid var(--border); padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.15s ease; }
+        .btn-modal-close:hover { color: var(--danger); border-color: var(--danger); }
         textarea { width: 100%; height: 280px; margin-top: 0.8rem; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border); font-family: monospace; font-size: 0.85rem; line-height: 1.5; }
         .modal-btn-row { display: flex; gap: 0.6rem; margin-top: 0.8rem; flex-wrap: wrap; }
-        .btn-action-primary { background: var(--primary); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.88rem; }
+        .btn-action-primary { background: var(--primary); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.88rem; transition: all 0.15s ease; }
+        .btn-action-primary:hover { background: var(--primary-light); }
 
         footer { text-align: center; margin-top: 3rem; font-size: 0.8rem; color: var(--text-muted); padding-bottom: 1rem; }
+
+        @media (max-width: 600px) {
+            body { padding: 0.5rem; }
+            .category-header-bar { flex-direction: column; align-items: flex-start; }
+            .category-actions { width: 100%; justify-content: flex-start; }
+        }
     </style>
 </head>
 <body>
 
     <input type="file" id="group-file-importer" accept=".json" style="display: none;" onchange="executeGroupFileImport(event)">
 
+    <!-- Login -->
     <div id="login-overlay">
         <div class="login-card">
             <h2>🔒 Student Access Required</h2>
@@ -104,6 +172,7 @@
         </div>
     </div>
 
+    <!-- Main Content -->
     <div id="main-content">
         <header>
             <button class="btn-logout" onclick="handleLogout()">🔒 Log Out</button>
@@ -337,10 +406,11 @@
                                 });
                             }
                         }
-                    } catch (err) { console.warn(`Fetch blocked for Set ${padNum}. Run local server.`); }
+                    } catch (err) { console.warn(`Fetch blocked for Set ${padNum}.`); }
                 }
             }
             btn.innerHTML = originalBtnText; btn.disabled = false;
+            
             if (totalAnsweredAcrossSets === 0) { alert(`No answers found in storage for ${categoryTitle}.`); return; }
             if (collectedMissedQuestions.length === 0) { alert(`Great news! You got 100% correct in ${categoryTitle}. No missed questions to compile.`); return; }
 
@@ -382,10 +452,11 @@
                                 });
                             }
                         }
-                    } catch (err) { console.warn(`Fetch blocked for Set ${padNum}. Run local server.`); }
+                    } catch (err) { console.warn(`Fetch blocked for Set ${padNum}.`); }
                 }
             }
             btn.innerHTML = originalBtnText; btn.disabled = false;
+            
             if (totalFlagsAcrossSets === 0) { alert(`No flagged questions found in storage for ${categoryTitle}.`); return; }
 
             localStorage.setItem(`fylsx_${categoryKey}_flagged_set_exam_data`, JSON.stringify(collectedFlaggedQuestions));
@@ -411,11 +482,12 @@
 
         function exportGroupJSON(categoryKey, categoryTitle, totalSets) {
             const storageItems = {}; let setsWithData = 0;
+            const versions = ["v25", "v100", "v23", "v24"];
             const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"];
             
             for (let i = 1; i <= totalSets; i++) {
                 let hasSetData = false; const padNum = String(i).padStart(2, '0');
-                ["v25", "v100"].forEach(v => prefixes.forEach(p => {
+                versions.forEach(v => prefixes.forEach(p => {
                     [ `fylsx_${categoryKey}_set${i}_${p}_${v}`, `fylsx_${categoryKey}_set${padNum}_${p}_${v}` ].forEach(k => {
                         const val = localStorage.getItem(k); if (val !== null) { storageItems[k] = val; hasSetData = true; }
                     });
@@ -429,7 +501,7 @@
             ["missed", "flagged"].forEach(st => {
                 const snap = localStorage.getItem(`fylsx_${categoryKey}_${st}_set_exam_data`);
                 if (snap !== null) storageItems[`fylsx_${categoryKey}_${st}_set_exam_data`] = snap;
-                ["v25", "v100"].forEach(v => prefixes.forEach(p => {
+                versions.forEach(v => prefixes.forEach(p => {
                     const key = `fylsx_${categoryKey}_set${st}_${p}_${v}`;
                     const val = localStorage.getItem(key); if (val !== null) storageItems[key] = val;
                 }));
@@ -437,9 +509,9 @@
                 if (localStorage.getItem(hKey)) storageItems[hKey] = localStorage.getItem(hKey);
             });
 
-            const exportPayload = { app: "GoBabyBar Exam Center", version: "2.0", exportType: "group_complete_backup", categoryKey, categoryTitle, totalSetsScanned: totalSets, setsWithRecordedData: setsWithData, exportTimestamp: new Date().toISOString(), data: storageItems };
+            const exportPayload = { app: "GoBabyBar Exam Center", version: "2.1", exportType: "group_complete_backup", categoryKey, categoryTitle, totalSetsScanned: totalSets, setsWithRecordedData: setsWithData, exportTimestamp: new Date().toISOString(), data: storageItems };
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportPayload, null, 2));
-            const downloadAnchor = document.createElement('a'); downloadAnchor.setAttribute("href", dataStr); downloadAnchor.setAttribute("download", `GoBabyBar_${categoryTitle.replace(/\s+/g, '_')}_Backup_${new Date().toISOString().slice(0,10)}.json`);
+            const downloadAnchor = document.createElement('a'); downloadAnchor.setAttribute("href", dataStr); downloadAnchor.setAttribute("download", `GoBabyBar_${categoryTitle.replace(/\s+/g, '_')}_Full_Backup_${new Date().toISOString().slice(0,10)}.json`);
             document.body.appendChild(downloadAnchor); downloadAnchor.click(); downloadAnchor.remove();
         }
 
@@ -454,20 +526,22 @@
                     if (!parsed.data) { alert("Invalid backup file."); return; }
                     const targetCat = activeImportCategory ? activeImportCategory.categoryKey : (parsed.categoryKey || "torts");
                     const targetSets = activeImportCategory ? activeImportCategory.totalSets : 20;
+                    const versions = ["v25", "v100", "v23", "v24"];
+                    const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"];
 
                     for (let i = 1; i <= targetSets; i++) {
                         const padNum = String(i).padStart(2, '0');
-                        ["v25", "v100"].forEach(v => ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"].forEach(p => { localStorage.removeItem(`fylsx_${targetCat}_set${i}_${p}_${v}`); localStorage.removeItem(`fylsx_${targetCat}_set${padNum}_${p}_${v}`); }));
+                        versions.forEach(v => prefixes.forEach(p => { localStorage.removeItem(`fylsx_${targetCat}_set${i}_${p}_${v}`); localStorage.removeItem(`fylsx_${targetCat}_set${padNum}_${p}_${v}`); }));
                         localStorage.removeItem(`fylsx_history_${targetCat}_set${i}`); localStorage.removeItem(`fylsx_history_${targetCat}_set${padNum}`);
                     }
                     ["missed", "flagged"].forEach(st => {
                         localStorage.removeItem(`fylsx_${targetCat}_${st}_set_exam_data`);
-                        ["v25", "v100"].forEach(v => ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"].forEach(p => localStorage.removeItem(`fylsx_${targetCat}_set${st}_${p}_${v}`)));
+                        versions.forEach(v => prefixes.forEach(p => localStorage.removeItem(`fylsx_${targetCat}_set${st}_${p}_${v}`)));
                         localStorage.removeItem(`fylsx_history_${targetCat}_set${st}`);
                     });
 
                     let keysImported = 0; Object.keys(parsed.data).forEach(k => { localStorage.setItem(k, parsed.data[k]); keysImported++; });
-                    populateAllExams(); alert(`✅ Data successfully imported (${keysImported} items).`);
+                    populateAllExams(); alert(`✅ Data successfully imported (${keysImported} items).\n\nYour original sets, Missed sets, and Flagged sets have all been synced!`);
                 } catch (err) { alert("Error parsing JSON backup file: " + err.message); }
             };
             reader.readAsText(file);
@@ -517,13 +591,44 @@
             ],
             criminal: [
                 { topic: "Homicide / Common Law Murder", exp: "Murder is the unlawful killing of a human being with malice aforethought, proven by: (1) intent to kill; (2) intent to inflict grievous bodily harm; (3) depraved heart reckless indifference to human life; or (4) felony murder." },
-                { topic: "Homicide / First-Degree Premeditated Murder", exp: "First-degree murder requires willful, deliberate, and premeditated killing with a cool, dispassionate reflection before the fatal act." }
+                { topic: "Homicide / First-Degree Premeditated Murder", exp: "First-degree murder requires willful, deliberate, and premeditated killing with a cool, dispassionate reflection before the fatal act." },
+                { topic: "Homicide / Voluntary Manslaughter", exp: "Voluntary manslaughter is an intentional homicide committed in the heat of passion upon adequate provocation that would obscure the reason of an ordinary reasonable person, before a cooling-off period." },
+                { topic: "Homicide / Involuntary Manslaughter", exp: "Involuntary manslaughter is an unintentional killing caused by criminal negligence (gross deviation from reasonable care) or during the commission of an unlawful misdemeanor." },
+                { topic: "Felony Murder Doctrine", exp: "An unintentional death occurring during the commission or attempted commission of an inherently dangerous felony (BARRK: Burglary, Arson, Robbery, Rape, Kidnapping) is murder." },
+                { topic: "Larceny", exp: "Larceny is the trespassory taking and carrying away of the personal property of another with the specific intent to permanently deprive the owner thereof." },
+                { topic: "Embezzlement", exp: "Embezzlement is the fraudulent conversion of the property of another by one who is already in lawful possession of the property." },
+                { topic: "False Pretenses", exp: "False Pretenses requires obtaining title to the property of another by an intentional false representation of past or existing material fact, with intent to defraud." },
+                { topic: "Larceny by Trick", exp: "Larceny by Trick occurs when the defendant obtains mere possession (not title) of personal property through an intentional fraudulent misrepresentation." },
+                { topic: "Robbery", exp: "Robbery is a larceny committed from the person or immediate presence of another by means of force or threat of immediate physical harm." },
+                { topic: "Burglary", exp: "Common law burglary requires breaking and entering the dwelling of another at nighttime with the specific intent to commit a felony therein." },
+                { topic: "Arson", exp: "Arson is the malicious burning of the dwelling of another; charring of the structural wood fibers is required, whereas mere scorching or smoking is insufficient." },
+                { topic: "Attempt", exp: "Attempt requires the specific intent to commit the target crime accompanied by an overt act in furtherance beyond mere preparation (a substantial step under modern law)." },
+                { topic: "Conspiracy", exp: "Conspiracy is an agreement between two or more persons to accomplish an unlawful objective, with specific intent to agree and commit the crime, plus an overt act under modern statutes." },
+                { topic: "Solicitation", exp: "Solicitation is enticing, encouraging, requesting, or commanding another to commit a felony with the specific intent that the crime be committed; merges into completed conspiracy or crime." },
+                { topic: "Self-Defense", exp: "An actor is privileged to use proportional non-deadly force when reasonably believing unlawful physical force is imminent; deadly force requires reasonable belief of imminent death or serious bodily harm." },
+                { topic: "Insanity / M'Naghten Rule", exp: "Under the M'Naghten rule, a defendant is legally insane if, due to mental disease or defect at the time of the act, they did not know the nature and quality of the act or did not know the act was wrong." }
             ],
             contracts: [
-                { topic: "Contract Formation / Mutual Assent", exp: "Formation requires mutual assent (a valid offer and acceptance) supported by sufficient legal consideration or an enforceable substitute." }
+                { topic: "Contract Formation / Mutual Assent", exp: "Formation requires mutual assent (a valid offer and acceptance) supported by sufficient legal consideration or an enforceable substitute." },
+                { topic: "Offer Requirements", exp: "An offer is a manifestation of willingness to enter into a bargain, sufficiently definite in terms so that a reasonable person would understand assent creates a binding contract." },
+                { topic: "Revocation of Offers", exp: "An offeror may revoke an ordinary offer at any time prior to acceptance; firm offers under UCC § 2-205 require signed writings by merchants holding an offer open up to 3 months without consideration." },
+                { topic: "Acceptance / Mirror Image vs. UCC § 2-207", exp: "Under common law, acceptance must mirror the exact terms of the offer; under UCC § 2-207, a definite expression of acceptance operates as acceptance even if stating additional or different terms." },
+                { topic: "Consideration", exp: "Consideration requires a bargained-for exchange of legal value; past consideration or moral obligation cannot support a binding contract." },
+                { topic: "Promissory Estoppel", exp: "Under Restatement (Second) § 90, a promise lacking consideration is enforceable if the promisor reasonably expected detrimental reliance, actual reliance occurred, and injustice can only be avoided by enforcement." },
+                { topic: "Statute of Frauds", exp: "Contracts within the Statute of Frauds (MY LEGS: Marriage, Year+, Land, Executor, Goods $500+, Suretyship) require a writing signed by the party to be charged indicating essential terms." },
+                { topic: "Parol Evidence Rule", exp: "The Parol Evidence Rule bars prior or contemporaneous extrinsic oral or written agreements that contradict or alter an integrated written agreement." },
+                { topic: "Anticipatory Repudiation", exp: "Anticipatory Repudiation occurs when a party makes an unequivocal, unambiguous statement before performance is due that they will not perform, allowing immediate suit for breach." },
+                { topic: "Material vs. Minor Breach", exp: "A material breach deprives the non-breaching party of the substantial benefit of the bargain, discharging the non-breaching party's duties; a minor breach allows damages but requires continued performance." },
+                { topic: "Expectation Damages", exp: "Expectation damages place the injured party in the financial position they would have occupied had the contract been fully performed without breach." },
+                { topic: "Mitigation of Damages", exp: "An injured party cannot recover damages that could have been avoided or prevented through reasonable efforts without undue risk or burden." }
             ],
             mixed: [
-                { topic: "Torts / Core Negligence", exp: "Negligence requires proof of duty, breach under the reasonable person standard, actual but-for cause, proximate causation within the scope of foreseeable risk, and legally cognizable damages." }
+                { topic: "Torts / Core Negligence", exp: "Negligence requires proof of duty, breach under the reasonable person standard, actual but-for cause, proximate causation within the scope of foreseeable risk, and legally cognizable damages." },
+                { topic: "Torts / Strict Products Liability", exp: "Commercial distributors and sellers are strictly liable for injuries caused by products sold in a defective condition (manufacturing, design, or warning defect) that is unreasonably dangerous." },
+                { topic: "Criminal Law / Malice Murder", exp: "Murder requires an unlawful homicide committed with malice aforethought (intent to kill, intent to commit grievous bodily harm, depraved-heart recklessness, or felony murder)." },
+                { topic: "Criminal Law / Inchoate Offenses", exp: "Attempt requires specific intent and an overt act beyond preparation; conspiracy requires agreement and intent; solicitation merges into completed conspiracy or attempt." },
+                { topic: "Contracts / UCC Article 2 vs. Common Law", exp: "UCC Article 2 governs transactions in goods (movable personal property); common law governs real estate, services, and construction contracts." },
+                { topic: "Contracts / Remedies & Breach", exp: "Remedies include expectation damages, reliance damages, restitution, and specific performance for unique goods or real estate." }
             ]
         };
 
