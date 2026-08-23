@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- iPad Fullscreen / PWA Optimization -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -40,14 +41,19 @@
             margin: 0 auto;
         }
 
+        /* Login Overlay */
         #login-overlay {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(8px);
             z-index: 1000;
             display: flex;
-            align-items: center; justify-content: center;
+            align-items: center;
+            justify-content: center;
             padding: 1rem;
         }
 
@@ -55,156 +61,366 @@
             background: white;
             border-radius: 16px;
             padding: 2rem;
-            max-width: 400px; width: 100%;
+            max-width: 400px;
+            width: 100%;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
 
-        .login-card h2 { color: var(--primary); font-size: 1.4rem; margin-bottom: 0.5rem; }
-        .login-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+        .login-card h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
 
         .login-input {
-            width: 100%; padding: 0.75rem 1rem; border-radius: 8px;
-            border: 1.5px solid var(--border); font-size: 1rem;
-            margin-bottom: 0.8rem; text-align: center; letter-spacing: 2px;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1.5px solid var(--border);
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            text-align: center;
+            letter-spacing: 2px;
         }
 
-        .login-input:focus { outline: none; border-color: var(--primary); }
+        .login-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
 
         .btn-login {
-            width: 100%; background: var(--primary); color: white;
-            padding: 0.75rem; border: none; border-radius: 8px;
-            font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
-        .btn-login:hover { background: var(--primary-light); }
+        .btn-login:hover {
+            background: var(--primary-light);
+        }
 
-        .login-error { color: var(--danger); font-size: 0.82rem; margin-top: 0.6rem; display: none; font-weight: 500; }
+        .login-error {
+            color: var(--danger);
+            font-size: 0.82rem;
+            margin-top: 0.6rem;
+            display: none;
+            font-weight: 500;
+        }
 
-        #main-content { display: none; }
+        /* Main App Interface */
+        #main-content {
+            display: none;
+        }
 
         header {
-            background: var(--primary); color: white; padding: 1.8rem 1rem;
-            border-radius: 14px; text-align: center; margin-bottom: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); position: relative;
+            background: var(--primary);
+            color: white;
+            padding: 1.8rem 1rem;
+            border-radius: 14px;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
-        header h1 { font-size: 1.6rem; margin-bottom: 0.4rem; }
-        header p { font-size: 0.95rem; opacity: 0.9; }
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 0.4rem;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
 
         .btn-logout {
-            position: absolute; top: 1rem; right: 1rem;
-            background: rgba(255, 255, 255, 0.2); color: white;
-            border: 1px solid rgba(255, 255, 255, 0.4); padding: 0.35rem 0.75rem;
-            border-radius: 6px; font-size: 0.8rem; cursor: pointer; font-weight: 600;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-weight: 600;
         }
-        .btn-logout:hover { background: rgba(255, 255, 255, 0.3); }
 
+        .btn-logout:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Category Header Bar with Export Controls */
         .category-header-bar {
-            display: flex; justify-content: space-between; align-items: center;
-            margin: 1.8rem 0 0.9rem 0; border-bottom: 2px solid var(--border);
-            padding-bottom: 0.4rem; flex-wrap: wrap; gap: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1.8rem 0 0.9rem 0;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.4rem;
+            flex-wrap: wrap;
+            gap: 0.6rem;
         }
 
-        .section-title { font-size: 1.15rem; color: var(--primary); font-weight: 700; margin: 0; }
-        .category-actions { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; }
+        .section-title {
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .category-actions {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
         .btn-cat-export {
-            padding: 0.3rem 0.65rem; border-radius: 6px; font-size: 0.78rem; font-weight: 600;
-            cursor: pointer; display: flex; align-items: center; gap: 0.25rem;
-            border: 1px solid var(--border); transition: all 0.15s ease;
+            padding: 0.3rem 0.65rem;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            border: 1px solid var(--border);
+            transition: all 0.15s ease;
         }
 
-        .btn-cat-group-export { background: #0284C7; color: white; border-color: #0284C7; }
-        .btn-cat-group-export:hover { background: #0369A1; }
+        .btn-cat-group-export {
+            background: #0284C7;
+            color: white;
+            border-color: #0284C7;
+        }
+        .btn-cat-group-export:hover {
+            background: #0369A1;
+        }
 
-        .btn-cat-group-import { background: #475569; color: white; border-color: #475569; }
-        .btn-cat-group-import:hover { background: #334155; }
+        .btn-cat-group-import {
+            background: #475569;
+            color: white;
+            border-color: #475569;
+        }
+        .btn-cat-group-import:hover {
+            background: #334155;
+        }
 
-        .btn-cat-rules { background: #F0F9FF; color: #0369A1; border-color: #BAE6FD; }
-        .btn-cat-rules:hover { background: #E0F2FE; }
+        .btn-cat-rules {
+            background: #F0F9FF;
+            color: #0369A1;
+            border-color: #BAE6FD;
+        }
+        .btn-cat-rules:hover {
+            background: #E0F2FE;
+        }
 
-        .btn-cat-missed { background: #FFFBEB; color: #B45309; border-color: #FCD34D; }
-        .btn-cat-missed:hover { background: #FEF3C7; }
+        .btn-cat-missed {
+            background: #FFFBEB;
+            color: #B45309;
+            border-color: #FCD34D;
+        }
+        .btn-cat-missed:hover {
+            background: #FEF3C7;
+        }
 
-        .btn-cat-flagged { background: #FFF1F2; color: var(--flag); border-color: #FECDD3; }
-        .btn-cat-flagged:hover { background: #FFE4E6; }
+        .btn-cat-flagged {
+            background: #FFF1F2;
+            color: var(--flag);
+            border-color: #FECDD3;
+        }
+        .btn-cat-flagged:hover {
+            background: #FFE4E6;
+        }
 
         .exam-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 1rem; margin-bottom: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .exam-card {
-            background: var(--card-bg); border: 1.5px solid var(--border);
-            border-radius: 12px; padding: 1.1rem; text-decoration: none; color: var(--text);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03); transition: all 0.2s ease;
-            display: flex; flex-direction: column; justify-content: space-between;
+            background: var(--card-bg);
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            padding: 1.1rem;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .exam-card:hover {
-            border-color: var(--primary-light); background: #F0F9FF;
-            transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+            border-color: var(--primary-light);
+            background: #F0F9FF;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
         }
 
-        .exam-card.special-missed-card { border: 2px solid #F59E0B; background: #FFFBEB; }
-        .exam-card.special-missed-card:hover { background: #FEF3C7; border-color: #D97706; }
+        .exam-card.special-missed-card {
+            border: 2px solid #F59E0B;
+            background: #FFFBEB;
+        }
 
-        .card-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.2rem; gap: 0.5rem; }
-        .exam-card h3 { font-size: 0.98rem; color: var(--primary); margin: 0; }
+        .exam-card.special-missed-card:hover {
+            background: #FEF3C7;
+            border-color: #D97706;
+        }
+
+        .card-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.2rem;
+            gap: 0.5rem;
+        }
+
+        .exam-card h3 {
+            font-size: 0.98rem;
+            color: var(--primary);
+            margin: 0;
+        }
 
         .score-display-badge {
-            color: var(--success-dark); font-weight: 600; font-size: 0.92rem;
-            background: #F0FDF4; padding: 0.15rem 0.5rem; border-radius: 6px;
-            border: 1px solid #DCFCE7; white-space: nowrap;
+            color: var(--success-dark);
+            font-weight: 600;
+            font-size: 0.92rem;
+            background: #F0FDF4;
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            border: 1px solid #DCFCE7;
+            white-space: nowrap;
         }
 
         .score-display-badge.unattempted {
-            color: var(--text-muted); font-weight: normal; font-size: 0.8rem;
-            background: #F1F5F9; border-color: #E2E8F0;
+            color: var(--text-muted);
+            font-weight: normal;
+            font-size: 0.8rem;
+            background: #F1F5F9;
+            border-color: #E2E8F0;
         }
 
-        .score-display-badge.missed-badge { color: #B45309; background: #FEF3C7; border-color: #FDE68A; }
+        .score-display-badge.missed-badge {
+            color: #B45309;
+            background: #FEF3C7;
+            border-color: #FDE68A;
+        }
 
-        .exam-card p { font-size: 0.82rem; color: var(--text-muted); margin: 0.4rem 0 0.9rem 0; }
+        .exam-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin: 0.4rem 0 0.9rem 0;
+        }
 
         .btn-launch {
-            background: var(--primary); color: white; text-align: center;
-            padding: 0.45rem; border-radius: 6px; font-size: 0.82rem; font-weight: 600;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 0.45rem;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
         }
 
-        .exam-card.special-missed-card .btn-launch { background: #D97706; }
-        .exam-card:hover .btn-launch { background: var(--primary-light); }
-        .exam-card.special-missed-card:hover .btn-launch { background: #B45309; }
+        .exam-card.special-missed-card .btn-launch {
+            background: #D97706;
+        }
 
+        .exam-card:hover .btn-launch {
+            background: var(--primary-light);
+        }
+
+        .exam-card.special-missed-card:hover .btn-launch {
+            background: #B45309;
+        }
+
+        /* Universal Modal Styles */
         .modal-box {
-            display: none; background: white; border: 2px solid var(--primary);
-            padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; margin-bottom: 2rem;
+            display: none;
+            background: white;
+            border: 2px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
         }
 
-        .modal-box.visible { display: block; }
+        .modal-box.visible {
+            display: block;
+        }
 
         .btn-modal-close {
-            background: transparent; color: var(--text-muted); border: 1px solid var(--border);
-            padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer;
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
         }
 
-        .btn-modal-close:hover { color: var(--danger); border-color: var(--danger); }
+        .btn-modal-close:hover {
+            color: var(--danger);
+            border-color: var(--danger);
+        }
 
         textarea {
-            width: 100%; height: 280px; margin-top: 0.8rem; padding: 0.8rem;
-            border-radius: 8px; border: 1px solid var(--border); font-family: monospace;
-            font-size: 0.85rem; line-height: 1.5;
+            width: 100%;
+            height: 280px;
+            margin-top: 0.8rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-family: monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
         }
 
-        .modal-btn-row { display: flex; gap: 0.6rem; margin-top: 0.8rem; flex-wrap: wrap; }
+        .modal-btn-row {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 0.8rem;
+            flex-wrap: wrap;
+        }
+
         .btn-action-primary {
-            background: var(--primary); color: white; border: none; padding: 0.6rem 1.2rem;
-            border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.88rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.88rem;
         }
 
-        footer { text-align: center; margin-top: 3rem; font-size: 0.8rem; color: var(--text-muted); padding-bottom: 1rem; }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            padding-bottom: 1rem;
+        }
 
         @media (max-width: 600px) {
             body { padding: 0.5rem; }
@@ -215,8 +431,10 @@
 </head>
 <body>
 
+    <!-- Hidden file input for JSON import -->
     <input type="file" id="group-file-importer" accept=".json" style="display: none;" onchange="executeGroupFileImport(event)">
 
+    <!-- Access Gate Modal -->
     <div id="login-overlay">
         <div class="login-card">
             <h2>🔒 Student Access Required</h2>
@@ -229,6 +447,7 @@
         </div>
     </div>
 
+    <!-- Main Content (Shown after login) -->
     <div id="main-content">
         <header>
             <button class="btn-logout" onclick="handleLogout()">🔒 Log Out</button>
@@ -236,6 +455,7 @@
             <p>California First-Year Law Students' Examination (FYLSX) Preparation Suite</p>
         </header>
 
+        <!-- Category Export Modal Container -->
         <div class="modal-box" id="category-modal-box">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <h3 id="modal-title" style="color: var(--primary);">Category Export</h3>
@@ -249,7 +469,7 @@
             </div>
         </div>
 
-        <!-- TORTS -->
+        <!-- TORTS (Sets 01–20) -->
         <div class="category-header-bar">
             <div class="section-title">⚖️ Torts Practice Sets (Sets 01–20)</div>
             <div class="category-actions">
@@ -272,7 +492,7 @@
         </div>
         <div class="exam-grid" id="torts-grid"></div>
 
-        <!-- CRIMINAL LAW -->
+        <!-- CRIMINAL LAW (Sets 01–20) -->
         <div class="category-header-bar">
             <div class="section-title">🏛️ Criminal Law Practice Sets (Sets 01–20)</div>
             <div class="category-actions">
@@ -295,7 +515,7 @@
         </div>
         <div class="exam-grid" id="crim-grid"></div>
 
-        <!-- CONTRACTS -->
+        <!-- CONTRACTS (Sets 01–20) -->
         <div class="category-header-bar">
             <div class="section-title">📜 Contracts Practice Sets (Sets 01–20)</div>
             <div class="category-actions">
@@ -318,7 +538,7 @@
         </div>
         <div class="exam-grid" id="contracts-grid"></div>
 
-        <!-- MIXED SETS -->
+        <!-- MIXED SETS (Sets 01–40) -->
         <div class="category-header-bar">
             <div class="section-title">📝 Mixed Subject Sets (Sets 01–40)</div>
             <div class="category-actions">
@@ -354,6 +574,84 @@
         let currentExportDataJSON = "";
         let isShowingJSON = false;
         let activeImportCategory = null;
+
+        // Master Rule Database
+        const masterRuleDatabase = {
+            torts: [
+                { topic: "Assault", exp: "Assault requires an intentional act by the defendant creating reasonable apprehension of imminent harmful or offensive contact. Apparent present ability is sufficient; conditional future threats lack required imminence." },
+                { topic: "Battery", exp: "Battery requires an intentional act causing harmful or offensive contact with the plaintiff's person or items intimately connected thereto, without consent or lawful privilege." },
+                { topic: "Battery / Transferred Intent", exp: "Under the transferred intent doctrine, an intent to commit an intentional tort (battery, assault, false imprisonment, trespass to land/chattels) transfers to any unintended third party who suffers the resulting harm." },
+                { topic: "False Imprisonment", exp: "False Imprisonment requires an intentional act causing complete physical confinement within bounded limits without reasonable means of escape known to the plaintiff, where plaintiff is conscious of confinement or harmed." },
+                { topic: "Intentional Infliction of Emotional Distress (IIED)", exp: "IIED requires intentional or reckless extreme and outrageous conduct exceeding all bounds of decency tolerated by a civilized society, causing severe emotional distress to the plaintiff." },
+                { topic: "Trespass to Land", exp: "Trespass to Land requires an intentional physical invasion or entry upon real property owned or possessed by another; mistake of boundary lines is no defense." },
+                { topic: "Trespass to Chattels", exp: "Trespass to Chattels occurs when an actor intentionally intermeddles with chattel in possession of another, causing actual damage, dispossession, or physical impairment of condition or value." },
+                { topic: "Conversion", exp: "Conversion is an intentional exercise of substantial dominion or control over chattel that seriously interferes with the owner's right to control it, justifying a forced judicial sale for fair market value." },
+                { topic: "Defense of Property", exp: "A possessor of land or chattel may use reasonable non-deadly force to defend property; mechanical spring guns or deadly force capable of causing death or serious bodily injury are strictly prohibited." },
+                { topic: "Private Necessity", exp: "Private necessity creates an incomplete privilege allowing entry onto another's property to avoid imminent disaster; the actor is immune from trespass liability but must pay for actual damage caused." },
+                { topic: "Public Necessity", exp: "Public necessity provides a complete, absolute privilege to destroy or damage private property to avert an imminent public disaster, relieving the actor of compensatory damages in tort." },
+                { topic: "Negligence / Standard of Care", exp: "An actor owes a duty to conform to the standard of an ordinary, reasonably prudent person under like circumstances; children in adult activities are held to adult standards." },
+                { topic: "Negligence Per Se", exp: "A defendant's violation of an applicable safety statute establishes conclusive breach of duty if the plaintiff is within the protected class and the harm is of the type the statute aimed to prevent." },
+                { topic: "Res Ipsa Loquitur", exp: "Res Ipsa Loquitur creates an inference of negligence if the accident ordinarily does not occur without negligence, the instrumentality was in defendant's exclusive control, and plaintiff was non-contributory." },
+                { topic: "Causation / But-For & Substantial Factor", exp: "Causation requires proving but-for causation; where multiple concurrent independent causes combine to cause an indivisible injury, the substantial factor test applies." },
+                { topic: "Proximate Cause & Foreseeability", exp: "Proximate cause limits liability to harms resulting from the foreseeable risks created by defendant's conduct; subsequent ordinary medical malpractice is deemed foreseeable as a matter of law." },
+                { topic: "Landowner Duty to Entrants", exp: "Possessors of land owe invitees a duty to inspect and make safe; licensees must be warned of known concealed dangers; known/anticipated trespassers must be warned of dangerous artificial conditions." },
+                { topic: "Attractive Nuisance", exp: "Landowners owe trespassing children a duty of reasonable care regarding artificial conditions if children are likely to trespass, the condition involves serious risk, children cannot appreciate risk, and burden to eliminate danger is slight." },
+                { topic: "Negligent Infliction of Emotional Distress (NIED)", exp: "Bystander NIED (Thing v. La Chusa) requires being closely related to the victim, present at the scene and contemporaneously aware of the injury-producing event, and suffering severe emotional distress." },
+                { topic: "Strict Products Liability / Manufacturing Defect", exp: "A manufacturing defect exists when a product departs from its intended design specifications when leaving the manufacturer's custody, imposing strict liability regardless of all possible care." },
+                { topic: "Strict Products Liability / Design Defect (Barker v. Lull)", exp: "A design defect is proven under the Consumer Expectation test (failure to perform as safely as expected) or the Risk-Utility test (benefits of design outweighed by inherent risk and feasible alternative design)." },
+                { topic: "Strict Products Liability / Failure to Warn", exp: "A product is defective for lack of warning if foreseeable risks of harm could have been avoided by reasonable instructions or warnings; adequate warnings cure unavoidable inherent product risks." },
+                { topic: "Strict Liability / Abnormally Dangerous Activities", exp: "An enterprise is strictly liable for conducting an abnormally dangerous activity that involves high risk of serious harm unable to be eliminated by reasonable care and is not of common usage." },
+                { topic: "Strict Liability / Animals", exp: "Keepers of wild animals are strictly liable for species propensities; domestic animal owners are strictly liable only if on notice of dangerous or vicious propensities abnormal to the class." },
+                { topic: "Defamation", exp: "Defamation requires publication of a false defamatory statement concerning plaintiff; public figures must prove constitutional actual malice (knowledge of falsity or reckless disregard) with convincing clarity." },
+                { topic: "Privacy / False Light", exp: "False light requires publicizing false, highly offensive portrayals before the public with actual malice." },
+                { topic: "Privacy / Intrusion Upon Seclusion", exp: "Intrusion upon seclusion is complete upon intentional, highly offensive technological or physical intrusion into a private sphere where plaintiff has a reasonable expectation of privacy." },
+                { topic: "Privacy / Public Disclosure of Private Facts", exp: "Public disclosure requires publicity of private, highly offensive non-newsworthy facts." },
+                { topic: "Privacy / Commercial Misappropriation", exp: "Commercial misappropriation is the unauthorized commercial use of plaintiff's name, likeness, or identity for advertising advantage." },
+                { topic: "Vicarious Liability / Respondeat Superior", exp: "An employer is vicariously liable for employee torts committed within the scope of employment; minor detours are within the scope, whereas substantial frolics fall outside." },
+                { topic: "California Proposition 51 (Civil Code § 1431.2)", exp: "In California personal injury actions, liability for economic damages remains joint and several, while liability for non-economic damages (pain and suffering) is several only, allocated by fault percentage." }
+            ],
+            criminal: [
+                { topic: "Homicide / Common Law Murder", exp: "Murder is the unlawful killing of a human being with malice aforethought, proven by: (1) intent to kill; (2) intent to inflict grievous bodily harm; (3) depraved heart reckless indifference to human life; or (4) felony murder." },
+                { topic: "Homicide / First-Degree Premeditated Murder", exp: "First-degree murder requires willful, deliberate, and premeditated killing with a cool, dispassionate reflection before the fatal act." },
+                { topic: "Homicide / Voluntary Manslaughter", exp: "Voluntary manslaughter is an intentional homicide committed in the heat of passion upon adequate provocation that would obscure the reason of an ordinary reasonable person, before a cooling-off period." },
+                { topic: "Homicide / Involuntary Manslaughter", exp: "Involuntary manslaughter is an unintentional killing caused by criminal negligence (gross deviation from reasonable care) or during the commission of an unlawful misdemeanor." },
+                { topic: "Felony Murder Doctrine", exp: "An unintentional death occurring during the commission or attempted commission of an inherently dangerous felony (BARRK: Burglary, Arson, Robbery, Rape, Kidnapping) is murder." },
+                { topic: "Larceny", exp: "Larceny is the trespassory taking and carrying away of the personal property of another with the specific intent to permanently deprive the owner thereof." },
+                { topic: "Embezzlement", exp: "Embezzlement is the fraudulent conversion of the property of another by one who is already in lawful possession of the property." },
+                { topic: "False Pretenses", exp: "False Pretenses requires obtaining title to the property of another by an intentional false representation of past or existing material fact, with intent to defraud." },
+                { topic: "Larceny by Trick", exp: "Larceny by Trick occurs when the defendant obtains mere possession (not title) of personal property through an intentional fraudulent misrepresentation." },
+                { topic: "Robbery", exp: "Robbery is a larceny committed from the person or immediate presence of another by means of force or threat of immediate physical harm." },
+                { topic: "Burglary", exp: "Common law burglary requires breaking and entering the dwelling of another at nighttime with the specific intent to commit a felony therein." },
+                { topic: "Arson", exp: "Arson is the malicious burning of the dwelling of another; charring of the structural wood fibers is required, whereas mere scorching or smoking is insufficient." },
+                { topic: "Attempt", exp: "Attempt requires the specific intent to commit the target crime accompanied by an overt act in furtherance beyond mere preparation (a substantial step under modern law)." },
+                { topic: "Conspiracy", exp: "Conspiracy is an agreement between two or more persons to accomplish an unlawful objective, with specific intent to agree and commit the crime, plus an overt act under modern statutes." },
+                { topic: "Solicitation", exp: "Solicitation is enticing, encouraging, requesting, or commanding another to commit a felony with the specific intent that the crime be committed; merges into completed conspiracy or crime." },
+                { topic: "Self-Defense", exp: "An actor is privileged to use proportional non-deadly force when reasonably believing unlawful physical force is imminent; deadly force requires reasonable belief of imminent death or serious bodily harm." },
+                { topic: "Insanity / M'Naghten Rule", exp: "Under the M'Naghten rule, a defendant is legally insane if, due to mental disease or defect at the time of the act, they did not know the nature and quality of the act or did not know the act was wrong." }
+            ],
+            contracts: [
+                { topic: "Contract Formation / Mutual Assent", exp: "Formation requires mutual assent (a valid offer and acceptance) supported by sufficient legal consideration or an enforceable substitute." },
+                { topic: "Offer Requirements", exp: "An offer is a manifestation of willingness to enter into a bargain, sufficiently definite in terms so that a reasonable person would understand assent creates a binding contract." },
+                { topic: "Revocation of Offers", exp: "An offeror may revoke an ordinary offer at any time prior to acceptance; firm offers under UCC § 2-205 require signed writings by merchants holding an offer open up to 3 months without consideration." },
+                { topic: "Acceptance / Mirror Image vs. UCC § 2-207", exp: "Under common law, acceptance must mirror the exact terms of the offer; under UCC § 2-207, a definite expression of acceptance operates as acceptance even if stating additional or different terms." },
+                { topic: "Consideration", exp: "Consideration requires a bargained-for exchange of legal value; past consideration or moral obligation cannot support a binding contract." },
+                { topic: "Promissory Estoppel", exp: "Under Restatement (Second) § 90, a promise lacking consideration is enforceable if the promisor reasonably expected detrimental reliance, actual reliance occurred, and injustice can only be avoided by enforcement." },
+                { topic: "Statute of Frauds", exp: "Contracts within the Statute of Frauds (MY LEGS: Marriage, Year+, Land, Executor, Goods $500+, Suretyship) require a writing signed by the party to be charged indicating essential terms." },
+                { topic: "Parol Evidence Rule", exp: "The Parol Evidence Rule bars prior or contemporaneous extrinsic oral or written agreements that contradict or alter an integrated written agreement." },
+                { topic: "Anticipatory Repudiation", exp: "Anticipatory Repudiation occurs when a party makes an unequivocal, unambiguous statement before performance is due that they will not perform, allowing immediate suit for breach." },
+                { topic: "Material vs. Minor Breach", exp: "A material breach deprives the non-breaching party of the substantial benefit of the bargain, discharging the non-breaching party's duties; a minor breach allows damages but requires continued performance." },
+                { topic: "Expectation Damages", exp: "Expectation damages place the injured party in the financial position they would have occupied had the contract been fully performed without breach." },
+                { topic: "Mitigation of Damages", exp: "An injured party cannot recover damages that could have been avoided or prevented through reasonable efforts without undue risk or burden." }
+            ],
+            mixed: [
+                { topic: "Torts / Core Negligence", exp: "Negligence requires proof of duty, breach under the reasonable person standard, actual but-for cause, proximate causation within the scope of foreseeable risk, and legally cognizable damages." },
+                { topic: "Torts / Strict Products Liability", exp: "Commercial distributors and sellers are strictly liable for injuries caused by products sold in a defective condition (manufacturing, design, or warning defect) that is unreasonably dangerous." },
+                { topic: "Criminal Law / Malice Murder", exp: "Murder requires an unlawful homicide committed with malice aforethought (intent to kill, intent to commit grievous bodily harm, depraved-heart recklessness, or felony murder)." },
+                { topic: "Criminal Law / Inchoate Offenses", exp: "Attempt requires specific intent and an overt act beyond preparation; conspiracy requires agreement and intent; solicitation merges into completed conspiracy or attempt." },
+                { topic: "Contracts / UCC Article 2 vs. Common Law", exp: "UCC Article 2 governs transactions in goods (movable personal property); common law governs real estate, services, and construction contracts." },
+                { topic: "Contracts / Remedies & Breach", exp: "Remedies include expectation damages, reliance damages, restitution, and specific performance for unique goods or real estate." }
+            ]
+        };
 
         // Extract saved score percentage from localStorage
         function getSetPercentage(categoryKey, setNumber) {
@@ -481,6 +779,7 @@
 
             let collectedMissedQuestions = [];
             const versions = ["v25", "v100", "v23", "v24"];
+            let totalAnsweredAcrossSets = 0;
 
             for (let i = 1; i <= totalSets; i++) {
                 let foundAnswers = null;
@@ -495,13 +794,22 @@
                 }
 
                 if (foundAnswers && Object.keys(foundAnswers).length > 0) {
+                    totalAnsweredAcrossSets += Object.keys(foundAnswers).length;
                     try {
-                        const response = await fetch(`BabyBar-${filePrefix}-${padNum}.html`);
+                        let response = await fetch(`BabyBar-${filePrefix}-${padNum}.html`);
+                        if (!response.ok) {
+                            // Try lowercase fallback if server is strictly case-sensitive
+                            response = await fetch(`BabyBar-${filePrefix.toLowerCase()}-${padNum}.html`);
+                        }
+
                         if (response.ok) {
                             const htmlText = await response.text();
-                            // Safely extract the raw array from the file's text
-                            const match = htmlText.match(/const\s+examData\s*=\s*(\[[\s\S]*?\]);\s*let\s+currentIndex/);
+                            
+                            // Highly forgiving regex to extract the examData array regardless of formatting
+                            const match = htmlText.match(/examData\s*=\s*(\[\s*\{[\s\S]*?\}\s*\])\s*(?:;|\n|let|const|var)/);
+                            
                             if (match && match[1]) {
+                                // Safely parse the extracted JS array string
                                 const fileExamData = new Function('return ' + match[1])();
                                 
                                 Object.keys(foundAnswers).forEach(idxStr => {
@@ -516,10 +824,12 @@
                                         });
                                     }
                                 });
+                            } else {
+                                console.warn(`Could not parse examData from Set ${padNum}. Format may be non-standard.`);
                             }
                         }
                     } catch (err) {
-                        console.warn(`Fetch blocked for Set ${padNum} (CORS/File protocol restriction).`);
+                        console.warn(`Fetch blocked for Set ${padNum}. Make sure you are running a local server to avoid CORS issues.`, err);
                     }
                 }
             }
@@ -527,25 +837,36 @@
             btn.innerHTML = originalBtnText;
             btn.disabled = false;
 
-            if (collectedMissedQuestions.length === 0) {
-                alert(`No missed questions could be compiled for ${categoryTitle}.\n\nNote: If you are opening this file directly from your computer (file:///), your browser's security settings prevent it from reading the other exam files. Please run this folder via a local web server (like VSCode Live Server) to compile missed questions.`);
+            if (totalAnsweredAcrossSets === 0) {
+                alert(`No answers found in this browser for ${categoryTitle}.\n\nIMPORTANT: If the student answered these on a different device (like an iPad), you must use the "Export" button on their device, and the "Import" button here first. Data is saved directly to the local browser memory, not the web server.`);
                 return;
             }
 
+            if (collectedMissedQuestions.length === 0) {
+                alert(`Great news! The student has answered ${totalAnsweredAcrossSets} questions in ${categoryTitle} and got them all correct. There are no missed questions to compile.`);
+                return;
+            }
+
+            // Save fresh exam data and clear prior answers for the missed set
             localStorage.setItem(`fylsx_${categoryKey}_missed_set_exam_data`, JSON.stringify(collectedMissedQuestions));
             localStorage.removeItem(`fylsx_${categoryKey}_setmissed_answers_v25`);
             localStorage.removeItem(`fylsx_${categoryKey}_setmissed_flags_v25`);
             localStorage.removeItem(`fylsx_${categoryKey}_setmissed_elim_v25`);
             localStorage.removeItem(`fylsx_${categoryKey}_setmissed_index_v25`);
             localStorage.removeItem(`fylsx_${categoryKey}_setmissed_score_v25`);
+            localStorage.removeItem(`fylsx_${categoryKey}_setmissed_filter_v25`);
+            localStorage.removeItem(`fylsx_${categoryKey}_setmissed_retry_v25`);
+            localStorage.removeItem(`fylsx_${categoryKey}_setmissed_text_highlights_v25`);
 
             populateAllExams();
-            alert(`✅ Successfully created new 'All Missed Questions' set for ${categoryTitle} with ${collectedMissedQuestions.length} questions!\n\nYou can now click the gold card on your dashboard to practice this set. (You must create a 'BabyBar-${filePrefix}-Missed.html' template file to load the exam).`);
+            alert(`✅ Successfully created new 'All Missed Questions' set for ${categoryTitle} with ${collectedMissedQuestions.length} questions!\n\nYou can now click the gold card on your dashboard to practice this set.`);
         }
 
+        // GROUP EXPORT JSON (Full answers, flags, highlights, scores, eliminations, and history for all sets in category)
         function exportGroupJSON(categoryKey, categoryTitle, totalSets) {
             const storageItems = {};
             let setsWithData = 0;
+
             const versions = ["v25", "v100", "v23", "v24"];
             const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights", "highlights", "exam_data"];
 
@@ -557,44 +878,67 @@
                     for (let p of prefixes) {
                         const k1 = `fylsx_${categoryKey}_set${i}_${p}_${v}`;
                         const k2 = `fylsx_${categoryKey}_set${padNum}_${p}_${v}`;
+                        
                         const v1 = localStorage.getItem(k1);
                         if (v1 !== null) { storageItems[k1] = v1; hasSetData = true; }
+                        
                         const v2 = localStorage.getItem(k2);
                         if (v2 !== null) { storageItems[k2] = v2; hasSetData = true; }
                     }
                 }
 
-                const histKeys = [`fylsx_history_${categoryKey}_set${i}`, `fylsx_history_${categoryKey}_set${padNum}`];
+                const histKeys = [
+                    `fylsx_history_${categoryKey}_set${i}`,
+                    `fylsx_history_${categoryKey}_set${padNum}`,
+                    `fylsx_history_${categoryKey}${i}`,
+                    `fylsx_history_${categoryKey}${padNum}`
+                ];
                 for (let hk of histKeys) {
                     const hv = localStorage.getItem(hk);
                     if (hv !== null) { storageItems[hk] = hv; hasSetData = true; }
                 }
+
                 if (hasSetData) setsWithData++;
             }
 
+            // Include custom missed set data if present
             const missedSnap = localStorage.getItem(`fylsx_${categoryKey}_missed_set_exam_data`);
-            if (missedSnap !== null) storageItems[`fylsx_${categoryKey}_missed_set_exam_data`] = missedSnap;
+            if (missedSnap !== null) {
+                storageItems[`fylsx_${categoryKey}_missed_set_exam_data`] = missedSnap;
+            }
 
             const exportPayload = {
-                app: "GoBabyBar Exam Center", version: "2.0", exportType: "group_complete_backup",
-                categoryKey, categoryTitle, totalSetsScanned: totalSets, setsWithRecordedData: setsWithData,
-                exportTimestamp: new Date().toISOString(), exportDateReadable: new Date().toLocaleString(),
+                app: "GoBabyBar Exam Center",
+                version: "2.0",
+                exportType: "group_complete_backup",
+                categoryKey: categoryKey,
+                categoryTitle: categoryTitle,
+                totalSetsScanned: totalSets,
+                setsWithRecordedData: setsWithData,
+                exportTimestamp: new Date().toISOString(),
+                exportDateReadable: new Date().toLocaleString(),
                 data: storageItems
             };
 
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportPayload, null, 2));
             const downloadAnchor = document.createElement('a');
+            const safeName = categoryTitle.replace(/\s+/g, '_');
             downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", `GoBabyBar_${categoryTitle.replace(/\s+/g, '_')}_Backup_${new Date().toISOString().slice(0,10)}.json`);
-            document.body.appendChild(downloadAnchor); downloadAnchor.click(); downloadAnchor.remove();
+            downloadAnchor.setAttribute("download", `GoBabyBar_${safeName}_Group_Backup_${new Date().toISOString().slice(0,10)}.json`);
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
         }
 
+        // GROUP IMPORT JSON TRIGGER
         function triggerGroupJSONImport(categoryKey, categoryTitle, totalSets) {
             activeImportCategory = { categoryKey, categoryTitle, totalSets };
             const fileInput = document.getElementById("group-file-importer");
-            fileInput.value = ""; fileInput.click();
+            fileInput.value = "";
+            fileInput.click();
         }
 
+        // EXECUTE GROUP IMPORT (Overwrites category localStorage items and live-refreshes)
         function executeGroupFileImport(event) {
             const file = event.target.files[0];
             if (!file) return;
@@ -603,11 +947,21 @@
             reader.onload = function(e) {
                 try {
                     const parsed = JSON.parse(e.target.result);
-                    if (!parsed.data || typeof parsed.data !== "object") { alert("Error: Invalid backup file."); return; }
+
+                    if (!parsed.data || typeof parsed.data !== "object") {
+                        alert("Error: Invalid backup file structure.");
+                        return;
+                    }
+
+                    if (activeImportCategory && parsed.categoryKey && parsed.categoryKey !== activeImportCategory.categoryKey) {
+                        const proceed = confirm(`Warning: You are importing a backup for '${parsed.categoryTitle || parsed.categoryKey}', but clicked Import under '${activeImportCategory.categoryTitle}'. Do you want to proceed?`);
+                        if (!proceed) return;
+                    }
 
                     const targetCat = activeImportCategory ? activeImportCategory.categoryKey : (parsed.categoryKey || "torts");
                     const targetSets = activeImportCategory ? activeImportCategory.totalSets : (parsed.totalSetsScanned || 20);
 
+                    // 1. Purge existing keys for this category to ensure clean overwrite
                     const versions = ["v25", "v100", "v23", "v24"];
                     const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights", "highlights", "exam_data"];
 
@@ -621,109 +975,272 @@
                         }
                         localStorage.removeItem(`fylsx_history_${targetCat}_set${i}`);
                         localStorage.removeItem(`fylsx_history_${targetCat}_set${padNum}`);
+                        localStorage.removeItem(`fylsx_history_${targetCat}${i}`);
+                        localStorage.removeItem(`fylsx_history_${targetCat}${padNum}`);
                     }
                     localStorage.removeItem(`fylsx_${targetCat}_missed_set_exam_data`);
 
+                    // 2. Write imported dataset into localStorage
                     let keysImported = 0;
-                    Object.keys(parsed.data).forEach(k => { localStorage.setItem(k, parsed.data[k]); keysImported++; });
+                    Object.keys(parsed.data).forEach(k => {
+                        localStorage.setItem(k, parsed.data[k]);
+                        keysImported++;
+                    });
 
+                    // 3. Refresh cards and UI
                     populateAllExams();
-                    alert(`✅ ${parsed.categoryTitle || targetCat} data successfully imported (${keysImported} items restored).`);
-                } catch (err) { alert("Error parsing JSON backup file: " + err.message); }
+                    alert(`✅ ${parsed.categoryTitle || targetCat} data successfully imported (${keysImported} items restored from backup generated on ${parsed.exportDateReadable || 'earlier session'}).`);
+
+                } catch (err) {
+                    alert("Error parsing JSON backup file: " + err.message);
+                }
             };
             reader.readAsText(file);
         }
 
+        // Category-Wide Unique Rules Exporter
+        function exportCategoryRules(categoryKey, categoryTitle, totalSets) {
+            const uniqueRulesMap = new Map();
+
+            // 1. Populate from Master Database
+            const staticList = masterRuleDatabase[categoryKey] || masterRuleDatabase.torts;
+            staticList.forEach(item => {
+                const cleanTopic = item.topic.trim();
+                const cleanExp = item.exp.trim().replace(/[\r\n]+/g, " ");
+                if (!uniqueRulesMap.has(cleanTopic)) {
+                    uniqueRulesMap.set(cleanTopic, new Set());
+                }
+                uniqueRulesMap.get(cleanTopic).add(cleanExp);
+            });
+
+            // 2. Scan localStorage for additional rules
+            for (let i = 1; i <= totalSets; i++) {
+                const versions = ["v25", "v100", "v23", "v24"];
+                for (let v of versions) {
+                    const snapKey = `fylsx_${categoryKey}_set${i}_exam_data_${v}`;
+                    const raw = localStorage.getItem(snapKey);
+                    if (raw) {
+                        try {
+                            const parsed = JSON.parse(raw);
+                            if (Array.isArray(parsed)) {
+                                parsed.forEach(item => {
+                                    if (item.topic && item.exp) {
+                                        const cleanTopic = item.topic.trim();
+                                        const cleanExp = item.exp.trim().replace(/[\r\n]+/g, " ");
+                                        if (!uniqueRulesMap.has(cleanTopic)) {
+                                            uniqueRulesMap.set(cleanTopic, new Set());
+                                        }
+                                        uniqueRulesMap.get(cleanTopic).add(cleanExp);
+                                    }
+                                });
+                            }
+                        } catch (e) {}
+                    }
+                }
+            }
+
+            const sortedTopics = Array.from(uniqueRulesMap.keys()).sort((a, b) => a.localeCompare(b));
+
+            let tableOutput = "**Legal Topic Category**\t**Black Letter Law Analysis / Core Rule**\n";
+            let displayOutput = `**${categoryTitle.toUpperCase()} - COMPLETE UNIQUE RULES DIRECTORY (ACROSS SETS 01–${String(totalSets).padStart(2, '0')})**\n`;
+            displayOutput += `========================================================================================\n\n`;
+
+            sortedTopics.forEach(topic => {
+                const rules = Array.from(uniqueRulesMap.get(topic));
+                rules.forEach(rule => {
+                    tableOutput += `**${topic}**\t${rule}\n`;
+                    displayOutput += `• [**${topic}**]\n  ${rule}\n\n`;
+                });
+            });
+
+            const exportBundle = {
+                category: categoryTitle,
+                categoryKey: categoryKey,
+                exportType: "unique_rules",
+                exportDate: new Date().toLocaleString(),
+                totalSetsScanned: totalSets,
+                totalUniqueTopics: sortedTopics.length,
+                rules: Array.from(uniqueRulesMap.entries()).map(([topic, set]) => ({
+                    topic: topic,
+                    explanations: Array.from(set)
+                }))
+            };
+
+            currentExportDataText = tableOutput;
+            currentExportDataJSON = JSON.stringify(exportBundle, null, 2);
+            isShowingJSON = false;
+
+            navigator.clipboard.writeText(tableOutput).then(() => {
+                openCategoryModal(
+                    `Export All ${categoryTitle} Rules`,
+                    `All unique Black Letter Law rules for ${categoryTitle} have been sorted and copied to your clipboard in Tab-Delimited format.\n\nTo make a table in Word:\n1. Paste into Word (Cmd+V / Ctrl+V)\n2. Highlight text > Click Insert > Table > Convert Text to Table (Separate at Tabs)`,
+                    displayOutput
+                );
+            }).catch(() => {
+                openCategoryModal(
+                    `Export All ${categoryTitle} Rules`,
+                    `Review or copy the unique rules compiled across all ${categoryTitle} sets:`,
+                    displayOutput
+                );
+            });
+        }
+
+        // Category-Wide Export Engine (Aggregates Missed / Flagged across all sets)
         function exportCategoryData(categoryKey, categoryTitle, totalSets, mode) {
             const isMissedMode = mode === "missed";
             const typeLabel = isMissedMode ? "Missed Questions" : "Flagged Questions";
             let aggregatedItems = [];
+            let totalFound = 0;
 
             for (let i = 1; i <= totalSets; i++) {
                 const padNum = String(i).padStart(2, '0');
                 const versions = ["v25", "v100", "v23", "v24"];
-                let foundAnswers = null; let foundFlags = null;
+                let foundAnswers = null;
+                let foundFlags = null;
 
                 for (let v of versions) {
                     const ansKey = `fylsx_${categoryKey}_set${i}_answers_${v}`;
                     const flagKey = `fylsx_${categoryKey}_set${i}_flags_${v}`;
-                    if (localStorage.getItem(ansKey)) foundAnswers = JSON.parse(localStorage.getItem(ansKey));
-                    if (localStorage.getItem(flagKey)) foundFlags = JSON.parse(localStorage.getItem(flagKey));
+                    
+                    const savedAns = localStorage.getItem(ansKey);
+                    const savedFlags = localStorage.getItem(flagKey);
+
+                    if (savedAns) foundAnswers = JSON.parse(savedAns);
+                    if (savedFlags) foundFlags = JSON.parse(savedFlags);
                 }
 
                 if (isMissedMode && foundAnswers) {
                     Object.keys(foundAnswers).forEach(qIdx => {
-                        aggregatedItems.push({ setNumber: padNum, questionIndex: Number(qIdx) + 1 });
+                        totalFound++;
+                        aggregatedItems.push({
+                            setNumber: padNum,
+                            setKey: `${categoryKey}_set${i}`,
+                            questionIndex: Number(qIdx) + 1,
+                            userSelected: foundAnswers[qIdx]
+                        });
                     });
                 } else if (!isMissedMode && foundFlags) {
                     Object.keys(foundFlags).forEach(qIdx => {
-                        if (foundFlags[qIdx]) aggregatedItems.push({ setNumber: padNum, questionIndex: Number(qIdx) + 1 });
+                        if (foundFlags[qIdx]) {
+                            totalFound++;
+                            aggregatedItems.push({
+                                setNumber: padNum,
+                                setKey: `${categoryKey}_set${i}`,
+                                questionIndex: Number(qIdx) + 1
+                            });
+                        }
                     });
                 }
             }
 
-            let outputText = `**${categoryTitle.toUpperCase()} - ALL ${typeLabel.toUpperCase()}**\n=========================================\n**Set Number**\t**Question Ref**\t**Status**\n`;
+            let outputText = `**${categoryTitle.toUpperCase()} - ALL ${typeLabel.toUpperCase()} (ACROSS SETS 01–${String(totalSets).padStart(2, '0')})**\n`;
+            outputText += `========================================================================================\n\n`;
+            outputText += `**Set Number**\t**Question Ref**\t**Legal Category / Topic**\t**Status**\n`;
+
             if (aggregatedItems.length === 0) {
-                outputText += `No ${typeLabel.toLowerCase()} recorded in local storage.\n`;
+                outputText += `No ${typeLabel.toLowerCase()} recorded in local storage for ${categoryTitle} yet.\n`;
+                outputText += `(As you complete tests in Sets 01 through ${totalSets}, your ${typeLabel.toLowerCase()} will aggregate here automatically.)\n`;
             } else {
-                aggregatedItems.forEach(item => { outputText += `**Set ${item.setNumber}**\tQuestion #${item.questionIndex}\t${typeLabel}\n`; });
+                aggregatedItems.forEach(item => {
+                    outputText += `**Set ${item.setNumber}**\tQuestion #${item.questionIndex}\t**${categoryTitle} Analysis**\t${typeLabel}\n`;
+                });
             }
 
-            currentExportDataText = outputText;
-            currentExportDataJSON = JSON.stringify({ category: categoryTitle, items: aggregatedItems }, null, 2);
-            isShowingJSON = false;
-            openCategoryModal(`Export All ${categoryTitle} ${typeLabel}`, `Aggregated ${aggregatedItems.length} item(s):`, currentExportDataText);
-        }
+            const exportBundle = {
+                category: categoryTitle,
+                categoryKey: categoryKey,
+                exportType: mode,
+                exportDate: new Date().toLocaleString(),
+                totalSetsScanned: totalSets,
+                totalItemsFound: aggregatedItems.length,
+                items: aggregatedItems
+            };
 
-        function exportCategoryRules(categoryKey, categoryTitle) {
-            // Simplified for brevity - utilizes masterRuleDatabase map
-            let outputText = `**${categoryTitle.toUpperCase()} RULES**\n=========================================\n`;
-            currentExportDataText = outputText; currentExportDataJSON = "[]"; isShowingJSON = false;
-            openCategoryModal(`Export ${categoryTitle} Rules`, `Compiled rules:`, currentExportDataText);
+            currentExportDataText = outputText;
+            currentExportDataJSON = JSON.stringify(exportBundle, null, 2);
+            isShowingJSON = false;
+
+            openCategoryModal(
+                `Export All ${categoryTitle} ${typeLabel}`,
+                `Aggregated ${aggregatedItems.length} item(s) across Sets 01–${String(totalSets).padStart(2, '0')}. Categories are formatted in BOLD for Microsoft Word tables:`,
+                currentExportDataText
+            );
         }
 
         function openCategoryModal(title, desc, content) {
             document.getElementById("modal-title").textContent = title;
             document.getElementById("modal-desc").textContent = desc;
             document.getElementById("modal-textarea").value = content;
-            document.getElementById("category-modal-box").classList.add("visible");
-            document.getElementById("category-modal-box").scrollIntoView({ behavior: "smooth" });
+            document.getElementById("btn-toggle-json").textContent = "🔀 Switch to JSON Format";
+            const modal = document.getElementById("category-modal-box");
+            modal.classList.add("visible");
+            modal.scrollIntoView({ behavior: "smooth" });
         }
 
-        function closeCategoryModal() { document.getElementById("category-modal-box").classList.remove("visible"); }
+        function closeCategoryModal() {
+            document.getElementById("category-modal-box").classList.remove("visible");
+        }
 
         function toggleExportFormat() {
             const textarea = document.getElementById("modal-textarea");
             const btn = document.getElementById("btn-toggle-json");
-            if (isShowingJSON) { textarea.value = currentExportDataText; btn.textContent = "🔀 Switch to JSON Format"; isShowingJSON = false; } 
-            else { textarea.value = currentExportDataJSON; btn.textContent = "🔀 Switch to Formatted Table"; isShowingJSON = true; }
+
+            if (isShowingJSON) {
+                textarea.value = currentExportDataText;
+                btn.textContent = "🔀 Switch to JSON Format";
+                isShowingJSON = false;
+            } else {
+                textarea.value = currentExportDataJSON;
+                btn.textContent = "🔀 Switch to Formatted Table";
+                isShowingJSON = true;
+            }
         }
 
         function copyCategoryModalContent() {
-            document.getElementById("modal-textarea").select();
+            const textarea = document.getElementById("modal-textarea");
+            textarea.select();
             document.execCommand("copy");
-            alert("Copied to clipboard!");
+            alert("Copied to clipboard! You can now paste directly into Microsoft Word or share it.");
         }
 
         function checkAuth() {
             const isVerified = sessionStorage.getItem(AUTH_SESSION_KEY);
             const overlay = document.getElementById("login-overlay");
             const content = document.getElementById("main-content");
-            if (isVerified === "true") { overlay.style.display = "none"; content.style.display = "block"; populateAllExams(); } 
-            else { overlay.style.display = "flex"; content.style.display = "none"; }
+
+            if (isVerified === "true") {
+                overlay.style.display = "none";
+                content.style.display = "block";
+                populateAllExams();
+            } else {
+                overlay.style.display = "flex";
+                content.style.display = "none";
+            }
         }
 
         function handleLogin(event) {
             event.preventDefault();
-            if (document.getElementById("passcode-input").value.trim() === CORRECT_PASSCODE) {
-                sessionStorage.setItem(AUTH_SESSION_KEY, "true"); document.getElementById("login-error").style.display = "none"; checkAuth();
+            const enteredPasscode = document.getElementById("passcode-input").value.trim();
+            const errorElement = document.getElementById("login-error");
+
+            if (enteredPasscode === CORRECT_PASSCODE) {
+                sessionStorage.setItem(AUTH_SESSION_KEY, "true");
+                errorElement.style.display = "none";
+                checkAuth();
             } else {
-                document.getElementById("login-error").style.display = "block"; document.getElementById("passcode-input").select();
+                errorElement.style.display = "block";
+                document.getElementById("passcode-input").select();
             }
         }
 
-        function handleLogout() { sessionStorage.removeItem(AUTH_SESSION_KEY); document.getElementById("passcode-input").value = ""; checkAuth(); }
+        function handleLogout() {
+            sessionStorage.removeItem(AUTH_SESSION_KEY);
+            document.getElementById("passcode-input").value = "";
+            checkAuth();
+        }
+
         window.addEventListener("DOMContentLoaded", checkAuth);
     </script>
+
 </body>
 </html>
