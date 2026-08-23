@@ -140,7 +140,7 @@
 
     <div class="nav-controls" id="nav-controls" style="display:none;">
         <button class="btn" id="prev-btn" onclick="navigate(-1)">← Previous</button>
-        <button class="btn btn-reset" onclick="resetProgress()">Clear Answer Progress</button>
+        <button class="btn btn-reset" onclick="retakeMissed()">Retake Missed</button>
         <button class="btn" id="next-btn" onclick="navigate(1)">Next →</button>
     </div>
 
@@ -457,18 +457,53 @@
             } catch (e) { console.error("Could not load saved progress", e); }
         }
 
-        function resetProgress() {
-            if (confirm("Are you sure you want to clear your answers, flags, and highlights for this custom set?\n\n(This will NOT delete the questions. You can retake the same set from 0%).")) {
-                localStorage.removeItem(STORAGE_KEY_ANSWERS);
-                localStorage.removeItem(STORAGE_KEY_FLAGS);
-                localStorage.removeItem(STORAGE_KEY_ELIM);
-                localStorage.removeItem(STORAGE_KEY_INDEX);
-                localStorage.removeItem(STORAGE_KEY_SCORE);
-                localStorage.removeItem(STORAGE_KEY_HIGHLIGHTS);
-                userAnswers = {}; flaggedQuestions = {}; eliminatedOptions = {}; userHighlights = {};
-                currentIndex = 0; totalCorrect = 0;
-                initApp();
+        function clearCustomSetProgress() {
+            localStorage.removeItem(STORAGE_KEY_ANSWERS);
+            localStorage.removeItem(STORAGE_KEY_FLAGS);
+            localStorage.removeItem(STORAGE_KEY_ELIM);
+            localStorage.removeItem(STORAGE_KEY_INDEX);
+            localStorage.removeItem(STORAGE_KEY_SCORE);
+            localStorage.removeItem(STORAGE_KEY_HIGHLIGHTS);
+            userAnswers = {}; flaggedQuestions = {}; eliminatedOptions = {}; userHighlights = {};
+            currentIndex = 0; totalCorrect = 0;
+        }
+
+        function retakeMissed() {
+            if (!confirm("Are you sure you want to Retake Missed? Any questions you answered correctly will be permanently removed from this set, and your current progress will be cleared.")) {
+                return;
             }
+
+            // Filter out correctly answered questions
+            let remainingQuestions = [];
+            examData.forEach((q, idx) => {
+                // Keep if unanswered OR answered incorrectly
+                if (userAnswers[idx] === undefined || userAnswers[idx] !== q.ans) {
+                    remainingQuestions.push(q);
+                }
+            });
+
+            if (remainingQuestions.length === 0) {
+                // All questions were answered correctly
+                localStorage.removeItem(`fylsx_${catKey}_${typeKey}_set_exam_data`);
+                clearCustomSetProgress();
+                alert("Great job! You have mastered all these questions.");
+                window.location.href = "index.html";
+                return;
+            }
+
+            // Update exam data with remaining questions and save back to storage
+            examData = remainingQuestions;
+            localStorage.setItem(`fylsx_${catKey}_${typeKey}_set_exam_data`, JSON.stringify(examData));
+            
+            // Wipe progress so they start fresh
+            clearCustomSetProgress();
+            
+            // Re-initialize DOM
+            document.getElementById("total-q-num").textContent = examData.length;
+            document.getElementById("bar-unattempted").textContent = examData.length;
+            populateJumpMenu();
+            renderQuestion();
+            updateScore();
         }
 
         function exportFullStudentSession() {
