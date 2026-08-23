@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Custom Set">
+    <title>California Baby Bar (FYLSX) - Custom Drill Set</title>
+    <style>
+        :root {
+            --primary: #1B365D; /* Default, overridden in JS */
+            --primary-light: #4B6B94;
+            --accent: #D97706;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text: #1E293B;
+            --text-muted: #64748B;
+            --border: #CBD5E1;
+            --success: #16A34A;
+            --danger: #DC2626;
+            --flag: #E11D48;
+            --badge-blue: #BAE6FD;
+            --badge-blue-hover: #7DD3FC;
+        }
+
+        mark.user-highlight { background-color: #FEF08A; color: #713F12; padding: 0.1rem 0.2rem; border-radius: 3px; cursor: pointer; }
+        mark.user-highlight:hover { background-color: #FDE047; }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
+
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 1rem; max-width: 920px; margin: 0 auto; }
+
+        header { background: var(--primary); color: white; padding: 1.2rem; border-radius: 12px; text-align: center; margin-bottom: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        header h1 { font-size: 1.3rem; margin-bottom: 0.2rem; }
+        header p { font-size: 0.85rem; opacity: 0.9; }
+
+        .tracker-wrapper { position: sticky; top: 10px; z-index: 100; margin-bottom: 1.2rem; }
+        .tracker-bar { background: var(--card-bg); padding: 0.75rem 1rem; border-radius: 10px 10px 0 0; border: 1px solid var(--border); border-bottom: none; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); flex-wrap: wrap; gap: 0.6rem; }
+        
+        .progress-bar-container { display: flex; width: 100%; height: 22px; background: #FFFFFF; border: 1px solid var(--border); border-top: none; border-radius: 0 0 10px 10px; overflow: hidden; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); font-size: 0.8rem; font-weight: 700; line-height: 22px; text-align: center; }
+        .progress-segment { height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; transition: width 0.3s ease; }
+        .segment-correct { background: var(--success); color: #FFFFFF; width: 0%; }
+        .segment-missed { background: var(--danger); color: #FFFFFF; width: 0%; }
+        .segment-unattempted { background: #FFFFFF; color: #0F172A; flex-grow: 1; }
+
+        .score-box { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; }
+        .badge { background: var(--primary-light); color: white; padding: 0.25rem 0.65rem; border-radius: 15px; font-weight: bold; font-size: 0.8rem; }
+
+        .action-group { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; }
+        .btn-action-tool { padding: 0.35rem 0.6rem; font-size: 0.8rem; font-weight: 600; border-radius: 6px; border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; gap: 0.2rem; transition: all 0.15s ease; }
+        .btn-history { background: var(--primary-light); color: white; border-color: var(--primary-light); }
+        .btn-export-session { background: #0284C7; color: white; border-color: #0284C7; }
+
+        .btn-elimination-toggle { background: #F1F5F9; color: var(--text-muted); border: 1px solid var(--border); padding: 0.35rem 0.6rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; }
+        .btn-elimination-toggle:hover { background: #E2E8F0; color: var(--text); }
+        .btn-elimination-toggle.active { background: #FEF3C7; color: #B45309; border-color: #F59E0B; font-weight: bold; }
+
+        .dropdown-menu { padding: 0.35rem 0.6rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.8rem; background: white; cursor: pointer; font-weight: 500; }
+
+        .question-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.2rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); position: relative; }
+        .q-top-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
+        .q-header { font-weight: bold; color: var(--primary); font-size: 1.05rem; }
+
+        .btn-flag { background: #F1F5F9; color: var(--text-muted); border: 1px solid var(--border); padding: 0.35rem 0.75rem; border-radius: 20px; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; transition: all 0.2s ease; }
+        .btn-flag.active { background: #FFE4E6; color: var(--flag); border-color: var(--flag); font-weight: bold; }
+
+        .fact-pattern { background: #F1F5F9; border-left: 4px solid var(--primary-light); padding: 1rem; margin-bottom: 1rem; border-radius: 0 8px 8px 0; font-size: 0.95rem; }
+        .q-text { font-size: 1rem; margin-bottom: 1rem; }
+        .options-grid { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem; }
+        .option-container { display: flex; align-items: center; gap: 0.5rem; width: 100%; }
+
+        .option-btn { background: white; border: 1px solid var(--border); padding: 0.75rem 1rem; border-radius: 10px; text-align: left; font-size: 0.95rem; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 0.75rem; flex: 1; user-select: none; }
+        .option-btn:hover:not(:disabled):not(.eliminated) { background: #F0F9FF; border-color: #38BDF8; }
+        .option-btn:hover:not(:disabled):not(.eliminated) .letter-circle { background: var(--badge-blue-hover); }
+        .option-btn:disabled { cursor: default; }
+        .option-btn.eliminated { opacity: 0.45; background: #F1F5F9; border-color: #E2E8F0; text-decoration: line-through; }
+        .option-btn.eliminated .letter-circle { background: #CBD5E1; color: #64748B; }
+
+        .letter-circle { width: 28px; height: 28px; border-radius: 50%; background: var(--badge-blue); color: #0F172A; display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 0.9rem; flex-shrink: 0; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08); transition: all 0.2s ease; text-transform: uppercase; }
+        .option-btn.correct { border-color: var(--success); background: #DCFCE7; color: #14532D; font-weight: 500; opacity: 1 !important; }
+        .option-btn.correct .letter-circle { background: var(--success); color: #FFFFFF; }
+        .option-btn.incorrect { border-color: var(--danger); background: #FEE2E2; color: #7F1D1D; opacity: 0.75; }
+        .option-btn.incorrect .letter-circle { background: var(--danger); color: #FFFFFF; }
+
+        .btn-eliminate-choice { background: white; border: 1px solid var(--border); color: var(--text-muted); width: 32px; height: 32px; border-radius: 50%; font-size: 0.8rem; font-weight: bold; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.15s ease; flex-shrink: 0; user-select: none; }
+        .btn-eliminate-choice:hover { background: #FEE2E2; border-color: var(--danger); color: var(--danger); }
+        .btn-eliminate-choice.active { background: #DC2626; color: white; border-color: #DC2626; }
+
+        .explanation-box { display: none; background: #F0F9FF; border: 1px solid #BAE6FD; padding: 1rem; border-radius: 8px; font-size: 0.9rem; color: #0369A1; margin-top: 1rem; }
+        .explanation-box.visible { display: block; }
+
+        .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; gap: 0.5rem; }
+        .btn { background: var(--primary); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem; user-select: none; }
+        .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+        .btn-reset { background: transparent; color: var(--text-muted); border: 1px solid var(--border); font-weight: normal; }
+        .btn-reset:hover { background: #F1F5F9; color: var(--danger); border-color: var(--danger); }
+
+        .modal-box { display: none; background: white; border: 2px solid var(--primary); padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; }
+        .modal-box.visible { display: block; }
+        textarea { width: 100%; height: 240px; margin-top: 0.8rem; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border); font-family: monospace; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <header id="dynamic-header">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <a href="index.html" style="background: rgba(255,255,255,0.2); color: white; padding: 0.3rem 0.7rem; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: bold;">← Back to Menu</a>
+            <span style="font-size: 0.8rem; opacity: 0.8;">GoBabyBar Exam Suite</span>
+        </div>
+        <h1 id="header-title">Loading Custom Set...</h1>
+        <p id="header-desc">Custom Drill Set Compiled from Your Storage</p>
+    </header>
+
+    <div class="tracker-wrapper" id="main-tracker" style="display:none;">
+        <div class="tracker-bar">
+            <div class="score-box">
+                <span>Question <strong id="current-q-num">1</strong> of <span id="total-q-num">0</span></span>
+                <span class="badge" id="score-badge">Score: 0 / 0 (0%)</span>
+            </div>
+
+            <div class="action-group">
+                <button class="btn-action-tool btn-history" onclick="showStudentHistory()" title="View Past Test History">📊 History</button>
+                <button class="btn-action-tool btn-export-session" onclick="exportFullStudentSession()" title="Export your answers">📤 Export</button>
+                <button class="btn-elimination-toggle active" id="elimination-toggle-btn" title="Disable Elimination Mode" onclick="toggleEliminationMode()">✂️</button>
+                <select id="jump-select" class="dropdown-menu" onchange="jumpToQuestion(this.value)"></select>
+            </div>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-segment segment-correct" id="bar-correct" title="Correct"></div>
+            <div class="progress-segment segment-missed" id="bar-missed" title="Missed"></div>
+            <div class="progress-segment segment-unattempted" id="bar-unattempted" title="Unattempted"></div>
+        </div>
+    </div>
+
+    <div id="quiz-container">
+        <!-- Question injected here -->
+    </div>
+
+    <div class="nav-controls" id="nav-controls" style="display:none;">
+        <button class="btn" id="prev-btn" onclick="navigate(-1)">← Previous</button>
+        <button class="btn btn-reset" onclick="resetProgress()">Clear Answer Progress</button>
+        <button class="btn" id="next-btn" onclick="navigate(1)">Next →</button>
+    </div>
+
+    <div class="modal-box" id="info-modal-box">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 id="modal-title" style="color: var(--primary);">Analysis / Export</h3>
+            <button class="btn btn-reset" style="padding:0.2rem 0.6rem;" onclick="closeModal()">✕ Close</button>
+        </div>
+        <p id="modal-desc" style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.3rem;"></p>
+        <textarea id="modal-textarea" readonly></textarea>
+        <button class="btn" id="modal-copy-btn" style="margin-top: 0.8rem;" onclick="copyModalContent()">Copy Content to Clipboard</button>
+    </div>
+
+    <script>
+        // Extract URL Parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const catKey = urlParams.get('cat') || 'torts'; 
+        const typeKey = urlParams.get('type') || 'missed'; // 'missed' or 'flagged'
+        const titleKey = urlParams.get('title') || 'Custom';
+
+        // Set Dynamic Keys Isolated from the Original Sets
+        const currentSetKey = `${catKey}_set${typeKey}`;
+        const STORAGE_KEY_ANSWERS = `fylsx_${currentSetKey}_answers_v25`;
+        const STORAGE_KEY_FLAGS = `fylsx_${currentSetKey}_flags_v25`;
+        const STORAGE_KEY_ELIM = `fylsx_${currentSetKey}_elim_v25`;
+        const STORAGE_KEY_INDEX = `fylsx_${currentSetKey}_index_v25`;
+        const STORAGE_KEY_SCORE = `fylsx_${currentSetKey}_score_v25`;
+        const STORAGE_KEY_HIGHLIGHTS = `fylsx_${currentSetKey}_text_highlights_v25`;
+
+        let examData = [];
+        let currentIndex = 0;
+        let userAnswers = {};
+        let flaggedQuestions = {};
+        let eliminatedOptions = {};
+        let totalCorrect = 0;
+        let isEliminationMode = true;
+        let userHighlights = {};
+        const letterLabels = ["A", "B", "C", "D"];
+
+        function setDynamicTheme() {
+            const root = document.documentElement;
+            const header = document.getElementById('dynamic-header');
+            const title = document.getElementById('header-title');
+
+            if (typeKey === 'missed') {
+                root.style.setProperty('--primary', '#D97706'); // Gold/Orange
+                root.style.setProperty('--primary-light', '#F59E0B');
+                root.style.setProperty('--badge-blue', '#FEF3C7');
+                root.style.setProperty('--badge-blue-hover', '#FDE68A');
+                title.textContent = `🔥 ${titleKey} - All Missed Questions`;
+            } else if (typeKey === 'flagged') {
+                root.style.setProperty('--primary', '#E11D48'); // Red
+                root.style.setProperty('--primary-light', '#BE123C');
+                root.style.setProperty('--badge-blue', '#FFE4E6');
+                root.style.setProperty('--badge-blue-hover', '#FECDD3');
+                title.textContent = `🚩 ${titleKey} - All Flagged Questions`;
+            }
+        }
+
+        function initApp() {
+            setDynamicTheme();
+
+            const storedData = localStorage.getItem(`fylsx_${catKey}_${typeKey}_set_exam_data`);
+            if (storedData) {
+                try { examData = JSON.parse(storedData); } catch (e) { console.error("Error parsing custom set data", e); }
+            }
+
+            if (!examData || examData.length === 0) {
+                document.getElementById("quiz-container").innerHTML = `
+                    <div class="question-card" style="text-align: center; padding: 3rem 1rem;">
+                        <h3>No Questions Found!</h3>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem;">Return to the main menu and use the Compile button to generate this set.</p>
+                        <a href="index.html" class="btn" style="display:inline-block; margin-top: 1rem; text-decoration:none;">Return to Menu</a>
+                    </div>
+                `;
+                return;
+            }
+
+            document.getElementById("main-tracker").style.display = "block";
+            document.getElementById("nav-controls").style.display = "flex";
+            document.getElementById("total-q-num").textContent = examData.length;
+            document.getElementById("bar-unattempted").textContent = examData.length;
+
+            loadProgress();
+            populateJumpMenu();
+            renderQuestion();
+            updateScore();
+            updateEliminationToggleStyle();
+        }
+
+        function toggleEliminationMode() {
+            isEliminationMode = !isEliminationMode;
+            updateEliminationToggleStyle();
+            renderQuestion();
+        }
+
+        function updateEliminationToggleStyle() {
+            const btn = document.getElementById("elimination-toggle-btn");
+            if (isEliminationMode) { btn.classList.add("active"); btn.title = "Disable Elimination Mode"; } 
+            else { btn.classList.remove("active"); btn.title = "Enable Elimination"; }
+        }
+
+        function populateJumpMenu() {
+            const select = document.getElementById("jump-select");
+            select.innerHTML = "";
+            examData.forEach((q, idx) => {
+                let opt = document.createElement("option");
+                opt.value = idx;
+                let flagMark = flaggedQuestions[idx] ? "🚩 " : "";
+                let missedMark = (userAnswers[idx] !== undefined && userAnswers[idx] !== q.ans) ? "❌ " : "";
+                opt.textContent = `${flagMark}${missedMark}Q${idx + 1} [${q.topic.split('/')[0].trim()}]`;
+                select.appendChild(opt);
+            });
+        }
+
+        function renderQuestion() {
+            const q = examData[currentIndex];
+            document.getElementById("current-q-num").textContent = currentIndex + 1;
+            document.getElementById("jump-select").value = currentIndex;
+
+            const isFlagged = Boolean(flaggedQuestions[currentIndex]);
+            const flagBtnText = isFlagged ? "🚩 Flagged" : "🏳️ Flag Question";
+            const flagBtnClass = isFlagged ? "btn-flag active" : "btn-flag";
+
+            let fpContent = (userHighlights[currentIndex] && userHighlights[currentIndex].fp) ? userHighlights[currentIndex].fp : (q.fp ? q.fp.replace(/\n/g, '<br>') : "");
+            let qContent = (userHighlights[currentIndex] && userHighlights[currentIndex].q) ? userHighlights[currentIndex].q : q.q;
+
+            let html = `<div class="question-card">`;
+            html += `<div class="q-top-row">
+                        <div class="q-header">Question ${currentIndex + 1} <span style="font-size:0.8rem; color: var(--text-muted); font-weight:normal;">[Source: ${q.originalSet} | ${q.topic}]</span></div>
+                        <button class="${flagBtnClass}" onclick="toggleFlagCurrentQuestion()">${flagBtnText}</button>
+                     </div>`;
+
+            if (q.fp) html += `<div class="fact-pattern" id="fp-container">${fpContent}</div>`;
+            html += `<div class="q-text" id="q-container">${qContent}</div>`;
+            html += `<div class="options-grid">`;
+
+            const currentElimMap = eliminatedOptions[currentIndex] || {};
+
+            q.opts.forEach((optText, i) => {
+                let isAnswered = userAnswers[currentIndex] !== undefined;
+                let isEliminated = Boolean(currentElimMap[i]);
+                let btnClass = "option-btn";
+                
+                if (isAnswered) {
+                    if (i === q.ans) btnClass += " correct";
+                    else if (i === userAnswers[currentIndex]) btnClass += " incorrect";
+                }
+                if (isEliminated) btnClass += " eliminated";
+
+                let cleanOptText = optText.replace(/^\([A-Da-d]\)\s*/, '');
+                let disabled = isAnswered ? "disabled" : "";
+
+                html += `<div class="option-container">
+                            <button class="${btnClass}" ${disabled} onclick="handleOptionClick(${i})">
+                                <span class="letter-circle">${letterLabels[i]}</span>
+                                <span>${cleanOptText}</span>
+                            </button>`;
+
+                if (isEliminationMode) {
+                    let elimBtnClass = isEliminated ? "btn-eliminate-choice active" : "btn-eliminate-choice";
+                    html += `<button class="${elimBtnClass}" onclick="toggleEliminateChoice(event, ${i})">✕</button>`;
+                }
+                html += `</div>`;
+            });
+
+            html += `</div>`;
+
+            let expClass = userAnswers[currentIndex] !== undefined ? "explanation-box visible" : "explanation-box";
+            
+            // For custom sets, force the explanation box colors so they are readable depending on the theme
+            let expStyle = typeKey === 'flagged' ? 'background: #FFF1F2; border-color: #FECDD3; color: #BE123C;' : 'background: #FFFBEB; border-color: #FDE68A; color: #92400E;';
+            
+            html += `<div class="${expClass}" style="${expStyle}">
+                        <div style="margin-bottom: 0.4rem;"><strong>Legal Analysis:</strong></div>
+                        <div>${q.exp}</div>
+                     </div>`;
+            html += `</div>`;
+
+            document.getElementById("quiz-container").innerHTML = html;
+
+            document.getElementById("prev-btn").disabled = currentIndex <= 0;
+            document.getElementById("next-btn").disabled = currentIndex >= examData.length - 1;
+
+            saveProgress();
+        }
+
+        document.addEventListener("mouseup", function(e) {
+            if (e.target.closest("button") || e.target.closest("select") || e.target.closest("textarea")) return;
+            const selection = window.getSelection();
+            if (!selection.isCollapsed && selection.toString().trim().length > 0) {
+                let range = selection.getRangeAt(0);
+                let fpEl = document.getElementById("fp-container");
+                let qEl = document.getElementById("q-container");
+                let container = range.commonAncestorContainer;
+                
+                if ((fpEl && fpEl.contains(container)) || (qEl && qEl.contains(container))) {
+                    let mark = document.createElement("mark");
+                    mark.className = "user-highlight";
+                    mark.title = "Click to remove highlight";
+                    mark.setAttribute("onclick", "removeHighlight(event, this)");
+                    try {
+                        mark.appendChild(range.extractContents());
+                        range.insertNode(mark);
+                        selection.removeAllRanges();
+                        saveTextHighlightState();
+                    } catch (err) {}
+                }
+            }
+        });
+
+        function removeHighlight(e, markEl) {
+            e.stopPropagation();
+            let parent = markEl.parentNode;
+            while (markEl.firstChild) parent.insertBefore(markEl.firstChild, markEl);
+            parent.removeChild(markEl);
+            parent.normalize();
+            saveTextHighlightState();
+        }
+
+        function saveTextHighlightState() {
+            let fpEl = document.getElementById("fp-container");
+            let qEl = document.getElementById("q-container");
+            if (!userHighlights[currentIndex]) userHighlights[currentIndex] = {};
+            if (fpEl) userHighlights[currentIndex].fp = fpEl.innerHTML;
+            if (qEl) userHighlights[currentIndex].q = qEl.innerHTML;
+            saveProgress();
+        }
+
+        function handleOptionClick(optIndex) {
+            const currentElimMap = eliminatedOptions[currentIndex] || {};
+            if (currentElimMap[optIndex]) { delete currentElimMap[optIndex]; saveProgress(); renderQuestion(); return; }
+            selectAnswer(optIndex);
+        }
+
+        function toggleEliminateChoice(event, optIndex) {
+            event.stopPropagation();
+            if (!eliminatedOptions[currentIndex]) eliminatedOptions[currentIndex] = {};
+            if (eliminatedOptions[currentIndex][optIndex]) delete eliminatedOptions[currentIndex][optIndex];
+            else eliminatedOptions[currentIndex][optIndex] = true;
+            saveProgress(); renderQuestion();
+        }
+
+        function toggleFlagCurrentQuestion() {
+            if (flaggedQuestions[currentIndex]) delete flaggedQuestions[currentIndex];
+            else flaggedQuestions[currentIndex] = true;
+            populateJumpMenu(); renderQuestion(); saveProgress();
+        }
+
+        function selectAnswer(optIndex) {
+            if (window.getSelection) window.getSelection().removeAllRanges();
+            userAnswers[currentIndex] = optIndex;
+            totalCorrect = 0;
+            Object.keys(userAnswers).forEach(idx => { if (userAnswers[idx] === examData[idx].ans) totalCorrect++; });
+            updateScore(); saveProgress(); renderQuestion();
+            if (Object.keys(userAnswers).length === examData.length) {
+                let percentage = Math.round((totalCorrect / examData.length) * 100);
+                saveStudentHistory(totalCorrect, examData.length, percentage);
+            }
+        }
+
+        function updateScore() {
+            const totalExamQuestions = examData.length;
+            const answeredCount = Object.keys(userAnswers).length;
+            const missedCount = answeredCount - totalCorrect;
+            const unattemptedCount = totalExamQuestions - answeredCount;
+            const percentage = answeredCount > 0 ? Math.round((totalCorrect / answeredCount) * 100) : 0;
+            
+            document.getElementById("score-badge").textContent = `Score: ${totalCorrect} / ${answeredCount} (${percentage}%)`;
+
+            const barCorrect = document.getElementById("bar-correct");
+            const barMissed = document.getElementById("bar-missed");
+            const barUnattempted = document.getElementById("bar-unattempted");
+
+            barCorrect.style.width = `${(totalCorrect / totalExamQuestions) * 100}%`;
+            barMissed.style.width = `${(missedCount / totalExamQuestions) * 100}%`;
+
+            barCorrect.textContent = totalCorrect >= 1 ? totalCorrect : "";
+            barMissed.textContent = missedCount >= 1 ? missedCount : "";
+            barUnattempted.textContent = unattemptedCount >= 1 ? unattemptedCount : "";
+        }
+
+        function navigate(dir) {
+            const targetPos = currentIndex + dir;
+            if (targetPos >= 0 && targetPos < examData.length) { currentIndex = targetPos; renderQuestion(); }
+        }
+
+        function jumpToQuestion(index) { currentIndex = parseInt(index); renderQuestion(); }
+
+        function saveProgress() {
+            localStorage.setItem(STORAGE_KEY_ANSWERS, JSON.stringify(userAnswers));
+            localStorage.setItem(STORAGE_KEY_FLAGS, JSON.stringify(flaggedQuestions));
+            localStorage.setItem(STORAGE_KEY_ELIM, JSON.stringify(eliminatedOptions));
+            localStorage.setItem(STORAGE_KEY_INDEX, currentIndex);
+            localStorage.setItem(STORAGE_KEY_SCORE, totalCorrect);
+            localStorage.setItem(STORAGE_KEY_HIGHLIGHTS, JSON.stringify(userHighlights));
+        }
+
+        function loadProgress() {
+            try {
+                const savedAnswers = localStorage.getItem(STORAGE_KEY_ANSWERS);
+                const savedFlags = localStorage.getItem(STORAGE_KEY_FLAGS);
+                const savedElim = localStorage.getItem(STORAGE_KEY_ELIM);
+                const savedIndex = localStorage.getItem(STORAGE_KEY_INDEX);
+                const savedScore = localStorage.getItem(STORAGE_KEY_SCORE);
+                const savedHighlights = localStorage.getItem(STORAGE_KEY_HIGHLIGHTS);
+
+                if (savedAnswers) userAnswers = JSON.parse(savedAnswers);
+                if (savedFlags) flaggedQuestions = JSON.parse(savedFlags);
+                if (savedElim) eliminatedOptions = JSON.parse(savedElim);
+                if (savedIndex !== null) currentIndex = parseInt(savedIndex);
+                if (savedScore !== null) totalCorrect = parseInt(savedScore);
+                if (savedHighlights) userHighlights = JSON.parse(savedHighlights);
+            } catch (e) { console.error("Could not load saved progress", e); }
+        }
+
+        function resetProgress() {
+            if (confirm("Are you sure you want to clear your answers, flags, and highlights for this custom set?\n\n(This will NOT delete the questions. You can retake the same set from 0%).")) {
+                localStorage.removeItem(STORAGE_KEY_ANSWERS);
+                localStorage.removeItem(STORAGE_KEY_FLAGS);
+                localStorage.removeItem(STORAGE_KEY_ELIM);
+                localStorage.removeItem(STORAGE_KEY_INDEX);
+                localStorage.removeItem(STORAGE_KEY_SCORE);
+                localStorage.removeItem(STORAGE_KEY_HIGHLIGHTS);
+                userAnswers = {}; flaggedQuestions = {}; eliminatedOptions = {}; userHighlights = {};
+                currentIndex = 0; totalCorrect = 0;
+                initApp();
+            }
+        }
+
+        function exportFullStudentSession() {
+            const sessionData = {
+                examSet: currentSetKey, exportDate: new Date().toLocaleString(),
+                userAnswers, flaggedQuestions, eliminatedOptions, userHighlights,
+                score: totalCorrect, totalAttempted: Object.keys(userAnswers).length, totalQuestions: examData.length
+            };
+            openModal("Export Test Session", "Copy this code block to save or share your results:", JSON.stringify(sessionData, null, 2));
+        }
+
+        function saveStudentHistory(score, total, percentage) {
+            let historyKey = `fylsx_history_${currentSetKey}`;
+            let history = JSON.parse(localStorage.getItem(historyKey) || "[]");
+            history.push({ date: new Date().toLocaleDateString(), time: new Date().toLocaleTimeString(), score, total, percentage });
+            if (history.length > 10) history.shift();
+            localStorage.setItem(historyKey, JSON.stringify(history));
+        }
+
+        function showStudentHistory() {
+            let history = JSON.parse(localStorage.getItem(`fylsx_history_${currentSetKey}`) || "[]");
+            let summary = `PAST TEST PERFORMANCE HISTORY:\n==================================================\n\n`;
+            if (history.length === 0) summary += "No completed past test history recorded for this set yet.";
+            else history.forEach((rec, idx) => summary += `Attempt #${idx + 1} — Date: ${rec.date} at ${rec.time}\n  Score: ${rec.score} / ${rec.total} (${rec.percentage}%)\n\n`);
+            openModal("Student Test History", "Review previous attempts:", summary);
+        }
+
+        function openModal(title, desc, content) {
+            document.getElementById("modal-title").textContent = title;
+            document.getElementById("modal-desc").textContent = desc;
+            document.getElementById("modal-textarea").value = content;
+            document.getElementById("info-modal-box").classList.add("visible");
+            document.getElementById("info-modal-box").scrollIntoView({ behavior: "smooth" });
+        }
+
+        function closeModal() { document.getElementById("info-modal-box").classList.remove("visible"); }
+        function copyModalContent() { document.getElementById("modal-textarea").select(); document.execCommand("copy"); alert("Copied to clipboard!"); }
+
+        window.onload = initApp;
+    </script>
+</body>
+</html>
