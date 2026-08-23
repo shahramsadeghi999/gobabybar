@@ -19,7 +19,7 @@
             --text: #1E293B;
             --text-muted: #64748B;
             --border: #CBD5E1;
-            --success-dark: #15803D; /* Darker green */
+            --success-dark: #15803D;
             --danger: #DC2626;
             --flag: #E11D48;
         }
@@ -203,6 +203,24 @@
             transition: all 0.15s ease;
         }
 
+        .btn-cat-group-export {
+            background: #0284C7;
+            color: white;
+            border-color: #0284C7;
+        }
+        .btn-cat-group-export:hover {
+            background: #0369A1;
+        }
+
+        .btn-cat-group-import {
+            background: #475569;
+            color: white;
+            border-color: #475569;
+        }
+        .btn-cat-group-import:hover {
+            background: #334155;
+        }
+
         .btn-cat-rules {
             background: #F0F9FF;
             color: #0369A1;
@@ -272,10 +290,9 @@
             margin: 0;
         }
 
-        /* Non-Bold, Darker Green Score Percentage */
         .score-display-badge {
             color: var(--success-dark);
-            font-weight: 600; /* Not bold */
+            font-weight: 600;
             font-size: 0.92rem;
             background: #F0FDF4;
             padding: 0.15rem 0.5rem;
@@ -390,6 +407,9 @@
 </head>
 <body>
 
+    <!-- Hidden file input for JSON import -->
+    <input type="file" id="group-file-importer" accept=".json" style="display: none;" onchange="executeGroupFileImport(event)">
+
     <!-- Access Gate Modal -->
     <div id="login-overlay">
         <div class="login-card">
@@ -429,6 +449,12 @@
         <div class="category-header-bar">
             <div class="section-title">⚖️ Torts Practice Sets (Sets 01–20)</div>
             <div class="category-actions">
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('torts', 'Torts', 20)" title="Export full answers, flags, and data for all Torts sets">
+                    📤 Export
+                </button>
+                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('torts', 'Torts', 20)" title="Import Torts sets data from another computer">
+                    📥 Import
+                </button>
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('torts', 'Torts', 20)" title="Export all unique black letter law rules for Torts">
                     📋 Export Rules
                 </button>
@@ -446,6 +472,12 @@
         <div class="category-header-bar">
             <div class="section-title">🏛️ Criminal Law Practice Sets (Sets 01–20)</div>
             <div class="category-actions">
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('criminal', 'Criminal Law', 20)" title="Export full answers, flags, and data for all Criminal Law sets">
+                    📤 Export
+                </button>
+                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('criminal', 'Criminal Law', 20)" title="Import Criminal Law sets data from another computer">
+                    📥 Import
+                </button>
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('criminal', 'Criminal Law', 20)" title="Export all unique black letter law rules for Criminal Law">
                     📋 Export Rules
                 </button>
@@ -463,6 +495,12 @@
         <div class="category-header-bar">
             <div class="section-title">📜 Contracts Practice Sets (Sets 01–20)</div>
             <div class="category-actions">
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('contracts', 'Contracts', 20)" title="Export full answers, flags, and data for all Contracts sets">
+                    📤 Export
+                </button>
+                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('contracts', 'Contracts', 20)" title="Import Contracts sets data from another computer">
+                    📥 Import
+                </button>
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('contracts', 'Contracts', 20)" title="Export all unique black letter law rules for Contracts">
                     📋 Export Rules
                 </button>
@@ -480,6 +518,12 @@
         <div class="category-header-bar">
             <div class="section-title">📝 Mixed Subject Sets (Sets 01–40)</div>
             <div class="category-actions">
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('mixed', 'Mixed Subjects', 40)" title="Export full answers, flags, and data for all Mixed sets">
+                    📤 Export
+                </button>
+                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('mixed', 'Mixed Subjects', 40)" title="Import Mixed sets data from another computer">
+                    📥 Import
+                </button>
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('mixed', 'Mixed Subjects', 40)" title="Export all unique black letter law rules for Mixed Subjects">
                     📋 Export Rules
                 </button>
@@ -505,8 +549,9 @@
         let currentExportDataText = "";
         let currentExportDataJSON = "";
         let isShowingJSON = false;
+        let activeImportCategory = null;
 
-        // Comprehensive Static Rule Library for Instant Category Exports
+        // Master Rule Database
         const masterRuleDatabase = {
             torts: [
                 { topic: "Assault", exp: "Assault requires an intentional act by the defendant creating reasonable apprehension of imminent harmful or offensive contact. Apparent present ability is sufficient; conditional future threats lack required imminence." },
@@ -629,7 +674,7 @@
             return null;
         }
 
-        // Render card with lighter-weight, darker green percentage
+        // Render card with score badge
         function renderExamSection(gridId, categoryKey, filePrefix, displayName, totalSets, defaultSubtitle) {
             const container = document.getElementById(gridId);
             if (!container) return;
@@ -667,7 +712,138 @@
             renderExamSection("mixed-grid", "mixed", "Mixed", "Mixed Exam", 40, "Multi-Subject FYLSX Practice Exam");
         }
 
-        // Category-Wide Unique Rules Exporter (Always Exports Comprehensive Rules)
+        // GROUP EXPORT JSON (Full answers, flags, highlights, scores, eliminations, and history for all sets in category)
+        function exportGroupJSON(categoryKey, categoryTitle, totalSets) {
+            const storageItems = {};
+            let setsWithData = 0;
+
+            const versions = ["v25", "v100", "v23", "v24"];
+            const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights", "highlights"];
+
+            for (let i = 1; i <= totalSets; i++) {
+                let hasSetData = false;
+                const padNum = String(i).padStart(2, '0');
+
+                // Check versioned keys
+                for (let v of versions) {
+                    for (let p of prefixes) {
+                        const k1 = `fylsx_${categoryKey}_set${i}_${p}_${v}`;
+                        const k2 = `fylsx_${categoryKey}_set${padNum}_${p}_${v}`;
+                        
+                        const v1 = localStorage.getItem(k1);
+                        if (v1 !== null) { storageItems[k1] = v1; hasSetData = true; }
+                        
+                        const v2 = localStorage.getItem(k2);
+                        if (v2 !== null) { storageItems[k2] = v2; hasSetData = true; }
+                    }
+                }
+
+                // Check history keys
+                const histKeys = [
+                    `fylsx_history_${categoryKey}_set${i}`,
+                    `fylsx_history_${categoryKey}_set${padNum}`,
+                    `fylsx_history_${categoryKey}${i}`,
+                    `fylsx_history_${categoryKey}${padNum}`
+                ];
+                for (let hk of histKeys) {
+                    const hv = localStorage.getItem(hk);
+                    if (hv !== null) { storageItems[hk] = hv; hasSetData = true; }
+                }
+
+                if (hasSetData) setsWithData++;
+            }
+
+            const exportPayload = {
+                app: "GoBabyBar Exam Center",
+                version: "2.0",
+                exportType: "group_complete_backup",
+                categoryKey: categoryKey,
+                categoryTitle: categoryTitle,
+                totalSetsScanned: totalSets,
+                setsWithRecordedData: setsWithData,
+                exportTimestamp: new Date().toISOString(),
+                exportDateReadable: new Date().toLocaleString(),
+                data: storageItems
+            };
+
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportPayload, null, 2));
+            const downloadAnchor = document.createElement('a');
+            const safeName = categoryTitle.replace(/\s+/g, '_');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", `GoBabyBar_${safeName}_Group_Backup_${new Date().toISOString().slice(0,10)}.json`);
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+        }
+
+        // GROUP IMPORT JSON TRIGGER
+        function triggerGroupJSONImport(categoryKey, categoryTitle, totalSets) {
+            activeImportCategory = { categoryKey, categoryTitle, totalSets };
+            const fileInput = document.getElementById("group-file-importer");
+            fileInput.value = "";
+            fileInput.click();
+        }
+
+        // EXECUTE GROUP IMPORT (Overwrites category localStorage items and live-refreshes)
+        function executeGroupFileImport(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const parsed = JSON.parse(e.target.result);
+
+                    if (!parsed.data || typeof parsed.data !== "object") {
+                        alert("Error: Invalid backup file structure.");
+                        return;
+                    }
+
+                    if (activeImportCategory && parsed.categoryKey && parsed.categoryKey !== activeImportCategory.categoryKey) {
+                        const proceed = confirm(`Warning: You are importing a backup for '${parsed.categoryTitle || parsed.categoryKey}', but clicked Import under '${activeImportCategory.categoryTitle}'. Do you want to proceed?`);
+                        if (!proceed) return;
+                    }
+
+                    const targetCat = activeImportCategory ? activeImportCategory.categoryKey : (parsed.categoryKey || "torts");
+                    const targetSets = activeImportCategory ? activeImportCategory.totalSets : (parsed.totalSetsScanned || 20);
+
+                    // 1. Purge existing keys for this category to ensure clean overwrite
+                    const versions = ["v25", "v100", "v23", "v24"];
+                    const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights", "highlights"];
+
+                    for (let i = 1; i <= targetSets; i++) {
+                        const padNum = String(i).padStart(2, '0');
+                        for (let v of versions) {
+                            for (let p of prefixes) {
+                                localStorage.removeItem(`fylsx_${targetCat}_set${i}_${p}_${v}`);
+                                localStorage.removeItem(`fylsx_${targetCat}_set${padNum}_${p}_${v}`);
+                            }
+                        }
+                        localStorage.removeItem(`fylsx_history_${targetCat}_set${i}`);
+                        localStorage.removeItem(`fylsx_history_${targetCat}_set${padNum}`);
+                        localStorage.removeItem(`fylsx_history_${targetCat}${i}`);
+                        localStorage.removeItem(`fylsx_history_${targetCat}${padNum}`);
+                    }
+
+                    // 2. Write imported dataset into localStorage
+                    let keysImported = 0;
+                    Object.keys(parsed.data).forEach(k => {
+                        localStorage.setItem(k, parsed.data[k]);
+                        keysImported++;
+                    });
+
+                    // 3. Refresh cards and UI
+                    populateAllExams();
+                    alert(`✅ ${parsed.categoryTitle || targetCat} data successfully imported (${keysImported} items restored from backup generated on ${parsed.exportDateReadable || 'earlier session'}).`);
+
+                } catch (err) {
+                    alert("Error parsing JSON backup file: " + err.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Category-Wide Unique Rules Exporter
         function exportCategoryRules(categoryKey, categoryTitle, totalSets) {
             const uniqueRulesMap = new Map();
 
@@ -682,7 +858,7 @@
                 uniqueRulesMap.get(cleanTopic).add(cleanExp);
             });
 
-            // 2. Scan localStorage to supplement with any additional live student snapshot rules
+            // 2. Scan localStorage for additional rules
             for (let i = 1; i <= totalSets; i++) {
                 const versions = ["v25", "v100", "v23", "v24"];
                 for (let v of versions) {
