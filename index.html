@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- iPad Fullscreen / PWA Optimization -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -104,9 +105,12 @@
         }
         .exam-card:hover { border-color: var(--primary-light); background: #F0F9FF; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
         
-        /* Gold Card Styles */
+        /* Custom Deck Card Styles */
         .exam-card.special-missed-card { border: 2px solid #F59E0B; background: #FFFBEB; }
         .exam-card.special-missed-card:hover { background: #FEF3C7; border-color: #D97706; }
+
+        .exam-card.special-flagged-card { border: 2px solid #E11D48; background: #FFF1F2; }
+        .exam-card.special-flagged-card:hover { background: #FFE4E6; border-color: #BE123C; }
 
         .card-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.2rem; gap: 0.5rem; }
         .exam-card h3 { font-size: 0.98rem; color: var(--primary); margin: 0; }
@@ -115,11 +119,13 @@
         .score-display-badge { color: var(--success-dark); font-weight: 600; font-size: 0.92rem; background: #F0FDF4; padding: 0.15rem 0.5rem; border-radius: 6px; border: 1px solid #DCFCE7; white-space: nowrap; }
         .score-display-badge.unattempted { color: var(--text-muted); font-weight: normal; font-size: 0.8rem; background: #F1F5F9; border-color: #E2E8F0; }
         .score-display-badge.missed-badge { color: #B45309; background: #FEF3C7; border-color: #FDE68A; }
+        .score-display-badge.flagged-badge { color: #BE123C; background: #FFE4E6; border-color: #FECDD3; }
 
         .btn-launch { background: var(--primary); color: white; text-align: center; padding: 0.45rem; border-radius: 6px; font-size: 0.82rem; font-weight: 600; }
         .exam-card.special-missed-card .btn-launch { background: #D97706; }
+        .exam-card.special-flagged-card .btn-launch { background: #E11D48; }
 
-        /* Dynamic Missed Quiz Overlay Styles */
+        /* Dynamic Quiz Overlay Styles */
         #quiz-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: var(--bg); z-index: 2000; overflow-y: auto; padding: 1rem;
@@ -169,6 +175,12 @@
         .btn-action-primary { background: var(--primary); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer; }
 
         footer { text-align: center; margin-top: 3rem; font-size: 0.8rem; color: var(--text-muted); padding-bottom: 1rem; }
+
+        @media (max-width: 600px) {
+            body { padding: 0.5rem; }
+            .category-header-bar { flex-direction: column; align-items: flex-start; }
+            .category-actions { width: 100%; justify-content: flex-start; }
+        }
     </style>
 </head>
 <body>
@@ -217,6 +229,7 @@
                 <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('torts', 'Torts', 20)">📥 Import</button>
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('torts', 'Torts', 20)">📋 Export Rules</button>
                 <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'torts', 'Torts', 'Torts', 20)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'torts', 'Torts', 'Torts', 20)">🚩 Compile Flagged</button>
             </div>
         </div>
         <div class="exam-grid" id="torts-grid"></div>
@@ -229,6 +242,7 @@
                 <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('criminal', 'Criminal Law', 20)">📥 Import</button>
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('criminal', 'Criminal Law', 20)">📋 Export Rules</button>
                 <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 20)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 20)">🚩 Compile Flagged</button>
             </div>
         </div>
         <div class="exam-grid" id="crim-grid"></div>
@@ -241,6 +255,7 @@
                 <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('contracts', 'Contracts', 20)">📥 Import</button>
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('contracts', 'Contracts', 20)">📋 Export Rules</button>
                 <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'contracts', 'Contracts', 'Contracts', 20)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'contracts', 'Contracts', 'Contracts', 20)">🚩 Compile Flagged</button>
             </div>
         </div>
         <div class="exam-grid" id="contracts-grid"></div>
@@ -253,6 +268,7 @@
                 <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('mixed', 'Mixed Subjects', 40)">📥 Import</button>
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('mixed', 'Mixed Subjects', 40)">📋 Export Rules</button>
                 <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 40)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 40)">🚩 Compile Flagged</button>
             </div>
         </div>
         <div class="exam-grid" id="mixed-grid"></div>
@@ -260,11 +276,11 @@
         <footer>gobabybar.com • Built for iPad & Offline Study</footer>
     </div>
 
-    <!-- IN-PAGE MISSED QUIZ RUNNER OVERLAY -->
+    <!-- IN-PAGE CUSTOM QUIZ RUNNER OVERLAY -->
     <div id="quiz-overlay">
         <div class="quiz-overlay-header">
-            <h1 id="quiz-overlay-title">🔥 Missed Questions</h1>
-            <button class="btn-exit-quiz" onclick="closeMissedQuiz()">✕ Exit Quiz</button>
+            <h1 id="quiz-overlay-title">Custom Deck</h1>
+            <button class="btn-exit-quiz" onclick="closeCustomQuiz()">✕ Exit Quiz</button>
         </div>
         <div id="quiz-overlay-content">
             <!-- Dynamic quiz content injected here -->
@@ -275,18 +291,19 @@
         const CORRECT_PASSCODE = "DibaNasr#2026";
         const AUTH_SESSION_KEY = "gobabybar_auth_session";
 
-        // Internal State for the Dynamic Missed Quiz Runner
-        let mqData = [];
-        let mqIndex = 0;
-        let mqAnswers = {};
-        let mqCategoryKey = "";
+        // Internal State for the Dynamic Custom Quiz Runner
+        let cqData = [];
+        let cqIndex = 0;
+        let cqAnswers = {};
+        let cqCategoryKey = "";
+        let cqType = ""; // 'missed' or 'flagged'
 
         // Core Functions
         function getSetPercentage(categoryKey, setNumber) {
             const padNum = String(setNumber).padStart(2, '0');
             const possibleHistoryKeys = [
                 `fylsx_history_${categoryKey}_set${setNumber}`,
-                `fylsx_history_${categoryKey}_set${padNum}`,
+                `fylsx_history_${categoryKey}_set${padNum}`
             ];
             for (let key of possibleHistoryKeys) {
                 const historyData = localStorage.getItem(key);
@@ -310,26 +327,24 @@
             return null;
         }
 
+        // Render exam grids including special "Missed" and "Flagged" cards
         function renderExamSection(gridId, categoryKey, filePrefix, displayName, totalSets, defaultSubtitle) {
             const container = document.getElementById(gridId);
             if (!container) return;
             let html = "";
 
-            // ALWAYS RENDER GOLD CARD (shows 0 or compiled data)
+            // 1. MISSED CARD
             const missedSetData = localStorage.getItem(`fylsx_${categoryKey}_missed_set_exam_data`);
             let missedCount = 0;
             let missedScoreHtml = `<span class="score-display-badge unattempted">Not Compiled</span>`;
-
             if (missedSetData) {
                 try {
                     const parsedMissed = JSON.parse(missedSetData);
                     if (Array.isArray(parsedMissed)) {
                         missedCount = parsedMissed.length;
                         missedScoreHtml = `<span class="score-display-badge missed-badge">${missedCount} Qs</span>`;
-
                         const directScore = localStorage.getItem(`fylsx_${categoryKey}_setmissed_score_v25`);
                         const directAnswers = localStorage.getItem(`fylsx_${categoryKey}_setmissed_answers_v25`);
-
                         if (directScore !== null && directAnswers !== null) {
                             const ansCount = Object.keys(JSON.parse(directAnswers)).length;
                             if (ansCount > 0) {
@@ -340,10 +355,8 @@
                     }
                 } catch (e) {}
             }
-
-            // Push Gold Card
             html += `
-                <div class="exam-card special-missed-card" onclick="launchMissedQuiz('${categoryKey}', '${displayName}')" title="Practice Missed Questions">
+                <div class="exam-card special-missed-card" onclick="launchCustomQuiz('${categoryKey}', '${displayName}', 'missed')" title="Practice Missed Questions">
                     <div>
                         <div class="card-header-row">
                             <h3>🔥 ${displayName} - All Missed</h3>
@@ -355,7 +368,42 @@
                 </div>
             `;
 
-            // Push the rest of the regular sets
+            // 2. FLAGGED CARD
+            const flaggedSetData = localStorage.getItem(`fylsx_${categoryKey}_flagged_set_exam_data`);
+            let flaggedCount = 0;
+            let flaggedScoreHtml = `<span class="score-display-badge unattempted">Not Compiled</span>`;
+            if (flaggedSetData) {
+                try {
+                    const parsedFlagged = JSON.parse(flaggedSetData);
+                    if (Array.isArray(parsedFlagged)) {
+                        flaggedCount = parsedFlagged.length;
+                        flaggedScoreHtml = `<span class="score-display-badge flagged-badge">${flaggedCount} Qs</span>`;
+                        const directScore = localStorage.getItem(`fylsx_${categoryKey}_setflagged_score_v25`);
+                        const directAnswers = localStorage.getItem(`fylsx_${categoryKey}_setflagged_answers_v25`);
+                        if (directScore !== null && directAnswers !== null) {
+                            const ansCount = Object.keys(JSON.parse(directAnswers)).length;
+                            if (ansCount > 0) {
+                                const p = Math.round((parseInt(directScore, 10) / ansCount) * 100);
+                                flaggedScoreHtml = `<span class="score-display-badge">${p}% (${ansCount}/${flaggedCount})</span>`;
+                            }
+                        }
+                    }
+                } catch (e) {}
+            }
+            html += `
+                <div class="exam-card special-flagged-card" onclick="launchCustomQuiz('${categoryKey}', '${displayName}', 'flagged')" title="Practice Flagged Questions">
+                    <div>
+                        <div class="card-header-row">
+                            <h3>🚩 ${displayName} - All Flagged</h3>
+                            ${flaggedScoreHtml}
+                        </div>
+                        <p>Active custom drill set compiled from storage.</p>
+                    </div>
+                    <div class="btn-launch" style="background:#E11D48;">Practice Flagged Set (${flaggedCount} Qs) →</div>
+                </div>
+            `;
+
+            // 3. STANDARD SETS
             for (let i = 1; i <= totalSets; i++) {
                 const padNum = String(i).padStart(2, '0');
                 const percent = getSetPercentage(categoryKey, i);
@@ -437,17 +485,9 @@
             btn.innerHTML = originalBtnText;
             btn.disabled = false;
 
-            if (totalAnsweredAcrossSets === 0) {
-                alert(`No answers found in storage for ${categoryTitle}.`);
-                return;
-            }
+            if (totalAnsweredAcrossSets === 0) { alert(`No answers found in storage for ${categoryTitle}.`); return; }
+            if (collectedMissedQuestions.length === 0) { alert(`Great news! You got 100% correct in ${categoryTitle}. No missed questions to compile.`); return; }
 
-            if (collectedMissedQuestions.length === 0) {
-                alert(`Great news! You got 100% correct in ${categoryTitle}. No missed questions to compile.`);
-                return;
-            }
-
-            // Overwrite storage
             localStorage.setItem(`fylsx_${categoryKey}_missed_set_exam_data`, JSON.stringify(collectedMissedQuestions));
             localStorage.removeItem(`fylsx_${categoryKey}_setmissed_answers_v25`);
             localStorage.removeItem(`fylsx_${categoryKey}_setmissed_score_v25`);
@@ -455,50 +495,107 @@
             alert(`✅ Successfully compiled ${collectedMissedQuestions.length} missed questions!\nThe gold card has been updated on your dashboard.`);
         }
 
-        // --- DYNAMIC IN-PAGE MISSED QUIZ RUNNER ---
-        function launchMissedQuiz(categoryKey, categoryTitle) {
-            const dataStr = localStorage.getItem(`fylsx_${categoryKey}_missed_set_exam_data`);
+        // COMPILE FLAGGED QUESTIONS (Overwrites Storage)
+        async function generateAllFlaggedSet(event, categoryKey, filePrefix, categoryTitle, totalSets) {
+            const proceed = confirm(`This will compile your currently flagged questions and OVERWRITE your existing 'Flagged Questions' storage bank for ${categoryTitle}. Proceed?`);
+            if (!proceed) return;
+
+            const btn = event.currentTarget;
+            const originalBtnText = btn.innerHTML;
+            btn.innerHTML = "⏳ Compiling...";
+            btn.disabled = true;
+
+            let collectedFlaggedQuestions = [];
+            let totalFlagsAcrossSets = 0;
+
+            for (let i = 1; i <= totalSets; i++) {
+                const padNum = String(i).padStart(2, '0');
+                let foundFlags = null;
+                const savedFlags = localStorage.getItem(`fylsx_${categoryKey}_set${i}_flags_v25`);
+                if (savedFlags) { try { foundFlags = JSON.parse(savedFlags); } catch (e) {} }
+
+                if (foundFlags && Object.values(foundFlags).some(val => val === true)) {
+                    totalFlagsAcrossSets += Object.values(foundFlags).filter(val => val === true).length;
+                    try {
+                        let response = await fetch(`BabyBar-${filePrefix}-${padNum}.html`);
+                        if (!response.ok) response = await fetch(`BabyBar-${filePrefix.toLowerCase()}-${padNum}.html`);
+
+                        if (response.ok) {
+                            const htmlText = await response.text();
+                            const match = htmlText.match(/examData\s*=\s*(\[\s*\{[\s\S]*?\}\s*\])\s*(?:;|\n|let|const|var)/);
+                            if (match && match[1]) {
+                                const fileExamData = new Function('return ' + match[1])();
+                                Object.keys(foundFlags).forEach(idxStr => {
+                                    const qIdx = Number(idxStr);
+                                    const qObj = fileExamData[qIdx];
+                                    if (qObj && foundFlags[qIdx] === true) {
+                                        collectedFlaggedQuestions.push({
+                                            ...qObj,
+                                            originalSet: `Set ${padNum}`,
+                                            originalSetIndex: i,
+                                            id: collectedFlaggedQuestions.length + 1
+                                        });
+                                    }
+                                });
+                            }
+                        }
+                    } catch (err) {
+                        console.warn(`Fetch blocked for Set ${padNum}.`);
+                    }
+                }
+            }
+
+            btn.innerHTML = originalBtnText;
+            btn.disabled = false;
+
+            if (totalFlagsAcrossSets === 0) { alert(`No flagged questions found in storage for ${categoryTitle}.`); return; }
+
+            localStorage.setItem(`fylsx_${categoryKey}_flagged_set_exam_data`, JSON.stringify(collectedFlaggedQuestions));
+            localStorage.removeItem(`fylsx_${categoryKey}_setflagged_answers_v25`);
+            localStorage.removeItem(`fylsx_${categoryKey}_setflagged_score_v25`);
+            populateAllExams();
+            alert(`✅ Successfully compiled ${collectedFlaggedQuestions.length} flagged questions!\nThe red card has been updated on your dashboard.`);
+        }
+
+        // --- DYNAMIC IN-PAGE QUIZ RUNNER ---
+        function launchCustomQuiz(categoryKey, categoryTitle, type) {
+            const dataStr = localStorage.getItem(`fylsx_${categoryKey}_${type}_set_exam_data`);
             if (!dataStr) {
-                alert(`You haven't compiled the Missed Questions for ${categoryTitle} yet! Click the '❌ Compile Missed' button in the header first.`);
+                alert(`You haven't compiled the ${type === 'missed' ? 'Missed' : 'Flagged'} Questions for ${categoryTitle} yet!\n\nClick the 'Compile ${type === 'missed' ? 'Missed' : 'Flagged'}' button in the header first.`);
                 return;
             }
             
-            try {
-                mqData = JSON.parse(dataStr);
-            } catch (e) {
-                alert("Error loading missed set data."); return;
-            }
-
-            if (mqData.length === 0) {
-                alert(`You currently have 0 missed questions compiled for ${categoryTitle}. Click the '❌ Compile Missed' button to refresh your data.`);
-                return;
-            }
+            try { cqData = JSON.parse(dataStr); } catch (e) { alert("Error loading set data."); return; }
+            if (cqData.length === 0) { alert(`You currently have 0 ${type} questions compiled. Click 'Compile' to refresh.`); return; }
             
-            mqCategoryKey = categoryKey;
-            mqIndex = 0;
+            cqCategoryKey = categoryKey;
+            cqType = type;
+            cqIndex = 0;
             
-            const savedAns = localStorage.getItem(`fylsx_${categoryKey}_setmissed_answers_v25`);
-            mqAnswers = savedAns ? JSON.parse(savedAns) : {};
+            const savedAns = localStorage.getItem(`fylsx_${categoryKey}_set${type}_answers_v25`);
+            cqAnswers = savedAns ? JSON.parse(savedAns) : {};
 
-            document.getElementById('quiz-overlay-title').textContent = `🔥 ${categoryTitle} - All Missed Questions`;
+            const emoji = type === 'missed' ? '🔥' : '🚩';
+            const typeLabel = type === 'missed' ? 'Missed' : 'Flagged';
+            document.getElementById('quiz-overlay-title').textContent = `${emoji} ${categoryTitle} - All ${typeLabel} Questions`;
             document.getElementById('main-content').style.display = 'none';
             document.getElementById('quiz-overlay').style.display = 'block';
             
-            renderMQ();
+            renderCQ();
         }
 
-        function closeMissedQuiz() {
+        function closeCustomQuiz() {
             document.getElementById('quiz-overlay').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
-            populateAllExams(); // Refresh gold card score
+            populateAllExams(); // Refresh score card
         }
 
-        function renderMQ() {
-            const q = mqData[mqIndex];
+        function renderCQ() {
+            const q = cqData[cqIndex];
             const container = document.getElementById('quiz-overlay-content');
             
             let html = `<div class="question-card" style="max-width: 920px; margin: 0 auto;">`;
-            html += `<div class="q-top-row"><span>Question ${mqIndex + 1} of ${mqData.length}</span> <span style="font-size:0.8rem; color: var(--text-muted);">[Source: ${q.originalSet} | ${q.topic}]</span></div>`;
+            html += `<div class="q-top-row"><span>Question ${cqIndex + 1} of ${cqData.length}</span> <span style="font-size:0.8rem; color: var(--text-muted);">[Source: ${q.originalSet} | ${q.topic}]</span></div>`;
             
             if (q.fp) html += `<div class="fact-pattern">${q.fp.replace(/\n/g, '<br>')}</div>`;
             html += `<div class="q-text">${q.q}</div>`;
@@ -506,14 +603,14 @@
 
             const labels = ["A", "B", "C", "D"];
             q.opts.forEach((optText, i) => {
-                let isAnswered = mqAnswers[mqIndex] !== undefined;
+                let isAnswered = cqAnswers[cqIndex] !== undefined;
                 let btnClass = "option-btn";
                 if (isAnswered) {
                     if (i === q.ans) btnClass += " correct";
-                    else if (i === mqAnswers[mqIndex]) btnClass += " incorrect";
+                    else if (i === cqAnswers[cqIndex]) btnClass += " incorrect";
                 }
                 let disabled = isAnswered ? "disabled" : "";
-                html += `<button class="${btnClass}" ${disabled} onclick="selectMQAnswer(${i})">
+                html += `<button class="${btnClass}" ${disabled} onclick="selectCQAnswer(${i})">
                             <span class="letter-circle">${labels[i]}</span>
                             <span>${optText.replace(/^\([A-Da-d]\)\s*/, '')}</span>
                          </button>`;
@@ -521,37 +618,37 @@
 
             html += `</div>`;
             
-            if (mqAnswers[mqIndex] !== undefined) {
+            if (cqAnswers[cqIndex] !== undefined) {
                 html += `<div class="explanation-box visible"><strong>Legal Analysis:</strong><br>${q.exp}</div>`;
             }
 
             html += `<div class="nav-controls" style="margin-top: 1.5rem;">
-                        <button class="btn" onclick="navMQ(-1)" ${mqIndex === 0 ? 'disabled' : ''}>← Previous</button>
-                        <button class="btn" onclick="navMQ(1)" ${mqIndex === mqData.length - 1 ? 'disabled' : ''}>Next →</button>
+                        <button class="btn" onclick="navCQ(-1)" ${cqIndex === 0 ? 'disabled' : ''}>← Previous</button>
+                        <button class="btn" onclick="navCQ(1)" ${cqIndex === cqData.length - 1 ? 'disabled' : ''}>Next →</button>
                      </div>`;
             html += `</div>`;
             
             container.innerHTML = html;
-            saveMQProgress();
+            saveCQProgress();
         }
 
-        function selectMQAnswer(optIndex) {
-            mqAnswers[mqIndex] = optIndex;
-            renderMQ();
+        function selectCQAnswer(optIndex) {
+            cqAnswers[cqIndex] = optIndex;
+            renderCQ();
         }
 
-        function navMQ(dir) {
-            mqIndex += dir;
-            renderMQ();
+        function navCQ(dir) {
+            cqIndex += dir;
+            renderCQ();
         }
 
-        function saveMQProgress() {
-            localStorage.setItem(`fylsx_${mqCategoryKey}_setmissed_answers_v25`, JSON.stringify(mqAnswers));
+        function saveCQProgress() {
+            localStorage.setItem(`fylsx_${cqCategoryKey}_set${cqType}_answers_v25`, JSON.stringify(cqAnswers));
             let correct = 0;
-            Object.keys(mqAnswers).forEach(idx => {
-                if (mqAnswers[idx] === mqData[idx].ans) correct++;
+            Object.keys(cqAnswers).forEach(idx => {
+                if (cqAnswers[idx] === cqData[idx].ans) correct++;
             });
-            localStorage.setItem(`fylsx_${mqCategoryKey}_setmissed_score_v25`, correct);
+            localStorage.setItem(`fylsx_${cqCategoryKey}_set${cqType}_score_v25`, correct);
         }
 
         // Export/Import & Auth logic
@@ -578,19 +675,32 @@
             const storageItems = {}; let setsWithData = 0;
             const versions = ["v25", "v100", "v23", "v24"];
             const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights", "highlights", "exam_data"];
+            
             for (let i = 1; i <= totalSets; i++) {
                 let hasSetData = false; const padNum = String(i).padStart(2, '0');
                 for (let v of versions) {
                     for (let p of prefixes) {
                         const k1 = `fylsx_${categoryKey}_set${i}_${p}_${v}`;
                         const k2 = `fylsx_${categoryKey}_set${padNum}_${p}_${v}`;
-                        if (localStorage.getItem(k1)) { storageItems[k1] = localStorage.getItem(k1); hasSetData = true; }
-                        if (localStorage.getItem(k2)) { storageItems[k2] = localStorage.getItem(k2); hasSetData = true; }
+                        if (localStorage.getItem(k1) !== null) { storageItems[k1] = localStorage.getItem(k1); hasSetData = true; }
+                        if (localStorage.getItem(k2) !== null) { storageItems[k2] = localStorage.getItem(k2); hasSetData = true; }
                     }
                 }
                 if (hasSetData) setsWithData++;
             }
-            if (localStorage.getItem(`fylsx_${categoryKey}_missed_set_exam_data`)) storageItems[`fylsx_${categoryKey}_missed_set_exam_data`] = localStorage.getItem(`fylsx_${categoryKey}_missed_set_exam_data`);
+
+            // Also export special sets (Missed & Flagged)
+            ["missed", "flagged"].forEach(st => {
+                const snap = localStorage.getItem(`fylsx_${categoryKey}_${st}_set_exam_data`);
+                if (snap !== null) storageItems[`fylsx_${categoryKey}_${st}_set_exam_data`] = snap;
+                ["v25", "v100", "v23", "v24"].forEach(v => {
+                    ["answers", "score"].forEach(p => {
+                        const key = `fylsx_${categoryKey}_set${st}_${p}_${v}`;
+                        const val = localStorage.getItem(key);
+                        if (val !== null) storageItems[key] = val;
+                    });
+                });
+            });
 
             const exportPayload = { app: "GoBabyBar Exam Center", version: "2.0", exportType: "group_complete_backup", categoryKey, categoryTitle, totalSetsScanned: totalSets, setsWithRecordedData: setsWithData, exportTimestamp: new Date().toISOString(), data: storageItems };
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportPayload, null, 2));
@@ -599,6 +709,7 @@
         }
 
         function triggerGroupJSONImport(categoryKey, categoryTitle, totalSets) { activeImportCategory = { categoryKey, categoryTitle, totalSets }; document.getElementById("group-file-importer").value = ""; document.getElementById("group-file-importer").click(); }
+        
         function executeGroupFileImport(event) {
             const file = event.target.files[0]; if (!file) return;
             const reader = new FileReader();
@@ -608,11 +719,22 @@
                     if (!parsed.data) { alert("Invalid backup file."); return; }
                     const targetCat = activeImportCategory ? activeImportCategory.categoryKey : (parsed.categoryKey || "torts");
                     const targetSets = activeImportCategory ? activeImportCategory.totalSets : 20;
+
+                    // Wipe existing standard sets
                     for (let i = 1; i <= targetSets; i++) {
                         const padNum = String(i).padStart(2, '0');
-                        ["v25", "v100"].forEach(v => ["answers", "flags", "elim", "index", "score"].forEach(p => { localStorage.removeItem(`fylsx_${targetCat}_set${i}_${p}_${v}`); localStorage.removeItem(`fylsx_${targetCat}_set${padNum}_${p}_${v}`); }));
+                        ["v25", "v100", "v23", "v24"].forEach(v => ["answers", "flags", "elim", "index", "score", "exam_data"].forEach(p => { localStorage.removeItem(`fylsx_${targetCat}_set${i}_${p}_${v}`); localStorage.removeItem(`fylsx_${targetCat}_set${padNum}_${p}_${v}`); }));
                     }
-                    localStorage.removeItem(`fylsx_${targetCat}_missed_set_exam_data`);
+
+                    // Wipe existing custom sets
+                    ["missed", "flagged"].forEach(st => {
+                        localStorage.removeItem(`fylsx_${targetCat}_${st}_set_exam_data`);
+                        ["v25", "v100", "v23", "v24"].forEach(v => {
+                            ["answers", "score"].forEach(p => { localStorage.removeItem(`fylsx_${targetCat}_set${st}_${p}_${v}`); });
+                        });
+                    });
+
+                    // Restore
                     let keysImported = 0; Object.keys(parsed.data).forEach(k => { localStorage.setItem(k, parsed.data[k]); keysImported++; });
                     populateAllExams(); alert(`✅ Data successfully imported (${keysImported} items).`);
                 } catch (err) { alert("Error parsing JSON backup file: " + err.message); }
