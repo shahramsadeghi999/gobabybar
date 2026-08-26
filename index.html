@@ -71,6 +71,9 @@
         .exam-card.special-flagged-card { border: 2px solid #E11D48; background: #FFF1F2; }
         .exam-card.special-flagged-card:hover { background: #FFE4E6; border-color: #BE123C; }
 
+        .exam-card.special-rules-card { border: 2px solid #0284C7; background: #F0F9FF; }
+        .exam-card.special-rules-card:hover { background: #E0F2FE; border-color: #0369A1; }
+
         .card-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.2rem; gap: 0.5rem; }
         .exam-card h3 { font-size: 0.98rem; color: var(--primary); margin: 0; }
         .exam-card p { font-size: 0.82rem; color: var(--text-muted); margin: 0.4rem 0 0.9rem 0; }
@@ -79,6 +82,7 @@
         .score-display-badge.unattempted { color: var(--text-muted); font-weight: normal; font-size: 0.8rem; background: #F1F5F9; border-color: #E2E8F0; }
         .score-display-badge.missed-badge { color: #B45309; background: #FEF3C7; border-color: #FDE68A; }
         .score-display-badge.flagged-badge { color: #BE123C; background: #FFE4E6; border-color: #FECDD3; }
+        .score-display-badge.rules-badge { color: #0369A1; background: #E0F2FE; border-color: #BAE6FD; }
 
         .btn-launch { background: var(--primary); color: white; text-align: center; padding: 0.45rem; border-radius: 6px; font-size: 0.82rem; font-weight: 600; transition: all 0.2s ease; }
         .exam-card:hover .btn-launch { background: var(--primary-light); }
@@ -86,6 +90,8 @@
         .exam-card.special-missed-card:hover .btn-launch { background: #B45309; }
         .exam-card.special-flagged-card .btn-launch { background: #E11D48; }
         .exam-card.special-flagged-card:hover .btn-launch { background: #BE123C; }
+        .exam-card.special-rules-card .btn-launch { background: #0284C7; }
+        .exam-card.special-rules-card:hover .btn-launch { background: #0369A1; }
 
         .modal-box { display: none; background: white; border: 2px solid var(--primary); padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; margin-bottom: 2rem; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15); }
         .modal-box.visible { display: block; }
@@ -286,7 +292,23 @@
                 </a>
             `;
 
-            // 3. STANDARD SETS (Routing to Master Runner)
+            // 3. TORTS RULES CARD (Blue - shown for Torts section)
+            if (categoryKey === "torts") {
+                html += `
+                    <a href="Torts-Rules.pdf" target="_blank" class="exam-card special-rules-card" title="View Torts Rules PDF">
+                        <div>
+                            <div class="card-header-row">
+                                <h3 style="color: #0284C7;">📘 Torts Rules</h3>
+                                <span class="score-display-badge rules-badge">PDF Reference</span>
+                            </div>
+                            <p>Comprehensive black letter law and analysis guide.</p>
+                        </div>
+                        <div class="btn-launch">Open Torts Rules (PDF) →</div>
+                    </a>
+                `;
+            }
+
+            // 4. STANDARD SETS (Routing to Master Runner)
             for (let i = 1; i <= totalSets; i++) {
                 const padNum = String(i).padStart(2, '0');
                 const percent = getSetPercentage(categoryKey, i);
