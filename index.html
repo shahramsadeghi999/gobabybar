@@ -6,306 +6,495 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="GoBabyBar">
-    <title>GoBabyBar Exam Suite - FYLSX Practice Portal</title>
+    <title>California Baby Bar (FYLSX) - Exam Center</title>
+    
     <style>
         :root {
             --primary: #1B365D;
-            --primary-light: #33598A;
+            --primary-light: #4B6B94;
             --accent: #D97706;
             --bg: #F8FAFC;
             --card-bg: #FFFFFF;
             --text: #1E293B;
             --text-muted: #64748B;
             --border: #CBD5E1;
+            --success-dark: #15803D;
             --success: #16A34A;
             --danger: #DC2626;
-            --torts-color: #0284C7;
-            --contracts-color: #0D9488;
-            --criminal-color: #7C3AED;
+            --flag: #E11D48;
+            --badge-blue: #BAE6FD;
+            --badge-blue-hover: #7DD3FC;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 1.5rem 1rem; max-width: 960px; margin: 0 auto; }
 
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            padding: 1.5rem 1rem;
-            max-width: 1040px;
-            margin: 0 auto;
-        }
+        /* Login Overlay */
+        #login-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); z-index: 3000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+        .login-card { background: white; border-radius: 16px; padding: 2rem; max-width: 400px; width: 100%; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); text-align: center; }
+        .login-card h2 { color: var(--primary); font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .login-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+        .login-input { width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1.5px solid var(--border); font-size: 1rem; margin-bottom: 0.8rem; text-align: center; letter-spacing: 2px; }
+        .login-input:focus { outline: none; border-color: var(--primary); }
+        .btn-login { width: 100%; background: var(--primary); color: white; padding: 0.75rem; border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+        .btn-login:hover { background: var(--primary-light); }
+        .login-error { color: var(--danger); font-size: 0.82rem; margin-top: 0.6rem; display: none; font-weight: 500; }
 
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 2rem 1.5rem;
-            border-radius: 16px;
-            text-align: center;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
+        /* Main App Interface */
+        #main-content { display: none; }
+        header { background: var(--primary); color: white; padding: 1.8rem 1rem; border-radius: 14px; text-align: center; margin-bottom: 2rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); position: relative; }
+        header h1 { font-size: 1.6rem; margin-bottom: 0.4rem; }
+        header p { font-size: 0.95rem; opacity: 0.9; }
+        .btn-logout { position: absolute; top: 1rem; right: 1rem; background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid rgba(255, 255, 255, 0.4); padding: 0.35rem 0.75rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; font-weight: 600; }
+        .btn-logout:hover { background: rgba(255, 255, 255, 0.3); }
 
-        header h1 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 0.4rem;
-            letter-spacing: -0.025em;
-        }
+        .category-header-bar { display: flex; justify-content: space-between; align-items: center; margin: 1.8rem 0 0.9rem 0; border-bottom: 2px solid var(--border); padding-bottom: 0.4rem; flex-wrap: wrap; gap: 0.6rem; }
+        .section-title { font-size: 1.15rem; color: var(--primary); font-weight: 700; margin: 0; }
+        .category-actions { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; }
+        .btn-cat-export { padding: 0.3rem 0.65rem; border-radius: 6px; font-size: 0.78rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.25rem; border: 1px solid var(--border); transition: all 0.15s ease; }
+        .btn-cat-group-export { background: #0284C7; color: white; border-color: #0284C7; }
+        .btn-cat-group-export:hover { background: #0369A1; }
+        .btn-cat-group-import { background: #475569; color: white; border-color: #475569; }
+        .btn-cat-group-import:hover { background: #334155; }
+        .btn-cat-rules { background: #F0F9FF; color: #0369A1; border-color: #BAE6FD; }
+        .btn-cat-rules:hover { background: #E0F2FE; }
+        .btn-cat-missed { background: #FFFBEB; color: #B45309; border-color: #FCD34D; }
+        .btn-cat-missed:hover { background: #FEF3C7; }
+        .btn-cat-flagged { background: #FFF1F2; color: var(--flag); border-color: #FECDD3; }
+        .btn-cat-flagged:hover { background: #FFE4E6; }
 
-        header p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            max-width: 650px;
-            margin: 0 auto;
-        }
+        .exam-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+        .exam-card { background: var(--card-bg); border: 1.5px solid var(--border); border-radius: 12px; padding: 1.1rem; text-decoration: none; color: var(--text); box-shadow: 0 2px 4px rgba(0,0,0,0.03); transition: all 0.2s ease; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; }
+        .exam-card:hover { border-color: var(--primary-light); background: #F0F9FF; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.06); }
+        .exam-card.special-missed-card { border: 2px solid #F59E0B; background: #FFFBEB; }
+        .exam-card.special-missed-card:hover { background: #FEF3C7; border-color: #D97706; }
+        .exam-card.special-flagged-card { border: 2px solid #E11D48; background: #FFF1F2; }
+        .exam-card.special-flagged-card:hover { background: #FFE4E6; border-color: #BE123C; }
 
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
+        .card-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.2rem; gap: 0.5rem; }
+        .exam-card h3 { font-size: 0.98rem; color: var(--primary); margin: 0; }
+        .exam-card p { font-size: 0.82rem; color: var(--text-muted); margin: 0.4rem 0 0.9rem 0; }
 
-        .subject-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 1.25rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
+        .score-display-badge { color: var(--success-dark); font-weight: 600; font-size: 0.92rem; background: #F0FDF4; padding: 0.15rem 0.5rem; border-radius: 6px; border: 1px solid #DCFCE7; white-space: nowrap; }
+        .score-display-badge.unattempted { color: var(--text-muted); font-weight: normal; font-size: 0.8rem; background: #F1F5F9; border-color: #E2E8F0; }
+        .score-display-badge.missed-badge { color: #B45309; background: #FEF3C7; border-color: #FDE68A; }
+        .score-display-badge.flagged-badge { color: #BE123C; background: #FFE4E6; border-color: #FECDD3; }
 
-        .subject-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-bottom: 0.75rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #F1F5F9;
-        }
+        .btn-launch { background: var(--primary); color: white; text-align: center; padding: 0.45rem; border-radius: 6px; font-size: 0.82rem; font-weight: 600; transition: all 0.2s ease; }
+        .exam-card:hover .btn-launch { background: var(--primary-light); }
+        .exam-card.special-missed-card .btn-launch { background: #D97706; }
+        .exam-card.special-missed-card:hover .btn-launch { background: #B45309; }
+        .exam-card.special-flagged-card .btn-launch { background: #E11D48; }
+        .exam-card.special-flagged-card:hover .btn-launch { background: #BE123C; }
 
-        .subject-title {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.15rem;
-            font-weight: 700;
-        }
-
-        .subject-card.torts .subject-title { color: var(--torts-color); }
-        .subject-card.contracts .subject-title { color: var(--contracts-color); }
-        .subject-card.criminal .subject-title { color: var(--criminal-color); }
-
-        .set-count {
-            background: #F1F5F9;
-            color: var(--text-muted);
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-
-        .exam-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            max-height: 520px;
-            overflow-y: auto;
-            padding-right: 0.25rem;
-        }
-
-        .exam-link {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #F8FAFC;
-            border: 1px solid var(--border);
-            padding: 0.65rem 0.9rem;
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text);
-            font-size: 0.88rem;
-            font-weight: 600;
-            transition: all 0.15s ease-in-out;
-        }
-
-        .exam-link:hover {
-            background: #F0F9FF;
-            border-color: #7DD3FC;
-            transform: translateX(3px);
-        }
-
-        .exam-link .arrow {
-            color: var(--text-muted);
-            font-weight: bold;
-            font-size: 0.8rem;
-        }
-
-        .exam-link:hover .arrow {
-            color: var(--primary);
-        }
-
-        footer {
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-        }
-
-        @media (max-width: 600px) {
-            body { padding: 1rem 0.5rem; }
-            header { padding: 1.5rem 1rem; }
-            header h1 { font-size: 1.4rem; }
-        }
+        .modal-box { display: none; background: white; border: 2px solid var(--primary); padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; margin-bottom: 2rem; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15); }
+        .modal-box.visible { display: block; }
+        .btn-modal-close { background: transparent; color: var(--text-muted); border: 1px solid var(--border); padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: all 0.15s ease; }
+        .btn-modal-close:hover { color: var(--danger); border-color: var(--danger); }
+        textarea { width: 100%; height: 280px; margin-top: 0.8rem; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border); font-family: monospace; font-size: 0.85rem; line-height: 1.5; }
+        .modal-btn-row { display: flex; gap: 0.6rem; margin-top: 0.8rem; flex-wrap: wrap; }
+        .btn-action-primary { background: var(--primary); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.88rem; transition: all 0.15s ease; }
+        .btn-action-primary:hover { background: var(--primary-light); }
+        footer { text-align: center; margin-top: 3rem; font-size: 0.8rem; color: var(--text-muted); padding-bottom: 1rem; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>California Baby Bar (FYLSX) Portal</h1>
-        <p>Comprehensive Multiple-Choice Practice Modules with Real-Time Analytics and Highlight Tools</p>
-    </header>
+    <input type="file" id="group-file-importer" accept=".json" style="display: none;" onchange="executeGroupFileImport(event)">
 
-    <main class="dashboard-grid">
-        <!-- TORTS SECTION -->
-        <section class="subject-card torts">
-            <div class="subject-header">
-                <div class="subject-title">
-                    <span>🛡️</span>
-                    <h2>Torts Exam Sets</h2>
-                </div>
-                <span class="set-count">Sets 1 – 20</span>
-            </div>
-            <div class="exam-list">
-                <a class="exam-link" href="BabyBar-Torts-01.html"><span>Torts Practice Set 01</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-02.html"><span>Torts Practice Set 02</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-03.html"><span>Torts Practice Set 03</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-04.html"><span>Torts Practice Set 04</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-05.html"><span>Torts Practice Set 05</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-06.html"><span>Torts Practice Set 06</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-07.html"><span>Torts Practice Set 07</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-08.html"><span>Torts Practice Set 08</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-09.html"><span>Torts Practice Set 09</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-10.html"><span>Torts Practice Set 10</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-11.html"><span>Torts Practice Set 11</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-12.html"><span>Torts Practice Set 12</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-13.html"><span>Torts Practice Set 13</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-14.html"><span>Torts Practice Set 14</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-15.html"><span>Torts Practice Set 15</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-16.html"><span>Torts Practice Set 16</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-17.html"><span>Torts Practice Set 17</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-18.html"><span>Torts Practice Set 18</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-19.html"><span>Torts Practice Set 19</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Torts-20.html"><span>Torts Practice Set 20</span><span class="arrow">→</span></a>
-            </div>
-        </section>
+    <div id="login-overlay">
+        <div class="login-card">
+            <h2>🔒 Student Access Required</h2>
+            <p>Please enter your access passcode to view the FYLSX practice suite.</p>
+            <form onsubmit="handleLogin(event)">
+                <input type="password" id="passcode-input" class="login-input" placeholder="Enter Passcode" autocomplete="current-password" autofocus required>
+                <button type="submit" class="btn-login">Unlock Exam Suite</button>
+                <div id="login-error" class="login-error">Incorrect passcode. Please try again.</div>
+            </form>
+        </div>
+    </div>
 
-        <!-- CONTRACTS SECTION -->
-        <section class="subject-card contracts">
-            <div class="subject-header">
-                <div class="subject-title">
-                    <span>📜</span>
-                    <h2>Contracts Exam Sets</h2>
-                </div>
-                <span class="set-count">Sets 1 – 39</span>
-            </div>
-            <div class="exam-list">
-                <a class="exam-link" href="BabyBar-Contracts-01.html"><span>Contracts Practice Set 01</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-02.html"><span>Contracts Practice Set 02</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-03.html"><span>Contracts Practice Set 03</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-04.html"><span>Contracts Practice Set 04</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-05.html"><span>Contracts Practice Set 05</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-06.html"><span>Contracts Practice Set 06</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-07.html"><span>Contracts Practice Set 07</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-08.html"><span>Contracts Practice Set 08</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-09.html"><span>Contracts Practice Set 09</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-10.html"><span>Contracts Practice Set 10</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-11.html"><span>Contracts Practice Set 11</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-12.html"><span>Contracts Practice Set 12</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-13.html"><span>Contracts Practice Set 13</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-14.html"><span>Contracts Practice Set 14</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-15.html"><span>Contracts Practice Set 15</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-16.html"><span>Contracts Practice Set 16</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-17.html"><span>Contracts Practice Set 17</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-18.html"><span>Contracts Practice Set 18</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-19.html"><span>Contracts Practice Set 19</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-20.html"><span>Contracts Practice Set 20</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-21.html"><span>Contracts Practice Set 21</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-22.html"><span>Contracts Practice Set 22</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-23.html"><span>Contracts Practice Set 23</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-24.html"><span>Contracts Practice Set 24</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-25.html"><span>Contracts Practice Set 25</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-26.html"><span>Contracts Practice Set 26</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-27.html"><span>Contracts Practice Set 27</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-28.html"><span>Contracts Practice Set 28</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-29.html"><span>Contracts Practice Set 29</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-30.html"><span>Contracts Practice Set 30</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-31.html"><span>Contracts Practice Set 31</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-32.html"><span>Contracts Practice Set 32</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-33.html"><span>Contracts Practice Set 33</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-34.html"><span>Contracts Practice Set 34</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-35.html"><span>Contracts Practice Set 35</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-36.html"><span>Contracts Practice Set 36</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-37.html"><span>Contracts Practice Set 37</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-38.html"><span>Contracts Practice Set 38</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-Contracts-39.html"><span>Contracts Practice Set 39</span><span class="arrow">→</span></a>
-            </div>
-        </section>
+    <div id="main-content">
+        <header>
+            <button class="btn-logout" onclick="handleLogout()">🔒 Log Out</button>
+            <h1>GoBabyBar Exam Center</h1>
+            <p>California First-Year Law Students' Examination (FYLSX) Preparation Suite</p>
+        </header>
 
-        <!-- CRIMINAL LAW SECTION -->
-        <section class="subject-card criminal">
-            <div class="subject-header">
-                <div class="subject-title">
-                    <span>⚖️</span>
-                    <h2>Criminal Law Exam Sets</h2>
-                </div>
-                <span class="set-count">Sets 1 – 28</span>
+        <div class="modal-box" id="category-modal-box">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h3 id="modal-title" style="color: var(--primary);">Category Export</h3>
+                <button class="btn-modal-close" onclick="closeCategoryModal()">✕ Close</button>
             </div>
-            <div class="exam-list">
-                <a class="exam-link" href="BabyBar-CriminalLaw-01.html"><span>Criminal Law Practice Set 01</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-02.html"><span>Criminal Law Practice Set 02</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-03.html"><span>Criminal Law Practice Set 03</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-04.html"><span>Criminal Law Practice Set 04</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-05.html"><span>Criminal Law Practice Set 05</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-06.html"><span>Criminal Law Practice Set 06</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-07.html"><span>Criminal Law Practice Set 07</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-08.html"><span>Criminal Law Practice Set 08</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-09.html"><span>Criminal Law Practice Set 09</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-10.html"><span>Criminal Law Practice Set 10</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-11.html"><span>Criminal Law Practice Set 11</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-12.html"><span>Criminal Law Practice Set 12</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-13.html"><span>Criminal Law Practice Set 13</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-14.html"><span>Criminal Law Practice Set 14</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-15.html"><span>Criminal Law Practice Set 15</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-16.html"><span>Criminal Law Practice Set 16</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-17.html"><span>Criminal Law Practice Set 17</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-18.html"><span>Criminal Law Practice Set 18</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-19.html"><span>Criminal Law Practice Set 19</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-20.html"><span>Criminal Law Practice Set 20</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-21.html"><span>Criminal Law Practice Set 21</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-22.html"><span>Criminal Law Practice Set 22</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-23.html"><span>Criminal Law Practice Set 23</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-24.html"><span>Criminal Law Practice Set 24</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-25.html"><span>Criminal Law Practice Set 25</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-26.html"><span>Criminal Law Practice Set 26</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-27.html"><span>Criminal Law Practice Set 27</span><span class="arrow">→</span></a>
-                <a class="exam-link" href="BabyBar-CriminalLaw-28.html"><span>Criminal Law Practice Set 28</span><span class="arrow">→</span></a>
+            <p id="modal-desc" style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.3rem;"></p>
+            <textarea id="modal-textarea" readonly></textarea>
+            <div class="modal-btn-row">
+                <button class="btn-action-primary" onclick="copyCategoryModalContent()">📋 Copy to Clipboard</button>
+                <button class="btn-cat-export btn-cat-rules" id="btn-toggle-json" onclick="toggleExportFormat()">🔀 Switch to JSON Format</button>
             </div>
-        </section>
-    </main>
+        </div>
 
-    <footer>
-        <p>&copy; 2026 GoBabyBar Exam Suite. California First-Year Law Students' Examination (FYLSX) Practice Portal.</p>
-    </footer>
+        <!-- TORTS -->
+        <div class="category-header-bar">
+            <div class="section-title">⚖️ Torts Practice Sets (Sets 01–34)</div>
+            <div class="category-actions">
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('torts', 'Torts', 34)">📤 Export</button>
+                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('torts', 'Torts', 34)">📥 Import</button>
+                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('torts', 'Torts', 34)">📋 Export Rules</button>
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'torts', 'Torts', 'Torts', 34)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'torts', 'Torts', 'Torts', 34)">🚩 Compile Flagged</button>
+            </div>
+        </div>
+        <div class="exam-grid" id="torts-grid"></div>
 
+        <!-- CRIMINAL LAW -->
+        <div class="category-header-bar">
+            <div class="section-title">🏛️ Criminal Law Practice Sets (Sets 01–28)</div>
+            <div class="category-actions">
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('criminal', 'Criminal Law', 28)">📤 Export</button>
+                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('criminal', 'Criminal Law', 28)">📥 Import</button>
+                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('criminal', 'Criminal Law', 28)">📋 Export Rules</button>
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 28)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 28)">🚩 Compile Flagged</button>
+            </div>
+        </div>
+        <div class="exam-grid" id="crim-grid"></div>
+
+        <!-- CONTRACTS -->
+        <div class="category-header-bar">
+            <div class="section-title">📜 Contracts Practice Sets (Sets 01–39)</div>
+            <div class="category-actions">
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('contracts', 'Contracts', 39)">📤 Export</button>
+                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('contracts', 'Contracts', 39)">📥 Import</button>
+                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('contracts', 'Contracts', 39)">📋 Export Rules</button>
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'contracts', 'Contracts', 'Contracts', 39)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'contracts', 'Contracts', 'Contracts', 39)">🚩 Compile Flagged</button>
+            </div>
+        </div>
+        <div class="exam-grid" id="contracts-grid"></div>
+
+        <!-- MIXED SETS -->
+        <div class="category-header-bar">
+            <div class="section-title">📝 Mixed Subject Sets (Sets 01–40)</div>
+            <div class="category-actions">
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('mixed', 'Mixed Subjects', 40)">📤 Export</button>
+                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('mixed', 'Mixed Subjects', 40)">📥 Import</button>
+                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('mixed', 'Mixed Subjects', 40)">📋 Export Rules</button>
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 40)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 40)">🚩 Compile Flagged</button>
+            </div>
+        </div>
+        <div class="exam-grid" id="mixed-grid"></div>
+
+        <footer>gobabybar.com • Built for iPad & Offline Study</footer>
+    </div>
+
+    <script>
+        const CORRECT_PASSCODE = "DibaNasr#2026";
+        const AUTH_SESSION_KEY = "gobabybar_auth_session";
+
+        let currentExportDataText = "";
+        let currentExportDataJSON = "";
+        let isShowingJSON = false;
+        let activeImportCategory = null;
+
+        function getSetPercentage(categoryKey, setNumber) {
+            const padNum = String(setNumber).padStart(2, '0');
+            const possibleHistoryKeys = [ `fylsx_history_${categoryKey}_set${setNumber}`, `fylsx_history_${categoryKey}_set${padNum}` ];
+            for (let key of possibleHistoryKeys) {
+                const historyData = localStorage.getItem(key);
+                if (historyData) {
+                    try {
+                        const parsed = JSON.parse(historyData);
+                        if (Array.isArray(parsed) && parsed.length > 0 && parsed[parsed.length - 1].percentage !== undefined) { return parsed[parsed.length - 1].percentage; }
+                    } catch (e) {}
+                }
+            }
+            const directScore = localStorage.getItem(`fylsx_${categoryKey}_set${setNumber}_score_v25`);
+            const directAnswers = localStorage.getItem(`fylsx_${categoryKey}_set${setNumber}_answers_v25`);
+            if (directScore !== null && directAnswers !== null) {
+                try {
+                    const ansCount = Object.keys(JSON.parse(directAnswers)).length;
+                    if (ansCount > 0) return Math.round((parseInt(directScore, 10) / ansCount) * 100);
+                } catch (e) {}
+            }
+            return null;
+        }
+
+        function renderExamSection(gridId, categoryKey, filePrefix, displayName, totalSets, defaultSubtitle) {
+            const container = document.getElementById(gridId);
+            if (!container) return;
+            let html = "";
+
+            // 1. MISSED CARD (Gold)
+            const missedSetData = localStorage.getItem(`fylsx_${categoryKey}_missed_set_exam_data`);
+            let missedCount = 0; let missedScoreHtml = `<span class="score-display-badge unattempted">Not Compiled</span>`;
+            if (missedSetData) {
+                try {
+                    const parsedMissed = JSON.parse(missedSetData);
+                    if (Array.isArray(parsedMissed)) {
+                        missedCount = parsedMissed.length; missedScoreHtml = `<span class="score-display-badge missed-badge">${missedCount} Qs</span>`;
+                        const directScore = localStorage.getItem(`fylsx_${categoryKey}_setmissed_score_v25`);
+                        const directAnswers = localStorage.getItem(`fylsx_${categoryKey}_setmissed_answers_v25`);
+                        if (directScore !== null && directAnswers !== null) {
+                            const ansCount = Object.keys(JSON.parse(directAnswers)).length;
+                            if (ansCount > 0) { const p = Math.round((parseInt(directScore, 10) / ansCount) * 100); missedScoreHtml = `<span class="score-display-badge">${p}% (${ansCount}/${missedCount})</span>`; }
+                        }
+                    }
+                } catch (e) {}
+            }
+            html += `
+                <a href="BabyBar-Custom-Runner.html?cat=${categoryKey}&type=missed&title=${encodeURIComponent(displayName)}" class="exam-card special-missed-card" title="Practice Missed Questions">
+                    <div>
+                        <div class="card-header-row">
+                            <h3>🔥 ${displayName} - All Missed</h3>
+                            ${missedScoreHtml}
+                        </div>
+                        <p>Active custom drill set compiled from storage.</p>
+                    </div>
+                    <div class="btn-launch">Practice Missed Set (${missedCount} Qs) →</div>
+                </a>
+            `;
+
+            // 2. FLAGGED CARD (Red)
+            const flaggedSetData = localStorage.getItem(`fylsx_${categoryKey}_flagged_set_exam_data`);
+            let flaggedCount = 0; let flaggedScoreHtml = `<span class="score-display-badge unattempted">Not Compiled</span>`;
+            if (flaggedSetData) {
+                try {
+                    const parsedFlagged = JSON.parse(flaggedSetData);
+                    if (Array.isArray(parsedFlagged)) {
+                        flaggedCount = parsedFlagged.length; flaggedScoreHtml = `<span class="score-display-badge flagged-badge">${flaggedCount} Qs</span>`;
+                        const directScore = localStorage.getItem(`fylsx_${categoryKey}_setflagged_score_v25`);
+                        const directAnswers = localStorage.getItem(`fylsx_${categoryKey}_setflagged_answers_v25`);
+                        if (directScore !== null && directAnswers !== null) {
+                            const ansCount = Object.keys(JSON.parse(directAnswers)).length;
+                            if (ansCount > 0) { const p = Math.round((parseInt(directScore, 10) / ansCount) * 100); flaggedScoreHtml = `<span class="score-display-badge">${p}% (${ansCount}/${flaggedCount})</span>`; }
+                        }
+                    }
+                } catch (e) {}
+            }
+            html += `
+                <a href="BabyBar-Custom-Runner.html?cat=${categoryKey}&type=flagged&title=${encodeURIComponent(displayName)}" class="exam-card special-flagged-card" title="Practice Flagged Questions">
+                    <div>
+                        <div class="card-header-row">
+                            <h3>🚩 ${displayName} - All Flagged</h3>
+                            ${flaggedScoreHtml}
+                        </div>
+                        <p>Active custom drill set compiled from storage.</p>
+                    </div>
+                    <div class="btn-launch" style="background:#E11D48;">Practice Flagged Set (${flaggedCount} Qs) →</div>
+                </a>
+            `;
+
+            // 3. STANDARD SETS (Routing to Master Runner)
+            for (let i = 1; i <= totalSets; i++) {
+                const padNum = String(i).padStart(2, '0');
+                const percent = getSetPercentage(categoryKey, i);
+                let scoreBadgeHtml = percent !== null ? `<span class="score-display-badge">${percent}%</span>` : `<span class="score-display-badge unattempted">—</span>`;
+
+                html += `
+                    <a href="Exam-Runner.html?cat=${categoryKey}&prefix=${filePrefix}&set=${padNum}&title=${encodeURIComponent(displayName)}" class="exam-card">
+                        <div>
+                            <div class="card-header-row">
+                                <h3>${displayName} - Set ${padNum}</h3>
+                                ${scoreBadgeHtml}
+                            </div>
+                            <p>${defaultSubtitle}</p>
+                        </div>
+                        <div class="btn-launch">Launch Exam →</div>
+                    </a>
+                `;
+            }
+            container.innerHTML = html;
+        }
+
+        function populateAllExams() {
+            renderExamSection("torts-grid", "torts", "Torts", "Torts", 34, "Targeted Practice & Rule Analysis");
+            renderExamSection("crim-grid", "criminal", "CriminalLaw", "Criminal Law", 28, "Crimes, Defenses & Analytics");
+            renderExamSection("contracts-grid", "contracts", "Contracts", "Contracts", 39, "Formation, Breach & Remedies");
+            renderExamSection("mixed-grid", "mixed", "Mixed", "Mixed Exam", 40, "Multi-Subject FYLSX Practice Exam");
+        }
+
+        // COMPILE MISSED QUESTIONS (Overwrites Storage - Now fetching .js files)
+        async function generateAllMissedSet(event, categoryKey, filePrefix, categoryTitle, totalSets) {
+            const proceed = confirm(`This will compile your currently missed questions and OVERWRITE your existing 'Missed Questions' storage bank for ${categoryTitle}. Proceed?`);
+            if (!proceed) return;
+
+            const btn = event.currentTarget; const originalBtnText = btn.innerHTML; btn.innerHTML = "⏳ Compiling..."; btn.disabled = true;
+            let collectedMissedQuestions = []; let totalAnsweredAcrossSets = 0;
+
+            for (let i = 1; i <= totalSets; i++) {
+                const padNum = String(i).padStart(2, '0'); let foundAnswers = null;
+                const savedAns = localStorage.getItem(`fylsx_${categoryKey}_set${padNum}_answers_v25`) || localStorage.getItem(`fylsx_${categoryKey}_set${i}_answers_v25`);
+                if (savedAns) { try { foundAnswers = JSON.parse(savedAns); } catch (e) {} }
+
+                if (foundAnswers && Object.keys(foundAnswers).length > 0) {
+                    totalAnsweredAcrossSets += Object.keys(foundAnswers).length;
+                    try {
+                        let response = await fetch(`BabyBar-${filePrefix}-${padNum}.js`);
+                        if (!response.ok) response = await fetch(`BabyBar-${filePrefix.toLowerCase()}-${padNum}.js`);
+
+                        if (response.ok) {
+                            const jsText = await response.text();
+                            const match = jsText.match(/examData\s*=\s*(\[\s*\{[\s\S]*?\}\s*\])\s*(?:;|\n|$)/);
+                            if (match && match[1]) {
+                                const fileExamData = new Function('return ' + match[1])();
+                                Object.keys(foundAnswers).forEach(idxStr => {
+                                    const qIdx = Number(idxStr); const qObj = fileExamData[qIdx];
+                                    if (qObj && foundAnswers[qIdx] !== qObj.ans) {
+                                        collectedMissedQuestions.push({ ...qObj, originalSet: `Set ${padNum}`, originalSetIndex: i, id: collectedMissedQuestions.length + 1 });
+                                    }
+                                });
+                            }
+                        }
+                    } catch (err) { console.warn(`Fetch blocked for Set ${padNum}. Run local server.`); }
+                }
+            }
+            btn.innerHTML = originalBtnText; btn.disabled = false;
+            
+            if (totalAnsweredAcrossSets === 0) { alert(`No answers found in storage for ${categoryTitle}.`); return; }
+            if (collectedMissedQuestions.length === 0) { alert(`Great news! You got 100% correct in ${categoryTitle}. No missed questions to compile.`); return; }
+
+            localStorage.setItem(`fylsx_${categoryKey}_missed_set_exam_data`, JSON.stringify(collectedMissedQuestions));
+            ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"].forEach(p => localStorage.removeItem(`fylsx_${categoryKey}_setmissed_${p}_v25`));
+            populateAllExams();
+            alert(`✅ Successfully compiled ${collectedMissedQuestions.length} missed questions!\nThe gold card has been updated on your dashboard.`);
+        }
+
+        // COMPILE FLAGGED QUESTIONS (Overwrites Storage - Now fetching .js files)
+        async function generateAllFlaggedSet(event, categoryKey, filePrefix, categoryTitle, totalSets) {
+            const proceed = confirm(`This will compile your currently flagged questions and OVERWRITE your existing 'Flagged Questions' storage bank for ${categoryTitle}. Proceed?`);
+            if (!proceed) return;
+
+            const btn = event.currentTarget; const originalBtnText = btn.innerHTML; btn.innerHTML = "⏳ Compiling..."; btn.disabled = true;
+            let collectedFlaggedQuestions = []; let totalFlagsAcrossSets = 0;
+
+            for (let i = 1; i <= totalSets; i++) {
+                const padNum = String(i).padStart(2, '0'); let foundFlags = null;
+                const savedFlags = localStorage.getItem(`fylsx_${categoryKey}_set${padNum}_flags_v25`) || localStorage.getItem(`fylsx_${categoryKey}_set${i}_flags_v25`);
+                if (savedFlags) { try { foundFlags = JSON.parse(savedFlags); } catch (e) {} }
+
+                if (foundFlags && Object.values(foundFlags).some(val => val === true)) {
+                    totalFlagsAcrossSets += Object.values(foundFlags).filter(val => val === true).length;
+                    try {
+                        let response = await fetch(`BabyBar-${filePrefix}-${padNum}.js`);
+                        if (!response.ok) response = await fetch(`BabyBar-${filePrefix.toLowerCase()}-${padNum}.js`);
+
+                        if (response.ok) {
+                            const jsText = await response.text();
+                            const match = jsText.match(/examData\s*=\s*(\[\s*\{[\s\S]*?\}\s*\])\s*(?:;|\n|$)/);
+                            if (match && match[1]) {
+                                const fileExamData = new Function('return ' + match[1])();
+                                Object.keys(foundFlags).forEach(idxStr => {
+                                    const qIdx = Number(idxStr); const qObj = fileExamData[qIdx];
+                                    if (qObj && foundFlags[qIdx] === true) {
+                                        collectedFlaggedQuestions.push({ ...qObj, originalSet: `Set ${padNum}`, originalSetIndex: i, id: collectedFlaggedQuestions.length + 1 });
+                                    }
+                                });
+                            }
+                        }
+                    } catch (err) { console.warn(`Fetch blocked for Set ${padNum}. Run local server.`); }
+                }
+            }
+            btn.innerHTML = originalBtnText; btn.disabled = false;
+            
+            if (totalFlagsAcrossSets === 0) { alert(`No flagged questions found in storage for ${categoryTitle}.`); return; }
+
+            localStorage.setItem(`fylsx_${categoryKey}_flagged_set_exam_data`, JSON.stringify(collectedFlaggedQuestions));
+            ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"].forEach(p => localStorage.removeItem(`fylsx_${categoryKey}_setflagged_${p}_v25`));
+            populateAllExams();
+            alert(`✅ Successfully compiled ${collectedFlaggedQuestions.length} flagged questions!\nThe red card has been updated on your dashboard.`);
+        }
+
+        // Export/Import & Auth logic
+        function checkAuth() {
+            const isVerified = sessionStorage.getItem(AUTH_SESSION_KEY);
+            if (isVerified === "true") { document.getElementById("login-overlay").style.display = "none"; document.getElementById("main-content").style.display = "block"; populateAllExams(); } 
+            else { document.getElementById("login-overlay").style.display = "flex"; document.getElementById("main-content").style.display = "none"; }
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            if (document.getElementById("passcode-input").value.trim() === CORRECT_PASSCODE) { sessionStorage.setItem(AUTH_SESSION_KEY, "true"); document.getElementById("login-error").style.display = "none"; checkAuth(); } 
+            else { document.getElementById("login-error").style.display = "block"; document.getElementById("passcode-input").select(); }
+        }
+        function handleLogout() { sessionStorage.removeItem(AUTH_SESSION_KEY); document.getElementById("passcode-input").value = ""; checkAuth(); }
+        window.addEventListener("DOMContentLoaded", checkAuth);
+
+        function exportGroupJSON(categoryKey, categoryTitle, totalSets) {
+            const storageItems = {}; let setsWithData = 0;
+            const versions = ["v25", "v100", "v23", "v24"];
+            const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"];
+            
+            for (let i = 1; i <= totalSets; i++) {
+                let hasSetData = false; const padNum = String(i).padStart(2, '0');
+                versions.forEach(v => prefixes.forEach(p => {
+                    [ `fylsx_${categoryKey}_set${i}_${p}_${v}`, `fylsx_${categoryKey}_set${padNum}_${p}_${v}` ].forEach(k => {
+                        const val = localStorage.getItem(k); if (val !== null) { storageItems[k] = val; hasSetData = true; }
+                    });
+                }));
+                [ `fylsx_history_${categoryKey}_set${i}`, `fylsx_history_${categoryKey}_set${padNum}` ].forEach(hk => {
+                    const hv = localStorage.getItem(hk); if (hv !== null) { storageItems[hk] = hv; hasSetData = true; }
+                });
+                if (hasSetData) setsWithData++;
+            }
+
+            ["missed", "flagged"].forEach(st => {
+                const snap = localStorage.getItem(`fylsx_${categoryKey}_${st}_set_exam_data`);
+                if (snap !== null) storageItems[`fylsx_${categoryKey}_${st}_set_exam_data`] = snap;
+                versions.forEach(v => prefixes.forEach(p => {
+                    const key = `fylsx_${categoryKey}_set${st}_${p}_${v}`;
+                    const val = localStorage.getItem(key); if (val !== null) storageItems[key] = val;
+                }));
+                const hKey = `fylsx_history_${categoryKey}_set${st}`;
+                if (localStorage.getItem(hKey)) storageItems[hKey] = localStorage.getItem(hKey);
+            });
+
+            const exportPayload = { app: "GoBabyBar Exam Center", version: "2.1", exportType: "group_complete_backup", categoryKey, categoryTitle, totalSetsScanned: totalSets, setsWithRecordedData: setsWithData, exportTimestamp: new Date().toISOString(), data: storageItems };
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportPayload, null, 2));
+            const downloadAnchor = document.createElement('a'); downloadAnchor.setAttribute("href", dataStr); downloadAnchor.setAttribute("download", `GoBabyBar_${categoryTitle.replace(/\s+/g, '_')}_Full_Backup_${new Date().toISOString().slice(0,10)}.json`);
+            document.body.appendChild(downloadAnchor); downloadAnchor.click(); downloadAnchor.remove();
+        }
+
+        function triggerGroupJSONImport(categoryKey, categoryTitle, totalSets) { activeImportCategory = { categoryKey, categoryTitle, totalSets }; document.getElementById("group-file-importer").value = ""; document.getElementById("group-file-importer").click(); }
+        
+        function executeGroupFileImport(event) {
+            const file = event.target.files[0]; if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const parsed = JSON.parse(e.target.result);
+                    if (!parsed.data) { alert("Invalid backup file."); return; }
+                    const targetCat = activeImportCategory ? activeImportCategory.categoryKey : (parsed.categoryKey || "torts");
+                    const targetSets = activeImportCategory ? activeImportCategory.totalSets : 20;
+                    const versions = ["v25", "v100", "v23", "v24"];
+                    const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"];
+
+                    for (let i = 1; i <= targetSets; i++) {
+                        const padNum = String(i).padStart(2, '0');
+                        versions.forEach(v => prefixes.forEach(p => { localStorage.removeItem(`fylsx_${targetCat}_set${i}_${p}_${v}`); localStorage.removeItem(`fylsx_${targetCat}_set${padNum}_${p}_${v}`); }));
+                        localStorage.removeItem(`fylsx_history_${targetCat}_set${i}`); localStorage.removeItem(`fylsx_history_${targetCat}_set${padNum}`);
+                    }
+                    ["missed", "flagged"].forEach(st => {
+                        localStorage.removeItem(`fylsx_${targetCat}_${st}_set_exam_data`);
+                        versions.forEach(v => prefixes.forEach(p => localStorage.removeItem(`fylsx_${targetCat}_set${st}_${p}_${v}`)));
+                        localStorage.removeItem(`fylsx_history_${targetCat}_set${st}`);
+                    });
+
+                    let keysImported = 0; Object.keys(parsed.data).forEach(k => { localStorage.setItem(k, parsed.data[k]); keysImported++; });
+                    populateAllExams(); alert(`✅ Data successfully imported (${keysImported} items).\n\nYour original sets, Missed sets, and Flagged sets have all been synced!`);
+                } catch (err) { alert("Error parsing JSON backup file: " + err.message); }
+            };
+            reader.readAsText(file);
+        }
+
+        function closeCategoryModal() { document.getElementById("category-modal-box").classList.remove("visible"); }
+        function copyCategoryModalContent() { document.getElementById("modal-textarea").select(); document.execCommand("copy"); alert("Copied to clipboard!"); }
+        function toggleExportFormat() {
+            const textarea = document.getElementById("modal-textarea"); const btn = document.getElementById("btn-toggle-json");
+            if (isShowingJSON) { textarea.value = currentExportDataText; btn.textContent = "🔀 Switch to JSON Format"; isShowingJSON = false; } 
+            else { textarea.value = currentExportDataJSON; btn.textContent = "🔀 Switch to Formatted Table"; isShowingJSON = true; }
+        }
+    </script>
 </body>
 </html>
