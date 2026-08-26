@@ -145,7 +145,7 @@
             <div class="section-title">⚖️ Torts Practice Sets (Sets 01–34)</div>
             <div class="category-actions">
                 <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('torts', 'Torts', 34)">📤 Export</button>
-                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('torts', 'Torts', 34)">📥 Import</button>
+                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('torts', 'Torts', 34)">📥 Import</button>
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('torts', 'Torts', 34)">📋 Export Rules</button>
                 <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'torts', 'Torts', 'Torts', 34)">❌ Compile Missed</button>
                 <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'torts', 'Torts', 'Torts', 34)">🚩 Compile Flagged</button>
@@ -158,7 +158,7 @@
             <div class="section-title">🏛️ Criminal Law Practice Sets (Sets 01–28)</div>
             <div class="category-actions">
                 <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('criminal', 'Criminal Law', 28)">📤 Export</button>
-                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('criminal', 'Criminal Law', 28)">📥 Import</button>
+                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('criminal', 'Criminal Law', 28)">📥 Import</button>
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('criminal', 'Criminal Law', 28)">📋 Export Rules</button>
                 <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 28)">❌ Compile Missed</button>
                 <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 28)">🚩 Compile Flagged</button>
@@ -171,7 +171,7 @@
             <div class="section-title">📜 Contracts Practice Sets (Sets 01–39)</div>
             <div class="category-actions">
                 <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('contracts', 'Contracts', 39)">📤 Export</button>
-                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('contracts', 'Contracts', 39)">📥 Import</button>
+                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('contracts', 'Contracts', 39)">📥 Import</button>
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('contracts', 'Contracts', 39)">📋 Export Rules</button>
                 <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'contracts', 'Contracts', 'Contracts', 39)">❌ Compile Missed</button>
                 <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'contracts', 'Contracts', 'Contracts', 39)">🚩 Compile Flagged</button>
@@ -184,7 +184,7 @@
             <div class="section-title">📝 Mixed Subject Sets (Sets 01–40)</div>
             <div class="category-actions">
                 <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('mixed', 'Mixed Subjects', 40)">📤 Export</button>
-                <button class="btn-cat-export btn-cat-group-import" onclick="triggerGroupJSONImport('mixed', 'Mixed Subjects', 40)">📥 Import</button>
+                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('mixed', 'Mixed Subjects', 40)">📥 Import</button>
                 <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('mixed', 'Mixed Subjects', 40)">📋 Export Rules</button>
                 <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 40)">❌ Compile Missed</button>
                 <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 40)">🚩 Compile Flagged</button>
@@ -292,18 +292,25 @@
                 </a>
             `;
 
-            // 3. TORTS RULES CARD (Blue - shown for Torts section)
-            if (categoryKey === "torts") {
+            // 3. RULES PDF CARD (Blue)
+            const rulesPdfMap = {
+                torts: { file: "Torts-Rules.pdf", label: "Torts Rules" },
+                criminal: { file: "Criminal-Rules.pdf", label: "Criminal Law Rules" },
+                contracts: { file: "Contracts-Rules.pdf", label: "Contracts Rules" }
+            };
+
+            if (rulesPdfMap[categoryKey]) {
+                const ruleInfo = rulesPdfMap[categoryKey];
                 html += `
-                    <a href="Torts-Rules.pdf" target="_blank" class="exam-card special-rules-card" title="View Torts Rules PDF">
+                    <a href="${ruleInfo.file}" target="_blank" class="exam-card special-rules-card" title="View ${ruleInfo.label} PDF">
                         <div>
                             <div class="card-header-row">
-                                <h3 style="color: #0284C7;">📘 Torts Rules</h3>
+                                <h3 style="color: #0284C7;">📘 ${ruleInfo.label}</h3>
                                 <span class="score-display-badge rules-badge">PDF Reference</span>
                             </div>
                             <p>Comprehensive black letter law and analysis guide.</p>
                         </div>
-                        <div class="btn-launch">Open Torts Rules (PDF) →</div>
+                        <div class="btn-launch">Open ${ruleInfo.label} (PDF) →</div>
                     </a>
                 `;
             }
