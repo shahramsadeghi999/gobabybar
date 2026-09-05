@@ -11,7 +11,7 @@ const examData = [
             "The defendant's assignment of the plaintiff's contract to the pilot did not impose an additional burden on the plaintiff since there was no change in price."
         ],
         ans: 2,
-        exp: "A transfer of contract duties is called a delegation. In general, contract duties are delegable so long as delegation would not prevent the obligee from getting what he or she bargained for[cite: 32]. Duties that involve personal services (i.e., that depend upon the obligor's special skills, training, or expertise) are not delegable[cite: 32]. However, the fact that the defendant did not herself participate in the activity indicates that the plaintiff did not bargain for her special skills anyway[cite: 32]. Thus, the delegation to the pilot would not deprive the plaintiff of what he bargained for, making it a valid delegation[cite: 32]."
+        exp: "A transfer of contract duties is called a delegation. In general, contract duties are delegable so long as delegation would not prevent the obligee from getting what he or she bargained for. Duties that involve personal services (i.e., that depend upon the obligor's special skills, training, or expertise) are not delegable. However, the fact that the defendant did not herself participate in the activity indicates that the plaintiff did not bargain for her special skills anyway. Thus, the delegation to the pilot would not deprive the plaintiff of what he bargained for, making it a valid delegation."
     },
     {
         id: 2,
@@ -25,7 +25,7 @@ const examData = [
             "The assets that the corporation offered to turn over to the bank on May 11 were sufficient to repay the loan."
         ],
         ans: 1,
-        exp: "The Statute of Frauds requires a promise to answer for the debt of another (a suretyship) to be in writing[cite: 32]. Since the shareholder's promise was to pay the debt of the corporation if the corporation defaulted, it falls within the Statute of Frauds and would be unenforceable over the shareholder's objection if it was not in writing[cite: 32]. Thus, establishing that it was an oral promise provides the shareholder with a strong defense[cite: 32]."
+        exp: "The Statute of Frauds requires a promise to answer for the debt of another (a suretyship) to be in writing. Since the shareholder's promise was to pay the debt of the corporation if the corporation defaulted, it falls within the Statute of Frauds and would be unenforceable over the shareholder's objection if it was not in writing. Thus, establishing that it was an oral promise provides the shareholder with a strong defense."
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ const examData = [
             "A prohibition against assignment of a leasehold interest is a restraint against alienation."
         ],
         ans: 0,
-        exp: "Novation is the substitution by mutual consent of a third person for a party to a contract, completely releasing the original party from liability[cite: 32]. By assigning to the woman, the tenant agreed to substitute the woman for him[cite: 32]. It may be argued that by accepting rent from the woman with the knowledge that the tenant had assigned to her, the landlord consented to the substitution of the woman for the tenant, effecting a novation[cite: 32]. Although it is not certain a court would come to that conclusion, it is the only listed argument that could possibly completely discharge the tenant's secondary liability[cite: 32]."
+        exp: "Novation is the substitution by mutual consent of a third person for a party to a contract, completely releasing the original party from liability. By assigning to the woman, the tenant agreed to substitute the woman for him. It may be argued that by accepting rent from the woman with the knowledge that the tenant had assigned to her, the landlord consented to the substitution of the woman for the tenant, effecting a novation. Although it is not certain a court would come to that conclusion, it is the only listed argument that could possibly completely discharge the tenant's secondary liability."
     },
     {
         id: 4,
@@ -53,7 +53,7 @@ const examData = [
             "The publisher's promise to hire the plaintiff for one year was given in return for the low rate that the defendant gave him."
         ],
         ans: 0,
-        exp: "A promise to make a gift is usually unenforceable for lack of consideration[cite: 32]. However, once a gift has been completed, the donee's rights do not depend on the donor's promise, and the executed gift creates an irrevocable right[cite: 32]. Because the defendant actually obtained the publisher's binding promise to employ the plaintiff (making her an intended donee beneficiary), the gift of that contract right was completed and delivered[cite: 32]. Therefore, the plaintiff can argue that consideration is irrelevant because it was a completed gift of a third-party contract right that had already vested due to her detrimental reliance[cite: 32]."
+        exp: "A promise to make a gift is usually unenforceable for lack of consideration. However, once a gift has been completed, the donee's rights do not depend on the donor's promise, and the executed gift creates an irrevocable right. Because the defendant actually obtained the publisher's binding promise to employ the plaintiff (making her an intended donee beneficiary), the gift of that contract right was completed and delivered. Therefore, the plaintiff can argue that consideration is irrelevant because it was a completed gift of a third-party contract right that had already vested due to her detrimental reliance."
     },
     {
         id: 5,
@@ -67,7 +67,7 @@ const examData = [
             "No, because when the buyer tendered payment, she knew that the seller had already sold the painting."
         ],
         ans: 3,
-        exp: "An offer terminates when the offeree learns from a reliable source that the offeror has acted in a manner fundamentally inconsistent with the offer (indirect revocation)[cite: 32]. When the buyer learned from the newspaper that the seller had sold the unique painting to someone else, the seller's offer terminated, depriving the buyer of the power to accept it[cite: 32]. (The promise to hold it open was not a firm offer because the seller was not a merchant, and it lacked consideration to be an option contract)[cite: 32]."
+        exp: "An offer terminates when the offeree learns from a reliable source that the offeror has acted in a manner fundamentally inconsistent with the offer (indirect revocation). When the buyer learned from the newspaper that the seller had sold the unique painting to someone else, the seller's offer terminated, depriving the buyer of the power to accept it. (The promise to hold it open was not a firm offer because the seller was not a merchant, and it lacked consideration to be an option contract)."
     },
     {
         id: 6,
@@ -81,7 +81,7 @@ const examData = [
             "Yes, to explain the meaning of the term 'rock lurgid' as used in the contract."
         ],
         ans: 3,
-        exp: "UCC § 2-202 provides that even a completely integrated writing may be explained or supplemented by evidence of usage of trade[cite: 32]. Usage of trade is a practice or method of dealing regularly observed in a place, vocation, or trade[cite: 32]. The seller's testimony that scmods is referred to as 'rock lurgid' in the fish industry is admissible specifically to explain the meaning of that ambiguous trade term used in the contract[cite: 32]."
+        exp: "UCC § 2-202 provides that even a completely integrated writing may be explained or supplemented by evidence of usage of trade. Usage of trade is a practice or method of dealing regularly observed in a place, vocation, or trade. The seller's testimony that scmods is referred to as 'rock lurgid' in the fish industry is admissible specifically to explain the meaning of that ambiguous trade term used in the contract."
     },
     {
         id: 7,
@@ -95,7 +95,7 @@ const examData = [
             "The plaintiff was not an intended third-party beneficiary of the contract between her father and the defendant."
         ],
         ans: 3,
-        exp: "To enforce a contract, a third party must be an 'intended' beneficiary. If the contract does not require performance to be rendered directly to the third party, they are typically deemed a mere 'incidental' beneficiary with no enforcement rights[cite: 32]. Here, the builder was contracted to build the house on the father's lot for the father; the father would subsequently deed it to the daughter[cite: 32]. Because the builder's direct contractual performance ran strictly to the father (the owner of the lot), the builder can effectively argue the daughter was not an intended beneficiary of the construction contract itself[cite: 32]."
+        exp: "To enforce a contract, a third party must be an 'intended' beneficiary. If the contract does not require performance to be rendered directly to the third party, they are typically deemed a mere 'incidental' beneficiary with no enforcement rights. Here, the builder was contracted to build the house on the father's lot for the father; the father would subsequently deed it to the daughter. Because the builder's direct contractual performance ran strictly to the father (the owner of the lot), the builder can effectively argue the daughter was not an intended beneficiary of the construction contract itself."
     },
     {
         id: 8,
@@ -109,7 +109,7 @@ const examData = [
             "Yes, because the second buyer's letter was not received by the storeowner until after January 15."
         ],
         ans: 1,
-        exp: "An offer creates the power of acceptance. To be an offer, the recipient must reasonably believe that only their assent is necessary to form a binding contract[cite: 32]. Because the storeowner's letter explicitly stated it was being sent to 'four possible buyers' for a single unique ring, it must have been obvious that someone else might purchase it first, making it a mere invitation to negotiate rather than a binding offer[cite: 32]. Consequently, the first buyer's letter was an offer, which the storeowner simply chose not to accept[cite: 32]."
+        exp: "An offer creates the power of acceptance. To be an offer, the recipient must reasonably believe that only their assent is necessary to form a binding contract. Because the storeowner's letter explicitly stated it was being sent to 'four possible buyers' for a single unique ring, it must have been obvious that someone else might purchase it first, making it a mere invitation to negotiate rather than a binding offer. Consequently, the first buyer's letter was an offer, which the storeowner simply chose not to accept."
     },
     {
         id: 9,
@@ -123,7 +123,7 @@ const examData = [
             "No, because requirements contracts are not assignable without consent of the purchaser."
         ],
         ans: 2,
-        exp: "Under UCC § 2-609, when a party has reasonable grounds for insecurity, they may demand adequate assurances of due performance and suspend their own performance until received[cite: 32]. Furthermore, UCC § 2-210 specifically provides that a delegation of contract duties automatically supplies reasonable grounds for insecurity[cite: 32]. Because the business was sold to the plaintiff, the defendant justifiably demanded assurances, and the plaintiff's failure to furnish them constituted a repudiation of the contract[cite: 32]."
+        exp: "Under UCC § 2-609, when a party has reasonable grounds for insecurity, they may demand adequate assurances of due performance and suspend their own performance until received. Furthermore, UCC § 2-210 specifically provides that a delegation of contract duties automatically supplies reasonable grounds for insecurity. Because the business was sold to the plaintiff, the defendant justifiably demanded assurances, and the plaintiff's failure to furnish them constituted a repudiation of the contract."
     },
     {
         id: 10,
@@ -137,7 +137,7 @@ const examData = [
             "The daughter is not entitled to collect anything from either party."
         ],
         ans: 3,
-        exp: "The daughter is an intended donee third-party beneficiary of the original contract[cite: 32]. However, the original contracting parties are completely free to modify or cancel the contract without the beneficiary's consent until the beneficiary's rights have 'vested'[cite: 32]. A beneficiary's rights vest only when they learn of the contract and rely on it, assent to it, or sue upon it[cite: 32]. Because the daughter did not even learn about the contract until after her father and the homeowner had already modified/discharged it (by the father taking the $4,500 directly), her rights never vested, and she collects nothing[cite: 32]."
+        exp: "The daughter is an intended donee third-party beneficiary of the original contract. However, the original contracting parties are completely free to modify or cancel the contract without the beneficiary's consent until the beneficiary's rights have 'vested.' A beneficiary's rights vest only when they learn of the contract and rely on it, assent to it, or sue upon it. Because the daughter did not even learn about the contract until after her father and the homeowner had already modified/discharged it (by the father taking the $4,500 directly), her rights never vested, and she collects nothing."
     },
     {
         id: 11,
@@ -151,7 +151,7 @@ const examData = [
             "Yes, because the manufacturer delivered conforming goods."
         ],
         ans: 2,
-        exp: "Under UCC § 2-201, a contract for the sale of goods for $500 or more generally requires a signed writing by the party to be charged[cite: 32]. However, between merchants, a written confirmation sent by one party that binds the sender is sufficient to bind the recipient if the recipient has reason to know of its contents and fails to object in writing within 10 days (the merchant's confirmatory memo rule)[cite: 32]. Here, the emailed photo of the signed contract served as a valid confirmation, binding the retailer since they acknowledged reading it and did not object[cite: 32]."
+        exp: "Under UCC § 2-201, a contract for the sale of goods for $500 or more generally requires a signed writing by the party to be charged. However, between merchants, a written confirmation sent by one party that binds the sender is sufficient to bind the recipient if the recipient has reason to know of its contents and fails to object in writing within 10 days (the merchant's confirmatory memo rule). Here, the emailed photo of the signed contract served as a valid confirmation, binding the retailer since they acknowledged reading it and did not object."
     },
     {
         id: 12,
@@ -165,7 +165,7 @@ const examData = [
             "Yes, because the plaintiff customarily engaged in buying and selling real estate."
         ],
         ans: 0,
-        exp: "The UCC firm offer rule (which makes signed, written offers by merchants irrevocable without consideration) strictly applies only to the sale of goods (Article 2)[cite: 32]. Because this transaction involves the sale of real estate, the common law applies[cite: 32]. Under common law, an offeror can revoke an offer at any time prior to acceptance unless the promise to hold the offer open is supported by independent consideration (an option contract)[cite: 32]. Since the plaintiff provided no consideration to keep the offer open, it was freely revocable[cite: 32]."
+        exp: "The UCC firm offer rule (which makes signed, written offers by merchants irrevocable without consideration) strictly applies only to the sale of goods (Article 2). Because this transaction involves the sale of real estate, the common law applies. Under common law, an offeror can revoke an offer at any time prior to acceptance unless the promise to hold the offer open is supported by independent consideration (an option contract). Since the plaintiff provided no consideration to keep the offer open, it was freely revocable."
     },
     {
         id: 13,
@@ -179,7 +179,7 @@ const examData = [
             "There was no mutuality of obligation between the defendant and the plaintiff."
         ],
         ans: 0,
-        exp: "An assignment perfectly transfers the assignor's rights to the assignee, totally extinguishing the assignor's own direct legal rights to enforce the underlying contract[cite: 32]. Because the plaintiff (who was an intended creditor beneficiary of the original contract) executed a document actively assigning his rights to receive the $10,000 to another person, the plaintiff no longer holds the legal standing to personally enforce those rights against the defendant[cite: 32]."
+        exp: "An assignment perfectly transfers the assignor's rights to the assignee, totally extinguishing the assignor's own direct legal rights to enforce the underlying contract. Because the plaintiff (who was an intended creditor beneficiary of the original contract) executed a document actively assigning his rights to receive the $10,000 to another person, the plaintiff no longer holds the legal standing to personally enforce those rights against the defendant."
     },
     {
         id: 14,
@@ -193,7 +193,7 @@ const examData = [
             "$250,000 (the contract price)."
         ],
         ans: 1,
-        exp: "Expectation damages are meant to put the non-breaching party in the position they would have been in had the contract been properly performed[cite: 32]. In construction cases where a defect can be remedied, the standard measure of damages is the cost to complete or repair the defective work, unless that cost is grossly disproportionate to the actual economic benefit it would provide (economic waste)[cite: 32]. Here, $12,000 is a reasonable cost to make the building actually serve the manufacturer's required purpose, putting him exactly in the bargained-for position[cite: 32]."
+        exp: "Expectation damages are meant to put the non-breaching party in the position they would have been in had the contract been properly performed. In construction cases where a defect can be remedied, the standard measure of damages is the cost to complete or repair the defective work, unless that cost is grossly disproportionate to the actual economic benefit it would provide (economic waste). Here, $12,000 is a reasonable cost to make the building actually serve the manufacturer's required purpose, putting him exactly in the bargained-for position."
     },
     {
         id: 15,
@@ -207,7 +207,7 @@ const examData = [
             "An auction."
         ],
         ans: 1,
-        exp: "An offer must manifest a present intent to be bound, giving the offeree the power to conclude the deal by simply saying 'I accept'[cite: 32]. Because the seller sent the letter to four different people and specifically requested that they make 'the highest offer,' it is obvious that no single recipient could create a contract just by accepting[cite: 32]. The letter is merely soliciting competing bids, making it an invitation for offers (preliminary negotiations)[cite: 32]."
+        exp: "An offer must manifest a present intent to be bound, giving the offeree the power to conclude the deal by simply saying 'I accept'. Because the seller sent the letter to four different people and specifically requested that they make 'the highest offer,' it is obvious that no single recipient could create a contract just by accepting. The letter is merely soliciting competing bids, making it an invitation for offers (preliminary negotiations)."
     },
     {
         id: 16,
@@ -221,7 +221,7 @@ const examData = [
             "Nothing, since the homeowner has received no benefit from the first builder's work."
         ],
         ans: 3,
-        exp: "When a new structure under construction is destroyed by an act of God, the builder's performance is generally not excused under impossibility (they bear the risk of loss until completion)[cite: 32]. However, even if they were excused or sued in quasi-contract, restitution relies strictly on the defendant receiving an actual, retainable benefit to prevent unjust enrichment[cite: 32]. Because the partially built greenhouse was completely destroyed, the homeowner derived absolutely no benefit from the builder's incomplete work[cite: 32]. Thus, the builder is entitled to nothing in quasi-contract[cite: 32]."
+        exp: "When a new structure under construction is completely destroyed by an unforeseeable event without fault, the builder's performance may be temporarily excused under impossibility, but their refusal to rebuild entirely leaves their only potential remedy in quasi-contract (restitution). Restitution strictly requires that the defendant received and retained a measurable, tangible benefit to prevent unjust enrichment. Because the partially built greenhouse was totally destroyed before completion or use, the landowner derived absolutely no benefit from the builder's work, meaning the builder recovers nothing."
     },
     {
         id: 17,
@@ -235,7 +235,7 @@ const examData = [
             "Payment constituted acceptance, but the buyer was entitled to revoke acceptance within a reasonable time thereafter."
         ],
         ans: 2,
-        exp: "Under UCC § 2-512(2), if a contract specifically calls for payment prior to inspection, making such payment does not constitute a final acceptance of the goods, nor does it impair the buyer's right to subsequently inspect the goods or assert any remedies for non-conformity[cite: 32]. Because the buyer merely fulfilled the contractual sequence, he fully preserved his right to reject the defective screws post-inspection[cite: 32]."
+        exp: "Under UCC § 2-512(2), if a contract specifically calls for payment prior to inspection, making such payment does not constitute a final acceptance of the goods, nor does it impair the buyer's right to subsequently inspect the goods or assert any remedies for non-conformity. Because the buyer merely fulfilled the contractual sequence, he fully preserved his right to reject the defective screws post-inspection."
     },
     {
         id: 18,
@@ -249,7 +249,7 @@ const examData = [
             "The company's attempt to withdraw its offer was unconscionable."
         ],
         ans: 1,
-        exp: "Under Restatement (Second) of Contracts § 45, an offer for a unilateral contract becomes temporarily irrevocable (creating an option contract) once the offeree actually begins the requested performance[cite: 32]. Because the designer began working on the application in his spare time prior to the September 1 revocation, the offer became irrevocable, securing his right to finish and claim the prize by the November deadline[cite: 32]."
+        exp: "Under Restatement (Second) of Contracts § 45, an offer for a unilateral contract becomes temporarily irrevocable (creating an option contract) once the offeree actually begins the requested performance. Because the designer began working on the application in his spare time prior to the September 1 revocation, the offer became irrevocable, securing his right to finish and claim the prize by the November deadline."
     },
     {
         id: 19,
@@ -263,7 +263,7 @@ const examData = [
             "No, because it is impossible to calculate the value of the hiker's services."
         ],
         ans: 2,
-        exp: "Usually, a promise is unenforceable unless it is supported by consideration, which requires a bargained-for exchange[cite: 32]. Since the climber's promise was made after the hiker rendered a life-saving service with no apparent expectation of compensation, the service was not given in exchange for the promise (past consideration)[cite: 32]. Therefore, the promise is unsupported by valid consideration and generally unenforceable[cite: 32]."
+        exp: "Usually, a promise is unenforceable unless it is supported by consideration, which requires a bargained-for exchange. Since the climber's promise was made after the hiker rendered a life-saving service with no apparent expectation of compensation, the service was not given in exchange for the promise (past consideration). Therefore, the promise is unsupported by valid consideration and generally unenforceable."
     },
     {
         id: 20,
@@ -277,7 +277,7 @@ const examData = [
             "Nothing."
         ],
         ans: 0,
-        exp: "When a seller breaches, the buyer's compensatory damages typically consist of the difference between the contract price and the 'cover' price, plus incidental damages[cite: 32]. If the cover price ($130) is less than the contract price ($150), the buyer suffers zero compensatory damages from the breach itself[cite: 32]. However, the buyer is still entitled to recover reasonable incidental expenses incurred in effecting cover, which here were the $20 in travel expenses[cite: 32]. Total recovery is $20."
+        exp: "When a seller breaches, the buyer's compensatory damages typically consist of the difference between the contract price and the 'cover' price, plus incidental damages. If the cover price ($130) is less than the contract price ($150), the buyer suffers zero compensatory damages from the breach itself. However, the buyer is still entitled to recover reasonable incidental expenses incurred in effecting cover, which here were the $20 in travel expenses. Total recovery is $20."
     },
     {
         id: 21,
@@ -291,7 +291,7 @@ const examData = [
             "Yes, because the written contract between the builder and the homeowner operated as an assignment to the daughter of the builder's right to payment."
         ],
         ans: 1,
-        exp: "A donee third-party beneficiary of a contract may enforce it, but the original parties are free to modify or cancel that contract anytime prior to the beneficiary's rights 'vesting'[cite: 32]. Rights vest only when the beneficiary learns of and detrimentally relies on the contract, brings suit, or explicitly assents[cite: 32]. Since the daughter did not even learn of the contract until after her father and the homeowner modified it to exclude her, her rights never vested, making the modification valid and extinguishing her claim[cite: 32]."
+        exp: "A donee third-party beneficiary of a contract may enforce it, but the original parties are free to modify or cancel that contract anytime prior to the beneficiary's rights 'vesting.' Rights vest only when the beneficiary learns of and detrimentally relies on the contract, brings suit, or explicitly assents. Since the daughter did not even learn of the contract until after her father and the homeowner modified it to exclude her, her rights never vested, making the modification valid and extinguishing her claim."
     },
     {
         id: 22,
@@ -305,7 +305,7 @@ const examData = [
             "Performance of the contract was made impossible by the destruction of the air conditioners."
         ],
         ans: 1,
-        exp: "In an 'FOB origin' (or shipment) contract, such as 'FOB the company's factory,' the risk of loss passes to the buyer as soon as the goods are properly delivered to the carrier[cite: 32]. Once the air conditioners were loaded onto the independent trucking company's truck, any loss not resulting from the fault of the seller became the university's liability[cite: 32]. The university is thus not entitled to damages for non-delivery resulting from a transit loss[cite: 32]."
+        exp: "In an 'FOB origin' (or shipment) contract, such as 'FOB the company's factory,' the risk of loss passes to the buyer as soon as the goods are properly delivered to the carrier. Once the air conditioners were loaded onto the independent trucking company's truck, any loss not resulting from the fault of the seller became the university's liability. The university is thus not entitled to damages for non-delivery resulting from a transit loss."
     },
     {
         id: 23,
@@ -319,7 +319,7 @@ const examData = [
             "The catalog and the seller's cover letter were mere invitations to negotiate."
         ],
         ans: 2,
-        exp: "Since the seller's offer was for the sale of 'any or all' of the comics, the dealer could have accepted by promising to purchase the entire lot. However, by specifically agreeing to purchase only one comic (Number 30), the dealer's August 2 telegram effectively operated as a rejection of the seller's offer to sell the remaining 29 comics[cite: 32]. Once an offer is rejected, the offeree's power of acceptance is destroyed, rendering her August 4 'acceptance' of comics 1-29 completely ineffective[cite: 32]."
+        exp: "Since the seller's offer was for the sale of 'any or all' of the comics, the dealer could have accepted by promising to purchase the entire lot. However, by specifically agreeing to purchase only one comic (Number 30), the dealer's August 2 telegram effectively operated as a rejection of the seller's offer to sell the remaining 29 comics. Once an offer is rejected, the offeree's power of acceptance is destroyed, rendering her August 4 'acceptance' of comics 1-29 completely ineffective."
     },
     {
         id: 24,
@@ -333,7 +333,7 @@ const examData = [
             "No, because the importer accepted the shop owner's offer to purchase at a 10 percent discount."
         ],
         ans: 3,
-        exp: "A catalog is generally a mere invitation to negotiate. The shop owner's order form specifying the item, price (with discount), and payment terms constituted the legal offer[cite: 32]. Under UCC § 2-206(1)(b), an order to buy goods for prompt shipment can be accepted by prompt shipment of the goods[cite: 32]. By shipping the coffeepots on July 30, the importer legally accepted the shop owner's explicit offer (including the 10% discount term), rendering his subsequent letter demanding full price ineffective as a unilateral modification[cite: 32]."
+        exp: "A catalog is generally a mere invitation to negotiate. The shop owner's order form specifying the item, price (with discount), and payment terms constituted the legal offer. Under UCC § 2-206(1)(b), an order to buy goods for prompt shipment can be accepted by prompt shipment of the goods. By shipping the coffeepots on July 30, the importer legally accepted the shop owner's explicit offer (including the 10% discount term), rendering his subsequent letter demanding full price ineffective as a unilateral modification."
     },
     {
         id: 25,
@@ -347,6 +347,6 @@ const examData = [
             "The landowner is not entitled to recover the payments or the reasonable cost of completing the waterslide."
         ],
         ans: 3,
-        exp: "When a builder anticipatorily repudiates, the owner is entitled to damages measured by the cost of completing the work minus any unpaid balance of the contract price[cite: 32]. Here, the landowner still holds $50,000 of the original contract price intended for the waterslide[cite: 32]. If the cost of completing the waterslide is less than or equal to the unpaid $50,000, the landowner has suffered no net financial damage from the breach[cite: 32]. Thus, the landowner is not entitled to simply recover the gross cost of completion or refund prior payments for work already completed[cite: 32]."
+        exp: "When a builder anticipatorily repudiates, the owner is entitled to damages measured by the cost of completing the work minus any unpaid balance of the contract price. Here, the landowner still holds $50,000 of the original contract price intended for the waterslide. If the cost of completing the waterslide is less than or equal to the unpaid $50,000, the landowner has suffered no net financial damage from the breach. Thus, the landowner is not entitled to simply recover the gross cost of completion or refund prior payments for work already completed."
     }
 ];

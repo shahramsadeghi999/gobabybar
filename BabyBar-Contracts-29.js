@@ -11,7 +11,7 @@ const examData = [
             "$200, since this represented the writer's standard fee."
         ],
         ans: 3,
-        exp: "Even if parties do not expressly exchange an offer and acceptance, if they indicate by their conduct their understanding that a contract was formed, an implied-in-fact contract exists[cite: 32]. If an offeree silently receives the benefit of the offeror's services, a court will hold that the offeree accepted a contract for those services if he or she had a reasonable opportunity to reject them and knew or should have known that the offeror expected to be compensated[cite: 32]. Here, the woman had a reasonable opportunity to reject the writer's services, and she knew that the writer was usually compensated at $50 an hour for writing lessons[cite: 32]. Consequently, an implied-in-fact contract was formed for the lessons at the writer's usual rate ($50 x 4 hours = $200)[cite: 32]."
+        exp: "Even if parties do not expressly exchange an offer and acceptance, if they indicate by their conduct their understanding that a contract was formed, an implied-in-fact contract exists. Importantly, if an offeree silently receives the benefit of the offeror's services, a court will hold that the offeree accepted a contract for those services if he or she had a reasonable opportunity to reject them and knew or should have known that the offeror expected to be compensated. Here, the woman had a reasonable opportunity to reject the writer's services (they met each other for an hour over four weeks), and she knew that the writer was usually compensated at $50 an hour for writing lessons. Consequently, an implied-in-fact contract was formed for the lessons at the writer's usual rate. A is incorrect because an implied-in-fact contract was formed under these facts. B is incorrect because market value is irrelevant to the analysis. C is incorrect because there is no fact indicating that the writer was intending to make a gift of her services."
     },
     {
         id: 2,
@@ -25,7 +25,7 @@ const examData = [
             "No, because the mayor actually believed that the statue was too small."
         ],
         ans: 3,
-        exp: "Ordinarily, a promise to perform services implies a promise to perform them in a satisfactory manner, judged by an objective standard[cite: 32]. A specific agreement that personal satisfaction is required, however, is usually understood to call for subjective satisfaction so long as the party whose satisfaction is required acts in good faith[cite: 32]. Thus, if the mayor actually believed that the statue was too small, and he was therefore not subjectively satisfied with it, the town is discharged of its obligation under the contract[cite: 32]."
+        exp: "Ordinarily, a promise to perform services implies a promise to perform them in a satisfactory manner, judged by an objective standard. A specific agreement that personal satisfaction is required, however, is usually understood to call for subjective satisfaction so long as the party whose satisfaction is required acts in good faith. Thus, if the mayor actually believed that the statue was too small, and he was, therefore, not subjectively satisfied with it, the town is discharged of its obligation under the contract.\n\nA is therefore incorrect. If the mayor liked the statue but rejected it because he feared embarrassment resulting from a conviction, the town would be in breach because the rejection would not be in good faith. If he genuinely did not like the statue, however, the incidental fact that he feared embarrassment if the boxer was convicted would not be relevant. B is therefore incorrect. Although the clause called for subjective satisfaction, it did not create an absolute right to reject the work since such an agreement is understood to mean that the decision as to whether or not the work is satisfactory must be made in good faith. C is therefore incorrect."
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ const examData = [
             "No, because there was no consideration supporting the promise of the pension."
         ],
         ans: 0,
-        exp: "Promissory estoppel is used by the courts to enforce promises when the promise induces the promisee to rely on it to his or her detriment[cite: 32]. Here, the plaintiff relied on the promise to her detriment because she retired when she could have gone on working based on her belief that she would receive a pension[cite: 32]. Consequently, the promise can be enforced through promissory estoppel[cite: 32]. Her past services were not valid consideration, but the detrimental reliance makes the promise enforceable[cite: 32]."
+        exp: "Promissory estoppel is used by the courts to enforce promises when the promise induces the promisee to rely on it to his or her detriment. Here, the plaintiff relied on the promise to her detriment because she retired when she could have gone on working based on her belief that she would receive a pension. Consequently, the promise can be enforced through promissory estoppel. B is incorrect because 'past services are not valid consideration for a promise.' Consequently, the plaintiff's years of service prior to the awarding of the pension were not consideration for the pension. C is incorrect because the plaintiff retired in reliance on the pension promise. D is incorrect because, although there was no consideration for the pension, it could still be enforced through promissory estoppel."
     },
     {
         id: 4,
@@ -53,7 +53,7 @@ const examData = [
             "It was not enforceable when the contract was made, but since the plaintiff did pay before inspecting the goods, he waived his right to a pre-acceptance inspection."
         ],
         ans: 2,
-        exp: "UCC § 2-512(2) specifically provides that where a contract calls for payment prior to inspection, such payment does not constitute acceptance of the goods and does not impair the buyer's right to inspect or any of the buyer's remedies[cite: 32]. The requirement of payment prior to inspection is not uncommon in commercial transactions and is therefore not unconscionable[cite: 32]."
+        exp: "UCC §2-512(2) specifically provides that where a contract calls for payment prior to inspection, such payment does not constitute acceptance and does not impair the buyer's right to inspect.\n\nThe requirement of payment prior to inspection is not an uncommon one, and therefore not unconscionable, making A incorrect. B and D are incorrect because UCC §2-512(2) prevents pre-inspection payment from having these effects."
     },
     {
         id: 5,
@@ -67,7 +67,7 @@ const examData = [
             "No, because the store owner revoked the offer before the musician accepted it."
         ],
         ans: 1,
-        exp: "A merchant's firm offer under the UCC can only be held open for a maximum of three months (90 days) without consideration[cite: 32]. However, if an agreement to hold an offer open is supported by consideration, it is a common law option contract and can be held open for as long as the parties want[cite: 32]. Here, the store owner's agreement to hold the offer open for six months was supported by the musician's $10 consideration[cite: 32]. Thus, it was a valid option contract, and the store owner breached it when he sold the guitar before the six months expired[cite: 32]."
+        exp: "A merchant's firm offer can only be held open for a maximum of three months. However, if an agreement to hold an offer open is supported by consideration, it is a common law option contract and can be held open for as long as the parties want. Here, the store owner's agreement to hold the offer open for six months was supported by the musician's $10 consideration. Thus, the store owner breached the contract when he sold the guitar to someone else before the six months were over.\n\nA is incorrect because the store owner agreed to hold the offer open for more than 90 days. C and D are incorrect because this was a valid common law option contract."
     },
     {
         id: 6,
@@ -81,7 +81,7 @@ const examData = [
             "The fact that immediately after the man made the promise, his neighbor sent the man a written memorandum of their agreement, to which the man did not object within 30 days."
         ],
         ans: 1,
-        exp: "Consideration is something of value that is bargained for and given in exchange for a promise[cite: 32]. Since the neighbor's promise to deliver fire-fighting equipment is of obvious value to the man, if given in return for the man's promise of payment, it establishes a valid bargained-for exchange and constitutes consideration for it[cite: 32]. Past services are not given in exchange for a new promise, and detrimental reliance serves as a substitute for consideration rather than actual consideration[cite: 32]."
+        exp: "Although the Statute of Frauds might require a contract for the sale of goods with a price of $1,000 to be in writing, the question asks only if the neighbor's promise can be viewed as consideration for the man's promise. Consideration is something of value that is bargained for and given in exchange for a promise. Since the neighbor's promise to deliver fire-fighting equipment is of obvious value to the man, if given in return for the man's promise of payment, it is consideration for it.\n\nA is incorrect because the neighbor's prior services were not given in exchange for the man's promise. C is incorrect because the doctrine of promissory estoppel may make a contract enforceable in the absence of consideration, but although detrimental reliance may take the place of consideration, it is not consideration unless bargained for. Although the kind of written memorandum referred to in D sometimes satisfies the requirement of a writing, it is not relevant to the question of consideration or the lack of it."
     },
     {
         id: 7,
@@ -90,11 +90,12 @@ const examData = [
         q: "Will the court enforce the contract?",
         opts: [
             "No, because the war was not foreseeable at the time of contracting.",
+            "No, because the plaintiff was not bound to buy any goods at all.",
             "Yes, because it bound itself to act reasonably and in good faith in estimating the quantity of fuel it required.",
             "Yes, because a mere price increase due to a war would not invalidate the agreement."
         ],
         ans: 2,
-        exp: "Under a requirements contract, the buyer promises to buy all of his or her requirements from the seller, which, coupled with the buyer's good faith obligation, constitutes valid consideration[cite: 32]. Because the airline was bound, the agreement does not lack mutuality of obligation[cite: 32]. A mere price increase, even if caused by a war, typically does not invalidate the agreement or automatically grant an excuse of commercial impracticability, as price fluctuations are a foreseeable risk allocated by the contract's pricing terms[cite: 32]."
+        exp: "UCC §2-306 states that 'a term which measures the quantity by the output of the seller or the requirements of the buyer means such actual output or requirements as may occur in good faith, except that no quantity unreasonably disproportionate to any stated estimate or in the absence of a stated estimate to any normal or otherwise comparable prior output or requirements may be tendered or demanded.' Comment 2 to §2-306 states that requirements and output contracts do not 'lack mutuality of obligation since under this section, the party who will determine quantity is required to operate his plant or conduct his business in good faith and according to commercial standards of fair dealing in the trade so that his output or requirements will approximate a reasonably foreseeable figure.' Under a requirements contract, the buyer promises that he or she will buy all of his or her requirements from the seller. This promise, coupled with the buyer's good faith obligation to order reasonable quantities, constitutes consideration for the seller's counter-promise to meet the buyer's needs. Here, the airline bound itself to act reasonably and in good faith in estimating the quantities of fuel it required. Since the airline was bound, the supplier's return promise was not void for lack of mutuality of obligation. Consequently, B is incorrect. A and D are incorrect because part of the purpose of a requirements contract such as this one is to receive goods at predictable price. Thus, wars pushing up prices and other price increases are likely foreseeable."
     },
     {
         id: 8,
@@ -108,7 +109,7 @@ const examData = [
             "A statute in the jurisdiction prohibited the assignment of future wages by employees."
         ],
         ans: 1,
-        exp: "An assignment is effective only if the assignor has given up all rights under the assigned contract[cite: 32]. Thus, if the singer has made an effective assignment of his right to collect the money, he no longer has any personal legal rights against the defendant to demand that specific payment[cite: 32]. By assigning the right to the piano seller (and/or the landlord), the singer extinguished his own standing to bring a lawsuit for the money[cite: 32]."
+        exp: "An assignment is effective only if the assignor has given up all rights under the assigned contract. Thus, if the singer has made an effective assignment, he no longer has any rights against the defendant.\n\nA is incorrect for several reasons: First, since the contract was for the singer's business, the singer's infancy is probably irrelevant; second, even if the singer's infancy at the time of his contract with the defendant is relevant, it makes the contract voidable at the singer's option, not the defendant's; and, third, if the singer's infancy invalidated the assignments, the defendant would not benefit in the singer's action against it. C is incorrect because the agreement was to pay for the recording session whether or not a record was ever released. D is incorrect because the singer was probably a contractor rather than an employee and because if the assignments were held invalid, the defendant would have to pay the singer."
     },
     {
         id: 9,
@@ -122,12 +123,12 @@ const examData = [
             "Since the coat of arms was not yet associated with the defendant, it was possible for the plaintiff to find another buyer for it."
         ],
         ans: 2,
-        exp: "A condition precedent is an event that must occur before a party's obligation to perform under a contract becomes absolute[cite: 32]. Since the agreement provided that the defendant would be under no obligation to pay unless he was satisfied, satisfaction was a condition precedent[cite: 32]. Where the agreement calls for the design of something to be personally identified with the buyer (such as a custom coat of arms), it is understood that the buyer's own personal, subjective satisfaction is the standard, provided it is exercised in good faith[cite: 32]."
+        exp: "A condition precedent is an event that must occur before a party's obligation to perform under a contract becomes absolute. Since the agreement provided that the defendant would be under no obligation to pay unless he was satisfied with the product, satisfaction was a condition precedent to his obligation to accept and pay for the door. Ordinarily, a contract making a buyer's satisfaction a condition precedent to his or her obligation is held to require that the goods be satisfactory to the reasonable person (i.e., objective satisfaction). However, where the agreement calls for the design of something to be personally identified with the buyer, as here, it is more likely that the parties intended the buyer's own personal satisfaction (i.e., subjective satisfaction) to be the standard. If so, the defendant's dissatisfaction with the product, so long as it was based on good faith, would prevent the defendant from being obligated to purchase the door. While it is not certain that a court would come to this conclusion, the argument set forth in C is the only one listed that could possibly support the defendant's position.\n\nA is incorrect because the Statue of Frauds does not apply to goods that are specially designed for the buyer and which, therefore, would not be readily salable in the regular course of business. A unilateral contract is one in which the promisor has agreed to do something in return for a specified act by the promisee (i.e., a promise for an act), and, therefore, one in which only one party is bound to perform. B is incorrect because the agreement between the defendant and the plaintiff was an exchange of promises, each party's promise being given in exchange for the other party's promise (i.e., a bilateral contract). If the plaintiff were able to sell the door to another buyer, her damages might be mitigated to some extent. D is incorrect, however, because the mere possibility that damages might thus be mitigated is not sufficient to defeat the plaintiff's substantive rights."
     },
     {
         id: 10,
         topic: "Consideration / Bargained-For Exchange",
-        fp: "Because its property was filling up with a lot of unwanted recycled plastic it didn't want to pay to have removed, a landfill gave a construction firm free recycled plastic for use in its construction work. All the firm had to do was come to the landfill and pick it up. The plastic turned out to be defective, and the firm sued the landfill for breach of contract. The landfill argued that there were no contractual obligations to the firm because any promise it made was not supported by consideration. The landfill argued it had merely made a gift of the plastic on the condition that the firm come and pick it up.",
+        fp: "Because its property was filling up with a lot of unwanted recycled plastic it didn't want to pay to have removed, a landfill gave a construction firm free recycled plastic for use in its construction work. All the firm had to do was come to the landfill and pick it up. The plastic turned out to be defective, and the firm sued the landfill for breach of contract. The landfill argued that there were no contractual obligations to the firm because any promise it made was not supported by consideration. The landfill argued it had merely made a gift of the plastic on the condition that the firm come and pick it up. Can the firm successfully sue for breach of contract?",
         q: "Can the firm successfully sue for breach of contract?",
         opts: [
             "Yes, because the firm relied on the landfill's promise to its detriment.",
@@ -136,7 +137,7 @@ const examData = [
             "No, because the unwanted plastic was a gift."
         ],
         ans: 1,
-        exp: "Even if a defendant can show that a plaintiff never overtly bargained for the defendant's promise to do something, as long as a court concludes that the defendant's promise induced the plaintiff's promise or performance, consideration exists[cite: 32]. Here, there was consideration because the landfill offered the plastic for free specifically because it wanted someone else to come remove it, thus saving the landfill the financial cost of disposing of the plastic itself[cite: 32]. The firm's act of picking it up constituted the bargained-for detriment[cite: 32]."
+        exp: "Even if a defendant can show that a plaintiff never overtly bargained for the defendant's promise to do something, as long as a court concludes that the defendant's promise induced the plaintiff's promise or performance, the fact that the defendant didn't expressly bargain in return for that promise doesn't matter. Here, there was consideration because the landfill offered the plastic for free because it wanted someone else to come remove it, and thus save the landfill the cost of disposing of the plastic itself.\n\nA is incorrect because there is no fact showing that the construction firm detrimentally relied on the landfill's promise (e.g., buying a special machine for the plastic, etc.). C is incorrect because the 'bargain' theory of consideration does not mean the parties must actually bargain over the terms of the agreement-it just means the promise made by the defendant and the detriment to the plaintiff must induce each other. D is incorrect because this was not a gift situation. The landfill wanted to have the plastic hauled away for free, and the construction firm wanted the plastic and agreed to do so."
     },
     {
         id: 11,
@@ -150,7 +151,7 @@ const examData = [
             "Yes, because the police officer knew about the reward offer before beginning performance."
         ],
         ans: 0,
-        exp: "Under the preexisting duty rule, there is no valid consideration to support the formation of a contract if the accepting party already has a legal or contractual duty to perform the subject of the agreement[cite: 32]. An on-duty police officer has a preexisting duty to apprehend and arrest criminals and rescue kidnap victims[cite: 32]. Consequently, the officer's performance in arresting the kidnapper and saving the baby did not create an enforceable contract for the reward[cite: 32]."
+        exp: "Under the preexisting duty rule, there is no consideration to support the formation of a contract if the accepting party already has a duty to perform the subject of the agreement. Here, an on-duty police officer has a preexisting duty to apprehend and arrest criminals. Consequently, the officer's performance in arresting the kidnapper and saving the baby did not create an enforceable contract.\n\nB is incorrect because the police officer could not accept the reward under the preexisting duty rule. C and D are also incorrect because of the preexisting duty rule."
     },
     {
         id: 12,
@@ -164,7 +165,7 @@ const examData = [
             "No, because the writing was a complete expression of the agreement of the parties."
         ],
         ans: 1,
-        exp: "The parol evidence rule prohibits the admission of extrinsic evidence of a prior or contemporaneous agreement to contradict, vary, or modify the terms of an unambiguous written contract that the parties intended to be a final and complete expression of their agreement[cite: 32]. Almost all jurisdictions, however, permit extrinsic evidence to be used to establish that a written term is ambiguous, and, if so, to explain the ambiguity[cite: 32]. Since '(two coats)' could apply just to the siding or to all the listed items, it is ambiguous and parol evidence is admissible to explain it[cite: 32]."
+        exp: "The parol evidence rule prohibits the admission of extrinsic evidence of a prior or contemporaneous agreement to contradict, vary, or modify the terms of an unambiguous written contract that the parties intended to be a final and complete expression of their agreement. Almost all jurisdictions, however, permit extrinsic evidence to be used to establish that the writing is ambiguous, and, if so, to explain the ambiguity.\n\nA is incorrect since it does not recognize that oral testimony may be used to explain the ambiguity. C is incorrect because it is irrelevant which party drafted the agreement. D is incorrect since even if the writing was a complete expression of the parties' agreement, oral testimony is admissible to explain ambiguities."
     },
     {
         id: 13,
@@ -178,7 +179,7 @@ const examData = [
             "The husband's agreement with the plaintiff was a compromise."
         ],
         ans: 3,
-        exp: "A promise to forbear or abandon a civil claim in return for some payment by the promisee is referred to as a compromise[cite: 32]. The promise to forbear is sufficient consideration for the promisee's promise to pay if the claim could have been asserted in good faith[cite: 32]. Because the administrator gave up a plausible claim against the estate in exchange for the husband's promise, the husband's promise was supported by the consideration of a valid compromise[cite: 32]."
+        exp: "A promise to forbear or abandon a civil claim in return for some payment by the promisee is referred to as a compromise. The promise to forbear is sufficient consideration for the promisee's promise to pay if the claim could have been asserted in good faith. Although the facts do not indicate whether the plaintiff believed in good faith that he had a claim against the mother, D is the only theory listed that might have any prospect of success.\n\nA is incorrect since the husband's promise was given in exchange for the plaintiff's 'promise to make no claim,' and a unilateral contract involves a promise that is given in exchange for an act rather than a promise. B is incorrect since the facts do not indicate any unjust enrichment, and since, even if they did, unjust enrichment is not, alone, enough to result in liability. C is incorrect since promissory estoppel requires detrimental reliance by the promisee, and there is no fact indicating detrimental reliance by the plaintiff."
     },
     {
         id: 14,
@@ -192,7 +193,7 @@ const examData = [
             "No, because the family member did not respond to the letter immediately."
         ],
         ans: 2,
-        exp: "Unless it qualifies as a firm offer under the UCC (which requires a merchant offering to sell goods), a promise to hold an offer open without consideration is unenforceable under common law[cite: 32]. Because renting a summer camp involves real estate and services, not goods, the UCC does not apply[cite: 32]. Here, the parties did not exchange any consideration to hold the offer open until April 1, so the promise to keep it open was an unenforceable option contract[cite: 32]. The owner was legally permitted to revoke the offer prior to acceptance, which he effectively did by renting the property to the university[cite: 32]."
+        exp: "Unless it is a firm offer under the UCC, a promise to hold an offer open without consideration is unenforceable. Here, the parties did not exchange any consideration to hold the offer open until April 1. Consequently, despite any language the camp owner used in his letter, the promise to hold the offer open was unenforceable.\n\nA and B are incorrect because past reliance is not enough to make a promise enforceable. Specifically, to enforce an agreement through promissory estoppel, the particular promise itself has to induce reliance. Here, the parties simply had a habit of renting the summer camp. D is incorrect because the family member could have accepted the offer any time before April 1 if the university hadn't rented the property first."
     },
     {
         id: 15,
@@ -206,7 +207,7 @@ const examData = [
             "Yes, because the boss had notified the employee of the future bonus."
         ],
         ans: 0,
-        exp: "A promise to pay for services received in the past is usually held not to be supported by consideration[cite: 32]. Because the employee had already shared her idea and completed its implementation before the boss ever promised to pay her a bonus, there was no bargained-for exchange[cite: 32]. Thus, the promise is entirely unenforceable due to a lack of consideration[cite: 32]."
+        exp: "A promise to pay for services received in the past is usually held not to be supported by consideration. Here, the employee had already told the boss her idea and completed its implementation when the boss promised to pay her a bonus. Thus, the promise is unenforceable. B is incorrect because the Statute of Frauds would not apply to the promise of a bonus for work already performed. C is incorrect because the mere fact that the factory received a material benefit would not support the promise. D is incorrect because the boss telling the employee about the bonus would not change the analysis."
     },
     {
         id: 16,
@@ -220,7 +221,7 @@ const examData = [
             "The plaintiff was not entitled to the patent rights under the employment contract."
         ],
         ans: 1,
-        exp: "Even if a claim is ultimately invalid, a promise to abandon it may serve as valid consideration for a settlement payment, but only if the claim could have been asserted in good faith[cite: 32]. If the plaintiff did not honestly believe that it was entitled to the patent rights, it could not have asserted its claim in good faith, and its promise to abandon the bad-faith claim would not constitute valid consideration for the defendant's promissory note[cite: 32]."
+        exp: "Even if a claim is invalid, a promise to abandon it may be consideration for another's promise of payment if the claim could have been asserted in good faith. If the plaintiff did not believe that it was entitled to the patent rights, it could not have asserted its claim in good faith, and its promise to abandon the claim would not have been consideration for the defendant's promise.\n\nIf the plaintiff's claim was asserted in good faith, abandonment of the claim was consideration for the defendant's promise of payment, regardless of whether the employment contract was enforceable. A is therefore incorrect. C is incorrect since it indicates that the plaintiff's promise to abandon the claim was made in good faith, which would make it good consideration for the defendant's promise. D is incorrect because abandonment of an invalid claim may be consideration for a promise to pay, so long as the person abandoning the claim believes in good faith that it is a valid one."
     },
     {
         id: 17,
@@ -234,7 +235,7 @@ const examData = [
             "The risk of loss was not on the plaintiff, since the loss was the result of action by the public enemy."
         ],
         ans: 2,
-        exp: "The term 'FOB' (Free On Board) accompanied by a specified place requires the seller to deliver the goods on board the carrier at that specific place, and the risk of loss does not pass to the buyer until the seller has done so[cite: 32]. Since this contract was specifically 'FOB the defendant's factory' (a destination contract), the plaintiff's obligation was to deliver it completely to the factory, and the risk of loss did not pass to the buyer until she did so[cite: 32]."
+        exp: "The term 'FOB' requires the seller to deliver the goods on board the carrier at the place specified, and the risk of loss does not pass to the buyer until the seller has done so. Since this contract was 'FOB the defendant's factory,' the plaintiff's obligation was to deliver it there, and the risk of loss did not pass until she did so.\n\nA and B are therefore incorrect. D is incorrect for two reasons: First, the term 'public enemy' refers to a person, group, or nation waging war against the United States, and second, because while interference by a public enemy might relieve a seller of the obligation to deliver, it does not pass the risk of loss to a buyer."
     },
     {
         id: 18,
@@ -248,7 +249,7 @@ const examData = [
             "The plaintiff, because the plaintiff was an intended creditor beneficiary of the contract between the contractor and his son."
         ],
         ans: 3,
-        exp: "When a promise is made with the intent that its benefit flow to a third person to satisfy an obligation that the promisee owes to that third party, the third party is an intended creditor beneficiary[cite: 32]. Here, the contractor owed the plaintiff (the builder) the duty of painting the house. When the contractor sold the business to his son and the son explicitly promised to perform the painting work on that specific house, the primary intent was to fulfill the contractor's existing legal obligation to the plaintiff[cite: 32]. Consequently, the plaintiff is a creditor beneficiary who may enforce the son's promise directly[cite: 32]."
+        exp: "When a promise is made with the intent that its benefit flow to a third person, that person is an intended beneficiary of the promise. When that benefit is intended to satisfy an obligation that the promisee owes to the third party, the third party is an intended creditor beneficiary. According to the Restatement (Second), a promise is enforceable by an intended creditor beneficiary when he or she relies upon or assents to the arrangement. Since the beneficiary is presumed to have assented when notified of the contract, and since the contractor notified the plaintiff, the plaintiff may enforce the contractor's son's promise even though there is no privity between them.\n\nA is therefore incorrect. B is incorrect for two reasons: First, because non-assignability would prevent the assignee from recovering but could not be raised as a defense by that assignee, and second, because obligations under a construction contract may generally be assigned to any competent contractor. C is incorrect because the preexisting obligation that the contractor owed the plaintiff, and which the contractor's contract with his son was designed to satisfy, made the plaintiff a creditor rather than a donee beneficiary."
     },
     {
         id: 19,
@@ -262,7 +263,7 @@ const examData = [
             "The seller changed her mind about selling the car before the buyer tendered the cash."
         ],
         ans: 0,
-        exp: "Because a contract requires a mutual meeting of the minds, a person who does not know the legal consequences of their act is incapable of contracting[cite: 32]. Where incapacity results from intoxication, the intoxicated party must prove they were so severely intoxicated that they could not understand the nature and consequences of the transaction, and often that the other party had reason to know of the intoxication[cite: 32]. Establishing that she was so drunk she did not know the legal consequences directly strikes at her contractual capacity to form mutual assent[cite: 32]."
+        exp: "Since a contract is a meeting of minds, a person who does not know the legal consequences of his or her act is incapable of contracting. Where the incapacity results from intoxication, some jurisdictions require proof that the other party was aware of the intoxication and the resulting incapacity. Although it is not clear whether the buyer was sufficiently aware of the seller's incapacity, the additional fact in A is the only one listed that could help the seller's defense.\n\nSo long as the seller knew the legal consequences of her act, her motivation is irrelevant. B is therefore incorrect. So long as the consideration given for a promise has value, courts, recognizing that contracting parties may be motivated by factors other than monetary worth, do not usually inquire into the sufficiency of that value. For this reason, C is incorrect. Although an offeror may withdraw an offer at any time prior to acceptance, D is incorrect for two reasons: First, such withdrawal is not effective until communicated to the offeree, and second, the facts suggest that a contract was formed when the napkin was signed, making a subsequent attempt at revocation ineffective."
     },
     {
         id: 20,
@@ -276,7 +277,7 @@ const examData = [
             "No, because specific performance is not available in an action for breach of a contract for the sale of a chattel."
         ],
         ans: 2,
-        exp: "Although a court may reform a contract by filling in a missing term in accordance with the manifest intent of the parties, it may not create a contract where the writing fails to indicate that the parties had the intent to actually be bound[cite: 32]. The January 5 document leaves the price term to subsequent agreement without providing an absolute mechanism to settle it, operating merely as an 'agreement to agree.'[cite: 32] As such, it fails to manifest an intention to be legally bound to any specific terms[cite: 32]."
+        exp: "Although a court may reform a contract by filling in a missing term in accordance with the manifest intent of the parties, it may not create a contract where the writing fails to indicate that the parties had the intent of creating one. The January 5 document leaves the price term to subsequent agreement after determining reasonable value. It does not indicate that reasonable value will be the price or set forth any method by which the sale price is to be determined. It is an 'agreement to agree,' and as such, it does not manifest an intention to be bound to any particular terms.\n\nA and B are therefore incorrect. Specific performance may be available in an action for breach of a contract for the sale of a chattel if the chattel is unique. Since a trained, talking bird is probably unique, D is incorrect."
     },
     {
         id: 21,
@@ -290,7 +291,7 @@ const examData = [
             "Consequential damages are not available for the breach of a contract of sale."
         ],
         ans: 2,
-        exp: "Consequential damages (like lost business profits) are recoverable only if they were reasonably foreseeable at the time of contracting AND if they could not have been reasonably mitigated by the aggrieved party[cite: 32]. Here, the plaintiff could have easily traveled to customer premises by temporarily renting a car or using an existing company pickup truck[cite: 32]. The defendant is not liable for damages that the plaintiff could have avoided through reasonable mitigation efforts[cite: 32]."
+        exp: "Losses that are normal but not inevitable results of a breach of contract (e.g., the plaintiff's claim of lost business resulting from non-delivery of the station wagon) are called 'consequential damages,' and they may be recovered if they were foreseeable to the parties at the time the contract was made, and if they could not have been mitigated by the aggrieved party. If the plaintiff could have traveled to the customers' premises by renting a car or by using one of the company pickup trucks, the defendant would not be responsible for damages resulting from his failure to mitigate consequential damages by doing so.\n\nA is incorrect because the plaintiff had advised the salesperson that he needed to use the station wagon for his business, making business losses foreseeable. B is incorrect because impossibility excuses performance only if it results from factors not within the reasonable contemplation of the parties at the time the contract was formed. Here, both parties knew that the defendant was planning to order the station wagon from the manufacturer and could have anticipated that the manufacturer might not deliver the car on time. D is incorrect since consequential damages are available in actions for breach of a sales contract."
     },
     {
         id: 22,
@@ -304,7 +305,7 @@ const examData = [
             "No, because the jurisdiction has a 'Good Samaritan' statute."
         ],
         ans: 0,
-        exp: "Even though no express or implied-in-fact contract exists (since the pedestrian was unconscious and could not assent), a party can recover in quasi-contract (implied-in-law contract) when they render valuable services in an emergency with the reasonable expectation of compensation[cite: 32]. Because the professional doctor reasonably expected payment when providing necessary emergency medical care, the law implies a duty on the estate to pay the reasonable value of those services to prevent unjust enrichment[cite: 32]."
+        exp: "Even though no contract exists, a party can recover from another on a quasi-contract (i.e., a contract implied-in-law) theory when he or she rendered a service to the other with the reasonable expectation of compensation. Thus, if the doctor had a reasonable expectation of payment at the time she rendered medical services to the pedestrian, she may recover on a quasi-contract theory.\n\nA contract is implied-in-fact when, although the parties have not expressed agreement, their intent to enter into a mutually binding bargain is evident from their conduct and the surrounding circumstances. Since the pedestrian remained unconscious for the entire period during which the doctor rendered services, he could not have acted in a way that manifested the intent to make a binding contract. B is therefore incorrect. C is incorrect because quasi-contract recovery is usually based on the value of the detriment sustained by the plaintiff, rather than that of the benefit received by the defendant. Where they exist, 'Good Samaritan' statutes protect physicians against negligence liability in connection with treatment that they render without expectation of compensation at accident or other emergency scenes. Although 'Good Samaritan' statutes do not extend this protection to a physician who charges for his or her services, they do not prevent him or her from doing so. D is therefore incorrect."
     },
     {
         id: 23,
@@ -318,7 +319,7 @@ const examData = [
             "The plumber's bid was an irrevocable firm offer between merchants."
         ],
         ans: 0,
-        exp: "In building projects, general contractors frequently request bids from subcontractors to assemble an overall master bid[cite: 32]. Under the doctrine of promissory estoppel, when a general contractor foreseeably relies on a subcontractor's bid by incorporating it into the master bid submitted to the developer, that detrimental reliance transforms the subcontractor's bid into a binding option contract[cite: 32]. The subcontractor is estopped from revoking the bid to the extent necessary to avoid injustice[cite: 32]."
+        exp: "In building projects, general contractors often request bids from subcontractors and put those bids together into an overall plan for the project. Under the doctrine of promissory estoppel, when the general contractor notifies a subcontractor that he or she is using the subcontractor's bid in the general contractor's overall bid, the general contractor's use of that bid creates an option contract through promissory estoppel. Specifically, the general contractor has relied on the subcontractor's promise to create the overall bid and the subcontractor's bid has induced the general contractor's reliance on that bid. At this point, an option contract is created to the extent necessary to avoid injustice.\n\nB, C, and D are incorrect because the general contractor's use of the bid creates an option contract through promissory estoppel."
     },
     {
         id: 24,
@@ -332,7 +333,7 @@ const examData = [
             "No, because a will speaks at death."
         ],
         ans: 0,
-        exp: "Courts judge the adequacy and fairness of consideration as of the exact time the contract was made, not based on hindsight after performance[cite: 32]. At the time of contracting, the plaintiff gave up her job and committed to taking care of the defendant for an unknown duration, which could have been years[cite: 32]. This constituted valid detriment and fair consideration at formation[cite: 32]. Therefore, the promise is fully enforceable, and because it involves unique real property, specific performance is appropriate[cite: 32]."
+        exp: "Even in equitable claims, courts judge the adequacy of consideration as of the time the contract was made, not as of the time the contract was allegedly breached. Thus, if it appeared fair at the time of contracting, a court will find it enforceable. Here, at the time of contracting, the plaintiff gave up her job and promised to take care of the defendant, a job of unknown difficulty and duration. Consequently, the defendant's promise will be enforced, and the plaintiff is entitled to specific performance. B is incorrect because there is no question here regarding the defendant's intent to gift the property. C is incorrect because even though the house and farm were worth more than the services actually performed by the plaintiff, the contract as it stood at the time of contracting was not grossly unfair or inequitable. D is incorrect because the issue is the agreement between the plaintiff and the defendant, not the will."
     },
     {
         id: 25,
@@ -346,6 +347,6 @@ const examData = [
             "Yes, because the man bought the trampoline for the same amount as the woman offered to the neighbor."
         ],
         ans: 0,
-        exp: "An offer is indirectly revoked if the offeree learns from a reliable source that the offeror has taken action fundamentally inconsistent with an intent to keep the offer open (such as selling the unique item to a third party)[cite: 32]. Because the neighbor learned the woman had already sold the trampoline before he formally accepted her offer, his power of acceptance was automatically terminated via indirect revocation, making his subsequent attempt to accept legally invalid[cite: 32]."
+        exp: "An offeree cannot accept an offer if the offeree learns from a reliable source that the offeror has taken action inconsistent with an intent to enter into a contract with the offeree. Here, the neighbor's power to accept the offer was terminated once he learned that the woman had already sold the trampoline to the man.\n\nB is incorrect because this agreement is not one of the types of agreements where the Statute of Frauds is implicated. C is incorrect because the woman did not make her offer irrevocable by saying the neighbor could think it over. Importantly, there was no consideration holding the offer open. D is incorrect because the fact that the man paid the same amount as the woman asked the neighbor to pay does not change the analysis."
     }
 ];

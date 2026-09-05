@@ -11,7 +11,7 @@ const examData = [
             "On May 2, when the buyer received the shipment of coffeepots."
         ],
         ans: 2,
-        exp: "A contract is formed upon acceptance of an offer[cite: 32]. Since the buyer's order identified the subject of the transaction, specified the quantity, set forth price and terms, and called for shipment, it conferred upon the seller the power to create a contract by accepting and was, therefore, an offer[cite: 32]. Catalogs of the kind used by the seller are mere invitations to negotiate because they are sent to a large number of buyers and do not refer to specific items for sale but rather to types of items[cite: 32]. Under UCC § 2-206(1)(b), an order to purchase goods for prompt shipment calls for acceptance either by prompt shipment or prompt promise to ship[cite: 32]. Since the seller shipped (i.e., accepted the offer) on April 28, the contract was formed on that exact date[cite: 32]."
+        exp: "A contract is formed upon acceptance of an offer. Since the buyer's order identified the subject of the transaction, specified the quantity, set forth price and terms, and called for shipment, it conferred upon the seller the power to create a contract by accepting and was, therefore, an offer. Under UCC §2-206(1)(b), an order to purchase goods for prompt shipment calls for acceptance either by prompt shipment or prompt promise to ship. Since the seller shipped (i.e., accepted the offer) on April 28, the contract was formed on that date.\n\nCatalogs of the kind used by the seller are mere invitations to negotiate because they are sent to a large number of buyers and do not refer to specific items for sale but rather to types of items. For that reason, the buyer's order could not constitute an acceptance. A and B are therefore incorrect. D is incorrect because the contract had already been formed when the goods were shipped."
     },
     {
         id: 2,
@@ -25,7 +25,7 @@ const examData = [
             "The plaintiff purchased the car in reliance on the advice of a mechanic whom she hired to inspect it prior to making the purchase."
         ],
         ans: 0,
-        exp: "Under UCC § 2-314, an implied warranty of merchantability accompanies every sale by a merchant unless disclaimed by unequivocal language[cite: 32]. UCC § 2-316(3)(a) specifically provides that the phrase 'as is' may be used to effectively disclaim this implied warranty[cite: 32]. An 'as is' clause shifts the risk of defects to the buyer, providing the seller with a complete defense against an implied warranty of merchantability claim[cite: 32]."
+        exp: "Under UCC §2-314, an implied warranty of merchantability accompanies every sale by a merchant unless disclaimed by unequivocal language. UCC §2-316(3)(a) specifically provides that the phrase 'as is' may be used to disclaim the warranty.\n\nB is incorrect because the implied warranty may accompany the sale of a used product as well as a new one. C is incorrect because liability for breach of warranty does not depend on negligence or fault by the seller. Under UCC §2-315, an implied warranty that the product is fit for the buyer's particular purpose accompanies a sale only if the seller knows the buyer's purpose and knows also that the buyer is relying on the seller's judgment in furnishing a product to suit that purpose. D is incorrect, however, because the implied warranty of merchantability does not require reliance on the seller's judgment."
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ const examData = [
             "No, because the doctor billed the insurance company directly."
         ],
         ans: 1,
-        exp: "In the absence of an agreement to the contrary, one who seeks the services of another, knowing that the other expects to be paid for those services, impliedly promises to pay for the services by availing himself or herself of them[cite: 32]. Although the doctor agreed to wait for payment and to bill the defendant's insurance company directly, nothing in the conversation between the doctor and the defendant indicates that the doctor was willing to look solely to the insurance company for payment[cite: 32]. The defendant implicitly promised to ensure the doctor was compensated for the services rendered[cite: 32]."
+        exp: "In the absence of an agreement to the contrary, one who seeks the services of another, knowing that the other expects to be paid for those services, impliedly promises to pay for the services by availing himself or herself of them. Although the doctor agreed to wait for payment and to bill the defendant's insurance company directly, nothing in the conversation between the doctor and the defendant indicates that the doctor was willing to look solely to the insurance company for payment.\n\nIf the benefit that a contract confers on a non-contracting party was intended to satisfy a preexisting obligation owed by one of the contracting parties, the person on whom the benefit is conferred is called a creditor third-party beneficiary. Since the defendant's debt to the doctor did not exist at the time the insurance contract was made, the doctor could not have been a creditor beneficiary. A is therefore incorrect. C and D are incorrect because, as noted above, nothing in the conversation between the doctor and the defendant indicates that the doctor agreed to look solely to the insurance company for payment."
     },
     {
         id: 4,
@@ -53,7 +53,7 @@ const examData = [
             "The contractor may not sue the landowner for breach of contract until he completes construction of the rollercoaster."
         ],
         ans: 2,
-        exp: "When either party to a contract breaches it, the other party is excused from further performance[cite: 32]. Since the landowner breached by refusing to make the agreed-upon progress payment as required, the contractor is entirely justified in refusing to perform any further work without incurring liability for breach[cite: 32]. The non-breaching party is also entitled to damages consisting of the losses sustained as a result of the breach, which may include expected profits for the remainder of the contract, meaning damages are not strictly capped at the missed payment amount[cite: 32]."
+        exp: "When either party to a contract breaches it, the other party is excused from further performance. Since the landowner breached by refusing to make payment as required, the contractor may refuse to perform any further work.\n\nIn addition, the non-breaching party is entitled to damages consisting of the losses that he or she sustained as a result of the breach. This may include profits that he or she would have earned if the breach had not occurred. D is therefore incorrect. Ordinarily, lost profits are measured by the balance of the contract price less whatever it would have cost the builder to complete performance. Since the amounts specified in A and B are not necessarily based on this measure, A and B are incorrect."
     },
     {
         id: 5,
@@ -67,7 +67,7 @@ const examData = [
             "No, because the contract is void under the doctrine of frustration of purpose."
         ],
         ans: 0,
-        exp: "Although the man's intended use of the store for marijuana sales is now illegal, this does not change the fact that the lease was simply a valid contract to rent a generic retail space for a year[cite: 32]. The man could still legally use the space for something else, although he might not be able to sell his planned primary product[cite: 32]. Because the core subject matter of the contract (the lease of space) is not illegal, and the space retains general utility, there is no valid reason to excuse the man's performance of the contract[cite: 32]."
+        exp: "Although the man's intended use of the store for marijuana sales is now illegal, this does not change the fact that the lease was simply to rent the space for a year. The man could still use the space for something, although he might not be able to sell his planned product. Under the circumstances, there's no reason to excuse the man's performance of the contract.\n\nB, C, and D are thus incorrect."
     },
     {
         id: 6,
@@ -81,7 +81,7 @@ const examData = [
             "$100,000."
         ],
         ans: 1,
-        exp: "Under UCC § 2-201, a contract for the sale of goods for the price of $500 or more is generally not enforceable unless there is a writing signed by the party against whom enforcement is sought[cite: 32]. However, under UCC § 2-201(3)(c), an oral contract is legally enforceable with respect to goods that have been actively received and accepted[cite: 32]. Here, since the venue accepted the first two speakers, the oral contract is enforceable specifically for those two units, allowing the company to recover $50,000 ($25,000 per accepted speaker)[cite: 32]."
+        exp: "Under UCC §2-201, a contract for the sale of goods for the price of $500 or more is not enforceable unless there is a writing signed by the party against whom enforcement is sought. However, under UCC §2-201(3)(c), an oral contract is enforceable with respect to goods that have been received and accepted. Here, since the venue accepted the first two speakers, the company can recover $50,000 according to the terms of the oral contract.\n\nTherefore, A, C, and D are incorrect."
     },
     {
         id: 7,
@@ -95,7 +95,7 @@ const examData = [
             "Yes, because there was no indication the seller acted in bad faith."
         ],
         ans: 2,
-        exp: "Under the Statute of Frauds, a contract for the sale of any interest in real estate must be in writing, and the writing must contain all the essential terms[cite: 32]. The price is an absolute essential term in a contract for the sale of realty, as a court will be unable to fashion a remedy or enforce the agreement without it[cite: 32]. Although the UCC provides gap-fillers for missing prices in the sale of goods, those provisions do not apply to the sale of real estate[cite: 32]."
+        exp: "Under the Statute of Frauds, a contract for the sale of any interest in real estate must be in writing, and the writing must contain all the essential terms. The price is an essential term in a contract for the sale of realty, since the court will be unable to fashion a remedy without it.\n\nAlthough UCC §2-305(1) makes special provision for contracts between merchants, providing that a contract silent as to price is presumed to be for a reasonable price, these provisions apply only to the sale of goods and not to the sale of realty. A and B are therefore incorrect. D is incorrect because bad faith is not at issue."
     },
     {
         id: 8,
@@ -109,7 +109,7 @@ const examData = [
             "No, because the value of the service rendered by the rescuer to the husband was speculative."
         ],
         ans: 2,
-        exp: "Consideration strictly requires a bargained-for exchange[cite: 32]. Since the husband did not ask the rescuer to save his wife prior to the act occurring, the rescuer's heroic act was neither bargained for nor given in exchange for the husband's subsequent promise[cite: 32]. A service rendered in the past, even if it materially benefited the promisor, is past consideration and cannot serve as valid consideration for a new promise because it was not performed in exchange for that promise[cite: 32]."
+        exp: "Consideration requires a bargained-for exchange. Since the husband did not ask the rescuer to save his wife, the rescuer's doing so was neither bargained for nor given in exchange for the husband's promise.\n\nThe fact that a promisor calls something 'consideration' for his or her promise does not make it so. A is incorrect because the service was not given in exchange for the promise. Even though the service rendered by the rescuer may have materially benefited the husband, it is not consideration for the husband's promise because it was not performed in exchange for the promise. B is therefore incorrect. A service given in return for a promise, however, would be consideration for the promise even if the value of the service cannot be specified. D is therefore incorrect."
     },
     {
         id: 9,
@@ -123,7 +123,7 @@ const examData = [
             "No, because the man informed the owner he did not want the car on April 19."
         ],
         ans: 3,
-        exp: "The man's note was an offer for a unilateral contract that explicitly required acceptance by the actual physical performance of delivering the car to his house, rather than by a return promise[cite: 32]. Because the man explicitly told the owner that he didn't want the car anymore before the owner actually started performance by delivering the car on the required date, the offer was validly revoked[cite: 32]. Consequently, the owner's letter was legally irrelevant, and no contract was created[cite: 32]."
+        exp: "The man's note was an offer for a unilateral contract that could only be accepted by performance. Because the man told the owner that he didn't want the car anymore before the owner started performance by delivering the car on the required date, the offer was revoked and no contract was created. A, B, and C are incorrect because the man's offer could only be accepted by performance."
     },
     {
         id: 10,
@@ -137,7 +137,7 @@ const examData = [
             "The buyer may reject the tendered delivery of 475 pens and may successfully sue for the return of its advance payment and for damages resulting from breach of contract if it does so."
         ],
         ans: 3,
-        exp: "The seller's fundamental obligation under a contract of sale is to deliver goods that conform in every way to the exact terms of the contract under the perfect tender rule[cite: 32]. Since the contract called for delivery of 500 pens, the tender of anything less (475 pens) is a material breach allowing rejection[cite: 32]. If the buyer rightfully rejects the nonconforming tender, the buyer is entitled to the return of all money already paid in advance, plus any damages resulting from the seller's breach (such as the cost of cover)[cite: 32]."
+        exp: "The seller's obligation under a contract of sale is to deliver goods that conform in every way to the terms of the contract. Since the contract called for delivery of 500 pens, delivery of anything less is a breach. Since the seller failed to perform as promised, the buyer is entitled to the return of all money already paid. In addition, since the seller breached the contract, the buyer is entitled to damages resulting from the breach.\n\nA is incorrect because the buyer is not required to accept a nonconforming tender. If a buyer chooses to accept a nonconforming tender, he or she must pay the contracted price but is entitled to sue for damages resulting from the seller's defective performance, so long as he or she notifies the seller of his or her intention to do so. B is therefore incorrect. On the other hand, if the tender does not conform to the seller's promise, the buyer may reject it. Having done so, the buyer is entitled to damages that resulted from the seller's breach. C is incorrect because return of the buyer's advance payment may not be sufficient to compensate the buyer for other damages that it sustained. (Note: Damages are traditionally measured by the difference between the contract price and the 'cover price' or the fair market value of the goods involved.)"
     },
     {
         id: 11,
@@ -151,7 +151,7 @@ const examData = [
             "No, because the man was merely soliciting bids."
         ],
         ans: 3,
-        exp: "A party who wishes to make a contract may make statements that are not definitive offers but rather preliminary solicitations of bids[cite: 32]. These bids form the basis of preliminary negotiations and cannot be legally accepted to form a contract[cite: 32]. Here, the man explicitly stating 'I would consider' demonstrates that his statement was a mere solicitation of bids or opening of negotiations, not a true binding offer granting the power of acceptance[cite: 32]. Consequently, the friend cannot accept it, and no contract is formed[cite: 32]."
+        exp: "A party who wishes to make a contract may make statements that are not offers but rather solicitations of bids. These bids are the basis of preliminary negotiations and cannot be accepted. Here, the man saying 'I would consider' shows his statement to be a mere solicitation of bids, and not a true offer. Consequently, the friend cannot accept and no contract is formed. This makes A incorrect. B is incorrect because detrimental reliance usually refers to the other party beginning performance or making costly preparations in anticipation of a contract. Here, the friend buying motorcycle equipment and a shed is unlikely to rise to this level. C is incorrect because a statement of future intention is an announcement by a person that he or she intends to contract in the future. The man's statement that he wanted to sell his motorcycle did not show that he necessarily intended to make any contract in the future."
     },
     {
         id: 12,
@@ -165,7 +165,7 @@ const examData = [
             "The defendant's refusal to deliver the abstract frustrated the purpose of the contract between the defendant and the plaintiff."
         ],
         ans: 1,
-        exp: "Under the brokerage contract, the actual transfer of title was an express condition precedent to the defendant's obligation to pay the commission[cite: 32]. However, there is always an implied covenant of good faith that a party will not willfully prevent or hinder the performance of a condition to their own obligation[cite: 32]. Because the transfer of title was directly prevented by the defendant's bad-faith, willful breach of his contract with the buyer (refusing to deliver the abstract to sabotage the deal), the condition is legally excused, and the defendant is liable for the unpaid commission[cite: 32]."
+        exp: "Under the brokerage contract, transfer of title was a condition precedent to the defendant's obligation to pay a commission. There is always an implied agreement, however, that a party will not willfully prevent the performance of a condition to his or her obligation. If transfer of title was prevented by the defendant's willful breach of his contract with the buyer, the defendant thus violated the implied agreement with the plaintiff and may be held liable for damages (i.e., the unpaid commission) that resulted.\n\nAlthough real estate brokerage contracts frequently require payment of the commission when the broker procures a ready, willing, and able buyer, A and C are incorrect because this contract was conditioned on the transfer of title. 'Frustration of purpose' may excuse performance of a contract where an unforeseen event destroys the underlying reasons for performing the contract. D is incorrect because the doctrine of frustration of purpose never results in liability but rather excuses a party's failure to perform."
     },
     {
         id: 13,
@@ -179,7 +179,7 @@ const examData = [
             "Yes, because there has been a valid agreement of accord."
         ],
         ans: 0,
-        exp: "An accord is a new agreement intended to temporarily suspend and ultimately take the place of an existing obligation[cite: 32]. To discharge the original obligation, the accord must actually be performed; the performance of the new obligation is known as 'satisfaction'[cite: 32]. The agreement of May 21 constituted an executory accord, but since the buyer failed to pay the $45,000 in cash by the agreed May 25 deadline, there was no satisfaction[cite: 32]. Because there was no satisfaction, there is no discharge of the original obligation, allowing the seller to sue for the full $50,000 originally owed[cite: 32]."
+        exp: "An accord is a new obligation intended to take the place of an existing one. To be enforceable, it must be supported by consideration. To discharge the original obligation, it must actually be performed. Performance of the new obligation is known as 'satisfaction,' and it is the satisfaction rather than the accord that discharges a contractual obligation. The agreement of May 21 constituted an accord, but since the buyer did not pay $45,000 in cash by May 25, there has been no satisfaction and thus no discharge of his obligation to pay $50,000 as originally agreed.\n\nWhile a promise to perform a preexisting obligation is not valuable consideration, B is incorrect because the buyer's original contractual obligation was to pay before June 14, and his May 21 promise was to pay by May 25. A novation is an agreement to substitute a third party for one of the parties to the contract. C is therefore incorrect. D is incorrect because accord without satisfaction does not work to discharge contractual obligations."
     },
     {
         id: 14,
@@ -192,8 +192,8 @@ const examData = [
             "Yes, because the acceptance was properly addressed with the correct amount of postage.",
             "Yes, because the writer mailed her acceptance."
         ],
-        ans: 3,
-        exp: "Under the common law mailbox rule, an acceptance is legally effective the moment it is properly dispatched (sent) by the offeree[cite: 32]. If the offeror never receives the acceptance, the acceptance is still valid as long as it was properly dispatched with the correct address and postage[cite: 32]. Because the writer properly dispatched the letter, the contract was fully formed upon mailing, regardless of the post office losing the physical document[cite: 32]."
+        ans: 2,
+        exp: "Under the mailbox rule, an acceptance is effective when sent. However, if the offeror never receives the acceptance, the acceptance has to be properly dispatched in order to create a contract. Here, since the facts state that the writer put the correct address and proper postage on the acceptance, the mailbox rule applies. This makes A and B incorrect.\n\nD is incorrect because even if the writer mailed her acceptance, the mailbox rule would not apply if the acceptance was not properly dispatched (i.e., she put the wrong address on it)."
     },
     {
         id: 15,
@@ -207,7 +207,7 @@ const examData = [
             "No, because the dean's promise was illusory."
         ],
         ans: 2,
-        exp: "A promise must be supported by valid consideration to be legally enforceable, meaning there must be a bargained-for exchange[cite: 32]. Past consideration is no consideration at all; because the professor had already completed the work that resulted in the high test scores before the bonus was promised, the work could not have been bargained for in exchange for the bonus[cite: 32]. Therefore, there was no fresh consideration, and the dean's promise of a bonus is completely unenforceable[cite: 32]."
+        exp: "A promise has to be supported by consideration to be enforceable. Consideration is a bargained-for exchange or legal detriment, which means that the promise must agree to do something that he or she was not obligated to do or refrain from something he or she was legally permitted to do. Importantly, past consideration is no consideration at all. Here, the professor already did his job teaching professional responsibility. Consequently, there was no consideration and the bonus promise is unenforceable.\n\nA is incorrect because the professor had the legal duty to do the job he was hired. Working 'extra hard' in that job would not count as sufficient consideration to support the dean's bonus promise. Additionally, the professor had already done the work the bonus was based on. B is incorrect because the fact that the dean received a financial benefit does not change the analysis. D is incorrect because an illusory promise is a statement where the speaker doesn't actually promise to do anything. Here, the dean clearly promised to give the professor a bonus."
     },
     {
         id: 16,
@@ -221,7 +221,7 @@ const examData = [
             "The owner of a messenger service who employs a full-time bicycle mechanic to maintain bicycles used in her business, and who sends the mechanic to inspect a new bicycle before buying it for use by messengers in her employ."
         ],
         ans: 1,
-        exp: "UCC § 2-104 defines a merchant as a person who deals in goods of the kind involved in the transaction, or one who holds themselves out as having knowledge or skill peculiar to the goods involved[cite: 32]. The owner of an automobile dealership is not in the business of selling bicycles, does not hold themselves out as having special knowledge of bicycles, and does not employ a person who does so specifically for this transaction[cite: 32]. Therefore, they are not a merchant with respect to bicycles[cite: 32]. The others all either deal in bicycles directly or possess/employ specialized knowledge regarding them."
+        exp: "UCC §2-104 defines a merchant as a person who deals in goods of the kind involved in the transaction, one who by his or her occupation holds himself or herself out as having knowledge peculiar to the goods involved in the transaction, one to whom such knowledge may be attributed by his or her employment, or a person who by his or her occupation holds himself or herself out as having such knowledge. Since the buyer in B is not in the bicycle business, does not hold himself or herself out as having special knowledge of bicycles, and does not employ a person who does so, he or she is not a merchant under UCC §2-104.\n\nThe seller in A is in the bicycle business and therefore deals in bicycles. The buyer in C is a bicycle mechanic, and as such holds himself out as having special knowledge of bicycles. Special knowledge of bicycles may be attributed to the buyer in D because she employed a bicycle mechanic to assist in making the purchase."
     },
     {
         id: 17,
@@ -235,7 +235,7 @@ const examData = [
             "No, because the defendant hired another caretaker in reliance on the reasonable belief that the plaintiff would be unable to perform as agreed."
         ],
         ans: 3,
-        exp: "A prospective inability to perform occurs when a party to a contract has, by their own conduct, divested themselves of the apparent ability to fulfill the contract[cite: 32]. A party who justifiably relies to its detriment on another party's severe prospective inability to perform is discharged from its own obligations under the contract[cite: 32]. Since the hotel executives learned that the plaintiff had enlisted for three years (which would make his required winter residency impossible), they were entirely justified in relying on this prospective inability by hiring a replacement caretaker to mitigate damages[cite: 32]. This detrimental reliance permanently excused the hotel from performing[cite: 32]."
+        exp: "A prospective inability to perform occurs when a party to a contract has, by his or her own conduct, divested himself or herself of the ability to perform. A party who justifiably relies to its detriment on another party's prospective inability to perform is discharged from its obligations under the contract. Since the hotel executives learned that the plaintiff had enlisted, and since this would make it impossible for the plaintiff to perform, they were justified in hiring another caretaker. Since the hotel ordinarily employed only one winter caretaker, hiring the new caretaker was sufficiently detrimental to excuse it from performing its contract with the plaintiff.\n\nA and B are incorrect because the hotel justifiably relied to its detriment on the plaintiff's prospective inability to perform when it hired the new caretaker upon learning of the plaintiff's enlistment. An anticipatory repudiation occurs when a party refuses to perform even though he or she is able to do so. C is incorrect because the plaintiff never refused to perform."
     },
     {
         id: 18,
@@ -249,7 +249,7 @@ const examData = [
             "$5,000, because the defendant could have rebuilt the house with the proceeds from the fire insurance policy."
         ],
         ans: 1,
-        exp: "When unforeseeable circumstances destroy the subject matter of an existing building repair contract, performance is excused under the doctrine of impossibility without fault by either party[cite: 32]. Because the contract is discharged, neither party can sue for full expectation damages on the contract[cite: 32]. However, in construction contracts involving the repair of an existing building, the contractor is entitled to recover in quasi-contract (restitution) for the reasonable value of the work successfully done prior to the destruction, preventing total forfeiture[cite: 32]. Thus, the plaintiff recovers $1,500[cite: 32]."
+        exp: "Ordinarily, when unforeseeable circumstances make performance impossible, that performance is excused. When this occurs after performance has begun, the party who has performed is not entitled to contract remedies, since there has been no breach by the other party. In construction contracts, if the contractor is hired to repair an existing building rather than build a new one, the contractor is entitled to recover in restitution for the reasonable value of the work done prior to the destruction of the building. In contracts involving building a new building, contractors are not permitted any recovery in restitution for the work that was destroyed, because no benefit was conferred on the owner.\n\nA and D are incorrect because the plaintiff did not fully perform, such performance having become impossible without fault by either party."
     },
     {
         id: 19,
@@ -263,7 +263,7 @@ const examData = [
             "An assignment of wages is invalid."
         ],
         ans: 1,
-        exp: "An assignment transfers the assignor's rights entirely to the assignee, immediately extinguishing the assignor's direct legal rights to enforce the underlying contract[cite: 32]. Since the plaintiff assigned his rights to receive royalties under the contract (to his friend, and then again later), he no longer holds the legal standing to personally enforce those rights against the defendant[cite: 32]. Consequently, the defendant's strongest defense against the plaintiff's direct lawsuit is that the plaintiff already transferred the rights away[cite: 32]."
+        exp: "An assignment transfers the assignor's rights to the assignee, thus extinguishing the assignor's rights under the contract. Since the plaintiff has assigned his rights under the contract, he can no longer enforce them.\n\nA is incorrect for two reasons: First, lack of contractual capacity makes a contract voidable only at the option of the person who lacked it, and second, a minor has capacity to contract in connection with his or her own business interests. An assignee's failure to notify the obligor that an assignment has been made may result in a discharge of the obligor's obligation to the assignee to the extent of payments that the obligor made to the assignor. C is incorrect, however, because the assignee's failure to notify does not alone discharge any obligation owed by the obligor. In some jurisdictions, an assignment of wages is invalid. D is incorrect for two reasons: First, if the assignment is invalid, the defendant is liable to the plaintiff, and second, the assignment was of royalties, not of wages."
     },
     {
         id: 20,
@@ -277,7 +277,7 @@ const examData = [
             "She received no consideration from her brother for either promise."
         ],
         ans: 0,
-        exp: "The Statute of Frauds strictly requires that any contract establishing or creating an interest in land (including leasehold interests or life estates) must be memorialized in writing to be legally enforceable[cite: 32]. The daughter's oral promises to allow her aunt and brother to occupy the house effectively constituted promises to create life estates or long-term leaseholds[cite: 32]. Because these oral promises involved interests in land, they fall squarely within the Statute of Frauds, giving the sister a highly effective defense[cite: 32]."
+        exp: "The Statute of Frauds requires that a contract to create an interest in land be in writing. Most states agree that this requirement applies to a promise to create a leasehold interest, so it would apply to both promises made by the daughter.\n\nThe Statute of Frauds also requires a writing if the contract is one that by its terms cannot be performed within one year. The promise that the daughter made to her mother could be performed within one year if her brother died during that period. The promise that the daughter made to her brother could be performed within one year if their aunt died during that period. B is therefore incorrect. UCC §2-201(1) requires that a contract for the sale of goods for a price of $500 or more be in writing. C is incorrect, however, because a house is realty rather than goods, and because the requirement of a writing is based on the price rather than the value of goods sold. Consideration is something of value given in return for a promise, but it is not necessary that the consideration flow from the promisee to the promisor. D is incorrect because the woman's conveyance to her daughter was consideration for her daughter's promise to the woman, and because her brother's promise to share the inheritance was consideration for his sister's promise to him. In addition, D is incorrect because the lack of consideration does not relate to the assertion that an oral promise is unenforceable."
     },
     {
         id: 21,
@@ -291,7 +291,7 @@ const examData = [
             "Yes, because the painter was entitled to be paid for his part performance."
         ],
         ans: 1,
-        exp: "As long as neither party has fully performed a contract, the parties may mutually agree to cancel the entire contract[cite: 32]. Such an agreement is called a mutual rescission[cite: 32]. However, when parties agree to a mutual rescission without explicitly preserving claims for past work, most courts hold that neither party is legally obligated to pay for any benefits already received under the canceled contract[cite: 32]. The mutual cancellation wiped out the remaining obligations on both sides[cite: 32]."
+        exp: "As long as neither party has fully performed a contract, the parties may agree to cancel the whole contract. Such an agreement is called a mutual rescission. However, when parties agree to a mutual rescission, most courts hold that neither party is obligated to pay for any benefits already received under the contract. A is incorrect because it is irrelevant who asked to get out of the contract first. C and D are incorrect because parties are not obligated to pay for any benefits they received under the contract before the mutual rescission."
     },
     {
         id: 22,
@@ -305,7 +305,7 @@ const examData = [
             "No, because there has been an accord and satisfaction."
         ],
         ans: 0,
-        exp: "UCC § 2-209(3) states that an agreement to modify a commercial contract must be in writing if the contract, as modified, falls within the provisions of the Statute of Frauds[cite: 32]. Since the contract as modified calls for the sale of 1,000 widgets at $10 per widget, the total modified price is $10,000[cite: 32]. Because this massively exceeds the $500 threshold for the sale of goods under the Statute of Frauds, the modification absolutely required a written memorandum[cite: 32]. Because it was merely oral, it is unenforceable over the objection of the plaintiff, who may sue on the original contract[cite: 32]."
+        exp: "UCC §2-209(3) provides that an agreement to modify a contract must be in writing if the contract as modified is within the provisions of the Statute of Frauds. Since the contract as modified calls for the sale of 1,000 widgets at $10 per widget for a total price of $10,000, and since the Statute of Frauds requires a contract for the sale of goods with a price of $500 or more to be in writing, the contract as modified falls within the provisions of the Statute of Frauds. Since it is not in writing, it is not enforceable over the objection of the plaintiff.\n\nC is therefore incorrect. B is incorrect because UCC §2-209(1) provides that an agreement to modify an existing contract may be enforceable without consideration. An accord is an agreement to substitute a new obligation for an existing one. To be enforceable, an accord, like any other agreement, must be supported by consideration. Since consideration is a detriment suffered in exchange for a benefit received, and since the defendant suffered no detriment in return for the reduction in his obligation, the agreement to accept 1,000 widgets instead of 2,000 as originally required by the contract is unsupported by consideration. D is therefore incorrect."
     },
     {
         id: 23,
@@ -319,7 +319,7 @@ const examData = [
             "No, because the offer was revocable at any time before acceptance."
         ],
         ans: 3,
-        exp: "Because the transaction involves the sale of real estate (a store building and parking lot) rather than goods, the Uniform Commercial Code's firm offer rule does not apply[cite: 32]. Under the common law of contracts, a promise to hold an offer open requires independent consideration to become a binding option contract[cite: 32]. Since the neighbor provided no consideration to keep the offer open, it remained a standard offer that was freely revocable at any time before acceptance[cite: 32]. The merchant legally revoked it by communicating the sale prior to any acceptance by the neighbor[cite: 32]."
+        exp: "Under the UCC, a merchant can make an irrevocable firm offer if the offer is in writing, signed by the merchant, and expressly states that the offer will be held open for a certain period of time. Under the common law, an enforceable option contract is created when the offeror makes a promise to hold the offer open and that promise is supported by consideration. Here, because the store and parking lot are land and not goods, the UCC does not apply. Because the parties did not exchange consideration to keep the offer open, it was not an enforceable option contract. Consequently, the offer was revocable at any time before acceptance and the offer was revoked when the merchant told the neighbor he'd already sold the property.\n\nFor the above reasons, A, B, and C are incorrect. C is also incorrect because a firm offer can be held open for a maximum of 90 days."
     },
     {
         id: 24,
@@ -333,7 +333,7 @@ const examData = [
             "No contractual relationship existed between the homeowner and the contractor."
         ],
         ans: 3,
-        exp: "The contractor's note on September 5 demanding $325 was a counteroffer, which legally acted as a definitive rejection of the homeowner's $300 offer[cite: 32]. Once an offeree kills an offer by rejecting it, they do not have the unilateral power to resurrect it by a subsequent 'acceptance'[cite: 32]. The contractor's September 12 note agreeing to $300 was therefore merely a new offer[cite: 32]. Because an offeror cannot typically force silence to act as an acceptance, and the homeowner lacked knowledge of the actual installation, no mutual assent was reached, leaving no contractual relationship[cite: 32]."
+        exp: "The note that the contractor sent on September 5 demanding $325 was a rejection of the homeowner's offer to pay $300. An offeree who has killed an offer by rejecting it does not have the power to resurrect it by a subsequent acceptance. The contractor's note of September 12 was thus no more than a new offer. Since an offer may not make the offeree's silence an acceptance, the contractor's offer of September 12 was never accepted because the homeowner did not respond to it.\n\nA is therefore incorrect. Since there was no existing offer that could be accepted by performance, the contractor's commencement of performance on September 28 could not have resulted in the formation of a contract, making B incorrect. Since the homeowner did not know that the contractor was installing the screens, and since the contractor did not have a reasonable expectation of compensation at the time he installed them, the contractor has no quasi-contract remedy, and C is incorrect."
     },
     {
         id: 25,
@@ -347,6 +347,6 @@ const examData = [
             "Yes, because damages in this situation would be difficult to calculate."
         ],
         ans: 1,
-        exp: "While parties may agree to a liquidated damages clause, such clauses are legally invalid if they function primarily as a punitive penalty[cite: 32]. A valid clause must be a reasonable estimate of actual potential losses[cite: 32]. Here, paying the full gross per-pound bagging price for unbagged apples grants the plaintiff the entire gross revenue without deducting the operational costs saved by doing absolutely no work[cite: 32]. Because this results in a grossly disproportionate windfall disconnected from actual net losses, the clause is an unenforceable penalty[cite: 32]."
+        exp: "Parties to a contract may make an explicit agreement as to what each party's remedy for a breach of contract will be. However, such 'liquidated damages clauses' are invalid if they act as a penalty. The purpose of damages is to put the plaintiff in the same position he or she would have been in had the contract been fulfilled. It is not to punish the defendant for breach. Importantly, where a damage clause is keyed to the plaintiff's lost gross revenues, lost profits, or other figure not necessarily tied to actual losses, the court is likely to find it an unenforceable penalty. Here, the clause is an unenforceable penalty because the plaintiff gets paid the same amount regardless of whether it had to do any work, and thus regardless of whether it incurred operating costs in performing the work. Consequently, the clause has no connection to the nature of the breach, and is an unreasonable estimate of potential losses to the plaintiff. A is incorrect because, although the clause is a poor estimate of actual losses, a court will not enforce it because it rises to the level of an unenforceable penalty. C is incorrect because the clause was not a reasonable estimation of the damages. D is incorrect because there is no indication this agreement is so complicated or the industry so volatile as to make damages difficult to calculate."
     }
 ];
