@@ -142,52 +142,84 @@
 
         <!-- TORTS -->
         <div class="category-header-bar">
-            <div class="section-title">⚖️ Torts Practice Sets (Sets 01–34)</div>
+            <div class="section-title">⚖️ Torts Practice Sets (Sets 01–20)</div>
             <div class="category-actions">
-                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('torts', 'Torts', 34)">📤 Export</button>
-                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('torts', 'Torts', 34)">📥 Import</button>
-                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('torts', 'Torts', 34)">📋 Export Rules</button>
-                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'torts', 'Torts', 'Torts', 34)">❌ Compile Missed</button>
-                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'torts', 'Torts', 'Torts', 34)">🚩 Compile Flagged</button>
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('torts', 'Torts', 1, 20)">📤 Export</button>
+                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('torts', 'Torts', 1, 20)">📥 Import</button>
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'torts', 'Torts', 'Torts', 1, 20)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'torts', 'Torts', 'Torts', 1, 20)">🚩 Compile Flagged</button>
             </div>
         </div>
         <div class="exam-grid" id="torts-grid"></div>
+
+        <!-- TORTS ADV -->
+        <div class="category-header-bar">
+            <div class="section-title">⚖️ Torts Adv Practice Sets (Sets 21–34)</div>
+            <div class="category-actions">
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('torts_adv', 'Torts Adv', 21, 34)">📤 Export</button>
+                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('torts_adv', 'Torts Adv', 21, 34)">📥 Import</button>
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'torts_adv', 'Torts', 'Torts Adv', 21, 34)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'torts_adv', 'Torts', 'Torts Adv', 21, 34)">🚩 Compile Flagged</button>
+            </div>
+        </div>
+        <div class="exam-grid" id="torts-adv-grid"></div>
 
         <!-- CRIMINAL LAW -->
         <div class="category-header-bar">
             <div class="section-title">🏛️ Criminal Law Practice Sets (Sets 01–28)</div>
             <div class="category-actions">
-                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('criminal', 'Criminal Law', 28)">📤 Export</button>
-                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('criminal', 'Criminal Law', 28)">📥 Import</button>
-                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('criminal', 'Criminal Law', 28)">📋 Export Rules</button>
-                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 28)">❌ Compile Missed</button>
-                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 28)">🚩 Compile Flagged</button>
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('criminal', 'Criminal Law', 1, 28)">📤 Export</button>
+                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('criminal', 'Criminal Law', 1, 28)">📥 Import</button>
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 1, 28)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 1, 28)">🚩 Compile Flagged</button>
             </div>
         </div>
         <div class="exam-grid" id="crim-grid"></div>
 
+        <!-- CRIMINAL LAW ADV -->
+        <div class="category-header-bar">
+            <div class="section-title">🏛️ Criminal Law Adv Practice Sets (Sets 29–42)</div>
+            <div class="category-actions">
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('criminal_adv', 'Criminal Law Adv', 29, 42)">📤 Export</button>
+                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('criminal_adv', 'Criminal Law Adv', 29, 42)">📥 Import</button>
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'criminal_adv', 'CriminalLaw', 'Criminal Law Adv', 29, 42)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'criminal_adv', 'CriminalLaw', 'Criminal Law Adv', 29, 42)">🚩 Compile Flagged</button>
+            </div>
+        </div>
+        <div class="exam-grid" id="crim-adv-grid"></div>
+
         <!-- CONTRACTS -->
         <div class="category-header-bar">
-            <div class="section-title">📜 Contracts Practice Sets (Sets 01–39)</div>
+            <div class="section-title">📜 Contracts Practice Sets (Sets 01–25)</div>
             <div class="category-actions">
-                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('contracts', 'Contracts', 39)">📤 Export</button>
-                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('contracts', 'Contracts', 39)">📥 Import</button>
-                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('contracts', 'Contracts', 39)">📋 Export Rules</button>
-                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'contracts', 'Contracts', 'Contracts', 39)">❌ Compile Missed</button>
-                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'contracts', 'Contracts', 'Contracts', 39)">🚩 Compile Flagged</button>
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('contracts', 'Contracts', 1, 25)">📤 Export</button>
+                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('contracts', 'Contracts', 1, 25)">📥 Import</button>
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'contracts', 'Contracts', 'Contracts', 1, 25)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'contracts', 'Contracts', 'Contracts', 1, 25)">🚩 Compile Flagged</button>
             </div>
         </div>
         <div class="exam-grid" id="contracts-grid"></div>
+
+        <!-- CONTRACTS ADV -->
+        <div class="category-header-bar">
+            <div class="section-title">📜 Contracts Adv Practice Sets (Sets 26–39)</div>
+            <div class="category-actions">
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('contracts_adv', 'Contracts Adv', 26, 39)">📤 Export</button>
+                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('contracts_adv', 'Contracts Adv', 26, 39)">📥 Import</button>
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'contracts_adv', 'Contracts', 'Contracts Adv', 26, 39)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'contracts_adv', 'Contracts', 'Contracts Adv', 26, 39)">🚩 Compile Flagged</button>
+            </div>
+        </div>
+        <div class="exam-grid" id="contracts-adv-grid"></div>
 
         <!-- MIXED SETS -->
         <div class="category-header-bar">
             <div class="section-title">📝 Mixed Subject Sets (Sets 01–40)</div>
             <div class="category-actions">
-                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('mixed', 'Mixed Subjects', 40)">📤 Export</button>
-                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('mixed', 'Mixed Subjects', 40)">📥 Import</button>
-                <button class="btn-cat-export btn-cat-rules" onclick="exportCategoryRules('mixed', 'Mixed Subjects', 40)">📋 Export Rules</button>
-                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 40)">❌ Compile Missed</button>
-                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 40)">🚩 Compile Flagged</button>
+                <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('mixed', 'Mixed Subjects', 1, 40)">📤 Export</button>
+                <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('mixed', 'Mixed Subjects', 1, 40)">📥 Import</button>
+                <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 1, 40)">❌ Compile Missed</button>
+                <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 1, 40)">🚩 Compile Flagged</button>
             </div>
         </div>
         <div class="exam-grid" id="mixed-grid"></div>
@@ -227,7 +259,7 @@
             return null;
         }
 
-        function renderExamSection(gridId, categoryKey, filePrefix, displayName, totalSets, defaultSubtitle) {
+        function renderExamSection(gridId, categoryKey, filePrefix, displayName, startSet, endSet, defaultSubtitle) {
             const container = document.getElementById(gridId);
             if (!container) return;
             let html = "";
@@ -292,7 +324,7 @@
                 </a>
             `;
 
-            // 3. RULES PDF CARD (Blue)
+            // 3. RULES PDF CARD (Blue) - Standard subjects only
             const rulesPdfMap = {
                 torts: { file: "Torts-Rules.pdf", label: "Torts Rules" },
                 criminal: { file: "Criminal-Rules.pdf", label: "Criminal Law Rules" },
@@ -316,7 +348,7 @@
             }
 
             // 4. STANDARD SETS (Routing to Master Runner)
-            for (let i = 1; i <= totalSets; i++) {
+            for (let i = startSet; i <= endSet; i++) {
                 const padNum = String(i).padStart(2, '0');
                 const percent = getSetPercentage(categoryKey, i);
                 let scoreBadgeHtml = percent !== null ? `<span class="score-display-badge">${percent}%</span>` : `<span class="score-display-badge unattempted">—</span>`;
@@ -338,21 +370,24 @@
         }
 
         function populateAllExams() {
-            renderExamSection("torts-grid", "torts", "Torts", "Torts", 34, "Targeted Practice & Rule Analysis");
-            renderExamSection("crim-grid", "criminal", "CriminalLaw", "Criminal Law", 28, "Crimes, Defenses & Analytics");
-            renderExamSection("contracts-grid", "contracts", "Contracts", "Contracts", 39, "Formation, Breach & Remedies");
-            renderExamSection("mixed-grid", "mixed", "Mixed", "Mixed Exam", 40, "Multi-Subject FYLSX Practice Exam");
+            renderExamSection("torts-grid", "torts", "Torts", "Torts", 1, 20, "Targeted Practice & Rule Analysis");
+            renderExamSection("torts-adv-grid", "torts_adv", "Torts", "Torts Adv", 21, 34, "Advanced Application & Edge Cases");
+            renderExamSection("crim-grid", "criminal", "CriminalLaw", "Criminal Law", 1, 28, "Crimes, Defenses & Analytics");
+            renderExamSection("crim-adv-grid", "criminal_adv", "CriminalLaw", "Criminal Law Adv", 29, 42, "Advanced Crimes, Defenses & MPC Analytics");
+            renderExamSection("contracts-grid", "contracts", "Contracts", "Contracts", 1, 25, "Formation, Breach & Remedies");
+            renderExamSection("contracts-adv-grid", "contracts_adv", "Contracts", "Contracts Adv", 26, 39, "Advanced UCC, Performance & Complex Remedies");
+            renderExamSection("mixed-grid", "mixed", "Mixed", "Mixed Exam", 1, 40, "Multi-Subject FYLSX Practice Exam");
         }
 
-        // COMPILE MISSED QUESTIONS (Overwrites Storage - Now fetching .js files)
-        async function generateAllMissedSet(event, categoryKey, filePrefix, categoryTitle, totalSets) {
+        // COMPILE MISSED QUESTIONS
+        async function generateAllMissedSet(event, categoryKey, filePrefix, categoryTitle, startSet, endSet) {
             const proceed = confirm(`This will compile your currently missed questions and OVERWRITE your existing 'Missed Questions' storage bank for ${categoryTitle}. Proceed?`);
             if (!proceed) return;
 
             const btn = event.currentTarget; const originalBtnText = btn.innerHTML; btn.innerHTML = "⏳ Compiling..."; btn.disabled = true;
             let collectedMissedQuestions = []; let totalAnsweredAcrossSets = 0;
 
-            for (let i = 1; i <= totalSets; i++) {
+            for (let i = startSet; i <= endSet; i++) {
                 const padNum = String(i).padStart(2, '0'); let foundAnswers = null;
                 const savedAns = localStorage.getItem(`fylsx_${categoryKey}_set${padNum}_answers_v25`) || localStorage.getItem(`fylsx_${categoryKey}_set${i}_answers_v25`);
                 if (savedAns) { try { foundAnswers = JSON.parse(savedAns); } catch (e) {} }
@@ -390,15 +425,15 @@
             alert(`✅ Successfully compiled ${collectedMissedQuestions.length} missed questions!\nThe gold card has been updated on your dashboard.`);
         }
 
-        // COMPILE FLAGGED QUESTIONS (Overwrites Storage - Now fetching .js files)
-        async function generateAllFlaggedSet(event, categoryKey, filePrefix, categoryTitle, totalSets) {
+        // COMPILE FLAGGED QUESTIONS
+        async function generateAllFlaggedSet(event, categoryKey, filePrefix, categoryTitle, startSet, endSet) {
             const proceed = confirm(`This will compile your currently flagged questions and OVERWRITE your existing 'Flagged Questions' storage bank for ${categoryTitle}. Proceed?`);
             if (!proceed) return;
 
             const btn = event.currentTarget; const originalBtnText = btn.innerHTML; btn.innerHTML = "⏳ Compiling..."; btn.disabled = true;
             let collectedFlaggedQuestions = []; let totalFlagsAcrossSets = 0;
 
-            for (let i = 1; i <= totalSets; i++) {
+            for (let i = startSet; i <= endSet; i++) {
                 const padNum = String(i).padStart(2, '0'); let foundFlags = null;
                 const savedFlags = localStorage.getItem(`fylsx_${categoryKey}_set${padNum}_flags_v25`) || localStorage.getItem(`fylsx_${categoryKey}_set${i}_flags_v25`);
                 if (savedFlags) { try { foundFlags = JSON.parse(savedFlags); } catch (e) {} }
@@ -450,12 +485,12 @@
         function handleLogout() { sessionStorage.removeItem(AUTH_SESSION_KEY); document.getElementById("passcode-input").value = ""; checkAuth(); }
         window.addEventListener("DOMContentLoaded", checkAuth);
 
-        function exportGroupJSON(categoryKey, categoryTitle, totalSets) {
+        function exportGroupJSON(categoryKey, categoryTitle, startSet, endSet) {
             const storageItems = {}; let setsWithData = 0;
             const versions = ["v25", "v100", "v23", "v24"];
             const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"];
             
-            for (let i = 1; i <= totalSets; i++) {
+            for (let i = startSet; i <= endSet; i++) {
                 let hasSetData = false; const padNum = String(i).padStart(2, '0');
                 versions.forEach(v => prefixes.forEach(p => {
                     [ `fylsx_${categoryKey}_set${i}_${p}_${v}`, `fylsx_${categoryKey}_set${padNum}_${p}_${v}` ].forEach(k => {
@@ -479,13 +514,13 @@
                 if (localStorage.getItem(hKey)) storageItems[hKey] = localStorage.getItem(hKey);
             });
 
-            const exportPayload = { app: "GoBabyBar Exam Center", version: "2.1", exportType: "group_complete_backup", categoryKey, categoryTitle, totalSetsScanned: totalSets, setsWithRecordedData: setsWithData, exportTimestamp: new Date().toISOString(), data: storageItems };
+            const exportPayload = { app: "GoBabyBar Exam Center", version: "2.2", exportType: "group_complete_backup", categoryKey, categoryTitle, startSet, endSet, totalSetsScanned: (endSet - startSet + 1), setsWithRecordedData: setsWithData, exportTimestamp: new Date().toISOString(), data: storageItems };
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportPayload, null, 2));
             const downloadAnchor = document.createElement('a'); downloadAnchor.setAttribute("href", dataStr); downloadAnchor.setAttribute("download", `GoBabyBar_${categoryTitle.replace(/\s+/g, '_')}_Full_Backup_${new Date().toISOString().slice(0,10)}.json`);
             document.body.appendChild(downloadAnchor); downloadAnchor.click(); downloadAnchor.remove();
         }
 
-        function triggerGroupJSONImport(categoryKey, categoryTitle, totalSets) { activeImportCategory = { categoryKey, categoryTitle, totalSets }; document.getElementById("group-file-importer").value = ""; document.getElementById("group-file-importer").click(); }
+        function triggerGroupJSONImport(categoryKey, categoryTitle, startSet, endSet) { activeImportCategory = { categoryKey, categoryTitle, startSet, endSet }; document.getElementById("group-file-importer").value = ""; document.getElementById("group-file-importer").click(); }
         
         function executeGroupFileImport(event) {
             const file = event.target.files[0]; if (!file) return;
@@ -495,11 +530,12 @@
                     const parsed = JSON.parse(e.target.result);
                     if (!parsed.data) { alert("Invalid backup file."); return; }
                     const targetCat = activeImportCategory ? activeImportCategory.categoryKey : (parsed.categoryKey || "torts");
-                    const targetSets = activeImportCategory ? activeImportCategory.totalSets : 20;
+                    const targetStart = activeImportCategory ? activeImportCategory.startSet : (parsed.startSet || 1);
+                    const targetEnd = activeImportCategory ? activeImportCategory.endSet : (parsed.endSet || parsed.totalSetsScanned || 20);
                     const versions = ["v25", "v100", "v23", "v24"];
                     const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"];
 
-                    for (let i = 1; i <= targetSets; i++) {
+                    for (let i = targetStart; i <= targetEnd; i++) {
                         const padNum = String(i).padStart(2, '0');
                         versions.forEach(v => prefixes.forEach(p => { localStorage.removeItem(`fylsx_${targetCat}_set${i}_${p}_${v}`); localStorage.removeItem(`fylsx_${targetCat}_set${padNum}_${p}_${v}`); }));
                         localStorage.removeItem(`fylsx_history_${targetCat}_set${i}`); localStorage.removeItem(`fylsx_history_${targetCat}_set${padNum}`);
