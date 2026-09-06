@@ -271,13 +271,13 @@
             <div class="category-header-bar" onclick="toggleAccordion('sec-mixed', 'mixed')">
                 <div class="title-left">
                     <span class="chevron-icon">▶</span>
-                    <div class="section-title">📝 Mixed Subject Sets (Sets 01–40)</div>
+                    <div class="section-title">📝 Mixed Subject Sets (Sets 01–50)</div>
                 </div>
                 <div class="category-actions" onclick="event.stopPropagation()">
-                    <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('mixed', 'Mixed Subjects', 1, 40)">📤 Export</button>
-                    <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('mixed', 'Mixed Subjects', 1, 40)">📥 Import</button>
-                    <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 1, 40)">❌ Compile Missed</button>
-                    <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 1, 40)">🚩 Compile Flagged</button>
+                    <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('mixed', 'Mixed Subjects', 1, 50)">📤 Export</button>
+                    <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('mixed', 'Mixed Subjects', 1, 50)">📥 Import</button>
+                    <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 1, 50)">❌ Compile Missed</button>
+                    <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'mixed', 'Mixed', 'Mixed Subjects', 1, 50)">🚩 Compile Flagged</button>
                 </div>
             </div>
             <div class="accordion-body">
@@ -462,7 +462,7 @@
             renderExamSection("crim-adv-grid", "criminal_adv", "CriminalLaw", "Criminal Law Adv", 21, 28, "Advanced Crimes, Defenses & MPC Analytics");
             renderExamSection("contracts-grid", "contracts", "Contracts", "Contracts", 1, 25, "Formation, Breach & Remedies");
             renderExamSection("contracts-adv-grid", "contracts_adv", "Contracts", "Contracts Adv", 26, 39, "Advanced UCC, Performance & Complex Remedies");
-            renderExamSection("mixed-grid", "mixed", "Mixed", "Mixed Exam", 1, 40, "Multi-Subject FYLSX Practice Exam");
+            renderExamSection("mixed-grid", "mixed", "Mixed", "Mixed Exam", 1, 50, "Multi-Subject FYLSX Practice Exam");
         }
 
         // COMPILE MISSED QUESTIONS
