@@ -195,13 +195,13 @@
             <div class="category-header-bar" onclick="toggleAccordion('sec-criminal', 'criminal')">
                 <div class="title-left">
                     <span class="chevron-icon">▶</span>
-                    <div class="section-title">🏛️ Criminal Law Practice Sets (Sets 01–28)</div>
+                    <div class="section-title">🏛️ Criminal Law Practice Sets (Sets 01–20)</div>
                 </div>
                 <div class="category-actions" onclick="event.stopPropagation()">
-                    <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('criminal', 'Criminal Law', 1, 28)">📤 Export</button>
-                    <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('criminal', 'Criminal Law', 1, 28)">📥 Import</button>
-                    <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 1, 28)">❌ Compile Missed</button>
-                    <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 1, 28)">🚩 Compile Flagged</button>
+                    <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('criminal', 'Criminal Law', 1, 20)">📤 Export</button>
+                    <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('criminal', 'Criminal Law', 1, 20)">📥 Import</button>
+                    <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 1, 20)">❌ Compile Missed</button>
+                    <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'criminal', 'CriminalLaw', 'Criminal Law', 1, 20)">🚩 Compile Flagged</button>
                 </div>
             </div>
             <div class="accordion-body">
@@ -214,13 +214,13 @@
             <div class="category-header-bar" onclick="toggleAccordion('sec-criminal_adv', 'criminal_adv')">
                 <div class="title-left">
                     <span class="chevron-icon">▶</span>
-                    <div class="section-title">🏛️ Criminal Law Adv Practice Sets (Sets 29–42)</div>
+                    <div class="section-title">🏛️ Criminal Law Adv Practice Sets (Sets 21–28)</div>
                 </div>
                 <div class="category-actions" onclick="event.stopPropagation()">
-                    <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('criminal_adv', 'Criminal Law Adv', 29, 42)">📤 Export</button>
-                    <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('criminal_adv', 'Criminal Law Adv', 29, 42)">📥 Import</button>
-                    <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'criminal_adv', 'CriminalLaw', 'Criminal Law Adv', 29, 42)">❌ Compile Missed</button>
-                    <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'criminal_adv', 'CriminalLaw', 'Criminal Law Adv', 29, 42)">🚩 Compile Flagged</button>
+                    <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('criminal_adv', 'Criminal Law Adv', 21, 28)">📤 Export</button>
+                    <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('criminal_adv', 'Criminal Law Adv', 21, 28)">📥 Import</button>
+                    <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'criminal_adv', 'CriminalLaw', 'Criminal Law Adv', 21, 28)">❌ Compile Missed</button>
+                    <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'criminal_adv', 'CriminalLaw', 'Criminal Law Adv', 21, 28)">🚩 Compile Flagged</button>
                 </div>
             </div>
             <div class="accordion-body">
@@ -458,8 +458,8 @@
         function populateAllExams() {
             renderExamSection("torts-grid", "torts", "Torts", "Torts", 1, 20, "Targeted Practice & Rule Analysis");
             renderExamSection("torts-adv-grid", "torts_adv", "Torts", "Torts Adv", 21, 34, "Advanced Application & Edge Cases");
-            renderExamSection("crim-grid", "criminal", "CriminalLaw", "Criminal Law", 1, 28, "Crimes, Defenses & Analytics");
-            renderExamSection("crim-adv-grid", "criminal_adv", "CriminalLaw", "Criminal Law Adv", 29, 42, "Advanced Crimes, Defenses & MPC Analytics");
+            renderExamSection("crim-grid", "criminal", "CriminalLaw", "Criminal Law", 1, 20, "Crimes, Defenses & Analytics");
+            renderExamSection("crim-adv-grid", "criminal_adv", "CriminalLaw", "Criminal Law Adv", 21, 28, "Advanced Crimes, Defenses & MPC Analytics");
             renderExamSection("contracts-grid", "contracts", "Contracts", "Contracts", 1, 25, "Formation, Breach & Remedies");
             renderExamSection("contracts-adv-grid", "contracts_adv", "Contracts", "Contracts Adv", 26, 39, "Advanced UCC, Performance & Complex Remedies");
             renderExamSection("mixed-grid", "mixed", "Mixed", "Mixed Exam", 1, 40, "Multi-Subject FYLSX Practice Exam");

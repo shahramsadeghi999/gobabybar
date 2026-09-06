@@ -12,7 +12,7 @@ const examData = [
             "No, because he withdrew from the conspiracy before any overt act was committed."
         ],
         ans: 0,
-        exp: "Co-conspirators are vicariously liable for all crimes committed by fellow conspirators in furtherance of the conspiracy[cite: 32]. Because the boy who ran away never communicated his withdrawal to his co-conspirator, his attempted withdrawal was legally ineffective, leaving him fully liable for the resulting murder[cite: 32]."
+        exp: "Murder is the unjustified killing of a human being with malice aforethought[cite: 29]. Malice aforethought includes the intent to kill, which means the desire or knowledge that the defendant's act will bring about the death of another person[cite: 29]. Since the other boy threw away the victim's medicine with the desire that doing so would bring about the death of the victim, and since the victim died as a result, the victim was murdered[cite: 29]. A criminal conspiracy is an agreement to commit a crime[cite: 29]. Since the two boys agreed to kill the victim, they were involved in a criminal conspiracy[cite: 29]. Co-conspirators are vicariously liable for any crimes committed in furtherance of the conspiracy[cite: 29]. Since the murder of the victim was committed by the other boy in furtherance of his agreement with the boy who ran away, the boy who ran away is vicariously liable for it[cite: 29]. A is therefore correct[cite: 29].\n\nSince the boy who ran away did no physical act that enabled the other boy to bring about the victim's death, he did not aid or abet him in bringing it about[cite: 29]. B is therefore incorrect[cite: 29]. C is incorrect because the principle of vicarious liability as explained above makes it unnecessary for the boy who ran away to physically participate in the commission of the crime with which he is charged[cite: 29]. One who effectively withdraws from a conspiracy before its goal is accomplished may avoid vicarious guilt for the substantive crime, although not for the crime of conspiracy[cite: 29]. For a withdrawal to be effective, however, the withdrawing conspirator must at least do something that places his or her co-conspirator on notice of his or her withdrawal[cite: 29]. Since the boy who ran away did not do so, he has not effectively withdrawn from the conspiracy, and D is incorrect[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 110
     {
@@ -27,7 +27,7 @@ const examData = [
             "No, because the pedestrian's death did not occur during the commission of a felony."
         ],
         ans: 0,
-        exp: "Under the felony murder rule, the perpetration of a felony continues throughout the immediate flight from the scene until the felon reaches a place of temporary safety[cite: 32]. Because the fatal collision occurred while fleeing from the robbery, the defendant is guilty of felony murder[cite: 32]."
+        exp: "The felony-murder rule provides that the intent to commit a felony is malice aforethought, and that a death that results from the perpetration of a felony is therefore murder[cite: 29]. For this purpose, the perpetration of a felony continues during the defendant's attempt to escape to a place of seeming safety[cite: 29]. The pedestrian's death thus occurred during the perpetration of a robbery, and the defendant could be convicted of murder even if he was driving carefully at the time it occurred[cite: 29].\n\nB, C, and D are therefore incorrect[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 111
     {
@@ -42,7 +42,7 @@ const examData = [
             "No, because she had no duty to aid the girl."
         ],
         ans: 3,
-        exp: "In the absence of a recognized legal duty (such as parent-child, contract, or creation of peril), an individual has no affirmative legal duty to rescue another[cite: 32]. An aunt does not have a formal common-law parental duty of care, meaning her omission cannot serve as the basis for a criminal homicide charge[cite: 32]."
+        exp: "In the absence of special circumstances, no person is under a legal duty to render aid to another[cite: 29]. Since a failure to act can lead to criminal responsibility only in the face of a duty to act, the adult's failure to rescue the girl was not a crime[cite: 29].\n\nThis is true even though she could have saved the girl without risk to herself, even though she knew that there was no one else who could rescue the child, and even if she was related to the girl[cite: 29]. A, B, and C are therefore incorrect[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 113
     {
@@ -57,7 +57,7 @@ const examData = [
             "Yes, because theft of the pen from her briefcase was foreseeable."
         ],
         ans: 1,
-        exp: "Larceny is a specific intent crime requiring the intent to permanently deprive the owner of property at the exact moment of the taking[cite: 32]. Because the defendant genuinely intended to return the pen in a week or two, she lacked the requisite felonious intent to steal[cite: 32]."
+        exp: "At common law, larceny is defined as intentionally taking and carrying off the personal property of another with the intent to permanently deprive the owner of it[cite: 29]. Since the defendant planned to return the pen to the professor in a week or two, she lacked the intent to permanently deprive him of it[cite: 29].\n\nA is incorrect because if she had the requisite intent at the time she took the pen, the fact that it was later taken from her would not undo the crime that she had already committed[cite: 29]. C is incorrect because the defendant lacked the requisite intent[cite: 29]. There are no facts justifying the inference on which D is based, but even if there were, the defendant's taking would not be a larceny unless she intended (i.e., was substantially certain) that the professor would be permanently deprived of the pen[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 114
     {
@@ -72,7 +72,7 @@ const examData = [
             "When the victim purchased a ticket at the airport for his flight, he checked his baggage. Later, the defendant, wearing a mask and carrying a gun, entered the room where checked baggage was stored. While forcing the room attendant to lie face down on the floor, the defendant opened the victim's suitcase and removed several hundred dollars' worth of negotiable securities. The defendant's conviction for robbery was affirmed."
         ],
         ans: 1,
-        exp: "Robbery requires a taking accomplished by force or fear[cite: 32]. In many jurisdictions, using force or threats immediately after acquiring custody to overcome the owner's resistance and retain possession completes a robbery, matching the supermarket precedent[cite: 32]."
+        exp: "Robbery is larceny accomplished by physical force or threat[cite: 29]. The defendant clearly committed a larceny[cite: 29]. Although he acquired possession and carried off the briefcase without the use of force, the issue is whether his subsequent use of force to retain possession was sufficient to make him guilty of robbery[cite: 29]. B is the only case in which this issue arose[cite: 29].\n\nIn A, no force was used after acquisition of the purse[cite: 29]. In C and D, although force was used to acquire the stolen property, none was used thereafter[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 115
     {
@@ -87,7 +87,7 @@ const examData = [
             "Fraud, because he obtained money by withholding information that he had a duty to disclose."
         ],
         ans: 1,
-        exp: "One who incites, encourages, or commands another to commit a crime is liable as an accomplice/accessory to the completed crime[cite: 32]. By coercing and encouraging the cashier to take $25 from the safe for his benefit, the coworker is guilty as an accomplice to larceny[cite: 32]."
+        exp: "One who incites and encourages another to commit a crime may be guilty as an accomplice or accessory, especially when he or she derives some direct benefit from the crime[cite: 29]. Since the coworker demanded $25 to cover up the cashier's crime while they were standing in front of the open safe and then watched as the cashier reached into the safe and handed it to him, he can be found guilty as an accessory to larceny[cite: 29].\n\nRobbery is larceny committed by force or threat of force[cite: 29]. A is incorrect because the threat that the coworker made was not of force[cite: 29]. Embezzlement is the fraudulent taking of property that is lawfully in the defendant's possession[cite: 29]. Since the $25 that the coworker took from the cashier was not lawfully in the coworker's possession to begin with, he did not embezzle it[cite: 29]. C is therefore incorrect[cite: 29]. Crimes characterized by the term 'fraud' involve takings that are committed by making misrepresentations that induce the owner to willingly part with possession or title[cite: 29]. D is incorrect because the owner of the supermarket was not induced to part with the money by reliance on a misrepresentation[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 116
     {
@@ -102,7 +102,7 @@ const examData = [
             "The bartender was not acting within the scope of his employment when he sold wine to a minor in violation of the statute."
         ],
         ans: 2,
-        exp: "Vicarious liability requires an underlying criminal violation committed by the agent[cite: 32]. If the bartender lacked the mens rea ('knowingly') due to a reasonable mistake of fact regarding the forged identification, no underlying crime occurred for which the owner could be held vicariously liable[cite: 32]."
+        exp: "Vicarious liability refers to responsibility that is imposed on one person for a crime committed by another[cite: 29]. If the bartender was not guilty of violating the statute, there has been no crime for which the owner can be held vicariously liable[cite: 29]. Although it is not certain that this argument will succeed, it is the only one listed that could possibly support the owner's defense[cite: 29].\n\nA is incorrect because when vicarious liability is imposed, the fault (or lack of fault) of the person on whom it is imposed is irrelevant[cite: 29]. B is similarly incorrect because vicarious liability may be imposed for the crime committed by an agent even though the agent violated specific instructions in committing it[cite: 29]. D is incorrect because a bartender selling drinks to a bar customer is acting in the scope of employment, since his or her conduct is designed to benefit his or her employer and since he or she is subject to the employer's right of control while doing so[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 117
     {
@@ -117,7 +117,7 @@ const examData = [
             "Murder."
         ],
         ans: 3,
-        exp: "Discharging a high-powered firearm toward a residential house in a densely populated suburban area manifests an extreme, reckless indifference to an unjustifiably high risk to human life ('depraved heart'), satisfying malice aforethought for second-degree murder[cite: 32]."
+        exp: "In nearly all states, the defendant is liable for murder if he or she causes a death while acting with a 'depraved heart' or an extreme indifference to the value of human life[cite: 29]. For depraved heart murder, the risk of death or serious bodily injury has to be so great that the defendant can be said to act with great recklessness[cite: 29]. Importantly, negligence or even gross negligence won't suffice[cite: 29]. Here, hunting deer in a 'densely populated suburban neighborhood' is likely so reckless as to reach the level required for depraved heart murder[cite: 29].\n\nA, B, and C are therefore incorrect[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 118
     {
@@ -132,7 +132,7 @@ const examData = [
             "The bank manager was an adult."
         ],
         ans: 2,
-        exp: "Movement that is purely incidental to the commission of another underlying crime (such as moving bank employees from a lobby to a back room during a robbery) does not satisfy the independent, substantial asportation element required for kidnapping[cite: 32]."
+        exp: "Kidnapping is the intentional asportation and confinement of a person against the person's will by means of force or threat and without lawful authority[cite: 29]. Although it is obvious that the defendant intentionally confined the bank manager against his will by means of force and threat and without lawful authority, there is some question as to whether there was an asportation[cite: 29]. Ordinarily, any moving of the victim satisfies the requirement of asportation[cite: 29]. Many jurisdictions now hold, however, that there is no asportation if the movement of the victim was incidental to and a necessary part of the commission of some other substantive crime[cite: 29]. Although it is not certain that a court would accept that view, the argument in C is the only one listed that could possibly support the defendant's defense[cite: 29].\n\nIn some jurisdictions, a ransom demand makes the defendant guilty of a more serious degree of the crime, but no jurisdiction requires a ransom demand as an essential element of kidnapping[cite: 29]. A is therefore incorrect[cite: 29]. B is incorrect because, once committed, a crime cannot be uncommitted[cite: 29]. D is incorrect because the crime of kidnapping can be committed against an adult as well as a child[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 120
     {
@@ -147,7 +147,7 @@ const examData = [
             "No, because she was, at most, an accessory after the fact."
         ],
         ans: 2,
-        exp: "Accomplice liability requires an affirmative act of aiding, abetting, or encouraging[cite: 32]. Mere presence at the scene, even when accompanied by silent approval or internal hope that the crime succeeds, is insufficient for accessorial liability[cite: 32]."
+        exp: "Unless a defendant was ready, willing, and able to give affirmative assistance in the commission of the crime, his or her presence and silent acquiescence are not sufficient to result in criminal liability[cite: 29].\n\nOrdinarily, one is not under any obligation to attempt to prevent a crime from being committed[cite: 29]. A is therefore incorrect[cite: 29]. B is incorrect because, even with criminal intent, mere presence at the scene of a crime is not sufficient to satisfy the requirement of actus reus[cite: 29]. The defendant was not an accessory at all since her presence was not sufficient participation, but in any event, she could not have been an accessory after the fact since the crime was committed after her involvement began[cite: 29]. D is therefore incorrect[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 122
     {
@@ -162,7 +162,7 @@ const examData = [
             "By the time the collector showed up with the money, the defendant had discovered the daughter sleeping in the backseat."
         ],
         ans: 3,
-        exp: "Robbery requires a threat of immediate physical harm directed against a person[cite: 32]. If the defendant discovered the child prior to the exchange, his continuing threat to set the car on fire with the child inside constitutes a threat of physical harm against a person to obtain property, satisfying robbery[cite: 32]."
+        exp: "Robbery is a larceny that is committed by force or threat to use force against the lawful possessor of the property taken or any other person[cite: 29]. If the collector gave the defendant $1,000 because he knowingly threatened to injure the daughter if she did not, his taking of the money was robbery[cite: 29]. Although he did not know that the daughter was in the car when he first made the threat, it could be found that the threat was continued by his conduct[cite: 29]. Thus, if he knew that the daughter was in the car when he received the money from the collector, it might be concluded that he obtained the money by a threat to burn the daughter, not just the car[cite: 29].\n\nA is incorrect for two reasons: First, he did not take the car by force, and second, he is charged with robbery of the cash, not of the car[cite: 29]. B would not make him guilty of robbery unless he knew that the daughter was in the car when he threatened to burn it[cite: 29]. C is incorrect since in most jurisdictions, robbery requires that the threat be directed against a person[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 124
     {
@@ -177,7 +177,7 @@ const examData = [
             "Yes."
         ],
         ans: 3,
-        exp: "Involuntary manslaughter is an unintentional killing resulting from criminal negligence or recklessness[cite: 32]. Drunk driving constitutes criminal recklessness, and the contributory negligence of the pedestrian is no defense in criminal prosecutions[cite: 32]."
+        exp: "A defendant may be liable for involuntary manslaughter if his or her conduct results in the accidental death of another person[cite: 29]. Involuntary manslaughter is particularly applicable to cases where the defendant causes a drunk-driving accident that kills someone[cite: 29]. As long as the intoxication was a significant contributing factor to the accident, the defendant is almost certainly guilty of involuntary manslaughter[cite: 29]. Importantly, most states require only a mental state of gross negligence, and driving while drunk constitutes recklessness (a higher mental state than gross negligence)[cite: 29]. Additionally, in a jurisdiction applying the misdemeanor-manslaughter rule, drunk driving will at least be a misdemeanor[cite: 29]. Here, since defendant's drunk driving constituted recklessness and his intoxication proximately caused the crime by leading to his mistaken belief that he was being chased, the defendant is guilty of involuntary manslaughter[cite: 29]. The fact that the victim may have been contributorily negligent is not a defense to involuntary manslaughter[cite: 29]. A is therefore incorrect[cite: 29]. B is incorrect because involuntary manslaughter does not require the defendant to intend to cause the death of the victim[cite: 29]. C is incorrect because his belief that he was being chased would not provide a defense for the defendant[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 125
     {
@@ -192,7 +192,7 @@ const examData = [
             "Not guilty, because the felony was completed when his friend was shot."
         ],
         ans: 2,
-        exp: "Under the majority agency theory (Redline rule), a felon cannot be convicted of felony murder for the justifiable killing of a co-felon committed by a police officer[cite: 32]."
+        exp: "Felony murder is a foreseeable killing that occurs during the course of a felony[cite: 29]. In the majority of states, a person cannot be found guilty of felony murder for the death of a co-felon if that co-felon is killed by the police[cite: 29]. Here, since the defendant's friend was shot by a police officer, it is unlikely he would be found guilty of felony murder[cite: 29]. Therefore, A and B are incorrect[cite: 29].\n\nD is incorrect because a death that occurs while fleeing the scene still meets the requirements of felony murder, whether or not the felony itself is technically completed[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 126
     {
@@ -207,7 +207,7 @@ const examData = [
             "Attempted murder."
         ],
         ans: 0,
-        exp: "Criminal battery is the reckless or criminally negligent application of force to the person of another[cite: 32]. Firing into an occupied apartment constitutes reckless battery[cite: 32]. Attempted involuntary manslaughter does not exist as a matter of law, and attempted murder requires a specific intent to kill[cite: 32]."
+        exp: "Criminal battery consists of the intentional, reckless, or criminally negligent application of force to the body of another[cite: 29]. The defendant's act of shooting through the ceiling into an apartment in which she knew there were people probably was at least criminally negligent, and so it probably constituted a battery[cite: 29].\n\nA person is guilty of attempting to commit a crime when, with the specific intent to bring about a criminally proscribed result, he or she comes substantially close to accomplishing that result[cite: 29]. Since involuntary manslaughter is an unintended homicide, no person can have the specific intent to commit it[cite: 29]. Thus, there can be no attempt to commit it, and B is therefore incorrect[cite: 29]. Attempted murder and attempted voluntary manslaughter both require an intent to kill[cite: 29]. Since the defendant did not intend to strike anyone with the bullet, C and D are incorrect[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 127
     {
@@ -222,7 +222,7 @@ const examData = [
             "Assault."
         ],
         ans: 2,
-        exp: "When an unlawful assault or battery unexpectedly results in an unintended death, the defendant is guilty of involuntary manslaughter under the misdemeanor-manslaughter or criminal negligence rule[cite: 32]."
+        exp: "Generally, when an intentional battery or assault results in an unintended death, the defendant is guilty of involuntary manslaughter[cite: 29]. Importantly, the man was only attempting to regain his wallet[cite: 29]. Since this would not count as a robbery, the man could not be convicted of felony murder[cite: 29].\n\nA is incorrect because the barista's death was not caused intentionally or as the result of a felony[cite: 29]. B is incorrect because voluntary manslaughter is a provoked intentional killing[cite: 29]. Here, the man did not intend to kill the barista[cite: 29]. D is incorrect because involuntary manslaughter is a more serious crime than assault[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 128
     {
@@ -237,7 +237,7 @@ const examData = [
             "Both arson and conspiracy."
         ],
         ans: 3,
-        exp: "Conspiracy is a separate and distinct inchoate offense that does not merge into the completed substantive target crime[cite: 32]. Thus, the defendants can be convicted of both conspiracy and arson[cite: 32]."
+        exp: "At common law, arson was defined as the intentional burning of another's dwelling[cite: 29]. Under the statute given, the definition includes buildings other than dwellings as well[cite: 29]. Since the men desired to burn down the factory, they had the necessary intent[cite: 29]. Since they succeeded in doing so, they are guilty of arson[cite: 29]. Conspiracy consists of an agreement to commit a crime[cite: 29]. Since the men agreed to commit arson, they are guilty of conspiracy[cite: 29]. Conspiracy does not merge with the substantive crime and may be the basis of separate prosecution and conviction[cite: 29]. D is therefore correct[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 129
     {
@@ -252,7 +252,7 @@ const examData = [
             "No, because there was no indication that the defendant could carry out on his threat."
         ],
         ans: 2,
-        exp: "Robbery requires an underlying larceny—the trespassory taking of property of another with intent to steal[cite: 32]. An honest belief that the property belongs to the defendant (a claim of right) negates the intent to steal property of another, even if that belief is objectively unreasonable[cite: 32]."
+        exp: "Robbery is a larceny where the property is taken from the person or presence of the owner, and the taking is accomplished by force or threat[cite: 29]. Importantly, a larceny is the trespassory taking and carrying away of the personal property of another with intent to steal[cite: 29]. Consequently, if the defendant is reclaiming his or her own property, then the defendant is not committing robbery[cite: 29]. This is true even if the defendant honestly but unreasonably believes that what he or she is taking is his or her own property[cite: 29]. Here, the defendant has not committed larceny because he is taking back 'his' own property, not property of another[cite: 29].\n\nA, B, and D are therefore incorrect[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 130
     {
@@ -267,7 +267,7 @@ const examData = [
             "She did not intend to benefit from the destruction of the couch."
         ],
         ans: 2,
-        exp: "Larceny requires an asportation (carrying away or physical movement) of the property[cite: 32]. Because the defendant burned the couch in place without moving it, she did not commit larceny[cite: 32]."
+        exp: "Larceny is a trespassory taking and carrying off of personal property known to be another's with the intent to permanently deprive the owner[cite: 29]. Since the defendant did not physically move the couch, she may successfully argue that because there was no asportation (i.e., carrying off), there was no larceny[cite: 29].\n\nIt is sometimes argued that one who enters through an unlocked door committed no breaking and, therefore, is not guilty of burglary[cite: 29]. A is incorrect, however, because breaking is not an element of larceny[cite: 29]. If a defendant carried off personal property that actually was his or her own, he or she could not be guilty of larceny because he or she did not take the property of another[cite: 29]. If he or she mistakenly believed that it was his or her own, he or she still would not be guilty of larceny because he or she did not carry off property known to be another's[cite: 29]. The couch was not the defendant's, however, and she knew that it was not hers[cite: 29]. The fact that it was equal in value to her stereo would not, therefore, justify her taking or carrying it off[cite: 29]. B is therefore incorrect[cite: 29]. A person who takes and carries off personal property known to be another's with the intent to permanently deprive is guilty of larceny without regard to whether or not he or she intended to benefit by doing so[cite: 29]. D is therefore incorrect[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 131
     {
@@ -282,7 +282,7 @@ const examData = [
             "No crime."
         ],
         ans: 3,
-        exp: "A bystander has no common-law legal duty to report a suspected crime or warn law enforcement, and failure to act does not create criminal liability absent a special duty[cite: 32]."
+        exp: "The woman did not commit any crime because she did not have a legal duty to warn anyone about the man walking into the mall, despite the fact she suspected he was about to commit a crime he did in fact commit[cite: 29].\n\nConsequently, A, B, and C are incorrect[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 132
     {
@@ -297,7 +297,7 @@ const examData = [
             "No, because the gas made the woman lose control of her arms and legs."
         ],
         ans: 3,
-        exp: "A fundamental element of every criminal offense is a voluntary physical act (actus reus)[cite: 32]. Involuntary physical spasms or movements caused by sudden toxic gas exposure lack volition, negating criminal liability[cite: 32]."
+        exp: "One of the elements of every crime is the actus reus, or the requirement that the defendant's conduct be a voluntary act[cite: 29]. If a defendant acts reflexively or while in a state of unconsciousness, his or her actions do not fulfill the actus reus requirement and he or she will not be held criminally liable[cite: 29]. Here, the toxic gas caused the woman to lose voluntary control of her arms or legs, and she had no control over them when she punched the man[cite: 29]. Consequently, she cannot be held criminally liable for his death[cite: 29].\n\nTherefore, A, B, and C are incorrect[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 133
     {
@@ -312,7 +312,7 @@ const examData = [
             "Yes, because he agreed to furnish the bank robber with a place to hide in return for a portion of the proceeds of the robbery."
         ],
         ans: 3,
-        exp: "An agreement to provide services to facilitate a crime combined with a financial stake in the venture (a share of the robbery proceeds) establishes the agreement and intent required for criminal conspiracy[cite: 32]."
+        exp: "A conspiracy is an agreement by two or more persons to commit a crime[cite: 29]. Ordinarily, one who agrees to furnish services to another that the other will use in committing a crime is not guilty of conspiracy merely because he or she knows the purpose to which the services will be put[cite: 29]. Where, however, the supplier has a stake in the criminal enterprise, his or her agreement to furnish services may constitute a conspiracy to commit the crime[cite: 29]. Since the defendant knew that the bank robber would be using his apartment as a hideout following the robbery, and since the bank robber's promise to compensate the defendant by paying him a percentage of the loot gave the defendant a stake in the criminal enterprise, the defendant may be guilty of conspiracy[cite: 29].\n\nA is therefore incorrect[cite: 29]. B is incorrect for two reasons: First, the defendant's agreement probably was per se unlawful, since he knew that the bank robber would be hiding in his apartment to escape detection (i.e., that he would be harboring a felon), and second, the defendant had a personal stake in the bank robber's crime[cite: 29]. The crime of conspiracy to commit robbery is complete when the defendant agrees with another to commit the robbery, and is a separate crime from the robbery itself[cite: 29]. Thus, the fact that a defendant is guilty of robbery is not relevant to the issue of whether he or she conspired (i.e., agreed) to commit it[cite: 29]. For this reason, C is incorrect[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 134
     {
@@ -327,7 +327,7 @@ const examData = [
             "Not guilty, because the man set the fire as part of a fraudulent scheme with the friend."
         ],
         ans: 0,
-        exp: "Under the common-law felony murder rule, an unintended death occurring during the commission of an inherently dangerous felony (arson) constitutes murder[cite: 32]. The defendant's mistaken belief that the home was unoccupied does not excuse liability[cite: 32]."
+        exp: "Under the common law felony-murder rule, a person who kills another during the commission of a dangerous felony is guilty of murder[cite: 29]. Here, arson is a dangerous felony, and the friend died during its commission, so the man is guilty of murder[cite: 29].\n\nB is incorrect because insurance fraud is not a dangerous felony[cite: 29]. C and D are incorrect because they do not change the fact that the friend was killed during the man's commission of a dangerous felony[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 135
     {
@@ -342,7 +342,7 @@ const examData = [
             "Not guilty, because the doctor did not think the wife would die."
         ],
         ans: 3,
-        exp: "At common law, conspiracy requires a bilateral agreement between two or more parties sharing the specific intent to commit the target offense[cite: 32]. Because the doctor feigned agreement and did not intend for the wife to die, no bilateral conspiracy was formed[cite: 32]."
+        exp: "Conspiracy occurs when two or more people with the specific intent to commit a crime agree to commit it[cite: 29]. Here, since the doctor did not think the wife would die, he did not really agree to commit murder[cite: 29]. Consequently, there was no conspiracy[cite: 29].\n\nA is incorrect because even if the man believed the pills were deadly poison, he'd still have to reach an agreement to commit a crime with someone else in order to be prosecuted for conspiracy[cite: 29]. Here, no one actually agreed to help him kill his wife[cite: 29]. B and C are incorrect because the crime of conspiracy is complete when the unlawful agreement is made[cite: 29]. The success or failure of the substantive crime the parties agree to do is irrelevant[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 138
     {
@@ -357,7 +357,7 @@ const examData = [
             "No crime."
         ],
         ans: 0,
-        exp: "Releasing wild tigers to roam free in a residential backyard with an inadequate fence constitutes an extreme and reckless indifference to an unjustifiably high risk to human life, supporting a conviction for depraved heart murder[cite: 32]."
+        exp: "A conviction for murder can be supported by extremely negligent conduct that a reasonable person would realize created an unjustifiable and high risk of death or serious bodily injury[cite: 29]. Here, the woman let tigers run around her suburban backyard[cite: 29]. This is probably enough to meet the standard[cite: 29].\n\nB is incorrect because there needs to be some adequate provocation[cite: 29]. Here, there wasn't any provocation at all[cite: 29]. C is incorrect because the woman's conduct rose to the level of extremely negligent conduct required for depraved heart murder[cite: 29]. As such, C is not the strongest answer even if the woman did not intend to kill anyone[cite: 29]. D is incorrect because the woman could be convicted of murder[cite: 29]."
     },
     // SOURCE: FINZ-CriminalLaw.pdf, Question 140
     {
@@ -372,7 +372,7 @@ const examData = [
             "The man should be convicted because the stabbing was the result of the man's plan to catch his wife and best friend committing adultery."
         ],
         ans: 0,
-        exp: "When the best friend drew a gun, he escalated the conflict by introducing an imminent threat of deadly force[cite: 32]. The husband was legally justified in using deadly force in self-defense to protect his own life[cite: 32]."
+        exp: "Here, the best friend was the aggressor and pulled the gun on the man when the man didn't do anything but break a lamp and order the best friend to leave[cite: 29]. The man did not react with deadly force until the best friend pulled a gun on him[cite: 29]. Consequently, the man's actions were justified and he should be acquitted of murder[cite: 29].\n\nB and C are incorrect because the murder was the result of self-defense, not the heat of passion[cite: 29]. D is incorrect because the fact that the murder was the result of the man's plan to catch his best friend and wife does not change the analysis[cite: 29]."
     }
 ];
 
