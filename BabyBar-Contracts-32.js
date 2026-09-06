@@ -11,7 +11,7 @@ const examData = [
             "The dealer's refusal to accept a check discharged the buyer's obligation under the contract, since an agreement that is silent as to the manner of payment is presumed to call for payment in any manner current in the ordinary course of business."
         ],
         ans: 2,
-        exp: "Under UCC § 2-511, tender of payment is sufficient when made by any means or in any manner current in the ordinary course of business unless the seller demands payment in legal tender. If the seller demands legal tender (cash), they must give the buyer any extension of time reasonably necessary to procure it. Because the buyer tendered a check, the dealer's refusal to accept it does not immediately discharge the dealer's obligation to deliver; the dealer must give the buyer a reasonable time to procure cash."
+        exp: "Under UCC §2-511, a contract that is silent as to the manner of payment calls for payment in any manner current in the ordinary course of business[cite: 14]. The seller is entitled to demand payment in cash, but if he or she does so, the buyer is entitled to a reasonable opportunity to procure the necessary cash[cite: 14].\n\nA is incorrect for the reason stated above[cite: 14]. B is incorrect because the buyer is entitled to a reasonable time to procure cash[cite: 14]. D is incorrect because a seller may demand cash[cite: 14]."
     },
     {
         id: 2,
@@ -25,7 +25,7 @@ const examData = [
             "On June 1, the company advised the committee that it would only be able to deliver 475 bobbleheads, and the committee orally agreed to reduce the order to that number."
         ],
         ans: 3,
-        exp: "Under UCC § 2-209(1), an agreement to modify a contract for the sale of goods needs no consideration to be binding, provided it is made in good faith. If the committee orally agreed to reduce the order to 475 bobbleheads, this constituted a valid modification of the contract. Delivering the modified quantity of 475 would perfectly conform to the newly modified agreement, providing the company with an absolute defense against a breach of contract claim."
+        exp: "Under UCC §2-209(1), an agreement to modify a contract is enforceable even though unsupported by consideration[cite: 14]. Since, as modified, the agreement does not fall within the provisions of the Statute of Frauds, it need not be in writing[cite: 14]. Thus, if the committee agreed to accept 475 bobbleheads instead of 500, the company's delivery of 475 bobbleheads would not be a breach[cite: 14].\n\nThe company's inability to obtain the necessary materials would not excuse performance unless that inability resulted from circumstances that were not within the reasonable contemplation of the parties at the time the contract was formed[cite: 14]. Since there is no indication that this is so, A is incorrect[cite: 14]. A buyer who accepts a nonconforming tender may recover damages only if it notifies the seller of the breach within a reasonable time[cite: 14]. B is incorrect because the buyer is not required to give notice of an intention to sue[cite: 14]. The purpose of damages is to put the nonbreaching party in the position it would have occupied had the breach not occurred[cite: 14]. Since the committee would have had 500 bobbleheads to distribute to conventioneers or use as it saw fit, C is incorrect[cite: 14]."
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ const examData = [
             "The broker did not participate in the formation of the homeowner's contract with the buyer."
         ],
         ans: 2,
-        exp: "The contract expressly stated that the commission was to be paid 'upon transfer of title.' This established an express condition precedent to the homeowner's obligation to pay the commission. Because the buyer backed out and breached the purchase agreement, the transfer of title never occurred. Since the non-occurrence of the condition was not due to the fault or bad faith of the homeowner, the homeowner's duty to pay the commission never arose."
+        exp: "A condition precedent is an event that must occur before performance under a contract becomes due[cite: 14]. The brokerage agreement provided that the commission was to be paid 'upon transfer of title'[cite: 14]. Since title was never transferred, the condition precedent to the homeowner's obligation to pay the commission never occurred[cite: 14]. Since the non-occurrence of the condition was not due to the fault of the homeowner, the homeowner's duty to pay the commission was discharged[cite: 14].\n\nA is incorrect because an owner who accepts an offer procured by an exclusive broker at a price below the listing price remains liable for the commission based on the accepted price[cite: 14]. B is incorrect because the buyer's offer was made during the three-month exclusive period[cite: 14]. D is incorrect because an exclusive right to sell entitles the broker to a commission regardless of whether the broker participated in the ultimate contract formation, provided the condition precedent occurs[cite: 14]."
     },
     {
         id: 4,
@@ -53,7 +53,7 @@ const examData = [
             "The mother's promise was unsupported by consideration."
         ],
         ans: 3,
-        exp: "To be enforceable, a promise must be supported by valid consideration, which requires a bargained-for exchange. The mother's statement was a classic conditional gift promise rather than a bargained-for commercial exchange. Because the mother was not bargaining for the daughter to get 'A's in order to receive some benefit for herself, the promise lacked consideration and is legally unenforceable as a gratuitous promise."
+        exp: "To be enforceable, a promise must be supported by consideration, which requires a bargained-for exchange[cite: 14]. The mother's promise was a promise to make a conditional gift motivated by maternal affection and pride rather than a bargained-for exchange[cite: 14]. The mother was not bargaining for the plaintiff's completion of the first year as the price of her promise[cite: 14]. Because the promise was gratuitous and unsupported by consideration, it is unenforceable[cite: 14].\n\nA is incorrect because divisibility does not supply consideration to an unenforceable gift promise[cite: 14]. B is incorrect because the promise could have been performed within one year if the plaintiff had died within that period, taking it out of the Statute of Frauds[cite: 14]. C is incorrect because describing the promise as an offer for a cash bonus does not make it enforceable without consideration[cite: 14]."
     },
     {
         id: 5,
@@ -67,7 +67,7 @@ const examData = [
             "Yes, because he gave value for the right that the man assigned to him."
         ],
         ans: 1,
-        exp: "When an assignor assigns a right to receive payment, the obligor (the company) must be properly notified of the assignment. If the obligor pays the original assignor (the man) in good faith without having received notice of the assignment, the obligor's duty is completely discharged. Because the company was completely unaware of the assignment to the plaintiff when it paid the $50,000 settlement to the man, the company is discharged from any further liability to the assignee."
+        exp: "When an assignor assigns a right to receive performance, the obligor remains entitled to pay or settle with the original assignor until the obligor receives notice of the assignment[cite: 14]. If the obligor in good faith pays or enters into an agreement with the assignor before receiving notice that an assignment has occurred, the obligor's contractual duty is discharged[cite: 14]. Because the company had received no notice of the assignment to the plaintiff when it paid the $50,000 settlement to the man in mutual rescission, the company was completely discharged of any liability[cite: 14].\n\nA is incorrect because the timing of the subsequent assignment to the software company is irrelevant to the obligor's discharge by settlement without notice[cite: 14]. C and D are incorrect because giving value and identifying the right at the time of assignment do not deprive the obligor of the defense of payment or settlement prior to notification[cite: 14]."
     },
     {
         id: 6,
@@ -81,7 +81,7 @@ const examData = [
             "The company does not have to accept the router, and it is entitled to damages caused by the manufacturer sending the wrong router."
         ],
         ans: 3,
-        exp: "Under UCC § 2-206(1)(b), an order inviting prompt shipment is accepted by the prompt shipment of either conforming or non-conforming goods. Shipping non-conforming goods acts as a simultaneous acceptance and breach, unless the seller seasonably notifies the buyer that the shipment is offered only as an accommodation. Because no accommodation notice was given, the manufacturer accepted the contract and breached it simultaneously, entitling the company to reject the goods and sue for damages."
+        exp: "Under UCC §2-206(1)(b), an order or other offer to buy goods for prompt or current shipment invites acceptance either by a prompt promise to ship or by the prompt or current shipment of conforming or non-conforming goods[cite: 14]. A shipment of non-conforming goods operates simultaneously as an acceptance and as a breach, unless the seller seasonably notifies the buyer that the shipment is offered only as an accommodation[cite: 14]. Since the manufacturer did not send an accommodation notice, its prompt shipment of the non-conforming router accepted the contract and breached it simultaneously[cite: 14]. Under the perfect tender rule (UCC §2-601), the company does not have to accept the router and is entitled to recover damages caused by the breach[cite: 14].\n\nA is incorrect because a shipment of non-conforming goods without an accommodation notice is an acceptance and a breach, not a counteroffer[cite: 14]. B and C are incorrect because the company is entitled to reject the non-conforming tender and sue for damages[cite: 14]."
     },
     {
         id: 7,
@@ -95,7 +95,7 @@ const examData = [
             "Yes, as assignee of the agreement between the homeowner and the defendant."
         ],
         ans: 3,
-        exp: "A party to a contract may generally assign their rights under the contract to a third party, provided the assignment does not materially change the obligor's duty or materially increase the burden or risk imposed on them. Because the defendant's duty was simply to maintain the exact same lawn, the assignment of the right to receive those services from the homeowner to the plaintiff was valid. Therefore, the plaintiff, as a valid assignee, has standing to enforce the agreement against the defendant."
+        exp: "Contract rights are generally freely assignable unless the assignment would materially change the duty of the obligor, materially increase the burden or risk imposed on the obligor, or materially impair the obligor's chance of obtaining return performance[cite: 14]. Maintaining the lawn of the same property does not materially change the duties or burden of the defendant[cite: 14]. An assignee stands in the shoes of the assignor and acquires all of the assignor's rights to enforce the agreement[cite: 14]. Therefore, the plaintiff is entitled to enforce the agreement as assignee[cite: 14].\n\nA is incorrect because a novation is not required to enforce an assignment of contract rights[cite: 14]. B is incorrect because lack of direct privity between the original promisor and the assignee does not prevent the assignee from enforcing the contract[cite: 14]. C is incorrect because property ownership alone does not confer contractual standing absent an assignment[cite: 14]."
     },
     {
         id: 8,
@@ -109,7 +109,7 @@ const examData = [
             "No, because the homeowner is estopped by the liquidated damages clause in her contract with the contractor from asserting that her 'living expenses necessitated by the loss' exceeded $50 per day."
         ],
         ans: 0,
-        exp: "The homeowner's contract with the insurance company and her contract with the builder are entirely independent obligations. The insurance policy explicitly obligated the insurer to pay $50 per day until the house was rebuilt, up to a maximum of 90 days. Because the house was not rebuilt until day 70, the insurance company is contractually obligated to pay the $50 per day for the full 70 days, regardless of the fact that the homeowner is also receiving liquidated damages from the breaching contractor."
+        exp: "The insurance company's contractual obligation is independent of the contractor's contract with the homeowner[cite: 14]. The policy explicitly agreed to pay $50 per day for living expenses necessitated by the loss until the house was rebuilt, up to a maximum of 90 days[cite: 14]. Since the reconstruction took 70 days, which is within the 90-day maximum, the homeowner was entitled to the full 70 days of coverage ($3,500 total, leaving $500 unpaid)[cite: 14]. The fact that the homeowner also received liquidated damages from the breaching contractor does not relieve the insurer of its separate contractual duty[cite: 14].\n\nB is incorrect because the policy fixed the daily rate at $50, making proof of actual expenses unnecessary[cite: 14]. C is incorrect because agreed daily expense provisions in insurance policies are valid liquidated rates[cite: 14]. D is incorrect because the liquidated damages clause in the repair contract creates no estoppel in favor of the unrelated insurance company[cite: 14]."
     },
     {
         id: 9,
@@ -123,7 +123,7 @@ const examData = [
             "No, because cash flow issues would have been foreseeable at the time of contracting."
         ],
         ans: 0,
-        exp: "A contract is considered 'divisible' if the performances to be exchanged can be apportioned into corresponding pairs of part performances that the parties treat as equivalent. Because the contract explicitly priced the work at $10,000 per individual building, the contract is highly divisible. Even though the company breached by failing to complete all 20 buildings, they are entitled to recover the contract price for the severable, completed portions of the contract (the five buildings), subject to any offset for damages caused by their breach."
+        exp: "A contract is divisible if (1) the performance of each party is divided into two or more parts, (2) the number of parts due from each party is the same, and (3) the performance of each part by one party is the agreed exchange for a corresponding part by the other party[cite: 14]. Because the contract apportioned the performance and compensation at an exact rate of $10,000 per building, the contract is divisible[cite: 14]. When a contract is divisible, a party that performs one or more parts is entitled to recover the agreed price for the completed parts, subject to any counterclaim for damages resulting from its failure to complete the remainder of the contract[cite: 14].\n\nB is incorrect because subjective financial inability does not create a right to payment unless the contract is divisible[cite: 14]. C is incorrect because in a divisible contract, total completion of all units is not a condition precedent to recovery for the completed divisible units[cite: 14]. D is incorrect because divisibility governs the recovery, not foreseeability of cash flow issues[cite: 14]."
     },
     {
         id: 10,
@@ -137,7 +137,7 @@ const examData = [
             "Require the farmer to return the money that the bar owner paid."
         ],
         ans: 2,
-        exp: "Because the contract required payment prior to inspection, the buyer's initial payment did not constitute an absolute acceptance. The buyer properly rejected (or revoked acceptance of) the nonconforming goods. Under UCC § 2-711, a buyer who rightfully rejects goods is entitled to a refund of the purchase price already paid, PLUS expectation damages (cover damages or the difference between the contract price and the market price) to put them in the position they would have been in had the contract been fulfilled."
+        exp: "Under UCC §2-512(2), payment prior to inspection does not constitute an acceptance of goods or impair the buyer's right to inspect or any of his remedies[cite: 14]. Upon discovering that the tender did not conform to the contract, the buyer rightfully rejected the goods (or revoked acceptance) and returned them[cite: 14]. Under UCC §2-711(1), a buyer who rightfully rejects or revokes acceptance is entitled to cancel and recover so much of the purchase price as has been paid, and in addition may recover damages under §2-713 for non-delivery (the difference between the market price and the contract price)[cite: 14].\n\nA is incorrect because specific performance is an equitable remedy available only when goods are unique or in other proper circumstances, which does not apply to fungible commodities like pickled eggs[cite: 14]. B is incorrect because the difference between the value of accepted goods and the value they would have had as warranted applies under UCC §2-714 only when the buyer has accepted and retained the goods[cite: 14]. D is incorrect because merely returning the purchase price does not award expectation damages[cite: 14]."
     },
     {
         id: 11,
@@ -151,7 +151,7 @@ const examData = [
             "The seller's mailing of the letter did not prevent the buyer from withdrawing his offer."
         ],
         ans: 1,
-        exp: "Under the common law mailbox rule, an acceptance is legally effective the moment it is properly dispatched (mailed) by the offeree, provided it is sent using a reasonable medium of communication. Because the buyer initiated the negotiations and sent the offer via mail, replying by mail was undeniably reasonable. The contract was formed the moment the seller mailed the acceptance on July 9, and it remains binding even if the letter is subsequently lost in the mail and never received by the offeror."
+        exp: "The seller's initial letter was an invitation to negotiate[cite: 14]. The buyer's reply was an offer to buy the books if delivered on September 1[cite: 14]. Under the mailbox rule, an acceptance of an offer for a bilateral contract is effective upon dispatch if it is sent by a reasonable medium of communication[cite: 14]. Because the buyer used the mail to send the offer, the mail was an authorized and reasonable medium[cite: 14]. When the seller mailed the properly addressed acceptance letter on July 9, an enforceable bilateral contract was immediately formed, regardless of the fact that it was subsequently lost and never received[cite: 14].\n\nA is incorrect because the contract was bilateral, involving an exchange of mutual promises[cite: 14]. C is incorrect because under the mailbox rule, receipt is not required for an acceptance to take effect upon dispatch[cite: 14]. D is incorrect because contract formation upon dispatch terminates the offeror's power to revoke[cite: 14]."
     },
     {
         id: 12,
@@ -165,7 +165,7 @@ const examData = [
             "Whether the buyer's purpose in insisting on a liquidated damages clause was to encourage the seller to vacate the premises on time."
         ],
         ans: 2,
-        exp: "A liquidated damages clause is enforceable only if it satisfies two requirements: (1) at the time of contracting, actual damages must have been difficult to estimate, and (2) the stipulated amount must represent a reasonable forecast of the anticipated harm. It cannot serve merely as a penalty. Therefore, the court's determination of the clause's enforceability will turn directly on whether $75 per day was a reasonable forecast of the buyer's anticipated living expenses at the time the contract was formed."
+        exp: "A liquidated damages clause is enforceable if (1) damages were difficult to estimate at the time the contract was formed, and (2) the amount stipulated was a reasonable forecast of the compensatory damages that would result from a breach[cite: 14]. If the amount stipulated is unreasonable or acts as a penalty to compel performance, the clause is void and unenforceable[cite: 14]. Therefore, enforceability turns on whether $75 per day was a reasonable forecast of the anticipated damages (living expenses) at the time of contract formation[cite: 14].\n\nA and B are incorrect because the validity of a liquidated damages clause is determined from the perspective of the parties at the time of formation, and a valid liquidated damages clause displaces the need to prove actual expenditures or mitigation[cite: 14]. D is incorrect because an intent to compel performance would render the clause an unenforceable penalty[cite: 14]."
     },
     {
         id: 13,
@@ -179,7 +179,7 @@ const examData = [
             "The question of whether or not they are sufficient consideration depends upon whether the reasonable value of the services approximated $350."
         ],
         ans: 1,
-        exp: "Consideration strictly requires a bargained-for exchange. The doctor rendered the life-saving services in the past, without any prior request from the husband (or the mother), and without any expectation of payment. Because the services were rendered entirely in the past and were not given in exchange to induce the husband's current promise, they constitute past consideration. Past consideration is generally no consideration at all, meaning the husband's promise was merely an unenforceable gratuitous pledge."
+        exp: "Consideration requires a bargained-for exchange[cite: 14]. Under the traditional common law rule, past consideration is no consideration[cite: 14]. Services rendered in the past voluntarily, without a prior request by the promisor and without expectation of compensation, cannot serve as consideration for a subsequent promise[cite: 14]. Because the doctor's emergency services were rendered in the past without any request from the husband, they were not given in exchange for the husband's subsequent promise and cannot constitute consideration for it[cite: 14].\n\nA is incorrect because moral obligation alone is not valid consideration under the traditional common law rule[cite: 14]. C is incorrect because the material benefit rule applies only where a promise is made by the person who received the benefit, and the adult son, not the husband, was the recipient of the medical services[cite: 14]. D is incorrect because the value of past services does not cure the lack of a bargained-for exchange[cite: 14]."
     },
     {
         id: 14,
@@ -193,7 +193,7 @@ const examData = [
             "Whether the student made extra efforts in her studies in reliance on the September 10 notice."
         ],
         ans: 1,
-        exp: "When an offer is made by general advertisement to the public (such as posting a reward notice in a bookstore), the offer can only be validly revoked by communicating the revocation in a manner equal to or better than the original offer. Therefore, a revocation must be distributed through the same medium and with the same prominence and conspicuousness as the original offer. If the second notice was physically smaller or hidden compared to the first, the revocation is legally ineffective, regardless of whether the specific offeree actually saw it."
+        exp: "Under Restatement (Second) of Contracts §46, an offer made by general notification to the public (such as a notice posted on a bulletin board) may be revoked by giving publicity to the revocation equivalent to that given to the offer[cite: 14]. If an offer made by general advertisement is revoked by a subsequent notice given equal publicity, the revocation is effective against all persons, even those who never saw the revocation notice[cite: 14]. Therefore, whether the revocation notice was given equivalent publicity and was as conspicuously posted as the original offer is the dispositive factor[cite: 14].\n\nA is incorrect because if the revocation is given equal publicity, it is effective against an offeree even if that offeree did not see it[cite: 14]. C is incorrect because an offer for a unilateral contract that calls for performance cannot be accepted by a mere promise[cite: 14]. D is incorrect because studying for classes that a student is already enrolled in is not performance that creates an option contract under Restatement §45[cite: 14]."
     },
     {
         id: 15,
@@ -207,7 +207,7 @@ const examData = [
             "The contract that the contractor made with the builder on March 3 was a breach of a fiduciary obligation that the contractor owed the landowner."
         ],
         ans: 1,
-        exp: "The original agreement stipulated that the landowner's duty to convey the lot to the children was expressly conditioned 'after completion of the house.' By refusing to paint the house, the contractor's son directly caused the house to remain uncompleted. Because the completion of the house operated as an express condition precedent to the landowner's duty to convey title, the failure of that condition legally excuses the landowner from performing."
+        exp: "A promisor's duty to perform does not arise if a condition precedent to that duty fails to occur[cite: 14]. The January 1 agreement between the landowner and the contractor provided that the conveyance of the lot would take place 'after completion of the house'[cite: 14]. Furthermore, the contractor's son had undertaken the obligation to paint the house[cite: 14]. Because the contractor's son wrongfully refused to paint the house, the house was not completed[cite: 14]. The completion of the house was an express condition precedent to the landowner's duty to convey title[cite: 14]. A party cannot sue on a contract where his own wrongful breach prevented the occurrence of the condition precedent to the defendant's performance[cite: 14].\n\nA is incorrect because an intended beneficiary does not need to formally assent or rely if the contract has not been modified prior to suit[cite: 14]. C is incorrect because the son was an express donee beneficiary of the conveyance[cite: 14]. D is incorrect because the parties were not in a fiduciary relationship[cite: 14]."
     },
     {
         id: 16,
@@ -221,12 +221,12 @@ const examData = [
             "Award damages of $500."
         ],
         ans: 0,
-        exp: "While the standard remedy for breach of contract is expectation damages, courts will grant the equitable remedy of specific performance when the subject matter of the contract is unique or cannot be easily replaced on the open market, rendering monetary damages legally inadequate. Because a 'rare guitar' is a unique chattel, the court will issue an order forcing the breaching seller to specifically perform the contract by handing over the exact guitar for the agreed $500 price."
+        exp: "Specific performance is an equitable remedy available in contracts for the sale of goods under UCC §2-716 where the goods are unique or in other proper circumstances[cite: 14]. Because the subject matter of the contract is a rare guitar, money damages would be inadequate to purchase an identical substitute[cite: 14]. An order of specific performance requiring the seller to deliver the unique guitar upon payment of the $500 contract price is the appropriate remedy[cite: 14].\n\nB is incorrect because money damages are inadequate for unique chattels[cite: 14]. C is incorrect because specific performance gives the buyer the goods; granting specific performance and compensatory expectation damages would result in a double recovery[cite: 14]. D is incorrect because $500 is the purchase price to be paid by the buyer, not the measure of damages for breach[cite: 14]."
     },
     {
         id: 17,
         topic: "Applicable Law / Scope of UCC Article 2",
-        fp: "The plaintiff had long admired the defendant's dog, which was trained to get the paper and start the coffeepot every morning. The plaintiff finally convinced the defendant to agree to sell him the dog, and the defendant wrote out a contract that said, 'I agree to sell my dog to the plaintiff. Price to be decided at delivery.' The plaintiff was seeking to purchase the dog for resale. When the plaintiff arrived to pick up the dog a week later, the defendant refused to give the dog to him. The plaintiff then filed suit.",
+        fp: "The plaintiff had long admired the defendant's dog, which was trained to get the paper and start the coffeepot every morning. The plaintiff finally convinced the defendant to agree to sell him the dog, and the defendant wrote out a contract that said, 'I agree to sell my dog to the plaintiff. Price to be decided at delivery.' The plaintiff was seeking to purchase the dog for resale. When the plaintiff arrived to pick up the dog a week later, the defendant refused to give the dog to him. The plaintiff then filed suit. Does the UCC apply to the transaction between the plaintiff and the defendant?",
         q: "Does the UCC apply to the transaction between the plaintiff and the defendant?",
         opts: [
             "Yes, because this was a transaction in goods.",
@@ -235,7 +235,7 @@ const examData = [
             "No, because the plaintiff was seeking to purchase the dog for resale."
         ],
         ans: 0,
-        exp: "UCC Article 2 applies to all transactions in 'goods.' Goods are defined broadly as all things (including specially manufactured goods) which are movable at the time of identification to the contract for sale. The UCC explicitly classifies animals—including pets and livestock—as movable, tangible personal property, qualifying them as 'goods.' Therefore, the sale of the dog is strictly governed by the UCC."
+        exp: "Under UCC §2-102, Article 2 applies to transactions in goods[cite: 14]. Under UCC §2-105(1), 'goods' means all things (including specially manufactured goods) which are movable at the time of identification to the contract for sale[cite: 14]. Live animals, including domestic pets, are movable personal property and fall within the statutory definition of goods[cite: 14]. Therefore, the contract for the sale of the dog is governed by UCC Article 2[cite: 14].\n\nB is incorrect because missing terms do not determine whether the UCC applies to a transaction[cite: 14]. C is incorrect because live animals are classified as goods under the UCC[cite: 14]. D is incorrect because Article 2 applies to sales of goods regardless of whether the buyer intends to keep or resell the item[cite: 14]."
     },
     {
         id: 18,
@@ -248,8 +248,8 @@ const examData = [
             "Yes, because the painting is unique.",
             "Yes, because the defendant's sale to the other person was an anticipatory repudiation of its contract with the attorney."
         ],
-        ans: 1,
-        exp: "When the defendant repudiated the contract by selling to a third party on November 15, the attorney was legally entitled to treat the repudiation as final and mitigate her damages by 'covering' (buying substitute goods). By spending her $4,000 budget on a substitute painting from another dealer, she materially changed her position in reliance on the repudiation, terminating the defendant's right to retract. Because specific performance is an equitable remedy meant to make the plaintiff whole when monetary damages are inadequate, the fact that the attorney already successfully mitigated her investment entirely defeats her claim for a court order forcing the original sale."
+        ans: 0,
+        exp: "Specific performance is an equitable remedy that is available only when the plaintiff has not breached and is ready, willing, and able to perform, and legal remedies are inadequate[cite: 14]. While the defendant's sale of the painting on November 15 was an anticipatory repudiation, the defendant effectively retracted that repudiation on November 30 by reacquiring the painting and tendering conforming delivery on December 28, the date set for performance[cite: 14]. Because the attorney refused to accept delivery and pay the purchase price when properly tendered, the attorney herself was in breach and is not entitled to specific performance[cite: 14].\n\nB is incorrect because purchasing an unrelated painting did not constitute cover for a unique work of art[cite: 14]. C is incorrect because uniqueness alone does not entitle a party who refuses tender to specific performance[cite: 14]. D is incorrect because an anticipatory repudiation can be retracted before performance is due if the aggrieved party has not canceled, sued, or materially changed position in reliance on the repudiation[cite: 14]."
     },
     {
         id: 19,
@@ -263,7 +263,7 @@ const examData = [
             "The buyer may bring a legal proceeding for the purpose of evicting the tenant from the premises, and, if successful, is required to pay the seller $2,000 less the expenses he incurred in evicting the tenant."
         ],
         ans: 1,
-        exp: "A condition subsequent is an event that extinguishes or discharges an existing contractual duty. The contract explicitly stated that the buyer's obligation to pay the final $2,000 would be 'voided' if the tenant did not vacate within three months. Because the tenant remained in the downstairs apartment well past the three-month deadline (November 1), the condition subsequent occurred, automatically discharging the buyer's obligation to pay the remaining $2,000."
+        exp: "A condition subsequent is an event whose occurrence discharges an existing duty of performance[cite: 14]. The contract explicitly provided that the buyer's obligation to pay the remaining $2,000 would be voided if the downstairs apartment had not been vacated within three months after closing (November 1)[cite: 14]. Because the apartment was still occupied on November 15, the condition subsequent occurred, automatically discharging the buyer's duty to pay the $2,000[cite: 14].\n\nA is incorrect because the parties specifically agreed to the remedy of voiding the $2,000 payment[cite: 14]. C is incorrect because the failure of the tenant to vacate within three months does not justify total rescission after title has closed[cite: 14]. D is incorrect because the buyer's duty to pay $2,000 was completely discharged by the terms of the agreement[cite: 14]."
     },
     {
         id: 20,
@@ -277,7 +277,7 @@ const examData = [
             "No, because the seller changed his mind about the piece prior to April 21."
         ],
         ans: 0,
-        exp: "Unless an offer explicitly restricts the method of acceptance, an offer invites acceptance by any medium reasonable under the circumstances. Given modern commercial practices and the prior communication, replying to a mailed offer via email is considered a highly reasonable method of acceptance. Because the seller never actually communicated his revocation to the buyer before the buyer dispatched the email, the contract was validly formed the moment the buyer hit send on the email under standard dispatch/mailbox rule principles."
+        exp: "Under UCC §2-206(1)(a), unless otherwise unambiguously indicated by the language or circumstances, an offer to make a contract shall be construed as inviting acceptance in any manner and by any medium reasonable in the circumstances[cite: 14]. Because the seller did not specify a medium of acceptance, and electronic communication via email is a commercially reasonable method of acceptance, the buyer's email was an effective mode of acceptance[cite: 14]. Furthermore, an uncommunicated change of mind does not revoke an offer; a revocation is effective only when received by the offeree before acceptance[cite: 14]. Because the seller never communicated a revocation, the buyer's acceptance formed a binding contract[cite: 14].\n\nB is incorrect because the obligation of good faith does not create a contract in the absence of valid offer and acceptance[cite: 14]. C is incorrect because common law and UCC rules permit acceptance by any reasonable medium unless restricted by the offer[cite: 14]. D is incorrect because an uncommunicated subjective change of mind does not revoke an offer[cite: 14]."
     },
     {
         id: 21,
@@ -291,7 +291,7 @@ const examData = [
             "The firm paid $15,000 to the specialist prior to being notified of the specialist's assignment to the programmer."
         ],
         ans: 3,
-        exp: "When a party assigns the right to receive payment, the obligor (the firm) remains liable to the original assignor until they receive proper, effective notice of the assignment. If the obligor pays the assignor in good faith before receiving notice of the assignment, the obligor's contractual duty is fully discharged. Consequently, if the firm paid the original specialist before being told to pay the programmer, the firm owes the programmer nothing."
+        exp: "An obligor is bound to pay the assignee only after the obligor receives notice that the contract right has been assigned[cite: 14]. If an obligor pays the assignor in full before receiving notice of the assignment, the obligor's contractual duty is discharged[cite: 14]. If the firm paid the $15,000 to the specialist before being notified of the assignment to the programmer, the payment discharged the firm's liability, providing a complete defense to the programmer's claim[cite: 14].\n\nA is incorrect because an assignee of a right to payment does not need the professional qualifications of the assignor[cite: 14]. B is incorrect because contract rights to receive payment are freely assignable without an express clause permitting assignment[cite: 14]. C is incorrect because an assignment of the right to receive payment is not a modification of the contract[cite: 14]."
     },
     {
         id: 22,
@@ -305,7 +305,7 @@ const examData = [
             "The plaintiff and the defendant made a contract for the sale of goods."
         ],
         ans: 3,
-        exp: "Because the transaction involves the sale of animals, it is governed by UCC Article 2 (Sale of Goods). Unlike the common law pre-existing duty rule, UCC § 2-209 expressly allows parties to modify a contract for the sale of goods without any new consideration, provided the modification is sought and agreed upon in good faith. Therefore, the defendant's promise to include the pig for no extra charge was a valid, binding modification simply because it was a contract for the sale of goods."
+        exp: "Under UCC §2-105, animals are classified as goods, and Article 2 applies to all contracts for the sale of goods[cite: 14]. Under UCC §2-209(1), an agreement modifying a contract within Article 2 needs no consideration to be binding, provided it is made in good faith[cite: 14]. Unlike the common law pre-existing duty rule, the modification to add the pig at no extra charge was enforceable simply because it was a modification of a contract for the sale of goods[cite: 14].\n\nA, B, and C are incorrect because UCC §2-209(1) applies to all contracts for the sale of goods, not merely contracts between merchants[cite: 14]."
     },
     {
         id: 23,
@@ -319,7 +319,7 @@ const examData = [
             "Nothing."
         ],
         ans: 1,
-        exp: "Under UCC § 2-713, a buyer's standard measure of damages for non-delivery or repudiation is the difference between the market price at the time the buyer learned of the breach and the contract price, plus any incidental and consequential damages. Because the retailer learned of the breach on January 15 (when the short boards were delivered), the damages must be anchored to the market value of the requested conforming goods (8-foot boards) on that specific date, preventing the retailer from unfairly benefiting from the subsequent market spike on January 16."
+        exp: "Under UCC §2-713, the measure of damages for non-delivery or repudiation by the seller is the difference between the market price at the time when the buyer learned of the breach and the contract price, together with any incidental and consequential damages, but less expenses saved in consequence of the seller's breach[cite: 14]. The retailer learned of the breach on January 15, when the nonconforming boards were delivered[cite: 14]. Therefore, damages are measured by the difference between the contract price and the fair market value of conforming 8-foot boards on January 15, not the doubled price of January 17[cite: 14].\n\nA is incorrect because damages are based on the market price of the conforming goods contracted for (8-foot boards)[cite: 14]. C is incorrect because under §2-713, market price is determined at the time the buyer learned of the breach (January 15), not the date of rejection[cite: 14]. D is incorrect because the buyer rejected within a reasonable time[cite: 14]."
     },
     {
         id: 24,
@@ -333,7 +333,7 @@ const examData = [
             "Yes, because an assignment for consideration implies a warranty that the obligor will perform."
         ],
         ans: 2,
-        exp: "When a party assigns a contract right for value (consideration), the assignor implicitly warrants that the assigned right actually exists and is completely free from any undisclosed defenses or limitations. Because the pawnbroker committed fraud/breached the warranty regarding the cubic zirconia, the buyer had a valid defense against payment existing at the very moment the pawnbroker assigned the contract to the retailer. The pawnbroker breached this implied warranty to the assignee, making him liable to the retailer."
+        exp: "Under general contract law (Restatement (Second) of Contracts §333), an assignor for value warrants to the assignee that the right assigned is genuine and not subject to any defenses or claims of the obligor, other than those stated or apparent at the time of assignment[cite: 14]. An assignor does not warrant that the obligor is solvent or will perform, but does warrant that the claim is legally enforceable and that no defense (such as fraud or breach of warranty) exists against it[cite: 14]. Because the pawnbroker's misrepresentation gave the buyer a complete defense that existed at the time the assignment was made, the pawnbroker breached the implied warranty of assignment and is liable to the retailer[cite: 14].\n\nA is incorrect because while an assignor does not warrant that the obligor will perform, the assignor does warrant that the obligor has no valid defenses[cite: 14]. B is incorrect because the assignee's vulnerability to the obligor's defense triggers the assignor's liability for breach of the warranty of assignment[cite: 14]. D is incorrect because an assignor does not warrant performance[cite: 14]."
     },
     {
         id: 25,
@@ -347,6 +347,6 @@ const examData = [
             "In favor of the butcher, because the restaurant's promise is illusory."
         ],
         ans: 3,
-        exp: "A valid requirements contract requires the buyer to commit to purchasing *all* of its actual requirements for a particular good from the seller, which provides necessary consideration. Here, the agreement merely states the butcher will provide as many steaks 'as the restaurant decides to order.' Because the restaurant retained the absolute, unfettered discretion to order nothing at all and was not strictly bound to purchase its requirements from the butcher, its promise is entirely illusory, rendering the contract void for lack of mutuality of obligation."
+        exp: "A promise is illusory and lacks consideration if the promisor reserves an unrestricted right to perform or not perform at will[cite: 14]. A valid requirements contract under UCC §2-306 requires the buyer to promise to purchase all of its requirements exclusively from the seller[cite: 14]. Here, the agreement did not require the restaurant to purchase all of its steak requirements from the butcher; it merely stated that the butcher would provide as many steaks 'as the restaurant decides to order'[cite: 14]. The restaurant made no commitment to purchase any steaks at all[cite: 14]. Because the restaurant's promise was completely illusory, the contract lacked mutuality of obligation and was unenforceable[cite: 14].\n\nA is incorrect because promissory estoppel cannot enforce an illusory agreement where no actual commitment was made[cite: 14]. B is incorrect because the contract lacked exclusivity and did not measure quantity by good-faith requirements[cite: 14]. C is incorrect because a rise in cattle feed prices constitutes mere cost increase, not commercial impossibility[cite: 14]."
     }
 ];
