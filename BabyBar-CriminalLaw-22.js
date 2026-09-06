@@ -11,7 +11,7 @@ const examData = [
             "Yes, because she planned to keep the money if she lost."
         ],
         ans: 3,
-        exp: "Larceny is a trespassory taking and carrying off of personal property known to be another's with the intent to permanently deprive the owner of it[cite: 32]. Although the defendant planned to return the money in the event of one contingency, she planned not to return it in the event of another[cite: 32]. This contingent intent to permanently deprive is sufficient to make her guilty of larceny when she took and carried off the money on Friday night[cite: 32]."
+        exp: "Larceny is a trespassory taking and carrying off of personal property known to be another's with the intent to permanently deprive the owner thereof[cite: 32]. Although the defendant planned to return the money in the event of one contingency, she planned not to return it in the event of another[cite: 32]. This contingent intent to permanently deprive is sufficient to make her guilty of larceny when she took and carried off the money on Friday night[cite: 32]."
     },
     {
         id: 2,
@@ -221,7 +221,7 @@ const examData = [
             "The defendant stole a check from the victim's mailbox and attempted to cash it in a bank by masquerading as the victim. Suspecting forgery, the bank teller signaled to the bank guard. As the guard approached, the defendant shot at him. When the guard returned the defendant's fire, one of the guard's bullets ricocheted off a wall and struck a customer, killing him."
         ],
         ans: 2,
-        exp: "Murder is defined as criminal homicide with malice aforethought[cite: 32]. Since homicide involves an act that causes the death of a human being, and since the victim's death in (C) did not result from the defendant's act (because the victim was already dead from a heart attack), the defendant could not be guilty of murdering the victim[cite: 32]. (He could only be guilty of attempted murder)."
+        exp: "Murder is defined as criminal homicide with malice aforethought[cite: 32]. Since homicide involves an act that causes the death of a human being, and since the victim's death in (C) did not result from the defendant's act (because the victim was already dead from a heart attack), the defendant could not be guilty of murdering the victim[cite: 32]."
     },
     {
         id: 17,
@@ -347,6 +347,6 @@ const examData = [
             "The victim's death resulted from the defendant's unlicensed operation of a motor vehicle."
         ],
         ans: 1,
-        exp: "Murder is a killing with malice aforethought[cite: 32]. Malice aforethought includes wanton disregard for human life, which means acting in deliberate disregard of the plain and strong likelihood that death or great bodily harm would result[cite: 32]. Operating a motor vehicle at a speed of 100 miles per hour might be found to constitute wanton disregard for human life, making it the only reason listed that could result in a conviction for murder[cite: 32]. (Misdemeanor manslaughter cannot lead to a murder conviction)."
+        exp: "Murder is a killing with malice aforethought[cite: 32]. Malice aforethought includes wanton disregard for human life, which means acting in deliberate disregard of the plain and strong likelihood that death or great bodily harm would result[cite: 32]. Operating a motor vehicle at a speed of 100 miles per hour might be found to constitute wanton disregard for human life, making it the only reason listed that could result in a conviction for murder[cite: 32]."
     }
 ];
