@@ -12,7 +12,7 @@ const examData = [
             "No, because the bullet passing completely through the aggressor's body constitutes a superseding, independent intervening event that severs the chain of proximate causation."
         ],
         ans: 2,
-        exp: "When a defendant is justified in using deadly force in self-defense against an attacker, that justification transfers to the unintended killing of an innocent bystander, provided the defendant did not act recklessly or negligently toward the bystander[cite: 29]."
+        exp: "When a defendant is justified in using deadly force in self-defense against an attacker, that justification transfers to the unintended killing of an innocent bystander, provided the defendant did not act recklessly or negligently toward the bystander."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "Voluntary manslaughter, because the sudden knife attack by the aggressor constitutes adequate legal provocation that mitigates all subsequent responsive violence to a lesser included offense."
         ],
         ans: 1,
-        exp: "While the initial right of self-defense transfers to unintended victims, a defendant may still be liable for murder (depraved heart) or manslaughter if the method of self-defense creates an unreasonable, reckless risk of death to innocent bystanders (like firing an automatic weapon blindly into a crowd)[cite: 29]."
+        exp: "While the initial right of self-defense transfers to unintended victims, a defendant may still be liable for murder (depraved heart) or manslaughter if the method of self-defense creates an unreasonable, reckless risk of death to innocent bystanders (like firing an automatic weapon blindly into a crowd)."
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const examData = [
             "No, because his lawful justification of self-defense transfers to the accidental injury."
         ],
         ans: 3,
-        exp: "Just as the doctrine of transferred intent applies to hold a defendant liable for unintended victims, the doctrine of 'transferred justification' shields a defendant from battery or homicide charges if they accidentally injure a bystander while lawfully exercising proportionate self-defense against an attacker[cite: 29]."
+        exp: "Just as the doctrine of transferred intent applies to hold a defendant liable for unintended victims, the doctrine of 'transferred justification' shields a defendant from battery or homicide charges if they accidentally injure a bystander while lawfully exercising proportionate self-defense against an attacker."
     },
     // FACT PATTERN 2 (Q4-Q5)
     {
@@ -55,7 +55,7 @@ const examData = [
             "Robbery, because exchanging a valueless counterfeit item for a substantial sum of money constitutes constructive physical force against the victim."
         ],
         ans: 0,
-        exp: "False pretenses requires obtaining title to the property of another by an intentional false statement of past or existing fact, with intent to defraud[cite: 29]. Because the Art Dealer intended to transfer full ownership (title) of the $100,000 check to Diane based on her lie, she is guilty of false pretenses[cite: 29]."
+        exp: "False pretenses requires obtaining title to the property of another by an intentional false statement of past or existing fact, with intent to defraud. Because the Art Dealer intended to transfer full ownership (title) of the $100,000 check to Diane based on her lie, she is guilty of false pretenses."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "Yes, because any modification of a financial document automatically constitutes statutory embezzlement under modern banking regulations."
         ],
         ans: 2,
-        exp: "Forgery is the making OR altering of a false writing with apparent legal significance, done with the specific intent to defraud[cite: 29]. Materially altering the amount on a validly signed check to steal more money perfectly satisfies the elements of forgery[cite: 29]. The crime is complete upon the alteration, regardless of whether it is cashed[cite: 29]."
+        exp: "Forgery is the making OR altering of a false writing with apparent legal significance, done with the specific intent to defraud. Materially altering the amount on a validly signed check to steal more money perfectly satisfies the elements of forgery. The crime is complete upon the alteration, regardless of whether it is cashed."
     },
     // FACT PATTERN 3 (Q6-Q8)
     {
@@ -84,7 +84,7 @@ const examData = [
             "Yes, but only if the prosecution can prove that Earl personally instructed Faye to utilize the brass statue as a bludgeoning instrument."
         ],
         ans: 1,
-        exp: "Under the felony murder rule, all co-felons are liable for a death caused by one of them during the commission of an inherently dangerous felony, provided the death is a foreseeable result[cite: 29]. A lethal struggle during a bank robbery is highly foreseeable, and a prior agreement not to hurt anyone does not shield a co-felon from felony murder liability[cite: 29]."
+        exp: "Under the felony murder rule, all co-felons are liable for a death caused by one of them during the commission of an inherently dangerous felony, provided the death is a foreseeable result. A lethal struggle during a bank robbery is highly foreseeable, and a prior agreement not to hurt anyone does not shield a co-felon from felony murder liability."
     },
     {
         id: 7,
@@ -98,7 +98,7 @@ const examData = [
             "No, because Earl's physical absence from the immediate vicinity of the desk completely severs his derivative accessorial liability."
         ],
         ans: 0,
-        exp: "Under the Pinkerton doctrine (and the natural and probable consequences doctrine for accomplices), a conspirator/accomplice is liable for any crimes committed by a co-conspirator that are reasonably foreseeable and in furtherance of the target offense[cite: 29]. A physical battery against a resisting guard is a natural and probable consequence of a bank robbery[cite: 29]."
+        exp: "Under the Pinkerton doctrine (and the natural and probable consequences doctrine for accomplices), a conspirator/accomplice is liable for any crimes committed by a co-conspirator that are reasonably foreseeable and in furtherance of the target offense. A physical battery against a resisting guard is a natural and probable consequence of a bank robbery."
     },
     {
         id: 8,
@@ -112,7 +112,7 @@ const examData = [
             "For the prosecution, because subjective ignorance of a co-conspirator's specific weapon does not defeat liability for the foreseeable consequences of an armed robbery."
         ],
         ans: 3,
-        exp: "An accomplice or co-conspirator does not need to know exactly how a foreseeable crime will be committed or what specific improvised weapon will be used[cite: 29]. As long as the resulting crime (assault/homicide during a bank robbery) is a natural and probable consequence of the target offense, the accomplice is liable[cite: 29]."
+        exp: "An accomplice or co-conspirator does not need to know exactly how a foreseeable crime will be committed or what specific improvised weapon will be used. As long as the resulting crime (assault/homicide during a bank robbery) is a natural and probable consequence of the target offense, the accomplice is liable."
     },
     // FACT PATTERN 4 (Q9-Q11)
     {
@@ -127,7 +127,7 @@ const examData = [
             "Yes, because any diagnosis of schizophrenia automatically confers absolute transactional immunity from all felony property prosecutions."
         ],
         ans: 2,
-        exp: "Under the M'Naghten test, a defendant is legally insane if a mental disease or defect causes them to either not know the nature and quality of their act, or not know that what they were doing was wrong[cite: 29]. If Greg's severe delusion made him believe he was saving the world and doing a morally right act, he satisfies this test[cite: 29]."
+        exp: "Under the M'Naghten test, a defendant is legally insane if a mental disease or defect causes them to either not know the nature and quality of their act, or not know that what they were doing was wrong. If Greg's severe delusion made him believe he was saving the world and doing a morally right act, he satisfies this test."
     },
     {
         id: 10,
@@ -141,7 +141,7 @@ const examData = [
             "Yes, because federal officers are constitutionally prohibited from communicating with individuals suffering from documented psychological disorders."
         ],
         ans: 1,
-        exp: "Entrapment is a valid defense if the criminal design originated with law enforcement, and the defendant was not predisposed to commit the specific crime prior to the government's contact[cite: 29]. Because the officer targeted Greg's illness and convinced him to commit a theft he otherwise had no inclination to commit, entrapment applies[cite: 29]."
+        exp: "Entrapment is a valid defense if the criminal design originated with law enforcement, and the defendant was not predisposed to commit the specific crime prior to the government's contact. Because the officer targeted Greg's illness and convinced him to commit a theft he otherwise had no inclination to commit, entrapment applies."
     },
     {
         id: 11,
@@ -155,7 +155,7 @@ const examData = [
             "No, because common law burglary strictly requires the breaking and entering of a dwelling house, and an office building is not a dwelling."
         ],
         ans: 3,
-        exp: "Common law burglary requires the breaking and entering of the DWELLING house of another in the nighttime[cite: 29]. A commercial office building or federal facility does not qualify as a dwelling house under the strict traditional common law definition[cite: 29]."
+        exp: "Common law burglary requires the breaking and entering of the DWELLING house of another in the nighttime. A commercial office building or federal facility does not qualify as a dwelling house under the strict traditional common law definition."
     },
     // FACT PATTERN 5 (Q12-Q13)
     {
@@ -170,7 +170,7 @@ const examData = [
             "Robbery, because driving a vehicle away from the owner's immediate presence constitutes constructive physical force."
         ],
         ans: 0,
-        exp: "Embezzlement requires fraudulent conversion by someone already in lawful possession[cite: 29]. A bailee (like a legitimate valet entrusted with parking a car) has lawful possession of the vehicle[cite: 29]. When the bailee subsequently converts the property to their own use, the crime is embezzlement, not larceny[cite: 29]."
+        exp: "Embezzlement requires fraudulent conversion by someone already in lawful possession. A bailee (like a legitimate valet entrusted with parking a car) has lawful possession of the vehicle. When the bailee subsequently converts the property to their own use, the crime is embezzlement, not larceny."
     },
     {
         id: 13,
@@ -184,7 +184,7 @@ const examData = [
             "Common law burglary, because he breached the physical threshold of the vehicle's interior cabin."
         ],
         ans: 2,
-        exp: "If Ian is a fake valet, he never acquires lawful possession through a legitimate bailment[cite: 29]. Instead, he uses fraud and deceit (wearing a fake uniform) to trick the owner into handing over mere custody of the vehicle, while he harbors the contemporaneous intent to steal it[cite: 29]. This is the classic definition of Larceny by Trick[cite: 29]."
+        exp: "If Ian is a fake valet, he never acquires lawful possession through a legitimate bailment. Instead, he uses fraud and deceit (wearing a fake uniform) to trick the owner into handing over mere custody of the vehicle, while he harbors the contemporaneous intent to steal it. This is the classic definition of Larceny by Trick."
     },
     // FACT PATTERN 6 (Q14-Q15)
     {
@@ -199,7 +199,7 @@ const examData = [
             "No, because criminal actors are held strictly liable for any and all subsequent medical decisions made by hospital administration committees."
         ],
         ans: 1,
-        exp: "In criminal law, the removal of artificial life support by a victim's family or doctors is considered a foreseeable, dependent intervening act that naturally results from the defendant inflicting the fatal injury[cite: 29]. It is not a superseding cause, and the defendant remains the proximate cause of death[cite: 29]."
+        exp: "In criminal law, the removal of artificial life support by a victim's family or doctors is considered a foreseeable, dependent intervening act that naturally results from the defendant inflicting the fatal injury. It is not a superseding cause, and the defendant remains the proximate cause of death."
     },
     {
         id: 15,
@@ -213,7 +213,7 @@ const examData = [
             "Yes, because the ongoing operation of the life support machine tolls the applicable statute of limitations for common law homicides."
         ],
         ans: 0,
-        exp: "Under the traditional common law 'year and a day' rule, a defendant cannot be convicted of criminal homicide if the victim dies more than one year and one day after the fatal blow or act was inflicted[cite: 29]. Because Kevin died 15 months later, Jack is immune from a completed homicide charge at common law (though attempted murder still applies)[cite: 29]."
+        exp: "Under the traditional common law 'year and a day' rule, a defendant cannot be convicted of criminal homicide if the victim dies more than one year and one day after the fatal blow or act was inflicted. Because Kevin died 15 months later, Jack is immune from a completed homicide charge at common law (though attempted murder still applies)."
     },
     // FACT PATTERN 7 (Q16-Q18)
     {
@@ -228,7 +228,7 @@ const examData = [
             "Yes, because the maritime salvage code grants absolute immunity to all civilian sailors during inclement weather events."
         ],
         ans: 1,
-        exp: "The defense of necessity (choice of evils) justifies committing a crime (like trespass) if the defendant reasonably believes it is necessary to avoid a greater, imminent harm (drowning in a hurricane)[cite: 29]. Private necessity allows Liam to trespass to save his life, though he remains civilly liable for any actual damage caused to the dock[cite: 29]."
+        exp: "The defense of necessity (choice of evils) justifies committing a crime (like trespass) if the defendant reasonably believes it is necessary to avoid a greater, imminent harm (drowning in a hurricane). Private necessity allows Liam to trespass to save his life, though he remains civilly liable for any actual damage caused to the dock."
     },
     {
         id: 17,
@@ -242,7 +242,7 @@ const examData = [
             "No, because deadly force may never be used solely to protect property against a simple trespasser."
         ],
         ans: 3,
-        exp: "A property owner is privileged to use reasonable, non-deadly force to protect their property from trespass[cite: 29]. However, a property owner may NEVER use deadly force (like shooting a shotgun) solely to defend property[cite: 29]. Because Liam posed no threat of death or great bodily harm to Mary, her use of deadly force was entirely unjustified[cite: 29]."
+        exp: "A property owner is privileged to use reasonable, non-deadly force to protect their property from trespass. However, a property owner may NEVER use deadly force (like shooting a shotgun) solely to defend property. Because Liam posed no threat of death or great bodily harm to Mary, her use of deadly force was entirely unjustified."
     },
     {
         id: 18,
@@ -256,7 +256,7 @@ const examData = [
             "No, because tying a person to a stationary object during a hurricane lacks the required asportation element for violent crimes."
         ],
         ans: 1,
-        exp: "False imprisonment is the unlawful confinement of a person[cite: 29]. However, Liam's confinement of Mary is legally justified by self-defense[cite: 29]. Because Mary used unlawful deadly force against him (shooting his foot to stop a trespass), Liam was privileged to use reasonable force to disarm and restrain her to prevent further lethal attacks while he survived the storm[cite: 29]."
+        exp: "False imprisonment is the unlawful confinement of a person. However, Liam's confinement of Mary is legally justified by self-defense. Because Mary used unlawful deadly force against him (shooting his foot to stop a trespass), Liam was privileged to use reasonable force to disarm and restrain her to prevent further lethal attacks while he survived the storm."
     },
     // FACT PATTERN 8 (Q19-Q20)
     {
@@ -271,7 +271,7 @@ const examData = [
             "No, because the pills were harmless sugar, preventing her actions from meeting the dangerous proximity test required for inchoate felonies."
         ],
         ans: 0,
-        exp: "Attempt requires specific intent and a substantial step[cite: 29]. Factual impossibility (the fact that Nancy was not pregnant and the pills were fake) is not a defense to an attempt charge[cite: 29]. She is judged based on the facts as she believed them to be[cite: 29]. Since she believed she was pregnant and took what she thought were abortion pills, she is guilty of attempt[cite: 29]."
+        exp: "Attempt requires specific intent and a substantial step. Factual impossibility (the fact that Nancy was not pregnant and the pills were fake) is not a defense to an attempt charge. She is judged based on the facts as she believed them to be. Since she believed she was pregnant and took what she thought were abortion pills, she is guilty of attempt."
     },
     {
         id: 20,
@@ -285,7 +285,7 @@ const examData = [
             "False pretenses, because he obtained legal title to the money by intentionally misrepresenting the nature of the pills."
         ],
         ans: 3,
-        exp: "Oscar intentionally lied about the nature of the pills (a false statement of fact) with the intent to defraud Nancy out of her money[cite: 29]. Because Nancy intended to purchase the pills and transfer full title to the $500 cash to Oscar, the crime is false pretenses[cite: 29]."
+        exp: "Oscar intentionally lied about the nature of the pills (a false statement of fact) with the intent to defraud Nancy out of her money. Because Nancy intended to purchase the pills and transfer full title to the $500 cash to Oscar, the crime is false pretenses."
     },
     // FACT PATTERN 9 (Q21-Q23)
     {
@@ -300,7 +300,7 @@ const examData = [
             "Yes, because locking the victim inside a commercial bank vault substantially extends the overall duration of the underlying felony offense."
         ],
         ans: 2,
-        exp: "Kidnapping requires unlawful confinement and 'asportation' (movement) that is substantial or increases the risk of harm independent of the underlying crime[cite: 29]. Most courts hold that dragging a teller a short distance to a vault or back room within the same building to facilitate a robbery or escape is merely incidental to the robbery and does not constitute the substantial movement required for kidnapping[cite: 29]."
+        exp: "Kidnapping requires unlawful confinement and 'asportation' (movement) that is substantial or increases the risk of harm independent of the underlying crime. Most courts hold that dragging a teller a short distance to a vault or back room within the same building to facilitate a robbery or escape is merely incidental to the robbery and does not constitute the substantial movement required for kidnapping."
     },
     {
         id: 22,
@@ -314,7 +314,7 @@ const examData = [
             "Yes, but the charge is automatically elevated to extortion."
         ],
         ans: 1,
-        exp: "False imprisonment is the intentional, unlawful confinement of a person to a bounded area[cite: 29]. Shoving Quinn into a vault and locking the door clearly confines her against her will, fulfilling all elements of the crime[cite: 29]."
+        exp: "False imprisonment is the intentional, unlawful confinement of a person to a bounded area. Shoving Quinn into a vault and locking the door clearly confines her against her will, fulfilling all elements of the crime."
     },
     {
         id: 23,
@@ -328,7 +328,7 @@ const examData = [
             "Yes, because the vault door operated as an instrument of continuous physical force."
         ],
         ans: 0,
-        exp: "The elevation of robbery to 'armed' robbery depends entirely on the defendant's possession or use of a dangerous/deadly weapon (the gun) during the taking of the property or the immediate flight[cite: 29]. The subsequent act of locking the victim in a vault constitutes false imprisonment, but does not alter the fundamental classification of the robbery itself[cite: 29]."
+        exp: "The elevation of robbery to 'armed' robbery depends entirely on the defendant's possession or use of a dangerous/deadly weapon (the gun) during the taking of the property or the immediate flight. The subsequent act of locking the victim in a vault constitutes false imprisonment, but does not alter the fundamental classification of the robbery itself."
     },
     // FACT PATTERN 10 (Q24-Q25)
     {
@@ -343,7 +343,7 @@ const examData = [
             "No, because he lacked the specific intent to facilitate a homicide; he only intended to facilitate a hunting misdemeanor."
         ],
         ans: 3,
-        exp: "Accomplice liability requires that the defendant aid or encourage the principal with the specific intent that the target crime be committed[cite: 29]. Sam intended to help Rachel commit a hunting misdemeanor[cite: 29]. Because he had no knowledge of or intent to assist a murder, he is not an accomplice to the homicide[cite: 29]."
+        exp: "Accomplice liability requires that the defendant aid or encourage the principal with the specific intent that the target crime be committed. Sam intended to help Rachel commit a hunting misdemeanor. Because he had no knowledge of or intent to assist a murder, he is not an accomplice to the homicide."
     },
     {
         id: 25,
@@ -357,6 +357,6 @@ const examData = [
             "Yes, but his liability is capped at a minor civil infraction."
         ],
         ans: 2,
-        exp: "Even for a strict liability offense, a person can be an accomplice if they intentionally aid or encourage the principal to commit the prohibited actus reus[cite: 29]. Sam knew Rachel intended to hunt without a license and deliberately provided the rifle to help her do so, making him an accomplice to the hunting misdemeanor[cite: 29]."
+        exp: "Even for a strict liability offense, a person can be an accomplice if they intentionally aid or encourage the principal to commit the prohibited actus reus. Sam knew Rachel intended to hunt without a license and deliberately provided the rifle to help her do so, making him an accomplice to the hunting misdemeanor."
     }
 ];

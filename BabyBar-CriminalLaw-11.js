@@ -12,7 +12,7 @@ const examData = [
             "Yes, because he physically handed the weapon to Arthur prior to entering the commercial structure."
         ],
         ans: 2,
-        exp: "Under the felony murder rule, all co-felons are liable for a death caused by one of them during the commission of an inherently dangerous felony (such as burglary), provided the death was a foreseeable consequence[cite: 22]. A lethal confrontation during a commercial burglary is foreseeable[cite: 22]."
+        exp: "Under the felony murder rule, all co-felons are liable for a death caused by one of them during the commission of an inherently dangerous felony (such as burglary), provided the death was a foreseeable consequence. A lethal confrontation during a commercial burglary is foreseeable."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "Yes, because the guard's use of lethal force was a highly foreseeable response to the initiation of an armed nighttime burglary."
         ],
         ans: 1,
-        exp: "Under the agency theory of felony murder (and the related Redline rule), a felon is not liable for the death of a co-felon who is justifiably killed by a police officer, security guard, or victim acting in lawful self-defense or crime prevention[cite: 22]."
+        exp: "Under the agency theory of felony murder (and the related Redline rule), a felon is not liable for the death of a co-felon who is justifiably killed by a police officer, security guard, or victim acting in lawful self-defense or crime prevention."
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const examData = [
             "Yes, because the initial agreement inherently creates absolute joint and several liability for all subsequent acts indefinitely."
         ],
         ans: 0,
-        exp: "To effectively withdraw as an accomplice and avoid liability for the principal's subsequent crimes, the accomplice must repudiate their encouragement and communicate that withdrawal to the principal before the crime becomes unstoppable[cite: 22]. Silently slipping away is insufficient[cite: 22]."
+        exp: "To effectively withdraw as an accomplice and avoid liability for the principal's subsequent crimes, the accomplice must repudiate their encouragement and communicate that withdrawal to the principal before the crime becomes unstoppable. Silently slipping away is insufficient."
     },
     // FACT PATTERN 2 (Q4-Q5)
     {
@@ -55,7 +55,7 @@ const examData = [
             "No, because larceny strictly requires the victim to be physically present and aware of the deprivation at the exact moment of the taking."
         ],
         ans: 1,
-        exp: "Larceny requires a trespassory taking with the specific intent to steal the property of another[cite: 22]. If a person honestly believes property is abandoned, they lack the intent to steal another's property, making the initial taking non-trespassory[cite: 22]."
+        exp: "Larceny requires a trespassory taking with the specific intent to steal the property of another. If a person honestly believes property is abandoned, they lack the intent to steal another's property, making the initial taking non-trespassory."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "No, because the flyer was posted in a public area, which legally invalidates the original owner's continuous claim of right."
         ],
         ans: 2,
-        exp: "The continuing trespass doctrine fictionally extends a trespassory taking until the moment the defendant forms the intent to steal[cite: 22]. However, it ONLY applies if the initial taking was wrongful (trespassory)[cite: 22]. Because Chloe's initial taking was innocent (believing the ring was abandoned), the doctrine does not apply[cite: 22]."
+        exp: "The continuing trespass doctrine fictionally extends a trespassory taking until the moment the defendant forms the intent to steal. However, it ONLY applies if the initial taking was wrongful (trespassory). Because Chloe's initial taking was innocent (believing the ring was abandoned), the doctrine does not apply."
     },
     // FACT PATTERN 3 (Q6-Q8)
     {
@@ -84,7 +84,7 @@ const examData = [
             "False pretenses, because he obtained the money by deceptive concealment."
         ],
         ans: 1,
-        exp: "Embezzlement requires the fraudulent conversion of property by someone already in LAWFUL POSSESSION of it[cite: 22]. Low-level employees (like a janitor) who have restricted access to property generally only have 'custody' of it, not lawful possession[cite: 22]. Therefore, taking the property is a trespassory taking, constituting larceny[cite: 22]."
+        exp: "Embezzlement requires the fraudulent conversion of property by someone already in LAWFUL POSSESSION of it. Low-level employees (like a janitor) who have restricted access to property generally only have 'custody' of it, not lawful possession. Therefore, taking the property is a trespassory taking, constituting larceny."
     },
     {
         id: 7,
@@ -97,7 +97,7 @@ const examData = [
             "No, because commercial couriers are legally classified as independent contractors rather than traditional common law bailees."
         ],
         ans: 1,
-        exp: "A bailee (like a courier) generally has lawful possession of property entrusted to them, making conversion embezzlement[cite: 22]. However, under the common law 'breaking bulk' doctrine, if a bailee opens a sealed container and takes the contents, their lawful possession terminates[cite: 22]. The taking becomes a trespassory taking, constituting larceny[cite: 22]."
+        exp: "A bailee (like a courier) generally has lawful possession of property entrusted to them, making conversion embezzlement. However, under the common law 'breaking bulk' doctrine, if a bailee opens a sealed container and takes the contents, their lawful possession terminates. The taking becomes a trespassory taking, constituting larceny."
     },
     {
         id: 8,
@@ -111,7 +111,7 @@ const examData = [
             "No, because gambling losses are universally considered involuntary conversions."
         ],
         ans: 0,
-        exp: "Larceny is a specific intent crime requiring the intent to permanently deprive the owner of the property AT THE TIME of the taking[cite: 22]. If David genuinely intended to return the money the next morning, he lacked the requisite intent for larceny when he took the bag[cite: 22]. (Losing the money recklessly might expose him to other liability, but it does not retroactively create the specific intent for larceny)[cite: 22]."
+        exp: "Larceny is a specific intent crime requiring the intent to permanently deprive the owner of the property AT THE TIME of the taking. If David genuinely intended to return the money the next morning, he lacked the requisite intent for larceny when he took the bag. (Losing the money recklessly might expose him to other liability, but it does not retroactively create the specific intent for larceny)."
     },
     // FACT PATTERN 4 (Q9-Q10)
     {
@@ -126,7 +126,7 @@ const examData = [
             "Voluntary manslaughter, because her societal anger acted as sudden provocation."
         ],
         ans: 2,
-        exp: "Murder requires malice aforethought[cite: 22]. Malice can be implied when a defendant acts with a 'depraved heart'—a reckless indifference to an unjustifiably high risk to human life[cite: 22]. Dropping a 50-pound bowling ball into moving highway traffic perfectly satisfies this standard, making it second-degree murder[cite: 22]."
+        exp: "Murder requires malice aforethought. Malice can be implied when a defendant acts with a 'depraved heart'—a reckless indifference to an unjustifiably high risk to human life. Dropping a 50-pound bowling ball into moving highway traffic perfectly satisfies this standard, making it second-degree murder."
     },
     {
         id: 10,
@@ -140,7 +140,7 @@ const examData = [
             "The doctrine of factual impossibility, which prevents her from claiming she aimed at the wrong vehicle."
         ],
         ans: 2,
-        exp: "Under the doctrine of transferred intent, a defendant who intends to kill or injure one person but accidentally kills or injures a different, unintended person is guilty of the intentional crime against the actual victim[cite: 22]. Emily's intent to kill her ex-boyfriend transfers to Frank[cite: 22]."
+        exp: "Under the doctrine of transferred intent, a defendant who intends to kill or injure one person but accidentally kills or injures a different, unintended person is guilty of the intentional crime against the actual victim. Emily's intent to kill her ex-boyfriend transfers to Frank."
     },
     // FACT PATTERN 5 (Q11-Q13)
     {
@@ -155,7 +155,7 @@ const examData = [
             "Yes, but only if Ian actually purchases and consumes the narcotics."
         ],
         ans: 1,
-        exp: "The Model Penal Code adopts a 'unilateral' approach to conspiracy[cite: 22]. Under this approach, a defendant can be convicted of conspiracy if they themselves agree to commit a crime with another person, regardless of whether the other person (like an undercover officer) actually intends to carry out the agreement[cite: 22]."
+        exp: "The Model Penal Code adopts a 'unilateral' approach to conspiracy. Under this approach, a defendant can be convicted of conspiracy if they themselves agree to commit a crime with another person, regardless of whether the other person (like an undercover officer) actually intends to carry out the agreement."
     },
     {
         id: 12,
@@ -169,7 +169,7 @@ const examData = [
             "No, because there are three participants, which is more than the number logically necessary to complete the substantive offense."
         ],
         ans: 3,
-        exp: "Wharton's Rule prohibits a conspiracy charge for crimes that logically require two people (e.g., bribery, dueling, selling drugs)[cite: 22]. However, an exception applies if the number of conspirators exceeds the minimum number required to commit the underlying offense[cite: 22]. Because three people are involved, the rule does not bar the charge[cite: 22]."
+        exp: "Wharton's Rule prohibits a conspiracy charge for crimes that logically require two people (e.g., bribery, dueling, selling drugs). However, an exception applies if the number of conspirators exceeds the minimum number required to commit the underlying offense. Because three people are involved, the rule does not bar the charge."
     },
     {
         id: 13,
@@ -183,7 +183,7 @@ const examData = [
             "That he was physically threatened."
         ],
         ans: 0,
-        exp: "The majority 'subjective test' for entrapment requires the defendant to prove two elements: (1) the criminal design originated with law enforcement (inducement), and (2) the defendant was not predisposed to commit the crime prior to the government contact[cite: 22]."
+        exp: "The majority 'subjective test' for entrapment requires the defendant to prove two elements: (1) the criminal design originated with law enforcement (inducement), and (2) the defendant was not predisposed to commit the crime prior to the government contact."
     },
     // FACT PATTERN 6 (Q14-Q16)
     {
@@ -198,7 +198,7 @@ const examData = [
             "Yes, involuntary intoxication serves as a complete defense if it renders the defendant temporarily legally insane."
         ],
         ans: 3,
-        exp: "Involuntary intoxication is treated the same as insanity[cite: 22]. Taking prescribed medication and experiencing an unforeseeable, extreme adverse reaction constitutes involuntary intoxication[cite: 22]. It provides a complete defense to a crime if, because of the intoxication, the defendant was unable to understand the nature of the act or distinguish right from wrong[cite: 22]."
+        exp: "Involuntary intoxication is treated the same as insanity. Taking prescribed medication and experiencing an unforeseeable, extreme adverse reaction constitutes involuntary intoxication. It provides a complete defense to a crime if, because of the intoxication, the defendant was unable to understand the nature of the act or distinguish right from wrong."
     },
     {
         id: 15,
@@ -212,7 +212,7 @@ const examData = [
             "It establishes malice aforethought by proving she entered the dwelling house at night."
         ],
         ans: 2,
-        exp: "Burglary is a specific intent crime requiring the intent to commit a felony inside the dwelling[cite: 22]. Even if the intoxication were voluntary, severe intoxication that prevents the formation of the specific intent is a valid defense to burglary[cite: 22]."
+        exp: "Burglary is a specific intent crime requiring the intent to commit a felony inside the dwelling. Even if the intoxication were voluntary, severe intoxication that prevents the formation of the specific intent is a valid defense to burglary."
     },
     {
         id: 16,
@@ -226,7 +226,7 @@ const examData = [
             "No, unless she was entirely physically blacked out."
         ],
         ans: 0,
-        exp: "Battery is a general intent crime[cite: 22]. Voluntary intoxication is NEVER a defense to general intent crimes, because the act of voluntarily consuming the intoxicating substance legally substitutes for the reckless mental state required for the offense[cite: 22]."
+        exp: "Battery is a general intent crime. Voluntary intoxication is NEVER a defense to general intent crimes, because the act of voluntarily consuming the intoxicating substance legally substitutes for the reckless mental state required for the offense."
     },
     // FACT PATTERN 7 (Q17-Q18)
     {
@@ -241,7 +241,7 @@ const examData = [
             "Yes, because any physical movement of a victim during a commercial robbery is automatically classified as a federal kidnapping offense."
         ],
         ans: 2,
-        exp: "Kidnapping requires unlawful confinement plus asportation (movement) of the victim[cite: 22]. The movement must be substantial or increase the risk of harm to the victim[cite: 22]. Forcing a victim into a trunk and driving them 20 miles to a deserted road clearly satisfies this requirement[cite: 22]."
+        exp: "Kidnapping requires unlawful confinement plus asportation (movement) of the victim. The movement must be substantial or increase the risk of harm to the victim. Forcing a victim into a trunk and driving them 20 miles to a deserted road clearly satisfies this requirement."
     },
     {
         id: 18,
@@ -255,7 +255,7 @@ const examData = [
             "Yes, because he used the threat of immediate physical force to take property from the manager's person or presence."
         ],
         ans: 3,
-        exp: "Robbery is the trespassory taking of personal property from the person or presence of another by force or threat of immediate physical harm[cite: 22]. Holding the manager at gunpoint to force him to empty the safe satisfies all elements[cite: 22]."
+        exp: "Robbery is the trespassory taking of personal property from the person or presence of another by force or threat of immediate physical harm. Holding the manager at gunpoint to force him to empty the safe satisfies all elements."
     },
     // FACT PATTERN 8 (Q19-Q20)
     {
@@ -270,7 +270,7 @@ const examData = [
             "No, because maritime vessels are exclusively governed by federal admiralty law rather than traditional state penal codes."
         ],
         ans: 0,
-        exp: "Common law burglary strictly requires the breaking and entering of a DWELLING house[cite: 22]. However, a dwelling is defined as any structure regularly used for sleeping purposes[cite: 22]. An occupied residential houseboat qualifies as a dwelling under the common law[cite: 22]."
+        exp: "Common law burglary strictly requires the breaking and entering of a DWELLING house. However, a dwelling is defined as any structure regularly used for sleeping purposes. An occupied residential houseboat qualifies as a dwelling under the common law."
     },
     {
         id: 20,
@@ -284,7 +284,7 @@ const examData = [
             "Yes, because she maliciously burned the dwelling house of another, and the fire spread to the structure of the boat, causing it to sink."
         ],
         ans: 3,
-        exp: "Common law arson requires the malicious burning of the dwelling house of another[cite: 22]. While burning just the curtains (personal property) is not arson, the fire spread and destroyed the boat (the structure of the dwelling itself)[cite: 22]. Her intent to destroy evidence satisfies the reckless malice requirement[cite: 22]."
+        exp: "Common law arson requires the malicious burning of the dwelling house of another. While burning just the curtains (personal property) is not arson, the fire spread and destroyed the boat (the structure of the dwelling itself). Her intent to destroy evidence satisfies the reckless malice requirement."
     },
     // FACT PATTERN 9 (Q21-Q23)
     {
@@ -299,7 +299,7 @@ const examData = [
             "Yes, because property owners have an absolute right to execute trespassers."
         ],
         ans: 0,
-        exp: "A person may use deadly force in self-defense if they reasonably believe they are in imminent danger of death or great bodily harm[cite: 22]. A baseball bat swung at someone's head is a deadly weapon[cite: 22]. Oscar was justified in using proportionate lethal force to repel the lethal threat[cite: 22]."
+        exp: "A person may use deadly force in self-defense if they reasonably believe they are in imminent danger of death or great bodily harm. A baseball bat swung at someone's head is a deadly weapon. Oscar was justified in using proportionate lethal force to repel the lethal threat."
     },
     {
         id: 22,
@@ -313,7 +313,7 @@ const examData = [
             "No, because the 'castle doctrine' exception eliminates the duty to retreat when a person is attacked in their home or its immediate curtilage (porch)."
         ],
         ans: 3,
-        exp: "Even in minority jurisdictions that require a victim to retreat before using deadly force, the 'castle doctrine' provides an absolute exception: a person is never required to retreat when attacked inside their own home or its immediate curtilage (such as an attached front porch)[cite: 22]."
+        exp: "Even in minority jurisdictions that require a victim to retreat before using deadly force, the 'castle doctrine' provides an absolute exception: a person is never required to retreat when attacked inside their own home or its immediate curtilage (such as an attached front porch)."
     },
     {
         id: 23,
@@ -326,7 +326,7 @@ const examData = [
             "Second-degree murder, because his belief was objectively unreasonable."
         ],
         ans: 2,
-        exp: "Under the doctrine of imperfect self-defense, if a defendant holds an honest but objectively unreasonable belief that deadly force is necessary to prevent imminent death or great bodily harm, this belief negates malice aforethought[cite: 22]. The murder charge is mitigated to voluntary manslaughter[cite: 22]."
+        exp: "Under the doctrine of imperfect self-defense, if a defendant holds an honest but objectively unreasonable belief that deadly force is necessary to prevent imminent death or great bodily harm, this belief negates malice aforethought. The murder charge is mitigated to voluntary manslaughter."
     },
     // FACT PATTERN 10 (Q24-Q25)
     {
@@ -341,7 +341,7 @@ const examData = [
             "Forgery, because he falsely made or altered a writing with apparent legal significance and the specific intent to defraud."
         ],
         ans: 3,
-        exp: "Forgery is the making or altering of a false writing with apparent legal significance, with the specific intent to defraud[cite: 22]. Forging a famous artist's signature and creating a fake certificate of authenticity satisfies all elements[cite: 22]."
+        exp: "Forgery is the making or altering of a false writing with apparent legal significance, with the specific intent to defraud. Forging a famous artist's signature and creating a fake certificate of authenticity satisfies all elements."
     },
     {
         id: 25,
@@ -355,6 +355,6 @@ const examData = [
             "Embezzlement, because Rita entrusted him with the $50,000 prior to the transaction."
         ],
         ans: 1,
-        exp: "False pretenses requires obtaining title to the property of another by an intentional false statement of past or existing fact, with intent to defraud[cite: 22]. Because Rita intended to transfer ownership (title) of the $50,000 to Quinn in the sale, the crime is false pretenses, not larceny by trick[cite: 22]."
+        exp: "False pretenses requires obtaining title to the property of another by an intentional false statement of past or existing fact, with intent to defraud. Because Rita intended to transfer ownership (title) of the $50,000 to Quinn in the sale, the crime is false pretenses, not larceny by trick."
     }
 ];

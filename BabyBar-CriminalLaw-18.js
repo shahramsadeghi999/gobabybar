@@ -12,7 +12,7 @@ const examData = [
             "Yes, because Charlie's status as an illegal trespasser is irrelevant to the initial formation of specific malice aforethought against Bob."
         ],
         ans: 0,
-        exp: "Transferred intent applies when a defendant intends to kill one person but kills another[cite: 29]. However, the defendant must still be the PROXIMATE CAUSE of the victim's death[cite: 29]. The bizarre and highly extraordinary chain of events (bullet passing through, hitting an unmarked gas line, causing an explosion and building collapse) is an unforeseeable superseding sequence that severs proximate causation[cite: 29]."
+        exp: "Transferred intent applies when a defendant intends to kill one person but kills another. However, the defendant must still be the PROXIMATE CAUSE of the victim's death. The bizarre and highly extraordinary chain of events (bullet passing through, hitting an unmarked gas line, causing an explosion and building collapse) is an unforeseeable superseding sequence that severs proximate causation."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "Voluntary manslaughter, due to her failure to complete the intended objective."
         ],
         ans: 1,
-        exp: "Attempted murder requires the specific intent to kill and an overt act beyond mere preparation (a substantial step)[cite: 29]. Firing a rifle directly at the victim with the intent to kill him satisfies all elements of attempted murder, regardless of whether the victim survives[cite: 29]."
+        exp: "Attempted murder requires the specific intent to kill and an overt act beyond mere preparation (a substantial step). Firing a rifle directly at the victim with the intent to kill him satisfies all elements of attempted murder, regardless of whether the victim survives."
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const examData = [
             "Yes, because depraved heart murder is a strict liability offense."
         ],
         ans: 2,
-        exp: "Depraved heart murder requires an extreme, conscious disregard for an unjustifiably high risk to human life[cite: 29]. Firing a high-powered, armor-piercing rifle in a populated urban area constitutes extreme recklessness that creates a massive risk to bystanders, potentially satisfying the malice requirement for second-degree murder even if the exact mechanism (the gas line) was unknown[cite: 29]."
+        exp: "Depraved heart murder requires an extreme, conscious disregard for an unjustifiably high risk to human life. Firing a high-powered, armor-piercing rifle in a populated urban area constitutes extreme recklessness that creates a massive risk to bystanders, potentially satisfying the malice requirement for second-degree murder even if the exact mechanism (the gas line) was unknown."
     },
     // FACT PATTERN 2 (Q4-Q5)
     {
@@ -55,7 +55,7 @@ const examData = [
             "No, because she used a third party instead of killing him herself."
         ],
         ans: 2,
-        exp: "Traditional self-defense requires that the defendant reasonably believe they face an IMMINENT threat of death or great bodily harm[cite: 29]. Edgar was asleep, and hiring a hitman demonstrates a lack of immediate, split-second necessity[cite: 29]. Battered spouse syndrome may help explain reasonableness, but it does not completely abolish the imminence requirement for contract killings of sleeping persons[cite: 29]."
+        exp: "Traditional self-defense requires that the defendant reasonably believe they face an IMMINENT threat of death or great bodily harm. Edgar was asleep, and hiring a hitman demonstrates a lack of immediate, split-second necessity. Battered spouse syndrome may help explain reasonableness, but it does not completely abolish the imminence requirement for contract killings of sleeping persons."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "Involuntary manslaughter, because he was merely performing a requested service."
         ],
         ans: 0,
-        exp: "A contract killing is the classic example of first-degree murder[cite: 29]. The hitman (Frank) formulates the intent to kill, plans the execution, and carries it out for financial gain, perfectly satisfying the requirements of premeditation and deliberation[cite: 29]. He does not inherit Diane's potential mitigation[cite: 29]."
+        exp: "A contract killing is the classic example of first-degree murder. The hitman (Frank) formulates the intent to kill, plans the execution, and carries it out for financial gain, perfectly satisfying the requirements of premeditation and deliberation. He does not inherit Diane's potential mitigation."
     },
     // FACT PATTERN 3 (Q6-Q7)
     {
@@ -84,7 +84,7 @@ const examData = [
             "Because he was a recognized employee of the corporation."
         ],
         ans: 1,
-        exp: "Embezzlement requires the fraudulent conversion of property by someone who is ALREADY in lawful possession of it (like a CFO or a trusted bailee)[cite: 29]. Because George was a low-level IT worker with no lawful authority or trusted possession over the funds, he could not embezzle them[cite: 29]."
+        exp: "Embezzlement requires the fraudulent conversion of property by someone who is ALREADY in lawful possession of it (like a CFO or a trusted bailee). Because George was a low-level IT worker with no lawful authority or trusted possession over the funds, he could not embezzle them."
     },
     {
         id: 7,
@@ -98,7 +98,7 @@ const examData = [
             "Extortion, because he utilized illicit access."
         ],
         ans: 2,
-        exp: "By logging in as the CEO, George fraudulently represented himself to the bank as an authorized party[cite: 29]. The bank, relying on this deception, intended to (and did) transfer full ownership (title) of the $1,000,000 to the destination account[cite: 29]. Obtaining title by intentional deceit is false pretenses[cite: 29]."
+        exp: "By logging in as the CEO, George fraudulently represented himself to the bank as an authorized party. The bank, relying on this deception, intended to (and did) transfer full ownership (title) of the $1,000,000 to the destination account. Obtaining title by intentional deceit is false pretenses."
     },
     // FACT PATTERN 4 (Q8-Q9)
     {
@@ -113,7 +113,7 @@ const examData = [
             "Yes, because she formed a valid bilateral agreement with Ian, and an overt act was completed prior to her silent withdrawal."
         ],
         ans: 3,
-        exp: "Conspiracy requires an agreement and an overt act[cite: 29]. Hannah and Ian (two non-police actors) formed a valid bilateral agreement[cite: 29]. Once an overt act occurred, the conspiracy was complete[cite: 29]. Her later silent withdrawal does not erase the already completed crime of conspiracy[cite: 29]."
+        exp: "Conspiracy requires an agreement and an overt act. Hannah and Ian (two non-police actors) formed a valid bilateral agreement. Once an overt act occurred, the conspiracy was complete. Her later silent withdrawal does not erase the already completed crime of conspiracy."
     },
     {
         id: 9,
@@ -127,7 +127,7 @@ const examData = [
             "Yes, but her liability is strictly capped at a misdemeanor."
         ],
         ans: 0,
-        exp: "To successfully withdraw and avoid liability for the SUBSEQUENT crimes of co-conspirators, a defendant must communicate their withdrawal to all co-conspirators in time for them to abandon the plan[cite: 29]. Hannah's silent withdrawal by staying home and throwing away her mask was ineffective to shield her from Ian's attempt[cite: 29]."
+        exp: "To successfully withdraw and avoid liability for the SUBSEQUENT crimes of co-conspirators, a defendant must communicate their withdrawal to all co-conspirators in time for them to abandon the plan. Hannah's silent withdrawal by staying home and throwing away her mask was ineffective to shield her from Ian's attempt."
     },
     // FACT PATTERN 5 (Q10-Q11)
     {
@@ -142,7 +142,7 @@ const examData = [
             "Yes, because setting the suitcase on fire automatically satisfies the specific intent requirement."
         ],
         ans: 1,
-        exp: "A hotel room used for sleeping is considered a 'dwelling house' under the common law[cite: 29]. A 'breaking' can be constructive, such as gaining entry by fraud or trick (claiming to be room service)[cite: 29]. Since she entered with intent to commit a felony (theft), it satisfies the core elements[cite: 29]."
+        exp: "A hotel room used for sleeping is considered a 'dwelling house' under the common law. A 'breaking' can be constructive, such as gaining entry by fraud or trick (claiming to be room service). Since she entered with intent to commit a felony (theft), it satisfies the core elements."
     },
     {
         id: 11,
@@ -156,7 +156,7 @@ const examData = [
             "No, because she originally entered the room with the intent to steal rather than the intent to burn."
         ],
         ans: 2,
-        exp: "Common law arson requires the malicious burning of the dwelling house of another[cite: 29]. The burning must cause some structural damage (charring) to the building itself or its fixtures[cite: 29]. Burning personal property contained within the house (like a suitcase) without damaging the structure does not constitute common law arson[cite: 29]."
+        exp: "Common law arson requires the malicious burning of the dwelling house of another. The burning must cause some structural damage (charring) to the building itself or its fixtures. Burning personal property contained within the house (like a suitcase) without damaging the structure does not constitute common law arson."
     },
     // FACT PATTERN 6 (Q12-Q13)
     {
@@ -171,7 +171,7 @@ const examData = [
             "Yes, because using a human shield constitutes highly provocative conduct establishing implied malice, overcoming standard co-felon limitations."
         ],
         ans: 3,
-        exp: "While the traditional Redline rule states that felony murder does not apply when a co-felon is justifiably killed by police, the 'provocative act' doctrine provides an alternate path to murder liability[cite: 29]. If a felon commits an independent, highly reckless act (using a human shield) that provokes lethal return fire, they can be convicted of murder based on their own implied malice, even if the person killed is a co-felon[cite: 29]."
+        exp: "While the traditional Redline rule states that felony murder does not apply when a co-felon is justifiably killed by police, the 'provocative act' doctrine provides an alternate path to murder liability. If a felon commits an independent, highly reckless act (using a human shield) that provokes lethal return fire, they can be convicted of murder based on their own implied malice, even if the person killed is a co-felon."
     },
     {
         id: 13,
@@ -185,7 +185,7 @@ const examData = [
             "No, because merger doctrines only apply to inchoate offenses like attempt and solicitation."
         ],
         ans: 0,
-        exp: "The merger doctrine (Ireland rule) prevents a felony murder charge if the underlying felony is an integral part of the homicide (e.g., assault or battery)[cite: 29]. Robbery is an independent felony with an independent purpose (acquiring property) and therefore does NOT merge, allowing it to serve as a valid predicate for felony murder[cite: 29]."
+        exp: "The merger doctrine (Ireland rule) prevents a felony murder charge if the underlying felony is an integral part of the homicide (e.g., assault or battery). Robbery is an independent felony with an independent purpose (acquiring property) and therefore does NOT merge, allowing it to serve as a valid predicate for felony murder."
     },
     // FACT PATTERN 7 (Q14-Q15)
     {
@@ -200,7 +200,7 @@ const examData = [
             "No, because the coat check attendant voluntarily surrendered physical custody of the garment."
         ],
         ans: 1,
-        exp: "Larceny is a specific intent crime requiring the intent to permanently deprive the owner at the time of the taking[cite: 29]. Voluntary intoxication can cause a mistake of fact (believing the coat is hers)[cite: 29]. Because this honest mistake negates the specific intent to steal, the initial taking was not larceny[cite: 29]."
+        exp: "Larceny is a specific intent crime requiring the intent to permanently deprive the owner at the time of the taking. Voluntary intoxication can cause a mistake of fact (believing the coat is hers). Because this honest mistake negates the specific intent to steal, the initial taking was not larceny."
     },
     {
         id: 15,
@@ -214,7 +214,7 @@ const examData = [
             "No, because the nightclub abandoned their legal claim to the property."
         ],
         ans: 2,
-        exp: "The continuing trespass doctrine fictionally extends a trespassory taking until the moment the defendant forms the intent to steal[cite: 29]. However, it ONLY applies if the initial taking was wrongful (trespassory)[cite: 29]. Because Olivia's initial taking was innocent (believing the coat was hers), the doctrine does not apply to her later decision to sell it[cite: 29]."
+        exp: "The continuing trespass doctrine fictionally extends a trespassory taking until the moment the defendant forms the intent to steal. However, it ONLY applies if the initial taking was wrongful (trespassory). Because Olivia's initial taking was innocent (believing the coat was hers), the doctrine does not apply to her later decision to sell it."
     },
     // FACT PATTERN 8 (Q16-Q17)
     {
@@ -229,7 +229,7 @@ const examData = [
             "Yes, because charging an excessive premium establishes a financial stake in the criminal venture, satisfying the specific intent to facilitate the offense."
         ],
         ans: 3,
-        exp: "While selling ordinary goods at a normal price with knowledge of a crime does not typically make the seller an accomplice, charging a 'premium' because of the illegal nature of the buyer's intended use establishes a stake in the venture[cite: 29]. This satisfies the specific intent requirement, making the seller an accomplice[cite: 29]."
+        exp: "While selling ordinary goods at a normal price with knowledge of a crime does not typically make the seller an accomplice, charging a 'premium' because of the illegal nature of the buyer's intended use establishes a stake in the venture. This satisfies the specific intent requirement, making the seller an accomplice."
     },
     {
         id: 17,
@@ -243,7 +243,7 @@ const examData = [
             "Yes, because the sale of any firearm constitutes a per se conspiracy under modern federal statutes."
         ],
         ans: 0,
-        exp: "Conspiracy requires an agreement to commit a crime[cite: 29]. While a simple sale doesn't usually prove agreement, when a seller charges an exorbitant premium based on the illegal use, courts infer a tacit agreement to the criminal enterprise because the seller now shares a financial interest in its success[cite: 29]."
+        exp: "Conspiracy requires an agreement to commit a crime. While a simple sale doesn't usually prove agreement, when a seller charges an exorbitant premium based on the illegal use, courts infer a tacit agreement to the criminal enterprise because the seller now shares a financial interest in its success."
     },
     // FACT PATTERN 9 (Q18-Q19)
     {
@@ -258,7 +258,7 @@ const examData = [
             "No, because entrapment is completely unavailable for narcotics offenses."
         ],
         ans: 1,
-        exp: "The subjective test for entrapment requires the defendant to prove they were NOT predisposed to commit the crime prior to government contact[cite: 29]. Because Sam is a known, active dealer with recent convictions, he is legally predisposed to sell drugs[cite: 29]. Therefore, the subjective entrapment defense fails, regardless of the officer's severe tactics[cite: 29]."
+        exp: "The subjective test for entrapment requires the defendant to prove they were NOT predisposed to commit the crime prior to government contact. Because Sam is a known, active dealer with recent convictions, he is legally predisposed to sell drugs. Therefore, the subjective entrapment defense fails, regardless of the officer's severe tactics."
     },
     {
         id: 19,
@@ -272,7 +272,7 @@ const examData = [
             "Mistake of law, because he believed complying with an officer was a legal requirement."
         ],
         ans: 2,
-        exp: "When law enforcement tactics are so extreme, coercive, and fundamentally unfair that they shock the conscience (e.g., threatening to frame a suspect's elderly mother to force a sale), the defendant can invoke the 'Outrageous Government Conduct' defense[cite: 29]. This is a violation of the Due Process Clause, resulting in dismissal even if the defendant was predisposed[cite: 29]."
+        exp: "When law enforcement tactics are so extreme, coercive, and fundamentally unfair that they shock the conscience (e.g., threatening to frame a suspect's elderly mother to force a sale), the defendant can invoke the 'Outrageous Government Conduct' defense. This is a violation of the Due Process Clause, resulting in dismissal even if the defendant was predisposed."
     },
     // FACT PATTERN 10 (Q20-Q22)
     {
@@ -287,7 +287,7 @@ const examData = [
             "No, because Ursula signed the deed voluntarily."
         ],
         ans: 2,
-        exp: "Kidnapping requires BOTH unlawful confinement and 'asportation' (movement) of the victim[cite: 29]. Despite holding Ursula hostage for 24 hours at gunpoint, Tom never moved her from the location[cite: 29]. Without movement, the crime is false imprisonment, not kidnapping[cite: 29]."
+        exp: "Kidnapping requires BOTH unlawful confinement and 'asportation' (movement) of the victim. Despite holding Ursula hostage for 24 hours at gunpoint, Tom never moved her from the location. Without movement, the crime is false imprisonment, not kidnapping."
     },
     {
         id: 21,
@@ -301,7 +301,7 @@ const examData = [
             "Robbery, because he stole her personal liberty."
         ],
         ans: 0,
-        exp: "False imprisonment is the intentional, unlawful confinement of a person to a bounded area without their valid consent[cite: 29]. Holding someone in a chair at gunpoint for 24 hours perfectly satisfies all elements of false imprisonment[cite: 29]."
+        exp: "False imprisonment is the intentional, unlawful confinement of a person to a bounded area without their valid consent. Holding someone in a chair at gunpoint for 24 hours perfectly satisfies all elements of false imprisonment."
     },
     {
         id: 22,
@@ -315,7 +315,7 @@ const examData = [
             "No, because Ursula did not suffer actual physical injury."
         ],
         ans: 1,
-        exp: "Robbery is the trespassory taking of PERSONAL property from the person or presence of another by force[cite: 29]. Real property (real estate/a house) cannot be the subject of larceny or robbery under traditional common law[cite: 29]."
+        exp: "Robbery is the trespassory taking of PERSONAL property from the person or presence of another by force. Real property (real estate/a house) cannot be the subject of larceny or robbery under traditional common law."
     },
     // FACT PATTERN 11 (Q23)
     {
@@ -330,7 +330,7 @@ const examData = [
             "Solicitation, because he merely asked a question without transferring the funds."
         ],
         ans: 2,
-        exp: "Attempt requires specific intent and a substantial step[cite: 29]. Factual impossibility (the fact that the woman was a clerk, not a juror) is not a defense to an attempt charge[cite: 29]. Victor is judged based on the facts as he believed them to be[cite: 29]. Since he believed she was a juror and offered the bribe, he is guilty of attempted bribery[cite: 29]."
+        exp: "Attempt requires specific intent and a substantial step. Factual impossibility (the fact that the woman was a clerk, not a juror) is not a defense to an attempt charge. Victor is judged based on the facts as he believed them to be. Since he believed she was a juror and offered the bribe, he is guilty of attempted bribery."
     },
     // FACT PATTERN 12 (Q24-Q25)
     {
@@ -345,7 +345,7 @@ const examData = [
             "Yes, because a victim's foreseeable, desperate act to escape agonizing pain inflicted by the defendant does not break the chain of proximate causation."
         ],
         ans: 3,
-        exp: "A defendant is the proximate cause of death if the result is a foreseeable consequence of their actions[cite: 29]. If a defendant inflicts a painful or terrifying injury, and the victim takes a desperate, foreseeable action to escape the pain or danger (like jumping out a window), the victim's reaction is a dependent intervening cause and does not break the chain of causation[cite: 29]."
+        exp: "A defendant is the proximate cause of death if the result is a foreseeable consequence of their actions. If a defendant inflicts a painful or terrifying injury, and the victim takes a desperate, foreseeable action to escape the pain or danger (like jumping out a window), the victim's reaction is a dependent intervening cause and does not break the chain of causation."
     },
     {
         id: 25,
@@ -359,6 +359,6 @@ const examData = [
             "First-degree murder, because a killing perpetrated by means of poison is statutorily designated as a premeditated and deliberate homicide."
         ],
         ans: 3,
-        exp: "First-degree murder encompasses intentional killings committed with premeditation and deliberation[cite: 29]. In nearly all jurisdictions, killings perpetrated by specific, inherently premeditated methods—such as lying in wait, torture, or the administration of poison—are automatically classified as first-degree murder by statute[cite: 29]."
+        exp: "First-degree murder encompasses intentional killings committed with premeditation and deliberation. In nearly all jurisdictions, killings perpetrated by specific, inherently premeditated methods—such as lying in wait, torture, or the administration of poison—are automatically classified as first-degree murder by statute."
     }
 ];

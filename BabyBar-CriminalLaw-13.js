@@ -12,7 +12,7 @@ const examData = [
             "Yes, because the danger of the fire forced Brenda to be present at the location."
         ],
         ans: 2,
-        exp: "To establish felony murder, the underlying felony must be the proximate cause of the death[cite: 24]. An unforeseeable, extraordinary act of nature (an unprecedented freak earthquake) that occurs independently of the defendant's actions acts as a superseding cause, breaking the chain of proximate causation[cite: 24]."
+        exp: "To establish felony murder, the underlying felony must be the proximate cause of the death. An unforeseeable, extraordinary act of nature (an unprecedented freak earthquake) that occurs independently of the defendant's actions acts as a superseding cause, breaking the chain of proximate causation."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "No, because the building was completely destroyed by the earthquake."
         ],
         ans: 0,
-        exp: "At strict common law, arson is defined as the malicious burning of the dwelling house of another[cite: 24]. Burning one's own property, or burning a commercial structure (warehouse), does not satisfy the elements of common law arson, though modern statutes criminalize such acts[cite: 24]."
+        exp: "At strict common law, arson is defined as the malicious burning of the dwelling house of another. Burning one's own property, or burning a commercial structure (warehouse), does not satisfy the elements of common law arson, though modern statutes criminalize such acts."
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const examData = [
             "No, because the fire was extinguished."
         ],
         ans: 1,
-        exp: "Attempt requires a substantial step (or dangerous proximity) toward the completion of the target crime[cite: 24]. Setting the fire is mere preparation for the crime of false pretenses against the insurance company[cite: 24]. Until Arthur actually files the fraudulent claim or contacts the insurer, he has not committed a substantial step toward obtaining their money[cite: 24]."
+        exp: "Attempt requires a substantial step (or dangerous proximity) toward the completion of the target crime. Setting the fire is mere preparation for the crime of false pretenses against the insurance company. Until Arthur actually files the fraudulent claim or contacts the insurer, he has not committed a substantial step toward obtaining their money."
     },
     // FACT PATTERN 2 (Q4-Q6)
     {
@@ -55,7 +55,7 @@ const examData = [
             "Yes, the crime was already complete."
         ],
         ans: 3,
-        exp: "Conspiracy is complete the moment the agreement is made and an overt act is performed (Clara buying the guns)[cite: 24]. Once completed, a defendant cannot withdraw from the conspiracy itself, though an effective withdrawal will shield them from liability for SUBSEQUENT substantive crimes[cite: 24]."
+        exp: "Conspiracy is complete the moment the agreement is made and an overt act is performed (Clara buying the guns). Once completed, a defendant cannot withdraw from the conspiracy itself, though an effective withdrawal will shield them from liability for SUBSEQUENT substantive crimes."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "Yes, because accomplices are strictly liable for the actions of the principal."
         ],
         ans: 2,
-        exp: "To successfully withdraw as an accomplice, a person must repudiate their prior aid, communicate the withdrawal to the principal, and neutralize any material assistance they provided before the chain of events becomes unstoppable[cite: 24]. Clara communicating her withdrawal and destroying the gun she bought successfully neutralized her aid[cite: 24]."
+        exp: "To successfully withdraw as an accomplice, a person must repudiate their prior aid, communicate the withdrawal to the principal, and neutralize any material assistance they provided before the chain of events becomes unstoppable. Clara communicating her withdrawal and destroying the gun she bought successfully neutralized her aid."
     },
     {
         id: 6,
@@ -83,7 +83,7 @@ const examData = [
             "Yes, because all felonies are strictly liable."
         ],
         ans: 0,
-        exp: "Even in an agency-theory jurisdiction where a felon is not typically liable for deaths caused by third parties, the 'provocative act' doctrine holds that if a felon acts with extreme recklessness (like using a human shield) and provokes a lethal response, they are liable for the resulting murder based on their own implied malice[cite: 24]."
+        exp: "Even in an agency-theory jurisdiction where a felon is not typically liable for deaths caused by third parties, the 'provocative act' doctrine holds that if a felon acts with extreme recklessness (like using a human shield) and provokes a lethal response, they are liable for the resulting murder based on their own implied malice."
     },
     // FACT PATTERN 3 (Q7-Q9)
     {
@@ -98,7 +98,7 @@ const examData = [
             "Robbery, due to the counterfeit check."
         ],
         ans: 1,
-        exp: "Larceny by trick occurs when a defendant uses fraud to obtain mere CUSTODY of property with the intent to steal[cite: 24]. False pretenses requires obtaining TITLE[cite: 24]. Because the jeweler explicitly retained title and only transferred the necklace for a one-hour appraisal, Edgar only obtained custody through his deceit[cite: 24]."
+        exp: "Larceny by trick occurs when a defendant uses fraud to obtain mere CUSTODY of property with the intent to steal. False pretenses requires obtaining TITLE. Because the jeweler explicitly retained title and only transferred the necklace for a one-hour appraisal, Edgar only obtained custody through his deceit."
     },
     {
         id: 8,
@@ -112,7 +112,7 @@ const examData = [
             "No, because common law forgery strictly requires the actual making or altering of the false document, whereas merely passing a forged document is the separate crime of uttering."
         ],
         ans: 3,
-        exp: "At common law, forgery is the MAKING or ALTERING of a false writing with intent to defraud[cite: 24]. Passing or offering a forged document that someone else created is a distinct crime known as 'uttering a forged instrument.'[cite: 24] Because Edgar merely bought and passed the check without altering it, he is not guilty of forgery[cite: 24]."
+        exp: "At common law, forgery is the MAKING or ALTERING of a false writing with intent to defraud. Passing or offering a forged document that someone else created is a distinct crime known as 'uttering a forged instrument.' Because Edgar merely bought and passed the check without altering it, he is not guilty of forgery."
     },
     {
         id: 9,
@@ -126,7 +126,7 @@ const examData = [
             "Because he didn't make a statement."
         ],
         ans: 2,
-        exp: "False pretenses strictly requires that the victim intend to transfer legal TITLE (ownership) to the defendant based on the false representation[cite: 24]. Because the jeweler only transferred temporary physical custody for an appraisal and expressly retained title, the crime cannot be false pretenses[cite: 24]."
+        exp: "False pretenses strictly requires that the victim intend to transfer legal TITLE (ownership) to the defendant based on the false representation. Because the jeweler only transferred temporary physical custody for an appraisal and expressly retained title, the crime cannot be false pretenses."
     },
     // FACT PATTERN 4 (Q10-Q12)
     {
@@ -141,7 +141,7 @@ const examData = [
             "No, because gold is a highly regulated asset."
         ],
         ans: 0,
-        exp: "A mistake of law (believing a criminal statute is invalid or doesn't apply) is generally never a defense to criminal liability, regardless of how honest the belief is[cite: 24]. Her subjective legal theories do not excuse the violation of the smuggling statute[cite: 24]."
+        exp: "A mistake of law (believing a criminal statute is invalid or doesn't apply) is generally never a defense to criminal liability, regardless of how honest the belief is. Her subjective legal theories do not excuse the violation of the smuggling statute."
     },
     {
         id: 11,
@@ -155,7 +155,7 @@ const examData = [
             "Yes, because the unforeseeable severe reaction to a prescribed medication functions identically to temporary legal insanity, excusing her conduct."
         ],
         ans: 3,
-        exp: "Taking prescribed medication and suffering a highly unforeseeable, extreme adverse reaction constitutes INVOLUNTARY intoxication[cite: 24]. Involuntary intoxication operates identically to the insanity defense, excusing criminal liability if the intoxication prevented the defendant from understanding the nature of her act or knowing it was wrong[cite: 24]."
+        exp: "Taking prescribed medication and suffering a highly unforeseeable, extreme adverse reaction constitutes INVOLUNTARY intoxication. Involuntary intoxication operates identically to the insanity defense, excusing criminal liability if the intoxication prevented the defendant from understanding the nature of her act or knowing it was wrong."
     },
     {
         id: 12,
@@ -169,7 +169,7 @@ const examData = [
             "No, she is strictly liable."
         ],
         ans: 1,
-        exp: "Under the Feola rule (United States v. Feola), a statute criminalizing the assault of a federal officer does not require the defendant to know the victim is a federal officer[cite: 24]. The victim's status is a strictly jurisdictional element designed to provide federal courts with authority over the crime[cite: 24]."
+        exp: "Under the Feola rule (United States v. Feola), a statute criminalizing the assault of a federal officer does not require the defendant to know the victim is a federal officer. The victim's status is a strictly jurisdictional element designed to provide federal courts with authority over the crime."
     },
     // FACT PATTERN 5 (Q13-Q14)
     {
@@ -184,7 +184,7 @@ const examData = [
             "Yes, because criminal defendants are strictly liable for all events that occur to their incapacitated victims while residing in a medical care facility."
         ],
         ans: 0,
-        exp: "Proximate cause is severed by an unforeseeable, independent intervening event (a superseding cause)[cite: 24]. A freak meteor strike destroying the hospital is an extraordinary act of nature completely independent of the poisoning, thereby breaking the chain of legal causation[cite: 24]."
+        exp: "Proximate cause is severed by an unforeseeable, independent intervening event (a superseding cause). A freak meteor strike destroying the hospital is an extraordinary act of nature completely independent of the poisoning, thereby breaking the chain of legal causation."
     },
     {
         id: 14,
@@ -198,7 +198,7 @@ const examData = [
             "Yes, because he took a substantial step."
         ],
         ans: 2,
-        exp: "The traditional common law 'year and a day' rule acts as an absolute bar to a homicide prosecution if the victim does not die within one year and one day of the defendant inflicting the fatal injury[cite: 24]. (George could only be charged with attempted murder)[cite: 24]."
+        exp: "The traditional common law 'year and a day' rule acts as an absolute bar to a homicide prosecution if the victim does not die within one year and one day of the defendant inflicting the fatal injury. (George could only be charged with attempted murder)."
     },
     // FACT PATTERN 6 (Q15-Q17)
     {
@@ -213,7 +213,7 @@ const examData = [
             "No, she consented."
         ],
         ans: 1,
-        exp: "At strict common law, the unlawful confinement required for kidnapping must be accomplished by physical force or the threat of physical force[cite: 24]. Fraud or extortionate threats of future reputational harm do not satisfy the force requirement for common law kidnapping, rendering the entry legally 'voluntary' (though modern statutes often modify this)[cite: 24]."
+        exp: "At strict common law, the unlawful confinement required for kidnapping must be accomplished by physical force or the threat of physical force. Fraud or extortionate threats of future reputational harm do not satisfy the force requirement for common law kidnapping, rendering the entry legally 'voluntary' (though modern statutes often modify this)."
     },
     {
         id: 16,
@@ -227,7 +227,7 @@ const examData = [
             "Robbery, due to the immediate physical threat."
         ],
         ans: 3,
-        exp: "Robbery requires taking property from the person or presence of another by force or the threat of immediate physical harm[cite: 24]. Threatening to break Jane's arm 'right now' establishes the immediate threat of physical harm required for robbery[cite: 24]."
+        exp: "Robbery requires taking property from the person or presence of another by force or the threat of immediate physical harm. Threatening to break Jane's arm 'right now' establishes the immediate threat of physical harm required for robbery."
     },
     {
         id: 17,
@@ -241,7 +241,7 @@ const examData = [
             "False imprisonment, because the car doors were locked."
         ],
         ans: 0,
-        exp: "Extortion (blackmail) involves obtaining property or compelling action from another by means of threats of future harm, including exposing a secret or causing reputational ruin[cite: 24]. Ian's threat to post the photos to force her compliance falls squarely under extortion[cite: 24]."
+        exp: "Extortion (blackmail) involves obtaining property or compelling action from another by means of threats of future harm, including exposing a secret or causing reputational ruin. Ian's threat to post the photos to force her compliance falls squarely under extortion."
     },
     // FACT PATTERN 7 (Q18-Q20)
     {
@@ -256,7 +256,7 @@ const examData = [
             "No, because a third party (Kyle) participated in the agreement."
         ],
         ans: 3,
-        exp: "Wharton's Rule prohibits a conspiracy charge for a crime that logically requires exactly two people (like dueling) if only those two people agree to commit it[cite: 24]. However, the 'third-party exception' applies when more people participate in the agreement than are necessary to commit the crime[cite: 24]. Because Kyle participated, Wharton's Rule does not bar the charge[cite: 24]."
+        exp: "Wharton's Rule prohibits a conspiracy charge for a crime that logically requires exactly two people (like dueling) if only those two people agree to commit it. However, the 'third-party exception' applies when more people participate in the agreement than are necessary to commit the crime. Because Kyle participated, Wharton's Rule does not bar the charge."
     },
     {
         id: 19,
@@ -270,7 +270,7 @@ const examData = [
             "Not guilty, because the undercover agent failed to inform them of the recent statutory legislative changes prior to the execution of the overt act."
         ],
         ans: 1,
-        exp: "True legal impossibility is an absolute defense to an attempt or conspiracy charge[cite: 24]. It occurs when a defendant intends to do something they believe is illegal, but the act is actually perfectly lawful[cite: 24]. If dueling is legal, intending to duel cannot be a crime, regardless of their guilty minds[cite: 24]."
+        exp: "True legal impossibility is an absolute defense to an attempt or conspiracy charge. It occurs when a defendant intends to do something they believe is illegal, but the act is actually perfectly lawful. If dueling is legal, intending to duel cannot be a crime, regardless of their guilty minds."
     },
     {
         id: 20,
@@ -284,7 +284,7 @@ const examData = [
             "Necessity, because they had to duel to satisfy Kyle."
         ],
         ans: 2,
-        exp: "Entrapment applies when the government originates the criminal design and induces an individual to commit a crime they were not otherwise predisposed to commit[cite: 24]. Begging peaceful men for weeks to commit a violent crime clearly satisfies the elements of government inducement overcoming a lack of predisposition[cite: 24]."
+        exp: "Entrapment applies when the government originates the criminal design and induces an individual to commit a crime they were not otherwise predisposed to commit. Begging peaceful men for weeks to commit a violent crime clearly satisfies the elements of government inducement overcoming a lack of predisposition."
     },
     // FACT PATTERN 8 (Q21-Q22)
     {
@@ -299,7 +299,7 @@ const examData = [
             "Yes, she is a woman."
         ],
         ans: 0,
-        exp: "While an initial aggressor (Nancy, who slapped Oscar) generally loses the right to self-defense, that right is restored if the victim suddenly escalates a non-deadly altercation into a deadly one, and the initial aggressor has no safe means of escape[cite: 24]. Oscar pulling a shotgun was a deadly escalation[cite: 24]."
+        exp: "While an initial aggressor (Nancy, who slapped Oscar) generally loses the right to self-defense, that right is restored if the victim suddenly escalates a non-deadly altercation into a deadly one, and the initial aggressor has no safe means of escape. Oscar pulling a shotgun was a deadly escalation."
     },
     {
         id: 22,
@@ -313,7 +313,7 @@ const examData = [
             "Voluntary manslaughter."
         ],
         ans: 3,
-        exp: "If a defendant honestly but unreasonably believes that deadly force is necessary to repel an imminent deadly threat, the doctrine of imperfect self-defense applies[cite: 24]. This unreasonable belief negates malice aforethought, mitigating the homicide from murder to voluntary manslaughter[cite: 24]."
+        exp: "If a defendant honestly but unreasonably believes that deadly force is necessary to repel an imminent deadly threat, the doctrine of imperfect self-defense applies. This unreasonable belief negates malice aforethought, mitigating the homicide from murder to voluntary manslaughter."
     },
     // FACT PATTERN 9 (Q23-Q25)
     {
@@ -328,7 +328,7 @@ const examData = [
             "No, she lacked intent."
         ],
         ans: 1,
-        exp: "A finder of lost property commits larceny if they take possession of the property intending to permanently keep it, AND at the time of the finding, there are reasonable clues (like an ID) to identify the true owner[cite: 24]. Patty satisfied both conditions[cite: 24]."
+        exp: "A finder of lost property commits larceny if they take possession of the property intending to permanently keep it, AND at the time of the finding, there are reasonable clues (like an ID) to identify the true owner. Patty satisfied both conditions."
     },
     {
         id: 24,
@@ -342,7 +342,7 @@ const examData = [
             "Robbery, because she breached the physical seal of the container using destructive constructive force against the commercial cargo."
         ],
         ans: 2,
-        exp: "While a commercial carrier (bailee) has lawful possession of the cargo as a whole, the common law 'breaking bulk' doctrine dictates that if the bailee breaks open a sealed container to remove individual contents, their lawful possession ends[cite: 24]. The taking of the contents becomes a trespassory taking, constituting larceny[cite: 24]."
+        exp: "While a commercial carrier (bailee) has lawful possession of the cargo as a whole, the common law 'breaking bulk' doctrine dictates that if the bailee breaks open a sealed container to remove individual contents, their lawful possession ends. The taking of the contents becomes a trespassory taking, constituting larceny."
     },
     {
         id: 25,
@@ -356,6 +356,6 @@ const examData = [
             "Embezzlement."
         ],
         ans: 3,
-        exp: "If a bailee fraudulently converts the entire bailed property (the entire truck and its unbreached container) without 'breaking bulk', they are converting property over which they already have lawful possession[cite: 24]. This constitutes embezzlement, not larceny[cite: 24]."
+        exp: "If a bailee fraudulently converts the entire bailed property (the entire truck and its unbreached container) without 'breaking bulk', they are converting property over which they already have lawful possession. This constitutes embezzlement, not larceny."
     }
 ];

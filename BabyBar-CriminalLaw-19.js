@@ -12,7 +12,7 @@ const examData = [
             "Common law robbery, because bypassing the corporate firewall to execute unauthorized wire transfers constitutes the constructive application of physical violence against the entity."
         ],
         ans: 0,
-        exp: "Embezzlement requires the fraudulent conversion of the property of another by someone who already possesses lawful, entrusted possession of it[cite: 30]. As CFO with discretionary authority over the accounts, Arthur had lawful constructive possession of the funds[cite: 30]. His use of a subordinate to execute the conversion does not change the nature of his own entrusted authority[cite: 30]."
+        exp: "Embezzlement requires the fraudulent conversion of the property of another by someone who already possesses lawful, entrusted possession of it. As CFO with discretionary authority over the accounts, Arthur had lawful constructive possession of the funds. His use of a subordinate to execute the conversion does not change the nature of his own entrusted authority."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "No, because she possessed a valid mistake of law defense regarding the legality of offshore corporate banking regulations."
         ],
         ans: 1,
-        exp: "Under criminal agency principles, a person who causes a crime to be committed through an 'innocent agent' (someone who lacks criminal intent, like Betty) is treated as the principal in the first degree[cite: 30]. The innocent agent is not guilty of any crime because they lack the required mens rea[cite: 30]."
+        exp: "Under criminal agency principles, a person who causes a crime to be committed through an 'innocent agent' (someone who lacks criminal intent, like Betty) is treated as the principal in the first degree. The innocent agent is not guilty of any crime because they lack the required mens rea."
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const examData = [
             "Embezzlement, because the hacker asserted an unauthorized proprietary interest in the financial data previously entrusted to the corporate banking servers."
         ],
         ans: 2,
-        exp: "Extortion (blackmail) is the obtaining of property from another by means of threats of future harm, including threats to expose a secret, report a crime, or initiate administrative action[cite: 30]. Threatening to release bank records to the FBI 'tomorrow' perfectly satisfies the elements of extortion[cite: 30]."
+        exp: "Extortion (blackmail) is the obtaining of property from another by means of threats of future harm, including threats to expose a secret, report a crime, or initiate administrative action. Threatening to release bank records to the FBI 'tomorrow' perfectly satisfies the elements of extortion."
     },
     // FACT PATTERN 2 (Q4-Q5)
     {
@@ -55,7 +55,7 @@ const examData = [
             "Attempted murder, because the traditional common law year-and-a-day rule conclusively bars a completed homicide prosecution since the victim survived beyond the strictly defined temporal limit."
         ],
         ans: 3,
-        exp: "Under the traditional common law 'year and a day' rule, a defendant cannot be convicted of criminal homicide if the victim dies more than one year and one day after the fatal blow or act was inflicted[cite: 30]. Because Carl survived for 370 days, Bob cannot be convicted of murder, leaving attempted murder as his highest liability[cite: 30]."
+        exp: "Under the traditional common law 'year and a day' rule, a defendant cannot be convicted of criminal homicide if the victim dies more than one year and one day after the fatal blow or act was inflicted. Because Carl survived for 370 days, Bob cannot be convicted of murder, leaving attempted murder as his highest liability."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "Yes, because the affirmative act of unplugging the machine actively hastened the victim's inevitable death."
         ],
         ans: 0,
-        exp: "In criminal law, the removal of artificial life support by a victim's family or doctors is considered a foreseeable, dependent intervening act that naturally results from the defendant inflicting the fatal injury[cite: 30]. It is not a superseding cause, and the original attacker remains the proximate cause of death[cite: 30]."
+        exp: "In criminal law, the removal of artificial life support by a victim's family or doctors is considered a foreseeable, dependent intervening act that naturally results from the defendant inflicting the fatal injury. It is not a superseding cause, and the original attacker remains the proximate cause of death."
     },
     // FACT PATTERN 3 (Q6-Q8)
     {
@@ -84,7 +84,7 @@ const examData = [
             "Legal insanity, because the combination of substances produced a recognized, permanent defect of reason."
         ],
         ans: 1,
-        exp: "Intoxication is voluntary if the defendant knowingly ingests an illicit intoxicating substance, even if it is mixed with a prescribed medication[cite: 30]. Because Dave deliberately consumed black-market heroin to enhance the drug's effects, his resulting extreme psychosis is legally classified as voluntary intoxication[cite: 30]."
+        exp: "Intoxication is voluntary if the defendant knowingly ingests an illicit intoxicating substance, even if it is mixed with a prescribed medication. Because Dave deliberately consumed black-market heroin to enhance the drug's effects, his resulting extreme psychosis is legally classified as voluntary intoxication."
     },
     {
         id: 7,
@@ -98,7 +98,7 @@ const examData = [
             "No, because the belief that zombies exist is factually impossible and therefore completely barred from mitigating any violent felony."
         ],
         ans: 2,
-        exp: "Under the doctrine of imperfect self-defense, if a defendant holds an honest but objectively unreasonable belief that deadly force is necessary (such as a hallucination that the victim is a lethal monster), it negates malice aforethought[cite: 30]. This mitigates murder to voluntary manslaughter, even if the delusion was induced by voluntary intoxication[cite: 30]."
+        exp: "Under the doctrine of imperfect self-defense, if a defendant holds an honest but objectively unreasonable belief that deadly force is necessary (such as a hallucination that the victim is a lethal monster), it negates malice aforethought. This mitigates murder to voluntary manslaughter, even if the delusion was induced by voluntary intoxication."
     },
     {
         id: 8,
@@ -112,7 +112,7 @@ const examData = [
             "No, because voluntary intoxication is never a recognized legal defense to general intent crimes, as the act of voluntarily consuming the intoxicant legally substitutes for the required reckless mental state."
         ],
         ans: 3,
-        exp: "Battery is a general intent crime[cite: 30]. Voluntary intoxication is NEVER a defense to general intent crimes, because the act of voluntarily consuming the intoxicating substance is deemed sufficiently reckless to satisfy the mens rea for the offense[cite: 30]."
+        exp: "Battery is a general intent crime. Voluntary intoxication is NEVER a defense to general intent crimes, because the act of voluntarily consuming the intoxicating substance is deemed sufficiently reckless to satisfy the mens rea for the offense."
     },
     // FACT PATTERN 4 (Q9-Q11)
     {
@@ -127,7 +127,7 @@ const examData = [
             "Robbery, because the exchange of a completely valueless counterfeit item constitutes the constructive application of physical force."
         ],
         ans: 0,
-        exp: "False pretenses requires that the victim intend to transfer legal TITLE (ownership) to the defendant based on an intentional false representation of a past or existing fact[cite: 30]. Because the broker intended to purchase the ring and transfer full ownership of the $10,000 to Fiona, her crime is false pretenses[cite: 30]."
+        exp: "False pretenses requires that the victim intend to transfer legal TITLE (ownership) to the defendant based on an intentional false representation of a past or existing fact. Because the broker intended to purchase the ring and transfer full ownership of the $10,000 to Fiona, her crime is false pretenses."
     },
     {
         id: 10,
@@ -141,7 +141,7 @@ const examData = [
             "False pretenses, because he obtained legal title to the jewelry."
         ],
         ans: 1,
-        exp: "Forgery is the making or altering of a false writing with apparent legal significance, done with the specific intent to defraud[cite: 30]. Creating a fake cashier's check perfectly satisfies all elements of forgery[cite: 30]. The crime is complete upon the making of the document[cite: 30]."
+        exp: "Forgery is the making or altering of a false writing with apparent legal significance, done with the specific intent to defraud. Creating a fake cashier's check perfectly satisfies all elements of forgery. The crime is complete upon the making of the document."
     },
     {
         id: 11,
@@ -155,7 +155,7 @@ const examData = [
             "Attempted larceny, because she failed to acquire physical custody of the funds."
         ],
         ans: 2,
-        exp: "Attempt requires specific intent and a substantial step toward the completion of the target crime[cite: 30]. Even though the broker was not fooled (which breaks the causal chain for completed false pretenses), Fiona had the specific intent to defraud and took a substantial step by presenting the fake ring and lying about it, making her guilty of attempted false pretenses[cite: 30]."
+        exp: "Attempt requires specific intent and a substantial step toward the completion of the target crime. Even though the broker was not fooled (which breaks the causal chain for completed false pretenses), Fiona had the specific intent to defraud and took a substantial step by presenting the fake ring and lying about it, making her guilty of attempted false pretenses."
     },
     // FACT PATTERN 5 (Q12-Q14)
     {
@@ -170,7 +170,7 @@ const examData = [
             "No homicide liability for Greg under the traditional Redline rule."
         ],
         ans: 3,
-        exp: "Under the agency theory of felony murder (and the related Redline rule), a felon is not liable for the death of a co-felon who is justifiably killed by a police officer, security guard, or victim acting in lawful self-defense or crime prevention[cite: 30]. The lethal act must be committed by a felon or their agent for the rule to apply[cite: 30]."
+        exp: "Under the agency theory of felony murder (and the related Redline rule), a felon is not liable for the death of a co-felon who is justifiably killed by a police officer, security guard, or victim acting in lawful self-defense or crime prevention. The lethal act must be committed by a felon or their agent for the rule to apply."
     },
     {
         id: 13,
@@ -184,7 +184,7 @@ const examData = [
             "Yes, but only for involuntary manslaughter, because he did not explicitly intend for the specific hostage to perish."
         ],
         ans: 0,
-        exp: "Even in an agency-theory jurisdiction, the 'provocative act' doctrine holds that if a felon commits an independent, highly reckless act (like using a human shield or initiating a gunfight) that provokes lethal return fire from police, the felon is liable for murder based on their own implied malice, even if the police fired the fatal shot[cite: 30]."
+        exp: "Even in an agency-theory jurisdiction, the 'provocative act' doctrine holds that if a felon commits an independent, highly reckless act (like using a human shield or initiating a gunfight) that provokes lethal return fire from police, the felon is liable for murder based on their own implied malice, even if the police fired the fatal shot."
     },
     {
         id: 14,
@@ -198,7 +198,7 @@ const examData = [
             "No, because the merger doctrine exclusively applies to inchoate crimes like attempt and solicitation."
         ],
         ans: 1,
-        exp: "The merger doctrine (Ireland rule) bars a felony murder conviction if the underlying felony is an integral part of the homicide (e.g., assault or battery)[cite: 30]. Robbery is an independent felony with an independent purpose (acquiring property) and therefore does NOT merge, allowing it to serve as a valid predicate for felony murder[cite: 30]."
+        exp: "The merger doctrine (Ireland rule) bars a felony murder conviction if the underlying felony is an integral part of the homicide (e.g., assault or battery). Robbery is an independent felony with an independent purpose (acquiring property) and therefore does NOT merge, allowing it to serve as a valid predicate for felony murder."
     },
     // FACT PATTERN 6 (Q15-Q16)
     {
@@ -213,7 +213,7 @@ const examData = [
             "No crime, because the legal impossibility of marrying an undercover federal agent completely nullifies all preliminary inchoate charges."
         ],
         ans: 2,
-        exp: "Solicitation is complete the moment the defendant asks, commands, or urges another person to commit a crime with the specific intent that the crime be committed[cite: 30]. It is entirely irrelevant that the solicitee is an undercover agent or refuses the request[cite: 30]."
+        exp: "Solicitation is complete the moment the defendant asks, commands, or urges another person to commit a crime with the specific intent that the crime be committed. It is entirely irrelevant that the solicitee is an undercover agent or refuses the request."
     },
     {
         id: 16,
@@ -227,7 +227,7 @@ const examData = [
             "No, because the traditional bilateral approach requires two guilty minds, and the undercover officer lacked the requisite criminal intent to form a genuine agreement."
         ],
         ans: 3,
-        exp: "Under traditional common law, conspiracy requires a 'bilateral' agreement—a true meeting of the minds between at least two parties who actually intend to commit the crime[cite: 30]. Because the undercover agent was feigning agreement and lacked genuine criminal intent, no common law conspiracy was formed[cite: 30]."
+        exp: "Under traditional common law, conspiracy requires a 'bilateral' agreement—a true meeting of the minds between at least two parties who actually intend to commit the crime. Because the undercover agent was feigning agreement and lacked genuine criminal intent, no common law conspiracy was formed."
     },
     // FACT PATTERN 7 (Q17-Q19)
     {
@@ -242,7 +242,7 @@ const examData = [
             "No, because he failed to demand a monetary ransom from her immediate family members."
         ],
         ans: 0,
-        exp: "Kidnapping requires unlawful confinement and 'asportation' (movement) that is substantial or increases the risk of harm independent of the underlying crime[cite: 30]. Most courts hold that forcing a victim a short distance into a closet or bathroom within their own home to facilitate a robbery is merely incidental to the robbery and does not constitute kidnapping[cite: 30]."
+        exp: "Kidnapping requires unlawful confinement and 'asportation' (movement) that is substantial or increases the risk of harm independent of the underlying crime. Most courts hold that forcing a victim a short distance into a closet or bathroom within their own home to facilitate a robbery is merely incidental to the robbery and does not constitute kidnapping."
     },
     {
         id: 18,
@@ -256,7 +256,7 @@ const examData = [
             "Robbery, because depriving an individual of their personal freedom of movement constitutes the taking of an intangible asset."
         ],
         ans: 1,
-        exp: "False imprisonment is the intentional, unlawful confinement of a person to a bounded area without their valid consent[cite: 30]. Locking the victim in a closet against her will perfectly satisfies all elements of false imprisonment[cite: 30]."
+        exp: "False imprisonment is the intentional, unlawful confinement of a person to a bounded area without their valid consent. Locking the victim in a closet against her will perfectly satisfies all elements of false imprisonment."
     },
     {
         id: 19,
@@ -270,7 +270,7 @@ const examData = [
             "False pretenses, because he fraudulently deceived her into remaining silent."
         ],
         ans: 2,
-        exp: "Extortion (blackmail) is obtaining property or compelling action from another by means of threats of future harm[cite: 30]. Threatening to return 'next week' to inflict lethal violence is a threat of future harm, satisfying the elements of extortion[cite: 30]."
+        exp: "Extortion (blackmail) is obtaining property or compelling action from another by means of threats of future harm. Threatening to return 'next week' to inflict lethal violence is a threat of future harm, satisfying the elements of extortion."
     },
     // FACT PATTERN 8 (Q20-Q22)
     {
@@ -285,7 +285,7 @@ const examData = [
             "Her entry is privileged by private necessity, shielding her from criminal trespass liability."
         ],
         ans: 3,
-        exp: "The defense of necessity (choice of evils) justifies committing a minor crime (like trespass) if the defendant reasonably believes it is necessary to avoid a greater, imminent harm caused by natural forces (a bear attack)[cite: 30]. Private necessity allows Karen to trespass to save her life, shielding her from criminal liability, though she remains civilly liable for the broken window[cite: 30]."
+        exp: "The defense of necessity (choice of evils) justifies committing a minor crime (like trespass) if the defendant reasonably believes it is necessary to avoid a greater, imminent harm caused by natural forces (a bear attack). Private necessity allows Karen to trespass to save her life, shielding her from criminal liability, though she remains civilly liable for the broken window."
     },
     {
         id: 21,
@@ -299,7 +299,7 @@ const examData = [
             "No, because female intruders are granted heightened protections under the common law duty to retreat."
         ],
         ans: 0,
-        exp: "A property owner is privileged to use reasonable, non-deadly force to protect their property from trespass[cite: 30]. However, a property owner may NEVER use deadly force solely to defend property[cite: 30]. Because Karen posed no threat of death or great bodily harm to Larry, his use of a shotgun was entirely unjustified[cite: 30]."
+        exp: "A property owner is privileged to use reasonable, non-deadly force to protect their property from trespass. However, a property owner may NEVER use deadly force solely to defend property. Because Karen posed no threat of death or great bodily harm to Larry, his use of a shotgun was entirely unjustified."
     },
     {
         id: 22,
@@ -312,7 +312,7 @@ const examData = [
             "Entrapment."
         ],
         ans: 1,
-        exp: "The key distinction between the two defenses is the source of the threat[cite: 30]. Duress involves coercion by another HUMAN being who threatens immediate physical harm[cite: 30]. Necessity involves pressure created by physical, mechanical, or NATURAL forces (like a bear)[cite: 30]."
+        exp: "The key distinction between the two defenses is the source of the threat. Duress involves coercion by another HUMAN being who threatens immediate physical harm. Necessity involves pressure created by physical, mechanical, or NATURAL forces (like a bear)."
     },
     // FACT PATTERN 9 (Q23-Q25)
     {
@@ -327,7 +327,7 @@ const examData = [
             "No, because the homeowner was absent, meaning the structure was not actively being used as a dwelling."
         ],
         ans: 2,
-        exp: "Common law burglary requires the specific intent to commit a felony inside the dwelling AT THE TIME of the breaking and entering[cite: 30]. Because Leo only intended to escape the cold upon entry, he lacked the specific intent required for burglary[cite: 30]. His later decision to steal the TV makes him guilty of larceny, but not burglary[cite: 30]."
+        exp: "Common law burglary requires the specific intent to commit a felony inside the dwelling AT THE TIME of the breaking and entering. Because Leo only intended to escape the cold upon entry, he lacked the specific intent required for burglary. His later decision to steal the TV makes him guilty of larceny, but not burglary."
     },
     {
         id: 24,
@@ -341,7 +341,7 @@ const examData = [
             "He is not guilty of common law arson because the accidental dropping of a cigarette lacks the malicious intent required to intentionally or recklessly burn the dwelling structure of another."
         ],
         ans: 3,
-        exp: "Common law arson requires the MALICIOUS burning of the dwelling of another[cite: 30]. Malice requires an intentional burning or an extreme, reckless disregard of an obvious risk of burning the structure itself[cite: 30]. Accidentally dropping a cigarette while stealing a TV generally lacks the requisite malice for arson[cite: 30]."
+        exp: "Common law arson requires the MALICIOUS burning of the dwelling of another. Malice requires an intentional burning or an extreme, reckless disregard of an obvious risk of burning the structure itself. Accidentally dropping a cigarette while stealing a TV generally lacks the requisite malice for arson."
     },
     {
         id: 25,
@@ -355,6 +355,6 @@ const examData = [
             "Mike is strictly liable as an accessory after the fact."
         ],
         ans: 2,
-        exp: "To successfully withdraw as an accomplice, a person must repudiate their prior aid, communicate their withdrawal to the principal, AND neutralize any material assistance they previously provided before the crime becomes unstoppable[cite: 30]. By running away silently, Mike failed to notify Leo, rendering his attempted withdrawal legally ineffective[cite: 30]."
+        exp: "To successfully withdraw as an accomplice, a person must repudiate their prior aid, communicate their withdrawal to the principal, AND neutralize any material assistance they previously provided before the crime becomes unstoppable. By running away silently, Mike failed to notify Leo, rendering his attempted withdrawal legally ineffective."
     }
 ];

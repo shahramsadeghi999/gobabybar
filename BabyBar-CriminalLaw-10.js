@@ -12,7 +12,7 @@ const examData = [
             "No, because the prompt return of the exact same property within twenty-four hours establishes a complete affirmative defense to theft."
         ],
         ans: 2,
-        exp: "A bailee generally has lawful possession of property entrusted to them, making conversion embezzlement rather than larceny[cite: 30]. However, under the common law 'breaking bulk' doctrine, if a bailee opens a sealed container and takes a portion of the contents, their lawful possession terminates[cite: 30]. The taking of the contents becomes a trespassory taking, constituting larceny[cite: 30]."
+        exp: "A bailee generally has lawful possession of property entrusted to them, making conversion embezzlement rather than larceny. However, under the common law 'breaking bulk' doctrine, if a bailee opens a sealed container and takes a portion of the contents, their lawful possession terminates. The taking of the contents becomes a trespassory taking, constituting larceny."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "Because the act of breaking bulk terminated his lawful possession of the enclosed contents prior to the conversion."
         ],
         ans: 3,
-        exp: "Embezzlement requires the fraudulent conversion of property by one who is already in LAWFUL possession of it[cite: 30]. When a bailee 'breaks bulk' (opens a closed container), their lawful possession of the contents is legally severed[cite: 30]. Since Albert no longer had lawful possession of the coins when he took them, his crime is larceny, not embezzlement[cite: 30]."
+        exp: "Embezzlement requires the fraudulent conversion of property by one who is already in LAWFUL possession of it. When a bailee 'breaks bulk' (opens a closed container), their lawful possession of the contents is legally severed. Since Albert no longer had lawful possession of the coins when he took them, his crime is larceny, not embezzlement."
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const examData = [
             "Yes, if he sincerely repented."
         ],
         ans: 0,
-        exp: "Larceny requires the specific intent to permanently deprive the owner of their property AT THE TIME of the taking[cite: 30]. Albert intended to keep the coins when he took them from the chest[cite: 30]. A later change of heart and return of the property does not negate the previously completed crime of larceny[cite: 30]."
+        exp: "Larceny requires the specific intent to permanently deprive the owner of their property AT THE TIME of the taking. Albert intended to keep the coins when he took them from the chest. A later change of heart and return of the property does not negate the previously completed crime of larceny."
     },
     // FACT PATTERN 2 (Q4-Q5)
     {
@@ -55,7 +55,7 @@ const examData = [
             "No, because he used a deadly weapon."
         ],
         ans: 1,
-        exp: "Voluntary manslaughter requires 'adequate provocation' that would cause a reasonable person to lose self-control[cite: 30]. Under traditional common law, mere words, taunts, or insults—no matter how offensive—are never sufficient to constitute adequate provocation to mitigate murder to manslaughter[cite: 30]."
+        exp: "Voluntary manslaughter requires 'adequate provocation' that would cause a reasonable person to lose self-control. Under traditional common law, mere words, taunts, or insults—no matter how offensive—are never sufficient to constitute adequate provocation to mitigate murder to manslaughter."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "Involuntary manslaughter."
         ],
         ans: 1,
-        exp: "Carl intentionally killed Dan with a deadly weapon (the heavy wrench), establishing express malice[cite: 30]. However, because he acted 'instantly enraged' without prior planning or reflection, he lacks the premeditation and deliberation required for first-degree murder[cite: 30]. Thus, the crime is second-degree murder[cite: 30]."
+        exp: "Carl intentionally killed Dan with a deadly weapon (the heavy wrench), establishing express malice. However, because he acted 'instantly enraged' without prior planning or reflection, he lacks the premeditation and deliberation required for first-degree murder. Thus, the crime is second-degree murder."
     },
     // FACT PATTERN 3 (Q6-Q8)
     {
@@ -84,7 +84,7 @@ const examData = [
             "No, because hunting regulations are unconstitutional."
         ],
         ans: 2,
-        exp: "Ignorance or mistake of the law is generally not a defense to criminal liability[cite: 30]. The fact that Evan misread the statute or misunderstood its provisions does not excuse his violation of the caliber restriction[cite: 30]."
+        exp: "Ignorance or mistake of the law is generally not a defense to criminal liability. The fact that Evan misread the statute or misunderstood its provisions does not excuse his violation of the caliber restriction."
     },
     {
         id: 7,
@@ -98,7 +98,7 @@ const examData = [
             "No, because using a firearm automatically negates any mistake of fact defense regardless of reasonableness."
         ],
         ans: 0,
-        exp: "Involuntary manslaughter is a general intent/recklessness crime[cite: 30]. An honest AND reasonable mistake of fact is a valid defense to such crimes[cite: 30]. Because Fred was wearing a realistic deer costume in a hunting area, Evan's mistake was both honest and objectively reasonable, negating criminal negligence[cite: 30]."
+        exp: "Involuntary manslaughter is a general intent/recklessness crime. An honest AND reasonable mistake of fact is a valid defense to such crimes. Because Fred was wearing a realistic deer costume in a hunting area, Evan's mistake was both honest and objectively reasonable, negating criminal negligence."
     },
     {
         id: 8,
@@ -112,7 +112,7 @@ const examData = [
             "Yes, because his specific intent to kill Fred transfers to the actual victim, George, under the transferred intent doctrine."
         ],
         ans: 3,
-        exp: "Under the doctrine of transferred intent, a defendant who intends to kill one person but accidentally kills a different, unintended person is guilty of the intentional murder of the actual victim[cite: 30]. The intent to kill transfers from the intended target (Fred) to the actual victim (George)[cite: 30]."
+        exp: "Under the doctrine of transferred intent, a defendant who intends to kill one person but accidentally kills a different, unintended person is guilty of the intentional murder of the actual victim. The intent to kill transfers from the intended target (Fred) to the actual victim (George)."
     },
     // FACT PATTERN 4 (Q9-Q11)
     {
@@ -127,7 +127,7 @@ const examData = [
             "Yes, because Wharton's rule only applies to common law felonies, not statutory bribery."
         ],
         ans: 0,
-        exp: "Wharton's Rule states that an agreement between two people to commit a crime that logically requires two people (like bribery, dueling, adultery) cannot be prosecuted as a conspiracy[cite: 30]. HOWEVER, an exception exists if the number of conspirators exceeds the number required to commit the crime[cite: 30]. Since bribery requires two, but there are three conspirators (Gina, Harry, Ian), Wharton's Rule does not apply, and they are all guilty of conspiracy[cite: 30]."
+        exp: "Wharton's Rule states that an agreement between two people to commit a crime that logically requires two people (like bribery, dueling, adultery) cannot be prosecuted as a conspiracy. HOWEVER, an exception exists if the number of conspirators exceeds the number required to commit the crime. Since bribery requires two, but there are three conspirators (Gina, Harry, Ian), Wharton's Rule does not apply, and they are all guilty of conspiracy."
     },
     {
         id: 10,
@@ -141,7 +141,7 @@ const examData = [
             "Yes, because the completed bribery was a foreseeable act committed in furtherance of the conspiracy."
         ],
         ans: 3,
-        exp: "Under the Pinkerton doctrine, a co-conspirator is vicariously liable for any substantive crimes committed by their partners that are in furtherance of the conspiracy and reasonably foreseeable[cite: 30]. Paying the bribe was the exact object of the conspiracy, making Harry fully liable for it[cite: 30]."
+        exp: "Under the Pinkerton doctrine, a co-conspirator is vicariously liable for any substantive crimes committed by their partners that are in furtherance of the conspiracy and reasonably foreseeable. Paying the bribe was the exact object of the conspiracy, making Harry fully liable for it."
     },
     {
         id: 11,
@@ -155,7 +155,7 @@ const examData = [
             "Yes, because driving a vehicle is an inherently dangerous activity."
         ],
         ans: 1,
-        exp: "Pinkerton liability requires the co-conspirator's crime to be a REASONABLY FORESEEABLE consequence of the conspiracy[cite: 30]. While a fatal high-speed crash might be foreseeable escaping an armed bank robbery, a fatal traffic accident fleeing a quiet, white-collar bribery is generally not considered a foreseeable consequence of the specific conspiracy[cite: 30]."
+        exp: "Pinkerton liability requires the co-conspirator's crime to be a REASONABLY FORESEEABLE consequence of the conspiracy. While a fatal high-speed crash might be foreseeable escaping an armed bank robbery, a fatal traffic accident fleeing a quiet, white-collar bribery is generally not considered a foreseeable consequence of the specific conspiracy."
     },
     // FACT PATTERN 5 (Q12-Q14)
     {
@@ -170,7 +170,7 @@ const examData = [
             "Yes, because all store owners assume the risk of injury during robberies."
         ],
         ans: 2,
-        exp: "Under the agency theory of felony murder, a felon is not strictly liable for deaths caused by a non-felon (like a police officer)[cite: 30]. HOWEVER, the 'provocative act' doctrine is an exception: if a felon commits an intentional act with extreme recklessness (like using a human shield and shooting at cops) that provokes lethal return fire, they are liable for murder based on their own implied malice[cite: 30]."
+        exp: "Under the agency theory of felony murder, a felon is not strictly liable for deaths caused by a non-felon (like a police officer). HOWEVER, the 'provocative act' doctrine is an exception: if a felon commits an intentional act with extreme recklessness (like using a human shield and shooting at cops) that provokes lethal return fire, they are liable for murder based on their own implied malice."
     },
     {
         id: 13,
@@ -184,7 +184,7 @@ const examData = [
             "No, because the Redline doctrine automatically immunizes co-felons from the deaths of innocent victims."
         ],
         ans: 0,
-        exp: "Under conspiracy and accomplice principles, a co-felon is liable for the foreseeable crimes of their partners committed in furtherance of the joint enterprise[cite: 30]. A shootout during an armed robbery is a foreseeable consequence[cite: 30]. Therefore, Kyle shares Jack's liability for the provocative act murder of the owner[cite: 30]."
+        exp: "Under conspiracy and accomplice principles, a co-felon is liable for the foreseeable crimes of their partners committed in furtherance of the joint enterprise. A shootout during an armed robbery is a foreseeable consequence. Therefore, Kyle shares Jack's liability for the provocative act murder of the owner."
     },
     {
         id: 14,
@@ -198,7 +198,7 @@ const examData = [
             "No, because the merger doctrine exclusively applies to involuntary manslaughter."
         ],
         ans: 1,
-        exp: "The merger doctrine (Ireland rule) bars a felony murder conviction if the underlying felony is an integral part of the homicide (e.g., assault or battery)[cite: 30]. Robbery is an independent felony with an independent purpose (acquiring property) and therefore does NOT merge, allowing it to serve as a valid predicate for felony murder[cite: 30]."
+        exp: "The merger doctrine (Ireland rule) bars a felony murder conviction if the underlying felony is an integral part of the homicide (e.g., assault or battery). Robbery is an independent felony with an independent purpose (acquiring property) and therefore does NOT merge, allowing it to serve as a valid predicate for felony murder."
     },
     // FACT PATTERN 6 (Q15-Q17)
     {
@@ -213,7 +213,7 @@ const examData = [
             "Robbery, because she took the property from his presence by the threat of immediate physical harm."
         ],
         ans: 3,
-        exp: "Robbery is taking property from the person or presence of another by force or the threat of IMMEDIATE physical harm[cite: 30]. Extortion involves threats of FUTURE harm[cite: 30]. Because Laura raised a bat and threatened to break his legs 'right now,' the threat was of immediate physical harm, constituting robbery[cite: 30]."
+        exp: "Robbery is taking property from the person or presence of another by force or the threat of IMMEDIATE physical harm. Extortion involves threats of FUTURE harm. Because Laura raised a bat and threatened to break his legs 'right now,' the threat was of immediate physical harm, constituting robbery."
     },
     {
         id: 16,
@@ -227,7 +227,7 @@ const examData = [
             "No, because the baseball bat was not actually swung."
         ],
         ans: 2,
-        exp: "At common law, a defendant who takes property to satisfy a specific, liquidated debt under an honest belief of entitlement has a 'claim of right' defense that negates the intent to steal[cite: 30]. However, this defense does NOT apply to unliquidated, disputed tort claims (like estimating car damage)[cite: 30]. Furthermore, many modern jurisdictions prohibit the defense entirely when violent force is used[cite: 30]."
+        exp: "At common law, a defendant who takes property to satisfy a specific, liquidated debt under an honest belief of entitlement has a 'claim of right' defense that negates the intent to steal. However, this defense does NOT apply to unliquidated, disputed tort claims (like estimating car damage). Furthermore, many modern jurisdictions prohibit the defense entirely when violent force is used."
     },
     {
         id: 17,
@@ -241,7 +241,7 @@ const examData = [
             "No, because verbal threats cannot constitute assault under any circumstances."
         ],
         ans: 0,
-        exp: "Assault is the intentional creation of a reasonable apprehension of imminent bodily harm[cite: 30]. Raising a baseball bat while making a violent threat clearly creates such apprehension[cite: 30]. The fact that the threat was conditional ('pay me OR I will break your legs') does not negate the assault[cite: 30]."
+        exp: "Assault is the intentional creation of a reasonable apprehension of imminent bodily harm. Raising a baseball bat while making a violent threat clearly creates such apprehension. The fact that the threat was conditional ('pay me OR I will break your legs') does not negate the assault."
     },
     // FACT PATTERN 7 (Q18-Q19)
     {
@@ -256,7 +256,7 @@ const examData = [
             "Yes, but only because she was an immediate family member."
         ],
         ans: 1,
-        exp: "The necessity defense (choice of evils) justifies a criminal act (like destroying property) if the defendant reasonably believes the conduct is necessary to avoid a greater, imminent harm caused by natural forces or emergencies[cite: 30]. Saving her sister's life/health far outweighs the property damage to the cruiser[cite: 30]."
+        exp: "The necessity defense (choice of evils) justifies a criminal act (like destroying property) if the defendant reasonably believes the conduct is necessary to avoid a greater, imminent harm caused by natural forces or emergencies. Saving her sister's life/health far outweighs the property damage to the cruiser."
     },
     {
         id: 19,
@@ -270,7 +270,7 @@ const examData = [
             "She cannot claim duress because duress requires a threat of physical force from another human being commanding her to commit the crime, rather than pressure from a medical emergency."
         ],
         ans: 3,
-        exp: "Duress involves coercion by another HUMAN being who threatens immediate physical harm if the defendant does not commit a specific crime[cite: 30]. Necessity involves pressure from physical or natural circumstances (like a medical emergency) forcing a choice between two evils[cite: 30]."
+        exp: "Duress involves coercion by another HUMAN being who threatens immediate physical harm if the defendant does not commit a specific crime. Necessity involves pressure from physical or natural circumstances (like a medical emergency) forcing a choice between two evils."
     },
     // FACT PATTERN 8 (Q20-Q22)
     {
@@ -285,7 +285,7 @@ const examData = [
             "Yes, but it merges completely into the underlying burglary charge."
         ],
         ans: 2,
-        exp: "False imprisonment is the intentional, unlawful confinement of a person to a bounded area without their valid consent[cite: 30]. Locking Patty in a closet against her will satisfies all elements of the offense, regardless of where the closet is located[cite: 30]."
+        exp: "False imprisonment is the intentional, unlawful confinement of a person to a bounded area without their valid consent. Locking Patty in a closet against her will satisfies all elements of the offense, regardless of where the closet is located."
     },
     {
         id: 21,
@@ -299,7 +299,7 @@ const examData = [
             "No, because she was not physically injured while inside the closet."
         ],
         ans: 0,
-        exp: "Kidnapping requires unlawful confinement and substantial 'asportation' (movement) that increases the risk of harm independent of the underlying crime[cite: 30]. Most jurisdictions hold that moving a victim from one room to another within the same structure to facilitate a burglary/robbery is merely incidental movement and insufficient for kidnapping[cite: 30]."
+        exp: "Kidnapping requires unlawful confinement and substantial 'asportation' (movement) that increases the risk of harm independent of the underlying crime. Most jurisdictions hold that moving a victim from one room to another within the same structure to facilitate a burglary/robbery is merely incidental movement and insufficient for kidnapping."
     },
     {
         id: 22,
@@ -313,7 +313,7 @@ const examData = [
             "Yes, because the open door created an implied invitation that he fraudulently exploited."
         ],
         ans: 1,
-        exp: "Common law burglary requires a breaking AND an entering[cite: 30]. A 'breaking' requires the use of some force (even slight, like turning a doorknob or pushing open a cracked window) to create an opening[cite: 30]. Entering through a door or window that is already completely open involves zero force and is therefore not a breaking[cite: 30]."
+        exp: "Common law burglary requires a breaking AND an entering. A 'breaking' requires the use of some force (even slight, like turning a doorknob or pushing open a cracked window) to create an opening. Entering through a door or window that is already completely open involves zero force and is therefore not a breaking."
     },
     // FACT PATTERN 9 (Q23-Q25)
     {
@@ -328,7 +328,7 @@ const examData = [
             "No, because honey is an agricultural commodity exempt from interstate commerce regulations."
         ],
         ans: 1,
-        exp: "True legal impossibility is a complete defense to criminal attempt[cite: 30]. It occurs when a defendant intends to do something they believe is illegal, but the act is actually perfectly lawful[cite: 30]. Because selling honey is not a crime, intending to sell it cannot be an attempted crime, regardless of his guilty mind[cite: 30]."
+        exp: "True legal impossibility is a complete defense to criminal attempt. It occurs when a defendant intends to do something they believe is illegal, but the act is actually perfectly lawful. Because selling honey is not a crime, intending to sell it cannot be an attempted crime, regardless of his guilty mind."
     },
     {
         id: 24,
@@ -342,7 +342,7 @@ const examData = [
             "Factual impossibility is an absolute defense to all inchoate crimes."
         ],
         ans: 0,
-        exp: "Legal impossibility means that even if the defendant completed all intended acts, no law would be broken (e.g., intending to smuggle illegal lace, but the lace is actually legal)[cite: 30]. Factual impossibility means the defendant intends to commit a crime, but a factual circumstance prevents completion (e.g., shooting into an empty bed believing the victim is there)[cite: 30]. Only legal impossibility is a defense[cite: 30]."
+        exp: "Legal impossibility means that even if the defendant completed all intended acts, no law would be broken (e.g., intending to smuggle illegal lace, but the lace is actually legal). Factual impossibility means the defendant intends to commit a crime, but a factual circumstance prevents completion (e.g., shooting into an empty bed believing the victim is there). Only legal impossibility is a defense."
     },
     {
         id: 25,
@@ -356,6 +356,6 @@ const examData = [
             "He is guilty of federal fraud because he intended to smuggle contraband."
         ],
         ans: 2,
-        exp: "Under the principle of legality, there is no crime without a pre-existing law making the conduct illegal[cite: 30]. A guilty mind (mens rea) alone, without an accompanying actus reus that violates a valid, existing criminal statute, cannot result in criminal liability[cite: 30]."
+        exp: "Under the principle of legality, there is no crime without a pre-existing law making the conduct illegal. A guilty mind (mens rea) alone, without an accompanying actus reus that violates a valid, existing criminal statute, cannot result in criminal liability."
     }
 ];

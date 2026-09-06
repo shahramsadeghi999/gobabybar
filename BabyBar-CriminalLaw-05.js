@@ -12,7 +12,7 @@ const examData = [
             "No, because Dan only intended to shoot the leg."
         ],
         ans: 2,
-        exp: "In criminal homicide, an original assailant is the proximate cause of death if the victim dies from medical negligence during treatment for the wound[cite: 23, 25]. Ordinary medical negligence is highly foreseeable and is considered a dependent intervening cause that does not break the chain of causation[cite: 23, 25]."
+        exp: "In criminal homicide, an original assailant is the proximate cause of death if the victim dies from medical negligence during treatment for the wound. Ordinary medical negligence is highly foreseeable and is considered a dependent intervening cause that does not break the chain of causation."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "Yes, because any physical threat justifies lethal force."
         ],
         ans: 0,
-        exp: "A defendant may use deadly force in self-defense if they reasonably believe they are in imminent danger of death or great bodily harm[cite: 23, 25]. A switchblade knife poses such a threat, and firing a gun to stop it is a proportionate use of deadly defensive force[cite: 23, 25]."
+        exp: "A defendant may use deadly force in self-defense if they reasonably believe they are in imminent danger of death or great bodily harm. A switchblade knife poses such a threat, and firing a gun to stop it is a proportionate use of deadly defensive force."
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const examData = [
             "Second-degree murder, because a gun was used."
         ],
         ans: 0,
-        exp: "If a superseding cause breaks the chain of proximate causation for homicide, the defendant cannot be convicted of murder[cite: 23, 25]. However, if the defendant possessed the specific intent to kill and took a substantial step (shooting), he is fully liable for attempted murder regardless of the victim's actual cause of death[cite: 23, 25]."
+        exp: "If a superseding cause breaks the chain of proximate causation for homicide, the defendant cannot be convicted of murder. However, if the defendant possessed the specific intent to kill and took a substantial step (shooting), he is fully liable for attempted murder regardless of the victim's actual cause of death."
     },
     // FACT PATTERN 2 (Q4-Q5)
     {
@@ -55,7 +55,7 @@ const examData = [
             "Embezzlement, because she fraudulently converted property of another while she had lawful possession."
         ],
         ans: 3,
-        exp: "Embezzlement is the fraudulent conversion of the property of another by one who is already in lawful possession of it[cite: 23, 25]. As a bank teller entrusted with handling deposits, Alice had lawful possession of the funds[cite: 23, 25]. Her conversion of the money for her own use constitutes embezzlement[cite: 23, 25]."
+        exp: "Embezzlement is the fraudulent conversion of the property of another by one who is already in lawful possession of it. As a bank teller entrusted with handling deposits, Alice had lawful possession of the funds. Her conversion of the money for her own use constitutes embezzlement."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "Because the money belonged to the bank, not the customer."
         ],
         ans: 0,
-        exp: "Larceny strictly requires a trespassory taking (a taking from the possession of another without consent)[cite: 23, 25]. Because Alice was already in lawful possession of the money as a trusted employee, there was no trespassory taking, eliminating a larceny charge[cite: 23, 25]."
+        exp: "Larceny strictly requires a trespassory taking (a taking from the possession of another without consent). Because Alice was already in lawful possession of the money as a trusted employee, there was no trespassory taking, eliminating a larceny charge."
     },
     // FACT PATTERN 3 (Q6-Q7)
     {
@@ -84,7 +84,7 @@ const examData = [
             "No, because he did not use a weapon."
         ],
         ans: 1,
-        exp: "Common law burglary is strictly defined as the breaking and entering of the DWELLING house of another in the nighttime with the intent to commit a felony therein[cite: 23, 25]. A detached garage that is not used for living or sleeping is not a dwelling house[cite: 23, 25]."
+        exp: "Common law burglary is strictly defined as the breaking and entering of the DWELLING house of another in the nighttime with the intent to commit a felony therein. A detached garage that is not used for living or sleeping is not a dwelling house."
     },
     {
         id: 7,
@@ -98,7 +98,7 @@ const examData = [
             "No, because common law arson strictly requires the malicious burning of the dwelling house of another person, and this was an accidental fire in a detached shed."
         ],
         ans: 2,
-        exp: "Common law arson requires the MALICIOUS burning of the dwelling of another[cite: 23, 25]. Malice requires an intentional burning or reckless disregard of an obvious risk of burning[cite: 23, 25]. Accidentally dropping a match to see in the dark lacks the requisite malice[cite: 23, 25]."
+        exp: "Common law arson requires the MALICIOUS burning of the dwelling of another. Malice requires an intentional burning or reckless disregard of an obvious risk of burning. Accidentally dropping a match to see in the dark lacks the requisite malice."
     },
     // FACT PATTERN 4 (Q8-Q10)
     {
@@ -113,7 +113,7 @@ const examData = [
             "Yes, but only as an accessory."
         ],
         ans: 0,
-        exp: "Conspiracy is complete the moment the agreement is made and an overt act is performed (buying the mask)[cite: 23, 25]. Once the crime of conspiracy is complete, subsequent withdrawal is not a defense to the conspiracy charge itself, though it may protect the defendant from liability for future substantive crimes[cite: 23, 25]."
+        exp: "Conspiracy is complete the moment the agreement is made and an overt act is performed (buying the mask). Once the crime of conspiracy is complete, subsequent withdrawal is not a defense to the conspiracy charge itself, though it may protect the defendant from liability for future substantive crimes."
     },
     {
         id: 9,
@@ -127,7 +127,7 @@ const examData = [
             "No, because Cathy failed to rob the bank."
         ],
         ans: 1,
-        exp: "A conspirator may withdraw and avoid liability for the SUBSEQUENT crimes of co-conspirators if they perform an affirmative act that notifies all co-conspirators of their withdrawal in time for them to abandon their plans[cite: 23, 25]. Dave telling Cathy he was backing out successfully severed his liability for her subsequent attempt[cite: 23, 25]."
+        exp: "A conspirator may withdraw and avoid liability for the SUBSEQUENT crimes of co-conspirators if they perform an affirmative act that notifies all co-conspirators of their withdrawal in time for them to abandon their plans. Dave telling Cathy he was backing out successfully severed his liability for her subsequent attempt."
     },
     {
         id: 10,
@@ -141,7 +141,7 @@ const examData = [
             "Yes, because entering a store with a weapon automatically satisfies the strict liability elements for completed common law robbery."
         ],
         ans: 2,
-        exp: "Attempt requires specific intent to commit the target offense and an overt act that constitutes a substantial step toward completion[cite: 23, 25]. Cathy possessing the intent to rob and executing the plan by attempting the robbery constitutes a clear substantial step[cite: 23, 25]."
+        exp: "Attempt requires specific intent to commit the target offense and an overt act that constitutes a substantial step toward completion. Cathy possessing the intent to rob and executing the plan by attempting the robbery constitutes a clear substantial step."
     },
     // FACT PATTERN 5 (Q11-Q12)
     {
@@ -156,7 +156,7 @@ const examData = [
             "Extortion, because she obtained the property by means of threatening future, non-physical harm to his employment."
         ],
         ans: 3,
-        exp: "Extortion (blackmail) is obtaining property from another by means of a threat of future harm[cite: 23, 25]. Threats to expose a secret, damage a reputation, or cause economic harm (getting him fired) perfectly satisfy the elements of extortion[cite: 23, 25]."
+        exp: "Extortion (blackmail) is obtaining property from another by means of a threat of future harm. Threats to expose a secret, damage a reputation, or cause economic harm (getting him fired) perfectly satisfy the elements of extortion."
     },
     {
         id: 12,
@@ -170,7 +170,7 @@ const examData = [
             "Fred voluntarily paid her."
         ],
         ans: 0,
-        exp: "Robbery is the taking of personal property from the person or presence of another by force or the threat of IMMEDIATE physical harm[cite: 23, 25]. A threat to expose a secret to a boss 'tomorrow' involves no immediate physical danger, differentiating it entirely from robbery[cite: 23, 25]."
+        exp: "Robbery is the taking of personal property from the person or presence of another by force or the threat of IMMEDIATE physical harm. A threat to expose a secret to a boss 'tomorrow' involves no immediate physical danger, differentiating it entirely from robbery."
     },
     // FACT PATTERN 6 (Q13-Q15)
     {
@@ -185,7 +185,7 @@ const examData = [
             "No, because he used a deadly weapon."
         ],
         ans: 1,
-        exp: "Attempted murder is a specific intent crime[cite: 23, 25]. Voluntary intoxication is a valid defense to specific intent crimes if the intoxication was so severe that it prevented the defendant from forming the requisite specific intent (in this case, the intent to kill a human being)[cite: 23, 25]."
+        exp: "Attempted murder is a specific intent crime. Voluntary intoxication is a valid defense to specific intent crimes if the intoxication was so severe that it prevented the defendant from forming the requisite specific intent (in this case, the intent to kill a human being)."
     },
     {
         id: 14,
@@ -199,7 +199,7 @@ const examData = [
             "No, because battery is a strict liability offense."
         ],
         ans: 2,
-        exp: "Battery is a general intent crime[cite: 23, 25]. The law presumes that the requisite general intent or recklessness is supplied by the defendant's initial reckless act of voluntarily consuming the intoxicating substance[cite: 23, 25]. Voluntary intoxication is NEVER a defense to a general intent crime[cite: 23, 25]."
+        exp: "Battery is a general intent crime. The law presumes that the requisite general intent or recklessness is supplied by the defendant's initial reckless act of voluntarily consuming the intoxicating substance. Voluntary intoxication is NEVER a defense to a general intent crime."
     },
     {
         id: 15,
@@ -213,7 +213,7 @@ const examData = [
             "No, because a temporary psychotic state caused solely by voluntary intoxication does not qualify as a mental disease or defect."
         ],
         ans: 3,
-        exp: "Legal insanity must be the result of a recognized 'mental disease or defect.'[cite: 23, 25] A temporary psychotic state or hallucination brought on solely by the voluntary ingestion of drugs or alcohol does not qualify as a mental disease for the purposes of the insanity defense[cite: 23, 25]."
+        exp: "Legal insanity must be the result of a recognized 'mental disease or defect.' A temporary psychotic state or hallucination brought on solely by the voluntary ingestion of drugs or alcohol does not qualify as a mental disease for the purposes of the insanity defense."
     },
     // FACT PATTERN 7 (Q16-Q18)
     {
@@ -228,7 +228,7 @@ const examData = [
             "No, because the car was his own property."
         ],
         ans: 0,
-        exp: "Kidnapping requires the unlawful confinement of a person accompanied by asportation (movement) that is substantial or increases the risk of harm to the victim[cite: 23, 25]. Moving a victim 10 miles from a public street to an isolated barn clearly satisfies this element[cite: 23, 25]."
+        exp: "Kidnapping requires the unlawful confinement of a person accompanied by asportation (movement) that is substantial or increases the risk of harm to the victim. Moving a victim 10 miles from a public street to an isolated barn clearly satisfies this element."
     },
     {
         id: 17,
@@ -242,7 +242,7 @@ const examData = [
             "Yes, but only after they reached the barn."
         ],
         ans: 1,
-        exp: "False imprisonment is the intentional, unlawful confinement of a person to a bounded area[cite: 23, 25]. Harry locking Irene in the barn (and the car) against her will constitutes false imprisonment[cite: 23, 25]."
+        exp: "False imprisonment is the intentional, unlawful confinement of a person to a bounded area. Harry locking Irene in the barn (and the car) against her will constitutes false imprisonment."
     },
     {
         id: 18,
@@ -256,7 +256,7 @@ const examData = [
             "Common law robbery, because he used a deadly weapon to coerce her movements into the vehicle against her will."
         ],
         ans: 2,
-        exp: "Assault is either an attempted battery or the intentional creation of a reasonable apprehension of imminent bodily harm[cite: 23, 25]. Pointing a loaded gun at someone to force compliance intentionally creates a highly reasonable apprehension of imminent physical injury[cite: 23, 25]."
+        exp: "Assault is either an attempted battery or the intentional creation of a reasonable apprehension of imminent bodily harm. Pointing a loaded gun at someone to force compliance intentionally creates a highly reasonable apprehension of imminent physical injury."
     },
     // FACT PATTERN 8 (Q19-Q20)
     {
@@ -271,7 +271,7 @@ const examData = [
             "Larceny by trick, because he obtained custody via fraud with the specific intent to permanently deprive the owner at the time of the borrowing."
         ],
         ans: 3,
-        exp: "Larceny by trick occurs when a defendant obtains mere CUSTODY (not title) of property through intentional fraud or deceit, with the contemporaneous intent to permanently deprive[cite: 23, 25]. Because the neighbor only lent the lawnmower, Jack obtained custody by trick, not title[cite: 23, 25]."
+        exp: "Larceny by trick occurs when a defendant obtains mere CUSTODY (not title) of property through intentional fraud or deceit, with the contemporaneous intent to permanently deprive. Because the neighbor only lent the lawnmower, Jack obtained custody by trick, not title."
     },
     {
         id: 20,
@@ -285,7 +285,7 @@ const examData = [
             "Because it was a neighborly loan."
         ],
         ans: 0,
-        exp: "False pretenses requires the defendant to obtain TITLE to the property by an intentional false statement[cite: 23, 25]. When someone lends an item to be returned, they only intend to transfer custody[cite: 23, 25]. Without the transfer of title, the crime cannot be false pretenses[cite: 23, 25]."
+        exp: "False pretenses requires the defendant to obtain TITLE to the property by an intentional false statement. When someone lends an item to be returned, they only intend to transfer custody. Without the transfer of title, the crime cannot be false pretenses."
     },
     // FACT PATTERN 9 (Q21-Q23)
     {
@@ -300,7 +300,7 @@ const examData = [
             "Yes, but only if he returns the car."
         ],
         ans: 1,
-        exp: "Duress is a valid defense if the defendant committed a crime because of a reasonable belief that a present, imminent threat of death or great bodily harm would be inflicted upon them if they did not comply[cite: 23, 25]. It is a defense to all crimes EXCEPT intentional homicide[cite: 23, 25]."
+        exp: "Duress is a valid defense if the defendant committed a crime because of a reasonable belief that a present, imminent threat of death or great bodily harm would be inflicted upon them if they did not comply. It is a defense to all crimes EXCEPT intentional homicide."
     },
     {
         id: 22,
@@ -314,7 +314,7 @@ const examData = [
             "No, because the law requires a person to sacrifice their own life rather than take the life of an innocent third party under any circumstances."
         ],
         ans: 2,
-        exp: "Under traditional common law, duress is NEVER a defense to an intentional killing[cite: 23, 25]. The rationale is that a person may not take the life of an innocent third party to save their own life[cite: 23, 25]."
+        exp: "Under traditional common law, duress is NEVER a defense to an intentional killing. The rationale is that a person may not take the life of an innocent third party to save their own life."
     },
     {
         id: 23,
@@ -328,7 +328,7 @@ const examData = [
             "Necessity involves choosing between evils usually from natural forces, while duress involves human coercion."
         ],
         ans: 3,
-        exp: "The key distinction between the two defenses is the source of the threat[cite: 23, 25]. Duress involves coercion by another HUMAN being[cite: 23, 25]. Necessity (the choice of evils defense) typically involves pressure created by physical or NATURAL forces[cite: 23, 25]."
+        exp: "The key distinction between the two defenses is the source of the threat. Duress involves coercion by another HUMAN being. Necessity (the choice of evils defense) typically involves pressure created by physical or NATURAL forces."
     },
     // FACT PATTERN 10 (Q24-Q25)
     {
@@ -343,7 +343,7 @@ const examData = [
             "Yes, because stealing a check is forgery."
         ],
         ans: 0,
-        exp: "Forgery is the making or altering of a false writing with apparent legal significance, with the specific intent to defraud[cite: 23, 25]. By signing Mary's name and filling out the check, Larry created a false document with apparent legal significance[cite: 23, 25]. The crime is complete upon the making[cite: 23, 25]."
+        exp: "Forgery is the making or altering of a false writing with apparent legal significance, with the specific intent to defraud. By signing Mary's name and filling out the check, Larry created a false document with apparent legal significance. The crime is complete upon the making."
     },
     {
         id: 25,
@@ -357,6 +357,6 @@ const examData = [
             "No, unless it's a commercial bank check."
         ],
         ans: 1,
-        exp: "Common law forgery is complete once the document is fraudulently made or altered with the intent to defraud[cite: 23, 25]. Actual use, presentation, or cashing of the document (known as 'uttering') is a separate and distinct criminal offense[cite: 23, 25]. Uttering is not required to complete the crime of forgery[cite: 23, 25]."
+        exp: "Common law forgery is complete once the document is fraudulently made or altered with the intent to defraud. Actual use, presentation, or cashing of the document (known as 'uttering') is a separate and distinct criminal offense. Uttering is not required to complete the crime of forgery."
     }
 ];

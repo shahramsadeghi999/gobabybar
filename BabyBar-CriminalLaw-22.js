@@ -11,7 +11,7 @@ const examData = [
             "Yes, because she planned to keep the money if she lost."
         ],
         ans: 3,
-        exp: "Larceny is a trespassory taking and carrying off of personal property known to be another's with the intent to permanently deprive the owner thereof[cite: 32]. Although the defendant planned to return the money in the event of one contingency, she planned not to return it in the event of another[cite: 32]. This contingent intent to permanently deprive is sufficient to make her guilty of larceny when she took and carried off the money on Friday night[cite: 32]."
+        exp: "Larceny is a trespassory taking and carrying off of personal property known to be another's with the intent to permanently deprive the owner thereof. Although the defendant planned to return the money in the event of one contingency, she planned not to return it in the event of another. This contingent intent to permanently deprive is sufficient to make her guilty of larceny when she took and carried off the money on Friday night."
     },
     {
         id: 2,
@@ -25,7 +25,7 @@ const examData = [
             "The wine was not an intoxicating substance because the teenager never got a chance to drink it."
         ],
         ans: 1,
-        exp: "Although most statutes that forbid the sale of alcohol to minors impose strict liability, this one does not because it prohibits only the 'knowing' sale[cite: 32]. If the defendant reasonably believed that the teenager was over the age of 21, he lacked the knowledge that is requisite to a conviction[cite: 32]."
+        exp: "Although most statutes that forbid the sale of alcohol to minors impose strict liability, this one does not because it prohibits only the 'knowing' sale. If the defendant reasonably believed that the teenager was over the age of 21, he lacked the knowledge that is requisite to a conviction."
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ const examData = [
             "Yes, because it was unreasonable to spin around and stab an unknown person with a kitchen knife."
         ],
         ans: 1,
-        exp: "Self-defense involves a privilege to use reasonable force to prevent what is reasonably perceived as a threat of imminent bodily harm[cite: 32]. If a defendant makes a mistake regarding the need for self-defense, courts will look at whether such a mistake was reasonable[cite: 32]. Here, the recent robberies, time of day, robber's threat, and the metal spatula handle in the back likely made it reasonable for the defendant to believe he was in danger of being shot[cite: 32]."
+        exp: "Self-defense involves a privilege to use reasonable force to prevent what is reasonably perceived as a threat of imminent bodily harm. If a defendant makes a mistake regarding the need for self-defense, courts will look at whether such a mistake was reasonable. Here, the recent robberies, time of day, robber's threat, and the metal spatula handle in the back likely made it reasonable for the defendant to believe he was in danger of being shot."
     },
     {
         id: 4,
@@ -53,7 +53,7 @@ const examData = [
             "Possession of narcotics."
         ],
         ans: 0,
-        exp: "A person is guilty as an accessory to a crime when he or she aids and abets in its perpetration[cite: 32]. At common law, a defendant commits rape when he or she has sexual intercourse with a woman who is not his wife without the woman's consent[cite: 32]. Although under this definition a husband cannot be guilty as a principal of raping his wife, he can be guilty as an accessory if he aids and abets another to have sexual intercourse with her without her consent[cite: 32]."
+        exp: "A person is guilty as an accessory to a crime when he or she aids and abets in its perpetration. At common law, a defendant commits rape when he or she has sexual intercourse with a woman who is not his wife without the woman's consent. Although under this definition a husband cannot be guilty as a principal of raping his wife, he can be guilty as an accessory if he aids and abets another to have sexual intercourse with her without her consent."
     },
     {
         id: 5,
@@ -67,7 +67,7 @@ const examData = [
             "No crime."
         ],
         ans: 0,
-        exp: "Larceny is defined as the trespassory taking and carrying off of personal property known to be another's with the intent to permanently deprive the owner thereof[cite: 32]. Since the defendant's taking and carrying off of the candy dish was inconsistent with his friend's rights, it was trespassory, and giving it to his sister as a wedding present would permanently deprive his friend of it[cite: 32]. He is not guilty of burglary because he entered to recover his own camera, meaning his purpose was not to commit a felony[cite: 32]."
+        exp: "Larceny is defined as the trespassory taking and carrying off of personal property known to be another's with the intent to permanently deprive the owner thereof. Since the defendant's taking and carrying off of the candy dish was inconsistent with his friend's rights, it was trespassory, and giving it to his sister as a wedding present would permanently deprive his friend of it. He is not guilty of burglary because he entered to recover his own camera, meaning his purpose was not to commit a felony."
     },
     {
         id: 6,
@@ -81,7 +81,7 @@ const examData = [
             "No, because the crime of involuntary manslaughter is a lesser offense included in murder."
         ],
         ans: 2,
-        exp: "A person is guilty of attempting to commit a crime when, with the specific intent to bring about a criminally prohibited result, he or she comes substantially close to achieving that result[cite: 32]. Since involuntary manslaughter is unintended homicide, there can be no attempt to commit it because the requisite state of mind cannot exist[cite: 32]."
+        exp: "A person is guilty of attempting to commit a crime when, with the specific intent to bring about a criminally prohibited result, he or she comes substantially close to achieving that result. Since involuntary manslaughter is unintended homicide, there can be no attempt to commit it because the requisite state of mind cannot exist."
     },
     {
         id: 7,
@@ -95,7 +95,7 @@ const examData = [
             "The accomplice assumed the risk by participating in the commission of a felony."
         ],
         ans: 2,
-        exp: "The defendant obviously did not have the intent to cause the death of the accomplice and was obviously not engaged in committing rape, robbery, or kidnapping at the time that the accomplice was killed[cite: 32]. Under the common law definition, burglary is a breaking and entering into the dwelling of another at night for the purpose of committing a felony therein[cite: 32]. Since the defendant was attempting to enter a warehouse rather than a dwelling, he was not committing a burglary either, preventing the application of the statute[cite: 32]."
+        exp: "The defendant obviously did not have the intent to cause the death of the accomplice and was obviously not engaged in committing rape, robbery, or kidnapping at the time that the accomplice was killed. Under the common law definition, burglary is a breaking and entering into the dwelling of another at night for the purpose of committing a felony therein. Since the defendant was attempting to enter a warehouse rather than a dwelling, he was not committing a burglary either, preventing the application of the statute."
     },
     {
         id: 8,
@@ -109,7 +109,7 @@ const examData = [
             "The law was intended to protect people in the defendant's position against people in the personnel manager's position."
         ],
         ans: 3,
-        exp: "The victim of a crime does not share the guilt of the perpetrator, even though the victim's participation was necessary to the crime's commission[cite: 32]. If the law was designed to protect people in the defendant's position against people in the personnel manager's position, the defendant can be regarded as the victim of the personnel manager's act and thus escape criminal liability as an accessory[cite: 32]."
+        exp: "The victim of a crime does not share the guilt of the perpetrator, even though the victim's participation was necessary to the crime's commission. If the law was designed to protect people in the defendant's position against people in the personnel manager's position, the defendant can be regarded as the victim of the personnel manager's act and thus escape criminal liability as an accessory."
     },
     {
         id: 9,
@@ -123,7 +123,7 @@ const examData = [
             "False pretenses."
         ],
         ans: 0,
-        exp: "Robbery is larceny accomplished by force or a threat of force directed at the lawful possessor of the property taken[cite: 32]. The defendant's snatching of the purse was accomplished by force, and the hand in his pocket coupled with his words constituted a threat of force[cite: 32]."
+        exp: "Robbery is larceny accomplished by force or a threat of force directed at the lawful possessor of the property taken. The defendant's snatching of the purse was accomplished by force, and the hand in his pocket coupled with his words constituted a threat of force."
     },
     {
         id: 10,
@@ -137,7 +137,7 @@ const examData = [
             "Neither larceny nor burglary."
         ],
         ans: 0,
-        exp: "Larceny is a trespassory taking and carrying off of property known to be another's with the intent to permanently deprive[cite: 32]. The defendant's taking of the plant was trespassory, and therefore a larceny, because she had been authorized to water it, not to carry it off[cite: 32]. The defendant could not be guilty of burglary since her use of the key that the doctor gave her prevents her entry from constituting a breaking, which requires force against the premises[cite: 32]."
+        exp: "Larceny is a trespassory taking and carrying off of property known to be another's with the intent to permanently deprive. The defendant's taking of the plant was trespassory, and therefore a larceny, because she had been authorized to water it, not to carry it off. The defendant could not be guilty of burglary since her use of the key that the doctor gave her prevents her entry from constituting a breaking, which requires force against the premises."
     },
     {
         id: 11,
@@ -151,7 +151,7 @@ const examData = [
             "Neither solicitation to commit rape nor rape."
         ],
         ans: 1,
-        exp: "Rape is sexual intercourse without consent of the female. Since the bank teller's resistance was overcome by the defendant's threat and her resulting fear of death, the intercourse occurred without her consent[cite: 32]. One who commands another to do an act is responsible for the criminal consequences thereof[cite: 32]. Although the defendant did not himself have sexual intercourse with the teller, he is guilty of rape because he commanded the bank manager to do so[cite: 32]. (Solicitation merges with the completed crime)."
+        exp: "Rape is sexual intercourse without consent of the female. Since the bank teller's resistance was overcome by the defendant's threat and her resulting fear of death, the intercourse occurred without her consent. One who commands another to do an act is responsible for the criminal consequences thereof. Although the defendant did not himself have sexual intercourse with the teller, he is guilty of rape because he commanded the bank manager to do so. (Solicitation merges with the completed crime)."
     },
     {
         id: 12,
@@ -165,7 +165,7 @@ const examData = [
             "No, because what he intended to do was not a crime."
         ],
         ans: 3,
-        exp: "Under the common law, burglary is the breaking and entering into the dwelling house of another, at night, with the intent to commit a felony therein[cite: 32]. Here, since what the man was intending to do wasn't actually a crime, he can't be convicted of burglary[cite: 32]. The issue is whether what the man intended to do was a felony in reality, not whether the man merely possessed a mistaken belief that he was intending to commit a felony[cite: 32]."
+        exp: "Under the common law, burglary is the breaking and entering into the dwelling house of another, at night, with the intent to commit a felony therein. Here, since what the man was intending to do wasn't actually a crime, he can't be convicted of burglary. The issue is whether what the man intended to do was a felony in reality, not whether the man merely possessed a mistaken belief that he was intending to commit a felony."
     },
     {
         id: 13,
@@ -179,7 +179,7 @@ const examData = [
             "No, because words alone are not sufficient to result in criminal liability."
         ],
         ans: 1,
-        exp: "One who, with the intent that a crime will be committed, encourages another to commit that crime, is liable for it as an accessory[cite: 32]. Mere presence at the scene of a crime is not sufficient, even if the defendant intended or was willing for the crime to be committed; however, here the words were coupled with intent and constituted active encouragement[cite: 32]."
+        exp: "One who, with the intent that a crime will be committed, encourages another to commit that crime, is liable for it as an accessory. Mere presence at the scene of a crime is not sufficient, even if the defendant intended or was willing for the crime to be committed; however, here the words were coupled with intent and constituted active encouragement."
     },
     {
         id: 14,
@@ -193,7 +193,7 @@ const examData = [
             "No, because she did not intend to kill anyone."
         ],
         ans: 3,
-        exp: "Depending on the seriousness of the wrongdoing, a defendant who engages in wrongful conduct that results in a homicide is guilty of either involuntary homicide or second-degree murder[cite: 32]. Involuntary homicide is appropriate when the wrongful conduct did not create a very high risk of death or serious injury[cite: 32]. Poisoning the water to make the players sick was unlikely to cause death or serious injury, and the student did not intend to kill anyone[cite: 32]."
+        exp: "Depending on the seriousness of the wrongdoing, a defendant who engages in wrongful conduct that results in a homicide is guilty of either involuntary homicide or second-degree murder. Involuntary homicide is appropriate when the wrongful conduct did not create a very high risk of death or serious injury. Poisoning the water to make the players sick was unlikely to cause death or serious injury, and the student did not intend to kill anyone."
     },
     {
         id: 15,
@@ -207,7 +207,7 @@ const examData = [
             "In a jurisdiction that applies the common law definition, the defendant is charged with voluntary manslaughter after killing his wife. He asserts that he was so drunk that he imagined that he saw another man in bed with her, and that he killed her in the drunken rage that resulted."
         ],
         ans: 2,
-        exp: "Involuntary intoxication may be a defense to crimes involving recklessness, as well as to specific intent crimes[cite: 32]. The defendant's assertion in (C) that an unknown person put alcohol in her juice without her knowledge could provide her with an effective defense to murder based on reckless driving, because her intoxication was involuntary[cite: 32]. Voluntary intoxication is not a defense to general intent crimes like statutory rape or reckless involuntary manslaughter[cite: 32]."
+        exp: "Involuntary intoxication may be a defense to crimes involving recklessness, as well as to specific intent crimes. The defendant's assertion in (C) that an unknown person put alcohol in her juice without her knowledge could provide her with an effective defense to murder based on reckless driving, because her intoxication was involuntary. Voluntary intoxication is not a defense to general intent crimes like statutory rape or reckless involuntary manslaughter."
     },
     {
         id: 16,
@@ -221,7 +221,7 @@ const examData = [
             "The defendant stole a check from the victim's mailbox and attempted to cash it in a bank by masquerading as the victim. Suspecting forgery, the bank teller signaled to the bank guard. As the guard approached, the defendant shot at him. When the guard returned the defendant's fire, one of the guard's bullets ricocheted off a wall and struck a customer, killing him."
         ],
         ans: 2,
-        exp: "Murder is defined as criminal homicide with malice aforethought[cite: 32]. Since homicide involves an act that causes the death of a human being, and since the victim's death in (C) did not result from the defendant's act (because the victim was already dead from a heart attack), the defendant could not be guilty of murdering the victim[cite: 32]."
+        exp: "Murder is defined as criminal homicide with malice aforethought. Since homicide involves an act that causes the death of a human being, and since the victim's death in (C) did not result from the defendant's act (because the victim was already dead from a heart attack), the defendant could not be guilty of murdering the victim."
     },
     {
         id: 17,
@@ -235,7 +235,7 @@ const examData = [
             "No, because he did not know that the daughter was in the car."
         ],
         ans: 3,
-        exp: "Kidnapping is defined as the intentional asportation and confinement of a person against that person's will, by force or threat, and without lawful authority[cite: 32]. Since the defendant did not know that the daughter was in the car when he drove it away, he lacked the requisite intent[cite: 32]."
+        exp: "Kidnapping is defined as the intentional asportation and confinement of a person against that person's will, by force or threat, and without lawful authority. Since the defendant did not know that the daughter was in the car when he drove it away, he lacked the requisite intent."
     },
     {
         id: 18,
@@ -249,7 +249,7 @@ const examData = [
             "No, because to convict him would be to punish him merely for having a guilty mind."
         ],
         ans: 1,
-        exp: "Since the statute prohibits possession of a skeleton key with the intent to commit an unlawful entry, and since the defendant was, in fact, attempting to effect an unlawful entry with his skeleton key, he is guilty of violating the statute[cite: 32]. The crime defined by the statute would merge into attempted burglary if charged with it, but in the absence of an attempted burglary charge, the lesser crime can be prosecuted[cite: 32]."
+        exp: "Since the statute prohibits possession of a skeleton key with the intent to commit an unlawful entry, and since the defendant was, in fact, attempting to effect an unlawful entry with his skeleton key, he is guilty of violating the statute. The crime defined by the statute would merge into attempted burglary if charged with it, but in the absence of an attempted burglary charge, the lesser crime can be prosecuted."
     },
     {
         id: 19,
@@ -263,7 +263,7 @@ const examData = [
             "No, because the hostage killed the officer out of necessity to save his life."
         ],
         ans: 0,
-        exp: "Duress is not a defense to murder because one person's life is not more important than another person's life[cite: 32]. Here, the hostage clearly intended to kill the policeman, and the fact that he did so under duress does not change the analysis[cite: 32]."
+        exp: "Duress is not a defense to murder because one person's life is not more important than another person's life. Here, the hostage clearly intended to kill the policeman, and the fact that he did so under duress does not change the analysis."
     },
     {
         id: 20,
@@ -277,7 +277,7 @@ const examData = [
             "Either conspiracy or robbery, but not both."
         ],
         ans: 2,
-        exp: "One who intentionally aids or facilitates the commission of a crime is guilty of the crime as an accessory[cite: 32]. Although the defendant did not point a gun and demand money, she aided and abetted the student by operating the getaway car, making her guilty as an accessory to robbery[cite: 32]. She and the student also committed the separate crime of conspiracy when they agreed on the commission of the robbery, and conspiracy does not merge with the substantive crime[cite: 32]."
+        exp: "One who intentionally aids or facilitates the commission of a crime is guilty of the crime as an accessory. Although the defendant did not point a gun and demand money, she aided and abetted the student by operating the getaway car, making her guilty as an accessory to robbery. She and the student also committed the separate crime of conspiracy when they agreed on the commission of the robbery, and conspiracy does not merge with the substantive crime."
     },
     {
         id: 21,
@@ -291,7 +291,7 @@ const examData = [
             "The defendant's daughter was suffering from a lingering, incurable, fatal disease. One day, while the defendant was visiting her in the hospital, she screamed and writhed in pain. Wanting to end her suffering, the defendant placed a pillow over her face and held it there until she died of suffocation."
         ],
         ans: 1,
-        exp: "A defendant is guilty of murder when he or she proximately causes the death of another human being unlawfully and with malice aforethought[cite: 32]. Since there are no facts indicating that the defendant in (B) intended to kill or cause harm, was escaping from lawful custody, or engaged in conduct demonstrating a reckless disregard for human life, and violation of the insurance statute is not an inherently dangerous felony, the defendant could not be convicted of murder[cite: 32]."
+        exp: "A defendant is guilty of murder when he or she proximately causes the death of another human being unlawfully and with malice aforethought. Since there are no facts indicating that the defendant in (B) intended to kill or cause harm, was escaping from lawful custody, or engaged in conduct demonstrating a reckless disregard for human life, and violation of the insurance statute is not an inherently dangerous felony, the defendant could not be convicted of murder."
     },
     {
         id: 22,
@@ -305,7 +305,7 @@ const examData = [
             "The attempted crime merged with the completed act."
         ],
         ans: 1,
-        exp: "A person is guilty of a criminal attempt when, with the specific intent to bring about a criminally prohibited result, he or she performs some act that comes substantially close to achieving that result[cite: 32]. Many jurisdictions hold that if the result that the defendant specifically intended to bring about was not a crime, the defendant cannot be guilty of a criminal attempt[cite: 32]. This is known as the doctrine of legal impossibility[cite: 32]."
+        exp: "A person is guilty of a criminal attempt when, with the specific intent to bring about a criminally prohibited result, he or she performs some act that comes substantially close to achieving that result. Many jurisdictions hold that if the result that the defendant specifically intended to bring about was not a crime, the defendant cannot be guilty of a criminal attempt. This is known as the doctrine of legal impossibility."
     },
     {
         id: 23,
@@ -319,7 +319,7 @@ const examData = [
             "No crime, because the man did not complete the robbery and the bus driver's death was due to the illegally parked car."
         ],
         ans: 0,
-        exp: "If a death occurs during a felony or attempted felony, the defendant is guilty of felony murder[cite: 32]. Importantly, the felony does not end until the defendant reaches a place of safety[cite: 32]. Here, the man committed attempted robbery at the store, a felony, and the death occurred while the man was still fleeing, so the felony was not over yet[cite: 32]."
+        exp: "If a death occurs during a felony or attempted felony, the defendant is guilty of felony murder. Importantly, the felony does not end until the defendant reaches a place of safety. Here, the man committed attempted robbery at the store, a felony, and the death occurred while the man was still fleeing, so the felony was not over yet."
     },
     {
         id: 24,
@@ -333,7 +333,7 @@ const examData = [
             "No, because the defendant did not intend damage to the homeowner's home."
         ],
         ans: 3,
-        exp: "Arson is the intentional or reckless burning of the dwelling of another[cite: 32]. Although the defendant caused the burning of the homeowner's dwelling, he did not do so intentionally since he believed that there would be no damage, and the facts indicate his conduct was reasonable[cite: 32]. A statutory violation alone is not sufficient to satisfy the mens rea requirement for arson[cite: 32]."
+        exp: "Arson is the intentional or reckless burning of the dwelling of another. Although the defendant caused the burning of the homeowner's dwelling, he did not do so intentionally since he believed that there would be no damage, and the facts indicate his conduct was reasonable. A statutory violation alone is not sufficient to satisfy the mens rea requirement for arson."
     },
     {
         id: 25,
@@ -347,6 +347,6 @@ const examData = [
             "The victim's death resulted from the defendant's unlicensed operation of a motor vehicle."
         ],
         ans: 1,
-        exp: "Murder is a killing with malice aforethought[cite: 32]. Malice aforethought includes wanton disregard for human life, which means acting in deliberate disregard of the plain and strong likelihood that death or great bodily harm would result[cite: 32]. Operating a motor vehicle at a speed of 100 miles per hour might be found to constitute wanton disregard for human life, making it the only reason listed that could result in a conviction for murder[cite: 32]."
+        exp: "Murder is a killing with malice aforethought. Malice aforethought includes wanton disregard for human life, which means acting in deliberate disregard of the plain and strong likelihood that death or great bodily harm would result. Operating a motor vehicle at a speed of 100 miles per hour might be found to constitute wanton disregard for human life, making it the only reason listed that could result in a conviction for murder."
     }
 ];

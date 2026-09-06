@@ -12,7 +12,7 @@ const examData = [
             "Yes, because the strict strict liability framework of the Redline rule exclusively applies to the deaths of innocent bystanders rather than active participants."
         ],
         ans: 1,
-        exp: "Under the provocative act doctrine, a felon who commits an extremely reckless act (like using a human shield) that provokes lethal return fire is liable for murder based on their own implied malice[cite: 31]. Under co-conspirator/accomplice liability, Bob is vicariously liable for the foreseeable crimes of his co-felon committed in furtherance of the robbery, including provocative act murder[cite: 31]."
+        exp: "Under the provocative act doctrine, a felon who commits an extremely reckless act (like using a human shield) that provokes lethal return fire is liable for murder based on their own implied malice. Under co-conspirator/accomplice liability, Bob is vicariously liable for the foreseeable crimes of his co-felon committed in furtherance of the robbery, including provocative act murder."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "Yes, but her culpability is restricted solely to the lesser included offense of involuntary manslaughter."
         ],
         ans: 2,
-        exp: "The 'res gestae' of a felony includes the immediate flight from the scene[cite: 31]. If a death occurs during the escape, before the felons have reached a place of temporary safety, the felony murder rule applies[cite: 31]. As a co-felon, Alice is fully liable for the foreseeable lethal actions of her getaway driver during the escape[cite: 31]."
+        exp: "The 'res gestae' of a felony includes the immediate flight from the scene. If a death occurs during the escape, before the felons have reached a place of temporary safety, the felony murder rule applies. As a co-felon, Alice is fully liable for the foreseeable lethal actions of her getaway driver during the escape."
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const examData = [
             "He is guilty, because natural and probable consequences automatically impute specific intent."
         ],
         ans: 0,
-        exp: "To be convicted of a specific intent crime as an accomplice (like attempted murder), the accomplice must share the specific intent of the principal[cite: 31]. Bob only intended to commit a robbery; he did not intend to kill the guard[cite: 31]. Thus, he cannot be convicted of attempted murder (though he is liable for felony murder for the actual deaths)[cite: 31]."
+        exp: "To be convicted of a specific intent crime as an accomplice (like attempted murder), the accomplice must share the specific intent of the principal. Bob only intended to commit a robbery; he did not intend to kill the guard. Thus, he cannot be convicted of attempted murder (though he is liable for felony murder for the actual deaths)."
     },
     // FACT PATTERN 2 (Q4-Q5)
     {
@@ -55,7 +55,7 @@ const examData = [
             "Yes, but the claim is strictly restricted to establishing imperfect self-defense."
         ],
         ans: 0,
-        exp: "Involuntary intoxication is treated identically to the insanity defense[cite: 31]. It provides a complete defense to ALL crimes (including general intent crimes like battery) if it renders the defendant unable to understand the nature of their act or causes a profound mistake of fact that negates culpability, regardless of objective reasonableness[cite: 31]."
+        exp: "Involuntary intoxication is treated identically to the insanity defense. It provides a complete defense to ALL crimes (including general intent crimes like battery) if it renders the defendant unable to understand the nature of their act or causes a profound mistake of fact that negates culpability, regardless of objective reasonableness."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "No, because the victim suffered permanent paralysis, triggering strict liability enhancement statutes."
         ],
         ans: 2,
-        exp: "Battery is a general intent crime[cite: 31]. Voluntary intoxication is NEVER a defense to general intent crimes, as the act of voluntarily consuming the intoxicant legally substitutes for the reckless mental state required for the offense[cite: 31]."
+        exp: "Battery is a general intent crime. Voluntary intoxication is NEVER a defense to general intent crimes, as the act of voluntarily consuming the intoxicant legally substitutes for the reckless mental state required for the offense."
     },
     // FACT PATTERN 3 (Q6-Q8)
     {
@@ -84,7 +84,7 @@ const examData = [
             "Yes, because two people agreed to bribe a third party, falling under the third-party exception to Wharton's Rule."
         ],
         ans: 3,
-        exp: "Wharton's Rule prohibits a conspiracy charge for a crime that logically requires exactly two people (like bribery) if only those two people agree to commit it[cite: 31]. However, the 'third-party exception' applies when more people participate in the agreement than are necessary to commit the crime[cite: 31]. Because Eve and Fred (two people) agreed to bribe a third (the official), the rule does not bar the charge[cite: 31]."
+        exp: "Wharton's Rule prohibits a conspiracy charge for a crime that logically requires exactly two people (like bribery) if only those two people agree to commit it. However, the 'third-party exception' applies when more people participate in the agreement than are necessary to commit the crime. Because Eve and Fred (two people) agreed to bribe a third (the official), the rule does not bar the charge."
     },
     {
         id: 7,
@@ -98,7 +98,7 @@ const examData = [
             "Yes, because foreign corrupt practices act violations enforce strict liability."
         ],
         ans: 1,
-        exp: "Attempt requires specific intent and a substantial step[cite: 31]. Factual impossibility (the fact that the official was an FBI agent) is not a defense to an attempt charge[cite: 31]. Fred is judged based on the facts as he believed them to be[cite: 31]. Since he believed he was meeting a corrupt official and offered the bribe, he is guilty of attempted bribery[cite: 31]."
+        exp: "Attempt requires specific intent and a substantial step. Factual impossibility (the fact that the official was an FBI agent) is not a defense to an attempt charge. Fred is judged based on the facts as he believed them to be. Since he believed he was meeting a corrupt official and offered the bribe, he is guilty of attempted bribery."
     },
     {
         id: 8,
@@ -112,7 +112,7 @@ const examData = [
             "Yes, gathering funds is considered mere preparation."
         ],
         ans: 2,
-        exp: "Conspiracy requires an agreement and an overt act in furtherance of the conspiracy[cite: 31]. The overt act does NOT need to be the completed crime itself; it can be any act that shows the conspiracy is at work[cite: 31]. Gathering the funds or traveling overseas clearly satisfies the overt act requirement[cite: 31]."
+        exp: "Conspiracy requires an agreement and an overt act in furtherance of the conspiracy. The overt act does NOT need to be the completed crime itself; it can be any act that shows the conspiracy is at work. Gathering the funds or traveling overseas clearly satisfies the overt act requirement."
     },
     // FACT PATTERN 4 (Q9-Q11)
     {
@@ -127,7 +127,7 @@ const examData = [
             "Forgery, because she signed her own name on the payee line."
         ],
         ans: 0,
-        exp: "False pretenses requires that the victim intend to transfer legal TITLE (ownership) to the defendant based on an intentional false representation of fact[cite: 31]. Because the CFO intended to transfer full ownership of the $50,000 (believing it was going to the IRS), Gina obtained title via deceit, constituting false pretenses[cite: 31]."
+        exp: "False pretenses requires that the victim intend to transfer legal TITLE (ownership) to the defendant based on an intentional false representation of fact. Because the CFO intended to transfer full ownership of the $50,000 (believing it was going to the IRS), Gina obtained title via deceit, constituting false pretenses."
     },
     {
         id: 10,
@@ -141,7 +141,7 @@ const examData = [
             "Trespass to chattels only."
         ],
         ans: 1,
-        exp: "Larceny is a specific intent crime requiring the intent to PERMANENTLY deprive the owner of their property AT THE TIME of the taking[cite: 31]. Because Gina only intended to borrow the laptop for the weekend when she took it, she lacked the requisite mens rea for larceny at that moment[cite: 31]."
+        exp: "Larceny is a specific intent crime requiring the intent to PERMANENTLY deprive the owner of their property AT THE TIME of the taking. Because Gina only intended to borrow the laptop for the weekend when she took it, she lacked the requisite mens rea for larceny at that moment."
     },
     {
         id: 11,
@@ -155,7 +155,7 @@ const examData = [
             "Yes, because property theft statutes impose strict liability upon the ultimate unauthorized commercial sale of the asset."
         ],
         ans: 1,
-        exp: "The continuing trespass doctrine fictionally extends a trespassory taking until the moment the defendant forms the intent to steal[cite: 31]. However, it ONLY applies if the initial taking was wrongful (trespassory)[cite: 31]. Because Gina's initial taking was not wrongful (assuming implied permission or lack of wrongful intent in 'borrowing'), the doctrine does not apply[cite: 31]."
+        exp: "The continuing trespass doctrine fictionally extends a trespassory taking until the moment the defendant forms the intent to steal. However, it ONLY applies if the initial taking was wrongful (trespassory). Because Gina's initial taking was not wrongful (assuming implied permission or lack of wrongful intent in 'borrowing'), the doctrine does not apply."
     },
     // FACT PATTERN 5 (Q12-Q14)
     {
@@ -170,7 +170,7 @@ const examData = [
             "No, because a motorized recreational vehicle categorically fails to meet the permanent structure requirement."
         ],
         ans: 2,
-        exp: "Common law burglary requires the specific intent to commit a felony inside the dwelling AT THE TIME of the breaking and entering[cite: 31]. Because Harry only intended to escape the storm and sleep upon entry, he lacked the specific intent required for burglary[cite: 31]. His later decision to blow the safe does not retroactively establish burglary[cite: 31]."
+        exp: "Common law burglary requires the specific intent to commit a felony inside the dwelling AT THE TIME of the breaking and entering. Because Harry only intended to escape the storm and sleep upon entry, he lacked the specific intent required for burglary. His later decision to blow the safe does not retroactively establish burglary."
     },
     {
         id: 13,
@@ -184,7 +184,7 @@ const examData = [
             "No, because he lacked the malicious intent to burn the structure, as the fire was an accidental byproduct of blowing the safe."
         ],
         ans: 3,
-        exp: "Common law arson requires the MALICIOUS burning of the dwelling of another[cite: 31]. Malice requires an intentional burning or an extreme, reckless disregard of an obvious risk of burning the structure itself[cite: 31]. While using dynamite is dangerous, if the fire was a purely accidental byproduct of trying to open the safe, the specific malice to burn the dwelling is absent[cite: 31]."
+        exp: "Common law arson requires the MALICIOUS burning of the dwelling of another. Malice requires an intentional burning or an extreme, reckless disregard of an obvious risk of burning the structure itself. While using dynamite is dangerous, if the fire was a purely accidental byproduct of trying to open the safe, the specific malice to burn the dwelling is absent."
     },
     {
         id: 14,
@@ -198,7 +198,7 @@ const examData = [
             "No, because he did not secure the implied consent of the property owner prior to entry."
         ],
         ans: 1,
-        exp: "The necessity defense justifies committing a minor crime (like trespass) only if it is reasonably necessary to avoid a greater, imminent harm[cite: 31]. While necessity justifies Harry's initial trespass (entering to avoid the storm), blowing up a safe was completely unnecessary for his survival, so the defense does not apply to the property damage or theft[cite: 31]."
+        exp: "The necessity defense justifies committing a minor crime (like trespass) only if it is reasonably necessary to avoid a greater, imminent harm. While necessity justifies Harry's initial trespass (entering to avoid the storm), blowing up a safe was completely unnecessary for his survival, so the defense does not apply to the property damage or theft."
     },
     // FACT PATTERN 6 (Q15-Q16)
     {
@@ -213,7 +213,7 @@ const examData = [
             "No, because the use of a toxic chemical substance implies a degree of premeditated reflection that defeats the coercion narrative."
         ],
         ans: 1,
-        exp: "Under traditional common law, duress is NEVER a defense to an intentional killing[cite: 31]. The rationale is that a person may not take the life of an innocent third party to save their own life[cite: 31]. Jane is guilty of murder despite the extreme coercion[cite: 31]."
+        exp: "Under traditional common law, duress is NEVER a defense to an intentional killing. The rationale is that a person may not take the life of an innocent third party to save their own life. Jane is guilty of murder despite the extreme coercion."
     },
     {
         id: 16,
@@ -227,7 +227,7 @@ const examData = [
             "He bears absolutely no legal liability for the homicide because Jane independently performed the fatal voluntary act."
         ],
         ans: 2,
-        exp: "When a person forces an innocent or severely coerced party to commit a crime under threat of death, the coercer (Ian) is treated under criminal agency principles as the principal in the first degree, just as if he had poured the poison himself[cite: 31]."
+        exp: "When a person forces an innocent or severely coerced party to commit a crime under threat of death, the coercer (Ian) is treated under criminal agency principles as the principal in the first degree, just as if he had poured the poison himself."
     },
     // FACT PATTERN 7 (Q17-Q19)
     {
@@ -242,7 +242,7 @@ const examData = [
             "Extortion, because he threatened future physical harm."
         ],
         ans: 3,
-        exp: "Extortion (blackmail) involves obtaining property or compelling action by means of a threat of FUTURE harm[cite: 31]. Threatening to break Liam's knees 'tomorrow' is a threat of future physical harm, distinct from the immediate threat required for robbery[cite: 31]."
+        exp: "Extortion (blackmail) involves obtaining property or compelling action by means of a threat of FUTURE harm. Threatening to break Liam's knees 'tomorrow' is a threat of future physical harm, distinct from the immediate threat required for robbery."
     },
     {
         id: 18,
@@ -256,7 +256,7 @@ const examData = [
             "Yes, but the robbery charge completely merges into the prior extortionate threat."
         ],
         ans: 0,
-        exp: "Robbery requires taking property from the person or presence of another by force or the threat of IMMEDIATE physical harm[cite: 31]. Pulling a knife and demanding the item 'right now' satisfies the immediate threat[cite: 31]. The actual monetary value of the item taken (the briefcase) is irrelevant for establishing the basic elements of robbery[cite: 31]."
+        exp: "Robbery requires taking property from the person or presence of another by force or the threat of IMMEDIATE physical harm. Pulling a knife and demanding the item 'right now' satisfies the immediate threat. The actual monetary value of the item taken (the briefcase) is irrelevant for establishing the basic elements of robbery."
     },
     {
         id: 19,
@@ -270,7 +270,7 @@ const examData = [
             "No, because throwing an object at a victim constitutes an independent abandonment."
         ],
         ans: 2,
-        exp: "The crimes of larceny and robbery are complete the moment the defendant achieves physical possession (caption) and performs any slight movement (asportation) with the intent to permanently deprive[cite: 31]. Returning the property moments later out of disgust or disappointment does not undo the already completed crime[cite: 31]."
+        exp: "The crimes of larceny and robbery are complete the moment the defendant achieves physical possession (caption) and performs any slight movement (asportation) with the intent to permanently deprive. Returning the property moments later out of disgust or disappointment does not undo the already completed crime."
     },
     // FACT PATTERN 8 (Q20-Q22)
     {
@@ -285,7 +285,7 @@ const examData = [
             "Yes, because criminal defendants face strict liability for all environmental hazards."
         ],
         ans: 0,
-        exp: "A defendant is the proximate cause of death if the result is a foreseeable consequence of their actions[cite: 31]. Striking a gas tank and causing a leak during a shootout is highly foreseeable[cite: 31]. The fact that an unintended victim died from the fumes does not break the chain of causation[cite: 31]."
+        exp: "A defendant is the proximate cause of death if the result is a foreseeable consequence of their actions. Striking a gas tank and causing a leak during a shootout is highly foreseeable. The fact that an unintended victim died from the fumes does not break the chain of causation."
     },
     {
         id: 21,
@@ -299,7 +299,7 @@ const examData = [
             "Yes, because she possessed the specialized medical equipment required to effectuate the rescue."
         ],
         ans: 1,
-        exp: "While a stranger generally has no duty to rescue, a legal duty to act arises if the defendant themselves CREATED the peril[cite: 31]. Because Mona's shooting caused the gas leak that incapacitated Paul, she had an affirmative legal duty to attempt a rescue[cite: 31]. Her malicious failure to do so can independently support a homicide conviction[cite: 31]."
+        exp: "While a stranger generally has no duty to rescue, a legal duty to act arises if the defendant themselves CREATED the peril. Because Mona's shooting caused the gas leak that incapacitated Paul, she had an affirmative legal duty to attempt a rescue. Her malicious failure to do so can independently support a homicide conviction."
     },
     {
         id: 22,
@@ -313,7 +313,7 @@ const examData = [
             "Yes, but only if Ned was subjectively aware of the discharging firearm."
         ],
         ans: 0,
-        exp: "Attempted murder requires the specific intent to kill and an overt act beyond mere preparation (a substantial step)[cite: 31]. Firing a gun directly at Ned with the intent to kill him satisfies all elements of attempted murder, regardless of the fact that she missed[cite: 31]."
+        exp: "Attempted murder requires the specific intent to kill and an overt act beyond mere preparation (a substantial step). Firing a gun directly at Ned with the intent to kill him satisfies all elements of attempted murder, regardless of the fact that she missed."
     },
     // FACT PATTERN 9 (Q23-Q25)
     {
@@ -328,7 +328,7 @@ const examData = [
             "No, because the powder he sold was ultimately harmless baking soda."
         ],
         ans: 1,
-        exp: "The subjective test for entrapment requires the defendant to prove they were NOT predisposed to commit the crime prior to government contact[cite: 31]. Because Quinn is an active black-market dealer who agreed to the sale, he is legally predisposed[cite: 31]. Therefore, the subjective entrapment defense fails, regardless of the officer's begging[cite: 31]."
+        exp: "The subjective test for entrapment requires the defendant to prove they were NOT predisposed to commit the crime prior to government contact. Because Quinn is an active black-market dealer who agreed to the sale, he is legally predisposed. Therefore, the subjective entrapment defense fails, regardless of the officer's begging."
     },
     {
         id: 24,
@@ -342,7 +342,7 @@ const examData = [
             "No, because federal drug trafficking regulations strictly impose absolute strict liability."
         ],
         ans: 2,
-        exp: "A mistake of law (believing a criminal statute is invalid or unconstitutional) is generally never a defense to criminal liability, regardless of how honest the belief is[cite: 31]. Personal ideological or 'sovereign citizen' legal theories do not excuse the violation of a valid criminal statute[cite: 31]."
+        exp: "A mistake of law (believing a criminal statute is invalid or unconstitutional) is generally never a defense to criminal liability, regardless of how honest the belief is. Personal ideological or 'sovereign citizen' legal theories do not excuse the violation of a valid criminal statute."
     },
     {
         id: 25,
@@ -356,6 +356,6 @@ const examData = [
             "Yes, because federal drug regulations impose strict liability on all commercial powdery substances."
         ],
         ans: 2,
-        exp: "Attempt requires specific intent and a substantial step[cite: 31]. Factual impossibility (the fact that the powder was baking soda, not cocaine) is not a defense to an attempt charge[cite: 31]. Quinn is judged based on the facts as he believed them to be[cite: 31]. Since he believed he was selling cocaine and completed the sale, he is guilty of attempted distribution[cite: 31]."
+        exp: "Attempt requires specific intent and a substantial step. Factual impossibility (the fact that the powder was baking soda, not cocaine) is not a defense to an attempt charge. Quinn is judged based on the facts as he believed them to be. Since he believed he was selling cocaine and completed the sale, he is guilty of attempted distribution."
     }
 ];

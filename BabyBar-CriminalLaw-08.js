@@ -12,7 +12,7 @@ const examData = [
             "No, because the use of a firearm against an unarmed sleeping person constitutes disproportionate force as a matter of law."
         ],
         ans: 0,
-        exp: "Traditional perfect self-defense requires that the defendant reasonably believe they face an IMMINENT threat of death or great bodily harm[cite: 28]. Because Nick was asleep and the threat was for 'tomorrow,' the threat was not imminent, defeating a perfect self-defense claim in most jurisdictions[cite: 28]."
+        exp: "Traditional perfect self-defense requires that the defendant reasonably believe they face an IMMINENT threat of death or great bodily harm. Because Nick was asleep and the threat was for 'tomorrow,' the threat was not imminent, defeating a perfect self-defense claim in most jurisdictions."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "Second-degree murder, because her actions demonstrated a depraved heart."
         ],
         ans: 1,
-        exp: "Under the doctrine of imperfect self-defense, if a defendant holds an honest but objectively unreasonable belief that deadly force is necessary to prevent imminent death or great bodily harm, this belief negates malice aforethought[cite: 28]. The murder charge is mitigated to voluntary manslaughter[cite: 28]."
+        exp: "Under the doctrine of imperfect self-defense, if a defendant holds an honest but objectively unreasonable belief that deadly force is necessary to prevent imminent death or great bodily harm, this belief negates malice aforethought. The murder charge is mitigated to voluntary manslaughter."
     },
     // FACT PATTERN 2 (Q3-Q5)
     {
@@ -41,7 +41,7 @@ const examData = [
             "Yes, because Paul used the threat of imminent deadly force to take cash from the victim's immediate presence."
         ],
         ans: 1,
-        exp: "At traditional common law, the 'claim of right' doctrine holds that a person who takes property to satisfy a specific, liquidated debt honestly believes they are entitled to the property[cite: 28]. This honest belief negates the 'animus furandi' (intent to steal), thereby defeating a robbery or larceny charge[cite: 28]."
+        exp: "At traditional common law, the 'claim of right' doctrine holds that a person who takes property to satisfy a specific, liquidated debt honestly believes they are entitled to the property. This honest belief negates the 'animus furandi' (intent to steal), thereby defeating a robbery or larceny charge."
     },
     {
         id: 4,
@@ -55,7 +55,7 @@ const examData = [
             "He is guilty of false pretenses, because he used deceit to obtain title."
         ],
         ans: 0,
-        exp: "Many modern jurisdictions have abolished the claim-of-right defense for violent crimes to discourage self-help[cite: 28]. In such jurisdictions, using force or the threat of force to recover a debt satisfies the elements of robbery, as the defendant takes property from the victim's person by force[cite: 28]."
+        exp: "Many modern jurisdictions have abolished the claim-of-right defense for violent crimes to discourage self-help. In such jurisdictions, using force or the threat of force to recover a debt satisfies the elements of robbery, as the defendant takes property from the victim's person by force."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "Yes, because any verbal threat of violence automatically constitutes assault when spoken in a public forum."
         ],
         ans: 2,
-        exp: "Assault is the intentional creation of a reasonable apprehension of imminent bodily harm[cite: 28]. Brandishing a knife and issuing a conditional threat ('do this or I will cut you') satisfies the imminence and apprehension elements of assault, regardless of whether the victim complies[cite: 28]."
+        exp: "Assault is the intentional creation of a reasonable apprehension of imminent bodily harm. Brandishing a knife and issuing a conditional threat ('do this or I will cut you') satisfies the imminence and apprehension elements of assault, regardless of whether the victim complies."
     },
     // FACT PATTERN 3 (Q6-Q8)
     {
@@ -84,7 +84,7 @@ const examData = [
             "No, because the target crime of murder was never completed or attempted."
         ],
         ans: 1,
-        exp: "Under traditional common law, conspiracy requires a 'bilateral' agreement (a true meeting of the minds between at least two parties who actually intend to commit the crime)[cite: 28]. Because Alice was an undercover agent feigning agreement, Bob did not form a valid conspiracy with her[cite: 28]."
+        exp: "Under traditional common law, conspiracy requires a 'bilateral' agreement (a true meeting of the minds between at least two parties who actually intend to commit the crime). Because Alice was an undercover agent feigning agreement, Bob did not form a valid conspiracy with her."
     },
     {
         id: 7,
@@ -98,7 +98,7 @@ const examData = [
             "Yes, but only if the prosecution can prove that Alice took a substantial step toward the killing."
         ],
         ans: 2,
-        exp: "Solicitation is complete when the defendant asks, commands, or urges another to commit a crime with the specific intent that the crime be committed[cite: 28]. The fact that the solicitee is an undercover agent or refuses the request is irrelevant to the completion of the solicitation[cite: 28]."
+        exp: "Solicitation is complete when the defendant asks, commands, or urges another to commit a crime with the specific intent that the crime be committed. The fact that the solicitee is an undercover agent or refuses the request is irrelevant to the completion of the solicitation."
     },
     {
         id: 8,
@@ -112,7 +112,7 @@ const examData = [
             "Dan is guilty of attempted murder, because providing funds constitutes a dangerous proximity to success."
         ],
         ans: 0,
-        exp: "While Bob cannot conspire with Alice (the undercover agent), Bob and Dan CAN form a valid bilateral conspiracy[cite: 28]. Both Bob and Dan shared the specific intent to kill Claire and agreed to pool resources ($10,000) to accomplish the goal[cite: 28]. Thus, Dan and Bob conspired together[cite: 28]."
+        exp: "While Bob cannot conspire with Alice (the undercover agent), Bob and Dan CAN form a valid bilateral conspiracy. Both Bob and Dan shared the specific intent to kill Claire and agreed to pool resources ($10,000) to accomplish the goal. Thus, Dan and Bob conspired together."
     },
     // FACT PATTERN 4 (Q9-Q10)
     {
@@ -127,7 +127,7 @@ const examData = [
             "No, because the pedestrian's resulting death was an entirely unforeseeable consequence of a minor property theft."
         ],
         ans: 1,
-        exp: "The felony murder rule applies only when a death occurs during the commission or attempted commission of an 'inherently dangerous felony' (e.g., BARRK offenses: burglary, arson, rape, robbery, kidnapping)[cite: 28]. Stealing a $50 bicycle is a misdemeanor (petit larceny), precluding the application of the felony murder rule[cite: 28]."
+        exp: "The felony murder rule applies only when a death occurs during the commission or attempted commission of an 'inherently dangerous felony' (e.g., BARRK offenses: burglary, arson, rape, robbery, kidnapping). Stealing a $50 bicycle is a misdemeanor (petit larceny), precluding the application of the felony murder rule."
     },
     {
         id: 10,
@@ -141,7 +141,7 @@ const examData = [
             "Voluntary manslaughter."
         ],
         ans: 0,
-        exp: "Involuntary manslaughter encompasses unintentional killings resulting from criminal negligence or deaths occurring during the commission of an unlawful act not amounting to a felony (the misdemeanor-manslaughter rule)[cite: 28]. Riding a stolen bike furiously on a crowded sidewalk satisfies either theory[cite: 28]."
+        exp: "Involuntary manslaughter encompasses unintentional killings resulting from criminal negligence or deaths occurring during the commission of an unlawful act not amounting to a felony (the misdemeanor-manslaughter rule). Riding a stolen bike furiously on a crowded sidewalk satisfies either theory."
     },
     // FACT PATTERN 5 (Q11-Q13)
     {
@@ -156,7 +156,7 @@ const examData = [
             "Yes, but only if the intoxicating substance was administered by a licensed physician in a clinical setting."
         ],
         ans: 1,
-        exp: "Involuntary intoxication is treated the same as insanity[cite: 28]. It provides a complete defense to a crime if, because of the intoxication, the defendant was unable to understand the nature of the act or distinguish right from wrong[cite: 28]. Even under standard intoxication rules, it negates the specific intent required for burglary[cite: 28]."
+        exp: "Involuntary intoxication is treated the same as insanity. It provides a complete defense to a crime if, because of the intoxication, the defendant was unable to understand the nature of the act or distinguish right from wrong. Even under standard intoxication rules, it negates the specific intent required for burglary."
     },
     {
         id: 12,
@@ -170,7 +170,7 @@ const examData = [
             "Yes, but only if the prosecution fails to establish that the defendant voluntarily entered the residential premises prior to the attack."
         ],
         ans: 1,
-        exp: "Unlike voluntary intoxication (which is only a defense to specific intent crimes), INVOLUNTARY intoxication is a defense to ALL crimes—including general intent crimes like battery—if the intoxication renders the defendant legally insane at the time of the act under the jurisdiction's insanity test[cite: 28]."
+        exp: "Unlike voluntary intoxication (which is only a defense to specific intent crimes), INVOLUNTARY intoxication is a defense to ALL crimes—including general intent crimes like battery—if the intoxication renders the defendant legally insane at the time of the act under the jurisdiction's insanity test."
     },
     {
         id: 13,
@@ -184,7 +184,7 @@ const examData = [
             "It provides a complete and absolute defense to all criminal charges under the objective reasonable person standard for self-defense."
         ],
         ans: 0,
-        exp: "A mistake of fact negates criminal liability if it prevents the defendant from forming the required mens rea[cite: 28]. Because the mistake was induced by involuntary intoxication, even an objectively unreasonable mistake (believing the victim is a demon) operates as a valid defense[cite: 28]."
+        exp: "A mistake of fact negates criminal liability if it prevents the defendant from forming the required mens rea. Because the mistake was induced by involuntary intoxication, even an objectively unreasonable mistake (believing the victim is a demon) operates as a valid defense."
     },
     // FACT PATTERN 6 (Q14-Q16)
     {
@@ -199,7 +199,7 @@ const examData = [
             "Robbery, because forged instruments constitute constructive force."
         ],
         ans: 2,
-        exp: "False pretenses occurs when a defendant obtains TITLE to the property of another by an intentional false statement of fact with intent to defraud[cite: 28]. Because the dealer officially signed over the vehicle's title (not just custody), the crime is false pretenses, not larceny by trick[cite: 28]."
+        exp: "False pretenses occurs when a defendant obtains TITLE to the property of another by an intentional false statement of fact with intent to defraud. Because the dealer officially signed over the vehicle's title (not just custody), the crime is false pretenses, not larceny by trick."
     },
     {
         id: 15,
@@ -213,7 +213,7 @@ const examData = [
             "Because the dealership officially signed over the legal title to the vehicle."
         ],
         ans: 3,
-        exp: "The distinction between larceny by trick and false pretenses lies in whether the victim intended to transfer custody or title[cite: 28]. Larceny by trick involves acquiring mere custody through deceit[cite: 28]. Because the dealership transferred legal title along with the keys, the crime cannot be larceny by trick[cite: 28]."
+        exp: "The distinction between larceny by trick and false pretenses lies in whether the victim intended to transfer custody or title. Larceny by trick involves acquiring mere custody through deceit. Because the dealership transferred legal title along with the keys, the crime cannot be larceny by trick."
     },
     {
         id: 16,
@@ -227,7 +227,7 @@ const examData = [
             "No, because the counterfeit check was never successfully cashed by the receiving bank."
         ],
         ans: 1,
-        exp: "Forgery is the making or altering of a false writing with apparent legal significance, done with the specific intent to defraud[cite: 28]. Creating a fake cashier's check satisfies all elements of forgery[cite: 28]. The fact that it was voluntarily accepted or not actually cashed is irrelevant to the completion of the forgery[cite: 28]."
+        exp: "Forgery is the making or altering of a false writing with apparent legal significance, done with the specific intent to defraud. Creating a fake cashier's check satisfies all elements of forgery. The fact that it was voluntarily accepted or not actually cashed is irrelevant to the completion of the forgery."
     },
     // FACT PATTERN 7 (Q17-Q18)
     {
@@ -242,7 +242,7 @@ const examData = [
             "No, because the year-and-a-day rule strictly bars a homicide conviction after 13 months."
         ],
         ans: 3,
-        exp: "Under the traditional common law 'year and a day' rule, a defendant cannot be convicted of criminal homicide if the victim dies more than one year and one day after the fatal blow or act was inflicted[cite: 28]. Because Ian died 14 months later, Harry is immune from a homicide prosecution at common law[cite: 28]."
+        exp: "Under the traditional common law 'year and a day' rule, a defendant cannot be convicted of criminal homicide if the victim dies more than one year and one day after the fatal blow or act was inflicted. Because Ian died 14 months later, Harry is immune from a homicide prosecution at common law."
     },
     {
         id: 18,
@@ -256,7 +256,7 @@ const examData = [
             "Voluntary manslaughter."
         ],
         ans: 0,
-        exp: "If a defendant cannot be convicted of a completed homicide due to a legal barrier like the year-and-a-day rule, they remain fully liable for attempted murder[cite: 28]. Harry possessed the specific intent to kill and completed the actus reus by shooting Ian, satisfying all elements of attempt[cite: 28]."
+        exp: "If a defendant cannot be convicted of a completed homicide due to a legal barrier like the year-and-a-day rule, they remain fully liable for attempted murder. Harry possessed the specific intent to kill and completed the actus reus by shooting Ian, satisfying all elements of attempt."
     },
     // FACT PATTERN 8 (Q19-Q20)
     {
@@ -271,7 +271,7 @@ const examData = [
             "No, because there was no asportation of the victim."
         ],
         ans: 3,
-        exp: "Kidnapping requires the unlawful confinement of a person accompanied by ASPORTATION (movement of the victim)[cite: 28]. Because Kevin merely locked Laura in her office and did not move her from one location to another, the crime is false imprisonment, not kidnapping[cite: 28]."
+        exp: "Kidnapping requires the unlawful confinement of a person accompanied by ASPORTATION (movement of the victim). Because Kevin merely locked Laura in her office and did not move her from one location to another, the crime is false imprisonment, not kidnapping."
     },
     {
         id: 20,
@@ -285,7 +285,7 @@ const examData = [
             "Larceny by trick or false pretenses against the victim."
         ],
         ans: 2,
-        exp: "False imprisonment is the intentional, unlawful confinement of a person to a bounded area without their valid consent[cite: 28]. Kevin restricting Laura's freedom of movement by locking the door and holding her at gunpoint perfectly satisfies the elements of the tort and crime[cite: 28]."
+        exp: "False imprisonment is the intentional, unlawful confinement of a person to a bounded area without their valid consent. Kevin restricting Laura's freedom of movement by locking the door and holding her at gunpoint perfectly satisfies the elements of the tort and crime."
     },
     // FACT PATTERN 9 (Q21-Q22)
     {
@@ -300,7 +300,7 @@ const examData = [
             "No, because entrapment only applies to violent felonies."
         ],
         ans: 2,
-        exp: "Entrapment requires showing that the government induced the crime AND that the defendant was not otherwise predisposed to commit it[cite: 28]. Because Mike was a known drug dealer who immediately agreed to the sale, he was clearly predisposed, meaning the officer merely provided an opportunity[cite: 28]."
+        exp: "Entrapment requires showing that the government induced the crime AND that the defendant was not otherwise predisposed to commit it. Because Mike was a known drug dealer who immediately agreed to the sale, he was clearly predisposed, meaning the officer merely provided an opportunity."
     },
     {
         id: 22,
@@ -314,7 +314,7 @@ const examData = [
             "Whether the targeted defendant's fundamental constitutional due process rights were overtly violated."
         ],
         ans: 1,
-        exp: "The majority 'subjective test' for entrapment focuses primarily on the defendant's state of mind—specifically, whether the defendant was predisposed to commit the crime prior to government contact[cite: 28]. If the defendant was predisposed, the entrapment defense fails[cite: 28]."
+        exp: "The majority 'subjective test' for entrapment focuses primarily on the defendant's state of mind—specifically, whether the defendant was predisposed to commit the crime prior to government contact. If the defendant was predisposed, the entrapment defense fails."
     },
     // FACT PATTERN 10 (Q23-Q25)
     {
@@ -329,7 +329,7 @@ const examData = [
             "Extortion, because she threatened future reputational harm."
         ],
         ans: 3,
-        exp: "Extortion (blackmail) is the obtaining of property from another by means of threats of future harm (including reputational harm or exposing secrets)[cite: 28]. Threatening to post embarrassing photos tomorrow clearly satisfies this definition[cite: 28]."
+        exp: "Extortion (blackmail) is the obtaining of property from another by means of threats of future harm (including reputational harm or exposing secrets). Threatening to post embarrassing photos tomorrow clearly satisfies this definition."
     },
     {
         id: 24,
@@ -343,7 +343,7 @@ const examData = [
             "Because the threat involved future reputational damage instead of immediate physical harm."
         ],
         ans: 3,
-        exp: "Robbery requires a taking accomplished by force or the threat of IMMEDIATE physical harm to the victim (or someone in their presence)[cite: 28]. A threat to cause reputational damage 'tomorrow' involves no immediate physical danger, differentiating it entirely from robbery[cite: 28]."
+        exp: "Robbery requires a taking accomplished by force or the threat of IMMEDIATE physical harm to the victim (or someone in their presence). A threat to cause reputational damage 'tomorrow' involves no immediate physical danger, differentiating it entirely from robbery."
     },
     {
         id: 25,
@@ -356,6 +356,6 @@ const examData = [
             "Simple assault, because the unprivileged taking of a wristwatch constitutes a distinct civil tort action."
         ],
         ans: 1,
-        exp: "Robbery is the trespassory taking and carrying away of the personal property of another from their person or presence by force or threat of immediate physical harm[cite: 28]. Threatening to punch the victim 'right now' is a threat of immediate physical harm, establishing robbery[cite: 28]."
+        exp: "Robbery is the trespassory taking and carrying away of the personal property of another from their person or presence by force or threat of immediate physical harm. Threatening to punch the victim 'right now' is a threat of immediate physical harm, establishing robbery."
     }
 ];

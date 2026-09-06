@@ -12,7 +12,7 @@ const examData = [
             "No, because the victim voluntarily consented to the procedure, which acts as an absolute legal bar to any subsequent felony murder prosecution."
         ],
         ans: 0,
-        exp: "Under the 'abstract' approach to felony murder, the court looks only at the elements of the statute, not the defendant's specific conduct, to determine if it is inherently dangerous[cite: 26]. Practicing medicine without a license can be done safely (e.g., prescribing aspirin without a license) and is thus NOT inherently dangerous in the abstract, precluding a felony murder charge[cite: 26]."
+        exp: "Under the 'abstract' approach to felony murder, the court looks only at the elements of the statute, not the defendant's specific conduct, to determine if it is inherently dangerous. Practicing medicine without a license can be done safely (e.g., prescribing aspirin without a license) and is thus NOT inherently dangerous in the abstract, precluding a felony murder charge."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "Voluntary manslaughter, because the intense pressure of performing a medical procedure provoked a state of severe emotional disturbance."
         ],
         ans: 1,
-        exp: "Even if felony murder does not apply, a defendant who acts with a 'depraved heart'—an extreme, conscious disregard for an unjustifiably high risk to human life—can be convicted of second-degree murder[cite: 26]. Performing an appendectomy in a basement with no medical training clearly demonstrates such extreme recklessness[cite: 26]."
+        exp: "Even if felony murder does not apply, a defendant who acts with a 'depraved heart'—an extreme, conscious disregard for an unjustifiably high risk to human life—can be convicted of second-degree murder. Performing an appendectomy in a basement with no medical training clearly demonstrates such extreme recklessness."
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const examData = [
             "Yes, but only if the patient signed a formal, notarized liability waiver before the procedure commenced."
         ],
         ans: 2,
-        exp: "In criminal law, a victim's consent is generally NEVER a defense to murder or severe bodily injury[cite: 26]. The state has an independent interest in preserving human life that cannot be waived by the victim[cite: 26]."
+        exp: "In criminal law, a victim's consent is generally NEVER a defense to murder or severe bodily injury. The state has an independent interest in preserving human life that cannot be waived by the victim."
     },
     // FACT PATTERN 2 (Q4-Q5)
     {
@@ -55,7 +55,7 @@ const examData = [
             "Yes, because reasonable reliance on an official interpretation by a public officer charged with enforcement is a recognized exception to the mistake of law doctrine."
         ],
         ans: 3,
-        exp: "While mistake of law is generally no defense, a widely recognized exception applies if the defendant reasonably relies on an official statement of the law contained in a statute, judicial decision, or an official interpretation by a public officer/agency legally charged with interpreting or enforcing the law (such as the Attorney General)[cite: 26]."
+        exp: "While mistake of law is generally no defense, a widely recognized exception applies if the defendant reasonably relies on an official statement of the law contained in a statute, judicial decision, or an official interpretation by a public officer/agency legally charged with interpreting or enforcing the law (such as the Attorney General)."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "Yes, provided the legal memorandum was objectively reasonable based on the available jurisprudence at the time."
         ],
         ans: 0,
-        exp: "Reliance on the advice of private counsel, no matter how eminent or expensive the attorney is, does NOT constitute a valid exception to the general rule that ignorance of the law is no defense[cite: 26]."
+        exp: "Reliance on the advice of private counsel, no matter how eminent or expensive the attorney is, does NOT constitute a valid exception to the general rule that ignorance of the law is no defense."
     },
     // FACT PATTERN 3 (Q6-Q8)
     {
@@ -84,7 +84,7 @@ const examData = [
             "Yes, but only because the total monetary value of the fraudulent transaction exceeded grand theft thresholds."
         ],
         ans: 1,
-        exp: "Forgery is the making or altering of a false writing with apparent legal significance, done with the specific intent to defraud[cite: 26]. Signing the name of a fictitious or non-existent person to a legal document with the intent to defraud still constitutes forgery[cite: 26]."
+        exp: "Forgery is the making or altering of a false writing with apparent legal significance, done with the specific intent to defraud. Signing the name of a fictitious or non-existent person to a legal document with the intent to defraud still constitutes forgery."
     },
     {
         id: 7,
@@ -98,7 +98,7 @@ const examData = [
             "Robbery, because the exchange of forged real estate documents constitutes constructive force against the buyer."
         ],
         ans: 2,
-        exp: "False pretenses requires that the victim intend to transfer legal TITLE (ownership) to the defendant based on an intentional false representation of a past or existing fact[cite: 26]. Because Fred intended to purchase the land and transfer full ownership of the $50,000 to Erin, her crime is false pretenses[cite: 26]."
+        exp: "False pretenses requires that the victim intend to transfer legal TITLE (ownership) to the defendant based on an intentional false representation of a past or existing fact. Because Fred intended to purchase the land and transfer full ownership of the $50,000 to Erin, her crime is false pretenses."
     },
     {
         id: 8,
@@ -112,7 +112,7 @@ const examData = [
             "Because Fred intended to transfer full ownership of the currency to Erin, rather than merely relinquishing temporary physical custody of the funds."
         ],
         ans: 3,
-        exp: "The core distinction between larceny by trick and false pretenses depends on what the victim intends to pass to the defendant[cite: 26]. If the victim intends to pass mere custody (e.g., handing over a watch to be inspected), it is larceny by trick[cite: 26]. If the victim intends to pass full ownership/title (e.g., handing over cash to finalize a purchase), it is false pretenses[cite: 26]."
+        exp: "The core distinction between larceny by trick and false pretenses depends on what the victim intends to pass to the defendant. If the victim intends to pass mere custody (e.g., handing over a watch to be inspected), it is larceny by trick. If the victim intends to pass full ownership/title (e.g., handing over cash to finalize a purchase), it is false pretenses."
     },
     // FACT PATTERN 4 (Q9-Q11)
     {
@@ -127,7 +127,7 @@ const examData = [
             "Yes, because under the natural and probable consequences doctrine, any assistance inherently triggers absolute vicarious liability."
         ],
         ans: 0,
-        exp: "Accomplice liability requires dual intent: the intent to assist the primary party, AND the specific intent that the substantive crime be successfully committed[cite: 26]. Because Hal secretly wanted the arson to fail and purposely sabotaged the gasoline, he lacked the requisite mens rea to be an accomplice[cite: 26]."
+        exp: "Accomplice liability requires dual intent: the intent to assist the primary party, AND the specific intent that the substantive crime be successfully committed. Because Hal secretly wanted the arson to fail and purposely sabotaged the gasoline, he lacked the requisite mens rea to be an accomplice."
     },
     {
         id: 10,
@@ -141,7 +141,7 @@ const examData = [
             "Yes, but his liability is mitigated because he was actively sabotaged by a third party."
         ],
         ans: 1,
-        exp: "Attempt requires specific intent to commit the crime and a substantial step toward its commission[cite: 26]. Factual impossibility (the fact that the 'gasoline' was actually mostly water, preventing the fire) is NEVER a defense to attempt[cite: 26]. Greg's conduct is judged based on the circumstances as he believed them to be[cite: 26]."
+        exp: "Attempt requires specific intent to commit the crime and a substantial step toward its commission. Factual impossibility (the fact that the 'gasoline' was actually mostly water, preventing the fire) is NEVER a defense to attempt. Greg's conduct is judged based on the circumstances as he believed them to be."
     },
     {
         id: 11,
@@ -155,7 +155,7 @@ const examData = [
             "No, because the structure did not suffer actual physical charring."
         ],
         ans: 2,
-        exp: "Under traditional common law, conspiracy requires a 'bilateral' agreement—a true meeting of the minds where at least two parties genuinely intend to commit the target crime[cite: 26]. Because Hal was feigning his agreement and secretly wanted the crime to fail, there was no true bilateral agreement[cite: 26]."
+        exp: "Under traditional common law, conspiracy requires a 'bilateral' agreement—a true meeting of the minds where at least two parties genuinely intend to commit the target crime. Because Hal was feigning his agreement and secretly wanted the crime to fail, there was no true bilateral agreement."
     },
     // FACT PATTERN 5 (Q12-Q14)
     {
@@ -170,7 +170,7 @@ const examData = [
             "No, because the nurse's intentional homicidal act is a superseding intervening cause."
         ],
         ans: 3,
-        exp: "While ordinary medical negligence is a foreseeable dependent cause that does not break the chain of legal causation, a third party's independent, INTENTIONAL, and malicious act (a nurse committing active euthanasia/murder) is highly unforeseeable[cite: 26]. This acts as a superseding intervening cause, severing Ian's liability for the completed homicide[cite: 26]."
+        exp: "While ordinary medical negligence is a foreseeable dependent cause that does not break the chain of legal causation, a third party's independent, INTENTIONAL, and malicious act (a nurse committing active euthanasia/murder) is highly unforeseeable. This acts as a superseding intervening cause, severing Ian's liability for the completed homicide."
     },
     {
         id: 13,
@@ -184,7 +184,7 @@ const examData = [
             "No crime, because the superseding act provides absolute transactional immunity to the original aggressor."
         ],
         ans: 2,
-        exp: "If a superseding cause breaks the chain of proximate causation for the completed homicide, the original attacker cannot be convicted of murder[cite: 26]. However, because Ian shot Jack with the specific intent to kill him, he remains fully liable for attempted murder, as the elements of attempt were complete the moment he pulled the trigger[cite: 26]."
+        exp: "If a superseding cause breaks the chain of proximate causation for the completed homicide, the original attacker cannot be convicted of murder. However, because Ian shot Jack with the specific intent to kill him, he remains fully liable for attempted murder, as the elements of attempt were complete the moment he pulled the trigger."
     },
     {
         id: 14,
@@ -198,7 +198,7 @@ const examData = [
             "No crime, because she legally accelerated an inevitable demise."
         ],
         ans: 0,
-        exp: "A 'mercy killing' or active euthanasia remains murder[cite: 26]. Because the nurse intentionally administered a lethal overdose with premeditation and deliberation, she is fully liable for first-degree murder[cite: 26]. Compassion does not negate malice aforethought or premeditation in criminal law[cite: 26]."
+        exp: "A 'mercy killing' or active euthanasia remains murder. Because the nurse intentionally administered a lethal overdose with premeditation and deliberation, she is fully liable for first-degree murder. Compassion does not negate malice aforethought or premeditation in criminal law."
     },
     // FACT PATTERN 6 (Q15-Q17)
     {
@@ -213,7 +213,7 @@ const examData = [
             "Yes, because any movement of a hostage automatically triggers federal kidnapping statutes."
         ],
         ans: 1,
-        exp: "Kidnapping requires unlawful confinement and asportation (movement) that is substantial or increases the risk of harm independent of the underlying crime[cite: 26]. Moving a victim 50 miles from a highly visible public bank to an isolated private residence drastically increases the risk of harm, easily satisfying the asportation requirement[cite: 26]."
+        exp: "Kidnapping requires unlawful confinement and asportation (movement) that is substantial or increases the risk of harm independent of the underlying crime. Moving a victim 50 miles from a highly visible public bank to an isolated private residence drastically increases the risk of harm, easily satisfying the asportation requirement."
     },
     {
         id: 16,
@@ -227,7 +227,7 @@ const examData = [
             "Yes, she used the threat of immediate physical harm to take property from his presence."
         ],
         ans: 3,
-        exp: "Robbery requires a taking of personal property from the person or PRESENCE of another by force or the threat of immediate physical harm[cite: 26]. Forcing the victim at gunpoint to open a safe in the same room satisfies all elements of robbery[cite: 26]."
+        exp: "Robbery requires a taking of personal property from the person or PRESENCE of another by force or the threat of immediate physical harm. Forcing the victim at gunpoint to open a safe in the same room satisfies all elements of robbery."
     },
     {
         id: 17,
@@ -241,7 +241,7 @@ const examData = [
             "Embezzlement, because the manager voluntarily opened the vault."
         ],
         ans: 0,
-        exp: "Extortion (blackmail) involves obtaining property from another by means of threats of future harm (including exposing a secret)[cite: 26]. Because the threat was to release secrets 'tomorrow,' rather than immediate physical harm, the crime is extortion, not robbery[cite: 26]."
+        exp: "Extortion (blackmail) involves obtaining property from another by means of threats of future harm (including exposing a secret). Because the threat was to release secrets 'tomorrow,' rather than immediate physical harm, the crime is extortion, not robbery."
     },
     // FACT PATTERN 7 (Q18-Q20)
     {
@@ -256,7 +256,7 @@ const examData = [
             "No, because the neighbor survived the physical assault."
         ],
         ans: 1,
-        exp: "Common law burglary requires the specific intent to commit a felony inside the dwelling at the exact time of entry[cite: 26]. Severe intoxication (even voluntary) that prevents the defendant from forming this specific intent is a valid defense[cite: 26]. Because Leo believed he was killing a demon (not committing a felony), he lacked the specific intent required for burglary[cite: 26]."
+        exp: "Common law burglary requires the specific intent to commit a felony inside the dwelling at the exact time of entry. Severe intoxication (even voluntary) that prevents the defendant from forming this specific intent is a valid defense. Because Leo believed he was killing a demon (not committing a felony), he lacked the specific intent required for burglary."
     },
     {
         id: 19,
@@ -270,7 +270,7 @@ const examData = [
             "No, because the victim was unarmed at the time of the fatal physical altercation."
         ],
         ans: 2,
-        exp: "Under the doctrine of imperfect self-defense, if a defendant holds an honest but objectively unreasonable belief that deadly force is necessary to prevent imminent death or great bodily harm, this belief negates malice aforethought[cite: 26]. In many jurisdictions, this applies even if the unreasonable belief was induced by voluntary intoxication, mitigating murder to voluntary manslaughter[cite: 26]."
+        exp: "Under the doctrine of imperfect self-defense, if a defendant holds an honest but objectively unreasonable belief that deadly force is necessary to prevent imminent death or great bodily harm, this belief negates malice aforethought. In many jurisdictions, this applies even if the unreasonable belief was induced by voluntary intoxication, mitigating murder to voluntary manslaughter."
     },
     {
         id: 20,
@@ -284,7 +284,7 @@ const examData = [
             "No, because battery is a general intent crime."
         ],
         ans: 3,
-        exp: "Battery is a general intent crime[cite: 26]. Voluntary intoxication is NEVER a defense to general intent crimes, because the act of voluntarily consuming the intoxicating substance legally substitutes for the reckless mental state required for the offense[cite: 26]."
+        exp: "Battery is a general intent crime. Voluntary intoxication is NEVER a defense to general intent crimes, because the act of voluntarily consuming the intoxicating substance legally substitutes for the reckless mental state required for the offense."
     },
     // FACT PATTERN 8 (Q21-Q23)
     {
@@ -299,7 +299,7 @@ const examData = [
             "No, because the police intervention prevented the completion of a requisite physical overt act."
         ],
         ans: 0,
-        exp: "Wharton's Rule prohibits a conspiracy charge for a crime that logically requires exactly two people if only those two people agree to commit it[cite: 26]. However, the 'third-party exception' applies when more people participate in the agreement than are necessary to commit the crime[cite: 26]. Because Oscar participated, the rule does not bar the charge[cite: 26]."
+        exp: "Wharton's Rule prohibits a conspiracy charge for a crime that logically requires exactly two people if only those two people agree to commit it. However, the 'third-party exception' applies when more people participate in the agreement than are necessary to commit the crime. Because Oscar participated, the rule does not bar the charge."
     },
     {
         id: 22,
@@ -313,7 +313,7 @@ const examData = [
             "He is strictly liable for any future substantive offenses committed by his former partners."
         ],
         ans: 1,
-        exp: "Conspiracy is complete the moment the agreement is made and an overt act is performed (Oscar driving them)[cite: 26]. Once completed, a defendant cannot withdraw from the conspiracy itself[cite: 26]. However, an effective withdrawal (communicating it clearly before the crime occurs) will shield him from liability for the subsequent substantive crimes of his co-conspirators[cite: 26]."
+        exp: "Conspiracy is complete the moment the agreement is made and an overt act is performed (Oscar driving them). Once completed, a defendant cannot withdraw from the conspiracy itself. However, an effective withdrawal (communicating it clearly before the crime occurs) will shield him from liability for the subsequent substantive crimes of his co-conspirators."
     },
     {
         id: 23,
@@ -327,7 +327,7 @@ const examData = [
             "Yes, but only under the strict liability parameters of the felony murder rule."
         ],
         ans: 2,
-        exp: "An accomplice is one who aids, abets, or encourages the principal in the commission of the crime, with the intent that the crime be committed[cite: 26]. By acting as a referee and driving them to the location, Oscar intentionally facilitated the lethal duel, making him an accomplice to the resulting homicide[cite: 26]."
+        exp: "An accomplice is one who aids, abets, or encourages the principal in the commission of the crime, with the intent that the crime be committed. By acting as a referee and driving them to the location, Oscar intentionally facilitated the lethal duel, making him an accomplice to the resulting homicide."
     },
     // FACT PATTERN 9 (Q24-Q25)
     {
@@ -342,7 +342,7 @@ const examData = [
             "Larceny, because breaking the seal of a bailed container terminates lawful possession, making the subsequent removal a trespassory taking."
         ],
         ans: 3,
-        exp: "A commercial carrier (bailee) has lawful possession of a sealed container as a whole[cite: 26]. Under the common law 'breaking bulk' doctrine, if the bailee breaks open the sealed container to remove individual contents, their lawful possession ends immediately[cite: 26]. The taking of the contents becomes a trespassory taking, constituting larceny rather than embezzlement[cite: 26]."
+        exp: "A commercial carrier (bailee) has lawful possession of a sealed container as a whole. Under the common law 'breaking bulk' doctrine, if the bailee breaks open the sealed container to remove individual contents, their lawful possession ends immediately. The taking of the contents becomes a trespassory taking, constituting larceny rather than embezzlement."
     },
     {
         id: 25,
@@ -356,6 +356,6 @@ const examData = [
             "False pretenses, because the pawn shop acquired legal title to the merchandise."
         ],
         ans: 2,
-        exp: "If a bailee fraudulently converts the entire bailed property (the unbroken, sealed box) without 'breaking bulk', they are converting property over which they already have valid lawful possession[cite: 26]. This constitutes embezzlement, not larceny[cite: 26]."
+        exp: "If a bailee fraudulently converts the entire bailed property (the unbroken, sealed box) without 'breaking bulk', they are converting property over which they already have valid lawful possession. This constitutes embezzlement, not larceny."
     }
 ];

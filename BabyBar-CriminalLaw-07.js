@@ -12,7 +12,7 @@ const examData = [
             "No, because the merger doctrine strictly applies only to vehicular manslaughter and related offenses."
         ],
         ans: 0,
-        exp: "Under the merger doctrine (Ireland rule), a felony murder charge cannot be based on a felony that is an integral part of the homicide (e.g., assault or battery) because it merges into the killing[cite: 27]. However, arson is generally recognized as an independent collateral felony with an independent felonious purpose (destruction of property), even if the defendant also harbored an assaultive intent[cite: 27]. Thus, it does not merge and can support felony murder[cite: 27]."
+        exp: "Under the merger doctrine (Ireland rule), a felony murder charge cannot be based on a felony that is an integral part of the homicide (e.g., assault or battery) because it merges into the killing. However, arson is generally recognized as an independent collateral felony with an independent felonious purpose (destruction of property), even if the defendant also harbored an assaultive intent. Thus, it does not merge and can support felony murder."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "Involuntary manslaughter, because setting a building on fire is a property crime that lacks the required mens rea for an intentional homicide offense."
         ],
         ans: 2,
-        exp: "First-degree murder requires an intentional killing committed with premeditation and deliberation[cite: 27]. Aaron formulated a plan to kill Bill and deliberately set the building on fire to accomplish that goal, fully satisfying the requirements for first-degree premeditated murder[cite: 27]."
+        exp: "First-degree murder requires an intentional killing committed with premeditation and deliberation. Aaron formulated a plan to kill Bill and deliberately set the building on fire to accomplish that goal, fully satisfying the requirements for first-degree premeditated murder."
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const examData = [
             "Not guilty, because the janitor's presence was entirely unforeseeable."
         ],
         ans: 1,
-        exp: "Attempted murder is a specific intent crime requiring the actual intent to kill the specific victim[cite: 27]. The doctrine of transferred intent generally applies only to completed homicides or batteries, not to inchoate attempt crimes[cite: 27]. Because Aaron did not specifically intend to kill the janitor, he cannot be convicted of attempted murder of the janitor[cite: 27]."
+        exp: "Attempted murder is a specific intent crime requiring the actual intent to kill the specific victim. The doctrine of transferred intent generally applies only to completed homicides or batteries, not to inchoate attempt crimes. Because Aaron did not specifically intend to kill the janitor, he cannot be convicted of attempted murder of the janitor."
     },
     // FACT PATTERN 2 (Q4-Q5)
     {
@@ -55,7 +55,7 @@ const examData = [
             "Embezzlement, because he had lawful possession."
         ],
         ans: 3,
-        exp: "Embezzlement is the fraudulent conversion of the property of another by one who is already in lawful possession[cite: 27]. As CFO with the authority to disburse funds and sign checks, Calvin had lawful possession of the corporate assets[cite: 27]. His conversion of those assets for personal gain constitutes embezzlement[cite: 27]."
+        exp: "Embezzlement is the fraudulent conversion of the property of another by one who is already in lawful possession. As CFO with the authority to disburse funds and sign checks, Calvin had lawful possession of the corporate assets. His conversion of those assets for personal gain constitutes embezzlement."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "No, because corporate officers are shielded by the business judgment rule in such transactions."
         ],
         ans: 0,
-        exp: "Under criminal agency principles, a person who causes a crime to be committed through an innocent agent (someone who lacks criminal intent or capacity) is treated as the principal in the first degree, just as if they had performed the physical actus reus themselves[cite: 27]."
+        exp: "Under criminal agency principles, a person who causes a crime to be committed through an innocent agent (someone who lacks criminal intent or capacity) is treated as the principal in the first degree, just as if they had performed the physical actus reus themselves."
     },
     // FACT PATTERN 3 (Q6-Q8)
     {
@@ -84,7 +84,7 @@ const examData = [
             "No, because the items were not actually contraband, negating the actus reus."
         ],
         ans: 2,
-        exp: "Conspiracy requires an agreement to commit a crime[cite: 27]. Factual impossibility (the fact that the ivory was fake, preventing the successful completion of the smuggling) is never a defense to conspiracy[cite: 27]. They intended to agree and intended to commit the illegal act, which is sufficient[cite: 27]."
+        exp: "Conspiracy requires an agreement to commit a crime. Factual impossibility (the fact that the ivory was fake, preventing the successful completion of the smuggling) is never a defense to conspiracy. They intended to agree and intended to commit the illegal act, which is sufficient."
     },
     {
         id: 7,
@@ -98,7 +98,7 @@ const examData = [
             "Yes, because they crossed an international border."
         ],
         ans: 1,
-        exp: "Under modern attempt law (and the Model Penal Code), factual impossibility is not a defense[cite: 27]. A defendant is guilty of attempt if their conduct would constitute a crime had the attendant circumstances been as the defendant believed them to be[cite: 27]."
+        exp: "Under modern attempt law (and the Model Penal Code), factual impossibility is not a defense. A defendant is guilty of attempt if their conduct would constitute a crime had the attendant circumstances been as the defendant believed them to be."
     },
     {
         id: 8,
@@ -112,7 +112,7 @@ const examData = [
             "No, because she no longer shared the specific intent to commit the target crime with Dan."
         ],
         ans: 3,
-        exp: "Conspiracy requires that the parties share the specific intent to commit the target offense[cite: 27]. Once Eve discovered the ivory was fake, she could no longer intend to smuggle illegal ivory[cite: 27]. Continuing the act merely for payment without the shared intent to commit the underlying crime severs her from the ongoing conspiracy[cite: 27]."
+        exp: "Conspiracy requires that the parties share the specific intent to commit the target offense. Once Eve discovered the ivory was fake, she could no longer intend to smuggle illegal ivory. Continuing the act merely for payment without the shared intent to commit the underlying crime severs her from the ongoing conspiracy."
     },
     // FACT PATTERN 4 (Q9-Q11)
     {
@@ -127,7 +127,7 @@ const examData = [
             "No, because Greg failed to verbally communicate his withdrawal from the physical altercation."
         ],
         ans: 2,
-        exp: "An initial aggressor generally loses the privilege of self-defense[cite: 27]. However, there are two exceptions where the privilege is restored: (1) if the initial aggressor effectively withdraws and communicates that withdrawal, or (2) if the victim escalates a non-deadly confrontation into a deadly one, and the initial aggressor has no safe means of retreat[cite: 27]."
+        exp: "An initial aggressor generally loses the privilege of self-defense. However, there are two exceptions where the privilege is restored: (1) if the initial aggressor effectively withdraws and communicates that withdrawal, or (2) if the victim escalates a non-deadly confrontation into a deadly one, and the initial aggressor has no safe means of retreat."
     },
     {
         id: 10,
@@ -141,7 +141,7 @@ const examData = [
             "No, because the castle doctrine extends to all public places under modern statutes."
         ],
         ans: 0,
-        exp: "A person may only use non-deadly force to repel a non-deadly attack[cite: 27]. Hank responding to a fistfight by pulling a gun constitutes a disproportionate escalation to deadly force[cite: 27]. Intentionally creating a reasonable apprehension of imminent deadly harm without justification is aggravated assault[cite: 27]."
+        exp: "A person may only use non-deadly force to repel a non-deadly attack. Hank responding to a fistfight by pulling a gun constitutes a disproportionate escalation to deadly force. Intentionally creating a reasonable apprehension of imminent deadly harm without justification is aggravated assault."
     },
     {
         id: 11,
@@ -155,7 +155,7 @@ const examData = [
             "No, because Greg used a concealed weapon."
         ],
         ans: 1,
-        exp: "The right of self-defense is unavailable to a person who provokes an altercation with the specific intent to create an excuse or pretext to use deadly force against the victim[cite: 27]. Greg's premeditated provocation completely strips him of the defense[cite: 27]."
+        exp: "The right of self-defense is unavailable to a person who provokes an altercation with the specific intent to create an excuse or pretext to use deadly force against the victim. Greg's premeditated provocation completely strips him of the defense."
     },
     // FACT PATTERN 5 (Q12-Q14)
     {
@@ -170,7 +170,7 @@ const examData = [
             "Yes, under the natural and probable consequences doctrine, an accomplice is liable for any foreseeable crimes committed by the principal during the target offense."
         ],
         ans: 3,
-        exp: "Under the natural and probable consequences doctrine, an accomplice is liable not only for the target crime they intended to aid (robbery) but also for any other crimes committed by the principal that are reasonably foreseeable outcomes of the target crime[cite: 27]. Taking a hostage during a botched armed bank robbery is highly foreseeable[cite: 27]."
+        exp: "Under the natural and probable consequences doctrine, an accomplice is liable not only for the target crime they intended to aid (robbery) but also for any other crimes committed by the principal that are reasonably foreseeable outcomes of the target crime. Taking a hostage during a botched armed bank robbery is highly foreseeable."
     },
     {
         id: 13,
@@ -184,7 +184,7 @@ const examData = [
             "No, because withdrawal requires a formal confession to local law enforcement."
         ],
         ans: 2,
-        exp: "To effectively withdraw as an accomplice, the withdrawal must occur BEFORE the crime becomes unstoppable, and the accomplice must neutralize their prior assistance (e.g., notifying police in time to stop the act)[cite: 27]. Withdrawing as the principal is already exiting with a hostage is too late to effectively thwart the offense[cite: 27]."
+        exp: "To effectively withdraw as an accomplice, the withdrawal must occur BEFORE the crime becomes unstoppable, and the accomplice must neutralize their prior assistance (e.g., notifying police in time to stop the act). Withdrawing as the principal is already exiting with a hostage is too late to effectively thwart the offense."
     },
     {
         id: 14,
@@ -198,7 +198,7 @@ const examData = [
             "Yes, because robbery is a strict liability offense."
         ],
         ans: 0,
-        exp: "Even in jurisdictions that follow the agency theory of felony murder (where felons are generally not liable for killings by police/victims), a well-established exception holds the felon liable for murder if they act with extreme recklessness, such as using a hostage as a human shield, thereby provoking the lethal response that kills the innocent party[cite: 27]."
+        exp: "Even in jurisdictions that follow the agency theory of felony murder (where felons are generally not liable for killings by police/victims), a well-established exception holds the felon liable for murder if they act with extreme recklessness, such as using a hostage as a human shield, thereby provoking the lethal response that kills the innocent party."
     },
     // FACT PATTERN 6 (Q15-Q17)
     {
@@ -213,7 +213,7 @@ const examData = [
             "No, because opening an unlocked window does not satisfy the common law breaking requirement."
         ],
         ans: 1,
-        exp: "Common law burglary strictly requires that both the breaking AND entering of the dwelling house occur during the nighttime[cite: 27]. Because Kyle's physical entry occurred at 2:00 PM, the nighttime element is absent[cite: 27]. (Note: sliding open an unlocked window DOES satisfy the 'breaking' element, making D incorrect, but the timing precludes common law burglary)[cite: 27]."
+        exp: "Common law burglary strictly requires that both the breaking AND entering of the dwelling house occur during the nighttime. Because Kyle's physical entry occurred at 2:00 PM, the nighttime element is absent. (Note: sliding open an unlocked window DOES satisfy the 'breaking' element, making D incorrect, but the timing precludes common law burglary)."
     },
     {
         id: 16,
@@ -227,7 +227,7 @@ const examData = [
             "No, because common law arson requires burning a part of the dwelling structure itself, not merely personal furniture."
         ],
         ans: 3,
-        exp: "Common law arson is the malicious burning of the dwelling house of another[cite: 27]. The burning must cause some structural damage (charring) to the building itself or its fixtures[cite: 27]. Burning personal property contained within the house (like a bed or rug) without damaging the structure does not constitute common law arson[cite: 27]."
+        exp: "Common law arson is the malicious burning of the dwelling house of another. The burning must cause some structural damage (charring) to the building itself or its fixtures. Burning personal property contained within the house (like a bed or rug) without damaging the structure does not constitute common law arson."
     },
     {
         id: 17,
@@ -241,7 +241,7 @@ const examData = [
             "False pretenses, because he deceived the homeowner by hiding under the bed."
         ],
         ans: 0,
-        exp: "Larceny is the trespassory taking and carrying away of the personal property of another with the intent to steal[cite: 27]. Taking the painting satisfies all these elements[cite: 27]. It is not robbery because no force or threat was used against a person[cite: 27]."
+        exp: "Larceny is the trespassory taking and carrying away of the personal property of another with the intent to steal. Taking the painting satisfies all these elements. It is not robbery because no force or threat was used against a person."
     },
     // FACT PATTERN 7 (Q18-Q20)
     {
@@ -256,7 +256,7 @@ const examData = [
             "Guilty of murder, but only if the prosecution proves no intervening medical negligence occurred."
         ],
         ans: 2,
-        exp: "Under the traditional common law 'year and a day' rule, a defendant cannot be convicted of criminal homicide if the victim dies more than one year and one day after the fatal blow or act was inflicted[cite: 27]. Because Ned died 13 months later, Mary is immune from a homicide prosecution at common law (though modern statutes largely abolish this)[cite: 27]."
+        exp: "Under the traditional common law 'year and a day' rule, a defendant cannot be convicted of criminal homicide if the victim dies more than one year and one day after the fatal blow or act was inflicted. Because Ned died 13 months later, Mary is immune from a homicide prosecution at common law (though modern statutes largely abolish this)."
     },
     {
         id: 19,
@@ -270,7 +270,7 @@ const examData = [
             "Yes, because medical errors are strictly irrelevant in criminal law."
         ],
         ans: 1,
-        exp: "An original assailant is the proximate cause of a victim's death if the death results from ordinary medical negligence or foreseeable infections contracted during treatment for the inflicted wound[cite: 27]. These are considered dependent intervening causes that do not break the chain of legal causation[cite: 27]."
+        exp: "An original assailant is the proximate cause of a victim's death if the death results from ordinary medical negligence or foreseeable infections contracted during treatment for the inflicted wound. These are considered dependent intervening causes that do not break the chain of legal causation."
     },
     {
         id: 20,
@@ -284,7 +284,7 @@ const examData = [
             "Attempted murder, because she had specific intent and took a substantial step."
         ],
         ans: 3,
-        exp: "If a defendant cannot be convicted of a completed homicide due to a legal barrier like the year-and-a-day rule, they remain fully liable for attempted murder[cite: 27]. Mary possessed the specific intent to kill and completed the actus reus by poisoning the vitamins, satisfying all elements of attempt[cite: 27]."
+        exp: "If a defendant cannot be convicted of a completed homicide due to a legal barrier like the year-and-a-day rule, they remain fully liable for attempted murder. Mary possessed the specific intent to kill and completed the actus reus by poisoning the vitamins, satisfying all elements of attempt."
     },
     // FACT PATTERN 8 (Q21-Q22)
     {
@@ -299,7 +299,7 @@ const examData = [
             "No, because they were trespassing."
         ],
         ans: 0,
-        exp: "The necessity defense (choice of evils) excuses a criminal act if the defendant reasonably believed the conduct was necessary to avoid a greater, imminent harm caused by natural forces[cite: 27]. Saving human life from a blizzard far outweighs the property damage of breaking in and consuming food/wood[cite: 27]."
+        exp: "The necessity defense (choice of evils) excuses a criminal act if the defendant reasonably believed the conduct was necessary to avoid a greater, imminent harm caused by natural forces. Saving human life from a blizzard far outweighs the property damage of breaking in and consuming food/wood."
     },
     {
         id: 22,
@@ -313,7 +313,7 @@ const examData = [
             "Yes, because the owner's attempt to eject them constituted an unlawful use of deadly force in a blizzard."
         ],
         ans: 2,
-        exp: "Necessity generally cannot be used to justify harming an innocent third party or overriding an innocent person's lawful rights to protect themselves[cite: 27]. While necessity justifies trespassing against property, it does not justify committing violent torts/crimes against a property owner defending their home[cite: 27]."
+        exp: "Necessity generally cannot be used to justify harming an innocent third party or overriding an innocent person's lawful rights to protect themselves. While necessity justifies trespassing against property, it does not justify committing violent torts/crimes against a property owner defending their home."
     },
     // FACT PATTERN 9 (Q23-Q25)
     {
@@ -328,7 +328,7 @@ const examData = [
             "Yes, but only if his intoxication was involuntary due to spiked drinks."
         ],
         ans: 1,
-        exp: "Receiving stolen property requires specific subjective knowledge that the property is stolen[cite: 27]. Voluntary intoxication is a valid defense if it prevents the defendant from forming the required specific mental state (in this case, the cognitive capacity to know the item was stolen)[cite: 27]."
+        exp: "Receiving stolen property requires specific subjective knowledge that the property is stolen. Voluntary intoxication is a valid defense if it prevents the defendant from forming the required specific mental state (in this case, the cognitive capacity to know the item was stolen)."
     },
     {
         id: 24,
@@ -342,7 +342,7 @@ const examData = [
             "No, because battery is a general intent crime, and voluntary intoxication is no defense."
         ],
         ans: 3,
-        exp: "Battery is a general intent crime (which can be committed through criminal recklessness)[cite: 27]. Voluntary intoxication is never a defense to general intent or recklessness crimes, because the act of voluntarily drinking is legally substituted for the required reckless mental state[cite: 27]."
+        exp: "Battery is a general intent crime (which can be committed through criminal recklessness). Voluntary intoxication is never a defense to general intent or recklessness crimes, because the act of voluntarily drinking is legally substituted for the required reckless mental state."
     },
     {
         id: 25,
@@ -356,6 +356,6 @@ const examData = [
             "He is strictly liable regardless of his mistake, because he operated a motor vehicle while impaired."
         ],
         ans: 1,
-        exp: "Mistake of fact is a defense to a specific intent/knowledge crime if it negates the required mens rea, and the mistake need only be subjective/honest, not objectively reasonable[cite: 27]. Evidence of voluntary intoxication is admissible to explain why the defendant made an honest (though objectively unreasonable) mistake regarding the stolen nature of the property[cite: 27]."
+        exp: "Mistake of fact is a defense to a specific intent/knowledge crime if it negates the required mens rea, and the mistake need only be subjective/honest, not objectively reasonable. Evidence of voluntary intoxication is admissible to explain why the defendant made an honest (though objectively unreasonable) mistake regarding the stolen nature of the property."
     }
 ];

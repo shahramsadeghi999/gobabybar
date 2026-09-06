@@ -12,7 +12,7 @@ const examData = [
             "No, because the initial taking was not wrongful since he lacked the intent to steal at that time, and therefore the continuing trespass doctrine does not apply."
         ],
         ans: 3,
-        exp: "Larceny requires a trespassory taking with the contemporaneous intent to permanently deprive[cite: 26]. An honest mistake of fact negates the trespassory nature of the initial taking[cite: 26]. Because the original taking was not wrongful, the 'continuing trespass' doctrine does not apply when Albert later forms the intent to keep it[cite: 26]."
+        exp: "Larceny requires a trespassory taking with the contemporaneous intent to permanently deprive. An honest mistake of fact negates the trespassory nature of the initial taking. Because the original taking was not wrongful, the 'continuing trespass' doctrine does not apply when Albert later forms the intent to keep it."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "It is entirely irrelevant, because ignorance of property ownership does not excuse the physical asportation of goods."
         ],
         ans: 1,
-        exp: "Larceny is a specific intent crime[cite: 26]. An honest mistake of fact, even if unreasonable, is a valid defense to a specific intent crime because it negates the required mental state (the intent to steal)[cite: 26]."
+        exp: "Larceny is a specific intent crime. An honest mistake of fact, even if unreasonable, is a valid defense to a specific intent crime because it negates the required mental state (the intent to steal)."
     },
     // FACT PATTERN 2 (Questions 3-5)
     {
@@ -41,7 +41,7 @@ const examData = [
             "No, because the value of the stolen chainsaw did not exceed the required felony threshold for a common law burglary prosecution."
         ],
         ans: 0,
-        exp: "Common law burglary requires the breaking and entering of the DWELLING house of another in the nighttime[cite: 26]. A detached shed that is not used regularly for sleeping or living purposes is not a dwelling house[cite: 26]."
+        exp: "Common law burglary requires the breaking and entering of the DWELLING house of another in the nighttime. A detached shed that is not used regularly for sleeping or living purposes is not a dwelling house."
     },
     {
         id: 4,
@@ -55,7 +55,7 @@ const examData = [
             "Yes, because his actions resulted in actual physical charring to the fundamental structural fibers of the house."
         ],
         ans: 2,
-        exp: "At common law, arson is the malicious burning of the dwelling house OF ANOTHER[cite: 26]. Because Carl burned his own house, he cannot be convicted of common law arson (though modern statutes often extend to one's own property for insurance fraud)[cite: 26]."
+        exp: "At common law, arson is the malicious burning of the dwelling house OF ANOTHER. Because Carl burned his own house, he cannot be convicted of common law arson (though modern statutes often extend to one's own property for insurance fraud)."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "Larceny, because he committed a trespassory taking and carrying away of personal property with the intent to steal."
         ],
         ans: 3,
-        exp: "Larceny is the trespassory taking and carrying away of the tangible personal property of another with the specific intent to permanently deprive[cite: 26]. Carl taking the chainsaw from the shed satisfies all elements[cite: 26]."
+        exp: "Larceny is the trespassory taking and carrying away of the tangible personal property of another with the specific intent to permanently deprive. Carl taking the chainsaw from the shed satisfies all elements."
     },
     // FACT PATTERN 3 (Questions 6-8)
     {
@@ -84,7 +84,7 @@ const examData = [
             "First-degree murder, because a killing perpetrated by means of poison is statutorily classified as premeditated."
         ],
         ans: 3,
-        exp: "First-degree murder generally encompasses intentional killings committed with premeditation and deliberation[cite: 26]. In nearly all jurisdictions, killings perpetrated by specific, inherently premeditated methods—such as lying in wait, torture, or the administration of poison—are automatically classified as first-degree murder[cite: 26]."
+        exp: "First-degree murder generally encompasses intentional killings committed with premeditation and deliberation. In nearly all jurisdictions, killings perpetrated by specific, inherently premeditated methods—such as lying in wait, torture, or the administration of poison—are automatically classified as first-degree murder."
     },
     {
         id: 7,
@@ -98,7 +98,7 @@ const examData = [
             "Yes, but only under the strict common law doctrines governing the desecration of human remains."
         ],
         ans: 0,
-        exp: "Attempt requires the specific intent to commit a crime and a substantial step toward its completion[cite: 26]. Factual impossibility (the fact that the victim was already dead, unknown to the defendant) is never a defense to an attempt charge, provided the defendant's actions would constitute a crime if the facts were as she believed them to be[cite: 26]."
+        exp: "Attempt requires the specific intent to commit a crime and a substantial step toward its completion. Factual impossibility (the fact that the victim was already dead, unknown to the defendant) is never a defense to an attempt charge, provided the defendant's actions would constitute a crime if the facts were as she believed them to be."
     },
     {
         id: 8,
@@ -112,7 +112,7 @@ const examData = [
             "She is guilty of solicitation only, because providing physical materials supersedes accomplice doctrines."
         ],
         ans: 2,
-        exp: "An accomplice is one who aids, abets, or encourages the principal in the commission of the crime, with the intent that the crime be committed[cite: 26]. By knowingly providing the poison to facilitate the murder, Gina is fully liable for the resulting homicide as an accomplice[cite: 26]."
+        exp: "An accomplice is one who aids, abets, or encourages the principal in the commission of the crime, with the intent that the crime be committed. By knowingly providing the poison to facilitate the murder, Gina is fully liable for the resulting homicide as an accomplice."
     },
     // FACT PATTERN 4 (Questions 9-10)
     {
@@ -127,7 +127,7 @@ const examData = [
             "Yes, because the use of a firearm is universally deemed proportionate to an unprovoked verbal threat."
         ],
         ans: 0,
-        exp: "Even in minority jurisdictions that require a victim to retreat before using deadly force if safe to do so, the 'castle doctrine' provides an absolute exception: a person is never required to retreat when attacked inside their own home by an intruder[cite: 26]."
+        exp: "Even in minority jurisdictions that require a victim to retreat before using deadly force if safe to do so, the 'castle doctrine' provides an absolute exception: a person is never required to retreat when attacked inside their own home by an intruder."
     },
     {
         id: 10,
@@ -141,7 +141,7 @@ const examData = [
             "Assault, because he intentionally created a reasonable apprehension of imminent bodily harm."
         ],
         ans: 3,
-        exp: "Assault is defined as either an attempted battery or the intentional creation of a reasonable apprehension of imminent bodily harm[cite: 26]. Lunging at someone with a machete while screaming a death threat clearly creates a reasonable apprehension of imminent lethal harm[cite: 26]."
+        exp: "Assault is defined as either an attempted battery or the intentional creation of a reasonable apprehension of imminent bodily harm. Lunging at someone with a machete while screaming a death threat clearly creates a reasonable apprehension of imminent lethal harm."
     },
     // FACT PATTERN 5 (Questions 11-13)
     {
@@ -156,7 +156,7 @@ const examData = [
             "Robbery, because the use of a counterfeit instrument serves as a constructive application of economic force."
         ],
         ans: 2,
-        exp: "If a victim intends to transfer TITLE (ownership) based on a misrepresentation, the crime is false pretenses[cite: 26]. In a standard retail sale where the merchant accepts payment (even a fake check) and provides a receipt, the merchant intends to transfer full title[cite: 26]. Thus, John committed false pretenses[cite: 26]."
+        exp: "If a victim intends to transfer TITLE (ownership) based on a misrepresentation, the crime is false pretenses. In a standard retail sale where the merchant accepts payment (even a fake check) and provides a receipt, the merchant intends to transfer full title. Thus, John committed false pretenses."
     },
     {
         id: 12,
@@ -170,7 +170,7 @@ const examData = [
             "He presented the document during the course of an interstate commercial transaction."
         ],
         ans: 1,
-        exp: "Forgery is the making or altering of a false writing with apparent legal significance, done with the specific intent to defraud[cite: 26]. Creating a fake cashier's check perfectly fits this definition[cite: 26]."
+        exp: "Forgery is the making or altering of a false writing with apparent legal significance, done with the specific intent to defraud. Creating a fake cashier's check perfectly fits this definition."
     },
     {
         id: 13,
@@ -184,7 +184,7 @@ const examData = [
             "Because embezzlement only applies to corporate executives."
         ],
         ans: 0,
-        exp: "Embezzlement requires that the defendant already have LAWFUL possession of the property (usually through a position of trust, like a bailee or employee) before fraudulently converting it[cite: 26]. John was a mere customer who acquired the property through deceit; he never had prior lawful possession[cite: 26]."
+        exp: "Embezzlement requires that the defendant already have LAWFUL possession of the property (usually through a position of trust, like a bailee or employee) before fraudulently converting it. John was a mere customer who acquired the property through deceit; he never had prior lawful possession."
     },
     // FACT PATTERN 6 (Questions 14-16)
     {
@@ -199,7 +199,7 @@ const examData = [
             "No, because the sale of raw dairy products constitutes an inherently dangerous strict liability activity."
         ],
         ans: 2,
-        exp: "Ignorance or mistake of the law is generally not a defense to criminal liability[cite: 26]. An exception exists if the defendant relies on an official statement of the law from a high-level government official or court, but reliance on the advice of a private citizen (her friend) provides no defense[cite: 26]."
+        exp: "Ignorance or mistake of the law is generally not a defense to criminal liability. An exception exists if the defendant relies on an official statement of the law from a high-level government official or court, but reliance on the advice of a private citizen (her friend) provides no defense."
     },
     {
         id: 15,
@@ -213,7 +213,7 @@ const examData = [
             "Nothing, because strict liability offenses do not require proof of mens rea regarding the prohibited act."
         ],
         ans: 3,
-        exp: "Strict liability offenses (often public welfare offenses like selling adulterated food or alcohol to minors) require no proof of a culpable mental state (mens rea) regarding the prohibited act[cite: 26]. The prosecution must only prove that she performed the voluntary actrus reus (selling the milk)[cite: 26]."
+        exp: "Strict liability offenses (often public welfare offenses like selling adulterated food or alcohol to minors) require no proof of a culpable mental state (mens rea) regarding the prohibited act. The prosecution must only prove that she performed the voluntary actrus reus (selling the milk)."
     },
     {
         id: 16,
@@ -227,7 +227,7 @@ const examData = [
             "No, because entrapment is completely unavailable as a defense for any strict liability health offense."
         ],
         ans: 1,
-        exp: "Entrapment requires showing that the government induced the crime AND that the defendant was not otherwise predisposed to commit it[cite: 26]. Because Karen was already selling the milk at her booth, she was clearly predisposed, meaning the inspector merely provided an opportunity[cite: 26]."
+        exp: "Entrapment requires showing that the government induced the crime AND that the defendant was not otherwise predisposed to commit it. Because Karen was already selling the milk at her booth, she was clearly predisposed, meaning the inspector merely provided an opportunity."
     },
     // FACT PATTERN 7 (Questions 17-19)
     {
@@ -242,7 +242,7 @@ const examData = [
             "No, because Wharton's Rule states that an agreement between two people to commit a crime that logically requires two people cannot be prosecuted as a conspiracy."
         ],
         ans: 3,
-        exp: "Wharton's Rule provides that if a crime by definition requires the participation of two people (such as dueling, bigamy, or adultery), there is no conspiracy to commit that crime if only the two necessary parties are involved in the agreement[cite: 26]."
+        exp: "Wharton's Rule provides that if a crime by definition requires the participation of two people (such as dueling, bigamy, or adultery), there is no conspiracy to commit that crime if only the two necessary parties are involved in the agreement."
     },
     {
         id: 18,
@@ -256,7 +256,7 @@ const examData = [
             "No, because involuntary manslaughter strictly applies only to vehicular traffic fatalities."
         ],
         ans: 2,
-        exp: "Involuntary manslaughter is a killing resulting from criminal negligence[cite: 26]. Participating in a lethal pistol duel demonstrates either a specific intent to kill or, at a minimum, an extreme reckless indifference to human life (depraved heart), satisfying the malice requirement for murder[cite: 26]."
+        exp: "Involuntary manslaughter is a killing resulting from criminal negligence. Participating in a lethal pistol duel demonstrates either a specific intent to kill or, at a minimum, an extreme reckless indifference to human life (depraved heart), satisfying the malice requirement for murder."
     },
     {
         id: 19,
@@ -270,7 +270,7 @@ const examData = [
             "Robbery, because depriving an individual of their freedom constitutes the taking of an intangible personal asset."
         ],
         ans: 0,
-        exp: "False imprisonment is the unlawful confinement of a person without their valid consent[cite: 26]. Kidnapping requires confinement PLUS asportation (movement of the victim)[cite: 26]. Because Liam merely locked Mike in a room and did not move him, the crime is false imprisonment, not kidnapping[cite: 26]."
+        exp: "False imprisonment is the unlawful confinement of a person without their valid consent. Kidnapping requires confinement PLUS asportation (movement of the victim). Because Liam merely locked Mike in a room and did not move him, the crime is false imprisonment, not kidnapping."
     },
     // FACT PATTERN 8 (Questions 20-22)
     {
@@ -285,7 +285,7 @@ const examData = [
             "Yes, because she reasonably believed she faced an imminent threat of death or serious bodily harm if she did not commit the crimes."
         ],
         ans: 3,
-        exp: "Duress is a valid defense if the defendant committed a crime because of a reasonable belief that a present, imminent threat of death or great bodily harm would be inflicted upon them if they did not comply[cite: 26]. Duress is a defense to all crimes EXCEPT intentional homicide[cite: 26]."
+        exp: "Duress is a valid defense if the defendant committed a crime because of a reasonable belief that a present, imminent threat of death or great bodily harm would be inflicted upon them if they did not comply. Duress is a defense to all crimes EXCEPT intentional homicide."
     },
     {
         id: 21,
@@ -299,7 +299,7 @@ const examData = [
             "No, because she was holding the firearm, giving her a tactical advantage over the coercer."
         ],
         ans: 0,
-        exp: "Under traditional common law, duress is never a defense to an intentional killing[cite: 26]. The law dictates that a person may not take the life of an innocent third party to save their own[cite: 26]."
+        exp: "Under traditional common law, duress is never a defense to an intentional killing. The law dictates that a person may not take the life of an innocent third party to save their own."
     },
     {
         id: 22,
@@ -313,7 +313,7 @@ const examData = [
             "He bears no liability for the property crimes, as his actions constituted an independent assault."
         ],
         ans: 2,
-        exp: "When a person forces an innocent or coerced party (who has a valid duress defense) to commit a crime, the coercer is treated as the principal actor who committed the crime through an instrumentality[cite: 26]."
+        exp: "When a person forces an innocent or coerced party (who has a valid duress defense) to commit a crime, the coercer is treated as the principal actor who committed the crime through an instrumentality."
     },
     // FACT PATTERN 9 (Questions 23-25)
     {
@@ -328,7 +328,7 @@ const examData = [
             "No, because police officers assume the risk of physical altercations when operating without uniform."
         ],
         ans: 1,
-        exp: "Under the modern 'reasonable belief' rule for defense of others, an intervenor is justified in using force to protect a third party if they reasonably believe the third party is facing an unlawful attack, even if that belief turns out to be mistaken[cite: 26]. (Note: Under the older minority 'alter ego' rule, Paul would be guilty, but the prompt specifies the reasonable belief rule)[cite: 26]."
+        exp: "Under the modern 'reasonable belief' rule for defense of others, an intervenor is justified in using force to protect a third party if they reasonably believe the third party is facing an unlawful attack, even if that belief turns out to be mistaken. (Note: Under the older minority 'alter ego' rule, Paul would be guilty, but the prompt specifies the reasonable belief rule)."
     },
     {
         id: 24,
@@ -342,7 +342,7 @@ const examData = [
             "Yes, because her suspicion and the highly suspicious circumstances (willful blindness) satisfy the knowledge requirement."
         ],
         ans: 3,
-        exp: "Receiving stolen property requires receiving possession of stolen property, knowing it to be stolen, with the intent to permanently deprive the owner[cite: 26]. Subjective knowledge can be inferred from the highly suspicious circumstances (e.g., $20 for a high-end phone in an alley) and the defendant's willful blindness[cite: 26]."
+        exp: "Receiving stolen property requires receiving possession of stolen property, knowing it to be stolen, with the intent to permanently deprive the owner. Subjective knowledge can be inferred from the highly suspicious circumstances (e.g., $20 for a high-end phone in an alley) and the defendant's willful blindness."
     },
     {
         id: 25,
@@ -356,6 +356,6 @@ const examData = [
             "Yes, because televisions are classified as highly valuable chattels."
         ],
         ans: 0,
-        exp: "Robbery requires a taking from the victim's 'person or presence.'[cite: 26] Property located in another room of the victim's house is considered within the victim's 'presence' if the victim is prevented from retaining the property by the defendant's application of force or intimidation (e.g., locking them in the bathroom)[cite: 26]."
+        exp: "Robbery requires a taking from the victim's 'person or presence.' Property located in another room of the victim's house is considered within the victim's 'presence' if the victim is prevented from retaining the property by the defendant's application of force or intimidation (e.g., locking them in the bathroom)."
     }
 ];

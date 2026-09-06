@@ -12,7 +12,7 @@ const examData = [
             "Yes, but only if the prosecution can prove that she possessed the specific malice aforethought required for an intentional homicide."
         ],
         ans: 0,
-        exp: "Under the felony murder rule, a defendant is liable for any death caused during the commission of an inherently dangerous felony (like robbery)[cite: 23]. The 'eggshell skull' rule applies in criminal law: a defendant takes their victim as they find them[cite: 23]. Alice is liable for the heart attack caused by the terror of the robbery[cite: 23]."
+        exp: "Under the felony murder rule, a defendant is liable for any death caused during the commission of an inherently dangerous felony (like robbery). The 'eggshell skull' rule applies in criminal law: a defendant takes their victim as they find them. Alice is liable for the heart attack caused by the terror of the robbery."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "No, because any unprivileged taking of property from a deceased individual immediately constitutes robbery as a matter of law."
         ],
         ans: 1,
-        exp: "Robbery requires taking property by force or the threat of immediate physical harm[cite: 23]. Using a fake gun that appears real creates a reasonable apprehension of immediate harm in the victim, satisfying the threat of force element for robbery[cite: 23]."
+        exp: "Robbery requires taking property by force or the threat of immediate physical harm. Using a fake gun that appears real creates a reasonable apprehension of immediate harm in the victim, satisfying the threat of force element for robbery."
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const examData = [
             "No crime, because a plastic toy cannot satisfy the actus reus for any violent common law offense."
         ],
         ans: 2,
-        exp: "Assault is either an attempted battery or the intentional creation of a reasonable apprehension of imminent bodily harm[cite: 23]. Pointing a fake gun (which the victim believes is real) intentionally creates a reasonable apprehension of imminent harm, satisfying the definition of assault[cite: 23]."
+        exp: "Assault is either an attempted battery or the intentional creation of a reasonable apprehension of imminent bodily harm. Pointing a fake gun (which the victim believes is real) intentionally creates a reasonable apprehension of imminent harm, satisfying the definition of assault."
     },
     // FACT PATTERN 2 (Q4-Q6)
     {
@@ -55,7 +55,7 @@ const examData = [
             "No, he lacked the specific intent required."
         ],
         ans: 3,
-        exp: "Common law burglary requires the specific intent to commit a felony inside the dwelling at the time of entry[cite: 23]. Because Carl thought he was entering his own home due to extreme intoxication (a mistake of fact that negates specific intent), he did not intend to commit a felony therein[cite: 23]."
+        exp: "Common law burglary requires the specific intent to commit a felony inside the dwelling at the time of entry. Because Carl thought he was entering his own home due to extreme intoxication (a mistake of fact that negates specific intent), he did not intend to commit a felony therein."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "No, because the castle doctrine prevents any intruder from ever claiming self-defense against a lawful homeowner."
         ],
         ans: 0,
-        exp: "Battery is a general intent crime[cite: 23]. Voluntary intoxication is never a defense to general intent crimes, as the act of voluntarily consuming the intoxicant is deemed sufficiently reckless to satisfy the mens rea for the offense[cite: 23]."
+        exp: "Battery is a general intent crime. Voluntary intoxication is never a defense to general intent crimes, as the act of voluntarily consuming the intoxicant is deemed sufficiently reckless to satisfy the mens rea for the offense."
     },
     {
         id: 6,
@@ -83,7 +83,7 @@ const examData = [
             "No, because homicide offenses are entirely immune from intoxication defenses under modern statutory reforms."
         ],
         ans: 1,
-        exp: "First-degree murder (when based on premeditation and deliberation) is a specific intent crime[cite: 23]. Severe voluntary intoxication can prevent a defendant from forming the specific intent to premeditate and deliberate, thereby reducing the charge from first-degree to second-degree murder[cite: 23]."
+        exp: "First-degree murder (when based on premeditation and deliberation) is a specific intent crime. Severe voluntary intoxication can prevent a defendant from forming the specific intent to premeditate and deliberate, thereby reducing the charge from first-degree to second-degree murder."
     },
     // FACT PATTERN 3 (Q7-Q9)
     {
@@ -98,7 +98,7 @@ const examData = [
             "Yes, because uploading a computer script constitutes an inherently dangerous strict liability cybercrime under federal regulations."
         ],
         ans: 2,
-        exp: "Under traditional common law, the crime of attempt is complete once the defendant possesses specific intent and commits a sufficient overt act (substantial step or dangerous proximity)[cite: 23]. Once the attempt is complete (uploading the script to the server), a subsequent change of heart and abandonment is NOT a defense at common law[cite: 23]."
+        exp: "Under traditional common law, the crime of attempt is complete once the defendant possesses specific intent and commits a sufficient overt act (substantial step or dangerous proximity). Once the attempt is complete (uploading the script to the server), a subsequent change of heart and abandonment is NOT a defense at common law."
     },
     {
         id: 8,
@@ -112,7 +112,7 @@ const examData = [
             "Yes, if her renunciation was completely voluntary and she successfully prevented the crime."
         ],
         ans: 3,
-        exp: "Unlike the common law, the Model Penal Code recognizes the affirmative defense of voluntary abandonment (or renunciation) for inchoate crimes[cite: 23]. To succeed, the defendant must completely and voluntarily renounce their criminal purpose and successfully prevent the commission of the target offense, which Diane did[cite: 23]."
+        exp: "Unlike the common law, the Model Penal Code recognizes the affirmative defense of voluntary abandonment (or renunciation) for inchoate crimes. To succeed, the defendant must completely and voluntarily renounce their criminal purpose and successfully prevent the commission of the target offense, which Diane did."
     },
     {
         id: 9,
@@ -126,7 +126,7 @@ const examData = [
             "Yes, because the intent to defraud an employer automatically consummates the offense regardless of the ultimate financial outcome."
         ],
         ans: 0,
-        exp: "Embezzlement requires the actual fraudulent CONVERSION of the property of another[cite: 23]. Because Diane deleted the script before executing the transfer, she never actually converted any funds, meaning the completed crime of embezzlement did not occur[cite: 23]."
+        exp: "Embezzlement requires the actual fraudulent CONVERSION of the property of another. Because Diane deleted the script before executing the transfer, she never actually converted any funds, meaning the completed crime of embezzlement did not occur."
     },
     // FACT PATTERN 4 (Q10-Q11)
     {
@@ -141,7 +141,7 @@ const examData = [
             "No, because hardware stores are legally protected by absolute commercial immunity doctrines."
         ],
         ans: 1,
-        exp: "Accomplice liability requires that the defendant aid the principal with the specific intent that the crime be committed[cite: 23]. A merchant who sells ordinary goods (like a crowbar) at standard prices generally only intends to make a sale, not to facilitate the crime, even if they have knowledge of the buyer's criminal intent[cite: 23]."
+        exp: "Accomplice liability requires that the defendant aid the principal with the specific intent that the crime be committed. A merchant who sells ordinary goods (like a crowbar) at standard prices generally only intends to make a sale, not to facilitate the crime, even if they have knowledge of the buyer's criminal intent."
     },
     {
         id: 11,
@@ -155,7 +155,7 @@ const examData = [
             "Yes, but it only renders him liable for the separate white-collar crime of criminal price gouging."
         ],
         ans: 2,
-        exp: "If a provider of goods or services charges a 'premium' because of the illegal nature of the buyer's intended use, courts hold that the provider has established a stake in the venture[cite: 23]. This satisfies the specific intent requirement to facilitate the crime, making the seller an accomplice[cite: 23]."
+        exp: "If a provider of goods or services charges a 'premium' because of the illegal nature of the buyer's intended use, courts hold that the provider has established a stake in the venture. This satisfies the specific intent requirement to facilitate the crime, making the seller an accomplice."
     },
     // FACT PATTERN 5 (Q12-Q14)
     {
@@ -170,7 +170,7 @@ const examData = [
             "Larceny."
         ],
         ans: 3,
-        exp: "When an owner hands property to a customer for temporary inspection within their presence, the customer acquires only 'custody,' while the owner retains constructive 'possession.'[cite: 23] George's act of running away with the watch is a trespassory taking from the owner's possession, constituting larceny[cite: 23]."
+        exp: "When an owner hands property to a customer for temporary inspection within their presence, the customer acquires only 'custody,' while the owner retains constructive 'possession.' George's act of running away with the watch is a trespassory taking from the owner's possession, constituting larceny."
     },
     {
         id: 13,
@@ -184,7 +184,7 @@ const examData = [
             "Because the clerk voluntarily relinquished full legal title to the merchandise."
         ],
         ans: 0,
-        exp: "Larceny by trick requires that the defendant use fraud or deceit to obtain custody of the property, with the INTENT to steal it existing AT THE TIME of the transfer[cite: 23]. Because George honestly intended to inspect the watch initially, he did not use fraud to obtain it[cite: 23]. He formed the intent to steal later[cite: 23]."
+        exp: "Larceny by trick requires that the defendant use fraud or deceit to obtain custody of the property, with the INTENT to steal it existing AT THE TIME of the transfer. Because George honestly intended to inspect the watch initially, he did not use fraud to obtain it. He formed the intent to steal later."
     },
     {
         id: 14,
@@ -198,7 +198,7 @@ const examData = [
             "Robbery, because depriving a commercial retail store of high-value inventory is equivalent to constructive physical force."
         ],
         ans: 1,
-        exp: "Allowing a customer to take an item home for an extended trial period creates a bailment, granting the customer LAWFUL POSSESSION of the item (not just custody)[cite: 23]. When a bailee subsequently converts the property (selling it), the crime is embezzlement[cite: 23]."
+        exp: "Allowing a customer to take an item home for an extended trial period creates a bailment, granting the customer LAWFUL POSSESSION of the item (not just custody). When a bailee subsequently converts the property (selling it), the crime is embezzlement."
     },
     // FACT PATTERN 6 (Q15-Q16)
     {
@@ -213,7 +213,7 @@ const examData = [
             "No, because the child's accidental slip constitutes an independent superseding cause."
         ],
         ans: 2,
-        exp: "While there is generally no duty to rescue, a legal duty to act arises when there is a special relationship, such as parent and child[cite: 23]. A parent's failure to protect their child from harm, when physically capable of doing so, satisfies the actus reus (by omission) for criminal homicide[cite: 23]."
+        exp: "While there is generally no duty to rescue, a legal duty to act arises when there is a special relationship, such as parent and child. A parent's failure to protect their child from harm, when physically capable of doing so, satisfies the actus reus (by omission) for criminal homicide."
     },
     {
         id: 16,
@@ -227,7 +227,7 @@ const examData = [
             "Depraved heart murder, due to her extreme and reckless indifference to the value of human life."
         ],
         ans: 3,
-        exp: "Even without the specific intent to kill, Helen's decision to let her child drown simply to protect an expensive dress demonstrates a reckless indifference to an unjustifiably high risk to human life[cite: 23]. This extreme recklessness establishes the 'depraved heart' malice required for second-degree murder[cite: 23]."
+        exp: "Even without the specific intent to kill, Helen's decision to let her child drown simply to protect an expensive dress demonstrates a reckless indifference to an unjustifiably high risk to human life. This extreme recklessness establishes the 'depraved heart' malice required for second-degree murder."
     },
     // FACT PATTERN 7 (Q17-Q18)
     {
@@ -242,7 +242,7 @@ const examData = [
             "No, because the use of automated security devices is fully protected under modern iterations of the castle doctrine."
         ],
         ans: 0,
-        exp: "A property owner may never use deadly force (or deadly mechanical devices like spring guns) solely to protect unoccupied property[cite: 23]. Deadly force is only justified to protect human life[cite: 23]. Because the cabin was unoccupied, the use of a spring gun was unlawful, making Ian liable for the resulting battery[cite: 23]."
+        exp: "A property owner may never use deadly force (or deadly mechanical devices like spring guns) solely to protect unoccupied property. Deadly force is only justified to protect human life. Because the cabin was unoccupied, the use of a spring gun was unlawful, making Ian liable for the resulting battery."
     },
     {
         id: 18,
@@ -256,7 +256,7 @@ const examData = [
             "No, because firearms are strictly prohibited inside recreational vacation structures."
         ],
         ans: 1,
-        exp: "Even if Ian had been present, the use of deadly force inside a dwelling is only justified if the homeowner reasonably believes the intruder intends to commit a violent felony or cause great bodily harm to the occupants[cite: 23]. Jack was a lost hiker seeking shelter from a storm, posing no such threat[cite: 23]."
+        exp: "Even if Ian had been present, the use of deadly force inside a dwelling is only justified if the homeowner reasonably believes the intruder intends to commit a violent felony or cause great bodily harm to the occupants. Jack was a lost hiker seeking shelter from a storm, posing no such threat."
     },
     // FACT PATTERN 8 (Q19-Q21)
     {
@@ -271,7 +271,7 @@ const examData = [
             "Embezzlement."
         ],
         ans: 2,
-        exp: "Extortion (blackmail) is obtaining property from another by means of threats of future harm, including threats to expose a secret, initiate legal/administrative action, or report someone to the authorities[cite: 23]. Karen's threat to call immigration satisfies these elements[cite: 23]."
+        exp: "Extortion (blackmail) is obtaining property from another by means of threats of future harm, including threats to expose a secret, initiate legal/administrative action, or report someone to the authorities. Karen's threat to call immigration satisfies these elements."
     },
     {
         id: 20,
@@ -285,7 +285,7 @@ const examData = [
             "Because the threat involved legal or administrative action rather than the immediate application of physical violence against the victim's person."
         ],
         ans: 3,
-        exp: "Robbery requires a taking accomplished by force or the threat of IMMEDIATE physical harm to the victim[cite: 23]. A threat to call immigration authorities, while highly coercive, is a threat of future administrative/legal action, not immediate physical violence[cite: 23]."
+        exp: "Robbery requires a taking accomplished by force or the threat of IMMEDIATE physical harm to the victim. A threat to call immigration authorities, while highly coercive, is a threat of future administrative/legal action, not immediate physical violence."
     },
     {
         id: 21,
@@ -298,7 +298,7 @@ const examData = [
             "Larceny, because the taking was trespassory."
         ],
         ans: 0,
-        exp: "Threatening to stab someone in the neck is a threat of immediate physical harm[cite: 23]. Taking property from a victim's presence using the threat of immediate physical harm constitutes robbery[cite: 23]."
+        exp: "Threatening to stab someone in the neck is a threat of immediate physical harm. Taking property from a victim's presence using the threat of immediate physical harm constitutes robbery."
     },
     // FACT PATTERN 9 (Q22-Q23)
     {
@@ -313,7 +313,7 @@ const examData = [
             "No, because bigamy is a strict liability offense."
         ],
         ans: 1,
-        exp: "Wharton's Rule states that an agreement between two people to commit a crime that logically requires exactly two people (like bigamy, adultery, or dueling) cannot be prosecuted as a conspiracy[cite: 23]. Because bigamy requires two participants, Mark and Nancy cannot be charged with conspiracy[cite: 23]."
+        exp: "Wharton's Rule states that an agreement between two people to commit a crime that logically requires exactly two people (like bigamy, adultery, or dueling) cannot be prosecuted as a conspiracy. Because bigamy requires two participants, Mark and Nancy cannot be charged with conspiracy."
     },
     {
         id: 23,
@@ -327,7 +327,7 @@ const examData = [
             "Yes, under the third-party exception."
         ],
         ans: 3,
-        exp: "An exception to Wharton's Rule applies when the number of conspirators exceeds the number logically necessary to commit the target offense[cite: 23]. Because bigamy requires two people, the active participation of a third person (Olivia) means all three can be charged with conspiracy[cite: 23]."
+        exp: "An exception to Wharton's Rule applies when the number of conspirators exceeds the number logically necessary to commit the target offense. Because bigamy requires two people, the active participation of a third person (Olivia) means all three can be charged with conspiracy."
     },
     // FACT PATTERN 10 (Q24-Q25)
     {
@@ -342,7 +342,7 @@ const examData = [
             "Yes, because under the doctrine of transferred intent, the specific intent to kill the targeted victim legally transfers to the unintended victim who is actually killed."
         ],
         ans: 3,
-        exp: "Under the doctrine of transferred intent, if a defendant intends to kill one person but accidentally kills another, the intent to kill transfers to the actual victim, making the defendant fully liable for the intentional murder of the bystander[cite: 23]."
+        exp: "Under the doctrine of transferred intent, if a defendant intends to kill one person but accidentally kills another, the intent to kill transfers to the actual victim, making the defendant fully liable for the intentional murder of the bystander."
     },
     {
         id: 25,
@@ -356,6 +356,6 @@ const examData = [
             "Yes, because the transferred intent doctrine applies equally to the principal and the accomplice for the highly foreseeable consequences of the targeted assassination."
         ],
         ans: 3,
-        exp: "Paul is an accomplice (and co-conspirator) to the murder of Ray[cite: 23]. Accomplices are liable for the crimes of the principal[cite: 23]. Since Quinn's intent to kill Ray transferred to Sam, Paul's accomplice liability transfers as well, making Paul guilty of Sam's murder[cite: 23]."
+        exp: "Paul is an accomplice (and co-conspirator) to the murder of Ray. Accomplices are liable for the crimes of the principal. Since Quinn's intent to kill Ray transferred to Sam, Paul's accomplice liability transfers as well, making Paul guilty of Sam's murder."
     }
 ];

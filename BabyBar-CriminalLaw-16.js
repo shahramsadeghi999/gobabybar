@@ -12,7 +12,7 @@ const examData = [
             "No, because Albert missed his original intended target, which severs direct physical causation."
         ],
         ans: 2,
-        exp: "Proximate cause is severed by an unforeseeable, independent intervening event (a superseding cause)[cite: 27]. While ordinary medical negligence is foreseeable, a doctor intentionally and maliciously murdering a patient is highly unforeseeable[cite: 27]. This acts as a superseding cause, breaking the chain of legal causation[cite: 27]."
+        exp: "Proximate cause is severed by an unforeseeable, independent intervening event (a superseding cause). While ordinary medical negligence is foreseeable, a doctor intentionally and maliciously murdering a patient is highly unforeseeable. This acts as a superseding cause, breaking the chain of legal causation."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "No liability, because the bursting of the steam pipe was an extraordinary mechanical failure that breaks the chain of causation."
         ],
         ans: 1,
-        exp: "Under the doctrine of transferred intent, a defendant who intends to kill one person but accidentally kills a different person is guilty of intentional murder[cite: 27]. Claire's secondary infection is a highly foreseeable medical complication of the burns, making it a dependent intervening cause that does not break the chain[cite: 27]."
+        exp: "Under the doctrine of transferred intent, a defendant who intends to kill one person but accidentally kills a different person is guilty of intentional murder. Claire's secondary infection is a highly foreseeable medical complication of the burns, making it a dependent intervening cause that does not break the chain."
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const examData = [
             "No crime, because the superseding event provides absolute transactional immunity to the original aggressor under common law."
         ],
         ans: 0,
-        exp: "If a superseding cause prevents a defendant from being convicted of the completed homicide, the defendant remains fully liable for attempted murder[cite: 27]. Albert possessed the specific intent to kill and fired the gun (a substantial step), fulfilling all elements of the inchoate offense[cite: 27]."
+        exp: "If a superseding cause prevents a defendant from being convicted of the completed homicide, the defendant remains fully liable for attempted murder. Albert possessed the specific intent to kill and fired the gun (a substantial step), fulfilling all elements of the inchoate offense."
     },
     // FACT PATTERN 2 (Q4-Q6)
     {
@@ -55,7 +55,7 @@ const examData = [
             "Voluntary, because he knowingly consumed an intoxicating substance while disregarding explicit medical warnings about the severe psychological side effects."
         ],
         ans: 3,
-        exp: "Intoxication is voluntary if the defendant knowingly ingests an intoxicating substance or knowingly disregards specific medical warnings about mixing prescribed medications with alcohol[cite: 27]. Because Edgar ignored the explicit warning, his resulting intoxication and psychosis are legally classified as voluntary[cite: 27]."
+        exp: "Intoxication is voluntary if the defendant knowingly ingests an intoxicating substance or knowingly disregards specific medical warnings about mixing prescribed medications with alcohol. Because Edgar ignored the explicit warning, his resulting intoxication and psychosis are legally classified as voluntary."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "No, because the insanity defense is constitutionally prohibited in all capital homicide prosecutions involving deadly weapons."
         ],
         ans: 0,
-        exp: "To qualify for the insanity defense, the defendant's incapacity must be caused by a 'mental disease or defect.'[cite: 27] A temporary psychotic state or hallucination brought on by voluntary intoxication (even an extreme, unpredictable reaction) does not legally qualify as a mental disease[cite: 27]."
+        exp: "To qualify for the insanity defense, the defendant's incapacity must be caused by a 'mental disease or defect.' A temporary psychotic state or hallucination brought on by voluntary intoxication (even an extreme, unpredictable reaction) does not legally qualify as a mental disease."
     },
     {
         id: 6,
@@ -83,7 +83,7 @@ const examData = [
             "Yes, because his subjective hatred of aliens constitutes adequate legal provocation under the traditional common law heat of passion framework."
         ],
         ans: 2,
-        exp: "Under the doctrine of imperfect self-defense, if a defendant holds an honest but objectively unreasonable belief that deadly force is necessary (such as an insane delusion of attack), it negates malice aforethought[cite: 27]. This mitigates what would be murder down to voluntary manslaughter, even if the delusion was induced by voluntary intoxication[cite: 27]."
+        exp: "Under the doctrine of imperfect self-defense, if a defendant holds an honest but objectively unreasonable belief that deadly force is necessary (such as an insane delusion of attack), it negates malice aforethought. This mitigates what would be murder down to voluntary manslaughter, even if the delusion was induced by voluntary intoxication."
     },
     // FACT PATTERN 3 (Q7-Q9)
     {
@@ -98,7 +98,7 @@ const examData = [
             "Robbery, because the unauthorized deprivation of a highly valuable heirloom constitutes constructive force."
         ],
         ans: 1,
-        exp: "Embezzlement requires the fraudulent conversion of property by someone already in LAWFUL possession of it[cite: 27]. As an artisan entrusted with repairing the clock, Gina was a bailee with lawful possession[cite: 27]. Selling it to pay off her debts constitutes a fraudulent conversion[cite: 27]."
+        exp: "Embezzlement requires the fraudulent conversion of property by someone already in LAWFUL possession of it. As an artisan entrusted with repairing the clock, Gina was a bailee with lawful possession. Selling it to pay off her debts constitutes a fraudulent conversion."
     },
     {
         id: 8,
@@ -112,7 +112,7 @@ const examData = [
             "Because she did not harbor the specific intent to steal at the exact moment she obtained custody of the clock."
         ],
         ans: 3,
-        exp: "Larceny by trick requires that the defendant use fraud or deceit to obtain custody of the property, with the INTENT to steal it existing AT THE TIME of the transfer[cite: 27]. Because Gina honestly intended to repair the clock initially, she formed the intent to steal later, precluding larceny[cite: 27]."
+        exp: "Larceny by trick requires that the defendant use fraud or deceit to obtain custody of the property, with the INTENT to steal it existing AT THE TIME of the transfer. Because Gina honestly intended to repair the clock initially, she formed the intent to steal later, precluding larceny."
     },
     {
         id: 9,
@@ -126,7 +126,7 @@ const examData = [
             "Because Harry did not actually believe her deceptive narrative."
         ],
         ans: 2,
-        exp: "False pretenses requires the defendant to obtain title to property BY MEANS OF an intentional false statement[cite: 27]. Gina already had lawful possession of the clock, and the crime of embezzlement was complete the moment she sold it[cite: 27]. Her lie to Harry occurred after the fact to cover it up[cite: 27]."
+        exp: "False pretenses requires the defendant to obtain title to property BY MEANS OF an intentional false statement. Gina already had lawful possession of the clock, and the crime of embezzlement was complete the moment she sold it. Her lie to Harry occurred after the fact to cover it up."
     },
     // FACT PATTERN 4 (Q10-Q11)
     {
@@ -141,7 +141,7 @@ const examData = [
             "No, because she failed to provide the full financial compensation required to formalize the criminal contract."
         ],
         ans: 0,
-        exp: "At strict traditional common law, the crime of solicitation is not complete unless the urging/request actually reaches the intended solicitee[cite: 27]. Because the letter was intercepted and Jack never received it, Irene is only guilty of attempted solicitation at common law[cite: 27]. (Note: The Model Penal Code changes this, making it completed solicitation even if intercepted)."
+        exp: "At strict traditional common law, the crime of solicitation is not complete unless the urging/request actually reaches the intended solicitee. Because the letter was intercepted and Jack never received it, Irene is only guilty of attempted solicitation at common law. (Note: The Model Penal Code changes this, making it completed solicitation even if intercepted)."
     },
     {
         id: 11,
@@ -155,7 +155,7 @@ const examData = [
             "No, because the interception of the letter by federal authorities rendered the completion of the offense legally impossible."
         ],
         ans: 1,
-        exp: "Courts generally hold that mere solicitation of another person to commit a crime (even offering payment) is 'mere preparation' and does not cross the line into the substantial step or dangerous proximity required for a criminal attempt charge of the target offense[cite: 27]."
+        exp: "Courts generally hold that mere solicitation of another person to commit a crime (even offering payment) is 'mere preparation' and does not cross the line into the substantial step or dangerous proximity required for a criminal attempt charge of the target offense."
     },
     // FACT PATTERN 5 (Q12-Q14)
     {
@@ -170,7 +170,7 @@ const examData = [
             "No, because an accomplice who provides material assistance must also act to neutralize that assistance (such as retrieving the explosives or alerting police) to effectuate a valid withdrawal."
         ],
         ans: 3,
-        exp: "To successfully withdraw as an accomplice, a person must repudiate their prior aid, communicate their withdrawal to the principal, AND neutralize any material assistance provided[cite: 27]. Kevin failed to retrieve the explosives or notify the police, rendering his verbal withdrawal legally ineffective[cite: 27]."
+        exp: "To successfully withdraw as an accomplice, a person must repudiate their prior aid, communicate their withdrawal to the principal, AND neutralize any material assistance provided. Kevin failed to retrieve the explosives or notify the police, rendering his verbal withdrawal legally ineffective."
     },
     {
         id: 13,
@@ -184,7 +184,7 @@ const examData = [
             "Yes, but his liability is capped at involuntary manslaughter because he was not physically present at the scene."
         ],
         ans: 2,
-        exp: "Because Kevin's withdrawal was ineffective, he remains fully liable as an accomplice to the armed robbery[cite: 27]. Under the felony murder rule, all participants in an inherently dangerous felony are liable for a murder committed by a co-felon during the commission of the crime, provided the death was foreseeable[cite: 27]."
+        exp: "Because Kevin's withdrawal was ineffective, he remains fully liable as an accomplice to the armed robbery. Under the felony murder rule, all participants in an inherently dangerous felony are liable for a murder committed by a co-felon during the commission of the crime, provided the death was foreseeable."
     },
     {
         id: 14,
@@ -198,7 +198,7 @@ const examData = [
             "No, because conspiracy strictly requires all participating parties to be physically present during the commission of the target felony."
         ],
         ans: 0,
-        exp: "Conspiracy is complete the moment the agreement is made and an overt act is performed (providing explosives)[cite: 27]. Once the crime of conspiracy is complete, subsequent withdrawal is not a defense to the conspiracy charge itself, though an effective withdrawal will shield them from liability for SUBSEQUENT substantive crimes[cite: 27]."
+        exp: "Conspiracy is complete the moment the agreement is made and an overt act is performed (providing explosives). Once the crime of conspiracy is complete, subsequent withdrawal is not a defense to the conspiracy charge itself, though an effective withdrawal will shield them from liability for SUBSEQUENT substantive crimes."
     },
     // FACT PATTERN 6 (Q15-Q17)
     {
@@ -213,7 +213,7 @@ const examData = [
             "Yes, because any unauthorized restriction of a victim's freedom of movement automatically constitutes kidnapping."
         ],
         ans: 1,
-        exp: "Kidnapping requires unlawful confinement and 'asportation' (movement) that is substantial or increases the risk of harm independent of the underlying crime[cite: 27]. Moving a victim from a public street to a secluded abandoned house drastically increases the risk of harm, easily satisfying the asportation requirement[cite: 27]."
+        exp: "Kidnapping requires unlawful confinement and 'asportation' (movement) that is substantial or increases the risk of harm independent of the underlying crime. Moving a victim from a public street to a secluded abandoned house drastically increases the risk of harm, easily satisfying the asportation requirement."
     },
     {
         id: 16,
@@ -227,7 +227,7 @@ const examData = [
             "Specific intent, because aggravated kidnapping for ransom requires the defendant to confine the victim with the explicit, specific purpose of extorting money or securing a distinct secondary objective."
         ],
         ans: 3,
-        exp: "While simple kidnapping is often a general intent crime, aggravated kidnapping (such as kidnapping for ransom, robbery, or sexual assault) is a specific intent crime[cite: 27]. The defendant must possess the specific purpose of obtaining money or another illicit objective[cite: 27]."
+        exp: "While simple kidnapping is often a general intent crime, aggravated kidnapping (such as kidnapping for ransom, robbery, or sexual assault) is a specific intent crime. The defendant must possess the specific purpose of obtaining money or another illicit objective."
     },
     {
         id: 17,
@@ -241,7 +241,7 @@ const examData = [
             "Yes, because kidnapping exclusively pertains to the transportation phase, while false imprisonment governs the stationary confinement phase."
         ],
         ans: 0,
-        exp: "False imprisonment is a lesser included offense of kidnapping[cite: 27]. Under the Double Jeopardy Clause and standard merger doctrines, a defendant cannot be separately punished for both the greater offense (kidnapping) and the lesser included offense (false imprisonment) based on the same continuous act of confinement[cite: 27]."
+        exp: "False imprisonment is a lesser included offense of kidnapping. Under the Double Jeopardy Clause and standard merger doctrines, a defendant cannot be separately punished for both the greater offense (kidnapping) and the lesser included offense (false imprisonment) based on the same continuous act of confinement."
     },
     // FACT PATTERN 7 (Q18-Q20)
     {
@@ -256,7 +256,7 @@ const examData = [
             "No, because the structure was completely destroyed, extinguishing the underlying property offense."
         ],
         ans: 0,
-        exp: "Common law burglary requires the specific intent to commit a felony inside the dwelling AT THE TIME of the breaking and entering[cite: 27]. Because Oscar only intended to escape the storm upon entry, he lacked the specific intent required for burglary[cite: 27]."
+        exp: "Common law burglary requires the specific intent to commit a felony inside the dwelling AT THE TIME of the breaking and entering. Because Oscar only intended to escape the storm upon entry, he lacked the specific intent required for burglary."
     },
     {
         id: 19,
@@ -270,7 +270,7 @@ const examData = [
             "Yes, because he utilized constructive physical force to bypass the residential security systems."
         ],
         ans: 1,
-        exp: "Larceny is the trespassory taking and carrying away of the personal property of another with the intent to steal[cite: 27]. Even though his initial entry was justified by necessity, his subsequent taking of the jewelry was an unprivileged, trespassory taking[cite: 27]."
+        exp: "Larceny is the trespassory taking and carrying away of the personal property of another with the intent to steal. Even though his initial entry was justified by necessity, his subsequent taking of the jewelry was an unprivileged, trespassory taking."
     },
     {
         id: 20,
@@ -284,7 +284,7 @@ const examData = [
             "No, because accidentally tripping over a space heater lacks the malicious intent (intentional or reckless burning) required for common law arson."
         ],
         ans: 3,
-        exp: "Common law arson requires the MALICIOUS burning of the dwelling of another[cite: 27]. Malice requires an intentional burning or reckless disregard of an obvious risk of burning[cite: 27]. Accidentally tripping over a heater during flight lacks the requisite malice[cite: 27]."
+        exp: "Common law arson requires the MALICIOUS burning of the dwelling of another. Malice requires an intentional burning or reckless disregard of an obvious risk of burning. Accidentally tripping over a heater during flight lacks the requisite malice."
     },
     // FACT PATTERN 8 (Q21-Q23)
     {
@@ -299,7 +299,7 @@ const examData = [
             "No, because necessity exclusively applies to the protection of real property and is entirely inapplicable to personal injury cases."
         ],
         ans: 1,
-        exp: "The traditional common law rule (famously established in R v Dudley and Stephens) holds that necessity is NEVER a defense to the intentional taking of an innocent human life, even to save a greater number of lives[cite: 27]. (Note: The Model Penal Code generally allows it if the evil avoided is greater, but the prompt asks for traditional common law)[cite: 27]."
+        exp: "The traditional common law rule (famously established in R v Dudley and Stephens) holds that necessity is NEVER a defense to the intentional taking of an innocent human life, even to save a greater number of lives. (Note: The Model Penal Code generally allows it if the evil avoided is greater, but the prompt asks for traditional common law)."
     },
     {
         id: 22,
@@ -313,7 +313,7 @@ const examData = [
             "Because duress only mitigates crimes to lesser included misdemeanors."
         ],
         ans: 2,
-        exp: "The key distinction between the two defenses is the source of the threat[cite: 27]. Duress involves coercion by another HUMAN being who threatens immediate physical harm[cite: 27]. Necessity (the choice of evils defense) typically involves pressure created by physical, mechanical, or NATURAL forces[cite: 27]."
+        exp: "The key distinction between the two defenses is the source of the threat. Duress involves coercion by another HUMAN being who threatens immediate physical harm. Necessity (the choice of evils defense) typically involves pressure created by physical, mechanical, or NATURAL forces."
     },
     {
         id: 23,
@@ -327,7 +327,7 @@ const examData = [
             "That the doctrine of transferred intent completely shields drivers during mechanical failure events."
         ],
         ans: 2,
-        exp: "Manslaughter requires a showing of criminal negligence or recklessness[cite: 27]. Under the sudden emergency doctrine, a person confronted with a sudden, unexpected emergency not of their own making is not held to the same standard of calm reflection as one who has time to deliberate[cite: 27]. Quinn's choice to save the children was arguably reasonable under the extreme circumstances, negating criminal negligence[cite: 27]."
+        exp: "Manslaughter requires a showing of criminal negligence or recklessness. Under the sudden emergency doctrine, a person confronted with a sudden, unexpected emergency not of their own making is not held to the same standard of calm reflection as one who has time to deliberate. Quinn's choice to save the children was arguably reasonable under the extreme circumstances, negating criminal negligence."
     },
     // FACT PATTERN 9 (Q24-Q25)
     {
@@ -342,7 +342,7 @@ const examData = [
             "Yes, because he obtained property by threatening future harm to the victim's business and property."
         ],
         ans: 3,
-        exp: "Extortion (blackmail) is obtaining property from another by means of a threat of future harm, including threats to destroy property or cause economic/business ruin[cite: 27]. Sam's threat to delete the database satisfies the elements of extortion[cite: 27]."
+        exp: "Extortion (blackmail) is obtaining property from another by means of a threat of future harm, including threats to destroy property or cause economic/business ruin. Sam's threat to delete the database satisfies the elements of extortion."
     },
     {
         id: 25,
@@ -356,6 +356,6 @@ const examData = [
             "No, because web development services do not constitute tangible property under the penal code."
         ],
         ans: 1,
-        exp: "While a 'claim of right' (an honest belief in ownership) can negate the intent to steal in simple larceny cases, modern courts universally reject the claim of right defense for violent crimes or extortion[cite: 27]. Using illegal threats of harm to collect a valid debt is still extortion[cite: 27]."
+        exp: "While a 'claim of right' (an honest belief in ownership) can negate the intent to steal in simple larceny cases, modern courts universally reject the claim of right defense for violent crimes or extortion. Using illegal threats of harm to collect a valid debt is still extortion."
     }
 ];

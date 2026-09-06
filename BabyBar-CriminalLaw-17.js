@@ -12,7 +12,7 @@ const examData = [
             "Depraved heart murder, due to his extreme and reckless indifference to the value of human life under emergency conditions."
         ],
         ans: 2,
-        exp: "Criminal liability for an omission (failure to act) only arises if the defendant has a strict legal duty to act (e.g., parent/child, contractual duty, or having created the peril)[cite: 28]. Despite Charlie's malicious motive (wanting the watch), a stranger generally has no legal affirmative duty to rescue a drowning person[cite: 28]."
+        exp: "Criminal liability for an omission (failure to act) only arises if the defendant has a strict legal duty to act (e.g., parent/child, contractual duty, or having created the peril). Despite Charlie's malicious motive (wanting the watch), a stranger generally has no legal affirmative duty to rescue a drowning person."
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const examData = [
             "Yes, because guides are held strictly liable for any fatalities."
         ],
         ans: 0,
-        exp: "A defendant is the proximate cause of death if the result is a foreseeable consequence of their actions[cite: 28]. An intervening 'omission' (someone else failing to save the victim) is almost never considered a superseding cause[cite: 28]. Alice intentionally created the fatal peril, making her the proximate cause of death despite Charlie's failure to rescue[cite: 28]."
+        exp: "A defendant is the proximate cause of death if the result is a foreseeable consequence of their actions. An intervening 'omission' (someone else failing to save the victim) is almost never considered a superseding cause. Alice intentionally created the fatal peril, making her the proximate cause of death despite Charlie's failure to rescue."
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const examData = [
             "Solicitation to commit manslaughter."
         ],
         ans: 1,
-        exp: "Attempted murder requires the specific intent to kill and an overt act beyond mere preparation (a substantial step)[cite: 28]. Cutting a novice diver's lifeline in an extreme cave system with the specific intent that he drown clearly constitutes a substantial step, making her guilty of attempted murder when he survives[cite: 28]."
+        exp: "Attempted murder requires the specific intent to kill and an overt act beyond mere preparation (a substantial step). Cutting a novice diver's lifeline in an extreme cave system with the specific intent that he drown clearly constitutes a substantial step, making her guilty of attempted murder when he survives."
     },
     // FACT PATTERN 2 (Q4-Q5)
     {
@@ -55,7 +55,7 @@ const examData = [
             "Embezzlement, because he fraudulently converted the financial assets of another while he already possessed lawful, discretionary control over the funds."
         ],
         ans: 3,
-        exp: "Embezzlement requires the fraudulent conversion of the property of another by someone already in lawful possession[cite: 28]. As chief investment officer with discretionary authority, David had lawful possession (constructive control) of the funds[cite: 28]. Transferring them to his personal offshore account constitutes embezzlement[cite: 28]."
+        exp: "Embezzlement requires the fraudulent conversion of the property of another by someone already in lawful possession. As chief investment officer with discretionary authority, David had lawful possession (constructive control) of the funds. Transferring them to his personal offshore account constitutes embezzlement."
     },
     {
         id: 5,
@@ -69,7 +69,7 @@ const examData = [
             "Extortion."
         ],
         ans: 0,
-        exp: "False pretenses requires the defendant to obtain TITLE to property by an intentional false statement of fact with intent to defraud[cite: 28]. Because the investor intended to transfer full ownership (title) of the $5 million to David based on his lie about the bond investment, the crime is false pretenses[cite: 28]."
+        exp: "False pretenses requires the defendant to obtain TITLE to property by an intentional false statement of fact with intent to defraud. Because the investor intended to transfer full ownership (title) of the $5 million to David based on his lie about the bond investment, the crime is false pretenses."
     },
     // FACT PATTERN 3 (Q6-Q8)
     {
@@ -84,7 +84,7 @@ const examData = [
             "Yes, because he committed a violent felony immediately upon crossing the threshold."
         ],
         ans: 1,
-        exp: "Common law burglary strictly requires the breaking and entering of a DWELLING HOUSE of another in the nighttime[cite: 28]. A public art museum is a commercial or public structure, not a dwelling house, precluding a common law burglary conviction[cite: 28]."
+        exp: "Common law burglary strictly requires the breaking and entering of a DWELLING HOUSE of another in the nighttime. A public art museum is a commercial or public structure, not a dwelling house, precluding a common law burglary conviction."
     },
     {
         id: 7,
@@ -98,7 +98,7 @@ const examData = [
             "Yes, but only to mitigate the offense to voluntary manslaughter under the imperfect self-defense doctrine."
         ],
         ans: 2,
-        exp: "Perfect self-defense requires that the defendant's belief in the need for deadly force be BOTH honest (subjective) and objectively reasonable[cite: 28]. A belief based entirely on a drug-induced hallucination from voluntary PCP consumption is inherently objectively unreasonable, destroying perfect self-defense[cite: 28]."
+        exp: "Perfect self-defense requires that the defendant's belief in the need for deadly force be BOTH honest (subjective) and objectively reasonable. A belief based entirely on a drug-induced hallucination from voluntary PCP consumption is inherently objectively unreasonable, destroying perfect self-defense."
     },
     {
         id: 8,
@@ -112,7 +112,7 @@ const examData = [
             "No, because temporary psychosis caused solely by voluntary intoxication is not a recognized mental disease."
         ],
         ans: 3,
-        exp: "To qualify for the insanity defense, the defendant's incapacity must be caused by a valid 'mental disease or defect.'[cite: 28] A temporary psychotic state or hallucination brought on solely by the voluntary ingestion of illicit drugs (like PCP) does not legally qualify as a mental disease for the insanity defense[cite: 28]."
+        exp: "To qualify for the insanity defense, the defendant's incapacity must be caused by a valid 'mental disease or defect.' A temporary psychotic state or hallucination brought on solely by the voluntary ingestion of illicit drugs (like PCP) does not legally qualify as a mental disease for the insanity defense."
     },
     // FACT PATTERN 4 (Q9-Q10)
     {
@@ -127,7 +127,7 @@ const examData = [
             "Yes, because paying a federal agent constitutes bribery, establishing strict liability."
         ],
         ans: 1,
-        exp: "Because it is indeed a crime to import counterfeit goods, their mistake regarding the actual authenticity of the specific bags they possessed is a 'factual impossibility.'[cite: 28] Under modern attempt law (and the Model Penal Code), factual impossibility is never a defense to an attempt charge[cite: 28]. They are judged on the facts as they believed them to be[cite: 28]."
+        exp: "Because it is indeed a crime to import counterfeit goods, their mistake regarding the actual authenticity of the specific bags they possessed is a 'factual impossibility.' Under modern attempt law (and the Model Penal Code), factual impossibility is never a defense to an attempt charge. They are judged on the facts as they believed them to be."
     },
     {
         id: 10,
@@ -141,7 +141,7 @@ const examData = [
             "Yes, because the Pinkerton doctrine extends liability to all parties interacting with law enforcement."
         ],
         ans: 2,
-        exp: "Even under the traditional common law bilateral approach (which requires a genuine agreement between at least two parties), Gina and Harry genuinely agreed WITH EACH OTHER to commit the crime[cite: 28]. Ian's feigned intent does not invalidate the genuine agreement that existed between Gina and Harry[cite: 28]."
+        exp: "Even under the traditional common law bilateral approach (which requires a genuine agreement between at least two parties), Gina and Harry genuinely agreed WITH EACH OTHER to commit the crime. Ian's feigned intent does not invalidate the genuine agreement that existed between Gina and Harry."
     },
     // FACT PATTERN 5 (Q11-Q13)
     {
@@ -156,7 +156,7 @@ const examData = [
             "False pretenses."
         ],
         ans: 0,
-        exp: "Robbery requires a taking of personal property (the ATM card) from the person or presence of another by force or the threat of IMMEDIATE physical harm[cite: 28]. Threatening to slash her throat 'right now' clearly establishes the imminent physical threat necessary for robbery[cite: 28]."
+        exp: "Robbery requires a taking of personal property (the ATM card) from the person or presence of another by force or the threat of IMMEDIATE physical harm. Threatening to slash her throat 'right now' clearly establishes the imminent physical threat necessary for robbery."
     },
     {
         id: 12,
@@ -170,7 +170,7 @@ const examData = [
             "Extortion, because he threatened future violence against her family."
         ],
         ans: 3,
-        exp: "Extortion (blackmail) involves obtaining property or compelling action by means of a threat of FUTURE harm[cite: 28]. Threatening to come to her house and kill her family 'tomorrow' is a threat of future physical harm, distinct from the immediate threat required for robbery[cite: 28]."
+        exp: "Extortion (blackmail) involves obtaining property or compelling action by means of a threat of FUTURE harm. Threatening to come to her house and kill her family 'tomorrow' is a threat of future physical harm, distinct from the immediate threat required for robbery."
     },
     {
         id: 13,
@@ -184,7 +184,7 @@ const examData = [
             "No, because they involve different dollar amounts."
         ],
         ans: 2,
-        exp: "The merger doctrine typically applies to lesser included offenses (e.g., larceny merges into robbery) or inchoate crimes merging into completed crimes[cite: 28]. Here, Jack committed two distinct, separate acts involving different property (the card vs. the future $10k) and different threats (immediate throat slashing vs. future family harm)[cite: 28]. They do not merge[cite: 28]."
+        exp: "The merger doctrine typically applies to lesser included offenses (e.g., larceny merges into robbery) or inchoate crimes merging into completed crimes. Here, Jack committed two distinct, separate acts involving different property (the card vs. the future $10k) and different threats (immediate throat slashing vs. future family harm). They do not merge."
     },
     // FACT PATTERN 6 (Q14-Q16)
     {
@@ -199,7 +199,7 @@ const examData = [
             "Yes, because the use of an accelerant constitutes per se malice."
         ],
         ans: 0,
-        exp: "At strict common law, arson is defined as the malicious burning of the DWELLING house of another[cite: 28]. A commercial art gallery is not a dwelling house, precluding a common law arson conviction (though modern statutes routinely cover commercial buildings)[cite: 28]."
+        exp: "At strict common law, arson is defined as the malicious burning of the DWELLING house of another. A commercial art gallery is not a dwelling house, precluding a common law arson conviction (though modern statutes routinely cover commercial buildings)."
     },
     {
         id: 15,
@@ -213,7 +213,7 @@ const examData = [
             "No, because arson is a specific intent crime that never merges under any circumstances."
         ],
         ans: 1,
-        exp: "Under the merger doctrine (Ireland rule), a felony murder charge cannot be based on a felony that is an integral part of the homicide (e.g., assault or battery) because it merges[cite: 28]. However, arson has an independent collateral felonious purpose (the destruction of property)[cite: 28]. Thus, it does not merge and serves as a valid predicate for felony murder[cite: 28]."
+        exp: "Under the merger doctrine (Ireland rule), a felony murder charge cannot be based on a felony that is an integral part of the homicide (e.g., assault or battery) because it merges. However, arson has an independent collateral felonious purpose (the destruction of property). Thus, it does not merge and serves as a valid predicate for felony murder."
     },
     {
         id: 16,
@@ -227,7 +227,7 @@ const examData = [
             "Yes, because a death resulting from the burning of a commercial building is a highly foreseeable consequence of committing the inherently dangerous felony of arson."
         ],
         ans: 3,
-        exp: "Under the felony murder rule and accomplice/conspirator liability, a defendant is liable for a death caused by a co-felon during an inherently dangerous felony if the death is a foreseeable result[cite: 28]. It is highly foreseeable that someone (a guard, a homeless person, a firefighter) might be inside or near a burning building and die as a result of the arson[cite: 28]."
+        exp: "Under the felony murder rule and accomplice/conspirator liability, a defendant is liable for a death caused by a co-felon during an inherently dangerous felony if the death is a foreseeable result. It is highly foreseeable that someone (a guard, a homeless person, a firefighter) might be inside or near a burning building and die as a result of the arson."
     },
     // FACT PATTERN 7 (Q17-Q18)
     {
@@ -242,7 +242,7 @@ const examData = [
             "Yes, but the charge is mitigated to false imprisonment."
         ],
         ans: 2,
-        exp: "Kidnapping requires unlawful confinement and substantial asportation (movement) that increases the risk of harm[cite: 28]. Forcing a victim at gunpoint to drive their vehicle 100 miles clearly satisfies the substantial movement requirement[cite: 28]. Nina's temporary sleep does not negate the ongoing coercive threat she established[cite: 28]."
+        exp: "Kidnapping requires unlawful confinement and substantial asportation (movement) that increases the risk of harm. Forcing a victim at gunpoint to drive their vehicle 100 miles clearly satisfies the substantial movement requirement. Nina's temporary sleep does not negate the ongoing coercive threat she established."
     },
     {
         id: 18,
@@ -256,7 +256,7 @@ const examData = [
             "The charges are automatically consolidated into extortion."
         ],
         ans: 0,
-        exp: "False imprisonment (unlawful confinement) is a lesser included offense of kidnapping (unlawful confinement plus asportation)[cite: 28]. Under the Double Jeopardy Clause and standard merger doctrines, a defendant cannot be separately convicted and punished for both the greater and lesser included offenses based on the same continuous act[cite: 28]."
+        exp: "False imprisonment (unlawful confinement) is a lesser included offense of kidnapping (unlawful confinement plus asportation). Under the Double Jeopardy Clause and standard merger doctrines, a defendant cannot be separately convicted and punished for both the greater and lesser included offenses based on the same continuous act."
     },
     // FACT PATTERN 8 (Q19-Q21)
     {
@@ -271,7 +271,7 @@ const examData = [
             "No, because the 'open window' exception grants implied consent to all individuals seeking emergency shelter."
         ],
         ans: 1,
-        exp: "Common law burglary requires the specific intent to commit a felony inside the dwelling AT THE TIME of the breaking and entering[cite: 28]. Because Paul only intended to escape the dogs upon entry, he lacked the requisite specific intent[cite: 28]. Additionally, breaking OUT of a house does not constitute burglary at common law[cite: 28]."
+        exp: "Common law burglary requires the specific intent to commit a felony inside the dwelling AT THE TIME of the breaking and entering. Because Paul only intended to escape the dogs upon entry, he lacked the requisite specific intent. Additionally, breaking OUT of a house does not constitute burglary at common law."
     },
     {
         id: 20,
@@ -285,7 +285,7 @@ const examData = [
             "No, because while the sudden emergency justified his initial trespass into the home to save his life, it did not legally justify the subsequent, completely unrelated theft of the painting."
         ],
         ans: 3,
-        exp: "The necessity defense justifies committing a crime only if it is reasonably necessary to avoid a greater, imminent harm[cite: 28]. While necessity justifies Paul's initial trespass (entering the house to avoid being mauled by dogs), stealing a painting 30 minutes later was completely unnecessary for his survival, so the defense does not apply to the theft[cite: 28]."
+        exp: "The necessity defense justifies committing a crime only if it is reasonably necessary to avoid a greater, imminent harm. While necessity justifies Paul's initial trespass (entering the house to avoid being mauled by dogs), stealing a painting 30 minutes later was completely unnecessary for his survival, so the defense does not apply to the theft."
     },
     {
         id: 21,
@@ -299,7 +299,7 @@ const examData = [
             "No, because the door was already unlocked from the inside."
         ],
         ans: 2,
-        exp: "Common law burglary requires a breaking and entering INTO the dwelling[cite: 28]. Pushing a door open to EXIT the building (breaking out) does not satisfy the 'breaking' element of traditional common law burglary[cite: 28]."
+        exp: "Common law burglary requires a breaking and entering INTO the dwelling. Pushing a door open to EXIT the building (breaking out) does not satisfy the 'breaking' element of traditional common law burglary."
     },
     // FACT PATTERN 9 (Q22-Q23)
     {
@@ -314,7 +314,7 @@ const examData = [
             "No, withdrawal requires a formal police confession."
         ],
         ans: 1,
-        exp: "To successfully withdraw as an accomplice, a person must repudiate their prior aid, communicate their withdrawal to the principal, AND neutralize any material assistance they previously provided before the crime becomes unstoppable[cite: 28]. By leaving the alarm disabled, Rita failed to neutralize her material aid, rendering her withdrawal ineffective[cite: 28]."
+        exp: "To successfully withdraw as an accomplice, a person must repudiate their prior aid, communicate their withdrawal to the principal, AND neutralize any material assistance they previously provided before the crime becomes unstoppable. By leaving the alarm disabled, Rita failed to neutralize her material aid, rendering her withdrawal ineffective."
     },
     {
         id: 23,
@@ -328,7 +328,7 @@ const examData = [
             "Yes, because she provided material aid with the requisite specific intent."
         ],
         ans: 3,
-        exp: "An accomplice is one who aids, abets, or encourages the principal in the commission of the crime, with the specific intent that the crime be committed[cite: 28]. Rita intentionally disabled the alarm to facilitate the theft[cite: 28]. Because her withdrawal was legally ineffective, she remains fully liable as an accomplice to larceny[cite: 28]."
+        exp: "An accomplice is one who aids, abets, or encourages the principal in the commission of the crime, with the specific intent that the crime be committed. Rita intentionally disabled the alarm to facilitate the theft. Because her withdrawal was legally ineffective, she remains fully liable as an accomplice to larceny."
     },
     // FACT PATTERN 10 (Q24-Q25)
     {
@@ -343,7 +343,7 @@ const examData = [
             "Yes, because he lacked the malicious intent to pollute the local environment."
         ],
         ans: 0,
-        exp: "Strict liability offenses (often public welfare offenses like environmental dumping) require no proof of a culpable mental state (mens rea) regarding the prohibited act[cite: 28]. Because no mens rea is required, a mistake of fact—even if entirely honest and objectively reasonable—is never a defense[cite: 28]."
+        exp: "Strict liability offenses (often public welfare offenses like environmental dumping) require no proof of a culpable mental state (mens rea) regarding the prohibited act. Because no mens rea is required, a mistake of fact—even if entirely honest and objectively reasonable—is never a defense."
     },
     {
         id: 25,
@@ -357,6 +357,6 @@ const examData = [
             "Only that he performed the voluntary physical actus reus of opening the valve which resulted in the prohibited discharge of the regulated chemical."
         ],
         ans: 3,
-        exp: "For a strict liability offense, the prosecution does not need to prove intent, recklessness, or negligence (mens rea)[cite: 28]. They must only prove that the defendant committed the voluntary physical act (actus reus)—opening the valve—that caused the statutorily prohibited result (discharging the chemical)[cite: 28]."
+        exp: "For a strict liability offense, the prosecution does not need to prove intent, recklessness, or negligence (mens rea). They must only prove that the defendant committed the voluntary physical act (actus reus)—opening the valve—that caused the statutorily prohibited result (discharging the chemical)."
     }
 ];
