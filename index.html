@@ -342,6 +342,25 @@
             </div>
         </div>
 
+        <!-- MIXED PART 5 -->
+        <div class="accordion-section" id="sec-mixed_pt5">
+            <div class="category-header-bar" onclick="toggleAccordion('sec-mixed_pt5', 'mixed_pt5')">
+                <div class="title-left">
+                    <span class="chevron-icon">▶</span>
+                    <div class="section-title">📝 Mixed Part 5 (Sets 81–100)</div>
+                </div>
+                <div class="category-actions" onclick="event.stopPropagation()">
+                    <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('mixed_pt5', 'Mixed Part 5', 81, 100)">📤 Export</button>
+                    <button class="btn-cat-group-import btn-cat-export" onclick="triggerGroupJSONImport('mixed_pt5', 'Mixed Part 5', 81, 100)">📥 Import</button>
+                    <button class="btn-cat-export btn-cat-missed" onclick="generateAllMissedSet(event, 'mixed_pt5', 'Mixed', 'Mixed Part 5', 81, 100)">❌ Compile Missed</button>
+                    <button class="btn-cat-export btn-cat-flagged" onclick="generateAllFlaggedSet(event, 'mixed_pt5', 'Mixed', 'Mixed Part 5', 81, 100)">🚩 Compile Flagged</button>
+                </div>
+            </div>
+            <div class="accordion-body">
+                <div class="exam-grid" id="mixed-pt5-grid"></div>
+            </div>
+        </div>
+
         <footer>gobabybar.com • Built for iPad & Offline Study</footer>
     </div>
 
@@ -520,11 +539,12 @@
             renderExamSection("contracts-grid", "contracts", "Contracts", "Contracts", 1, 25, "Formation, Breach & Remedies");
             renderExamSection("contracts-adv-grid", "contracts_adv", "Contracts", "Contracts Adv", 26, 39, "Advanced UCC, Performance & Complex Remedies");
             
-            // Mixed Subject Sets broken into 4 parts
+            // Mixed Subject Sets broken into 5 parts
             renderExamSection("mixed-pt1-grid", "mixed_pt1", "Mixed", "Mixed Part 1", 1, 20, "Multi-Subject FYLSX Practice Exam");
             renderExamSection("mixed-pt2-grid", "mixed_pt2", "Mixed", "Mixed Part 2", 21, 40, "Multi-Subject FYLSX Practice Exam");
             renderExamSection("mixed-pt3-grid", "mixed_pt3", "Mixed", "Mixed Part 3", 41, 60, "Multi-Subject FYLSX Practice Exam");
             renderExamSection("mixed-pt4-grid", "mixed_pt4", "Mixed", "Mixed Part 4", 61, 80, "Multi-Subject FYLSX Practice Exam");
+            renderExamSection("mixed-pt5-grid", "mixed_pt5", "Mixed", "Mixed Part 5", 81, 100, "Multi-Subject FYLSX Practice Exam");
         }
 
         // COMPILE MISSED QUESTIONS
@@ -675,7 +695,7 @@
                 if (localStorage.getItem(hKey)) storageItems[hKey] = localStorage.getItem(hKey);
             });
 
-            const exportPayload = { app: "GoBabyBar Exam Center", version: "2.4", exportType: "group_complete_backup", categoryKey, categoryTitle, startSet, endSet, totalSetsScanned: (endSet - startSet + 1), setsWithRecordedData: setsWithData, exportTimestamp: new Date().toISOString(), data: storageItems };
+            const exportPayload = { app: "GoBabyBar Exam Center", version: "2.5", exportType: "group_complete_backup", categoryKey, categoryTitle, startSet, endSet, totalSetsScanned: (endSet - startSet + 1), setsWithRecordedData: setsWithData, exportTimestamp: new Date().toISOString(), data: storageItems };
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportPayload, null, 2));
             const downloadAnchor = document.createElement('a'); downloadAnchor.setAttribute("href", dataStr); downloadAnchor.setAttribute("download", `GoBabyBar_${categoryTitle.replace(/\s+/g, '_')}_Full_Backup_${new Date().toISOString().slice(0,10)}.json`);
             document.body.appendChild(downloadAnchor); downloadAnchor.click(); downloadAnchor.remove();
