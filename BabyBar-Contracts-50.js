@@ -2,7 +2,7 @@
 // Total Questions: 25
 // Subject: Contracts (Common Law & UCC Article 2) ONLY
 // Standard: Master Tier 5 / First-Year Law Students' Examination (Baby Bar) Benchmark
-const examData50 = [
+const examData = [
     {
         id: 1,
         topic: "Defenses / Infancy & Ratification",
