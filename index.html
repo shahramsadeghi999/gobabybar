@@ -141,6 +141,7 @@
             <p>California First-Year Law Students' Examination (FYLSX) Preparation Suite</p>
         </header>
 
+        <!-- EXPORT MODAL -->
         <div class="modal-box" id="category-modal-box">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <h3 id="modal-title" style="color: var(--primary);">Export Practice Data</h3>
@@ -151,6 +152,21 @@
             <div class="modal-btn-row">
                 <button class="btn-action-primary" onclick="copyCategoryModalContent()">📋 Copy to Clipboard</button>
                 <button class="btn-action-secondary" onclick="downloadCategoryModalFile()">💾 Save to File</button>
+            </div>
+        </div>
+
+        <!-- IMPORT MODAL -->
+        <div class="modal-box" id="category-import-modal-box">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h3 id="import-modal-title" style="color: var(--primary);">Import Practice Data</h3>
+                <button class="btn-modal-close" onclick="closeCategoryImportModal()">✕ Close</button>
+            </div>
+            <p id="import-modal-desc" style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.3rem;">Upload a saved JSON backup file or paste the JSON text directly into the box below:</p>
+            <textarea id="import-modal-textarea" placeholder="Paste your JSON backup code here..."></textarea>
+            <div class="modal-btn-row">
+                <button class="btn-action-secondary" onclick="triggerFilePickerForImport()">📁 Choose File (.json)</button>
+                <button class="btn-action-primary" onclick="pasteFromClipboardIntoImport()">📋 Paste from Clipboard</button>
+                <button class="btn-action-primary" style="background: var(--success);" onclick="executeTextImport()">✅ Import Pasted Data</button>
             </div>
         </div>
 
@@ -178,7 +194,7 @@
             <div class="category-header-bar" onclick="toggleAccordion('sec-torts_adv', 'torts_adv')">
                 <div class="title-left">
                     <span class="chevron-icon">▶</span>
-                    <div class="section-title">⚖️ Torts Adv Practice Sets (Sets 21–34)</div>
+                    <div class="section-title">⚖️️ Torts Adv Practice Sets (Sets 21–34)</div>
                 </div>
                 <div class="category-actions" onclick="event.stopPropagation()">
                     <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('torts_adv', 'Torts Adv', 21, 34)">📤 Export</button>
@@ -700,6 +716,7 @@
             pendingDownloadPayload = JSON.stringify(exportPayload, null, 2);
             pendingDownloadFilename = `GoBabyBar_${categoryTitle.replace(/\s+/g, '_')}_Full_Backup_${new Date().toISOString().slice(0,10)}.json`;
 
+            closeCategoryImportModal();
             document.getElementById("modal-title").textContent = `Export: ${categoryTitle}`;
             document.getElementById("modal-desc").textContent = `Choose an export option for ${categoryTitle} (Sets ${String(startSet).padStart(2, '0')}–${String(endSet).padStart(2, '0')}):`;
             document.getElementById("modal-textarea").value = pendingDownloadPayload;
@@ -718,41 +735,110 @@
             downloadAnchor.remove();
         }
 
-        function triggerGroupJSONImport(categoryKey, categoryTitle, startSet, endSet) { activeImportCategory = { categoryKey, categoryTitle, startSet, endSet }; document.getElementById("group-file-importer").value = ""; document.getElementById("group-file-importer").click(); }
-        
+        function closeCategoryModal() { document.getElementById("category-modal-box").classList.remove("visible"); }
+        function copyCategoryModalContent() { document.getElementById("modal-textarea").select(); document.execCommand("copy"); alert("Copied to clipboard!"); }
+
+        // IMPORT SYSTEM
+        function triggerGroupJSONImport(categoryKey, categoryTitle, startSet, endSet) {
+            activeImportCategory = { categoryKey, categoryTitle, startSet, endSet };
+            closeCategoryModal();
+            document.getElementById("import-modal-title").textContent = `Import: ${categoryTitle}`;
+            document.getElementById("import-modal-desc").textContent = `Import backup for ${categoryTitle} (Sets ${String(startSet).padStart(2, '0')}–${String(endSet).padStart(2, '0')}). Choose a file or paste JSON code:`;
+            document.getElementById("import-modal-textarea").value = "";
+            document.getElementById("category-import-modal-box").classList.add("visible");
+            document.getElementById("category-import-modal-box").scrollIntoView({ behavior: "smooth" });
+        }
+
+        function closeCategoryImportModal() {
+            document.getElementById("category-import-modal-box").classList.remove("visible");
+        }
+
+        function triggerFilePickerForImport() {
+            document.getElementById("group-file-importer").value = "";
+            document.getElementById("group-file-importer").click();
+        }
+
+        async function pasteFromClipboardIntoImport() {
+            try {
+                if (navigator.clipboard && navigator.clipboard.readText) {
+                    const text = await navigator.clipboard.readText();
+                    if (text && text.trim().length > 0) {
+                        document.getElementById("import-modal-textarea").value = text;
+                        alert("Pasted data from clipboard!");
+                        return;
+                    }
+                }
+            } catch (err) {}
+            document.getElementById("import-modal-textarea").focus();
+            document.getElementById("import-modal-textarea").select();
+            alert("Clipboard auto-read unavailable. Please press Ctrl+V / Cmd+V to paste your backup JSON into the box.");
+        }
+
+        function executeTextImport() {
+            const rawText = document.getElementById("import-modal-textarea").value.trim();
+            if (!rawText) {
+                alert("Please paste valid JSON backup data into the box first.");
+                return;
+            }
+            try {
+                const parsed = JSON.parse(rawText);
+                processImportData(parsed);
+                closeCategoryImportModal();
+            } catch (err) {
+                alert("Error parsing JSON data: " + err.message);
+            }
+        }
+
         function executeGroupFileImport(event) {
-            const file = event.target.files[0]; if (!file) return;
+            const file = event.target.files[0];
+            if (!file) return;
             const reader = new FileReader();
             reader.onload = function(e) {
                 try {
                     const parsed = JSON.parse(e.target.result);
-                    if (!parsed.data) { alert("Invalid backup file."); return; }
-                    const targetCat = activeImportCategory ? activeImportCategory.categoryKey : (parsed.categoryKey || "torts");
-                    const targetStart = activeImportCategory ? activeImportCategory.startSet : (parsed.startSet || 1);
-                    const targetEnd = activeImportCategory ? activeImportCategory.endSet : (parsed.endSet || parsed.totalSetsScanned || 20);
-                    const versions = ["v25", "v100", "v23", "v24"];
-                    const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"];
-
-                    for (let i = targetStart; i <= targetEnd; i++) {
-                        const padNum = String(i).padStart(2, '0');
-                        versions.forEach(v => prefixes.forEach(p => { localStorage.removeItem(`fylsx_${targetCat}_set${i}_${p}_${v}`); localStorage.removeItem(`fylsx_${targetCat}_set${padNum}_${p}_${v}`); }));
-                        localStorage.removeItem(`fylsx_history_${targetCat}_set${i}`); localStorage.removeItem(`fylsx_history_${targetCat}_set${padNum}`);
-                    }
-                    ["missed", "flagged"].forEach(st => {
-                        localStorage.removeItem(`fylsx_${targetCat}_${st}_set_exam_data`);
-                        versions.forEach(v => prefixes.forEach(p => localStorage.removeItem(`fylsx_${targetCat}_set${st}_${p}_${v}`)));
-                        localStorage.removeItem(`fylsx_history_${targetCat}_set${st}`);
-                    });
-
-                    let keysImported = 0; Object.keys(parsed.data).forEach(k => { localStorage.setItem(k, parsed.data[k]); keysImported++; });
-                    populateAllExams(); alert(`✅ Data successfully imported (${keysImported} items).\n\nYour original sets, Missed sets, and Flagged sets have all been synced!`);
-                } catch (err) { alert("Error parsing JSON backup file: " + err.message); }
+                    processImportData(parsed);
+                    closeCategoryImportModal();
+                } catch (err) {
+                    alert("Error parsing JSON backup file: " + err.message);
+                }
             };
             reader.readAsText(file);
         }
 
-        function closeCategoryModal() { document.getElementById("category-modal-box").classList.remove("visible"); }
-        function copyCategoryModalContent() { document.getElementById("modal-textarea").select(); document.execCommand("copy"); alert("Copied to clipboard!"); }
+        function processImportData(parsed) {
+            if (!parsed.data) {
+                alert("Invalid backup format: missing 'data' object.");
+                return;
+            }
+            const targetCat = activeImportCategory ? activeImportCategory.categoryKey : (parsed.categoryKey || "torts");
+            const targetStart = activeImportCategory ? activeImportCategory.startSet : (parsed.startSet || 1);
+            const targetEnd = activeImportCategory ? activeImportCategory.endSet : (parsed.endSet || parsed.totalSetsScanned || 20);
+            const versions = ["v25", "v100", "v23", "v24"];
+            const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"];
+
+            for (let i = targetStart; i <= targetEnd; i++) {
+                const padNum = String(i).padStart(2, '0');
+                versions.forEach(v => prefixes.forEach(p => {
+                    localStorage.removeItem(`fylsx_${targetCat}_set${i}_${p}_${v}`);
+                    localStorage.removeItem(`fylsx_${targetCat}_set${padNum}_${p}_${v}`);
+                }));
+                localStorage.removeItem(`fylsx_history_${targetCat}_set${i}`);
+                localStorage.removeItem(`fylsx_history_${targetCat}_set${padNum}`);
+            }
+            ["missed", "flagged"].forEach(st => {
+                localStorage.removeItem(`fylsx_${targetCat}_${st}_set_exam_data`);
+                versions.forEach(v => prefixes.forEach(p => localStorage.removeItem(`fylsx_${targetCat}_set${st}_${p}_${v}`)));
+                localStorage.removeItem(`fylsx_history_${targetCat}_set${st}`);
+            });
+
+            let keysImported = 0;
+            Object.keys(parsed.data).forEach(k => {
+                localStorage.setItem(k, parsed.data[k]);
+                keysImported++;
+            });
+            populateAllExams();
+            alert(`✅ Data successfully imported (${keysImported} items).\n\nYour original sets, Missed sets, and Flagged sets have all been synced!`);
+        }
     </script>
 </body>
 </html>
