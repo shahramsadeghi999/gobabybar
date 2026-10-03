@@ -113,6 +113,8 @@
         .modal-btn-row { display: flex; gap: 0.6rem; margin-top: 0.8rem; flex-wrap: wrap; }
         .btn-action-primary { background: var(--primary); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.88rem; transition: all 0.15s ease; }
         .btn-action-primary:hover { background: var(--primary-light); }
+        .btn-action-secondary { background: #0284C7; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.88rem; transition: all 0.15s ease; }
+        .btn-action-secondary:hover { background: #0369A1; }
         footer { text-align: center; margin-top: 3rem; font-size: 0.8rem; color: var(--text-muted); padding-bottom: 1rem; }
     </style>
 </head>
@@ -141,14 +143,14 @@
 
         <div class="modal-box" id="category-modal-box">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-                <h3 id="modal-title" style="color: var(--primary);">Category Export</h3>
+                <h3 id="modal-title" style="color: var(--primary);">Export Practice Data</h3>
                 <button class="btn-modal-close" onclick="closeCategoryModal()">✕ Close</button>
             </div>
-            <p id="modal-desc" style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.3rem;"></p>
+            <p id="modal-desc" style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.3rem;">Choose whether to download the backup file or copy the raw JSON data to your clipboard.</p>
             <textarea id="modal-textarea" readonly></textarea>
             <div class="modal-btn-row">
                 <button class="btn-action-primary" onclick="copyCategoryModalContent()">📋 Copy to Clipboard</button>
-                <button class="btn-cat-export btn-cat-rules" id="btn-toggle-json" onclick="toggleExportFormat()">🔀 Switch to JSON Format</button>
+                <button class="btn-action-secondary" onclick="downloadCategoryModalFile()">💾 Save to File</button>
             </div>
         </div>
 
@@ -369,9 +371,8 @@
         const AUTH_SESSION_KEY = "gobabybar_auth_session";
         const ACTIVE_CATEGORY_KEY = "gobabybar_active_accordion_cat";
 
-        let currentExportDataText = "";
-        let currentExportDataJSON = "";
-        let isShowingJSON = false;
+        let pendingDownloadFilename = "";
+        let pendingDownloadPayload = "";
         let activeImportCategory = null;
 
         function toggleAccordion(sectionId, catKey) {
@@ -695,10 +696,26 @@
                 if (localStorage.getItem(hKey)) storageItems[hKey] = localStorage.getItem(hKey);
             });
 
-            const exportPayload = { app: "GoBabyBar Exam Center", version: "2.6", exportType: "group_complete_backup", categoryKey, categoryTitle, startSet, endSet, totalSetsScanned: (endSet - startSet + 1), setsWithRecordedData: setsWithData, exportTimestamp: new Date().toISOString(), data: storageItems };
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportPayload, null, 2));
-            const downloadAnchor = document.createElement('a'); downloadAnchor.setAttribute("href", dataStr); downloadAnchor.setAttribute("download", `GoBabyBar_${categoryTitle.replace(/\s+/g, '_')}_Full_Backup_${new Date().toISOString().slice(0,10)}.json`);
-            document.body.appendChild(downloadAnchor); downloadAnchor.click(); downloadAnchor.remove();
+            const exportPayload = { app: "GoBabyBar Exam Center", version: "2.7", exportType: "group_complete_backup", categoryKey, categoryTitle, startSet, endSet, totalSetsScanned: (endSet - startSet + 1), setsWithRecordedData: setsWithData, exportTimestamp: new Date().toISOString(), data: storageItems };
+            pendingDownloadPayload = JSON.stringify(exportPayload, null, 2);
+            pendingDownloadFilename = `GoBabyBar_${categoryTitle.replace(/\s+/g, '_')}_Full_Backup_${new Date().toISOString().slice(0,10)}.json`;
+
+            document.getElementById("modal-title").textContent = `Export: ${categoryTitle}`;
+            document.getElementById("modal-desc").textContent = `Choose an export option for ${categoryTitle} (Sets ${String(startSet).padStart(2, '0')}–${String(endSet).padStart(2, '0')}):`;
+            document.getElementById("modal-textarea").value = pendingDownloadPayload;
+            document.getElementById("category-modal-box").classList.add("visible");
+            document.getElementById("category-modal-box").scrollIntoView({ behavior: "smooth" });
+        }
+
+        function downloadCategoryModalFile() {
+            if (!pendingDownloadPayload) return;
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(pendingDownloadPayload);
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", pendingDownloadFilename || "GoBabyBar_Backup.json");
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
         }
 
         function triggerGroupJSONImport(categoryKey, categoryTitle, startSet, endSet) { activeImportCategory = { categoryKey, categoryTitle, startSet, endSet }; document.getElementById("group-file-importer").value = ""; document.getElementById("group-file-importer").click(); }
@@ -736,11 +753,6 @@
 
         function closeCategoryModal() { document.getElementById("category-modal-box").classList.remove("visible"); }
         function copyCategoryModalContent() { document.getElementById("modal-textarea").select(); document.execCommand("copy"); alert("Copied to clipboard!"); }
-        function toggleExportFormat() {
-            const textarea = document.getElementById("modal-textarea"); const btn = document.getElementById("btn-toggle-json");
-            if (isShowingJSON) { textarea.value = currentExportDataText; btn.textContent = "🔀 Switch to JSON Format"; isShowingJSON = false; } 
-            else { textarea.value = currentExportDataJSON; btn.textContent = "🔀 Switch to Formatted Table"; isShowingJSON = true; }
-        }
     </script>
 </body>
 </html>
