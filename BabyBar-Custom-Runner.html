@@ -44,8 +44,22 @@
         .segment-missed { background: var(--danger); color: #FFFFFF; width: 0%; }
         .segment-unattempted { background: #FFFFFF; color: #0F172A; flex-grow: 1; }
 
-        .score-box { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; }
+        .score-box { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; flex-wrap: wrap; }
         .badge { background: var(--primary-light); color: white; padding: 0.25rem 0.65rem; border-radius: 15px; font-weight: bold; font-size: 0.8rem; }
+
+        /* Timer Badge Component */
+        .timer-badge-container { display: inline-flex; align-items: center; background: #0F172A; border: 1.5px solid #334155; border-radius: 20px; padding: 0.2rem 0.5rem 0.2rem 0.7rem; gap: 0.45rem; box-shadow: 0 2px 5px rgba(0,0,0,0.15); }
+        .timer-badge-container.paused { background: #1E293B; border-color: #64748B; }
+        .timer-badge-container.overtime { background: #450A0A; border-color: #EF4444; animation: pulseRed 1.8s infinite; }
+        @keyframes pulseRed { 0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); } 50% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); } }
+        .timer-display { font-family: "SF Mono", Monaco, Consolas, monospace; font-size: 0.88rem; font-weight: 700; color: #38BDF8; letter-spacing: 0.5px; }
+        .timer-badge-container.paused .timer-display { color: #FCD34D; }
+        .timer-badge-container.overtime .timer-display { color: #F87171; }
+        .timer-status-pill { font-size: 0.68rem; text-transform: uppercase; padding: 0.1rem 0.4rem; border-radius: 10px; font-weight: 700; background: #0369A1; color: white; }
+        .timer-badge-container.paused .timer-status-pill { background: #D97706; color: white; }
+        .timer-badge-container.overtime .timer-status-pill { background: #DC2626; color: white; }
+        .btn-timer-toggle { background: transparent; border: none; color: #94A3B8; font-size: 0.82rem; cursor: pointer; padding: 0.1rem 0.25rem; border-radius: 4px; transition: color 0.15s ease; display: flex; align-items: center; }
+        .btn-timer-toggle:hover { color: #FFFFFF; }
 
         .action-group { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; }
         .btn-action-tool { padding: 0.35rem 0.6rem; font-size: 0.8rem; font-weight: 600; border-radius: 6px; border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; gap: 0.2rem; transition: all 0.15s ease; }
@@ -117,6 +131,12 @@
             <div class="score-box">
                 <span>Question <strong id="current-q-num">1</strong> of <span id="total-q-num">0</span></span>
                 <span class="badge" id="score-badge">Score: 0 / 0 (0%)</span>
+                <div class="timer-badge-container" id="timer-badge-box">
+                    <span id="timer-icon">⏱</span>
+                    <span class="timer-display" id="timer-display">00:00</span>
+                    <span class="timer-status-pill" id="timer-status-pill">RUNNING</span>
+                    <button class="btn-timer-toggle" id="btn-timer-toggle" onclick="toggleManualTimerPause()" title="Pause/Resume Timer">⏸</button>
+                </div>
             </div>
 
             <div class="action-group">
@@ -169,6 +189,7 @@
         const STORAGE_KEY_INDEX = `fylsx_${currentSetKey}_index_v25`;
         const STORAGE_KEY_SCORE = `fylsx_${currentSetKey}_score_v25`;
         const STORAGE_KEY_HIGHLIGHTS = `fylsx_${currentSetKey}_text_highlights_v25`;
+        const STORAGE_KEY_TIMER = `fylsx_${currentSetKey}_timer_v25`;
 
         let examData = [];
         let currentIndex = 0;
@@ -180,9 +201,88 @@
         let userHighlights = {};
         const letterLabels = ["A", "B", "C", "D"];
 
+        // Scaled Timer Engine (1.8 minutes = 108 seconds per question)
+        let totalAllocatedSeconds = 0;
+        let timeRemaining = 0;
+        let timerInterval = null;
+        let isTimerPaused = false;
+
+        function initCustomTimer() {
+            totalAllocatedSeconds = Math.round(examData.length * 1.8 * 60);
+            const savedTime = localStorage.getItem(STORAGE_KEY_TIMER);
+            if (savedTime !== null) {
+                timeRemaining = parseInt(savedTime, 10);
+            } else {
+                timeRemaining = totalAllocatedSeconds;
+            }
+
+            if (userAnswers[currentIndex] !== undefined) {
+                isTimerPaused = true;
+            } else {
+                isTimerPaused = false;
+            }
+
+            updateTimerDisplay();
+            startTimerTicker();
+        }
+
+        function startTimerTicker() {
+            if (timerInterval) clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                if (!isTimerPaused) {
+                    timeRemaining--;
+                    localStorage.setItem(STORAGE_KEY_TIMER, timeRemaining);
+                    updateTimerDisplay();
+                }
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            isTimerPaused = true;
+            updateTimerDisplay();
+        }
+
+        function resumeTimer() {
+            isTimerPaused = false;
+            updateTimerDisplay();
+        }
+
+        function toggleManualTimerPause() {
+            if (isTimerPaused) resumeTimer();
+            else pauseTimer();
+        }
+
+        function updateTimerDisplay() {
+            const displayEl = document.getElementById("timer-display");
+            const pillEl = document.getElementById("timer-status-pill");
+            const boxEl = document.getElementById("timer-badge-box");
+            const toggleBtn = document.getElementById("btn-timer-toggle");
+            if (!displayEl || !pillEl || !boxEl) return;
+
+            const isOvertime = timeRemaining < 0;
+            const absSec = Math.abs(timeRemaining);
+            const m = Math.floor(absSec / 60);
+            const s = absSec % 60;
+            const formatted = `${isOvertime ? '-' : ''}${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+            displayEl.textContent = formatted;
+
+            toggleBtn.textContent = isTimerPaused ? "▶" : "⏸";
+            toggleBtn.title = isTimerPaused ? "Resume Timer" : "Pause Timer";
+
+            boxEl.className = "timer-badge-container";
+            if (isOvertime) {
+                boxEl.classList.add("overtime");
+                pillEl.textContent = isTimerPaused ? "OVERTIME (PAUSED)" : "OVERTIME";
+            } else if (isTimerPaused) {
+                boxEl.classList.add("paused");
+                pillEl.textContent = "PAUSED";
+            } else {
+                pillEl.textContent = "RUNNING";
+            }
+        }
+
         function setDynamicTheme() {
             const root = document.documentElement;
-            const header = document.getElementById('dynamic-header');
             const title = document.getElementById('header-title');
 
             if (typeKey === 'missed') {
@@ -229,6 +329,7 @@
             renderQuestion();
             updateScore();
             updateEliminationToggleStyle();
+            initCustomTimer();
         }
 
         function toggleEliminationMode() {
@@ -270,7 +371,7 @@
 
             let html = `<div class="question-card">`;
             html += `<div class="q-top-row">
-                        <div class="q-header">Question ${currentIndex + 1} <span style="font-size:0.8rem; color: var(--text-muted); font-weight:normal;">[Source: ${q.originalSet} | ${q.topic}]</span></div>
+                        <div class="q-header">Question ${currentIndex + 1} <span style="font-size:0.8rem; color: var(--text-muted); font-weight:normal;"></span></div>
                         <button class="${flagBtnClass}" onclick="toggleFlagCurrentQuestion()">${flagBtnText}</button>
                      </div>`;
 
@@ -310,8 +411,6 @@
             html += `</div>`;
 
             let expClass = userAnswers[currentIndex] !== undefined ? "explanation-box visible" : "explanation-box";
-            
-            // For custom sets, force the explanation box colors so they are readable depending on the theme
             let expStyle = typeKey === 'flagged' ? 'background: #FFF1F2; border-color: #FECDD3; color: #BE123C;' : 'background: #FFFBEB; border-color: #FDE68A; color: #92400E;';
             
             html += `<div class="${expClass}" style="${expStyle}">
@@ -396,6 +495,7 @@
             totalCorrect = 0;
             Object.keys(userAnswers).forEach(idx => { if (userAnswers[idx] === examData[idx].ans) totalCorrect++; });
             updateScore(); saveProgress(); renderQuestion();
+            pauseTimer(); // Automatically pause timer upon answering
             if (Object.keys(userAnswers).length === examData.length) {
                 let percentage = Math.round((totalCorrect / examData.length) * 100);
                 saveStudentHistory(totalCorrect, examData.length, percentage);
@@ -425,10 +525,26 @@
 
         function navigate(dir) {
             const targetPos = currentIndex + dir;
-            if (targetPos >= 0 && targetPos < examData.length) { currentIndex = targetPos; renderQuestion(); }
+            if (targetPos >= 0 && targetPos < examData.length) { 
+                currentIndex = targetPos; 
+                renderQuestion(); 
+                if (userAnswers[currentIndex] === undefined) {
+                    resumeTimer(); // Automatically unpause if question is unattempted
+                } else {
+                    pauseTimer(); // Keep paused if reviewing an answered question
+                }
+            }
         }
 
-        function jumpToQuestion(index) { currentIndex = parseInt(index); renderQuestion(); }
+        function jumpToQuestion(index) { 
+            currentIndex = parseInt(index); 
+            renderQuestion(); 
+            if (userAnswers[currentIndex] === undefined) {
+                resumeTimer();
+            } else {
+                pauseTimer();
+            }
+        }
 
         function saveProgress() {
             localStorage.setItem(STORAGE_KEY_ANSWERS, JSON.stringify(userAnswers));
@@ -464,26 +580,24 @@
             localStorage.removeItem(STORAGE_KEY_INDEX);
             localStorage.removeItem(STORAGE_KEY_SCORE);
             localStorage.removeItem(STORAGE_KEY_HIGHLIGHTS);
+            localStorage.removeItem(STORAGE_KEY_TIMER);
             userAnswers = {}; flaggedQuestions = {}; eliminatedOptions = {}; userHighlights = {};
             currentIndex = 0; totalCorrect = 0;
         }
 
         function retakeMissed() {
-            if (!confirm("Are you sure you want to Retake Missed? Any questions you answered correctly will be permanently removed from this set, and your current progress will be cleared.")) {
+            if (!confirm("Are you sure you want to Retake Missed? Any questions you answered correctly will be permanently removed from this set, your current progress will be cleared, and the timer will reset.")) {
                 return;
             }
 
-            // Filter out correctly answered questions
             let remainingQuestions = [];
             examData.forEach((q, idx) => {
-                // Keep if unanswered OR answered incorrectly
                 if (userAnswers[idx] === undefined || userAnswers[idx] !== q.ans) {
                     remainingQuestions.push(q);
                 }
             });
 
             if (remainingQuestions.length === 0) {
-                // All questions were answered correctly
                 localStorage.removeItem(`fylsx_${catKey}_${typeKey}_set_exam_data`);
                 clearCustomSetProgress();
                 alert("Great job! You have mastered all these questions.");
@@ -491,25 +605,24 @@
                 return;
             }
 
-            // Update exam data with remaining questions and save back to storage
             examData = remainingQuestions;
             localStorage.setItem(`fylsx_${catKey}_${typeKey}_set_exam_data`, JSON.stringify(examData));
             
-            // Wipe progress so they start fresh
             clearCustomSetProgress();
             
-            // Re-initialize DOM
             document.getElementById("total-q-num").textContent = examData.length;
             document.getElementById("bar-unattempted").textContent = examData.length;
             populateJumpMenu();
             renderQuestion();
             updateScore();
+            initCustomTimer(); // Resets timer to the newly scaled time
         }
 
         function exportFullStudentSession() {
             const sessionData = {
                 examSet: currentSetKey, exportDate: new Date().toLocaleString(),
                 userAnswers, flaggedQuestions, eliminatedOptions, userHighlights,
+                timeRemainingSeconds: timeRemaining,
                 score: totalCorrect, totalAttempted: Object.keys(userAnswers).length, totalQuestions: examData.length
             };
             openModal("Export Test Session", "Copy this code block to save or share your results:", JSON.stringify(sessionData, null, 2));
