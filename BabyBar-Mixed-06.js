@@ -2,351 +2,701 @@ const examData = [
     {
         id: 1,
         topic: "Mixed",
-        fp: "The defendant kept a pet cougar in a yard that was surrounded by a wire chain-link fence. The plaintiff, who lived in the vicinity, frequently walked on the public sidewalk adjacent to the defendant's yard. One day, while the plaintiff was standing on the public sidewalk looking at the cougar through the defendant's fence, the cougar sprang toward the plaintiff. Because the fence was badly deteriorated, it collapsed under the cougar's weight and fell on the plaintiff, inflicting serious injuries. The defendant knew the fence was in need of repair.",
-        q: "If the plaintiff asserts a negligence claim against the defendant as a result of her injuries, should the court find for the plaintiff?",
+        fp: "A pedestrian was walking on a designated path in a state park when he noticed a hiker struggling in a fast-moving river nearby. The pedestrian, who was an off-duty lifeguard and an expert swimmer, had a rescue rope in his backpack. However, the pedestrian was late for a lunch date and decided to keep walking without throwing the rope or calling for help. The hiker ultimately drowned. The hiker's estate sued the pedestrian for negligence.",
+        q: "Is the pedestrian liable for the hiker's death?",
         opts: [
-            "Yes, because the keeping of a wild animal is prima facie negligent.",
-            "Yes, because a reasonable person in the defendant's position would have repaired the fence.",
-            "Yes, because the defendant knew that the fence was in need of repair.",
-            "No, because the plaintiff assumed the risk by standing by the fence and looking at the cougar."
+            "Yes, because he was an expert swimmer and off-duty lifeguard with the means to easily effect a rescue.",
+            "Yes, because his failure to act constituted a gross deviation from the standard of care expected of a reasonable person.",
+            "No, because a bystander generally has no affirmative duty to rescue a stranger in peril.",
+            "No, because the hiker's estate cannot prove that the pedestrian's failure to act was the actual cause of the drowning."
         ],
-        ans: 1,
-        exp: "Rule: Under general negligence principles, a plaintiff must establish that the defendant owed a duty of care, that the defendant breached that duty by failing to act as a reasonably prudent person would under similar circumstances, and that this breach caused the plaintiff's damages. Here, the plaintiff asserted a claim based strictly on negligence rather than strict liability for wild animals. The standard for breach in negligence is objective: whether a reasonable person in the defendant's position would have repaired the deteriorated fence to prevent it from collapsing onto pedestrians on a public sidewalk (Option B). Option A is incorrect because keeping a wild animal gives rise to strict liability, but does not make the act prima facie negligent as a matter of law. Option C is incorrect because subjective knowledge alone is mere evidence; negligence requires showing that the failure to repair fell below the objective reasonable person standard. Option D is incorrect because standing on a public sidewalk observing an animal behind a fence is not a voluntary assumption of the risk of a collapsing fence."
+        ans: 2,
+        exp: "Rule: Under general tort law principles, there is no affirmative duty to rescue or assist a stranger in peril. Option C is correct because the pedestrian did not create the peril, nor did he have a special relationship with the hiker (such as parent-child or innkeeper-guest) that would impose an affirmative duty to act. Option A is incorrect because possessing the skills or means to rescue (even as an off-duty professional) does not create a legal duty to rescue a stranger. Option B is incorrect because without an underlying legal duty to act, a failure to act cannot constitute actionable negligence, regardless of how morally reprehensible the omission might be. Option D is incorrect because the issue is resolved on the element of duty, not causation; even if throwing the rope would have definitively saved the hiker, the lack of duty precludes liability."
     },
     {
         id: 2,
         topic: "Mixed",
-        fp: "On March 1, a farmer entered into a written contract with the worker. By its terms, the worker agreed to plow the farmer's fields by April 1, using the worker's own tractor. In return, the farmer promised to pay $2,000 upon completion of the work. On March 25, while the worker was plowing the farmer's field, her tractor broke down. The worker informed the farmer that because the tractor needed extensive repairs, it would be impossible to finish the job by April 1 unless she rented another tractor. The worker said that she could rent one for $600, but she would not do so unless the farmer agreed to add the rental charge to the worker's fee for preparing the field. The farmer agreed without complaint, afraid that the value of his crop would be reduced if the field was not plowed in time. The worker returned to work after renting a tractor for $600. After the worker finished plowing the farmer's field, however, the farmer refused to pay her any more than $2,000.",
-        q: "If the worker asserts a claim against the farmer on account of the farmer's promise to pay an additional $600 for the rental of a tractor, which of the following would be the farmer's most effective argument in defense?",
+        fp: "On Monday, a buyer mailed an offer to a seller to purchase a specific vintage motorcycle for $5,000. On Wednesday, the seller received the offer and immediately mailed a letter of acceptance. On Thursday, the seller changed his mind, called the buyer, and stated, 'I reject your offer.' The buyer received the seller's mailed acceptance on Friday. The buyer subsequently demanded that the seller deliver the motorcycle, but the seller refused.",
+        q: "Which of the following best describes the legal relationship between the parties?",
         opts: [
-            "The farmer's promise to pay for the tractor rental was not in writing.",
-            "The farmer's promise to pay for the tractor rental was unsupported by consideration.",
-            "The farmer's promise to pay for the tractor rental was induced by economic duress.",
-            "The farmer detrimentally relied on the worker's original promise to complete plowing of the field by April 1 at a price of $2,000."
+            "A valid contract was formed on Wednesday.",
+            "No contract was formed because the seller's revocation by phone preceded the buyer's receipt of the acceptance.",
+            "A valid contract was formed on Friday when the buyer received the acceptance.",
+            "No contract was formed because the buyer's offer was not held open by consideration."
         ],
-        ans: 1,
-        exp: "Rule: Under the common law pre-existing duty rule, doing or promising to do what one is already legally bound to do does not constitute valid consideration to support a modification. The contract was for services (governed by the common law, not the UCC). The worker was already obligated under the March 1 agreement to plow the field by April 1 for $2,000. Renting a substitute tractor when her own machine broke down was simply a means of fulfilling her pre-existing duty. Therefore, the farmer's promise to pay an extra $600 lacked new, independent consideration (Option B). Option A is incorrect because service contracts that can be performed within one year are not within the Statute of Frauds. Option C is incorrect because economic duress requires wrongful or unlawful coercive conduct that leaves the victim with no reasonable alternative; ordinary contract disputes or equipment breakdowns rarely rise to actionable duress, making lack of consideration far stronger. Option D is incorrect because promissory estoppel / reliance is used by a promisee seeking to enforce a promise, not as a defense by a promisor refusing to pay."
+        ans: 0,
+        exp: "Rule: Under the Mailbox Rule, an acceptance is generally effective upon proper dispatch (e.g., when deposited in the mail). Option A is correct because the seller mailed the acceptance on Wednesday, instantly forming the contract upon dispatch. Option B is incorrect because the subsequent phone call attempting to reject the offer occurred after the contract was already formed; an offeree cannot revoke an acceptance once it has been dispatched, even if the rejection reaches the offeror first (unless the offeror detrimentally relies on the rejection, which is not present here). Option C is incorrect because the contract was formed on Wednesday (dispatch), not Friday (receipt). Option D is incorrect because an offer does not need to be held open by consideration to be accepted; it simply remains open until accepted, rejected, or revoked, and here it was validly accepted."
     },
     {
         id: 3,
         topic: "Mixed",
-        fp: "A man went to a car dealer. The dealer showed him a car that he said was 'brand new.' The man checked the odometer, which showed it had been driven 10 miles, and checked the interior and engine, which looked new. After the man bought the car for $2,000 less than the suggested list price, he discovered the car was actually a used car that had been completely submerged in a flood. On further investigation, he learned the car dealer had rolled back the odometer from 10,000 miles and had covered up the flood damage with paint.",
-        q: "What crime, if any, can the car dealer be charged with?",
+        fp: "Two accomplices planned to rob a local convenience store. One accomplice entered the store with a loaded handgun and demanded money from the clerk, while the second accomplice waited outside in the getaway car. The clerk activated a silent alarm, and a police officer arrived just as the armed accomplice was exiting the store. A shootout ensued, and the armed accomplice accidentally shot and killed a pedestrian who was walking past the store. The driver of the getaway car was apprehended blocks away.",
+        q: "Can the getaway driver be convicted of felony murder?",
         opts: [
-            "Larceny by trick.",
-            "False pretenses.",
-            "Embezzlement.",
-            "No crime."
+            "No, because the driver did not fire the fatal shot and was not present inside the store.",
+            "No, because the killing of the pedestrian was accidental and lacked malice aforethought.",
+            "Yes, because the driver was an accomplice, but only if the prosecution can prove the driver intended for the gun to be fired.",
+            "Yes, because the killing occurred during the commission of a dangerous felony in which the driver was a participant."
         ],
-        ans: 1,
-        exp: "Rule: The crime of obtaining property by false pretenses requires: (1) obtaining title to the property of another, (2) by an intentional or knowing false statement of past or existing material fact, (3) with the intent to defraud. Here, the dealer knowingly misrepresented an existing material fact (that the car was brand new, concealing flood damage and rolling back the odometer) to induce the buyer to part with title to the purchase money. Because title to the money passed to the dealer, the crime is false pretenses (Option B). Option A is incorrect because larceny by trick occurs when the defendant obtains mere possession/custody rather than title through fraud. Option C is incorrect because embezzlement requires conversion of property by someone who is already in lawful possession. Option D is incorrect because the fraudulent misrepresentation used to acquire title to the buyer's money is a criminal theft offense."
+        ans: 3,
+        exp: "Rule: The felony murder rule holds all participants in an inherently dangerous felony (such as robbery) strictly liable for any death that occurs during the commission of or immediate flight from the felony, provided the death is a foreseeable result. Option D is correct because the getaway driver is a co-felon in the robbery, and the accidental shooting of a bystander during the escape is a foreseeable consequence of an armed robbery. Option A is incorrect because co-felons are vicariously liable for the acts of their partners during the felony, regardless of who pulled the trigger or physical proximity to the exact spot of the shooting. Option B is incorrect because felony murder substitutes the intent to commit the underlying felony for malice aforethought; accidental killings qualify. Option C is incorrect because the prosecution does not need to prove the driver intended the gun to be fired, only that the driver intended to participate in the underlying robbery."
     },
     {
         id: 4,
         topic: "Mixed",
-        fp: "A lumber supplier entered into a contract with a new home builder. The contract stated that the builder would purchase all the wood required by the builder for new homes he was building in 2019, but that in no event would the amount be less than 20,000 board-feet of wood. In making the agreement, neither party contemplated a decline in new home starts. After the agreement, new home starts fell dramatically. As a result, the builder informed the supplier he would not be ordering any wood in 2019. The supplier sued the builder for damages. At trial, the builder tried to testify that in the home-building industry it was generally understood that minimum requirements set forth in contracts for the supply of wood were of no effect when new home starts fell dramatically. The supplier objected.",
-        q: "Should the builder's testimony be admitted?",
+        fp: "A manufacturer and a distributor entered into a highly detailed, signed written agreement for the sale of 10,000 widgets. The document contained a merger clause stating it was the complete and final agreement of the parties. However, before signing, the parties orally agreed that the contract would only take effect if the distributor secured a specific warehouse lease by the end of the month. The distributor failed to secure the lease and refused to buy the widgets. The manufacturer sued for breach of contract.",
+        q: "May the distributor introduce evidence of the oral agreement regarding the warehouse lease?",
         opts: [
-            "Yes, because evidence of a regularly observed business practice may be offered to explain the terms of a written agreement.",
-            "No, because the written agreement was intended by the parties to be a final expression of their agreement.",
-            "No, because the parties did not contemplate a decline in new home starts.",
-            "No, because the fact that the parties specified a minimum requirement of 20,000 board-feet shows that they did not intend to be bound by any preexisting industry standards."
+            "No, because the parol evidence rule absolutely bars prior oral agreements that contradict a completely integrated written contract.",
+            "Yes, because evidence of an oral condition precedent to the formation or effectiveness of a contract is admissible.",
+            "No, because the inclusion of a merger clause conclusively prevents the introduction of extrinsic evidence for any purpose.",
+            "Yes, because the Uniform Commercial Code explicitly allows oral modifications to written contracts for the sale of goods."
         ],
-        ans: 0,
-        exp: "Rule: Under UCC § 1-303 (and former § 1-205) and § 2-202, written contractual terms may be explained or supplemented by course of dealing, usage of trade, or course of performance, even if the writing is a fully integrated agreement. Usage of trade encompasses any practice or method of dealing having such regularity of observance in a place, vocation, or trade as to justify an expectation that it will be observed with respect to the transaction in question. The builder is offering testimony of an established trade usage to explain the application of minimum requirement terms during economic downturns (Option A). Option B is incorrect because trade usage is admissible even against a final integrated writing under the UCC parol evidence rule. Option C is incorrect because lack of contemplation does not preclude the application of customary trade background understandings. Option D is incorrect because trade usage can explain or qualify express terms unless utterly impossible to reconcile."
+        ans: 1,
+        exp: "Rule: The Parol Evidence Rule prohibits the introduction of prior or contemporaneous extrinsic evidence to vary or contradict the terms of a fully integrated writing. However, there is a well-established exception that allows evidence to show that a written agreement was subject to an oral condition precedent to its legal effectiveness. Option B is correct because the distributor is not trying to change the terms of the widget sale, but rather showing that the contract itself never came into existence because the condition (securing the lease) failed. Option A is incorrect because the condition precedent exception bypasses the general bar on extrinsic evidence. Option C is incorrect because a merger clause does not preclude evidence showing that the entire agreement never became effective. Option D is incorrect because this issue concerns contract formation/conditions precedent under parol evidence rules, not a subsequent modification."
     },
     {
         id: 5,
         topic: "Mixed",
-        fp: "A local newspaper published an editorial claiming that the majority of firefighters at the local fire department were dangerously out of shape and had recently failed their physicals. Following publication, several firefighters sued the newspaper for defamation. All parties agree that the newspaper lacked actual malice in making the statement and that this is the only defense raised by the newspaper.",
-        q: "Which of the following arguments would be most likely to result in a judgment for the newspaper?",
+        fp: "A demolition company was hired to implode an abandoned building in a busy downtown area. The company used state-of-the-art explosives, adhered strictly to all safety protocols, and exercised the utmost care to ensure the public's safety. Despite these precautions, a bizarre and unforeseeable wind draft caused a small piece of debris to fly several blocks away, striking a pedestrian and causing severe injury.",
+        q: "Is the demolition company liable for the pedestrian's injuries?",
         opts: [
-            "There is no such thing as a false idea.",
-            "The plaintiffs were in a position of apparent control over public affairs.",
-            "The editorial and resulting lawsuit made the public familiar with the plaintiffs.",
-            "The plaintiffs were public employees."
+            "No, because the company exercised the utmost care and the wind draft was an unforeseeable superseding cause.",
+            "No, because the pedestrian assumed the risk by walking in a downtown area where demolition was occurring.",
+            "Yes, because blasting is an abnormally dangerous activity subject to strict liability.",
+            "Yes, because the company breached its duty of care under the doctrine of res ipsa loquitur."
         ],
-        ans: 1,
-        exp: "Rule: Under the First Amendment (New York Times Co. v. Sullivan; Rosenblatt v. Baer), a public official cannot recover for defamation without proving by clear and convincing evidence that the statement was made with 'actual malice' (knowledge of falsity or reckless disregard of the truth). The Supreme Court has defined a 'public official' as a government employee whose position in government has such apparent importance that the public has an independent interest in the qualifications and performance of the person who holds it, beyond the general public interest in the qualifications and performance of all government employees—namely, someone who appears to have substantial responsibility for or control over the conduct of governmental affairs. If the firefighters can be classified as public officials on the basis that they exercise apparent control/responsibility over public safety affairs, the newspaper's admitted lack of actual malice shields it from liability (Option B). Option A is incorrect because claiming that firefighters 'failed their physicals' is an assertion of fact, not an idea or pure opinion. Option C is incorrect because a defendant cannot bootstrap a plaintiff into public figure status through its own defamatory publication. Option D is incorrect because mere public employment alone does not automatically make an employee a public official under First Amendment defamation rules."
+        ans: 2,
+        exp: "Rule: Strict liability applies to abnormally dangerous activities, such as blasting or using explosives. A defendant engaged in such an activity is liable for injuries proximately caused by the dangerous propensity of the activity, regardless of the level of care exercised. Option C is correct because demolition by explosives is the classic example of an abnormally dangerous activity, and flying debris is exactly the type of harm that makes the activity dangerous. Option A is incorrect because no amount of reasonable care defeats a strict liability claim, and foreseeable weather variations or wind drafts are not superseding causes that cut off strict liability. Option B is incorrect because simply walking several blocks away does not constitute a knowing and voluntary assumption of the risk. Option D is incorrect because liability here is based on strict liability, not negligence (where res ipsa loquitur would apply)."
     },
     {
         id: 6,
         topic: "Mixed",
-        fp: "The plaintiff, a manufacturer of police equipment, obtained a patent for a bulletproof vest made entirely of recycled aluminum cans. On April 1, a police department entered into a written contract with the plaintiff providing for the purchase and sale of 30 of the plaintiff's bulletproof vests per month for the next year at a specified price. For the following three months, both parties performed as required by the agreement. On July 5, soon after the third delivery, the plaintiff's only factory burned completely to the ground without any fault on the part of the plaintiff. On July 10, officials of the police department wrote to the plaintiff, asking whether the plaintiff would continue to deliver as agreed. When the plaintiff failed to respond within a reasonable time, the police department entered into an agreement with another company for the purchase of 30 bulletproof vests per month. After the police department contracted with another company for the purchase of bulletproof vests, the plaintiff delivered 30 bulletproof vests to the police department, but the police department refused to accept them.",
-        q: "If the plaintiff asserts a claim against the police department for breach of contract, which of the following would be the police department's most effective argument in defense against that claim?",
+        fp: "A woman strongly disliked her neighbor. Intending to kill him, she purchased a highly toxic poison, placed it in a syringe, and walked over to his house in the middle of the night. She sneaked into his bedroom and injected the contents of the syringe into his leg while he slept. Unbeknownst to her, the substance she had purchased was completely harmless colored water, sold to her by a fraudulent merchant. The neighbor woke up unharmed but felt a pinch. She was arrested and charged with attempted murder.",
+        q: "What is the most likely outcome of the attempted murder charge?",
         opts: [
-            "The destruction of the plaintiff's factory reasonably appeared to frustrate the purpose of the contract between the police department and the plaintiff.",
-            "The plaintiff's failure to respond to the police department's letter of July 10 resulted in a prospective inability to perform.",
-            "The plaintiff's contract with the police department was divisible.",
-            "The police department's contract to purchase bulletproof vests from another company was a repudiation of its contract with the plaintiff."
+            "Acquittal, because it was factually impossible to kill the neighbor with colored water.",
+            "Conviction, because she had the specific intent to kill and took a substantial step toward committing the crime.",
+            "Acquittal, because it was legally impossible for her to commit murder using a non-lethal substance.",
+            "Conviction, because her entry into the neighbor's house constituted an independent felony."
         ],
         ans: 1,
-        exp: "Rule: Under UCC § 2-609, when reasonable grounds for insecurity arise with respect to the performance of either party, the other party may in writing demand adequate assurance of due performance. A failure to provide such assurance within a reasonable time not exceeding 30 days operates as a repudiation of the contract. The destruction of the manufacturer's sole production facility gave the police department reasonable grounds for insecurity. The manufacturer's failure to respond to the written demand within a reasonable time amounted to a repudiation / prospective inability to perform, discharging the department and entitling it to secure cover elsewhere (Option B). Option A is incorrect because frustration of purpose applies when the buyer's principal purpose in contracting is destroyed, not when the seller experiences a supply/manufacturing disruption. Option C is incorrect because whether an installment contract is divisible does not excuse a failure to provide adequate assurances following catastrophic disruption. Option D is incorrect because the police department's cover agreement occurred after the plaintiff's statutory repudiation, meaning the department was exercising a valid remedy rather than committing a wrongful repudiation."
+        exp: "Rule: Attempt requires the specific intent to commit the target offense and an overt act (a substantial step) toward its completion. Factual impossibility—where the defendant is unable to complete the crime due to facts unknown to her (e.g., the poison was fake)—is not a defense to attempt. Option B is correct because she intended to kill and took a massive substantial step (injecting the victim), making her fully culpable for attempted murder. Option A is incorrect because factual impossibility is never a valid defense at common law or under the Model Penal Code. Option C is incorrect because this scenario describes factual impossibility, not legal impossibility (legal impossibility occurs when the intended act, even if completed, would not constitute a crime). Option D is incorrect because while she may also be guilty of burglary, the question asks about the attempted murder charge, which is supported by her specific intent and substantial step."
     },
     {
         id: 7,
         topic: "Mixed",
-        fp: "A group of teenagers hired a stretch limousine for their prom. While driving to the prom, the limousine driver saw a dog crossing the road in front of the vehicle. He swerved to avoid it and ended up crashing into a tree. Several of the teenagers were injured. A state statute required that all limousine drivers carry at least a $100,000 minimum accident liability policy. The limousine driver was uninsured.",
-        q: "If the limousine driver is found liable for the teenagers' injuries, what is the likely reason?",
+        fp: "A teenager brought a heavy, solid rubber ball to a crowded park. He saw a boy who had bullied him earlier that week and, intending to strike the boy to cause him pain, hurled the ball at the boy's head. The boy ducked, and the ball missed him completely. However, the ball continued through the air and struck an elderly woman in the face, breaking her nose. The woman did not see the ball coming.",
+        q: "Can the elderly woman successfully sue the teenager for battery?",
         opts: [
-            "Under the doctrine of res ipsa loquitur, because an accident like this would not normally occur without negligence.",
-            "Under the doctrine of negligence per se, because the driver violated the state insurance statute.",
-            "Because his conduct in swerving to avoid the dog was unreasonable.",
-            "Because he owed a special duty to the teenagers in his care."
+            "Yes, because the teenager's intent to commit a battery against the boy transfers to the elderly woman.",
+            "Yes, because the teenager acted recklessly by throwing a heavy ball in a crowded park.",
+            "No, because the teenager had no intent to cause harmful or offensive contact to the elderly woman.",
+            "No, because the woman did not see the ball coming, so she could not have been placed in apprehension of the contact."
         ],
-        ans: 2,
-        exp: "Rule: The fundamental basis of liability in negligence is that the defendant breached the duty of care by acting unreasonably under the circumstances. If the limousine driver is held liable, it must be because swerving violently into a fixed object (a tree) to avoid a small animal rather than braking or maintaining course constituted unreasonable conduct under the emergency doctrine (Option C). Option A is incorrect because res ipsa loquitur applies when the exact cause of the accident is unknown; here, the driver's affirmative act of swerving to avoid the dog was fully known and witnessed. Option B is incorrect because negligence per se requires that the statutory violation be the cause-in-fact of the accident; operating without insurance does not cause a vehicle to crash. Option D is incorrect because, while common carriers historically owed a higher duty of care to passengers, liability still requires unreasonable or negligent conduct under the circumstances."
+        ans: 0,
+        exp: "Rule: Under the doctrine of transferred intent, if a defendant acts with the intent to commit an intentional tort (like battery or assault) against one person, but instead causes the tortious result to a different person, the intent transfers to the actual victim. Option A is correct because the teenager intended to commit a battery against the boy, and that intent legally transfers to the elderly woman whom he actually struck. Option B is incorrect because battery is an intentional tort requiring intent (which is satisfied via transferred intent), not mere recklessness. Option C is incorrect because transferred intent specifically overrides the lack of specific intent toward the actual victim. Option D is incorrect because seeing the contact coming is an element of assault (apprehension), not battery (which only requires harmful or offensive physical contact)."
     },
     {
         id: 8,
         topic: "Mixed",
-        fp: "At the defendant's trial on criminal charges, undisputed evidence established that the defendant and his friend had planned to take a certain coat from the victim's shop by threatening the victim with a pistol carried by the friend; that when they did so, the victim began shooting at them; and that the friend shot back with his pistol, intentionally killing the victim.\n\nTestifying on behalf of the prosecution, the friend stated that the defendant knew that the friend's pistol would be loaded. He also stated that the victim had handed the defendant the coat; that the friend had returned his own gun to his pocket; and that he and the defendant were on their way out of the victim's shop when the victim began shooting at them.\n\nThe defendant testified that the coat in question had previously been stolen from her by the victim, and that she and the friend were trying to retrieve it.\n\nStatutes in the jurisdiction define first-degree murder as the intentional unlawful killing of a human being, and second-degree murder as the unintentional killing of a human being by the defendant or an accomplice during the course of a burglary, robbery, rape, kidnapping, or arson committed by the defendant.\n\nThe jury believes the testimony of the defendant but does not believe the testimony of the friend.",
-        q: "Which of the following would be the defendant's most effective argument in defense against a charge of second-degree murder?",
+        fp: "On May 1, a merchant lumber supplier signed and sent a letter to a merchant furniture builder stating: 'I offer to sell you 500 oak planks for $5,000. I promise to keep this offer open until August 15.' On June 1, the supplier sent another letter to the builder stating: 'I revoke my May 1 offer.' The builder received the revocation on June 3. On June 10, the builder sent a letter to the supplier accepting the May 1 offer. The supplier refused to deliver the planks.",
+        q: "If the builder sues the supplier for breach of contract, who will prevail?",
         opts: [
-            "It was unforeseeable that the victim would begin shooting.",
-            "The defendant did not know that the friend's pistol would be loaded.",
-            "The victim's death did not occur during the course of one of the crimes specified in the applicable statute.",
-            "The statute was not intended to impose criminal liability on one person for the acts of another."
+            "The builder, because the supplier's revocation on June 3 was ineffective since the firm offer was still within its three-month period of irrevocability.",
+            "The builder, because the supplier's attempt to revoke was not supported by consideration.",
+            "The supplier, because the builder failed to accept the offer prior to receiving the revocation on June 3.",
+            "The supplier, because the firm offer expired after 30 days as a matter of law."
         ],
-        ans: 2,
-        exp: "Rule: Under the statutory felony-murder rule specified, second-degree murder requires an unintentional killing committed during the course of an enumerated felony: burglary, robbery, rape, kidnapping, or arson. Robbery requires the trespassory taking of personal property belonging to another. Because the jury believed the defendant's testimony, the coat had previously been stolen from her, giving her a bona fide claim of right to her own property. A person who recaptures their own property lacks the intent to steal necessary for larceny, thereby defeating the underlying robbery charge. Because no robbery or other enumerated felony was committed, the killing did not occur during the course of an enumerated felony under the statute (Option C). Options A and B are incorrect because felony murder is a strict liability homicide doctrine that does not depend on foreseeability of lethal resistance or knowledge of loaded firearms. Option D is incorrect because the statute expressly encompasses killings committed by an accomplice."
+        ans: 0,
+        exp: "Rule: Under UCC § 2-205, a signed, written offer by a merchant to buy or sell goods which gives assurance that it will be held open is not revocable for lack of consideration during the time stated, up to a maximum statutory limit of three months. Although the supplier stated the offer would remain open until August 15 (exceeding three months), the offer remained fully irrevocable for the statutory three-month ceiling (until August 1). Because the supplier's attempted revocation occurred on June 3—well within the initial three-month irrevocable window—the revocation was legally ineffective. The builder's June 10 acceptance was timely and formed a binding contract (Option A). Option B is incorrect because firm offers under UCC § 2-205 do not require consideration to be irrevocable. Option C is incorrect because the revocation was ineffective during the firm offer period. Option D is incorrect because UCC firm offers are irrevocable for the time stated up to three months, not 30 days."
     },
     {
         id: 9,
         topic: "Mixed",
-        fp: "One night, the defendant looked out his window and saw a robber taking something from his garage. The defendant went outside with a pistol and saw that the robber was already backing down the defendant's driveway in his getaway car. The defendant yelled, 'Stop or I'll shoot you right through the windshield!' The robber stopped and started to get out of the car with a large axe in his hand. Before the robber could get to his feet, the defendant shot the robber in the head, killing him instantly. The defendant was charged with manslaughter. At trial, the defendant claimed he acted in self-defense.",
-        q: "If the defendant is found guilty of manslaughter, what is the likely reason?",
+        fp: "A man went to a used car dealership and negotiated the purchase of a vehicle. He told the dealer he wanted to test drive the car around the block. The dealer handed the man the keys and consented to the test drive. The man had no intention of returning the car and drove it straight to another state, where he sold it. The jurisdiction retains common law theft classifications.",
+        q: "What crime did the man commit?",
         opts: [
-            "The harm being defended against was not reasonably imminent.",
-            "The defendant used more force than necessary.",
-            "The robber had already withdrawn.",
-            "The defendant provoked the robber."
+            "False pretenses.",
+            "Embezzlement.",
+            "Larceny by trick.",
+            "Common law robbery."
         ],
-        ans: 3,
-        exp: "Rule: An initial aggressor or provoker forfeits the right to use deadly force in self-defense. One who threatens unlawful deadly force ('Stop or I'll shoot you right through the windshield!') without privilege becomes the initial aggressor in the confrontation. Because the defendant used a lethal threat to prevent the robber's escape after the theft had concluded (deadly force is never privileged solely to defend property or prevent the retreat of a non-violent thief), the defendant unlawfully provoked the confrontation, forfeiting the privilege of self-defense (Option D). Option A is incorrect because an assailant emerging with a large axe poses an imminent threat of deadly harm. Option B is incorrect because a firearm is proportional to an axe attack if the right to self-defense were available. Option C is incorrect because the robber stopped and emerged with an axe rather than continuing to withdraw."
+        ans: 2,
+        exp: "Rule: Larceny by trick occurs when a defendant obtains custody or temporary possession (but not title) of another's property by means of a false representation or fraud, with the contemporaneous intent to permanently deprive the owner of it. Option C is correct because the dealer only parted with temporary custody/possession of the vehicle for the limited scope of a test drive, and the man obtained that possession through deceit while intending from the start to steal the car. Option A is incorrect because false pretenses requires obtaining title (ownership) through fraud. Option B is incorrect because embezzlement requires the defendant to be in lawful, entrusted possession of the property prior to forming the fraudulent intent to convert it. Option D is incorrect because robbery requires taking property by force or threat of force."
     },
     {
         id: 10,
         topic: "Mixed",
-        fp: "A boy decided to play a prank on his babysitter. He took one of his play swords and swung it at his babysitter's head, acting like he was going to hit her (although he had no intention of doing so). The babysitter raised her arms in defense. At the same moment, the boy's little sister walked out of the bathroom, saw her brother swinging the sword, and ducked, thinking she was about to be hit by the sword. Due to a manufacturing defect in the sword, the blade flew off and struck the babysitter in the head.",
-        q: "Which statement is most correct?",
+        fp: "A homeowner contracted with a painter to paint his house for $3,000, with work to begin on October 1. On September 15, the painter called the homeowner and stated, 'I took a better paying job. I won't be able to paint your house.' The homeowner was upset but did not hire another painter or communicate further with the painter. On September 28, the painter called the homeowner back and said, 'The other job fell through. I will be there on October 1 to paint your house as we agreed.' The homeowner replied, 'Forget it, you canceled on me.' The painter showed up on October 1, but the homeowner refused to let him work.",
+        q: "If the painter sues the homeowner for breach of contract, who will prevail?",
         opts: [
-            "The boy could not be held liable for battery of the babysitter because he did not have the necessary intent.",
-            "The boy's sister could claim assault under the doctrine of transferred intent.",
-            "Since the boy only intended to frighten the babysitter, he did not have the necessary intent for assault.",
-            "Because the boy did not bear malice or hostility toward the babysitter, he could not be held liable for battery."
+            "The homeowner, because the painter's September 15 call was a material breach that immediately terminated the contract.",
+            "The painter, because he successfully retracted his anticipatory repudiation before the homeowner materially changed position.",
+            "The homeowner, because a repudiation cannot be retracted once it has been clearly and unequivocally communicated.",
+            "The painter, because the Statute of Frauds requires anticipatory repudiations of service contracts to be in writing."
         ],
         ans: 1,
-        exp: "Rule: The doctrine of transferred intent applies across the intentional torts of assault, battery, false imprisonment, trespass to land, and trespass to chattels, as well as between different victims. Where an actor intends to commit an assault (intend to cause apprehension of imminent harmful contact in the babysitter) and an unintended third party (the sister) is placed in reasonable apprehension of imminent harmful contact, the intent transfers to the sister, supporting an assault claim by the sister (Option B). Option A is incorrect because intending an assault satisfies the intent requirement for battery when bodily contact ensues through transferred intent between torts. Option C is incorrect because the intent to cause apprehension of contact is the definition of assault intent. Option D is incorrect because hostile motive or malice is not an element of battery."
+        exp: "Rule: A party who has anticipatorily repudiated a contract may retract that repudiation and restore the contract to its original force IF the retraction occurs before the other party has materially changed their position in reliance on the repudiation, canceled the contract, or indicated that they consider the repudiation final. Option B is correct because the homeowner did not hire a replacement or explicitly treat the repudiation as final prior to September 28; therefore, the painter's retraction was valid, and the homeowner's subsequent refusal to allow performance constituted a breach. Option A is incorrect because an anticipatory repudiation does not automatically terminate the contract inextricably; it gives the non-repudiating party options, but remains retractable until reliance. Option C is incorrect because it misstates the law regarding retraction. Option D is incorrect because there is no such Statute of Frauds requirement for repudiations."
     },
     {
         id: 11,
         topic: "Mixed",
-        fp: "On March 1, the buyer, a well-known collector of antique automobiles, mailed to a newspaper an advertisement that read, in part: 'I will pay $100 for information leading to purchase of an antique car.' On March 2, before the advertisement appeared in the newspaper and without knowing about it, the seller phoned the buyer collect and offered to sell him an antique car. The advertisement was published on March 3. On March 3, a man saw the advertisement and remembered meeting someone who owned an antique car. After calling a few friends, the man obtained the owner's name and address and mailed it to the buyer with a request for the $100 reward. On March 4, the buyer looked at the seller's antique car and purchased it. Later that day, the buyer mailed to the newspaper for publication a second advertisement that in part read: 'No reward for antique car. I hereby withdraw my previous request for information about an antique car.' The second advertisement did not appear in the newspaper until March 6. On March 5, the buyer received the man's letter, but discarded it because he had purchased the seller's antique car.",
-        q: "If the man asserts a claim against the buyer for $100, should the court find in the man's favor?",
+        fp: "A local newspaper published an article falsely claiming that the city's mayor had embezzled public funds. The reporter had received a tip from an anonymous caller. Although the reporter had serious doubts about the caller's reliability and the truth of the allegations, she published the story anyway because it was highly sensational. The mayor sued the newspaper for defamation.",
+        q: "Will the mayor succeed in his defamation lawsuit?",
         opts: [
-            "No, because the buyer mailed the second advertisement before receiving the man's letter.",
-            "No, because the man's letter did not lead to the purchase of an antique car.",
-            "Yes, because he mailed the letter to the buyer before the buyer purchased an antique car.",
-            "Yes, because the buyer received the man's letter before the second advertisement was published."
+            "No, because the press has absolute immunity when reporting on public officials.",
+            "No, because the mayor cannot prove that he suffered special damages.",
+            "Yes, because the newspaper published the false statement negligently.",
+            "Yes, because the newspaper published the statement with actual malice."
         ],
-        ans: 1,
-        exp: "Rule: A unilateral contract offer requesting a specific act or result can be accepted only by full performance of the requested terms. The offer explicitly promised to pay $100 for information 'leading to purchase of an antique car.' Because the buyer had already been contacted by the seller on March 2 and purchased that seller's vehicle based on the seller's independent call, the man's letter received on March 5 did not lead to the purchase of the vehicle. Performance of the bargained-for condition was not satisfied (Option B). Option A is incorrect because revocation of a public offer by publication requires comparable publicity, which was not accomplished until March 6. Options C and D are incorrect because neither dispatch nor receipt of the letter constitutes acceptance when the substantive condition (furnishing information that actually leads to a purchase) never materialized."
+        ans: 3,
+        exp: "Rule: Under the First Amendment, a public official suing for defamation must prove that the defendant acted with 'actual malice,' which is defined as knowledge that the statement was false or reckless disregard as to its truth or falsity. Option D is correct because the reporter published the story despite having 'serious doubts' about its truth, which satisfies the legal standard for reckless disregard, and thus actual malice. Option A is incorrect because the press does not have absolute immunity; they are protected by the actual malice standard, but can be held liable if it is met. Option B is incorrect because false accusations of a crime or corruption in office constitute defamation per se, meaning special (pecuniary) damages do not need to be proven. Option C is incorrect because negligence is insufficient; a public official must prove actual malice."
     },
     {
         id: 12,
         topic: "Mixed",
-        fp: "A man who suffered from severe skin allergies purchased a topical cream online. A statute required the drug manufacturer to insert into the cream's packaging a warning of its potential adverse side effects. The manufacturer failed to insert an appropriate warning of a particular side effect, skin discoloration, into the cream's packaging. The man used the cream for several months until his skin began to turn a dark blue color. Even though the man continued to use the cream, the man sued. At trial, the man testified that neither he nor anyone in his household ever read warnings that accompanied drugs.",
-        q: "How should the court rule?",
+        fp: "A man suffered from severe schizophrenia. Due to his mental illness, he suffered from a persistent delusion that his neighbor was a demonic entity plotting to destroy the world. Believing he had a divine mandate to save humanity, the man broke into the neighbor's home and killed him. The man was aware that killing humans was against the law and that society condemned it, but he genuinely believed his actions were morally required to prevent the apocalypse. The jurisdiction strictly applies the M'Naghten test for insanity.",
+        q: "Is the man likely to be found not guilty by reason of insanity?",
         opts: [
-            "In favor of the manufacturer, because no one in the man's household read drug warnings.",
-            "In favor of the manufacturer, because the man continued to use the cream.",
-            "In favor of the man, because the manufacturer violated the statute by failing to include the warning.",
-            "In favor of the man, because the type of harm caused could have been avoided by an adequate warning."
+            "No, because he knew that killing the neighbor was legally prohibited.",
+            "No, because the M'Naghten test requires an irresistible impulse, which is not present here.",
+            "Yes, because his mental illness prevented him from knowing the nature and quality of his act or that his act was morally wrong.",
+            "Yes, because his mental illness caused him to lack substantial capacity to conform his conduct to the requirements of the law."
         ],
         ans: 0,
-        exp: "Rule: In a products liability action based on failure to warn (under both negligence and strict liability), the plaintiff must establish causation: that the absence of the warning was the cause-in-fact of the injury. While courts typically apply a rebuttable presumption that an adequate warning would have been read and heeded, this presumption is rebutted where the plaintiff affirmatively admits that he never reads warnings on medications. Because the plaintiff would not have read the warning even if properly included, the omission was not a cause-in-fact of his injury (Option A). Option B is incorrect because continuing to use the cream after the injury occurred speaks to mitigation of damages rather than initial liability. Option C is incorrect because negligence per se establishes breach of duty, but does not dispense with the requirement of proving causation-in-fact. Option D is incorrect because a warning cannot avoid harm if the consumer admits he never reads package warnings."
+        exp: "Rule: Under the strict M'Naghten test, a defendant is legally insane if, due to a mental disease or defect, he either did not know the nature and quality of his act, or did not know that his act was wrong. In many strict M'Naghten jurisdictions, 'wrong' is interpreted as legally wrong. Because the man knew that killing was against the law and that society condemned it, he knew the act was legally wrong. Option A is correct because his knowledge of the act's legal wrongfulness defeats an insanity defense under a strict legal interpretation of M'Naghten, even if he believed it was morally justified by a delusion. Option B is incorrect because irresistible impulse is a separate test, not part of M'Naghten. Option C is incorrect because he knew the physical nature of the act (killing) and knew it was legally wrong. Option D is incorrect because 'substantial capacity' is the standard for the Model Penal Code test, not M'Naghten."
     },
     {
         id: 13,
         topic: "Mixed",
-        fp: "A man was at the beach when he saw a small dog being washed out to sea. He jumped into the ocean and rescued the dog. As soon as the man and the dog were back on the beach, the dog's owner ran up to the man and said, 'That's my prize show dog! I promise to pay you $1,000 for rescuing him!' The man accepted. In celebration, the man bought himself a new motorcycle on credit based on his expected reward money. Several months passed, and the man called the dog's owner to ask when he might be paid so he could pay off the motorcycle. The dog owner refused to pay the $1,000 he had promised, claiming it was unsupported by any consideration.",
-        q: "Which of the following would be the man's most effective argument in support of his claim?",
+        fp: "A tenant leased a commercial storefront for five years at $2,000 per month. After two years, the tenant unjustifiably abandoned the property and stopped paying rent. The landlord immediately placed a 'For Rent' sign in the window and ran standard advertisements in local commercial real estate listings. Despite these efforts, the landlord was unable to find a replacement tenant for six months. The landlord sued the breaching tenant for the lost rent.",
+        q: "Is the landlord entitled to recover the full six months of lost rent?",
         opts: [
-            "The dog owner's promise was given in exchange for the man's rescue of his dog.",
-            "The dog owner was morally obligated to compensate the man for rescuing his dog.",
-            "Allowing the dog owner to avoid compensating the man for rescuing the dog would unjustly enrich the dog owner.",
-            "The man detrimentally relied on the dog owner's promise by buying the motorcycle."
+            "No, because the landlord was required to mitigate damages by accepting any tenant, even one seeking residential use.",
+            "No, because modern property law terminates a lease immediately upon a tenant's abandonment.",
+            "Yes, because the landlord made reasonable efforts to mitigate damages by advertising the property.",
+            "Yes, because landlords have no duty to mitigate damages in commercial leases under any circumstances."
         ],
-        ans: 1,
-        exp: "Rule: Under the traditional common law rule, past consideration is no consideration because the detriment was not bargained for in exchange for the promise. However, under the material benefit rule / moral obligation doctrine (Restatement (Second) of Contracts § 86; Webb v. McGowin), a promise made in recognition of a substantial benefit previously received by the promisor from the promisee is binding to the extent necessary to prevent injustice. Asserting that the owner incurred a moral obligation based on the receipt of a material benefit is the plaintiff's strongest available legal argument (Option B). Option A is incorrect because the rescue was completed before the promise was made, precluding a bargained-for exchange. Option C is incorrect because the man acted as a volunteer without an expectation of payment at the time of rescue, making quasi-contract restitution difficult to establish independently. Option D is incorrect because buying a motorcycle on credit was not an act that the dog owner should reasonably have expected to induce by promising a rescue reward."
+        ans: 2,
+        exp: "Rule: When a tenant breaches a lease by abandoning the premises, the landlord has a duty to mitigate damages by making reasonable efforts to re-let the property on the breaching tenant's account. Option C is correct because the landlord satisfied this duty by placing a sign and running standard advertisements; since the landlord's reasonable mitigation efforts failed to secure a replacement for six months, the landlord is entitled to recover the expectation damages (the lost rent) for that period. Option A is incorrect because the duty to mitigate only requires reasonable efforts and finding a suitable replacement tenant for the same commercial use; it does not require the landlord to fundamentally change the property's use to residential. Option B is incorrect because abandonment does not automatically terminate the tenant's liability for rent. Option D is incorrect because the majority modern rule requires landlords to mitigate damages in both residential and commercial leases."
     },
     {
         id: 14,
         topic: "Mixed",
-        fp: "At the defendant's trial for murder, the prosecution proved that the defendant was driving while intoxicated when his car struck another car, killing all its occupants. The defendant appealed his conviction for voluntary manslaughter.",
-        q: "Which of the cases below is most applicable as precedent?",
+        fp: "A farmer operated a large commercial pig farm for twenty years in a rural area. Recently, a developer purchased the adjacent vacant land and built a residential subdivision. The new homeowners immediately noticed strong, offensive odors emanating from the pig farm, which prevented them from enjoying their outdoor patios or opening their windows. The homeowners sued the farmer for private nuisance.",
+        q: "What is the farmer's best defense against the nuisance claim?",
         opts: [
-            "Believing that the victim was attacking her, the defendant swung a tennis racket at the victim, hoping to frighten the victim away but not meaning to strike the victim with it. The tennis racket struck the victim in the head, causing his death. At the defendant's trial, over the defendant's objection, the judge instructed the jury to find the defendant guilty of involuntary manslaughter if the force used by the defendant was excessive. The defendant's conviction for involuntary manslaughter was affirmed.",
-            "The defendant's wife was admitted to the intensive care unit of a hospital following an automobile accident. While visiting her, the defendant overheard doctors saying that there was no hope of saving the life of a certain patient who would be in intense pain and paralyzed for as long as she lived. Mistakenly believing that they were talking about his wife, the defendant subsequently smothered her to death with a pillow while she was asleep in the hospital bed. The defendant was convicted of murder after the court refused to charge the jury that if the defendant believed that his wife was hopelessly ill and in intense pain, they could find him guilty of voluntary manslaughter. The defendant's conviction for murder was reversed.",
-            "While the defendant was robbing a tavern, the bartender attempted to grab the defendant's gun. During the struggle, the gun accidentally went off, seriously injuring the bartender. At the defendant's trial for attempted murder, the court instructed the jury to return a verdict of not guilty if they found that the defendant did not intend to cause the bartender's death. The defendant's acquittal was affirmed.",
-            "After the defendant quarreled with her lover, she fired a gun at him while he was with his wife. The bullet missed the defendant's lover but struck and killed his wife. At the defendant's trial, it was established that she fired with the intention of frightening both her lover and his wife, but that she did not mean to strike either of them. The defendant was convicted of murder after the court refused to charge the jury on involuntary manslaughter. The conviction was affirmed."
+            "The odors do not cause any physical damage to the homeowners' properties.",
+            "The farmer's operation was there first, and the homeowners 'came to the nuisance.'",
+            "The pig farm is in compliance with all local zoning ordinances.",
+            "The interference is not unreasonable given the rural nature of the area and the utility of the farm."
         ],
         ans: 3,
-        exp: "Rule: Voluntary manslaughter requires an intentional homicide committed in the sudden heat of passion resulting from adequate provocation, or imperfect self-defense. Reckless homicides committed without intent to kill—such as drunk driving collisions—fall under involuntary manslaughter or depraved-heart second-degree murder. In Case D, the defendant acted with extreme recklessness without intending to kill; the court's refusal to instruct on voluntary manslaughter and the affirmance of murder established that an absence of intent to kill precludes voluntary manslaughter, making it the most directly applicable precedent on the mens rea boundaries of voluntary manslaughter (Option D). Option A addresses imperfect self-defense and involuntary manslaughter. Option B addresses mercy killings and adequate provocation. Option C addresses specific intent in attempted murder."
+        exp: "Rule: A private nuisance is a substantial and unreasonable interference with the plaintiff's use and enjoyment of land. To determine if an interference is unreasonable, courts balance the gravity of the harm to the plaintiff against the utility of the defendant's conduct, taking into account the character of the neighborhood. Option D is correct because highlighting the rural character of the area and the social utility of agriculture directly attacks the 'unreasonableness' element of the nuisance balancing test, making it the strongest legal defense. Option A is incorrect because private nuisance protects the intangible use and enjoyment of property; physical damage is not required. Option B is incorrect because 'coming to the nuisance' is generally not an absolute defense, though it is a factor considered in the balancing test. Option C is incorrect because compliance with zoning laws is relevant evidence but does not automatically preclude a finding of common law nuisance."
     },
     {
         id: 15,
         topic: "Mixed",
-        fp: "A buyer signed a sales contract to buy a new house from the seller. The contract stated that it was 'subject to and conditional upon the buyer obtaining a 30-year mortgage from a bank or other lending institution in the amount of $200,000 at an interest rate of less than 2 percent.' The buyer went to several banks in the area, but no bank would lend him the money at an interest rate of less than 2 percent. The seller offered to set up a private financing plan between the two parties that would bring the interest rate down to less than 2 percent for the buyer over the course of the loan. The buyer refused to close the deal. The seller argued that with the private financing in place, the net result of the loan was the same and the contract should be enforced.",
-        q: "What is the result of the buyer's failure to obtain an interest rate of less than 2 percent?",
+        fp: "A woman knew that her friend was planning to break into a warehouse to steal electronics. The friend asked the woman to lend him her crowbar to pry open the warehouse door. Wanting to help, the woman gave him the crowbar. That night, the friend used the crowbar to break into the warehouse, but while inside, he was startled by a security guard. In a panic, the friend struck the guard with the crowbar, causing severe injury, and then fled without stealing anything.",
+        q: "Is the woman guilty of the assault on the security guard as an accomplice?",
         opts: [
-            "The buyer is discharged from his duty to close the sale.",
-            "Since the net result of the private financing is the same, the buyer is required to close the sale.",
-            "The seller can sue the buyer for specific performance to complete the sale.",
-            "The seller can sue the buyer for any damages he suffered under the contract due to the buyer's failure to obtain a loan at less than 2 percent interest."
+            "No, because the woman only intended to assist in a burglary, not a violent assault.",
+            "No, because she was not physically present at the scene of the crime.",
+            "Yes, because she provided the instrument used in the crime and the assault was a natural and probable consequence of the burglary.",
+            "Yes, because she had a legal duty to warn the security guard of the impending crime."
         ],
-        ans: 0,
-        exp: "Rule: Express conditions in a contract must be strictly complied with. Where a purchase contract contains a financing contingency specifying that the buyer's obligation to close is conditional upon obtaining a mortgage from a bank or lending institution at a specified rate, the failure of that condition precedent—despite the buyer's good-faith efforts—excuses the buyer's duty to perform and discharges the contract. The buyer is not required to accept private seller financing or an alternative arrangement not specified in the contract (Option A). Option B is incorrect because strict compliance applies to express conditions; substantial equivalence cannot force a party to accept an unbargained-for financing source. Options C and D are incorrect because the non-occurrence of an express condition precedent is not a breach and creates no liability for damages or specific performance."
+        ans: 2,
+        exp: "Rule: An accomplice is someone who aids, abets, or encourages the principal in the commission of a crime with the intent that the crime be committed. An accomplice is liable not only for the target crime (burglary) but also for any other crimes committed by the principal that are a natural and probable consequence of the target crime. Option C is correct because the woman aided the burglary by supplying the tool with the requisite intent, and a violent confrontation with a guard is a foreseeable (natural and probable) consequence of breaking into a commercial warehouse at night. Option A is incorrect because the natural and probable consequences doctrine extends accomplice liability beyond the specific crime intended. Option B is incorrect because physical presence is not required for accomplice liability (she is an accessory before the fact). Option D is incorrect because accomplice liability here is based on her affirmative act of providing the crowbar, not a failure to warn."
     },
     {
         id: 16,
         topic: "Mixed",
-        fp: "The company was a major corporation with shares of stock traded on several stock exchanges. When rumors began to circulate that the company was experiencing financial difficulties, the price of the company stock fell drastically. The reporter was a journalist who wrote a financial news column for a daily newspaper. One day, while the reporter was discussing the company rumor with her friend, the friend said, 'I wouldn't be surprised if the whole thing was some kind of stunt to manipulate the price of stock.' The reporter was aware that the friend knew nothing about the stock market or about the company. The following day, based solely upon what she had heard from the friend, the reporter made the following statement in her column: 'Don't be fooled by rumors that the company is in trouble. Insiders say that the whole thing is a stunt to manipulate the price of the stock. I say the company is still a good investment.' After reading the column, the plaintiff invested in the company's stock in reliance on the reporter's statement. Two days later, the company filed a petition in bankruptcy, and its stock became worthless.",
-        q: "If the plaintiff asserts a claim against the reporter for misrepresentation, which one of the following facts or inferences, if it were the only one true, would be most likely to result in a judgment for the reporter?",
+        fp: "On a phone call, a buyer and seller agreed that the buyer would purchase the seller's beachfront cabin for $100,000. They did not sign a written contract. The next day, the buyer sent the seller a check for $50,000 as a down payment. The seller cashed the check. The buyer then hired a contractor who went to the cabin and began installing a new roof and renovating the kitchen, with the seller's full knowledge. Two weeks later, the seller decided the property was worth more and refused to transfer the deed, citing the Statute of Frauds.",
+        q: "Will the buyer likely succeed in a suit for specific performance?",
         opts: [
-            "At the time the plaintiff purchased the company's stock, the company's financial condition was a matter of public record.",
-            "The reporter's statement 'I think the company is a good investment' was an expression of opinion.",
-            "The plaintiff did not purchase the edition of the newspaper that contained the reporter's statement, but read it after finding it on a bus.",
-            "The reporter did not know that any person would rely on her statement."
+            "Yes, because the buyer's actions satisfy the part performance exception to the Statute of Frauds.",
+            "Yes, because the seller's cashing of the check acts as a complete waiver of the Statute of Frauds.",
+            "No, because contracts for the sale of real property must always be in writing without exception.",
+            "No, because the buyer has not yet paid the full $100,000 purchase price."
         ],
-        ans: 3,
-        exp: "Rule: An action for intentional misrepresentation (fraud/deceit) requires: (1) a misrepresentation of a material fact, (2) scienter, (3) intent to induce reliance by the plaintiff or a class of persons to which the plaintiff belongs, (4) justifiable reliance, and (5) damages. If the reporter did not know or intend that anyone would rely on her statement in making stock investments, the essential element of intent to induce reliance is negated, defeating the fraud claim (Option D). Option A is incorrect because a plaintiff's failure to investigate public records is not a defense to intentional fraudulent misrepresentation. Option B is incorrect because stating that 'Insiders say' is a provable representation of existing fact, not mere opinion. Option C is incorrect because secondary acquisition of a public newspaper does not defeat the intended audience reach if the publication was intended to induce investor reliance generally."
+        ans: 0,
+        exp: "Rule: Under the Statute of Frauds, contracts for the sale of land must be in writing. However, under the doctrine of part performance, an oral contract for the sale of land can be enforced in equity (for specific performance) if the buyer completes at least two of the following three acts: (1) pays all or part of the purchase price, (2) takes possession of the land, and (3) makes substantial improvements to the property. Option A is correct because the buyer paid a significant portion of the price ($50,000) and made substantial valuable improvements (new roof, kitchen renovation), satisfying the part performance exception. Option B is incorrect because payment alone is generally insufficient to overcome the Statute of Frauds in land contracts. Option C is incorrect because the part performance doctrine is a well-established equitable exception. Option D is incorrect because partial payment, when combined with substantial improvements or possession, is sufficient."
     },
     {
         id: 17,
         topic: "Mixed",
-        fp: "The defendant and the victim, who resided in the city, purchased rifles. Because neither of them had ever fired a rifle before, they decided to take them to the municipal dump to try them out. Although both believed that the dump was outside city limits, it was actually within city limits. At the dump, the defendant shot his rifle in the victim's direction, aiming slightly to the right to miss the victim. The bullet struck a rock and ricocheted, hitting the victim in the back and causing his death. A city ordinance provides that '[a]ny person who shall discharge a firearm knowing that he or she is within the municipal limits shall be guilty of a misdemeanor punishable by a maximum fine of $100.'",
-        q: "Which of the following is the most serious crime of which the defendant may properly be convicted?",
+        fp: "A consumer purchased a brand-new lawnmower from a local hardware store. The lawnmower was manufactured by a large power equipment company. During its very first use, a defective blade assembly—which had been improperly tightened at the manufacturing plant—flew off the machine and severely injured the consumer's leg. The consumer sued the local hardware store for strict products liability. The hardware store argued it should be dismissed from the suit because it was merely the retailer and had absolutely no role in designing or assembling the lawnmower, nor could it have discovered the defect through a reasonable inspection.",
+        q: "Is the hardware store's defense valid?",
         opts: [
-            "Murder.",
-            "Voluntary manslaughter.",
-            "Attempted murder.",
-            "Discharging a firearm within the municipal limits."
+            "Yes, because the store did not act negligently in selling the sealed product.",
+            "Yes, because strict liability only applies to the manufacturer who created the defect.",
+            "No, because a retailer is strictly liable for selling an unreasonably dangerous defective product, regardless of its fault.",
+            "No, because the store breached the implied warranty of fitness for a particular purpose."
         ],
-        ans: 0,
-        exp: "Rule: Common law murder is the unlawful killing of a human being with malice aforethought. Malice is established by depraved-heart murder: conduct that exhibits a reckless and wanton indifference to an unjustifiably high risk to human life. Firing a high-powered rifle directly in the immediate direction of another person while having no prior experience handling firearms constitutes depraved-heart recklessness, supporting a conviction for second-degree murder (Option A). Option B is incorrect because voluntary manslaughter requires an intentional killing in the heat of passion or under imperfect self-defense, neither of which applies. Option C is incorrect because attempt requires a specific intent to kill, which the defendant lacked. Option D is incorrect because the defendant honestly believed they were outside city limits, negating the ordinance's express knowledge requirement."
+        ans: 2,
+        exp: "Rule: In a strict products liability action, any commercial supplier in the chain of distribution (including manufacturers, wholesalers, and retailers) can be held strictly liable if they sell a product that is defective and unreasonably dangerous, and that defect causes physical harm. Option C is correct because the hardware store is a commercial retailer in the distribution chain, and is thus strictly liable for the manufacturing defect even if it exercised all possible care and could not have discovered the defect. Option A is incorrect because negligence or lack of fault is irrelevant in a strict liability claim. Option B is incorrect because strict liability extends to all commercial sellers in the chain of distribution, not just the manufacturer. Option D is incorrect because the action is based on strict products liability for a physical injury, and the implied warranty of fitness for a particular purpose applies when a buyer relies on a seller's skill to select a product for a specific, unusual use, which is not present here."
     },
     {
         id: 18,
         topic: "Mixed",
-        fp: "An author sent a text to her friend that said, 'Because you helped me get a $1 million advance for my new book, I'm going to give you my favorite Picasso drawing from my collection! I couldn't have done it without you!' The friend replied, 'Thank you so much! I'm going to give you one of my paintings of flowers that I did. I hope you like it!' The next day, the friend showed up with her painting at the author's house. The author thought the friend's painting was terrible and said, 'On second thought, I'm keeping the Picasso.' The friend sued the author for the Picasso.",
-        q: "Should the court rule in the friend's favor?",
+        fp: "At 11:00 PM, a man walked up to a closed, unoccupied residential garage that was detached and located 50 feet away from the main house. The man used a crowbar to pry open the locked garage window and climbed inside, intending to steal a valuable set of power tools he knew were stored there. Before he could take anything, an alarm sounded and the man fled. The jurisdiction strictly follows common law definitions for all crimes.",
+        q: "What is the most serious crime the man has committed?",
         opts: [
-            "Yes, because the friend delivered her painting to the author.",
-            "Yes, because the author received a $1 million advance due to the friend's help.",
-            "No, because the author did not like the friend's painting.",
-            "No, because there was no consideration."
+            "Burglary.",
+            "Attempted Burglary.",
+            "Larceny.",
+            "Attempted Larceny."
         ],
         ans: 3,
-        exp: "Rule: Enforceability of a contract requires bargained-for consideration. A promise made in recognition of past assistance is past consideration, which does not satisfy the requirement of an exchange. Furthermore, mutual gratuitous promises to make gifts (an exchange of gifts without bargaining) do not constitute consideration. The author promised the drawing out of gratitude for past help, and the friend offered a painting as a reciprocal gift; neither promise was bargained for as the price of the other. The promise was unenforceable for lack of consideration (Option D). Option A is incorrect because delivering an unbargained-for gift does not convert a gratuitous promise into a binding contract. Option B is incorrect because past services do not supply consideration for a subsequent promise. Option C is incorrect because subjective artistic approval is irrelevant where no underlying contract was formed."
+        exp: "Rule: Common law burglary requires the breaking and entering of the dwelling house of another at night with the intent to commit a felony therein. A detached garage that is not used for sleeping or living purposes is generally not considered part of the dwelling house at common law. Option D is correct because the man cannot be convicted of common law burglary (as the structure was not a dwelling), but he did have the specific intent to steal (larceny) and took a substantial step (breaking in) toward that goal, making him guilty of attempted larceny. Option A is incorrect because the structure was a detached, unoccupied garage, failing the 'dwelling' element of common law burglary. Option B is incorrect for the same reason; one cannot attempt to burglarize a non-dwelling under strict common law definitions. Option C is incorrect because larceny requires asportation (carrying away) of the property, and the man fled before taking anything."
     },
     {
         id: 19,
         topic: "Mixed",
-        fp: "A woman sold her financial services business to a larger company for $50 million in cash. Pursuant to the sales contract, the company agreed to employ the woman for one year at $1 million per year. Three months after the sale, the company fired the woman without justification. The woman was angry. Although there were comparable jobs in her field available in the area, the woman decided to work as a bartender for a year to blow off some steam and then get back into financial services. At the end of the year, the woman had made $45,000 as a bartender. She then sued the company for the $750,000 it owed her from the original company sales contract.",
-        q: "Should the court rule in the woman's favor?",
+        fp: "An uncle contracted with a dealership to purchase a new car for $25,000. In the written contract, the uncle specified that the dealership was to deliver the car directly to his niece on her 18th birthday as a gift. The niece was completely unaware of this arrangement. A week before her birthday, the uncle suffered financial setbacks and agreed with the dealership to cancel the contract in exchange for a full refund. On her birthday, the niece learned of the original contract from her mother and sued the dealership to enforce the delivery of the car.",
+        q: "Will the niece succeed in her lawsuit?",
         opts: [
-            "No, because the woman did not seek comparable employment.",
-            "No, because the woman's employment was only a minor breach of the sales contract.",
-            "Yes, because the woman was fired without justification.",
-            "Yes, because the woman's bartending job paid much less than the salary promised by the company."
+            "Yes, because she is an intended donee beneficiary of the contract.",
+            "Yes, because the contract was fully executed in writing.",
+            "No, because the contracting parties legally modified the contract before her rights vested.",
+            "No, because donee beneficiaries lack privity of contract and can never sue for enforcement."
         ],
-        ans: 0,
-        exp: "Rule: In an action for breach of an employment contract, the employee is entitled to the agreed salary minus amounts earned or amounts that could have been earned with reasonable diligence in comparable or substantially similar employment. The doctrine of avoidable consequences (duty to mitigate damages) bars recovery for salary losses that the employee could have avoided by accepting available comparable employment in the same field and locality. Because the employee made no effort to obtain comparable financial services positions that were readily available, her recovery for the remaining salary is barred by failure to mitigate (Option A). Option B is incorrect because wrongful termination of an employment provision is an actionable material breach of that employment promise. Options C and D are incorrect because unjustified firing does not eliminate the affirmative requirement to mitigate damages through available comparable employment."
+        ans: 2,
+        exp: "Rule: An intended third-party beneficiary (whether a donee or creditor beneficiary) can enforce a contract only after their rights have vested. Rights vest when the beneficiary (1) detrimentally relies on the contract, (2) expressly assents to the contract at the request of the parties, or (3) brings a lawsuit to enforce it before modification. Until the rights vest, the original contracting parties are free to modify or cancel the contract without the beneficiary's consent. Option C is correct because the niece was unaware of the contract when it was canceled; therefore, she had not assented or relied on it, her rights had not vested, and the cancellation was perfectly valid. Option A is incorrect because while she was an intended donee beneficiary, her inability to enforce the contract stems from the fact that her rights had not yet vested prior to the rescission. Option B is incorrect because a written contract can still be mutually rescinded. Option D is incorrect because intended beneficiaries do have standing to sue once their rights vest."
     },
     {
         id: 20,
         topic: "Mixed",
-        fp: "A restaurant contracted to buy 20 kegs of beer at the beer distributor's listed price of $50. Due to a mistake in the beer distributor's warehouse, the distributor sent the restaurant only 12 kegs of beer. Because the restaurant knew it would be busy for football weekend, it accepted the 12 kegs and notified the distributor of the error. The distributor looked for more beer in its warehouse, but it realized it was sold out. Consequently, the distributor did not ship any more beer to the restaurant. The restaurant ended up running out of beer on football weekend, which caused a riot in the restaurant. The restaurant owner was so angry that he did not send payment to the distributor.",
-        q: "May the restaurant owner refuse to pay the distributor?",
+        fp: "A delivery driver for a parcel service was instructed to deliver packages along a specific route in the city. While on his route, the driver decided to drive three miles in the opposite direction of his next stop to visit a new bakery he had seen on social media. While pulling into the bakery's parking lot, the driver negligently struck a pedestrian. The pedestrian sued the parcel service, arguing it was vicariously liable for the driver's negligence.",
+        q: "Is the parcel service vicariously liable for the pedestrian's injuries?",
         opts: [
-            "Yes, because the distributor failed to deliver 20 kegs of beer as contracted.",
-            "Yes, because the distributor's mistake led to a riot in the restaurant.",
-            "No, because the restaurant accepted 12 kegs of beer.",
-            "No, because the distributor could not fulfill the original order."
+            "Yes, because the accident occurred during the driver's regular working hours.",
+            "Yes, because the driver was operating a company-owned vehicle.",
+            "No, because the driver was on a frolic, outside the scope of his employment.",
+            "No, because the driver's negligence was an intentional deviation from his assigned route."
         ],
         ans: 2,
-        exp: "Rule: Under UCC § 2-607(1), a buyer must pay at the contract rate for any goods accepted. While a buyer facing a non-conforming tender may reject the whole under UCC § 2-601, the buyer may also accept any commercial unit and reject the rest. Once goods are accepted, the buyer is legally obligated to pay the contract price for the units accepted, though the buyer retains a right to seek an offset or damages under UCC § 2-714 for the breach (Option C). Options A and B are incorrect because the restaurant owner cannot refuse to pay for accepted goods entirely; acceptance requires payment of the purchase price for the 12 kegs, subject to a counterclaim/deduction for breach damages. Option D is incorrect because the distributor's inventory shortage does not determine the buyer's statutory obligation to pay for accepted units."
+        exp: "Rule: Under the doctrine of respondeat superior, an employer is vicariously liable for the torts of an employee committed within the scope of employment. A minor deviation for personal reasons is a 'detour' and remains within the scope, but a substantial deviation in time and geography for purely personal reasons is a 'frolic,' which falls outside the scope of employment. Option C is correct because driving three miles in the opposite direction to visit a bakery is a substantial personal deviation (a frolic), severing the employer's vicarious liability. Option A is incorrect because merely occurring during working hours is insufficient if the employee completely abandoned his duties. Option B is incorrect because ownership of the vehicle alone does not establish vicarious liability without showing the act was within the scope of employment. Option D is incorrect because while the deviation was intentional, the key legal distinction is the magnitude of the deviation (frolic vs. detour), not just intent."
     },
     {
         id: 21,
         topic: "Mixed",
-        fp: "A man was at a crowded rock concert when he saw a $20 bill fall out of a woman's pocket. The man grabbed the $20 and put it in his pocket. The woman reached into her pocket, turned around, and asked the man if he had seen any money on the floor. The man said no and walked to the bar to buy himself beer with the $20.",
-        q: "Of what crime is the man guilty?",
+        fp: "A pickpocket saw a man walking down the street with a wallet protruding from his back pocket. The pickpocket sneaked up behind the man and expertly slipped the wallet out of the pocket without the man noticing. The man felt absolutely nothing. As the pickpocket walked away, a police officer witnessed the act and arrested him.",
+        q: "Is the pickpocket guilty of robbery?",
         opts: [
-            "False pretenses.",
-            "Larceny.",
-            "Conversion.",
-            "No crime because the woman dropped the $20."
+            "Yes, because he took property from the person of another with the intent to permanently deprive.",
+            "Yes, because any physical contact during a theft satisfies the force requirement for robbery.",
+            "No, because the taking was accomplished without force or the threat of force.",
+            "No, because the victim must be physically injured to elevate larceny to robbery."
         ],
-        ans: 1,
-        exp: "Rule: Common law larceny is the trespassory taking and carrying away of the personal property of another with the intent to permanently deprive. With respect to lost or mislaid property, a finder commits larceny if, at the time of taking, the finder knows the true owner or has immediate clues to the owner's identity, yet takes possession with the contemporaneous intent to permanently deprive. The man saw the bill fall directly from the woman's pocket, immediately knew its true owner, and took it intending to keep it for himself (Option B). Option A is incorrect because false pretenses requires that the victim be induced by false representations to transfer title; the woman did not pass title to the man in reliance on a lie. Option C is incorrect because conversion is a civil tort, not a common law crime. Option D is incorrect because dropped property whose owner is immediately identifiable remains the subject of larceny."
+        ans: 2,
+        exp: "Rule: Robbery is larceny committed by taking property from the person or presence of another by means of force or the threat of immediate physical force (fear). Option C is correct because stealthy takings, such as pickpocketing where the victim is unaware and no resistance is overcome, lack the required element of force or fear. Option A is incorrect because it describes the elements of larceny from the person, not robbery; it omits the crucial force/fear requirement. Option B is incorrect because the minimal contact necessary to merely lift the wallet does not constitute the force required for robbery; force requires overcoming victim resistance or creating violence. Option D is incorrect because actual physical injury is not required for robbery; mere threat of force (fear) or sufficient physical force to overcome resistance is enough."
     },
     {
         id: 22,
         topic: "Mixed",
-        fp: "A music store sent a famous musician a letter offering to sell a rare guitar to the musician for $20,000 so long as he accepted the offer within one week. Three days later, the musician sent a letter back accepting the offer so long as the guitar carried a warranty of merchantability. The musician liked the guitar so much that he planned to base his new record cover on it. Before the music store received the musician's letter, the music store sold the guitar to another man. The music store received the musician's letter six days later. Two days after that, the musician called the music store, which told him the guitar had been sold to someone else. The musician sued the music store for breach of contract.",
-        q: "Should the court rule in the musician's favor?",
+        fp: "A contractor agreed to renovate a homeowner's bathroom for $5,000. Halfway through the job, the contractor realized he had underbid the project and was going to lose money. He told the homeowner he would abandon the job unless the homeowner agreed to pay an additional $1,000. The homeowner, desperate to have a working bathroom before hosting a large family gathering the next week, agreed to the higher price. The contractor finished the work, but the homeowner only paid the original $5,000.",
+        q: "If the contractor sues for the remaining $1,000, will he prevail?",
         opts: [
-            "Yes, because the musician accepted the offer.",
-            "Yes, based on promissory estoppel.",
-            "No, because the store did not receive the musician's letter until nine days after the offer was made.",
-            "No, because the musician added an additional term to his acceptance."
+            "Yes, because the homeowner's agreement to the modification created a binding contract.",
+            "No, because the modification was not supported by new consideration from the contractor.",
+            "Yes, because the unforeseen financial hardship justified the modification.",
+            "No, because the modification was induced by economic duress."
         ],
-        ans: 0,
-        exp: "Rule: Under the mailbox rule, an acceptance of an offer is effective upon dispatch. Under UCC § 2-207(1), a definite and seasonable expression of acceptance operates as an acceptance even though it states terms additional to or different from those offered. Furthermore, an express condition requiring an implied warranty of merchantability is not an additional or inconsistent term because the implied warranty of merchantability is automatically incorporated into every contract for the sale of goods by a merchant seller under UCC § 2-314. The musician dispatched his acceptance within the one-week window, forming a binding contract on the date of mailing before the store sold the instrument to another (Option A). Option B is incorrect because promissory estoppel is inapplicable where an actual contract was formed. Option C is incorrect because dispatch (mailing within 3 days) controls over receipt under the mailbox rule. Option D is incorrect because the UCC abolished the mirror-image rule, and the warranty of merchantability is implied by law."
+        ans: 1,
+        exp: "Rule: Under the common law pre-existing duty rule, a promise to do something one is already legally obligated to do is not valid consideration for a new promise. Option B is correct because the contractor was already contractually obligated to renovate the bathroom for $5,000; his promise to finish the work was merely a pre-existing duty, meaning the homeowner's promise to pay an extra $1,000 was unsupported by consideration and is unenforceable. Option A is incorrect because common law modifications require new consideration. Option C is incorrect because underestimating costs/underbidding is a normal business risk and does not constitute unforeseen, severe circumstances that would exceptionably excuse the pre-existing duty rule. Option D is a plausible defense, but the lack of consideration (Option B) is the fundamental mechanical reason the contract modification fails at formation, making it the most direct and precise answer under standard contract rules."
     },
     {
         id: 23,
         topic: "Mixed",
-        fp: "A man had embezzled $1 million from his company due to his crippling gambling addiction. To cover up the crime, he decided to kill his boss. One morning, the man took his boss's sandwich from the company refrigerator and laced it with poison. The man then went to his office and waited. By 12:30, the man felt so guilty that he ran to the boss's office and offered to take him out for pizza for lunch so he wouldn't eat the poisoned sandwich. While the man and his boss were away enjoying pizza, another worker took the sandwich from the refrigerator and ate it. The worker died instantly. The jurisdiction followed the common law.",
-        q: "Out of the following, which crimes could the man be found guilty of?",
+        fp: "A plaintiff was driving 10 mph over the speed limit down a residential street. A defendant backed his car out of his driveway without looking and struck the plaintiff's car, causing $10,000 in damages. The jury determined that the defendant was 80% at fault for failing to look, and the plaintiff was 20% at fault for speeding. The state operates under a pure comparative negligence regime.",
+        q: "How much will the plaintiff recover from the defendant?",
         opts: [
-            "No crime because the worker's death was an accident.",
-            "Manslaughter of the worker.",
-            "Attempted murder of the boss.",
-            "Attempted murder of the boss and murder or manslaughter of the worker."
+            "$0, because the plaintiff's own negligence contributed to the accident.",
+            "$10,000, because the defendant was the primary cause of the accident.",
+            "$5,000, because damages are split evenly when both parties are at fault.",
+            "$8,000, because the plaintiff's recovery is reduced by his 20% share of the fault."
         ],
         ans: 3,
-        exp: "Rule: Attempt requires a specific intent to commit the target offense and an overt act in furtherance beyond mere preparation. Lacing the sandwich with poison and leaving it in the refrigerator for the boss constituted an attempt; at common law, subsequent voluntary abandonment is not a defense once the attempt is complete. For the co-worker's death, the doctrine of transferred intent transfers the man's intent to kill from the boss to the deceased co-worker, establishing murder. Alternatively, leaving a lethal, poisoned sandwich in a shared office refrigerator exhibits depraved-heart malice or criminal negligence, supporting murder or involuntary manslaughter. The man is liable for attempted murder of the boss and murder or manslaughter of the worker (Option D). Options A, B, and C are incorrect because they fail to account for the completed attempted murder and the homicide liability arising from transferred intent and depraved recklessness."
+        exp: "Rule: In a pure comparative negligence jurisdiction, a plaintiff's recovery is reduced by their own percentage of fault, regardless of how great that percentage is (even if it exceeds 50%). Option D is correct because the plaintiff's total damages are $10,000, and his 20% fault reduces his recovery by $2,000, leaving $8,000 to be recovered from the defendant. Option A is incorrect because it describes the harsh common law rule of contributory negligence, which completely bars recovery, not comparative negligence. Option B is incorrect because it fails to account for the plaintiff's own comparative fault. Option C is incorrect because damages are apportioned based on exact percentages of fault, not split evenly 50/50."
     },
     {
         id: 24,
         topic: "Mixed",
-        fp: "The plaintiff showed his silver coins to the defendant and asked whether the defendant would be interested in trading them for chickens. After inspecting the coins, the defendant and the plaintiff placed them in a bag that they sealed together and left with a banker whom they both knew. Then, in a writing signed by both of them, they agreed to the trade. Pursuant to the terms of their agreement, the defendant was to deliver 6,000 fryer chickens to the plaintiff on July 1, at which time the bag of coins would be turned over to the defendant as payment in full. In May, weather conditions were such that the price of fryer chickens increased to three times what it had been when the agreement was signed. Although it was foreseeable that the market price for fryer chickens would change dramatically, neither party knew that the market price of fryer chickens would change. On July 1, the defendant refused to deliver 6,000 fryer chickens to the plaintiff.",
-        q: "If the plaintiff asserts a claim against the defendant for breach of contract, should the court find in the plaintiff's favor?",
+        fp: "A husband came home early from work and walked into his bedroom, where he found his wife in bed with another man. In a sudden rage, the husband grabbed a heavy lamp from the nightstand and struck the other man in the head, killing him instantly. The husband had no prior suspicion of the affair.",
+        q: "What is the most appropriate homicide charge for the husband?",
         opts: [
-            "No, because neither party knew that the market price of fryer chickens would change.",
-            "No, because the likelihood of fluctuation in the value of money makes this contract aleatory.",
-            "Yes, because it was foreseeable that the market price of fryer chickens would change dramatically.",
-            "Yes, because the transaction was not a sale as defined by the UCC."
+            "Voluntary manslaughter.",
+            "Involuntary manslaughter.",
+            "First-degree murder.",
+            "No crime, based on justifiable defense of marriage."
         ],
-        ans: 2,
-        exp: "Rule: Under UCC § 2-615, commercial impracticability excuses performance only where a supervening event occurs, the non-occurrence of which was a basic assumption on which the contract was made. Fluctuations in market price are normal, foreseeable business risks assumed by contracting parties. Where dramatic price changes are foreseeable, the party bearing the market risk is not excused by commercial impracticability or mutual mistake of fact. Because the price surge was foreseeable, the defendant remained obligated to deliver the chickens (Option C). Option A is incorrect because subjective lack of foresight regarding market shifts does not excuse performance when market fluctuations are objectively foreseeable. Option B is incorrect because contracts for future delivery at a fixed price are not aleatory contracts. Option D is incorrect because a barter/exchange of goods for consideration is governed by UCC Article 2 under § 2-304."
+        ans: 0,
+        exp: "Rule: Voluntary manslaughter is an intentional killing mitigated from murder because it was committed in the 'heat of passion' resulting from adequate provocation. Discovering a spouse in the act of adultery is the classic common law example of adequate provocation that would cause a reasonable person to lose self-control. Option A is correct because the husband killed the victim immediately upon discovering the infidelity, with no time to cool off, satisfying the elements of voluntary manslaughter. Option B is incorrect because involuntary manslaughter applies to unintentional killings caused by criminal negligence or during a misdemeanor; this was an intentional strike. Option C is incorrect because the adequate provocation negates the malice aforethought required for murder. Option D is incorrect because discovering adultery mitigates the crime but does not legally justify or excuse the use of lethal force."
     },
     {
         id: 25,
         topic: "Mixed",
-        fp: "The defendant was out walking when she saw the plaintiff, a seven-year-old child, suddenly chase a ball into the street in the path of a car driven by a driver. Afraid that the plaintiff would be hit by the car, the defendant ran into the roadway and pushed the plaintiff out of the way. The driver's car struck the defendant. The plaintiff was not hit by the driver's car, but he hurt his knees when he fell to the ground as a result of being pushed by the defendant. The jurisdiction applies the all-or-nothing rule of contributory negligence.",
-        q: "If the plaintiff asserts a negligence claim against the defendant for the injuries to his knees, which one of the following additional facts or inferences, if it was the only one true, would be most likely to result in a judgment for the defendant?",
+        fp: "A buyer in New York ordered 1,000 custom widgets from a seller in California. The written contract specified that the goods would be shipped 'FOB New York.' The seller properly packaged the widgets and delivered them to a reputable trucking company in California. While en route through the Midwest, the truck was struck by a tornado, and all the widgets were destroyed.",
+        q: "Who bears the risk of loss for the destroyed widgets?",
         opts: [
-            "The plaintiff's injury was proximately caused by the negligence of the driver.",
-            "If the defendant had not pushed him out of the way, the plaintiff would have been struck by the driver's car and killed.",
-            "The defendant was severely injured as a result of being struck by the driver's car.",
-            "The situation confronted the defendant with an emergency."
+            "The buyer, because the risk of loss passed when the seller delivered the goods to the carrier in California.",
+            "The seller, because under an FOB Destination contract, the risk of loss does not pass to the buyer until the goods are tendered at the destination.",
+            "The trucking company, because common carriers are strictly liable for Acts of God.",
+            "The buyer and seller share the loss equally because the destruction was unforeseeable."
+        ],
+        ans: 1,
+        exp: "Rule: Under the UCC, the delivery term 'FOB [Destination]' creates a destination contract, meaning the seller bears the risk of loss and expense until the goods are properly tendered to the buyer at the specified destination. Option B is correct because the contract stated 'FOB New York' (the buyer's location), making it a destination contract. Since the goods were destroyed in transit before reaching New York, the risk of loss remained with the seller. Option A is incorrect because it describes an 'FOB [Seller's Location]' (shipment) contract, where risk passes upon delivery to the carrier. Option C is incorrect because common carriers are generally excused from strict liability for damage caused by unforeseeable Acts of God (like tornados), and regardless, as between the buyer and seller, the seller holds the contractual risk. Option D is incorrect because the UCC assigns the risk of loss entirely to one party based on the delivery terms; it does not split the loss equitably."
+    },
+    {
+        id: 26,
+        topic: "Mixed",
+        fp: "A manufacturer of high-end mountain bikes displayed a newly designed trail bike at a trade show. A retail bicycle dealer examined the bike and expressed interest. The manufacturer sent the dealer a signed written proposal: 'We offer to sell you 50 Apex Trail Bikes at $800 each, net 30 days. Delivery at your retail warehouse on or before April 1. This offer will remain open until March 1.' On February 10, the dealer mailed a signed letter stating: 'I accept your offer for 50 Apex Trail Bikes at $800 each. Shipment must include manufacturer assembly manuals for each unit.' Under prevailing trade usage in the bicycle industry, assembly manuals are customarily included with all wholesale bike shipments. The manufacturer received the letter on February 12 but remained silent. On March 15, the manufacturer notified the dealer that it had sold its entire inventory of Apex bikes to a national competitor and would not deliver any bikes to the dealer.",
+        q: "In an action by the dealer against the manufacturer for breach of contract, which of the following statements is most accurate?",
+        opts: [
+            "A valid contract was formed because the dealer's letter operated as an acceptance under UCC § 2-207, and the manual requirement became part of the contract.",
+            "No contract was formed because the dealer's request for assembly manuals constituted a conditional acceptance and counteroffer.",
+            "A valid contract was formed, but the term regarding assembly manuals dropped out because it materially altered the bargain.",
+            "No contract was formed because the manufacturer never assented in writing to the additional term regarding assembly manuals."
+        ],
+        ans: 0,
+        exp: "Rule: Under UCC § 2-207(1), a definite and seasonable expression of acceptance operates as an acceptance even though it states terms additional to or different from those offered, unless acceptance is expressly made conditional on assent to the additional or different terms. Under UCC § 2-207(2), between merchants, additional terms automatically become part of the contract unless: (a) the offer expressly limits acceptance to the terms of the offer; (b) they materially alter it; or (c) notification of objection to them has already been given or is given within a reasonable time. A term does not materially alter a contract if it results in no unreasonable surprise or hardship, particularly where it reflects established trade usage (such as customarily including manufacturer assembly manuals). Therefore, the dealer's letter formed a binding contract upon receipt/dispatch, and the manual term was incorporated into the agreement (Option A). Option B is incorrect because the acceptance was not expressly made conditional on assent to the added term. Option C is incorrect because trade usage demonstrates that the term was not a material alteration. Option D is incorrect because between merchants, non-material additional terms enter automatically without requiring an express affirmative writing from the offeror."
+    },
+    {
+        id: 27,
+        topic: "Mixed",
+        fp: "A homeowner engaged a commercial tree service to fell a dead 60-foot oak tree standing in his front yard. The tree service brought heavy felling equipment and established a marked drop zone. A neighbor walked past the warning cones and onto the homeowner's driveway to ask the tree crew what time they expected to finish. While the crew was using a winch to direct the fall, a crew member negligently failed to secure an anchor pin. The winch cable snapped, whipped across the driveway, and struck the neighbor, fracturing his arm. The neighbor sued both the homeowner and the tree service for negligence.",
+        q: "Who is liable to the neighbor for his injuries?",
+        opts: [
+            "Both the homeowner and the tree service, because removing a massive dead tree is an inherently dangerous activity imposing non-delegable duties on a landowner.",
+            "The tree service only, because it committed active operational negligence, while the homeowner is not vicariously liable for the torts of an independent contractor.",
+            "The homeowner only, because the neighbor was a licensee on the premises to whom the homeowner owed an absolute duty of inspection and warning.",
+            "Neither, because the neighbor assumed the risk by walking past the warning cones into an active work area."
+        ],
+        ans: 1,
+        exp: "Rule: An independent contractor is solely liable for its own collateral or operational negligence. A property owner is generally not vicariously liable for the torts of an independent contractor unless the activity is inherently dangerous (carrying an unavoidable, high risk of harm requiring special precautions even when done carefully, such as blasting) or involves a non-delegable duty. Standard tree felling by a professional service is an ordinary construction/maintenance activity, not an inherently dangerous activity that triggers vicarious liability for the employer. Therefore, the homeowner is not vicariously liable for the crew's failure to secure the pin. However, the tree service owed a general duty of reasonable care to foreseeable persons in the vicinity and breached that duty through operational negligence (Option B). Option A is incorrect because routine tree trimming and felling is not classified as an inherently dangerous activity imposing non-delegable liability on residential landowners. Option C is incorrect because the harm arose from an independent contractor's dynamic operational acts, not a static concealed condition of the land under the owner's control. Option D is incorrect because crossing warning cones may raise comparative negligence, but it does not completely bar recovery under modern comparative fault principles."
+    },
+    {
+        id: 28,
+        topic: "Mixed",
+        fp: "A man believed his coworker had stolen his bespoke leather jacket. Late one evening, intending to retrieve his property, the man pried open the back window of the coworker's suburban residence with a screwdriver while the coworker was away. Once inside, the man searched the closets and discovered his leather jacket hanging in the master bedroom. The man took the jacket and departed through the back door. The jurisdiction adheres strictly to traditional common law definitions of all crimes.",
+        q: "What is the most serious common law crime of which the man can properly be convicted?",
+        opts: [
+            "Common law burglary.",
+            "Larceny.",
+            "Attempted larceny.",
+            "Trespass to land only."
         ],
         ans: 3,
-        exp: "Rule: Under the emergency doctrine in negligence, an actor confronted with a sudden, unexpected emergency not created by the actor's own misconduct is not held to the standard of calm contemplation applied in non-emergency settings, but rather to the standard of care of a reasonably prudent person facing that same sudden emergency. Rushing into the street to push a child out of the direct path of an oncoming automobile was an emergency response; showing that the situation was an emergency establishes that pushing the child out of harm's way was reasonable under the circumstances (Option D). Option A is incorrect because multiple tortfeasors can both be proximate causes of an injury. Option B is incorrect because necessity/lesser harm goes to justification, but the primary defense to negligence is that the defendant acted reasonably under emergency conditions. Option C is incorrect because injuries suffered by the defendant do not negate breach of duty toward the plaintiff."
+        exp: "Rule: At common law, burglary requires: (1) breaking, (2) entering, (3) the dwelling house of another, (4) in the nighttime, (5) with the intent to commit a felony therein. Larceny requires the trespassory taking and carrying away of the personal property of another with the intent to permanently deprive the owner thereof. Under the claim-of-right doctrine, a defendant who takes property under an honest, bona fide belief that the property belongs to him lacks the felonious intent (animus furandi) required for larceny, even if that belief is mistaken or unreasonable. Because the man entered solely to recover property he honestly believed was his own, he lacked the intent to commit a felony (larceny) at the moment of entry. Thus, he did not commit common law burglary. Because he lacked animus furandi, he also did not commit larceny or attempted larceny. He committed only a civil/criminal trespass to land (Option D). Options A, B, and C are incorrect because the absence of felonious intent negates both larceny and the felony element essential to common law burglary."
+    },
+    {
+        id: 29,
+        topic: "Mixed",
+        fp: "An avid art collector visited a gallery and fell in love with a painting titled 'Crimson Dusk' by a prominent modern artist. The gallery owner and the collector entered into a signed written contract whereby the collector agreed to buy 'Crimson Dusk' for $45,000, payable on delivery scheduled for July 1. On June 20, the gallery owner received an unsolicited offer of $70,000 for the same painting from an overseas museum. The gallery owner immediately sold and delivered 'Crimson Dusk' to the overseas museum and telephoned the collector to state that the gallery was repudiating their agreement and would refund any administrative deposits. The collector immediately filed an action against the gallery owner seeking specific performance.",
+        q: "Will the court grant the collector's request for specific performance?",
+        opts: [
+            "No, because the collector has an adequate remedy at law to recover market expectation damages from the gallery owner.",
+            "No, because the painting has already been transferred to a bona fide purchaser, rendering specific performance impossible.",
+            "Yes, because contracts for the sale of unique personal property are presumptively entitled to equitable enforcement.",
+            "Yes, because the gallery owner's deliberate, bad-faith breach estops him from asserting equitable defenses."
+        ],
+        ans: 1,
+        exp: "Rule: Specific performance is an equitable remedy available when the legal remedy (damages) is inadequate, which is presumptively true for unique chattels, works of art, and heirlooms under UCC § 2-716. However, equity will not order an impossibility: where the subject matter of a contract for personal property has already been sold and physically delivered to a third-party bona fide purchaser who takes without notice of the prior contract, specific performance cannot be decreed because the court cannot compel the defendant to transfer title to property he no longer owns or controls (Option B). Option A is incorrect because original paintings are unique, making damages historically inadequate in principle. Option C is incorrect because while unique goods ordinarily support specific performance, the transfer of possession and title to an overseas purchaser makes the decree legally and physically impossible to enforce. Option D is incorrect because bad faith does not grant a court power to order an impossible conveyance of property owned by a third party."
+    },
+    {
+        id: 30,
+        topic: "Mixed",
+        fp: "A restaurant patron ordered a bowl of classic New England clam chowder at a seafood establishment. While chewing a mouthful of soup, the patron bit forcefully down on a sharp, one-inch piece of natural clam shell that had not been removed during the shucking process. The fragment fractured two of the patron's molars and lacerated his gums, necessitating oral surgery. The patron brought a strict products liability action against the restaurant, alleging that the clam chowder was a defective and unreasonably dangerous food product.",
+        q: "If the court applies the modern 'reasonable expectation' test for food products liability, will the patron prevail?",
+        opts: [
+            "No, because a clam shell is natural to clams and therefore cannot constitute a manufacturing defect as a matter of law under the foreign-natural doctrine.",
+            "No, unless the patron can affirmatively establish that the restaurant staff failed to exercise reasonable care in inspecting and straining the chowder.",
+            "Yes, if a reasonable consumer eating clam chowder would not expect to encounter a one-inch jagged shell fragment capable of causing dental injury.",
+            "Yes, because commercial restaurants are strictly liable as insurers of the safety of all food items served on their premises."
+        ],
+        ans: 2,
+        exp: "Rule: In products liability for food products, modern jurisdictions have largely abandoned the rigid 'foreign-natural' test (which barred recovery if the harmful substance was natural to the food) in favor of the 'reasonable expectation' test. Under the reasonable expectation test, a food product is defective if a reasonable consumer would not expect the ingredient or object to be present in the prepared dish, regardless of whether it is natural to one of the ingredients. A consumer ordering processed chowder does not reasonably expect a large, jagged, dangerous shell fragment capable of breaking teeth (Option C). Option A is incorrect because it states the obsolete 'foreign-natural' rule that the modern reasonable expectation test rejects. Option B is incorrect because strict products liability does not require proof of negligent inspection; the focus is solely on whether the product was defective. Option D is incorrect because sellers of food are not absolute insurers under strict liability; they are liable only for defective, unreasonably dangerous conditions."
+    },
+    {
+        id: 31,
+        topic: "Mixed",
+        fp: "Defendant was furious after learning that a rival contractor had won a lucrative municipal building project. Defendant met with an acquaintance who had a criminal record for arson and said: 'I'll pay you $10,000 if you burn down that contractor's lumber warehouse tonight.' The acquaintance immediately replied: 'Count me in. Give me $2,000 upfront for materials, and I'll torch the place at midnight.' Defendant handed over $2,000 in cash. Unknown to Defendant, the acquaintance had recently become a paid informant for the municipal police department. The acquaintance never intended to set the fire, and he immediately delivered the $2,000 to his police handler. Defendant was arrested two hours later. The jurisdiction adheres to traditional common law principles for all crimes.",
+        q: "Which of the following offenses has Defendant committed?",
+        opts: [
+            "Conspiracy to commit arson and solicitation to commit arson.",
+            "Conspiracy to commit arson only.",
+            "Solicitation to commit arson only.",
+            "Attempted arson only."
+        ],
+        ans: 2,
+        exp: "Rule: Under traditional common law, conspiracy requires a bilateral agreement—a genuine meeting of two or more guilty minds intending to achieve an unlawful objective. An agreement with a government agent or informant who only feigns agreement cannot constitute a common law conspiracy because there is no genuine second party. Solicitation occurs when an actor urges, advises, incites, or requests another to commit a felony with the specific intent that the felony be committed; the crime is complete the moment the solicitation is uttered. While solicitation ordinarily merges into conspiracy once an agreement is formed, here no bilateral conspiracy was ever formed because the informant feigned assent. Therefore, the solicitation did not merge and Defendant is guilty of solicitation only (Option C). Options A and B are incorrect because the common law bilateral requirement was not met. Option D is incorrect because Defendant did not commit an overt act close enough to the commission of the arson to satisfy the common law proximity test for attempt."
+    },
+    {
+        id: 32,
+        topic: "Mixed",
+        fp: "A commercial developer engaged a general contractor to construct a five-story office building according to detailed architectural blueprints for a contract price of $2,000,000. When the building was 90 percent complete, a severe thunderstorm struck the area. A bolt of lightning struck the unfinished roof, igniting a fire that burned the entire building to the ground without fault by either party. The contractor demanded that the developer pay for the work completed to date ($1,800,000) or provide additional funds to reconstruct the building. The developer refused, demanding that the contractor rebuild the structure for the remaining unpaid contract price. The contractor walked off the job, and the developer sued for breach.",
+        q: "What is the legal effect of the building's destruction on the parties' contractual obligations?",
+        opts: [
+            "The contractor's duty to build was discharged by objective impossibility, and the contractor may recover $1,800,000 in quantum meruit.",
+            "The contractor remains obligated to rebuild the structure for the original contract price, and the fire does not excuse performance.",
+            "Both parties are discharged from further performance, but the developer must reimburse the contractor for reasonable material costs incurred before the fire.",
+            "The contract was frustrated in purpose, discharging both parties with no liability or restitutionary recovery on either side."
+        ],
+        ans: 1,
+        exp: "Rule: In construction contracts, a critical legal distinction exists between contracts to construct an entirely *new* building and contracts to repair or remodel an *existing* building. Under the common law, if a new structure is destroyed during construction by an act of nature without the fault of either party, performance is NOT excused by impossibility because it is still physically possible to rebuild the structure from the ground up. The contractor bears the risk of loss prior to completion and delivery and remains bound to complete the building for the agreed contract price (Option B). Option A is incorrect because impossibility applies only where the subject matter cannot be replaced; a contractor can erect another new building on the lot. Option C is incorrect because restitution for partially completed work prior to destruction is available only in *repair/remodel* contracts (where the destruction of the preexisting owner-owned building makes completion impossible), not new construction. Option D is incorrect because the basic purpose of the transaction (erecting an office building on the land) has not been frustrated."
+    },
+    {
+        id: 33,
+        topic: "Mixed",
+        fp: "An eccentric millionaire hosted an evening dinner party at his secluded country estate. During dinner, the host announced that he believed one of the eight guests had stolen an antique gold watch from his study. The host quietly locked the heavy front door, which was the only readily visible exit from the mansion. In fact, a rear servant door and an unlocked sliding patio door on the ground floor were completely unlatched and provided immediate, safe, and unobstructed access to the estate gardens and driveway. None of the guests attempted to look for another door or tried to leave for two hours until the host found the watch in his own coat pocket and unlocked the front door. One of the guests subsequently sued the host for false imprisonment.",
+        q: "Will the guest prevail in an action for false imprisonment against the host?",
+        opts: [
+            "Yes, because the host intentionally confined the guests by locking the primary exit to the premises.",
+            "Yes, unless the host had probable cause to detain the guests under a shopkeeper's privilege analogy.",
+            "No, if a reasonable person in the guest's position would have discovered the available, safe, and reasonable means of escape.",
+            "No, because the guest did not suffer any physical harm or economic damages during the two hours."
+        ],
+        ans: 2,
+        exp: "Rule: False imprisonment requires: (1) an intentional act by the defendant, (2) resulting in the unlawful confinement of the plaintiff within a bounded area, and (3) awareness of the confinement or physical harm resulting from it. Confinement is not present if there is a known, safe, and reasonable means of escape. If an exit is readily discoverable by a reasonable person without danger or humiliation, the area is not bounded in the legal sense. A plaintiff cannot establish false imprisonment if a reasonable and completely safe alternative exit was readily available and discoverable (Option C). Option A is incorrect because locking one door does not constitute actionable confinement if another safe, readily accessible door exists and could be found upon reasonable inspection. Option B is incorrect because private dinner hosts possess no common law shopkeeper's privilege, but confinement itself is lacking. Option D is incorrect because false imprisonment is an intentional tort where nominal damages are recoverable without proof of physical injury or economic loss."
+    },
+    {
+        id: 34,
+        topic: "Mixed",
+        fp: "Defendant was walking through a dimly lit commercial alleyway late at night when a stranger stepped from behind a dumpster holding what appeared to be a large metal pipe. The stranger raised the pipe, stepped toward Defendant, and shouted: 'Empty your pockets right now or I'll smash your skull in!' Believing his life was in immediate peril, Defendant drew a licensed concealed firearm and shot the stranger in the chest, killing him instantly. Subsequent investigation revealed that the stranger was an avant-garde performance artist executing an unannounced piece of guerrilla street theater, and the 'pipe' was a lightweight prop made of silver-painted foam. Defendant was charged with common law murder.",
+        q: "Which of the following best describes the validity of Defendant's claim of self-defense?",
+        opts: [
+            "Invalid, because the use of deadly force is never justified against non-deadly force, even if the mistake was reasonable.",
+            "Invalid, because Defendant had a legal duty to retreat before using deadly force in a public alleyway.",
+            "Valid, because an actor may use deadly force if he reasonably believes that deadly force is being threatened against him, even if that belief is based on a reasonable mistake of fact.",
+            "Valid, because self-defense is evaluated under an entirely subjective standard regarding the actor's actual, honest state of mind."
+        ],
+        ans: 2,
+        exp: "Rule: An individual is privileged to use deadly force in self-defense if he is without fault and reasonably believes that he is threatened with imminent death or serious bodily harm. A reasonable mistake of fact does not destroy the privilege: if a reasonable person in the defendant's position would have believed that the attacker had a weapon and threatened lethal force, the use of deadly force is fully justified (Option C). Option A is incorrect because self-defense does not require actual, objective danger in hindsight; a reasonable appearance of lethal peril justifies deadly force. Option B is incorrect because even in jurisdictions adhering to the minority retreat rule, retreat is not required unless it can be accomplished with complete safety, which is not possible when an armed aggressor is stepping forward in close quarters. Option D is incorrect because common law self-defense requires both subjective good faith AND objective reasonableness; it is not evaluated under a purely subjective standard."
+    },
+    {
+        id: 35,
+        topic: "Mixed",
+        fp: "A pharmaceutical sales representative parked his car on a steep residential hill. The representative applied the mechanical emergency brake but carelessly neglected to curb the front wheels toward the street curb, as explicitly required by a municipal traffic safety ordinance enacted to prevent runaway vehicles. Five minutes later, a heavy commercial delivery truck struck the rear bumper of the representative's parked car with extraordinary force. The impact severed the emergency brake cable, and the representative's car rolled down the hill, crashing through a homeowner's living room window. The homeowner sued the representative for negligence, invoking the doctrine of negligence per se.",
+        q: "What is the representative's most effective argument against liability based on negligence per se?",
+        opts: [
+            "The municipal ordinance was intended to protect pedestrians, not real property owners.",
+            "The violent collision by the delivery truck was an unforeseeable superseding cause that broke the chain of proximate causation.",
+            "Negligence per se cannot be established without proving that the representative had actual knowledge of the municipal ordinance.",
+            "The violation of a municipal parking ordinance creates merely a rebuttable presumption of negligence rather than conclusive negligence."
+        ],
+        ans: 1,
+        exp: "Rule: While the violation of an applicable safety statute or ordinance establishes duty and breach (negligence per se) if the plaintiff is within the class of persons intended to be protected and suffers the type of harm the statute was designed to prevent, the plaintiff must still prove proximate (legal) causation. An unforeseeable, highly extraordinary intervening force (such as a parked car being violently struck with extraordinary force by a third party's heavy truck) operates as a superseding cause that cuts off the defendant's liability (Option B). Option A is incorrect because anti-runaway curbing ordinances are intended to protect all persons and property located downhill in the path of rolling vehicles. Option C is incorrect because ignorance of the law is no defense; actors are presumed to know safety statutes. Option D is incorrect because while some states treat ordinance violations as mere evidence of negligence, asserting a total break in proximate causation via a superseding cause is a complete defense that defeats liability under any standard."
+    },
+    {
+        id: 36,
+        topic: "Mixed",
+        fp: "A homeowner engaged an electrical contractor in writing to completely rewire his home for $12,000, payable upon completion on September 1. After the contractor had completed 50 percent of the rewiring, the contractor suffered an acute cash flow crisis and assigned 'all rights to the $12,000 payment under the contract' to a local finance company in exchange for an immediate cash advance of $10,000. The finance company immediately mailed written notice of the assignment to the homeowner, who received it on August 10. Thereafter, the contractor completely abandoned the project without justification. The homeowner was forced to hire a replacement electrician, who charged $8,000 to complete the rewiring in accordance with the original specifications. The finance company then sued the homeowner for $12,000.",
+        q: "How much is the finance company entitled to recover from the homeowner?",
+        opts: [
+            "$12,000, because an assignee for value is not subject to personal defenses arising between the assignor and the obligor after notice of assignment.",
+            "$10,000, representing the actual value advanced by the assignee in good faith.",
+            "$4,000, representing the original contract price less the reasonable cost incurred by the homeowner to complete performance.",
+            "Nothing, because the contractor's material breach excused the homeowner from any duty to pay the contract price."
+        ],
+        ans: 2,
+        exp: "Rule: An assignee stands in the shoes of the assignor and takes the assignment subject to all defenses, setoffs, and counterclaims that the obligor has against the assignor arising out of the underlying contract, regardless of whether the defense accrued before or after notice of the assignment. Under standard contract expectation damages, when a builder breaches by partial performance, the owner is entitled to deduct the reasonable cost of completion from the contract price. The total contract price was $12,000. The homeowner paid $8,000 to complete the job. The remaining value earned under the contract is $12,000 - $8,000 = $4,000. Because the contractor would have been entitled to recover $4,000 (contract price minus cost of completion), the finance company as assignee is entitled to recover that exact net amount, $4,000 (Option C). Options A and B are incorrect because an assignee takes subject to all defenses arising from the original transaction and cannot recover more than the assignor could have recovered. Option D is incorrect because the homeowner received the benefit of 50% of the work and the net calculation ($12,000 - $8,000) prevents unjust enrichment while fully protecting the owner's expectation interest."
+    },
+    {
+        id: 37,
+        topic: "Mixed",
+        fp: "A nurse working in a hospital pharmacy decided to steal expensive narcotics to sell on the street. Late at night, using her authorized employee keycard, she entered the pharmacy supply room during her normal work shift. She placed 20 vials of morphine into her personal tote bag, intending to carry them home. While walking toward the hospital exit, she was stopped by hospital security for a routine bag inspection, and the narcotics were discovered. The jurisdiction retains traditional common law property offenses.",
+        q: "What crime did the nurse commit?",
+        opts: [
+            "Embezzlement.",
+            "Larceny.",
+            "Common law burglary.",
+            "False pretenses."
+        ],
+        ans: 1,
+        exp: "Rule: Larceny is the trespassory taking and carrying away (asportation) of the personal property of another with the intent to permanently deprive. Embezzlement is the fraudulent conversion of property by an individual who is already in *lawful possession* of the property. A crucial common law distinction governs employees: an employee who has mere access to, or physical control over, employer property on the employer's premises has mere *custody*, not lawful possession; possession remains constructively in the employer. When an employee takes property from the employer's custody and converts it with animus furandi, the taking is trespassory, constituting larceny rather than embezzlement (Option B). Option A is incorrect because low- or mid-level employees exercising handling duties have mere custody, not lawful possession; embezzlement requires high-level trust or independent bailment possession. Option C is incorrect because the nurse was authorized to enter the hospital pharmacy room during her shift, negating the trespassory 'breaking' element of burglary. Option D is incorrect because the nurse did not obtain title to the drugs through false representations."
+    },
+    {
+        id: 38,
+        topic: "Mixed",
+        fp: "A customer walked into a department store on a rainy afternoon. Another customer had tracked water onto the smooth marble floor near the store entrance five minutes earlier. The store maintained a policy of mopping entryways every 15 minutes during rainstorms, and a janitor was in the process of gathering cleaning supplies nearby. The customer slipped on the puddle of water, fell, and fractured her hip. The customer sued the store for negligence. The evidence established that store employees were unaware of the specific puddle and that it had existed for only five minutes.",
+        q: "Is the store liable to the customer for negligence?",
+        opts: [
+            "Yes, because business owners owe invitees a non-delegable duty to maintain completely dry and slip-free entryways during wet weather.",
+            "Yes, under the doctrine of res ipsa loquitur, because slippery water puddles do not ordinarily occur in entryways without negligence.",
+            "No, because the customer was contributorily negligent for failing to observe the wet floor during rainy conditions.",
+            "No, because the puddle had not existed for a sufficient period of time to charge the store with constructive notice of the hazard."
+        ],
+        ans: 3,
+        exp: "Rule: A business owner owes invitees a duty to exercise reasonable care to inspect the premises and keep them reasonably safe from concealed dangerous conditions. However, for slip-and-fall hazards caused by transitory substances (like tracked-in rainwater), the plaintiff must prove that the store either caused the condition, had actual notice of it, or had constructive notice (meaning the hazard existed for a sufficient length of time that a reasonable business owner would have discovered and rectified it). A puddle existing for only five minutes on a rainy day does not establish constructive notice, especially where the store maintained a reasonable 15-minute inspection protocol (Option D). Option A is incorrect because business owners are not strictly liable insurers of invitee safety; they owe only reasonable care. Option B is incorrect because res ipsa loquitur does not apply to tracked-in rainwater, which frequently occurs without any breach by the premises owner. Option C is incorrect because invitees are entitled to assume floors are reasonably safe, and a five-minute puddle creates an issue of defendant's notice rather than absolute plaintiff fault."
+    },
+    {
+        id: 39,
+        topic: "Mixed",
+        fp: "A grain merchant orally agreed over the telephone to sell 2,000 bushels of wheat to a bakery at a price of $6 per bushel ($12,000 total), with delivery in 30 days. Two days later, the merchant mailed to the bakery a written confirmation of the sale, printed on the merchant's official letterhead and signed by the merchant's sales manager, setting forth all the agreed terms including quantity, quality, price, and delivery dates. The purchasing manager of the bakery received the confirmation letter the following morning, read it, and placed it in a desk folder. The bakery sent no response or communication of any kind to the merchant. Twenty days later, the market price of wheat plummeted to $3 per bushel. When the merchant tendered delivery of the wheat, the bakery rejected the shipment, asserting that the oral agreement was unenforceable under the Statute of Frauds.",
+        q: "Is the bakery's Statute of Frauds defense valid?",
+        opts: [
+            "Yes, because the bakery never signed any written contract or memorandum agreeing to the transaction.",
+            "Yes, because the merchant's confirmatory memorandum cannot satisfy the Statute of Frauds against a recipient who did not dispatch an acceptance.",
+            "No, because under the merchant's confirmatory memo rule, the bakery's failure to object in writing within 10 days satisfied the Statute of Frauds.",
+            "No, because contracts for the sale of agricultural commodities are wholly exempt from the provisions of UCC Article 2."
+        ],
+        ans: 2,
+        exp: "Rule: Under UCC § 2-201(2) (the Merchant's Exception / Confirmatory Memo Rule), between merchants, if within a reasonable time a writing in confirmation of the contract and sufficient against the sender is received, and the party receiving it has reason to know its contents, it satisfies the requirements of the Statute of Frauds against such receiving merchant unless written notice of objection to its contents is given within 10 days after it is received. Both parties are merchants dealing in grain and bakery supplies. The signed confirmatory memo bound the merchant, and the bakery's complete failure to object within 10 days removed the Statute of Frauds defense (Option C). Option A is incorrect because the merchant's memo exception specifically overrides the signature requirement against the receiving merchant. Option B is incorrect because the memo satisfies the Statute of Frauds, not as an offer requiring acceptance, but as an evidentiary memorandum of an existing oral contract. Option D is incorrect because agricultural crops (wheat) are 'goods' governed by UCC Article 2."
+    },
+    {
+        id: 40,
+        topic: "Mixed",
+        fp: "A man became intensely jealous of his former business partner. Seeking revenge, the man waited in the shadows outside the partner's house at night, brandishing an iron bar. When a figure emerged from the doorway in the dark, the man sprang forward and struck the person violently over the head with the bar, fracturing the victim's skull. Upon turning the victim over, the man was horrified to discover that he had struck his own brother, who had arrived unexpectedly to visit the partner. The brother suffered permanent brain damage. The man was charged with assault with a deadly weapon with intent to commit murder.",
+        q: "Can the man properly be convicted of assault with a deadly weapon with intent to commit murder against his brother?",
+        opts: [
+            "No, because the man had no intent to cause any injury to his brother, and his mistake was genuine.",
+            "No, because the doctrine of transferred intent applies only when the unintended victim actually dies.",
+            "Yes, because the man's specific intent to kill the partner transfers to the actual victim he struck.",
+            "Yes, because assault with a deadly weapon is a strict liability offense requiring no proof of mens rea."
+        ],
+        ans: 2,
+        exp: "Rule: Under the doctrine of transferred intent, when an actor intends to commit a specific crime against one person (e.g., intending to kill his business partner with a deadly weapon), but through mistake or bad aim directs the physical act against another unintended person, the mental state (intent) transfers to the actual victim. The man intended to kill the person emerging from the house with a deadly weapon; under transferred intent, that homicidal intent attaches to the brother whom he struck (Option C). Option A is incorrect because a mistake of victim identity does not negate criminal intent under transferred intent principles. Option B is incorrect because transferred intent applies to completed non-fatal crimes (like battery, assault with a deadly weapon, and attempted homicide against the struck victim) as well as completed homicides. Option D is incorrect because assault with a deadly weapon with intent to commit murder is a specific intent crime requiring proof of intent, which is provided here by transferred intent."
+    },
+    {
+        id: 41,
+        topic: "Mixed",
+        fp: "A manufacturer of high-precision laboratory glassware entered into a written contract to produce and deliver 500 customized glass condensers to a chemical research laboratory for $25,000. The contract specified: 'Delivery must be made on or before October 1. Time is of the essence.' The contract was completely silent regarding any right to cure nonconforming deliveries. On September 15, the manufacturer delivered 500 condensers to the laboratory. Upon inspection on September 16, the laboratory discovered that the condenser joint ground glass was slightly rougher than required by the technical specifications, although functional. The laboratory immediately notified the manufacturer in writing that it was rejecting the entire shipment due to the nonconformity. On September 17, the manufacturer notified the laboratory that it had modified its production polishing line and would deliver 500 fully conforming condensers on September 30. The laboratory replied that the contract was terminated and refused to allow the manufacturer to tender a substitute shipment.",
+        q: "Did the laboratory have the legal right to reject the manufacturer's tender of cure on September 30?",
+        opts: [
+            "Yes, because under the UCC perfect tender rule, the buyer's rejection of nonconforming goods gives the buyer the absolute right to cancel the contract.",
+            "Yes, because the contract contained a 'time is of the essence' clause that eliminated any statutory right to cure.",
+            "No, because the manufacturer had an absolute statutory right to cure by tendering conforming goods within the original contract time.",
+            "No, because the defect was minor and did not constitute a material breach under standard commercial standards."
+        ],
+        ans: 2,
+        exp: "Rule: Under UCC § 2-508(1), where any tender or delivery by the seller is rejected because it is nonconforming, and the agreed time for performance has not yet expired, the seller may seasonably notify the buyer of his intention to cure and may then within the contract time make a conforming delivery. The contract delivery deadline was October 1. The rejection occurred on September 16. The manufacturer seasonably gave notice on September 17 of its intention to cure and tendered conforming goods on September 30—before the contractual deadline of October 1 expired. The manufacturer had an absolute right to cure, and the laboratory breached by refusing to allow it (Option C). Option A is incorrect because the perfect tender rule (UCC § 2-601) is explicitly subject to the seller's right to cure under § 2-508. Option B is incorrect because a 'time is of the essence' clause enforces performance by the agreed date (October 1); it does not abrogate the statutory right to cure prior to that date. Option D is incorrect because the perfect tender rule applies to single-delivery sales of goods; the laboratory had the right to reject the initial tender, but could not reject a timely, conforming cure."
+    },
+    {
+        id: 42,
+        topic: "Mixed",
+        fp: "A professional window washer was cleaning the exterior tenth-story windows of a high-rise office building while standing on a suspended scaffold platform. The scaffold had been manufactured by an equipment company. The company had installed safety guardrails secured by standard steel retaining pins. However, the company failed to install secondary safety cotter pins—an inexpensive, standard feature in the scaffolding industry designed to prevent primary pins from vibrating loose. While the washer was working, normal wind turbulence caused a primary pin to slide out, collapsing the left side of the platform. The washer plunged to the ground and was killed. The washer's safety harness was securely attached to his body, but the washer had negligently failed to tie off his harness lanyard to the building's independent roof lifeline, in clear violation of state occupational safety regulations. The washer's estate brought a strict products liability design defect action against the scaffold manufacturer in a pure comparative fault jurisdiction.",
+        q: "What is the legal effect of the window washer's failure to tie off his safety harness?",
+        opts: [
+            "It is a complete defense that bars the estate from any recovery against the manufacturer.",
+            "It constitutes ordinary comparative fault that reduces the estate's damage recovery proportionately.",
+            "It is completely inadmissible because contributory negligence is never a defense to strict products liability.",
+            "It operates as an unforeseeable superseding cause that severs proximate causation as a matter of law."
+        ],
+        ans: 1,
+        exp: "Rule: In modern tort law and under Restatement (Third) of Torts: Products Liability § 17, pure comparative fault principles apply to strict products liability actions. While a consumer's mere failure to discover or guard against a product defect is not a defense, a plaintiff's affirmative negligent conduct or misuse—such as violating safety rules by failing to tie off a lifeline—constitutes comparative negligence that proportionately reduces, but does not completely bar, recovery in a pure comparative fault jurisdiction (Option B). Option A is incorrect because pure comparative fault reduces damages rather than barring recovery. Option C is incorrect because modern jurisdictions apply comparative fault to strict products liability when the plaintiff's negligence consists of unreasonable conduct beyond mere failure to inspect. Option D is incorrect because user safety failures (like unclipped harnesses) are a foreseeable risk of high-rise window washing and do not constitute an extraordinary superseding cause that cuts off liability for a defectively designed scaffold."
+    },
+    {
+        id: 43,
+        topic: "Mixed",
+        fp: "A doctor was treating an elderly patient suffering from severe terminal bone cancer. The patient was in agonizing, uncontrollable pain that could no longer be managed with standard pain medication. The patient repeatedly and lucidly begged the doctor to administer a lethal dose of medication to end her suffering. Moved by deep compassion and wishing only to relieve the patient's unbearable agony, the doctor prepared and injected a massive overdose of potassium chloride, which caused instantaneous cardiac arrest and death. The doctor immediately documented his actions in the hospital records. When charged with common law murder, the doctor asserted that he acted without malice aforethought because his sole motive was mercy and the patient had consented.",
+        q: "Is the doctor guilty of common law murder?",
+        opts: [
+            "No, because the consent of a competent, terminally ill patient negates the element of unlawful killing.",
+            "No, because the doctor acted out of genuine compassion and lacked malice aforethought.",
+            "Yes, because voluntary euthanasia is an intentional killing without lawful justification or excuse, establishing malice aforethought.",
+            "Yes, but only of voluntary manslaughter under the doctrine of imperfect necessity."
+        ],
+        ans: 2,
+        exp: "Rule: At common law, murder is the unlawful killing of a human being with malice aforethought. Malice aforethought is established by: (1) intent to kill, (2) intent to inflict serious bodily harm, (3) depraved-heart recklessness, or (4) felony murder. Benevolent motive, compassion, or 'mercy killing' (euthanasia) does not negate malice aforethought. Furthermore, consent of the victim is never a defense to homicide. The doctor acted with the express, premeditated intent to cause death, which constitutes malice aforethought as a matter of law (Option C). Option A is incorrect because victim consent is legally void as a defense to murder. Option B is incorrect because motive is legally distinct from intent; an actor can possess an admirable motive while harboring the specific intent to kill. Option D is incorrect because necessity is never a defense to an intentional homicide at common law, and 'imperfect necessity' does not reduce murder to voluntary manslaughter."
+    },
+    {
+        id: 44,
+        topic: "Mixed",
+        fp: "A high school biology teacher placed an online order with a biological supply company for 30 preserved bullfrogs for dissection, at a price of $15 per frog ($450 total), specifying delivery to the school by March 15. The contract provided for payment 30 days after delivery. On March 10, the company delivered 30 preserved bullfrogs. The teacher unpacked the specimens and immediately noticed that while all 30 frogs were well preserved and suitable for dissection, 10 of them were grass frogs (a smaller species) rather than bullfrogs. The teacher placed the 10 grass frogs back in their shipping carton and set them beside the laboratory door, while keeping the 20 bullfrogs in the classroom storage cabinet. On March 12, the teacher telephoned the supply company and stated: 'Ten of the frogs you sent were grass frogs, which do not conform to our order. I have accepted the 20 bullfrogs and will pay $15 each for them, but I am rejecting the 10 grass frogs. They are boxed and ready for your courier to pick up.' The company refused to accept the return, insisting that the teacher had to either accept the entire shipment or reject all of it.",
+        q: "What were the teacher's rights regarding the nonconforming shipment under UCC Article 2?",
+        opts: [
+            "The teacher was required to reject the entire shipment because commercial units of goods cannot be accepted in part.",
+            "The teacher had the right to accept any commercial units and reject the rest.",
+            "The teacher was required to accept the entire shipment because the substitution of grass frogs did not substantially impair the value of the order.",
+            "The teacher's acceptance of the 20 bullfrogs operated as an acceptance of the entire shipment as a matter of law."
+        ],
+        ans: 1,
+        exp: "Rule: Under UCC § 2-601 (the Perfect Tender Rule), if the goods or the tender of delivery fail in any respect to conform to the contract, the buyer may: (a) reject the whole; (b) accept the whole; or (c) accept any commercial unit or units and reject the rest. A preserved specimen frog is a standard commercial unit. The teacher was fully within her statutory rights under UCC § 2-601(c) to accept conforming commercial units (the 20 bullfrogs) and reject nonconforming commercial units (the 10 grass frogs) (Option B). Option A is incorrect because commercial units can be accepted in part, provided the buyer does not divide a single indivisible unit. Option C is incorrect because the substantial impairment standard applies to installment contracts under UCC § 2-612 or revocation of acceptance under § 2-608, not to initial tender in a single-delivery sales contract. Option D is incorrect because partial acceptance is explicitly authorized by UCC § 2-601."
+    },
+    {
+        id: 45,
+        topic: "Mixed",
+        fp: "A security guard was patrolling an industrial shipping yard at night. The guard observed a man walking near a stack of shipping containers marked with high-voltage warning placards. Believing the man was a trespasser attempting to steal copper wiring, the guard approached with his flashlight, drew his baton, and shouted: 'Freeze, security!' The man, who was actually an authorized independent safety inspector conducting a nighttime acoustic audit, turned toward the guard. The guard ordered the man to place his hands on top of his head and sit on the ground. The inspector complied, showing his official photo identification badge and state inspection permit. The guard examined the badge, realized the inspector was fully authorized to be on the premises, and apologized, allowing the inspector to leave immediately. The entire encounter lasted approximately 90 seconds. The inspector brought an action for false imprisonment against the security company employing the guard.",
+        q: "Is the security company liable to the inspector for false imprisonment?",
+        opts: [
+            "Yes, because the guard intentionally confined the inspector without actual legal authority, and lack of malice is not a defense.",
+            "Yes, because the inspector was an invitee on the property and had committed no unlawful acts.",
+            "No, if the guard reasonably believed that the inspector was trespassing and the detention was reasonable in duration and manner.",
+            "No, because a temporary detention lasting under two minutes is insufficient as a matter of law to constitute confinement."
+        ],
+        ans: 2,
+        exp: "Rule: Under the common law shopkeeper's privilege and private security privileges (Restatement (Second) of Torts § 120A), a property owner or its authorized agent (security guard) is privileged to detain an individual for a reasonable investigation if: (1) there is a reasonable belief that the person is committing an unauthorized intrusion (trespass) or theft; (2) the detention is conducted in a reasonable manner; and (3) the detention lasts for a reasonable period of time necessary to verify identity. Because the guard observed an unidentified person in a restricted area at night, reasonably investigated, and immediately released the inspector upon inspecting his credentials within 90 seconds, the detention was privileged (Option C). Option A is incorrect because a reasonable, good-faith mistake regarding privilege does not impose liability if the criteria for protective detention are met. Option B is incorrect because invitee status does not destroy a security guard's privilege to investigate suspicious circumstances. Option D is incorrect because false imprisonment has no minimum time duration; any confinement, even for seconds, is actionable unless privileged."
+    },
+    {
+        id: 46,
+        topic: "Mixed",
+        fp: "Defendant and an accomplice planned to rob a jewelry store. Defendant handed the accomplice an unloaded revolver, instructing him: 'Use this only to scare the clerk. Do not hurt anyone.' Defendant remained in the alley behind the store as a lookout. Inside the store, the accomplice pointed the revolver at the clerk and demanded diamond rings. The clerk reached under the counter to hit a panic button. The accomplice, panicked by the clerk's sudden movement, struck the clerk forcefully on the temple with the heavy barrel of the revolver. The blow fractured the clerk's skull, causing a fatal brain hemorrhage. The accomplice grabbed several rings, ran into the alley, and fled with Defendant. The jurisdiction adheres to common law felony murder rules and accomplice liability doctrines.",
+        q: "What is Defendant's liability regarding the clerk's death?",
+        opts: [
+            "Defendant is not guilty of felony murder because he explicitly instructed the accomplice not to harm anyone.",
+            "Defendant is guilty of involuntary manslaughter only, because Defendant's conduct was criminally negligent rather than malicious.",
+            "Defendant is guilty of felony murder because the killing occurred during the commission of an inherently dangerous felony in which Defendant participated as an accomplice.",
+            "Defendant is not guilty of any homicide offense because the accomplice's violent assault was an unexpected deviation that severed accomplice liability."
+        ],
+        ans: 2,
+        exp: "Rule: Under the felony murder rule and accomplice liability (the Pinkerton doctrine), an accomplice to an inherently dangerous felony (such as robbery) is liable for all foreseeable crimes committed by a co-felon in furtherance of the common criminal design. A fatal assault upon a victim during an armed robbery is an entirely foreseeable risk of the felony. Private instructions or agreements among co-felons to refrain from violence do not insulate an accomplice from liability if a killing in fact occurs during the felony or immediate flight therefrom. Defendant is an accomplice to the robbery and is therefore guilty of felony murder (Option C). Option A is incorrect because co-felon instructions to avoid violence are legally ineffective to prevent felony murder liability. Option B is incorrect because felony murder requires no proof of criminal negligence or personal malice; the intent to commit the underlying felony supplies the malice aforethought for murder. Option D is incorrect because violence during an armed robbery is a natural and probable consequence, not an unexpected superseding deviation."
+    },
+    {
+        id: 47,
+        topic: "Mixed",
+        fp: "An avid art enthusiast read a profile in a national arts magazine about an emerging landscape painter who was having a gallery opening. The magazine stated that the painter had completed a breathtaking oil painting of the Grand Canyon titled 'Morning Splendor,' which would be sold at the gallery on Saturday for $10,000. Excited, the enthusiast sent a signed telegram to the painter on Friday morning: 'I hereby accept your offer to sell Morning Splendor for $10,000 as stated in the magazine profile. Will wire funds upon receipt of delivery confirmation.' The enthusiast also hired an interior decorator for $1,500 to re-hang the lighting in her living room specifically to showcase the painting. When the enthusiast arrived at the gallery on Saturday, the painter informed her that 'Morning Splendor' had already been sold to another buyer for $15,000. The enthusiast sued the painter for breach of contract, seeking to enforce the sale or recover reliance damages for the decorator's fee.",
+        q: "Was an enforceable contract formed between the enthusiast and the painter?",
+        opts: [
+            "Yes, because the enthusiast's telegram constituted a valid acceptance of the painter's specific offer in the magazine.",
+            "Yes, because the enthusiast foreseeably relied on the magazine announcement to her financial detriment.",
+            "No, because the magazine profile was merely an invitation to deal and not an operative offer.",
+            "No, because contracts for the sale of original artwork must be negotiated in person to satisfy mutual assent."
+        ],
+        ans: 2,
+        exp: "Rule: Advertisements, catalogs, price lists, and media profiles are generally construed as preliminary invitations to negotiate (invitations to deal), rather than legal offers. An advertisement constitutes an offer only if it contains clear, definite, and explicit terms leaving nothing open for negotiation and specifies *who* can accept (such as 'first come, first served' for a specific item, as in *Lefkowitz*). A magazine profile mentioning a price is an invitation to deal. Thus, the enthusiast's telegram was an offer to buy, not an acceptance, and no contract was formed (Option C). Option A is incorrect because the magazine article was not an offer. Option B is incorrect because promissory estoppel requires a definite promise; reliance on a mere advertisement or magazine feature is unreasonable as a matter of law. Option D is incorrect because artwork can be sold via written correspondence; in-person negotiation is not legally required."
+    },
+    {
+        id: 48,
+        topic: "Mixed",
+        fp: "A pedestrian was walking past an active construction excavation on a public sidewalk. The general contractor had failed to erect protective barricades or warning tape around an eight-foot-deep trench, leaving the hazard open and exposed to pedestrian traffic. As the pedestrian walked near the edge of the trench, a third-party skateboarder negligently collided with the pedestrian, knocking the pedestrian off his feet. The pedestrian tumbled into the trench, sustaining severe orthopedic injuries. Medical testimony established that had the pedestrian fallen onto ordinary flat sidewalk pavement, he would have suffered only minor bruises; his severe injuries resulted directly from falling into the eight-foot trench. The pedestrian sued the general contractor for negligence. The contractor moved for summary judgment, asserting that the skateboarder's negligent collision was an independent intervening cause that absolved the contractor of liability.",
+        q: "Should the court grant the contractor's motion?",
+        opts: [
+            "Yes, because the skateboarder's active negligence was the immediate initiating cause of the pedestrian's fall.",
+            "Yes, because an open excavation is an obvious danger, and the contractor owed no duty to guard against third-party collisions.",
+            "No, because the danger of an entrant falling into an unbarricaded trench is the precise hazard that made the contractor's failure to barricade negligent.",
+            "No, because general contractors are strictly liable for hazardous trench conditions adjacent to public walkways."
+        ],
+        ans: 2,
+        exp: "Rule: An intervening force does not sever proximate causation if it was foreseeable, or if the resulting harm is the very risk that made the defendant's conduct negligent in the first place. When a contractor negligently leaves a deep excavation open next to a crowded public sidewalk, the precise foreseeable risk created by that negligence is that a pedestrian might fall into the trench—whether due to stumbling, wind, distraction, or being bumped by a third party. The skateboarder's collision was a concurrent intervening cause, not an extraordinary superseding cause (Option C). Option A is incorrect because an intervening negligent act does not cut off liability if the resulting injury was within the scope of the original foreseeable risk. Option B is incorrect because possessors of land creating artificial hazards adjacent to public rights-of-way owe a duty of reasonable care to protect the traveling public. Option D is incorrect because an excavation trench is evaluated under negligence, not strict liability."
+    },
+    {
+        id: 49,
+        topic: "Mixed",
+        fp: "Defendant and an acquaintance spent an afternoon drinking heavily at a tavern. Both men became severely intoxicated, exhibiting slurred speech and unsteady gait. After an argument over sports trivia, the acquaintance punched Defendant in the shoulder. Enraged, Defendant pulled a hunting knife from his belt and slashed the acquaintance across the throat, severing his carotid artery and killing him within minutes. At his trial for common law murder, Defendant presented uncontradicted expert medical evidence that his blood-alcohol concentration was 0.24 percent, and that he was so severely intoxicated that he was physically and mentally incapable of forming a specific intent to kill or engaging in premeditation and deliberation. The jurisdiction follows common law homicide rules.",
+        q: "What is the most serious homicide offense of which Defendant can properly be convicted?",
+        opts: [
+            "First-degree premeditated murder.",
+            "Second-degree murder.",
+            "Voluntary manslaughter.",
+            "Involuntary manslaughter."
+        ],
+        ans: 1,
+        exp: "Rule: Voluntary intoxication is a defense only to *specific intent* crimes; it is NOT a defense to *general intent* crimes or crimes requiring recklessness (malice aforethought). Common law murder requires malice aforethought, which includes acting with a wanton and willful disregard of an unreasonable human risk (depraved-heart murder). Depraved-heart murder is a general malice/recklessness crime, not a specific intent crime. Voluntary intoxication cannot negate depraved-heart malice. Slashing an individual across the throat with a hunting knife during a bar brawl is an act exhibiting extreme, wanton indifference to human life. While voluntary intoxication negates specific intent to kill (first-degree premeditated murder), it does not negate depraved-heart malice; thus, Defendant remains guilty of second-degree murder (Option B). Option A is incorrect because severe intoxication negates premeditation and deliberation. Options C and D are incorrect because voluntary intoxication does not reduce murder to voluntary or involuntary manslaughter when the underlying act demonstrates depraved-heart malice."
+    },
+    {
+        id: 50,
+        topic: "Mixed",
+        fp: "A dairy farmer entered into a written contract with an artisan cheese manufacturer to sell and deliver 1,000 gallons of Grade A raw milk per week for a period of one year, at an agreed price of $4.00 per gallon. The contract provided that payments would be made on the first day of each month for milk delivered during the preceding month. For the first eight months, both parties performed smoothly. In the ninth month, an unexpected regional drought caused cattle feed prices to increase by 40 percent. The farmer telephoned the cheese maker and explained that his feed costs had escalated significantly, stating that he would lose money unless the cheese maker agreed to increase the price to $4.50 per gallon for the remainder of the contract term. The cheese maker orally agreed to the 50-cent price increase. The farmer delivered 4,000 gallons during the ninth month, and the cheese maker accepted the delivery without objection. However, when the monthly invoice arrived, the cheese maker paid the farmer at the original rate of $4.00 per gallon ($16,000) and refused to pay the additional $2,000 ($0.50 per gallon). The farmer sued for breach of contract to recover the $2,000.",
+        q: "Is the farmer entitled to recover the additional $2,000 from the cheese maker?",
+        opts: [
+            "No, because the oral modification was unsupported by new consideration under the pre-existing duty rule.",
+            "No, because the contract as modified was for the sale of goods priced at $500 or more and violated the Statute of Frauds.",
+            "Yes, because good-faith modifications under UCC Article 2 do not require consideration, and the cheese maker received and accepted the goods.",
+            "Yes, because an unexpected 40 percent increase in feed prices constituted legal commercial impracticability that discharged the farmer's initial duty."
+        ],
+        ans: 2,
+        exp: "Rule: Under UCC § 2-209(1), a good-faith agreement modifying a contract for the sale of goods needs no consideration to be binding. While UCC § 2-209(3) provides that the requirements of the Statute of Frauds must be satisfied if the contract as modified is within its provisions, under UCC § 2-201(3)(c), an oral contract (or modification) is fully enforceable without a writing 'with respect to goods for which payment has been made and accepted or which have been received and accepted.' Because the cheese maker received and accepted the 4,000 gallons of milk delivered pursuant to the good-faith oral modification, the Statute of Frauds was satisfied by receipt and acceptance, making the modification enforceable for those delivered goods (Option C). Option A is incorrect because UCC § 2-209(1) abolished the pre-existing duty rule for sales of goods. Option B is incorrect because receipt and acceptance of the goods provides a complete statutory exception to the Statute of Frauds. Option D is incorrect because a 40 percent price increase in feed is an ordinary market fluctuation that does not rise to the level of objective commercial impracticability."
     }
 ];

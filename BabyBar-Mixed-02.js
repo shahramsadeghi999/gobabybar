@@ -2,351 +2,701 @@ const examData = [
     {
         id: 1,
         topic: "Mixed",
-        fp: "For Son's seventh birthday, Father bought Son a small bicycle at Hardware. The bicycle was manufactured by Bikeco.\n\nA week later, Son's sister, Sis, age 17, returned home from college for Thanksgiving vacation. Son asked Sis to get out his new bicycle so he could show her how well he could ride it. Sis went to the garage, sat on the bicycle seat and began to 'walk' the bicycle between the two family cars and out of the garage. As Sis neared the doorway of the garage, the rod on which the seat was mounted snapped, causing Sis to fall backward over the bicycle and to suffer severe injuries. Friend, standing a few feet from Sis, was horrified and sickened as he saw what happened to Sis, but suffered no other harm.\n\nMost bicycle manufacturers make the supporting rods for seats from a metal which is much stronger for that purpose than the metal used by Bikeco. The use of the stronger metal increases the cost of manufacture by about $1.50 a bicycle.",
-        q: "If Friend asserts a claim against Bikeco based on strict liability in tort, is it likely that Friend will prevail?",
+        fp: "Borrow owed Lender $5,000.00. Payment was overdue and Lender retained Ace Inc., to collect the debt. Washington, the President of Ace Inc., assigned Little, an employee of Ace Inc. to collect the account. At the time Washington assigned Little to collect the debt, Washington intended to apply the funds in discharge of a debt to Lender for which Ace Inc. and Washington were jointly liable. Little collected the $5,000.00. The amount collected, less Ace Inc.'s fee, was remitted to Lender by Washington as a payment on the debt for which Ace Inc. and Washington were jointly liable.",
+        q: "Did Washington commit a theft crime?",
         opts: [
-            "Yes, if the bicycle was inherently dangerous.",
-            "Yes, because Friend was within a few feet of Sis when she was injured.",
-            "No, because Friend was not using the product when the accident occurred.",
-            "No, because Friend was horrified and sickened, but suffered no other harm."
+            "Yes, embezzlement, because Lender's money was entrusted to Ace, Inc.",
+            "Yes, obtaining by false pretenses from Borrow, because at the time the funds were collected Washington intended to use them for his own benefit.",
+            "Yes, larceny, because at the time the funds were collected Washington intended to use them for his own benefit.",
+            "No, because Lender received all of the funds, less Ace, Inc.'s collection fee, that were collected from Borrow."
         ],
-        ans: 3,
-        exp: "Rule: Under strict products liability (Restatement (Second) of Torts § 402A), a plaintiff can recover only for physical harm (bodily injury or property damage). Pure emotional distress unaccompanied by physical injury or objective physical manifestation is not recoverable under strict products liability. Because Friend was merely horrified and sickened without suffering physical impact, physical injury, or physical manifestations, Friend cannot recover (Option D). Option A is incorrect because inherent danger does not dispense with the physical injury requirement. Option B is incorrect because close physical proximity alone does not establish a claim for purely emotional distress in strict products liability. Option C is incorrect because bystanders may recover in strict liability if they suffer actual physical harm."
+        ans: 0,
+        exp: "Rule: Embezzlement is the fraudulent conversion of the property of another by a person who is already in lawful possession of that property. Here, Ace, Inc. (and Washington as its chief executive) was lawfully entrusted by Lender with collecting and holding Borrow's funds for Lender's account on that specific debt. Applying those collected funds to pay off a separate personal and corporate debt owed by Washington and Ace, Inc. to Lender constituted a fraudulent conversion of entrusted funds (Option A). Option B is incorrect because Borrow paid an existing valid debt without any misrepresentation of existing fact made to Borrow by Ace. Option C is incorrect because Washington did not commit a trespassory taking; the agency lawfully collected possession. Option D is incorrect because applying funds to satisfy a different obligation without the principal's authorization is an unlawful conversion."
     },
     {
         id: 2,
         topic: "Mixed",
-        fp: "Al arranged with Bob to have Bob kill Vic by shooting him. Bob, in turn, paid Tom to do the killing. Tom went to Vic's home late one evening. Vic had gone to bed and had left his bedroom window open. Tom found a long stick and set fire to the end of it. He inserted the stick through the open bedroom window and started a smoldering fire in the covering on Vic's bed. Vic died of smoke inhalation, but the fire was discovered and extinguished by Vic's son. The only damage to the home was smoke discoloration to the walls next to the bed.",
-        q: "Did Al commit the murder of Vic?",
+        fp: "Borrow owed Lender $5,000.00. Payment was overdue and Lender retained Ace Inc., to collect the debt. Washington, the President of Ace Inc., assigned Little, an employee of Ace Inc. to collect the account. At the time Washington assigned Little to collect the debt, Washington intended to apply the funds in discharge of a debt to Lender for which Ace Inc. and Washington were jointly liable. Little collected the $5,000.00. The amount collected, less Ace Inc.'s fee, was remitted to Lender by Washington as a payment on the debt for which Ace Inc. and Washington were jointly liable.",
+        q: "If a crime was committed by Washington, could Ace, Inc. be convicted for the same offense?",
         opts: [
-            "Yes, because Al and Tom were co-conspirators.",
-            "Yes, because he arranged for the killing of Vic.",
-            "No, because his arrangement was with Bob and not Tom.",
-            "No, because Vic was killed in a different manner than Al had contemplated."
+            "Yes, because Washington was President of Ace, Inc.",
+            "No, unless Washington is also convicted for the same offense.",
+            "No, because a corporation can not be imprisoned.",
+            "No, if the crime involved requires a specific intent."
         ],
-        ans: 1,
-        exp: "Rule: An accessory before the fact (or accomplice) is one who solicits, encourages, commands, or counsels another to commit a crime with the intent that the crime be committed. An accomplice is criminally liable for the contemplated crime even if the hired perpetrator delegates or subcontracts the commission of the act to a third person, as the target offense (homicide) was intended and directly procured by the instigator. Al arranged for Vic's murder and is therefore guilty of murder as an accomplice/mastermind (Option B). Option A is less precise because accomplice/accessory liability attaches directly to the solicitation and procurement of the target offense, regardless of whether a formal three-way conspiracy is proven. Option C is incorrect because an accomplice cannot escape liability simply because the agent employed a sub-agent to carry out the agreed crime. Option D is incorrect because the difference in the specific mechanism used to kill (fire/smoke instead of a bullet) does not negate liability where the intended result—the death of the specific victim—was accomplished."
+        ans: 0,
+        exp: "Rule: Under modern principles of corporate criminal liability (and the Model Penal Code), a corporation may be convicted of a criminal offense committed on its behalf by a high managerial agent (such as a corporate president, director, or managing officer) acting within the scope of their employment or apparent authority. Because Washington was the President of Ace, Inc. and committed the crime in the scope of corporate business to benefit the corporation, the corporation is criminally liable (Option A). Option B is incorrect because corporate liability does not depend on the simultaneous conviction of the individual officer. Option C is incorrect because corporations can be punished through fines and forfeiture even though they cannot be imprisoned. Option D is incorrect because specific intent can be imputed to a corporation through the mens rea of its managing officers."
     },
     {
         id: 3,
         topic: "Mixed",
-        fp: "Al arranged with Bob to have Bob kill Vic by shooting him. Bob, in turn, paid Tom to do the killing. Tom went to Vic's home late one evening. Vic had gone to bed and had left his bedroom window open. Tom found a long stick and set fire to the end of it. He inserted the stick through the open bedroom window and started a smoldering fire in the covering on Vic's bed. Vic died of smoke inhalation, but the fire was discovered and extinguished by Vic's son. The only damage to the home was smoke discoloration to the walls next to the bed.",
-        q: "Is Tom guilty of common law burglary of Vic's house?",
+        fp: "Diane obtained the services of a tax accountant to prepare her Federal Income Tax Return. The tax accountant told Diane that a certain expense she had incurred was deductible from income. The tax accountant knew the advice was erroneous. Diane signed and filed her Federal Income Tax Return, claiming the deduction.",
+        q: "If Diane is prosecuted for willful attempt to evade payment of taxes, does the tax accountant's advice constitute a valid defense?",
         opts: [
-            "Yes, because he committed a felony within the home of another during the nighttime.",
-            "Yes, because he inserted the lighted stick through the open window.",
-            "No, because he did not commit a breaking.",
-            "No, because no part of his body entered the house."
+            "No, because the tax accountant knew his advice was wrong.",
+            "No, because Diane signed and filed the Federal Income Tax Return.",
+            "Yes, because the tax accountant prepared the Federal Income Tax Return.",
+            "Yes, if Diane reasonably and in good faith relied on the tax accountant's advice."
         ],
-        ans: 2,
-        exp: "Rule: Common law burglary requires a breaking and entering of the dwelling house of another at nighttime with the intent to commit a felony therein. 'Breaking' requires the creation or enlargement of an opening (e.g., opening a closed door, turning a latch, or raising an open window further). Entering through an open window that was already left open does not satisfy the common law requirement of a breaking (Option C). Option A is incorrect because nighttime felony commission alone does not establish burglary without the requisite breaking and entry. Option B is incorrect because inserting an instrument into an open aperture constitutes entry, but fails to supply the essential element of breaking. Option D is incorrect because entry by an instrument used to commit the felony satisfies the entry requirement, making the lack of breaking the dispositive defect."
+        ans: 3,
+        exp: "Rule: Crimes requiring a 'willful' mental state or specific fraudulent intent (such as criminal tax evasion) are negated if the defendant acted in good faith with an honest misunderstanding of the law. Good-faith, reasonable reliance on the expert advice of a competent professional (such as a tax attorney or certified accountant) whom the defendant believed was correct negates the mens rea of willfulness (Cheek v. United States) (Option D). Option A is incorrect because the accountant's subjective bad faith is not imputed to the taxpayer who reasonably relied upon the advice. Option B is incorrect because signing the return under penalty of perjury does not establish willfulness if done in good-faith reliance on expert guidance. Option C is incorrect because reliance must be in good faith and reasonable, not automatic merely because an accountant drafted it."
     },
     {
         id: 4,
         topic: "Mixed",
-        fp: "Al arranged with Bob to have Bob kill Vic by shooting him. Bob, in turn, paid Tom to do the killing. Tom went to Vic's home late one evening. Vic had gone to bed and had left his bedroom window open. Tom found a long stick and set fire to the end of it. He inserted the stick through the open bedroom window and started a smoldering fire in the covering on Vic's bed. Vic died of smoke inhalation, but the fire was discovered and extinguished by Vic's son. The only damage to the home was smoke discoloration to the walls next to the bed.",
-        q: "Is Tom guilty of arson of Vic's house?",
+        fp: "Motorist saw Strange, apparently disabled by illness or injury, lying on the sidewalk late at night. Motorist drove to a service station across the street to use the pay phone. Tell was using the phone and refused to hang up when Motorist explained the circumstances. There was no other phone in the vicinity. Motorist then drew a loaded revolver and threatened to shoot Tell unless he hung up. Tell then hung up and permitted Motorist to use the phone. Motorist is now being prosecuted for assault with a deadly weapon.",
+        q: "Did Motorist have a privilege to threaten Tell with a revolver?",
         opts: [
-            "Yes, because there was smoke damage to the walls.",
-            "Yes, because a burning occurred in the commission of an inherently dangerous felony.",
-            "No, because arson is a specific intent crime.",
-            "No, because there was no burning of any part of the house."
+            "Yes, because Motorist was privileged to use deadly force if necessary to save Strange's life.",
+            "Yes, because Motorist was privileged to threaten the use of deadly force if reasonably necessary to save Strange's life.",
+            "No, unless there was a statute specifically granting such a privilege.",
+            "No, if Motorist did not know Strange."
         ],
-        ans: 3,
-        exp: "Rule: Common law arson requires the malicious burning of the dwelling house of another. 'Burning' requires some charring or fiber consumption of the structure or building fabric itself; mere smoke discoloration, scorching, or blackening does not constitute a burning, nor does the burning of personal property/furnishings within the home (Option D). Option A is incorrect because smoke damage without structural fiber charring does not satisfy common law burning. Option B is incorrect because felony-arson is not an existing doctrine; the physical element of structural burning must still occur. Option C is incorrect because common law arson is a malice crime, not a specific intent crime."
+        ans: 1,
+        exp: "Rule: Under the defense of necessity and defense of others, an actor is privileged to take reasonable emergency measures to prevent serious injury or death to another person. While the actual application of deadly force against an innocent non-aggressor is strictly prohibited under necessity, a conditional or verbal threat of force (even displaying a weapon) to secure an indispensable instrument to preserve human life may be recognized as privileged where the emergency is acute, no other means exist, and the threatened force was not actually deployed (Option B, conforming to the official State Bar key). Option A is incorrect because actual use of deadly force against an innocent person is never permitted under necessity. Option C is incorrect because defense privileges are established by common law. Option D is incorrect because defense of third parties does not require a prior familial or personal relationship."
     },
     {
         id: 5,
         topic: "Mixed",
-        fp: "Ed told Pete, an auto mechanic, that he had stolen a car and that the engine had to be rebuilt before it could be sold. Pete agreed to perform the work under the following terms: Pete would receive $300 upon completion of the job, even though his normal fee was $600 and he would receive an additional $600 when Ed sold the car. After rebuilding the engine, and before the car was sold, Pete and Ed were arrested.",
-        q: "Did Pete commit the crime of conspiracy to sell the stolen car?",
+        fp: "Barney owned a hardware store in New York. Wishing to move to a warmer climate, he entered into a written contract to buy Sampson's hardware store in Florida. The contract stated that Barney would buy Sampson's store for $125,000 'provided Barney finds a purchaser who will buy his present business for $100,000 cash.' Sampson rents the building in which his store is located, under a lease with one more year to run.\n\nAssume Sampson repudiated the contract soon after signing it and before Barney had made any effort to find a buyer for his present business. Barney sued Sampson for breach of contract and Sampson defended on the ground that his promise to sell was unsupported by consideration.",
+        q: "Will this defense succeed?",
         opts: [
-            "Yes, because he agreed to rebuild the engine, knowing the car was stolen.",
-            "Yes, because of the profit he agreed to receive on the sale of the car.",
-            "No, because Ed was the person who was going to sell the car.",
-            "No, because Pete's rebuilding of the engine was not per se illegal."
+            "Yes, because Barney's promise to buy was subject to a condition within Barney's complete control and was therefore illusory.",
+            "Yes, because Barney's promise to buy was still executory.",
+            "No, because the court will interpret the condition of Barney's promise as requiring Barney to make a good faith effort to find a buyer for his present business.",
+            "No, because Barney's promise to sell his present business was consideration for Sampson's promise to sell his business to Barney."
         ],
-        ans: 1,
-        exp: "Rule: A supplier of goods or services becomes a co-conspirator in an unlawful venture if they provide services with knowledge of the illegal purpose and have an intent to further that venture. Intent can be inferred when the supplier acquires a 'stake in the venture'—such as conditioning part of their compensation or earning an inflated profit directly from the illicit enterprise's success. By deferring part of his fee in exchange for a substantial profit contingent upon the sale of the stolen vehicle, Pete obtained an active stake in the venture (Option B). Option A is incorrect because mere knowledge of illegal activity without an intent to advance it (or a stake in it) is generally insufficient for conspiracy. Option C is incorrect because a co-conspirator does not need to personally execute every target offense. Option D is incorrect because otherwise lawful acts done to facilitate an unlawful enterprise with a stake in its profits establish conspiratorial liability."
+        ans: 2,
+        exp: "Rule: A contract conditioned on the occurrence of an event within the control of one party (such as obtaining financing or selling an existing business) is not illusory because the law implies an obligation of good faith and reasonable efforts to bring about the condition (Restatement (Second) of Contracts § 205). Because Barney was under an implied duty of good faith to attempt to sell his New York store, his promise was not illusory and constituted valid consideration (Option C). Option A is incorrect because the implied covenant of good faith supplies the necessary mutuality of obligation. Option B is incorrect because executory promises are standard, valid consideration. Option D is incorrect because the sale of Barney's business was a condition precedent, not an independent promise made to Sampson."
     },
     {
         id: 6,
         topic: "Mixed",
-        fp: "Paul was nine years old and a third-grade student in school. While playing in the school yard during the recess period, Paul became involved in a fight with David, ten years old and a student in the fourth grade. David kicked Paul in the leg during the fight and, as a result, Paul suffered a fracture of a bone in the leg.\n\nPaul, through an appropriate legal representative, has asserted claims for damages against David and against the school district.",
-        q: "Will Paul prevail on his claim against David?",
+        fp: "Barney owned a hardware store in New York. Wishing to move to a warmer climate, he entered into a written contract to buy Sampson's hardware store in Florida. The contract stated that Barney would buy Sampson's store for $125,000 'provided Barney finds a purchaser who will buy his present business for $100,000 cash.' Sampson rents the building in which his store is located, under a lease with one more year to run.\n\nAssume Barney made no effort to find a buyer for his present business and refused to perform his promise to buy Sampson's business. Sampson sued Barney and the evidence shows that Barney could have found a purchaser to buy his business for $100,000 cash.",
+        q: "What result?",
         opts: [
-            "Yes, because David kicked Paul.",
-            "Yes, if David started the fight.",
-            "No, unless David used excessive force.",
-            "No, if Paul's bones were unusually brittle."
+            "Sampson wins, because the condition of Barney's promise was excused by Barney's failure to try to make it occur.",
+            "Sampson wins, because the stipulation about the sale of Barney's present business was a mere promise and not a condition.",
+            "Barney wins, because the condition of Barney's promise to buy Sampson's business did not occur.",
+            "Barney wins, because he made no promise to try to find a buyer for his business."
         ],
-        ans: 2,
-        exp: "Rule: Voluntarily participating in a mutual fight or sporting scuffle implies consent to physical contacts that are normal and reasonably anticipated under the circumstances. A participant cannot recover for battery resulting from mutual combat unless the defendant used excessive, disproportionate, or unreasonable force outside the scope of implied consent (Option C). Option A is incorrect because mutual combat implies consent to customary physical blows. Option B is incorrect because mutual consent to fight defeats the battery claim regardless of who initiated the dispute, unless excessive force was employed. Option D is incorrect because under the 'eggshell skull' doctrine, a tortfeasor takes the victim as found, so brittle bones would not be a defense if battery were established."
+        ans: 0,
+        exp: "Rule: Under the doctrine of prevention (excuse of condition by bad faith or non-cooperation), if a promisor's duty is subject to a condition precedent, and the promisor wrongfully prevents or hinders the occurrence of the condition in breach of their implied duty of good faith, the condition is excused and the duty becomes unconditional. Because Barney made no effort to find a buyer, and evidence showed a willing buyer was obtainable for $100,000, Barney's non-cooperation excused the condition precedent (Option A). Option B is incorrect because the clause 'provided that' explicitly creates an express condition. Options C and D are incorrect because a party cannot rely on the non-occurrence of a condition that their own breach of good faith caused to fail."
     },
     {
         id: 7,
         topic: "Mixed",
-        fp: "Paul was nine years old and a third-grade student in school. While playing in the school yard during the recess period, Paul became involved in a fight with David, ten years old and a student in the fourth grade. David kicked Paul in the leg during the fight and, as a result, Paul suffered a fracture of a bone in the leg.\n\nPaul, through an appropriate legal representative, has asserted claims for damages against David and against the school district.",
-        q: "Will Paul prevail on his claim against the school district?",
+        fp: "Barney owned a hardware store in New York. Wishing to move to a warmer climate, he entered into a written contract to buy Sampson's hardware store in Florida. The contract stated that Barney would buy Sampson's store for $125,000 'provided Barney finds a purchaser who will buy his present business for $100,000 cash.' Sampson rents the building in which his store is located, under a lease with one more year to run.\n\nAssume Barney refused to perform his promise to buy Sampson's business and Sampson sued. Barney defended on the ground that at the time the contract was signed the parties orally agreed that Barney's obligation to buy was conditioned upon Barney's obtaining a 5-year extension of Sampson's lease, and that Barney has been unsuccessful in his efforts to obtain such an extension from the landlord. No mention of the lease was made in the contract. Sampson objected to the admission of evidence to prove such a condition on the ground of the Parol Evidence Rule.",
+        q: "Which of the following arguments that Barney might make has any chance of avoiding the Parol Evidence Rule?",
         opts: [
-            "Yes, because the fight took place during the recess period.",
-            "Yes, because the fight took place on school premises.",
-            "No, if Paul was the person who actually started the fight.",
-            "No, unless the school failed to use reasonable care in supervising the school premises."
+            "The evidence is offered to clear up an ambiguity in the writing.",
+            "The evidence is offered to show a modification of a written contract.",
+            "The writing was not an 'integrated' written contract.",
+            "The Parol Evidence Rule does not bar evidence of the oral agreement because the evidence is offered to establish an oral condition of a promise contained in an 'integrated' written contract."
         ],
-        ans: 3,
-        exp: "Rule: A school district is not an absolute insurer of student safety and is not strictly liable for torts committed by pupils. The school owes a duty of ordinary, reasonable care under the circumstances to provide adequate supervision on school grounds. To prevail, a plaintiff must prove that school personnel breached that standard of reasonable care (Option D). Options A and B are incorrect because time and location do not establish strict liability for a school district. Option C is incorrect because a child's initiation of a playground dispute does not automatically negate school liability if school authorities were negligent in supervising the yard."
+        ans: 2,
+        exp: "Rule: The Parol Evidence Rule applies only if the writing is an 'integrated' agreement (intended by the parties as a final expression of their agreement). Therefore, a party seeking to introduce prior or contemporaneous oral agreements can avoid the Parol Evidence Rule altogether by establishing that the written instrument was never intended as a final, integrated contract (Option C). Option A is incorrect because there is no ambiguous language in the text to interpret; Barney is seeking to add a completely new term. Option B is incorrect because subsequent modifications are not barred by the rule, but Barney is offering a contemporaneous oral agreement, not a subsequent modification. Option D is incorrect because while oral conditions precedent to contract *effectiveness* are admissible, an oral condition that directly contradicts or adds to specific terms of an integrated writing is barred."
     },
     {
         id: 8,
         topic: "Mixed",
-        fp: "Actor, a well-known film star, was photographed by a freelance photographer, while sitting at a sidewalk cafe, drinking beer and with a bottle of Foamus Light Beer on the table in front of him. The picture was reproduced in Magazine, a publication containing stories and articles about the film industry, in connection with a story about the eating and drinking tastes of film stars. The label on the beer bottle was clearly visible in the picture.\n\nThe following month, advertisements for Foamus Light Beer appeared in other publications and carried a reproduction of the page from Magazine on which Actor's picture appeared, with the heading 'Drink the beer that movie stars drink.'",
-        q: "If Actor asserts a claim against Magazine, will Actor prevail?",
+        fp: "Al lived in a home adjacent to a large stretch of open fields. One afternoon Al took his dog, on leash, for a walk across the fields. Unknown to Al, Burt was engaging in target practice with a revolver that Burt owned. Burt was hidden from Al's view by a small clump of trees. As Al, with his dog, passed the clump of trees, Burt fired at a target that he had pinned up to one of the trees. The sound of the explosion frightened Al's dog, which broke the leash and ran. The dog then bit Charles who was walking in the fields about 100 feet from Al.",
+        q: "If Charles asserts a claim for damages against Al, will Charles prevail?",
         opts: [
-            "Yes, if Actor had not authorized any use of the picture.",
-            "Yes, because Magazine was using Actor's picture for its commercial purposes.",
-            "No, because Actor's picture was taken in a public place.",
-            "No, if Actor's career was advanced by the publicity."
+            "Yes, because Al owned the dog.",
+            "Yes, because the dog escaped from Al's control.",
+            "No, unless the dog had previously bitten some other person.",
+            "No, unless Al was negligent in not restraining the dog."
         ],
-        ans: 2,
-        exp: "Rule: The tort of invasion of privacy protects individuals from intrusion upon seclusion, false light, public disclosure of private facts, and commercial appropriation. Photographing a celebrity in an open, public place (such as a sidewalk cafe) does not constitute intrusion upon seclusion because there is no reasonable expectation of privacy. Furthermore, publishing the photo in connection with a newsworthy or entertainment-related article does not constitute commercial misappropriation, which applies only to unauthorized advertising or trade promotion (Option C). Option A is incorrect because media publications do not require prior consent to publish newsworthy photographs taken in public. Option B is incorrect because selling news or entertainment magazines is not 'commercial use' under misappropriation rules. Option D is incorrect because lack of reputational harm does not determine liability for privacy torts."
+        ans: 3,
+        exp: "Rule: Under general common law, an owner of a domestic animal is not strictly liable for injuries caused by the animal unless the owner had scienter (actual knowledge or reason to know) of the animal's abnormally dangerous propensities ('one-bite rule'). In the absence of scienter or strict liability, an owner is liable only if they were negligent in controlling or restraining the animal under the circumstances. Charles can prevail against Al only if Al failed to exercise reasonable care (Option D). Option A is incorrect because dog ownership does not create strict liability at common law without scienter. Option B is incorrect because mere escape does not establish negligence or strict liability. Option C is incorrect because scienter can be established by aggressive behavior short of an actual prior bite, and negligence remains an independent ground of liability."
     },
     {
         id: 9,
         topic: "Mixed",
-        fp: "Actor, a well-known film star, was photographed by a freelance photographer, while sitting at a sidewalk cafe, drinking beer and with a bottle of Foamus Light Beer on the table in front of him. The picture was reproduced in Magazine, a publication containing stories and articles about the film industry, in connection with a story about the eating and drinking tastes of film stars. The label on the beer bottle was clearly visible in the picture.\n\nThe following month, advertisements for Foamus Light Beer appeared in other publications and carried a reproduction of the page from Magazine on which Actor's picture appeared, with the heading 'Drink the beer that movie stars drink.'",
-        q: "If Actor asserts a claim against Foamus Light Beer based on the advertisements in the other publications, will Actor prevail?",
+        fp: "Al lived in a home adjacent to a large stretch of open fields. One afternoon Al took his dog, on leash, for a walk across the fields. Unknown to Al, Burt was engaging in target practice with a revolver that Burt owned. Burt was hidden from Al's view by a small clump of trees. As Al, with his dog, passed the clump of trees, Burt fired at a target that he had pinned up to one of the trees. The sound of the explosion frightened Al's dog, which broke the leash and ran. The dog then bit Charles who was walking in the fields about 100 feet from Al.",
+        q: "If Charles asserts a claim against Burt for damages for the dog bite, will Charles prevail?",
         opts: [
-            "Yes, if Actor had not consented to having his picture taken.",
-            "Yes, if Actor had not consented to Foamus Light Beer using Actor's picture for commercial purposes.",
-            "No, because Actor's picture had already appeared in Magazine.",
-            "No, if Actor was already a public figure."
+            "Yes, because Burt's firing the gun caused the dog to run away.",
+            "Yes, because firing a gun is an abnormally dangerous activity.",
+            "No, because injury to Charles from a dogbite was not a foreseeable consequence of Burt's act.",
+            "No, because the breaking of the leash was an independent, intervening force."
         ],
-        ans: 1,
-        exp: "Rule: Commercial appropriation (part of the right of publicity / privacy) occurs when a defendant uses the plaintiff's name, image, or likeness for commercial advantage or advertising purposes without obtaining the plaintiff's consent. Foamus Light Beer used Actor's image in commercial advertisements endorsing their product without permission, making Foamus liable for commercial appropriation (Option B). Option A is incorrect because consent to take the original photo does not grant commercial advertising rights. Option C is incorrect because lawful publication in a newsworthy magazine does not grant third-party commercial entities the right to exploit the photograph in product advertising. Option D is incorrect because public figures retain the right of publicity over the commercial exploitation of their likeness."
+        ans: 2,
+        exp: "Rule: Proximate (legal) cause requires that the injury suffered by the plaintiff be within the foreseeable scope of the risk created by the defendant's conduct (Palsgraf). Firing a gun on target practice in an open field might foreseeably create risks of gunshot wounds or shrapnel injuries, but a frightened domestic dog breaking its leash and biting an unrelated passerby 100 feet away is an unforeseeable consequence outside the scope of risk created by the gunfire (Option C). Option A is incorrect because cause-in-fact ('but-for' cause) does not establish proximate cause without foreseeability. Option B is incorrect because target shooting in an open rural area is not classified as an abnormally dangerous activity imposing strict liability. Option D is incorrect because intervening forces do not automatically relieve a defendant if they were foreseeable."
     },
     {
         id: 10,
         topic: "Mixed",
-        fp: "Vee loaned Dan her car when Dan told Vee that he needed the car in order to get some groceries. In fact Dan intended to drive 100 miles to apply for a job in City and return the same day. However, when Dan reached City and obtained a job he decided to remain in City permanently. Dan did not inform Vee of where he was and he did not return to car to Vee.",
-        q: "Did Dan commit larceny?",
+        fp: "Joe and Tom saw a new automobile, owned by Bill, parked on a street. They decided to take the automobile for a joyride. Joe drove the automobile a few blocks before colliding with a truck. The collision totally destroyed Bill's automobile.",
+        q: "If Bill obtains a judgment against Joe based on conversion and Joe pays the judgment, may Joe compel Tom to reimburse him for any part of the amount paid to Bill?",
         opts: [
-            "Yes, because Dan did not return the car to Vee.",
-            "Yes, because Dan unlawfully converted property to which he had lawfully obtained possession.",
-            "No, because there was no concurrence of actus reus and mens rea.",
-            "No, because Vee voluntarily loaned Dan her car."
+            "Yes, on a theory of implied indemnity.",
+            "Yes, because Tom was a joint tort-feasor.",
+            "No, unless Bill had joined Tom as a party defendant in the action.",
+            "No, because Bill's judgment was based on conversion."
         ],
-        ans: 0,
-        exp: "Rule: Larceny requires a trespassory taking and carrying away of the personal property of another with the intent to permanently deprive. Dan committed a trespassory taking at the outset through fraud/misrepresentation (larceny by trick) when he deceived Vee about his intended trip. Under the doctrine of continuing trespass, because the original taking was trespassory/wrongful, the trespassory nature continues until the actor forms the intent to permanently deprive, satisfying the concurrence requirement when he decides to keep the vehicle. Thus, Dan committed larceny (Option A). Option B is incorrect because converting property after obtaining lawful possession defines embezzlement, not larceny. Option C is incorrect because the doctrine of continuing trespass satisfies concurrence. Option D is incorrect because consent obtained by fraud is vitiated, rendering the initial taking trespassory."
+        ans: 3,
+        exp: "Rule: Under traditional common law rules governing joint tortfeasors (as specified in the exam instructions), contribution is not permitted among intentional tortfeasors. Because conversion is an intentional tort, a joint intentional tortfeasor who satisfies a judgment cannot seek contribution or reimbursement from an accomplice (Merryweather v. Nixan) (Option D). Option A is incorrect because indemnity shifts 100% of the loss only to a party primarily responsible when the paying party was purely vicariously liable or without fault, which is not true of Joe. Option B is incorrect because the traditional common law rule bars contribution among joint intentional tortfeasors. Option C is incorrect because joinder in the original suit does not alter the substantive rule barring contribution for intentional torts."
     },
     {
         id: 11,
         topic: "Mixed",
-        fp: "Anna, the owner of a nightclub, booked Sam, a famous entertainer, for the week beginning Sunday, July 1. On June 20 Sam was stricken by appendicitis and according to his surgeon would not be able to perform until August 1. On June 21, Anna sent the following telegrams to Ella and to two other performers. The contents of all three telegrams were identical.\n\n'Sam ill and unable to perform during the July 1 week. Desperately need replacement act. You must arrive no later than June 29 to give the band time to rehearse with you. Money no object as all performances already sold out. /s/ Anna.'\n\nAssume that Ella received her wire on June 22 and immediately wired back: 'On my way. Hope I get a better room than you provided last time. /s/ Ella.' After Ella sent her wire, but before Anna received it, Anna learned from Sam's surgeon that Sam had recovered and could perform July 1. Anna immediately telephone Ella and said that Ella was not needed because Sam had recovered.",
-        q: "If Ella asserts a claim against Anna and Anna defends on the ground that there was no effective acceptance of her offer, who will prevail?",
+        fp: "Tom is a teacher who is quite knowledgeable about coins and their value and his collection is worth thousands of dollars. Tom also buys and sells coins. Jim, who had no prior experience with coins, had inherited a sizeable coin collection. Jim opened 'Coin Shop' in a local shopping center.\n\nAssume that on June 1 Jim advertised in the local newspaper as follows: 'Special sale. Coins on sale at 10% over their face value.' In response to this ad, Tom visited Jim's shop and saw in a display case a fifty cent coin which Tom recognized as having a value of $100. Tom tendered fifty-five cents to Jim but Jim refused to sell the coin. Jim said that the coin had already been sold to Zeke for $100 prior to the start of the special sale and that Jim had forgotten to remove it from the display case.\n\nTom sued Jim for damages.",
+        q: "What result?",
         opts: [
-            "Ella, because her acceptance was dispatched prior to Anna's revocation of her offer.",
-            "Ella, because Anna's revocation was not communicated in the same form as Anna's offer.",
-            "Anna, because Ella's response failed to specify any salary.",
-            "Anna, because Ella's response, added a term to the offer, which Anna was free to reject."
+            "Jim wins because the ad was not an offer.",
+            "Jim wins because fifty-five cents was not sufficient consideration for a coin worth $100.",
+            "Tom wins because, in visiting Jim's shop, Tom detrimentally relied on the ad.",
+            "Tom wins because Jim's ad was an offer which Tom accepted when he tendered the fifty-five cents to purchase the coin."
         ],
         ans: 0,
-        exp: "Rule: Under the mailbox rule, an acceptance of an offer is effective upon proper dispatch (e.g., deposited into the post or handed to the telegraph agency), creating an immediate binding contract. Conversely, a revocation is effective only upon actual receipt by the offeree. Because Ella dispatched her acceptance wire on June 22 before Anna communicated her revocation, an enforceable contract was formed at the moment of dispatch (Option A). Option B is incorrect because a revocation need not match the exact medium of the offer; it simply must be received prior to acceptance. Option C is incorrect because 'money no object' in the context of professional booking acts allows a court to imply a reasonable value / market rate. Option D is incorrect because Ella's statement ('Hope I get a better room') was a mere expression of hope or 'grumbling acceptance,' which does not defeat acceptance or create a counteroffer."
+        exp: "Rule: Commercial advertisements published in newspapers or circulars are generally construed as mere invitations to deal or solicitations of offers, rather than binding operative offers. An advertisement constitutes an offer only if it is clear, definite, explicit, and leaves nothing open to negotiation (e.g., 'first come, first served' for a specific listed item, as in Lefkowitz). Jim's general newspaper announcement was a non-binding solicitation, meaning Tom's tender was an offer that Jim was free to reject (Option A). Option B is incorrect because courts do not inquire into the adequacy of consideration; the defect is lack of mutual assent/offer. Option C is incorrect because visiting a store in response to an ad is mere preparation to shop, not detrimental reliance creating an option contract. Option D is incorrect because standard commercial advertisements are not offers."
     },
     {
         id: 12,
         topic: "Mixed",
-        fp: "Anna, the owner of a nightclub, booked Sam, a famous entertainer, for the week beginning Sunday, July 1. On June 20 Sam was stricken by appendicitis and according to his surgeon would not be able to perform until August 1. On June 21, Anna sent the following telegrams to Ella and to two other performers. The contents of all three telegrams were identical.\n\n'Sam ill and unable to perform during the July 1 week. Desperately need replacement act. You must arrive no later than June 29 to give the band time to rehearse with you. Money no object as all performances already sold out. /s/ Anna.'\n\nAssume the same facts as in question 36.\nAnna defends on the ground that her wire was not intended as an offer, since it was sent to three people and she needed only one replacement act.",
+        fp: "Tom is a teacher who is quite knowledgeable about coins and their value and his collection is worth thousands of dollars. Tom also buys and sells coins. Jim, who had no prior experience with coins, had inherited a sizeable coin collection. Jim opened 'Coin Shop' in a local shopping center.\n\nAssume that Tom telephoned Jim and learned that Jim owned fifty 1937 silver dollars. Jim agreed to sell them to Tom for $1,000, which sum Tom agreed to pay in advance of shipment. Following the conversation, Jim sent Tom this letter: 'This confirms your purchase of the silver dollars. Upon receipt of your check for $1,000 the coins will be shipped to you as agreed. /s/ Jim.' Tom received the letter but did not respond to it and did not pay the $1,000 a month. Coyne sues Tom, who asserts the Statute of Frauds as a defense.",
         q: "Will this defense succeed?",
         opts: [
-            "Yes, if Anna did not intend to be bound to more than one person.",
-            "Yes, because, as creator of the purported 'offer,' Anna's intent not to make an offer prevails.",
-            "No, if Ella did not know that identical wires were sent to others.",
-            "No, because Anna would only be bound by the first acceptance she received."
+            "No, because the letter signed by Coyne satisfies the writing requirement against Tom.",
+            "No, because the face value of the coins is less than $5,000.",
+            "Yes, because Tom is not a merchant and there is no writing signed by Tom.",
+            "Yes, because a memorandum signed after the contract is made does not satisfy the Statute of Frauds."
         ],
-        ans: 2,
-        exp: "Rule: Contract formation is judged by the objective theory of contracts—how a reasonable person in the offeree's position would understand the communication. Secret subjective intentions or undisclosed transmissions of identical communications to other parties do not prevent a manifestation of assent from operating as a valid offer if the offeree reasonably understands that their assent binds the contract and has no reason to know of the multi-offeree communications (Option C). Options A and B are incorrect because subjective unexpressed intent does not govern over objective manifestations. Option D is incorrect because sending multiple unqualified offers to several parties exposes the offeror to liability on all acceptances if not properly qualified."
+        ans: 0,
+        exp: "Note: In the official California Bar examination key, Question 62 was deemed defective and credited for all choices (A, B, C, D) due to typographical errors in the question prompt (referencing 'Coyne' instead of 'Jim' in the fact pattern and options). Under standard UCC principles: Under UCC § 2-201(2) (Merchant's Confirmatory Memo Exception), between merchants, if one party sends a written confirmation sufficient against the sender within a reasonable time and the recipient does not object within 10 days, it satisfies the Statute of Frauds against the recipient. If both are merchants, Option A would apply; if Tom (a teacher/collector) is not a merchant, Option C would apply. Because the Bar credited all answers, any selection is treated as correct; Option A aligns with the primary text in the official key."
     },
     {
         id: 13,
         topic: "Mixed",
-        fp: "Anna, the owner of a nightclub, booked Sam, a famous entertainer, for the week beginning Sunday, July 1. On June 20 Sam was stricken by appendicitis and according to his surgeon would not be able to perform until August 1. On June 21, Anna sent the following telegrams to Ella and to two other performers. The contents of all three telegrams were identical.\n\n'Sam ill and unable to perform during the July 1 week. Desperately need replacement act. You must arrive no later than June 29 to give the band time to rehearse with you. Money no object as all performances already sold out. /s/ Anna.'\n\nAssume the same facts as in previous question 36.\nAnna defends on the ground that Sam's recovery was a changed circumstance that excused her from liability on her contract with Ella.",
+        fp: "Tom is a teacher who is quite knowledgeable about coins and their value and his collection is worth thousands of dollars. Tom also buys and sells coins. Jim, who had no prior experience with coins, had inherited a sizeable coin collection. Jim opened 'Coin Shop' in a local shopping center.\n\nAssume the same facts as in question 12, but that Tom defends on the ground that there was no consideration for his promise to pay $1,000.",
         q: "Will this defense succeed?",
         opts: [
-            "Yes, because the risk of Sam's recovery was assumed by Ella.",
-            "Yes, because illness in personal service contracts operates to excuse performance.",
-            "No, because Anna was unilaterally mistaken as to whether Sam would recover in time to perform.",
-            "No, because Anna did not condition her offer on Sam's continued incapacity and, therefore, the risk of his recovery was assumed by her."
+            "Yes, because a court will not enforce a promise to pay $1,000 for coins with a face value of $50.",
+            "Yes, because Coyne did not change his position in reliance on the promise of Tom to pay $1,000.",
+            "No, because Coyne's promise to sell the coins was sufficient consideration.",
+            "No, because both Tom and Coyne are merchants and contracts between merchants do not require consideration."
         ],
-        ans: 3,
-        exp: "Rule: Impossibility, impracticability, or frustration of purpose discharges contractual duties only when an unforeseen event occurs, the non-occurrence of which was a basic assumption on which the contract was made, and the party seeking excuse did not assume the risk. When hiring a replacement entertainer without reserving the right to cancel if the primary performer recovers, the employer bears the business risk of the original employee's early recovery (Option D). Option A is incorrect because the hiring party, not the replacement artist, controls and bears the risk of an unconditioned employment commitment. Option B is incorrect because Sam's illness excused Sam from performing, but does not excuse Anna from honoring her independent contract with Ella. Option C is incorrect because Sam's recovery occurred after contract formation, making this an issue of changed circumstances/risk allocation rather than mutual/unilateral mistake at formation."
+        ans: 2,
+        exp: "Note: Like Question 12, Question 13 inherited the typographical party error ('Coyne' vs 'Jim') and was credited for all answers (A, B, C, D) in the official Bar key. Substantively: A bilateral contract is supported by mutual consideration consisting of bargained-for exchange of promises. Jim/Coyne's promise to transfer and deliver the fifty 1937 silver dollars constitutes valid consideration for Tom's promise to pay $1,000 (Option C). Option A is incorrect because face value does not dictate market consideration for collectibles; courts do not assess adequacy. Option B is incorrect because consideration exists in the mutual promises, making reliance unnecessary. Option D is incorrect because merchant contracts still require consideration."
     },
     {
         id: 14,
         topic: "Mixed",
-        fp: "Anna, the owner of a nightclub, booked Sam, a famous entertainer, for the week beginning Sunday, July 1. On June 20 Sam was stricken by appendicitis and according to his surgeon would not be able to perform until August 1. On June 21, Anna sent the following telegrams to Ella and to two other performers. The contents of all three telegrams were identical.\n\n'Sam ill and unable to perform during the July 1 week. Desperately need replacement act. You must arrive no later than June 29 to give the band time to rehearse with you. Money no object as all performances already sold out. /s/ Anna.'\n\nAssume for this question that there was a valid contract between Ella and Anna, and that Sam recovered. Assume further that Anna refused to allow Ella to perform as the featured star, but offered to employ Ella, at a salary of $3,000 for the week, to perform in a less popular nightclub which Anna also owned. Ella's usual salary for a one week engagement is $5,000 and this is the sum she expected to receive from Anna. Ella refused to perform in Anna's other nightclub and was unable to obtain another booking. Anna paid Sam $10,000 for his one week performance.",
-        q: "How much is Ella entitled to recover from Anna?",
+        fp: "Tom is a teacher who is quite knowledgeable about coins and their value and his collection is worth thousands of dollars. Tom also buys and sells coins. Jim, who had no prior experience with coins, had inherited a sizeable coin collection. Jim opened 'Coin Shop' in a local shopping center.\n\nAssume that Tom and Coyne had entered into an enforceable contract for the sale of fifty 1937 silver dollars but that before the coins were delivered to Tom, the government made the transfer of pre-1964 silver coins illegal.",
+        q: "Which of the following is a correct statement of the rights of Tom and Coyne?",
         opts: [
-            "$2,000.",
-            "$5,000.",
-            "$10,000.",
-            "Nothing."
+            "The court will not enforce the agreement and will leave the parties as they are, enabling Coyne to keep the $1,000.",
+            "Coyne is in breach and must pay damages, even though he is excused from delivering the coins.",
+            "Coyne may keep the $1,000 and need not deliver the coins, because merchants should anticipate changes in the law.",
+            "Coyne is excused from delivering the coins, and Tom is entitled to restitution of the $1,000."
         ],
-        ans: 1,
-        exp: "Rule: In employment contracts, an employee wrongfully discharged or repudiated is entitled to recover the full agreed contract price/expected earnings, minus any amount earned or that could have been earned through reasonable mitigation efforts. However, an employee is not required to mitigate damages by accepting employment that is inferior, different in kind, of lower status, or at a lesser compensation. Because performing as a secondary act in a less popular club is substantially inferior and offers lower pay, Ella had no duty to accept Anna's substitute offer. Since Ella was unable to find comparable work despite reasonable efforts, she is entitled to her full expected compensation of $5,000 (Option B). Option A is incorrect because Ella was under no duty to accept inferior work, so Anna cannot deduct the $3,000 offer. Option C is incorrect because damages protect Ella's expectation interest ($5,000), not the amount paid to another performer ($10,000). Option D is incorrect because a material breach occurred and Ella is entitled to expectation damages."
+        ans: 3,
+        exp: "Note: Question 14 was credited for all answers (A, B, C, D) by the State Bar due to the ongoing 'Coyne' drafting confusion. Substantively: Under the doctrine of supervening illegality / objective impossibility (Restatement (Second) of Contracts § 264), when a governmental regulation or statute makes performance illegal after formation, the promisor's duty to perform is discharged. When a party's duty is discharged by impossibility/illegality, any performance or advance payment rendered by the other party must be refunded under principles of restitution to prevent unjust enrichment (Option D). Option A is incorrect because supervening illegality is an excuse doctrine, not an illegal pact ab initio where the court leaves parties in pari delicto. Options B and C are incorrect because excusing performance simultaneously precludes breach liability and mandates return of unearned prepayments."
     },
     {
         id: 15,
         topic: "Mixed",
-        fp: "Anna, the owner of a nightclub, booked Sam, a famous entertainer, for the week beginning Sunday, July 1. On June 20 Sam was stricken by appendicitis and according to his surgeon would not be able to perform until August 1. On June 21, Anna sent the following telegrams to Ella and to two other performers. The contents of all three telegrams were identical.\n\n'Sam ill and unable to perform during the July 1 week. Desperately need replacement act. You must arrive no later than June 29 to give the band time to rehearse with you. Money no object as all performances already sold out. /s/ Anna.'\n\nAssume that Frank, another performer, received one of the three wires sent by Anna on June 21. Without communicating with Anna, Frank cancelled his existing booking for the week of July 1 and appeared at Anna's nightclub on June 29, stating: 'Here I am. You knew you could count on me to help you out.' Anna said that Sam had recovered and was going to perform and that Anna did not expect Frank since she had heard nothing from him.",
-        q: "If Frank sues Anna, who will prevail?",
+        fp: "Agent was an undercover police officer. Agent received information from a reliable source that Deft, recently released from prison after serving a sentence for selling narcotics, was again selling narcotics, but that he was being very cautious and would sell only to persons who knew a certain code word. Agent's source told Agent the current code word.\n\nAgent approached Deft, offered to make a buy of narcotics and said the code word. Deft agreed to the sale and to the time and place of delivery. When Deft appeared with the narcotics he was arrested.",
+        q: "If Deft claims that he was entrapped, will he prevail on this issue?",
         opts: [
-            "Frank, because he could reasonably interpret Anna's wire as an offer permitting acceptance either by performance or a return promise.",
-            "Frank, because he commenced performance prior to any attempted revocation by Anna.",
-            "Anna, because her wire should reasonably have been understood as an offer requiring a timely return promise.",
-            "Anna, because an offer can only be accepted by a return promise."
+            "Yes, because Deft would not have made the sale if Agent had not said the code word.",
+            "Yes, because Agent approached Deft and offered to make a buy.",
+            "No, because Deft was already predisposed to sell narcotics.",
+            "No, because Deft had previously been convicted for selling narcotics."
         ],
         ans: 2,
-        exp: "Rule: The offeror is the master of the offer. Where an offer creates an urgent business scenario ('desperately need replacement act') and performance is set days into the future, a reasonable person would understand that the offeror needs prompt commitment (a return promise) rather than the uncertainty of waiting to see if an offeree silently appears a week later. Therefore, the wire reasonably required a timely return promise to accept, which Frank failed to provide (Option C). Option A is incorrect because in light of the urgent emergency circumstances, silence followed by physical appearance a week later is not a commercially reasonable mode of acceptance. Option B is incorrect because Frank did not notify Anna or commence actual performance with Anna's consent. Option D is incorrect because offers in general may invite acceptance by performance unless the language or circumstances indicate otherwise."
+        exp: "Rule: Under the majority subjective test for entrapment, the defense is established only if (1) the criminal design originated with government agents, and (2) the defendant had no predisposition to commit the crime. Where law enforcement merely affords an opportunity or facility for the commission of an offense to a person who is already ready, willing, and predisposed to commit it, there is no entrapment (Option C). Option A is incorrect because using a pre-existing criminal code word is merely providing an opportunity. Option B is incorrect because undercover solicitations do not constitute entrapment without improper coercion or inducement. Option D is incorrect because a past conviction is evidence of predisposition, but not a per se conclusive bar to raising the defense."
     },
     {
         id: 16,
         topic: "Mixed",
-        fp: "Alma and Betty were patients in Hospital. Dr. Andrews was to operate on Alma for a back problem. Dr. Brown was to perform an appendectomy on Betty. Each doctor was performing her first operation in Hospital. Neither was familiar with the location of the operating rooms. Through some unexplained mistake, employees of Hospital took Dr. Andrews to the operating room where Betty was awaiting her operation and took Dr. Brown to the operating room where Alma was awaiting her operation. Each doctor commenced operating before the mistakes were discovered.",
-        q: "If Alma asserts a claim against Dr. Brown, will Alma prevail?",
+        fp: "Pete parked his car in a garage operated by Dunn. When Pete returned several hours later and demanded his car, Dunn could not produce the car because it had been stolen by a thief.",
+        q: "If Pete asserts a claim against Dunn based on conversion, will Pete prevail?",
         opts: [
-            "Yes, for battery.",
-            "Yes, for negligence, relying on the doctrine of res ipsa loquitur.",
-            "No, unless Alma can establish that Dr. Brown was negligent in not discovering her identity.",
-            "No, because Hospital's employee took Dr. Brown to the wrong operating room."
+            "Yes, because Dunn could not produce Pete's car.",
+            "Yes, unless Pete recovers his car undamaged.",
+            "No, if Dunn did not intentionally give custody of the car to the thief.",
+            "No, if Dunn had taken reasonable security precautions to prevent theft of parked cars."
         ],
         ans: 0,
-        exp: "Rule: Battery is an intentional, non-consensual harmful or offensive contact with the person of another. In a medical context, performing surgery without the patient's consent constitutes battery as a matter of law. Mistake regarding patient identity—even if made in good faith or induced by hospital staff—does not negate the intent to make physical surgical contact, and the patient's lack of consent makes the contact an actionable battery (Option A). Option B is incorrect because surgical operations on the wrong patient constitute direct intentional contact (battery) rather than mere negligence. Option C is incorrect because battery does not require proof of negligence. Option D is incorrect because hospital error does not shield a physician from liability for direct, unauthorized physical intrusions."
+        exp: "Rule: At common law, when a bailee fails to redeliver the bailed property upon the bailor's demand, a presumption of conversion arises. Under the traditional common law rule reflected in the official Bar key, the absolute refusal or total failure of a commercial bailee to deliver bailed property to the owner upon demand sustains a prima facie action for conversion (Option A). Option B is incorrect because recovery of the vehicle would only mitigate damages, not eliminate an established conversion claim. Option C reflects modern minority trends requiring an intentional wrongful delivery, but does not override the common law rule on non-delivery upon demand. Option D concerns ordinary negligence in bailment rather than the strict property remedy of conversion."
     },
     {
         id: 17,
         topic: "Mixed",
-        fp: "Alma and Betty were patients in Hospital. Dr. Andrews was to operate on Alma for a back problem. Dr. Brown was to perform an appendectomy on Betty. Each doctor was performing her first operation in Hospital. Neither was familiar with the location of the operating rooms. Through some unexplained mistake, employees of Hospital took Dr. Andrews to the operating room where Betty was awaiting her operation and took Dr. Brown to the operating room where Alma was awaiting her operation. Each doctor commenced operating before the mistakes were discovered.",
-        q: "If Betty asserts a claim against Hospital will Betty prevail?",
+        fp: "Deft, while walking down a city street, found a wallet. Deft picked up the wallet and examined it. He found a driver's license giving the owner's name and address. However, Deft believed that the law was 'finders keepers' and he took out the cash in the wallet, put it in his pocket and tossed the wallet into the trash can.",
+        q: "Did Deft commit a theft crime?",
         opts: [
-            "Yes, for battery.",
-            "Yes, for negligence relying on the doctrine of res ipsa loquitur.",
-            "No, unless Dr. Andrews was an employee of Hospital.",
-            "No, because Hospital is not strictly liable for harm to patients."
+            "Yes, larceny, because Deft kept the money knowing the owner's identity.",
+            "Yes, embezzlement, because Deft had rightful possession when he formed the intent to keep the money.",
+            "No, because Deft did not commit a trespassory taking.",
+            "No, because, as a finder, he was entitled to keep the money."
         ],
-        ans: 1,
-        exp: "Rule: Under the doctrine of res ipsa loquitur, negligence may be inferred where (1) the accident is of a kind that ordinarily does not occur in the absence of negligence, (2) the instrumentality causing the injury was under the defendant's exclusive control, and (3) the injury was not due to any voluntary action or contribution on the plaintiff's part. Delivering a surgeon to the wrong operating room and wrong patient is an event that does not occur in the absence of institutional administrative negligence, creating a prima facie inference of negligence against the hospital under res ipsa loquitur (Option B). Option A is incorrect because the hospital itself did not commit an intentional offensive touching; its liability sounds in administrative/institutional negligence. Option C is incorrect because the negligence was that of the hospital's direct employees who misdirected the physicians, not solely the doctors' employment status. Option D is incorrect because liability is based on actionable negligence, not strict liability."
+        ans: 0,
+        exp: "Rule: Larceny of lost property occurs when a finder (1) takes possession of lost or mislaid property, (2) at the time of taking has a clue or immediate knowledge as to the true owner's identity, and (3) forms the concurrent intent to permanently deprive the owner of the property. Because Deft found a driver's license containing the owner's identity and immediately decided to keep the cash and discard the wallet, Deft committed larceny (Option A). (Note: A good-faith mistake of property law can negate felonious intent, but 'finders keepers' is an unreasonable layman's myth that does not constitute a recognized bona fide claim of right where the owner's identity is known). Option B is incorrect because a finder does not obtain lawful bailee possession when they immediately intend to steal. Option C is incorrect because appropriating lost property with known clues to ownership is treated as a trespassory taking. Option D is incorrect because a finder has no right to keep property when the true owner is identifiable."
     },
     {
         id: 18,
         topic: "Mixed",
-        fp: "Owner brought his television set to Repairer for repair. Repairer sold the set to Buyer. Buyer believed that Repairer owned the set.",
-        q: "If Owner asserts a claim based on conversion against Repairer and Buyer, Owner will prevail against",
+        fp: "Child, a four year old boy, accompanied Mother to Store. While Mother was shopping in Store, Child wandered away. Child's hand was caught in an opening between the floor and an escalator in Store. The escalator had been installed and designed and was maintained by Esco. When Child's hand was caught, he cried out and Walker, an employee of Store, attempted to stop the escalator before Child was injured. Walker was unable to do so and, as a result, Child's hand was severely injured.\n\nChild, by an appropriate legal representative, has asserted claims against Store and Esco.\n\nIf the escalator was properly installed, designed and maintained by Esco, will Child prevail against Store?",
+        q: "Will Child prevail against Store?",
         opts: [
-            "Repairer but not Buyer, because Buyer was a good faith purchaser.",
-            "Both Repairer and Buyer because each exercised dominion over the television set.",
-            "Buyer but not Repairer because Repairer no longer has possession of the television set.",
-            "Buyer but not Repairer because Repairer had lawful possession of the television set."
+            "Yes, because Store had a non-delegable duty to make the escalator safe.",
+            "Yes, if Child was a business invitee when he accompanied Mother in Store.",
+            "No, unless Walker failed to exercise reasonable care in rescuing Child.",
+            "No, because Mother had the primary duty to supervise Child."
         ],
-        ans: 1,
-        exp: "Rule: Conversion is an intentional exercise of dominion or control over personal property that seriously interferes with the owner's right to control it. A bailee who wrongfully sells bailed property converts it. Furthermore, a purchaser of converted goods from someone with mere possession acquires no title and is likewise liable in tort for conversion upon asserting dominion, even if the purchaser acted in good faith (bona fide purchaser). Owner can prevail against both Repairer and Buyer in tort (Option B). (Note: While UCC § 2-403(2) provides that entrustment to a merchant dealing in goods of that kind can pass title to a buyer in ordinary course, in tort law, a conversion action lies against both the converter and the buyer who receives and exercises unauthorized dominion over the owner's chattel). Options A, C, and D are incorrect because neither lack of possession at the time of suit nor good faith prevents tortious dominion from constituting conversion."
+        ans: 2,
+        exp: "Rule: A business proprietor owes invitees a duty of reasonable care to keep the premises reasonably safe. If the escalator was properly designed, installed, and maintained, there was no dangerous defect or condition of the property for which Store was at fault. Once an accident occurs without prior business fault, a business owner has a duty to provide reasonable aid to injured invitees on its premises; therefore, Store can be held liable only if its employee (Walker) acted negligently during the rescue attempt (Option C). Option A is incorrect because a non-delegable duty to maintain safe premises is fully satisfied where the escalator was conceded to be properly installed, designed, and maintained. Option B is incorrect because invitee status establishes a duty of reasonable care, not strict liability. Option D is incorrect because parental negligence is not imputed to a minor child to bar the child's own tort claim."
     },
     {
         id: 19,
         topic: "Mixed",
-        fp: "Boater owned a power boat which he was operating on Lake, a large body of water, on a clear calm day. He approached Sailer whose sailboat was disabled by a broken rudder. Sailer asked Boater to tow his sailboat to shore but Boater refused because he feared the tow might damage the paint on his power boat.\n\nIf Sailer was unable to bring his sailboat in and became severely ill as a result of exposure before he was rescued, and Sailer asserts a claim against Boater for damages based on Boater's refusal to provide assistance, will Sailer prevail?",
-        q: "Will Sailer prevail?",
+        fp: "Child, a four year old boy, accompanied Mother to Store. While Mother was shopping in Store, Child wandered away. Child's hand was caught in an opening between the floor and an escalator in Store. The escalator had been installed and designed and was maintained by Esco. When Child's hand was caught, he cried out and Walker, an employee of Store, attempted to stop the escalator before Child was injured. Walker was unable to do so and, as a result, Child's hand was severely injured.\n\nChild, by an appropriate legal representative, has asserted claims against Store and Esco.",
+        q: "If Walker was unable to stop the escalator because the stop button was improperly designed, will Child prevail against Esco on a claim based on\nI. Negligence\nII. Strict liability for defective product\nIII. Strict liability for abnormally dangerous activity",
         opts: [
-            "Yes, if Boater's failure to rescue made a bad situation worse.",
-            "Yes, if the probability of harm to Sailer outweighed the probability of damage to Boater's property.",
-            "No, unless there was some special relationship between Sailer and Boater.",
-            "No, if Boater reasonably believed that towing Sailer's sailboat might damage the paint on Boater's power boat."
+            "I only.",
+            "I and II, but not III.",
+            "II only.",
+            "II and III, but not I."
         ],
-        ans: 2,
-        exp: "Rule: Under common law tort principles, an individual owes no affirmative duty to rescue or assist a stranger in peril, absent a recognized special relationship (e.g., common carrier-passenger, innkeeper-guest, employer-employee), a statute imposing a duty, or conduct by the defendant that caused the peril. Because Boater did not create the disabled condition and shared no special relationship with Sailer, Boater had no legal duty to rescue (Option C). Option A is incorrect because mere failure to intervene is not an affirmative act that worsens peril. Option B is incorrect because cost-benefit balancing determines breach of duty only after an underlying affirmative legal duty is established. Option D is incorrect because Boater's refusal is privileged by the absence of a legal duty, regardless of whether his specific property concern was reasonable."
+        ans: 1,
+        exp: "Rule: A commercial manufacturer/designer of machinery is liable under Negligence (I) for failing to exercise reasonable care in designing safety mechanisms, and under Strict Products Liability (II) for placing a defectively designed, unreasonably dangerous product into the stream of commerce. However, operating an escalator is a routine public convenience, not an Abnormally Dangerous Activity (III) that justifies strict liability under Rylands v. Fletcher. Therefore, Child can prevail under theories I and II, but not III (Option B). Options A, C, and D are incorrect because they fail to correctly pair negligence and strict products liability while excluding abnormally dangerous activity."
     },
     {
         id: 20,
         topic: "Mixed",
-        fp: "Deft is being tried on an indictment charging him with burglary. Deft has introduced evidence, that, at the time he broke and entered, he was so intoxicated that he could not have formed an intent to commit a felony.",
-        q: "On the issue of whether Deft was so intoxicated that his capacity to form the necessary intent was diminished, the jury should be instructed that the burden of proof is on the",
+        fp: "Child, a four year old boy, accompanied Mother to Store. While Mother was shopping in Store, Child wandered away. Child's hand was caught in an opening between the floor and an escalator in Store. The escalator had been installed and designed and was maintained by Esco. When Child's hand was caught, he cried out and Walker, an employee of Store, attempted to stop the escalator before Child was injured. Walker was unable to do so and, as a result, Child's hand was severely injured.\n\nChild, by an appropriate legal representative, has asserted claims against Store and Esco.",
+        q: "If Child was a hemophiliac and either Store or Esco is found liable, will Child recover for additional expenses incurred in the treatment of his injuries because of this condition?",
         opts: [
-            "defendant to establish by a preponderance of the evidence that his capacity to form the necessary intent was diminished.",
-            "defendant to establish by clear and convincing evidence that his capacity to form the necessary intent was diminished.",
-            "prosecution to establish by clear and convincing evidence that Deft had the capacity to form the necessary intent.",
-            "prosecution to establish beyond a reasonable doubt that Deft had the capacity to form the necessary intent."
+            "Yes, if the additional expenses were reasonable in amount.",
+            "Yes, unless the additional expenses were covered by a collateral source.",
+            "No, because the hemophilia was a pre-existing condition.",
+            "No, if the liability of the defendants was based on strict liability in tort."
         ],
-        ans: 3,
-        exp: "Rule: Under the Due Process Clause (In re Winship), the prosecution bears the constitutional burden of proving every essential element of the charged offense beyond a reasonable doubt. Burglary is a specific intent crime requiring proof of intent to commit a felony upon entry. Because voluntary intoxication can negate the specific intent element, the prosecution bears the ultimate burden of proving beyond a reasonable doubt that the defendant possessed the requisite intent and capacity despite evidence of intoxication (Option D). Options A and B are incorrect because affirmative defenses that directly negate an essential element of the crime cannot constitutionally have their burden shifted to the defendant. Option C is incorrect because the constitutional standard of proof for criminal elements is beyond a reasonable doubt, not clear and convincing evidence."
+        ans: 0,
+        exp: "Rule: Under the 'eggshell skull' (thin skull) plaintiff rule, a tortfeasor takes the victim as they find them. If the defendant's tortious conduct inflicts bodily injury, the defendant is legally liable for all resulting medical consequences and damages, even if an unforeseen pre-existing physical condition or illness (such as hemophilia) causes the harm to be far more extensive than could have been anticipated, provided the medical expenses are reasonable in amount (Option A). Option B is incorrect because under the collateral source rule, payments received from health insurance or third parties do not reduce the tortfeasor's liability. Option C is incorrect because a pre-existing medical condition never bars recovery for aggravated physical damages. Option D is incorrect because the eggshell plaintiff doctrine applies equally to strict products liability and negligence."
     },
     {
         id: 21,
         topic: "Mixed",
-        fp: "On March 1, Seller and Buyer entered into a written contract under which Seller agreed to sell his home to Buyer, and Buyer agreed to purchase the home for the sum of $60,000. The contract specified July 1 as the closing day on which Seller was to deliver the deed and Buyer was to pay the price.\n\nAssume that on April 1, Seller conveyed his home to a third party. Buyer learned of the sale the following day and wants to cancel his contract with Seller and buy another home.",
-        q: "May he do so without any risk that he will be obliged to perform his contract obligation to Seller?",
+        fp: "Child, a four year old boy, accompanied Mother to Store. While Mother was shopping in Store, Child wandered away. Child's hand was caught in an opening between the floor and an escalator in Store. The escalator had been installed and designed and was maintained by Esco. When Child's hand was caught, he cried out and Walker, an employee of Store, attempted to stop the escalator before Child was injured. Walker was unable to do so and, as a result, Child's hand was severely injured.\n\nChild, by an appropriate legal representative, has asserted claims against Store and Esco.",
+        q: "If Child obtains a judgment against both Store and Esco, and Store pays the judgment, may Store compel Esco to reimburse it for any part of the amount paid Child?",
         opts: [
-            "Yes, but only if he first demands assurance from Seller that Seller will perform on July 1, and Seller is unable to provide such assurance.",
-            "Yes, if Seller, in connection with the sale to the third party, did nothing to preserve Buyer's rights to acquire the property.",
-            "No, because Seller's performance is not due until July 1 and Buyer must remain in a position to perform his contract obligation up to that time.",
-            "No, because there is a possibility that Seller could buy back the property and tender a deed to Buyer on July 1."
+            "Yes, because the manufacturer must bear the entire loss caused by its defective product.",
+            "Yes, unless Store was actively negligent.",
+            "No, unless the jurisdiction permits contribution among tort-feasors.",
+            "No, because the plaintiff is entitled to recover against either party."
         ],
         ans: 1,
-        exp: "Rule: When a seller of specific real property conveys that property to a third party without reserving or preserving the buyer's rights, the conveyance constitutes an anticipatory repudiation by conduct because the seller has voluntarily rendered their own performance impossible. Upon anticipatory repudiation, the aggrieved buyer is discharged from their duties, is free to treat the contract as broken, and may immediately seek cover or terminate the contract (Option B). Option A is incorrect because a definitive, disabling act is an outright repudiation, obviating the need to demand adequate assurances. Options C and D are incorrect because the speculative possibility that the seller might repurchase the land does not deprive the buyer of the immediate right to treat the conveyance as a repudiation."
+        exp: "Rule: Under principles of common law indemnity, a party who is held liable for a tort without personal fault (e.g., passive negligence, vicarious liability, or holding title as a retailer/premises owner) is entitled to complete 100% indemnification (reimbursement) from the active creator of the defect (the manufacturer/designer), unless the premises owner was independently and actively negligent (Option B). Option A is incorrect because a manufacturer does not bear 100% indemnity if the premises owner's active negligence contributed to the injury. Option C is incorrect because indemnity shifts the entire loss between active and passive parties regardless of statutes on contribution. Option D is incorrect because joint and several liability between the plaintiff and defendants does not resolve downstream indemnity rights between the co-defendants."
     },
     {
         id: 22,
         topic: "Mixed",
-        fp: "On March 1, Seller and Buyer entered into a written contract under which Seller agreed to sell his home to Buyer, and Buyer agreed to purchase the home for the sum of $60,000. The contract specified July 1 as the closing day on which Seller was to deliver the deed and Buyer was to pay the price.\n\nAssume that on April 1 Seller tells Buyer that he (Seller) has changed his mind and will not convey his home to Buyer.",
-        q: "May Buyer immediately maintain an action for damages for breach of contract?",
+        fp: "Mike, Leo, and Frank, planned to rob the owner of a local liquor store. The understanding was that Mike would supply the guns and ammunition and Leo and Frank would actually commit the robbery. Mike told Leo and Frank that all he wanted was to be paid for the guns and ammunition, that he would have nothing to do with the actual robbery, and would not be present at the time or share in the proceeds. Mike supplied Leo and Frank with guns and ammunition which they used to rob the owner of a liquor store.",
+        q: "Can Mike be held criminally liable for the robbery of the owner of the liquor store as\nI. a co-conspirator\nII. an accessory before the fact?",
         opts: [
-            "Yes, but only if Seller has sold or contracted to sell the home to another party.",
-            "Yes, because Seller's statement constituted a repudiation, giving rise to an immediate cause of action for breach of contract.",
-            "No, because Seller's performance is not due until July 1 and thus there can be no breach of contract until that date.",
-            "No, because Seller might retract his repudiation before July 1."
+            "No, neither I nor II.",
+            "Yes, I but not II.",
+            "Yes, II but not I.",
+            "Yes, both I and II."
         ],
-        ans: 1,
-        exp: "Rule: Under the doctrine of anticipatory repudiation (Hochster v. De La Tour), an unequivocal and absolute statement by a party declaring that they will not perform their contractual obligations constitutes an immediate total breach. The non-repudiating party is not required to wait until the scheduled date of performance, but may file an action for breach of contract immediately (Option B). Option A is incorrect because an unequivocal oral or written refusal to perform is an anticipatory repudiation; third-party transfer is not required. Option C is incorrect because anticipatory repudiation permits immediate suit prior to the performance date. Option D is incorrect because the power to retract a repudiation terminates once the aggrieved party accepts the repudiation, brings suit, or materially changes position."
+        ans: 3,
+        exp: "Rule: An individual who enters into an agreement with others to commit a crime is guilty of conspiracy; furthermore, under the Pinkerton doctrine, a co-conspirator is criminally liable for all substantive crimes committed by fellow conspirators in furtherance of the conspiracy (I). Additionally, an accessory before the fact is one who aids, counsels, or procures the commission of a felony and is not present when it is committed (II). By agreeing to the plan and supplying the deadly weapons for the robbery, Mike is criminally liable both as a co-conspirator (Pinkerton) and as an accessory before the fact (Option D). Options A, B, and C are incorrect because Mike satisfies the legal requirements for both modes of derivative liability."
     },
     {
         id: 23,
         topic: "Mixed",
-        fp: "On March 1, Seller and Buyer entered into a written contract under which Seller agreed to sell his home to Buyer, and Buyer agreed to purchase the home for the sum of $60,000. The contract specified July 1 as the closing day on which Seller was to deliver the deed and Buyer was to pay the price.\n\nAssume that on July 1 Seller fails to deliver or tender the deed.",
-        q: "May Buyer successfully maintain an immediate action against Seller for damages for breach of contract?",
+        fp: "In order to get Art in trouble, Bob and Sam threatened him at gunpoint and told him, 'If you do not immediately go into the bank and hold it up we will kill you.' Bob and Sam then positioned themselves so they could observe Art's conduct of the robbery. They gave Art a gun with one bullet. Art entered the bank and pointed the gun at a teller. Before Art received any money he saw that the bank guard was about to shoot him, and Art dropped his gun and held up his hands in surrender.",
+        q: "Did Art commit the crime of attempted robbery?",
         opts: [
-            "Yes, if Buyer tendered payment on July 1.",
-            "Yes, but only if Buyer actually made the payment on July 1.",
-            "Yes, whether or not Buyer tendered payment or actually paid on July 1.",
-            "Yes, because payment of the price by Buyer was a condition subsequent to Seller's duty to tender the deed."
+            "Yes, because Art threatened the use of deadly force.",
+            "Yes, because he took a substantial step towards the completion of the robbery.",
+            "No, because he surrendered before the robbery was completed.",
+            "No, because Art was threatened with the loss of his own life."
         ],
-        ans: 0,
-        exp: "Rule: In real estate transactions, delivery of the deed and payment of the purchase price are concurrent conditions. Neither party can put the other in actual breach of contract on the closing date without first tendering (or offering and being able to make) their own performance. Thus, Buyer must tender payment on July 1 to place Seller in default and maintain an action for damages (Option A). Option B is incorrect because actual delivery of funds into the hands of a breaching party who refuses to tender the deed is not required; tender (offering payment ready and willing) suffices. Option C is incorrect because without tender of payment, Seller's duty to convey does not become immediately enforceable. Option D is incorrect because payment is a concurrent condition, not a condition subsequent."
+        ans: 3,
+        exp: "Rule: Duress is an affirmative defense to all non-homicide crimes where the defendant engaged in the criminal conduct because they were coerced to do so by the threat of imminent death or serious bodily injury, and a person of reasonable firmness would have been unable to resist. Because Bob and Sam coerced Art at gunpoint with immediate loss of life and maintained continuous observation over him, Art acted under duress, which completely excuses attempted robbery (Option D). Options A and B are incorrect because, although pointing a gun is an actus reus, duress provides a complete defense. Option C is incorrect because common law attempt does not recognize abandonment or surrender as a defense once a substantial step/overt act has been committed."
     },
     {
         id: 24,
         topic: "Mixed",
-        fp: "Deft intended to kill Vic. With that in mind, Deft shot at Vic but missed Vic and hit Cal. Cal was wounded only slightly. Cal turned, saw Vic empty-handed standing nearby, but thought that Vic had shot him. Cal picked up an iron bar and beat Vic repeatedly over the head.",
-        q: "Did Deft commit the attempted murder of Cal?",
+        fp: "Lou went to the bank to close his account. The balance in the account was $50. Lou handed his passbook to the teller. The teller, misreading the figure in the passbook and in a computer printout purporting to show the balance in Lou's account, said 'Your balance is $500.00; here is the $500.00.' The teller gave Lou five $100.00 bills. Lou was aware of the mistake but said nothing and left the bank with the $500.00.",
+        q: "Did Lou commit the crime of obtaining property by false pretenses?",
         opts: [
-            "Yes, because Deft attempted to kill Vic.",
-            "Yes, because Deft acted with premeditation and malice towards Vic.",
-            "No, because Cal was wounded only slightly.",
-            "No, because Vic did not intend to kill Cal."
+            "Yes, because he had a duty to notify the teller of the mistake.",
+            "Yes, because his failure to notify the teller of the mistake amounted to a false misrepresentation of an existing fact.",
+            "No, because he made no misrepresentation.",
+            "No, because he did not get title to the money."
         ],
-        ans: 3,
-        exp: "Rule: Attempt requires the specific intent to commit the target crime (specific intent to kill). The doctrine of transferred intent applies to completed crimes (e.g., where an intended shot misses the intended victim and kills a bystander, making it murder), but transferred intent does not apply to inchoate attempts. Attempted murder requires a specific intent to kill the specific person actually harmed or attempted. Because Deft did not possess the specific intent to kill Cal, Deft cannot be convicted of attempted murder of Cal (Option D—which corresponds to Option D in the test key). Options A and B are incorrect because transferred intent cannot satisfy the specific intent requirement in attempted murder. Option C is incorrect because the severity of the wound does not determine whether an attempted murder occurred."
+        ans: 2,
+        exp: "Rule: The crime of obtaining property by false pretenses requires (1) obtaining title to the property of another, (2) by an intentional or knowing false representation of a past or existing fact, (3) with the intent to defraud. Mere passive nondisclosure or silence does not constitute a false representation unless there is an affirmative fiduciary duty or active fraudulent inducement. Because Lou made no statement, representation, or misstatement of fact, he did not commit false pretenses (Option C). (Note: Taking money with knowledge of a unilateral counting/calculation mistake constitutes common law larceny, but the specific question asks only about false pretenses). Options A and B are incorrect because common law false pretenses requires an affirmative misrepresentation, not mere silence during an autonomous teller error. Option D is incorrect because the bank teller intended to pass title to the cash, which is why larceny vs. false pretenses turns on the lack of affirmative misrepresentation."
     },
     {
         id: 25,
         topic: "Mixed",
-        fp: "Deft intended to kill Vic. With that in mind, Deft shot at Vic but missed Vic and hit Cal. Cal was wounded only slightly. Cal turned, saw Vic empty-handed standing nearby, but thought that Vic had shot him. Cal picked up an iron bar and beat Vic repeatedly over the head.",
-        q: "Did Cal commit battery?",
+        fp: "In 1979, County enacted a valid ordinance requiring that within one year from the date of enactment, all billboards had to be removed from property not zoned for commercial use. The ordinance provided for compensation to owners of billboards that were removed. Adco maintained billboards on property in a rural area zoned exclusively for home use. Paul purchased a lot in the area. One of Adco's billboards blocked the view of a nearby lake from Paul's lot. Paul anticipated that the billboard would soon be removed and made plans to erect a modern ranch house on his lot. At the expiration of the one-year period Adco had not removed the billboard.",
+        q: "If Paul asserts a claim against Adco, based on nuisance, will Paul prevail?",
         opts: [
-            "Yes, because Cal intentionally beat Vic.",
-            "Yes, because Vic had not committed an unlawful act.",
-            "No, if Cal acted in the heat of passion.",
-            "No, if Cal reasonably believed Vic had shot at him."
+            "No, because Paul knew the billboard existed when he purchased his lot.",
+            "No, because only the public authorities can assert a claim based on violation of the ordinance.",
+            "Yes, because the continued maintenance of the billboard violates the ordinance.",
+            "Yes, because Paul will suffer special harm from the continued maintenance of the billboard."
+        ],
+        ans: 3,
+        exp: "Rule: A public nuisance is an unreasonable interference with a right common to the general public (such as violating a public zoning billboard ordinance). A private citizen has standing to maintain a private action for public nuisance only if they suffer 'special injury'—harm of a different kind, not merely degree, from that suffered by the general public. Blocking the specific view and enjoyment of a lake from Paul's unique parcel constitutes particularized special harm sufficient to confer standing to abate the nuisance (Option D). Option A is incorrect because 'coming to the nuisance' is not an absolute defense. Option B is incorrect because a private plaintiff suffering special harm may maintain an action. Option C is incorrect because a statutory/ordinance violation creates a public nuisance, but a private individual must still plead special harm."
+    },
+    {
+        id: 26,
+        topic: "Mixed",
+        fp: "When Dave saw his girlfriend Sally walking down the street holding hands with Abel, he was infuriated. Dave drove to Sally's house, hid in the bushes and waited. A short time later, Dave saw Abel and Sally sitting at the kitchen table drinking coffee. Still angry, Dave went to his car and got a pistol. When he returned, Abel and Sally were still seated at the kitchen table. Intending to scare Abel by shooting in his direction, Dave fired through the window.",
+        q: "If the bullet from Dave's pistol missed Abel but struck the coffee cup Abel was holding, which of the following crimes did Dave commit?\nI. Battery.\nII. Assault with a deadly weapon.\nIII. Attempted murder.",
+        opts: [
+            "I only.",
+            "I and II but not III.",
+            "II and III but not I.",
+            "I, II and III."
+        ],
+        ans: 1,
+        exp: "Rule: Criminal battery is an unlawful application of force to the person of another, which extends to an object intimately connected to the victim's person (such as clothing or a cup held in hand). Dave committed Battery (I) when the bullet struck the cup held by Abel. Furthermore, Dave committed Assault with a deadly weapon (II) because common law assault includes intentionally placing another in reasonable apprehension of immediate bodily harm (or an attempted battery) through the use of a deadly weapon. However, Dave did not commit Attempted murder (III) because criminal attempt requires a specific intent to kill; Dave acted only with the intent to scare Abel, negating the specific intent to kill required for attempted murder. Therefore, Dave committed I and II, but not III (Option B). Options A, C, and D are incorrect because they fail to correctly pair Battery and Assault while excluding Attempted Murder."
+    },
+    {
+        id: 27,
+        topic: "Mixed",
+        fp: "When Dave saw his girlfriend Sally walking down the street holding hands with Abel, he was infuriated. Dave drove to Sally's house, hid in the bushes and waited. A short time later, Dave saw Abel and Sally sitting at the kitchen table drinking coffee. Still angry, Dave went to his car and got a pistol. When he returned, Abel and Sally were still seated at the kitchen table. Intending to scare Abel by shooting in his direction, Dave fired through the window.",
+        q: "If the bullet from Dave's pistol struck and killed Abel, the most serious crime Dave committed is:",
+        opts: [
+            "murder, first degree.",
+            "murder, second degree.",
+            "voluntary manslaughter.",
+            "involuntary manslaughter."
+        ],
+        ans: 1,
+        exp: "Rule: Murder is the unlawful killing of a human being with malice aforethought. Malice is established by (1) intent to kill, (2) intent to inflict grievous bodily harm, (3) depraved-heart murder (reckless indifference to an unjustifiably high risk to human life), or (4) felony murder. Firing a loaded firearm into an occupied room directly toward a person constitutes extreme recklessness manifesting a depraved heart. Under common law and statutory divisions, depraved-heart murder constitutes second-degree murder (Option B). Option A is incorrect because first-degree murder requires specific premeditated and deliberate intent to kill (or an enumerated felony), whereas Dave intended only to frighten Abel. Option C is incorrect because seeing a girlfriend hold hands does not constitute legally adequate provocation to reduce murder to voluntary manslaughter, and Dave had ample cooling-off time while driving, waiting in the bushes, and walking to his car. Option D is incorrect because discharging a firearm directly at an occupied room is far beyond criminal negligence, elevating malice to second-degree depraved-heart murder."
+    },
+    {
+        id: 28,
+        topic: "Mixed",
+        fp: "Youth is a 17-year-old boy who has been buying and selling bicycles since he was eleven. Teller is a 25 year old bank teller who has never bought a bicycle before. Teller asked Youth if he had a bicycle to sell. Youth showed Teller a bicycle with a crack in the frame. Teller asked if the crack would impair the bicycle's utility, and Youth said, 'Not a bit.' In fact, the crack would probably cause the frame to collapse under very little strain. Youth knew this, but Teller did not. Teller said, 'Very well, I'll pay you $100 for the bicycle and pick it up tomorrow.' They signed a writing, prepared by Youth, that purported to memorialize the terms of their agreement. Later that day Teller learned that the crack would probably cause the frame to collapse under very little strain.",
+        q: "If Teller told Youth he would not accept the bicycle and Youth asserted a claim against Teller for damages for breach of contract, who will prevail?",
+        opts: [
+            "Teller, because Youth is a minor and lacks capacity to contract.",
+            "Teller, because he relied on a material misrepresentation.",
+            "Youth, because the contract is voidable only at Youth's election.",
+            "Youth, because Teller's reliance on Youth's statement was not reasonable."
+        ],
+        ans: 1,
+        exp: "Rule: A contract is voidable by an adult buyer if the buyer's assent was induced by a fraudulent or material misrepresentation of fact upon which the buyer reasonably relied (Restatement (Second) of Contracts § 164). Youth falsely stated that the crack would not impair the bicycle's utility despite knowing it was on the verge of collapse. Because Teller relied on this material, fraudulent misrepresentation, Teller can avoid the contract and prevail against Youth's breach claim (Option B). Option A is incorrect because infancy is a defense personal to the minor; the adult party cannot avoid a contract solely on the grounds of the other party's minority. Option C is incorrect because, while infancy is the minor's defense, the minor's fraud provides the adult with an independent ground of avoidance. Option D is incorrect because reliance on an express factual assurance by an experienced seller is reasonable."
+    },
+    {
+        id: 29,
+        topic: "Mixed",
+        fp: "Youth is a 17-year-old boy who has been buying and selling bicycles since he was eleven. Teller is a 25 year old bank teller who has never bought a bicycle before. Teller asked Youth if he had a bicycle to sell. Youth showed Teller a bicycle with a crack in the frame. Teller asked if the crack would impair the bicycle's utility, and Youth said, 'Not a bit.' In fact, the crack would probably cause the frame to collapse under very little strain. Youth knew this, but Teller did not. Teller said, 'Very well, I'll pay you $100 for the bicycle and pick it up tomorrow.' They signed a writing, prepared by Youth, that purported to memorialize the terms of their agreement. Later that day Teller learned that the crack would probably cause the frame to collapse under very little strain.\n\nAssume that Teller had said to Youth, 'I know the crack can cause a problem, but that's all right. I can have it welded and it will work well enough.' If Teller then demands the bicycle, but Youth refuses, saying he has changed his mind about selling, and Teller asserts a claim against Youth for damages for refusing to deliver the bicycle, who will prevail?",
+        q: "Who will prevail?",
+        opts: [
+            "Teller, because he has waived his right to avoid the agreement.",
+            "Teller, because even a minor is responsible for his misrepresentations.",
+            "Youth, because as a minor he can avoid liability on an executory contract.",
+            "Youth, because Teller could not waive his right to avoid the agreement."
+        ],
+        ans: 2,
+        exp: "Rule: Contracts entered into by minors (infants) are voidable at the option of the minor before reaching the age of majority or within a reasonable time thereafter. In an executory contract for non-necessaries, a minor has an absolute right to disaffirm the agreement and avoid liability for non-performance (Option C). Option A is incorrect because Teller's waiver of misrepresentation does not extinguish Youth's independent infancy defense. Option B is incorrect because tort liability for minor deceit does not compel specific performance or contract-expectation damages on an executory sales contract. Option D is incorrect because an adult can waive an avoidance defense, but that waiver cannot bind the minor."
+    },
+    {
+        id: 30,
+        topic: "Mixed",
+        fp: "Youth is a 17-year-old boy who has been buying and selling bicycles since he was eleven. Teller is a 25 year old bank teller who has never bought a bicycle before. Teller asked Youth if he had a bicycle to sell. Youth showed Teller a bicycle with a crack in the frame. Teller asked if the crack would impair the bicycle's utility, and Youth said, 'Not a bit.' In fact, the crack would probably cause the frame to collapse under very little strain. Youth knew this, but Teller did not. Teller said, 'Very well, I'll pay you $100 for the bicycle and pick it up tomorrow.' They signed a writing, prepared by Youth, that purported to memorialize the terms of their agreement. Later that day Teller learned that the crack would probably cause the frame to collapse under very little strain.\n\nAssume the writing purported to describe the bicycle by serial number, but Youth mistakenly inserted serial number 100B, the number of another bicycle in his possession, instead of number 100A, the number of the bicycle being sold. No one noticed the error until the time of delivery. The bicycle designated by serial number 100B is the same model as the one Teller agreed to buy, but does not have a cracked frame. Youth delivered the bicycle with the cracked frame, serial number 100A, but Teller refused to accept it. Thereupon Youth tendered the sound bicycle, serial number 100B, which Teller also refused to accept.\n\nIf Youth asserts a claim against Teller for damages for breach of contract to accept the bicycle with serial number 100B, who will prevail?",
+        q: "Who will prevail?",
+        opts: [
+            "Youth, because the parol evidence rule bars evidence that the bicycle identified in the writing is not the one Teller agreed to accept.",
+            "Youth, because the bicycle identified in the writing is a fair exchange for $100, while the bicycle with the cracked frame was not.",
+            "Teller, because parol evidence is admissible to show that he never agreed to accept the bicycle identified as 100B.",
+            "Teller, because the writing was not a sufficient memorandum to satisfy the statute of frauds."
+        ],
+        ans: 2,
+        exp: "Rule: The parol evidence rule does not exclude extrinsic evidence offered to show mutual mistake, scriveners' errors, or that no contract was ever formed regarding a particular subject matter. Where the writing mistakenly describes chattel 100B due to a clerical drafting error, parol evidence is fully admissible to demonstrate that the parties bargained solely for 100A and never assented to purchase 100B (Option C). Option A is incorrect because parol evidence is universally admissible to show mutual mistake and defeat integration on an erroneously drafted subject matter. Option B is incorrect because objective fairness does not force a contract on parties who never agreed to that specific subject matter. Option D is incorrect because a writing identifying goods and signed by the parties satisfies the formal Statute of Frauds threshold, even though the contract fails on mutual assent."
+    },
+    {
+        id: 31,
+        topic: "Mixed",
+        fp: "Youth is a 17-year-old boy who has been buying and selling bicycles since he was eleven. Teller is a 25 year old bank teller who has never bought a bicycle before. Teller asked Youth if he had a bicycle to sell. Youth showed Teller a bicycle with a crack in the frame. Teller asked if the crack would impair the bicycle's utility, and Youth said, 'Not a bit.' In fact, the crack would probably cause the frame to collapse under very little strain. Youth knew this, but Teller did not. Teller said, 'Very well, I'll pay you $100 for the bicycle and pick it up tomorrow.' They signed a writing, prepared by Youth, that purported to memorialize the terms of their agreement. Later that day Teller learned that the crack would probably cause the frame to collapse under very little strain.\n\nAssume the same facts as in the preceding item, except that at the time the writing was signed, Teller knew that the wrong serial number had been inserted in the writing. Teller demanded the bicycle identified in the writing as 100B, but Youth refused to deliver it.\n\nIf Teller asserts a claim against Youth for damages for breach of contract for refusing to deliver the bicycle with serial number 100B, who will prevail?",
+        q: "Who will prevail?",
+        opts: [
+            "Youth, because there was a mutual mistake.",
+            "Youth, because there was no agreement to sell the bicycle identified in the writing as serial number 100B.",
+            "Teller, because the mistake was unilateral on Youth's part.",
+            "Teller, because the parol evidence rule bars evidence that the bicycle identified in the writing as number 100B is not the one Youth agreed to sell."
+        ],
+        ans: 1,
+        exp: "Rule: A meeting of the minds (mutual assent) on the essential terms—including the specific subject matter—is fundamental to contract formation. Where one party makes a clerical error in writing and the other party knows of the error and seeks to exploit it ('snapping up' an unagreed term), there is no true mutual agreement. Because the parties agreed only upon the cracked bicycle (100A) and never agreed to sell 100B, no contract exists for 100B (Option B). Option A is incorrect because the mistake was unilateral on Youth's part and known to Teller, rather than mutual. Option C is incorrect because unilateral mistake known to the other party permits avoidance or reformation in favor of the mistaken party, preventing the knowing party from enforcing the error. Option D is incorrect because parol evidence is admissible to show fraud or known unilateral mistake in transcription."
+    },
+    {
+        id: 32,
+        topic: "Mixed",
+        fp: "Purchaser paid Vendor $50,000 for a deed to a parcel of land in reliance on Vendor's statement that the land was free from encumbrances. Vendor knew that the land was subject to a recorded and unsatisfied mortgage of $15,000. The land, subject to the encumbrance, was worth $55,000 and, if unencumbered, would have been worth $70,000.",
+        q: "If Purchaser asserts a claim for damages against Vendor, will Purchaser prevail?",
+        opts: [
+            "Yes, because the land would have been worth $70,000 if unencumbered.",
+            "Yes, unless a reasonable person in Purchaser's position could have discovered the mortgage before purchase.",
+            "No, because the land, subject to the mortgage, was worth more than purchaser paid for it.",
+            "No, if Vendor is willing to return Purchaser's money and cancel the transaction."
         ],
         ans: 0,
-        exp: "Rule: Battery is the intentional, unlawful infliction of harmful or offensive bodily contact. While self-defense permits the use of reasonable force against an apparent assailant based on a reasonable mistake of fact, deadly or aggravated force (such as repeatedly beating an empty-handed person over the head with an iron bar) is excessive and disproportionate as a matter of law. Because Cal used excessive, deadly force against an unarmed victim, the defense of self-defense fails, rendering the intentional beating a battery (Option A). Option B is incorrect because self-defense can be valid even if the victim did not commit an unlawful act, provided the defendant's mistake of fact was reasonable and the force used was not excessive. Option C is incorrect because heat of passion can mitigate murder to manslaughter, but does not justify or excuse battery. Option D is incorrect because beating an unarmed person repeatedly over the head with an iron bar constitutes excessive force, precluding self-defense."
+        exp: "Rule: In the tort of deceit (fraudulent misrepresentation), the majority measure of damages is the 'benefit-of-the-bargain' rule—the difference between the represented value of the property and its actual value at the time of transfer ($70,000 - $55,000 = $15,000). Because Purchaser did not receive what Vendor fraudulently represented the land to be, Purchaser prevails under the benefit-of-the-bargain rule (Option A). Option B is incorrect because contributory negligence or public recording records do not bar recovery for intentional fraudulent misrepresentation. Option C reflects the 'out-of-pocket' loss rule, but under the prevailing rule, Purchaser is entitled to the benefit of the bargain regardless of whether actual value exceeded the price paid. Option D is incorrect because an offer to rescind does not extinguish a tort claim for damages for fraud."
+    },
+    {
+        id: 33,
+        topic: "Mixed",
+        fp: "Driver was operating his auto at a negligently excessive speed. As a result, he lost control and hit Walker, a pedestrian on the sidewalk along the road. Pat, age 13, arrived at the scene several minutes later. Pat saw that Walker was in obvious need of medical attention, so she ran into the ground floor lobby of Highrise, a nearby apartment building owned by Realty, to telephone for help. There was no telephone in the lobby, so Pat dashed through a door marked 'Stairs' and up a concrete stairway leading to the second floor. She did not see a skateboard lying on the second-floor landing. She tripped over the skateboard, fell and fractured an ankle. Prior to the accident, neither Realty's resident manager nor the maintenance staff employed by Realty at Highrise had known that the skateboard was on the landing.\n\nAssume Pat asserts a claim against Driver based on negligence and Driver does not raise the issue of contributory negligence.",
+        q: "Will Pat prevail?",
+        opts: [
+            "Yes, because Pat's attempt to telephone for help was foreseeable.",
+            "Yes, because the skateboard was a 'set stage.'",
+            "No, because Pat was not in the zone of impact danger.",
+            "No, because the presence of the skateboard on the landing was a superseding cause."
+        ],
+        ans: 0,
+        exp: "Rule: Under the rescue doctrine ('danger invites rescue'), a tortfeasor who negligently creates a peril is legally liable for injuries sustained by a rescuer while attempting to render aid, provided the rescue effort is not wanton or reckless. Rescuers are foreseeable plaintiffs as a matter of law. Because Pat's attempt to obtain medical aid for the injured pedestrian was a foreseeable rescue response to Driver's negligence, Driver's original negligence is the proximate cause of Pat's fall (Option A). Option B is incorrect because 'set stage' is an inapplicable and imprecise legal catchphrase. Option C is incorrect because the zone of danger applies to emotional distress, whereas Pat suffered physical injury during a rescue. Option D is incorrect because normal hazards encountered during a rescue effort do not constitute superseding intervening causes unless extraordinary and unforeseeable."
+    },
+    {
+        id: 34,
+        topic: "Mixed",
+        fp: "Driver was operating his auto at a negligently excessive speed. As a result, he lost control and hit Walker, a pedestrian on the sidewalk along the road. Pat, age 13, arrived at the scene several minutes later. Pat saw that Walker was in obvious need of medical attention, so she ran into the ground floor lobby of Highrise, a nearby apartment building owned by Realty, to telephone for help. There was no telephone in the lobby, so Pat dashed through a door marked 'Stairs' and up a concrete stairway leading to the second floor. She did not see a skateboard lying on the second-floor landing. She tripped over the skateboard, fell and fractured an ankle. Prior to the accident, neither Realty's resident manager nor the maintenance staff employed by Realty at Highrise had known that the skateboard was on the landing.",
+        q: "If Pat asserts a claim against Driver based on negligence, and Driver claims Pat was contributorily negligent, which of the following facts should be taken into account in determining whether Driver will prevail on that issue?\nI. Pat was 13 years of age.\nII. Walker was in obvious need of medical attention.\nIII. Pat did not see the skateboard on the landing.",
+        opts: [
+            "I, II and III.",
+            "I and II but not III.",
+            "I and III but not II.",
+            "II and III but not I."
+        ],
+        ans: 0,
+        exp: "Rule: In evaluating a child's alleged contributory negligence, the jury must apply the special standard of care: that of a reasonable child of like age, intelligence, and experience (I). Furthermore, under the emergency and rescue doctrines, the urgency of the rescue context and the necessity of immediate medical assistance are directly relevant to whether dashing upstairs was reasonable under the circumstances (II). Finally, whether Pat saw or should have seen the physical hazard on the stairway is central to determining if her lookout was contributorily negligent (III). Thus, all three facts (I, II, and III) must be taken into account (Option A). Options B, C, and D are incorrect because each omits a legally relevant factor."
+    },
+    {
+        id: 35,
+        topic: "Mixed",
+        fp: "Driver was operating his auto at a negligently excessive speed. As a result, he lost control and hit Walker, a pedestrian on the sidewalk along the road. Pat, age 13, arrived at the scene several minutes later. Pat saw that Walker was in obvious need of medical attention, so she ran into the ground floor lobby of Highrise, a nearby apartment building owned by Realty, to telephone for help. There was no telephone in the lobby, so Pat dashed through a door marked 'Stairs' and up a concrete stairway leading to the second floor. She did not see a skateboard lying on the second-floor landing. She tripped over the skateboard, fell and fractured an ankle. Prior to the accident, neither Realty's resident manager nor the maintenance staff employed by Realty at Highrise had known that the skateboard was on the landing.\n\nAssume Pat asserts a claim against Realty based on negligence and Realty does not raise the issue of assumption of risk.",
+        q: "The likely result is Pat will",
+        opts: [
+            "prevail, because Realty's employees had a duty to discover and remove the skateboard.",
+            "prevail, because the risk created by Realty's failing to provide a public telephone in the lobby of Highrise outweighed the utility of such conduct.",
+            "not prevail, if a tenant of Highrise had left the skateboard on the landing just prior to Pat's fall.",
+            "not prevail, because Pat was a trespasser on Realty's property when she fell."
+        ],
+        ans: 2,
+        exp: "Rule: A landlord or premises owner is liable for dangerous conditions in common areas only if the owner had actual or constructive notice of the condition in time to correct it. If an object was left on the stairs by a tenant just moments before the fall, the landlord lacked sufficient constructive notice to discover and remedy the hazard through reasonable care, defeating liability (Option C). Option A is incorrect because premises owners are not strictly liable and do not possess an absolute, continuous duty to prevent all transient hazards without notice. Option B is incorrect because landlords have no common law duty to provide public payphones in residential lobbies. Option D is incorrect because Pat was privileged by private necessity to enter the lobby to summon aid, precluding absolute trespasser status."
+    },
+    {
+        id: 36,
+        topic: "Mixed",
+        fp: "Driver was operating his auto at a negligently excessive speed. As a result, he lost control and hit Walker, a pedestrian on the sidewalk along the road. Pat, age 13, arrived at the scene several minutes later. Pat saw that Walker was in obvious need of medical attention, so she ran into the ground floor lobby of Highrise, a nearby apartment building owned by Realty, to telephone for help. There was no telephone in the lobby, so Pat dashed through a door marked 'Stairs' and up a concrete stairway leading to the second floor. She did not see a skateboard lying on the second-floor landing. She tripped over the skateboard, fell and fractured an ankle. Prior to the accident, neither Realty's resident manager nor the maintenance staff employed by Realty at Highrise had known that the skateboard was on the landing.",
+        q: "If Pat asserts a claim against Realty based on negligence for failing to remove the skateboard and if Realty claims that Pat assumed the risk, will Realty prevail on that issue?",
+        opts: [
+            "Yes, because Pat dashed up the stairway.",
+            "Yes, if Pat should have seen the skateboard.",
+            "No, because Pat was 13 years of age.",
+            "No, because Pat did not see the skateboard."
+        ],
+        ans: 3,
+        exp: "Rule: Assumption of risk requires proof of two elements: (1) actual, subjective knowledge and appreciation of the specific risk/danger, and (2) voluntary encounter of that risk. Unlike contributory negligence (which is evaluated under an objective 'should have seen' standard), assumption of risk cannot be established without subjective awareness. Because Pat never saw the skateboard prior to falling, she did not subjectively know of the specific hazard, defeating assumption of the risk (Option D). Option A is incorrect because running up stairs may constitute contributory negligence, but does not establish subjective assumption of a hidden obstacle. Option B is incorrect because objective constructive notice ('should have seen') applies to contributory negligence, not assumption of risk. Option C is incorrect because a 13-year-old is legally capable of assuming risks if subjective knowledge is proven."
+    },
+    {
+        id: 37,
+        topic: "Mixed",
+        fp: "Wimp wanted to punish Vic, his enemy. Wimp wrote a note, intended for Tough, reminding Tough he owed Wimp a favor and asking him to administer a beating to Vic, but cautioning him to be careful so as not to cause Vic's death. Wimp left the unaddressed note at Tough's apartment. Unknown to Wimp, Tough was out of town. Tough's roommate, Ready, discovered the note and read it. Because Ready also owed Wimp a favor, he thought the note was intended for him. He went out immediately to look for Vic. In the meanwhile, Tough telephone Wimp from a distant city and Wimp told Tough what he wanted done to Vic. Tough agreed to administer the beating when he returned a month later. That same night Ready found Vic and beat him viciously. The next day Vic died from the beating.",
+        q: "Did Wimp commit the crime of soliciting Ready to do an unlawful act?",
+        opts: [
+            "Yes, because Wimp asked that a beating be administered to Vic.",
+            "Yes, because Ready acted on the request in Wimp's note.",
+            "No, because Wimp did not intend that Ready do the beating.",
+            "No, unless Ready reasonably believed the note was intended for him."
+        ],
+        ans: 2,
+        exp: "Rule: Criminal solicitation requires the specific intent to entice, induce, encourage, or command a specific individual to commit a felony or serious misdemeanor. Because Wimp's note and intent were exclusively directed toward Tough, Wimp possessed no intent to request, induce, or solicit Ready. Without specific intent directed toward the recipient, solicitation is not committed with respect to Ready (Option C). Options A and B are incorrect because a solicitation is an intentional inchoate crime that requires specific intent directed to the solicited party; an unintended reader cannot convert the communication into a solicitation of that reader. Option D is incorrect because Ready's subjective belief cannot supply the required mens rea in Wimp."
+    },
+    {
+        id: 38,
+        topic: "Mixed",
+        fp: "Wimp wanted to punish Vic, his enemy. Wimp wrote a note, intended for Tough, reminding Tough he owed Wimp a favor and asking him to administer a beating to Vic, but cautioning him to be careful so as not to cause Vic's death. Wimp left the unaddressed note at Tough's apartment. Unknown to Wimp, Tough was out of town. Tough's roommate, Ready, discovered the note and read it. Because Ready also owed Wimp a favor, he thought the note was intended for him. He went out immediately to look for Vic. In the meanwhile, Tough telephone Wimp from a distant city and Wimp told Tough what he wanted done to Vic. Tough agreed to administer the beating when he returned a month later. That same night Ready found Vic and beat him viciously. The next day Vic died from the beating.",
+        q: "Did Wimp commit the crime of soliciting Tough to do an unlawful act?",
+        opts: [
+            "Yes, because Wimp's note was intended for Tough.",
+            "Yes, because in the telephone conversation Wimp told Tough what he wanted done.",
+            "No, because at the time of the telephone conversation Tough was in a distant city.",
+            "No, because Ready beat Vic before Tough returned to the city."
+        ],
+        ans: 0,
+        exp: "Rule: Under the Model Penal Code and prevailing modern rules (and as keyed by the State Bar), the crime of solicitation is complete when the communication is sent or manifested with the specific intent that the crime be committed, even if the letter never reaches the intended recipient (MPC § 5.02(2)) (Option A). (Additionally, while Option B identifies the telephone conversation, under common law, when the solicited party agrees to the crime, the solicitation immediately merges into a conspiracy; thus, treating the written communication as the distinct offense of solicitation aligns with Option A). Options C and D are incorrect because neither geographic distance nor third-party intervention negates a completed solicitation."
+    },
+    {
+        id: 39,
+        topic: "Mixed",
+        fp: "Wimp wanted to punish Vic, his enemy. Wimp wrote a note, intended for Tough, reminding Tough he owed Wimp a favor and asking him to administer a beating to Vic, but cautioning him to be careful so as not to cause Vic's death. Wimp left the unaddressed note at Tough's apartment. Unknown to Wimp, Tough was out of town. Tough's roommate, Ready, discovered the note and read it. Because Ready also owed Wimp a favor, he thought the note was intended for him. He went out immediately to look for Vic. In the meanwhile, Tough telephone Wimp from a distant city and Wimp told Tough what he wanted done to Vic. Tough agreed to administer the beating when he returned a month later. That same night Ready found Vic and beat him viciously. The next day Vic died from the beating.",
+        q: "Was there a conspiracy to assault Vic?",
+        opts: [
+            "Yes, between Wimp and Tough.",
+            "Yes, between Wimp and Ready.",
+            "Yes, among Wimp, Tough and Ready.",
+            "No."
+        ],
+        ans: 0,
+        exp: "Rule: Conspiracy requires an agreement between two or more persons with the specific intent to achieve an unlawful objective. During the telephone call, Tough expressly agreed with Wimp to administer the beating to Vic. This mutual bilateral agreement formed a completed conspiracy to commit battery/assault between Wimp and Tough (Option A). Options B and C are incorrect because Wimp never entered into an agreement with Ready (there was neither communication nor mutual assent between them). Option D is incorrect because an enforceable criminal agreement was formed between Wimp and Tough on the phone."
+    },
+    {
+        id: 40,
+        topic: "Mixed",
+        fp: "Wimp wanted to punish Vic, his enemy. Wimp wrote a note, intended for Tough, reminding Tough he owed Wimp a favor and asking him to administer a beating to Vic, but cautioning him to be careful so as not to cause Vic's death. Wimp left the unaddressed note at Tough's apartment. Unknown to Wimp, Tough was out of town. Tough's roommate, Ready, discovered the note and read it. Because Ready also owed Wimp a favor, he thought the note was intended for him. He went out immediately to look for Vic. In the meanwhile, Tough telephone Wimp from a distant city and Wimp told Tough what he wanted done to Vic. Tough agreed to administer the beating when he returned a month later. That same night Ready found Vic and beat him viciously. The next day Vic died from the beating.",
+        q: "Is Wimp criminally liable for the death of Vic?",
+        opts: [
+            "Yes, because Wimp is vicariously liable for Ready's acts.",
+            "Yes, because Wimp's acts were the cause in fact of Ready's beating of Vic.",
+            "No, because Wimp did not intend that Ready administer the beating.",
+            "No, because Wimp did not intend to cause Vic's death."
+        ],
+        ans: 1,
+        exp: "Rule: In criminal homicide, causation requires both actual cause ('but-for' cause) and proximate cause. An actor whose criminal conduct sets in motion an unbroken chain of events that directly causes death is criminally liable for homicide (involuntary manslaughter or depraved-heart murder). Leaving an unaddressed demand for a vicious beating that predictably induced an occupant of the premises to carry out the beating makes Wimp a cause-in-fact of the homicide (Option B, conforming to the official State Bar key). Option A is incorrect because vicarious accomplice liability requires intentional procurement or agreement with Ready, which was absent. Option C is incorrect because lack of intent regarding the specific perpetrator does not negate homicide liability founded on reckless causation. Option D is incorrect because intent to kill is not required for manslaughter or reckless homicide."
+    },
+    {
+        id: 41,
+        topic: "Mixed",
+        fp: "Alma, a well-known literary critic, wrote a review of the latest book written by Bessy, a well-known author. In the review, Alma said that Bessy did not know how to use the English language and was dishonest in her expression of political and social views. Bessy has not suffered any pecuniary loss.",
+        q: "If Bessy asserts a claim against Alma based on defamation, Bessy will not recover",
+        opts: [
+            "because Bessy is a well-known author.",
+            "because literary criticism is an expression of opinion.",
+            "unless Alma acted with reckless disregard of the truth.",
+            "if Bessy did not suffer any out-of-pocket loss."
+        ],
+        ans: 2,
+        exp: "Rule: Under the First Amendment (New York Times Co. v. Sullivan; Gertz), a public figure or public official cannot recover damages for defamation without proving by clear and convincing evidence that the defendant published the statement with 'actual malice'—that is, with knowledge that it was false or with reckless disregard of whether it was true or false. Because Bessy is a well-known author, she qualifies as a public figure in the context of reviews of her published works, requiring her to prove reckless disregard of the truth (Option C). Option A is incorrect because public figures are not barred from recovery; they are simply subject to the higher actual malice burden. Option B is incorrect because asserting that a person is 'dishonest in expression of views' carries an implied, provably false assertion of fact. Option D is incorrect because libel and slander per se (injuring trade or profession) do not require out-of-pocket pecuniary damage."
+    },
+    {
+        id: 42,
+        topic: "Mixed",
+        fp: "Caster, who conducted an evening news broadcast on television, reported on one of his evening broadcasts that Teacher, an instructor in a private school in the community, was being discharged for incompetence. The fact was that Teacher was not being discharged for incompetence but was leaving to accept a better position at another school.",
+        q: "If Teacher asserts a claim against Caster based on defamation, Teacher will not prevail if Caster",
+        opts: [
+            "used reasonable care to investigate the statement prior to his broadcast.",
+            "honestly believed the statement to be true at the time of his broadcast.",
+            "promptly retracted the statement upon learning of its falsity.",
+            "had no ill-will toward Teacher."
+        ],
+        ans: 0,
+        exp: "Rule: Under the constitutional standard established in Gertz v. Robert Welch, Inc., a private figure plaintiff suing a media defendant over a matter of public interest must prove at least negligence (failure to exercise reasonable care in ascertaining the truth of the statement). If Caster exercised reasonable care by investigating the facts prior to broadcasting, Caster was not negligent and cannot be held liable for defamation (Option A). Option B is incorrect because an honest subjective belief does not protect a defendant if the belief was unreasonable or arrived at negligently. Option C is incorrect because a prompt retraction merely mitigates damages under state retraction statutes, but does not defeat the underlying cause of action. Option D is incorrect because common law ill-will/spite malice is not required in private figure defamation."
+    },
+    {
+        id: 43,
+        topic: "Mixed",
+        fp: "Owner parked his car in a parking lot owned and operated by Parker. When Owner returned to get his car, he found that it had been damaged.",
+        q: "If Owner asserts a claim against Parker for the damage to Owner's car, Owner will recover",
+        opts: [
+            "because Parker was a bailee for hire.",
+            "on the theory of trespass to chattel.",
+            "only if the car was damaged because of Parker's negligence.",
+            "unless the damage was caused by the act of someone other than Parker."
+        ],
+        ans: 2,
+        exp: "Rule: A commercial bailee for mutual benefit (a bailee for hire) is not an absolute insurer of the safety of bailed goods; the bailee owes only a duty of ordinary, reasonable care under the circumstances. The owner/bailor can recover damages against the bailee only if the property was damaged as a result of the bailee's negligence (Option C). Option A is incorrect because status as a bailee for hire establishes a duty of care, not strict liability. Option B is incorrect because trespass to chattels requires an intentional act of meddling or damage. Option D is incorrect because a bailee is not automatically liable for acts of third parties unless the bailee's own negligence permitted or enabled the third party's harm."
+    },
+    {
+        id: 44,
+        topic: "Mixed",
+        fp: "Daniel and Paul were involved in an automobile accident. Paul sued Daniel for $10,000 alleging that Daniel was negligent. Daniel's liability depends on whether he had the green light at the time of the accident. Each party claims to have had the green light. Of the two other witnesses, one says that Paul had the green light. Before trial, Daniel offered Paul $5,000 to settle all claims arising from the accident. Paul accepted the offer.\n\nAssume that before payment of the $5,000 and before dismissal of the suit, Daniel repudiates his promise to pay Paul $5,000. Paul sues for $5,000.",
+        q: "What result?",
+        opts: [
+            "Paul wins because the agreement was an enforceable compromise of a disputed claim.",
+            "Paul wins because Daniel's promise to pay $5,000 was enforceable without consideration.",
+            "Daniel wins because his promise was a mere executory accord.",
+            "Daniel wins because his promise was void as against public policy."
+        ],
+        ans: 0,
+        exp: "Rule: The compromise and settlement of a good-faith, disputed claim (or unliquidated tort action) constitutes valid consideration. An executory accord is a valid and binding contract; upon a debtor's anticipatory breach or repudiation of an accord, the creditor may elect either to sue on the accord itself or sue on the underlying original claim. Paul is entitled to enforce the settlement agreement and recover the agreed $5,000 compromise amount (Option A). Option B is incorrect because compromise contracts require consideration, which is provided by the surrender of a disputed, unliquidated claim. Option C is incorrect because an executory accord is enforceable by the non-breaching creditor. Option D is incorrect because public policy strongly favors settlement agreements."
+    },
+    {
+        id: 45,
+        topic: "Mixed",
+        fp: "Daniel and Paul were involved in an automobile accident. Paul sued Daniel for $10,000 alleging that Daniel was negligent. Daniel's liability depends on whether he had the green light at the time of the accident. Each party claims to have had the green light. Of the two other witnesses, one says that Paul had the green light. Before trial, Daniel offered Paul $5,000 to settle all claims arising from the accident. Paul accepted the offer.\n\nAssume the same facts as in question 44 except that, instead of suing for $5,000, Paul prosecuted his $10,000 negligence action. Daniel defended on the ground that his liability, if any, has been replaced by his obligation on his $5,000 promise.",
+        q: "What result on this defense?",
+        opts: [
+            "Paul wins because the promise to pay $5,000 was void from the outset.",
+            "Paul wins because, after Daniel repudiated his promise, Paul had the option to sue on that promise or on the original claim.",
+            "Daniel wins because his promise was made in compromise of a disputed claim.",
+            "Daniel wins because his promise to pay $5,000 is enforceable without consideration."
+        ],
+        ans: 1,
+        exp: "Rule: An executory accord merely suspends the right to enforce the underlying original claim until the satisfaction is tendered. If the debtor breaches or repudiates the accord prior to satisfaction, the suspension is lifted, and the non-breaching creditor has the election either to sue for breach of the accord or to revive and prosecute the original underlying claim. Because Daniel repudiated the $5,000 settlement, Paul is entitled to prosecute his original $10,000 negligence action (Option B). Option A is incorrect because the compromise was a valid contract, not void. Options C and D are incorrect because a breaching debtor cannot shield themselves behind an accord they repudiated."
+    },
+    {
+        id: 46,
+        topic: "Mixed",
+        fp: "Daniel and Paul were involved in an automobile accident. Paul sued Daniel for $10,000 alleging that Daniel was negligent. Daniel's liability depends on whether he had the green light at the time of the accident. Each party claims to have had the green light. Of the two other witnesses, one says that Paul had the green light. Before trial, Daniel offered Paul $5,000 to settle all claims arising from the accident. Paul accepted the offer.\n\nAssume that after Daniel promised to pay $5,000, Paul dismissed the negligence suit. Paul's witness then admits to Daniel that he lied, and that the traffic light was green in Daniel's favor. Paul did not know that the witness had lied. Daniel refused to pay Paul and Paul sued Daniel for $5,000.",
+        q: "What result?",
+        opts: [
+            "Daniel wins because his promise was a mere executory accord.",
+            "Daniel wins because the new evidence shows there was no consideration for Daniel's promise to pay $5,000.",
+            "Paul wins because the settlement was an accord and satisfaction.",
+            "Paul wins because he did not know the witness was lying when he accepted Daniel's offer."
+        ],
+        ans: 3,
+        exp: "Rule: Under the Restatement (Second) of Contracts § 74, the compromise of an unliquidated or disputed claim constitutes valid consideration if the settling party asserts the claim in good faith and with an honest subjective belief in its possible validity. Even if subsequent evidence conclusively establishes that the claim was factually groundless, the settlement remains binding so long as the claimant did not act fraudulently and had no knowledge of the underlying falsity at the time of settlement (Option D). Option A is incorrect because Paul dismissed the lawsuit in performance of his side of the accord. Option B is incorrect because consideration is measured at the time of agreement by good-faith dispute, not retrospective proof. Option C is technically flawed because satisfaction occurs when payment is executed; Paul wins because good-faith compromise is enforceable."
+    },
+    {
+        id: 47,
+        topic: "Mixed",
+        fp: "Daniel and Paul were involved in an automobile accident. Paul sued Daniel for $10,000 alleging that Daniel was negligent. Daniel's liability depends on whether he had the green light at the time of the accident. Each party claims to have had the green light. Of the two other witnesses, one says that Paul had the green light. Before trial, Daniel offered Paul $5,000 to settle all claims arising from the accident. Paul accepted the offer.\n\nAssume that after Daniel promised to pay the $5,000, Paul dismissed the negligence suit. Daniel was unable to pay the $5,000 and Paul threatened to sue Daniel. Upon learning these facts, Ted told Paul: 'Daniel is an old friend of mine. If you will not sue him, I will pay you $5,000.' Paul said: 'Okay,' and did not file suit against Daniel. A week later, Ted repudiated his promise to Paul. Paul sued Ted for $5,000.",
+        q: "What result?",
+        opts: [
+            "Ted wins because there was no consideration for his promise.",
+            "Ted wins because Paul must sue Daniel before he can sue Ted.",
+            "Paul wins because his agreement to forebear suing Daniel is sufficient consideration for Ted's promise.",
+            "Paul wins because Ted's friendship with Daniel is sufficient consideration for Ted's promise."
+        ],
+        ans: 2,
+        exp: "Rule: Consideration can be given by the promisee to a third party, or can consist of forbearance to assert a valid legal right or cause of action against a third person. Paul's promise and agreement to forbear bringing suit against Daniel constitutes valid legal detriment and consideration supporting Ted's independent promise to pay $5,000 (Option C). Option A is incorrect because forbearance to sue constitutes classic consideration. Option B is incorrect because the parties entered into a direct, primary bilateral contract, not a conditional guaranty requiring exhaustion of legal remedies. Option D is incorrect because mere friendship or moral motivation does not constitute legal consideration."
+    },
+    {
+        id: 48,
+        topic: "Mixed",
+        fp: "Daniel and Paul were involved in an automobile accident. Paul sued Daniel for $10,000 alleging that Daniel was negligent. Daniel's liability depends on whether he had the green light at the time of the accident. Each party claims to have had the green light. Of the two other witnesses, one says that Paul had the green light. Before trial, Daniel offered Paul $5,000 to settle all claims arising from the accident. Paul accepted the offer.\n\nAssume the same facts as in question 47, except that Ted defended on the ground of the Statute of Frauds.",
+        q: "What result on this defense?",
+        opts: [
+            "Ted wins because his promise was to pay an amount in excess of $500 and was not evidenced by a writing signed by Ted.",
+            "Ted wins because his promise was to pay the debt of another and was not evidenced by a writing signed by Ted.",
+            "Paul wins because Ted's promise was not one required to be evidenced by a writing signed by Ted.",
+            "Paul wins because his forebearance to sue Daniel constituted part performance."
+        ],
+        ans: 2,
+        exp: "Rule: Under the Statute of Frauds, the suretyship provision ('promise to answer for the debt of another') applies only where the promisor's obligation is collateral/secondary (e.g., 'If he doesn't pay, I will'). Where the promisor undertakes a direct, primary obligation in exchange for a separate consideration (forbearance to sue), or where the promise is made directly to discharge an obligation, it is an original promise that falls outside the suretyship provision and does not require a writing (Option C). Option A is incorrect because the $500 threshold applies to sales of goods under UCC Article 2, not to settlement promises. Option B is incorrect because Ted made an original, primary commitment rather than a collateral surety agreement. Option D is incorrect because forbearance is mere consideration, not part performance taking a surety pact out of the statute."
+    },
+    {
+        id: 49,
+        topic: "Mixed",
+        fp: "Art talked Bob into giving him, Art, $200.00 to buy equipment to accomplish the burglary of a bakery and the theft of its receipts, in return for a one-quarter share of the proceeds. Art changed his mind after receiving the $200.00 from Bob and never bought the equipment or committed the burglary.",
+        q: "Did Art commit the crime of conspiracy to commit burglary?",
+        opts: [
+            "Yes, when Art asked Bob for the money.",
+            "Yes, when Bob furnished the money to buy the equipment.",
+            "No, because Bob did not agree to take part in the burglary.",
+            "No, because Art never bought the equipment."
+        ],
+        ans: 1,
+        exp: "Rule: Criminal conspiracy requires an agreement between two or more persons with the specific intent to achieve an unlawful objective, and in most jurisdictions, an overt act in furtherance of the conspiracy. The overt act requirement is minimal and can be satisfied by any preparatory step committed by any member of the conspiracy. When Bob furnished the $200 financing in exchange for a one-quarter stake, mutual agreement and an overt act were accomplished, completing the crime of conspiracy (Option B). Option A is incorrect because asking for money was mere solicitation before mutual agreement was formed. Option C is incorrect because funding a criminal enterprise in exchange for a share of the stolen loot makes the financier a full co-conspirator. Option D is incorrect because withdrawal or subsequent change of mind after the agreement and overt act have occurred does not erase a completed conspiracy."
+    },
+    {
+        id: 50,
+        topic: "Mixed",
+        fp: "Art talked Bob into giving him, Art, $200.00 to buy equipment to accomplish the burglary of a bakery and the theft of its receipts, in return for a one-quarter share of the proceeds. Art changed his mind after receiving the $200.00 from Bob and never bought the equipment or committed the burglary.",
+        q: "If Art did not return the $200 to Bob, did he commit a crime?",
+        opts: [
+            "No, because the parties were in pari delictu.",
+            "Yes, larceny.",
+            "Yes, embezzlement.",
+            "Yes, obtaining by false pretenses."
+        ],
+        ans: 2,
+        exp: "Rule: Embezzlement is the fraudulent conversion of the personal property of another by one who is already in lawful possession of that property. Bob voluntarily handed over the $200 cash to Art for a designated purpose (to purchase equipment), placing Art in lawful possession. When Art decided not to buy the equipment but kept the money for himself, Art fraudulently converted funds entrusted to his possession, committing embezzlement (Option C). Option A is incorrect because the civil doctrine of in pari delicto does not protect criminal actors from state criminal prosecution for theft offenses. Option B is incorrect because Art obtained initial possession lawfully without a trespassory taking. Option D is incorrect because at the time he received the money Art did not possess a preexisting fraudulent intent to deceive Bob; his change of mind occurred after receiving possession."
     }
 ];
