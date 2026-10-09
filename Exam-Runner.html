@@ -45,11 +45,11 @@
         .score-box { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; flex-wrap: wrap; }
         .badge { background: var(--primary-light); color: white; padding: 0.25rem 0.65rem; border-radius: 15px; font-weight: bold; font-size: 0.8rem; }
 
-        /* Option 3: Vivid Emerald Timer */
+        /* Timer Badge: Running (Emerald) vs Paused (Crimson Rose) */
         .timer-badge-container { 
             display: inline-flex; 
             align-items: center; 
-            background: #16A34A; /* Vivid Emerald */
+            background: #16A34A; /* Option 3: Vivid Emerald */
             border: 2px solid #15803D; 
             border-radius: 20px; 
             padding: 0.2rem 0.55rem 0.2rem 0.75rem; 
@@ -59,21 +59,21 @@
         }
 
         .timer-badge-container.paused { 
-            background: #1E293B; 
-            border-color: #64748B; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            background: #E11D48; /* Option 5: Crimson Rose */
+            border-color: #BE123C; 
+            box-shadow: 0 2px 10px rgba(225, 29, 72, 0.45);
         }
 
         .timer-badge-container.overtime { 
-            background: #DC2626; 
-            border-color: #991B1B; 
+            background: #991B1B; 
+            border-color: #7F1D1D; 
             animation: pulseRed 1.8s infinite; 
-            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.5);
+            box-shadow: 0 2px 10px rgba(220, 38, 38, 0.55);
         }
 
         @keyframes pulseRed { 
-            0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); } 
-            50% { box-shadow: 0 0 0 7px rgba(239, 68, 68, 0); } 
+            0%, 100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.5); } 
+            50% { box-shadow: 0 0 0 7px rgba(225, 29, 72, 0); } 
         }
 
         .timer-display { 
@@ -84,32 +84,24 @@
             letter-spacing: 0.6px; 
         }
 
-        .timer-badge-container.paused .timer-display { 
-            color: #FCD34D; 
-        }
-
-        .timer-badge-container.overtime .timer-display { 
-            color: #FFFFFF; 
-        }
-
         .timer-status-pill { 
             font-size: 0.68rem; 
             text-transform: uppercase; 
             padding: 0.12rem 0.45rem; 
             border-radius: 10px; 
             font-weight: 800; 
-            background: #14532D; 
+            background: #14532D; /* Running Emerald Pill */
             color: #DCFCE7; 
         }
 
         .timer-badge-container.paused .timer-status-pill { 
-            background: #D97706; 
-            color: white; 
+            background: #881337; /* Option 5: Crimson Pill */
+            color: #FFE4E6; 
         }
 
         .timer-badge-container.overtime .timer-status-pill { 
-            background: #7F1D1D; 
-            color: white; 
+            background: #450A0A; 
+            color: #FECACA; 
         }
 
         .btn-timer-toggle { 
