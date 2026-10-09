@@ -125,7 +125,7 @@
 
     <header>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-            <a href="index.html" style="background: rgba(255,255,255,0.2); color: white; padding: 0.3rem 0.7rem; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: bold;">← Back to Menu</a>
+            <a id="btn-back-menu" href="index.html" style="background: rgba(255,255,255,0.2); color: white; padding: 0.3rem 0.7rem; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: bold;">← Back to Menu</a>
             <span style="font-size: 0.8rem; opacity: 0.8;">GoBabyBar Exam Suite</span>
         </div>
         <h1 id="header-title">Loading Exam...</h1>
@@ -311,7 +311,6 @@
             script.src = src;
             script.onload = callback;
             script.onerror = function() {
-                // Try lower-case variant if exact casing fails
                 const altSrc = src.toLowerCase();
                 if (altSrc !== src) {
                     const fallbackScript = document.createElement('script');
@@ -336,6 +335,9 @@
         }
 
         function initApp() {
+            const backBtn = document.getElementById('btn-back-menu');
+            if (backBtn) backBtn.href = `index.html?cat=${encodeURIComponent(catKey)}`;
+
             document.getElementById('header-title').textContent = `${titleKey} - Set ${setNum}`;
             if (typeof examData === 'undefined' || !Array.isArray(examData) || examData.length === 0) {
                 loadScript(`BabyBar-${filePrefix}-${setNum}.js`, function() {

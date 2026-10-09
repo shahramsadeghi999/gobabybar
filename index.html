@@ -194,7 +194,7 @@
             <div class="category-header-bar" onclick="toggleAccordion('sec-torts_adv', 'torts_adv')">
                 <div class="title-left">
                     <span class="chevron-icon">▶</span>
-                    <div class="section-title">⚖ Torts Adv Practice Sets (Sets 21–34)</div>
+                    <div class="section-title">⚖️ Torts Adv Practice Sets (Sets 21–34)</div>
                 </div>
                 <div class="category-actions" onclick="event.stopPropagation()">
                     <button class="btn-cat-export btn-cat-group-export" onclick="exportGroupJSON('torts_adv', 'Torts Adv', 21, 34)">📤 Export</button>
@@ -391,40 +391,42 @@
         let pendingDownloadPayload = "";
         let activeImportCategory = null;
 
+        function saveActiveCategory(catKey) {
+            if (catKey) {
+                localStorage.setItem(ACTIVE_CATEGORY_KEY, catKey);
+            }
+        }
+
         function toggleAccordion(sectionId, catKey) {
             const section = document.getElementById(sectionId);
             const isCurrentlyActive = section.classList.contains("active");
 
-            // Close all sections
             document.querySelectorAll(".accordion-section").forEach(sec => sec.classList.remove("active"));
 
-            // If it wasn't open, open it and remember state
             if (!isCurrentlyActive) {
                 section.classList.add("active");
-                localStorage.setItem(ACTIVE_CATEGORY_KEY, catKey);
+                saveActiveCategory(catKey);
             } else {
                 localStorage.removeItem(ACTIVE_CATEGORY_KEY);
             }
         }
 
         function restoreActiveAccordion() {
-            // Read from URL query param (?cat=...) if returning from an exam runner
             const urlParams = new URLSearchParams(window.location.search);
             const urlCat = urlParams.get('cat');
-            
-            // Read last open category from localStorage, fallback to torts only on first-time visit
-            const savedCat = urlCat || localStorage.getItem(ACTIVE_CATEGORY_KEY) || "torts";
-            
-            // Close any hardcoded active classes
+            const storedCat = localStorage.getItem(ACTIVE_CATEGORY_KEY);
+            const activeCat = urlCat || storedCat || "torts";
+
+            saveActiveCategory(activeCat);
+
             document.querySelectorAll(".accordion-section").forEach(sec => sec.classList.remove("active"));
 
-            let targetSection = document.getElementById(`sec-${savedCat}`);
+            let targetSection = document.getElementById(`sec-${activeCat}`);
             if (!targetSection) {
                 targetSection = document.getElementById("sec-torts");
             }
             if (targetSection) {
                 targetSection.classList.add("active");
-                targetSection.scrollIntoView({ behavior: "smooth", block: "nearest" });
             }
         }
 
@@ -474,7 +476,7 @@
                 } catch (e) {}
             }
             html += `
-                <a href="BabyBar-Custom-Runner.html?cat=${categoryKey}&type=missed&title=${encodeURIComponent(displayName)}" class="exam-card special-missed-card" title="Practice Missed Questions">
+                <a href="BabyBar-Custom-Runner.html?cat=${categoryKey}&type=missed&title=${encodeURIComponent(displayName)}" onclick="saveActiveCategory('${categoryKey}')" class="exam-card special-missed-card" title="Practice Missed Questions">
                     <div>
                         <div class="card-header-row">
                             <h3>🔥 ${displayName} - All Missed</h3>
@@ -504,7 +506,7 @@
                 } catch (e) {}
             }
             html += `
-                <a href="BabyBar-Custom-Runner.html?cat=${categoryKey}&type=flagged&title=${encodeURIComponent(displayName)}" class="exam-card special-flagged-card" title="Practice Flagged Questions">
+                <a href="BabyBar-Custom-Runner.html?cat=${categoryKey}&type=flagged&title=${encodeURIComponent(displayName)}" onclick="saveActiveCategory('${categoryKey}')" class="exam-card special-flagged-card" title="Practice Flagged Questions">
                     <div>
                         <div class="card-header-row">
                             <h3>🚩 ${displayName} - All Flagged</h3>
@@ -516,7 +518,7 @@
                 </a>
             `;
 
-            // 3. RULES PDF CARD (Blue) - Standard Subjects Only
+            // 3. RULES PDF CARD (Blue)
             const rulesPdfMap = {
                 torts: { file: "Torts-Rules.pdf", label: "Torts Rules" },
                 criminal: { file: "Criminal-Rules.pdf", label: "Criminal Law Rules" },
@@ -526,7 +528,7 @@
             if (rulesPdfMap[categoryKey]) {
                 const ruleInfo = rulesPdfMap[categoryKey];
                 html += `
-                    <a href="${ruleInfo.file}" target="_blank" class="exam-card special-rules-card" title="View ${ruleInfo.label} PDF">
+                    <a href="${ruleInfo.file}" target="_blank" onclick="saveActiveCategory('${categoryKey}')" class="exam-card special-rules-card" title="View ${ruleInfo.label} PDF">
                         <div>
                             <div class="card-header-row">
                                 <h3 style="color: #0284C7;">📘 ${ruleInfo.label}</h3>
@@ -539,14 +541,14 @@
                 `;
             }
 
-            // 4. STANDARD SETS (Routing to Master Runner)
+            // 4. STANDARD SETS
             for (let i = startSet; i <= endSet; i++) {
                 const padNum = String(i).padStart(2, '0');
                 const percent = getSetPercentage(categoryKey, i);
                 let scoreBadgeHtml = percent !== null ? `<span class="score-display-badge">${percent}%</span>` : `<span class="score-display-badge unattempted">—</span>`;
 
                 html += `
-                    <a href="Exam-Runner.html?cat=${categoryKey}&prefix=${filePrefix}&set=${padNum}&title=${encodeURIComponent(displayName)}" class="exam-card">
+                    <a href="Exam-Runner.html?cat=${categoryKey}&prefix=${filePrefix}&set=${padNum}&title=${encodeURIComponent(displayName)}" onclick="saveActiveCategory('${categoryKey}')" class="exam-card">
                         <div>
                             <div class="card-header-row">
                                 <h3>${displayName} - Set ${padNum}</h3>
@@ -569,7 +571,6 @@
             renderExamSection("contracts-grid", "contracts", "Contracts", "Contracts", 1, 25, "Formation, Breach & Remedies");
             renderExamSection("contracts-adv-grid", "contracts_adv", "Contracts", "Contracts Adv", 26, 57, "Advanced UCC, Performance & Complex Remedies");
             
-            // Mixed Subject Sets broken into 5 groups of 10 sets each
             renderExamSection("mixed-pt1-grid", "mixed_pt1", "Mixed", "Mixed Part 1", 1, 10, "Multi-Subject FYLSX Practice Exam");
             renderExamSection("mixed-pt2-grid", "mixed_pt2", "Mixed", "Mixed Part 2", 11, 20, "Multi-Subject FYLSX Practice Exam");
             renderExamSection("mixed-pt3-grid", "mixed_pt3", "Mixed", "Mixed Part 3", 21, 30, "Multi-Subject FYLSX Practice Exam");
@@ -579,6 +580,7 @@
 
         // COMPILE MISSED QUESTIONS
         async function generateAllMissedSet(event, categoryKey, filePrefix, categoryTitle, startSet, endSet) {
+            saveActiveCategory(categoryKey);
             const proceed = confirm(`This will compile your currently missed questions and OVERWRITE your existing 'Missed Questions' storage bank for ${categoryTitle}. Proceed?`);
             if (!proceed) return;
 
@@ -620,11 +622,13 @@
             localStorage.setItem(`fylsx_${categoryKey}_missed_set_exam_data`, JSON.stringify(collectedMissedQuestions));
             ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"].forEach(p => localStorage.removeItem(`fylsx_${categoryKey}_setmissed_${p}_v25`));
             populateAllExams();
+            restoreActiveAccordion();
             alert(`✅ Successfully compiled ${collectedMissedQuestions.length} missed questions!\nThe gold card has been updated.`);
         }
 
         // COMPILE FLAGGED QUESTIONS
         async function generateAllFlaggedSet(event, categoryKey, filePrefix, categoryTitle, startSet, endSet) {
+            saveActiveCategory(categoryKey);
             const proceed = confirm(`This will compile your currently flagged questions and OVERWRITE your existing 'Flagged Questions' storage bank for ${categoryTitle}. Proceed?`);
             if (!proceed) return;
 
@@ -665,6 +669,7 @@
             localStorage.setItem(`fylsx_${categoryKey}_flagged_set_exam_data`, JSON.stringify(collectedFlaggedQuestions));
             ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"].forEach(p => localStorage.removeItem(`fylsx_${categoryKey}_setflagged_${p}_v25`));
             populateAllExams();
+            restoreActiveAccordion();
             alert(`✅ Successfully compiled ${collectedFlaggedQuestions.length} flagged questions!\nThe red card has been updated.`);
         }
 
@@ -697,6 +702,7 @@
         window.addEventListener("DOMContentLoaded", checkAuth);
 
         function exportGroupJSON(categoryKey, categoryTitle, startSet, endSet) {
+            saveActiveCategory(categoryKey);
             const storageItems = {}; let setsWithData = 0;
             const versions = ["v25", "v100", "v23", "v24"];
             const prefixes = ["answers", "flags", "elim", "index", "score", "filter", "retry", "text_highlights"];
@@ -753,6 +759,7 @@
 
         // IMPORT SYSTEM
         function triggerGroupJSONImport(categoryKey, categoryTitle, startSet, endSet) {
+            saveActiveCategory(categoryKey);
             activeImportCategory = { categoryKey, categoryTitle, startSet, endSet };
             closeCategoryModal();
             document.getElementById("import-modal-title").textContent = `Import: ${categoryTitle}`;
@@ -849,7 +856,9 @@
                 localStorage.setItem(k, parsed.data[k]);
                 keysImported++;
             });
+            saveActiveCategory(targetCat);
             populateAllExams();
+            restoreActiveAccordion();
             alert(`✅ Data successfully imported (${keysImported} items).\n\nYour original sets, Missed sets, and Flagged sets have all been synced!`);
         }
     </script>
