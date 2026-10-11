@@ -689,4 +689,14 @@ const examData = [
         id: 50,
         topic: "Mixed",
         fp: "Defendant and an acquaintance agreed to break into an unoccupied dwelling house at night to steal firearms. When they reached the house, the acquaintance broke a basement window with a rock, and both men climbed inside. While searching the living room, the acquaintance used an iron pry bar to force open a locked gun cabinet. An armed neighbor who lived nearby heard breaking glass, walked over with a rifle, and observed the two men inside through an open window. The neighbor pointed the rifle through the window and shouted, 'Freeze, police!' The acquaintance turned toward the window and raised the iron pry bar in a threatening manner. Believing the acquaintance was about to attack, the neighbor fired a shot in lawful self-defense, striking the acquaintance in the chest and killing him instantly. Defendant immediately dropped to the floor and surrendered. The jurisdiction follows the common law 'agency theory' of felony murder.",
-        q: "Can Defendant properly
+        q: "Can Defendant properly be convicted of felony murder for the death of his accomplice?",
+        opts: [
+            "Yes, because the death of the accomplice was a direct proximate result of the nighttime residential burglary.",
+            "Yes, because under the felony murder rule, all co-felons are strictly liable for any death that occurs during an inherently dangerous felony.",
+            "No, because under the agency theory of felony murder, the lethal shot must be fired by a felon or an agent of the criminal conspiracy.",
+            "No, because an unoccupied dwelling house does not qualify as a dwelling under common law burglary."
+        ],
+        ans: 1,
+        exp: "Rule: A critical split of authority governs felony murder when a non-felon (such as a crime victim, police officer, or third-party bystander) fires the fatal shot. Under the majority Agency Theory of felony murder, the felony murder rule applies ONLY IF the lethal act is committed by one of the felons or an agent acting in furtherance of the common criminal conspiracy. When an innocent neighbor or victim shoots and kills a co-felon in lawful self-defense, the surviving felon cannot be convicted of felony murder because the fatal shot was fired by an adversary rather than an agent of the felony (the landmark State v. Canola rule). Because this jurisdiction explicitly adheres to the agency theory, Defendant cannot be convicted of felony murder for the death of his accomplice (Option B). Options A and C are incorrect because they describe the proximate cause theory, which this jurisdiction rejects. Option D is incorrect because vacation or unoccupied residential homes used for regular habitation qualify as dwellings at common law; the bar arises from the agency theory."
+    }
+];
