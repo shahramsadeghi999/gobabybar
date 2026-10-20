@@ -40,6 +40,7 @@
         .progress-segment { height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; transition: width 0.3s ease; }
         .segment-correct { background: var(--success); color: #FFFFFF; width: 0%; }
         .segment-missed { background: var(--danger); color: #FFFFFF; width: 0%; }
+        .segment-attempted-exam { background: #3B82F6; color: #FFFFFF; width: 0%; }
         .segment-unattempted { background: #FFFFFF; color: #0F172A; flex-grow: 1; }
 
         .score-box { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; flex-wrap: wrap; }
@@ -90,12 +91,12 @@
             padding: 0.12rem 0.45rem; 
             border-radius: 10px; 
             font-weight: 800; 
-            background: #14532D; /* Running Emerald Pill */
+            background: #14532D; 
             color: #DCFCE7; 
         }
 
         .timer-badge-container.paused .timer-status-pill { 
-            background: #881337; /* Option 5: Crimson Pill */
+            background: #881337; 
             color: #FFE4E6; 
         }
 
@@ -121,6 +122,12 @@
             transform: scale(1.15); 
             opacity: 0.9;
         }
+
+        /* Mode Switch Toggle */
+        .mode-toggle-wrap { display: flex; align-items: center; background: #F1F5F9; border: 1.5px solid var(--border); border-radius: 20px; padding: 2px 4px; gap: 4px; cursor: pointer; user-select: none; }
+        .mode-pill { font-size: 0.76rem; font-weight: 700; padding: 0.18rem 0.6rem; border-radius: 16px; transition: all 0.2s ease; color: var(--text-muted); }
+        .mode-pill.active { background: var(--primary); color: white; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+        .mode-pill.active.exam { background: #9333EA; }
 
         .action-group { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; }
         .btn-action-tool { padding: 0.35rem 0.6rem; font-size: 0.8rem; font-weight: 600; border-radius: 6px; border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; gap: 0.2rem; transition: all 0.15s ease; }
@@ -159,10 +166,16 @@
         .option-btn.eliminated .letter-circle { background: #CBD5E1; color: #64748B; }
 
         .letter-circle { width: 28px; height: 28px; border-radius: 50%; background: var(--badge-blue); color: #0F172A; display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 0.9rem; flex-shrink: 0; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08); transition: all 0.2s ease; text-transform: uppercase; }
+        
+        /* Study Mode Feedback */
         .option-btn.correct { border-color: var(--success); background: #DCFCE7; color: #14532D; font-weight: 500; opacity: 1 !important; }
         .option-btn.correct .letter-circle { background: var(--success); color: #FFFFFF; }
         .option-btn.incorrect { border-color: var(--danger); background: #FEE2E2; color: #7F1D1D; opacity: 0.75; }
         .option-btn.incorrect .letter-circle { background: var(--danger); color: #FFFFFF; }
+
+        /* Exam Mode Neutral Selection (Before Submission) */
+        .option-btn.exam-selected { border-color: #2563EB; background: #EFF6FF; color: #1E3A8A; font-weight: 600; }
+        .option-btn.exam-selected .letter-circle { background: #2563EB; color: #FFFFFF; }
 
         .btn-eliminate-choice { background: white; border: 1px solid var(--border); color: var(--text-muted); width: 32px; height: 32px; border-radius: 50%; font-size: 0.85rem; font-weight: bold; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.15s ease; flex-shrink: 0; user-select: none; }
         .btn-eliminate-choice:hover { background: #FEE2E2; border-color: var(--danger); color: var(--danger); }
@@ -172,11 +185,13 @@
         .explanation-box.visible { display: block; }
         .dropdown-analysis { padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid #BAE6FD; font-size: 0.8rem; background: #E0F2FE; color: #0369A1; font-weight: 600; cursor: pointer; }
 
-        .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; gap: 0.5rem; }
+        .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; gap: 0.5rem; flex-wrap: wrap; }
         .btn { background: var(--primary); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem; user-select: none; }
         .btn:disabled { opacity: 0.4; cursor: not-allowed; }
         .btn-reset { background: transparent; color: var(--text-muted); border: 1px solid var(--border); font-weight: normal; }
         .btn-reset:hover { background: #F1F5F9; color: var(--danger); border-color: var(--danger); }
+        .btn-submit-exam { background: #9333EA; color: white; border: none; font-weight: 700; padding: 0.6rem 1.3rem; border-radius: 6px; cursor: pointer; }
+        .btn-submit-exam:hover { background: #7E22CE; }
 
         .modal-box { display: none; background: white; border: 2px solid var(--primary); padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; }
         .modal-box.visible { display: block; }
@@ -201,6 +216,12 @@
             <div class="score-box">
                 <span>Question <strong id="current-q-num">1</strong> of <span id="total-q-num">0</span></span>
                 <span class="badge" id="score-badge">Score: 0 / 0 (0%)</span>
+                
+                <div class="mode-toggle-wrap" onclick="toggleExamMode()" title="Toggle Study vs Exam Mode">
+                    <span class="mode-pill active" id="pill-mode-study">Study</span>
+                    <span class="mode-pill" id="pill-mode-exam">Exam</span>
+                </div>
+
                 <div class="timer-badge-container" id="timer-badge-box">
                     <span id="timer-icon">⏱</span>
                     <span class="timer-display" id="timer-display">90:00</span>
@@ -234,6 +255,7 @@
         <div class="progress-bar-container">
             <div class="progress-segment segment-correct" id="bar-correct" title="Correct"></div>
             <div class="progress-segment segment-missed" id="bar-missed" title="Missed"></div>
+            <div class="progress-segment segment-attempted-exam" id="bar-attempted-exam" title="Answered"></div>
             <div class="progress-segment segment-unattempted" id="bar-unattempted" title="Unattempted"></div>
         </div>
     </div>
@@ -249,6 +271,7 @@
 
     <div class="nav-controls" id="nav-controls" style="display:none;">
         <button class="btn" id="prev-btn" onclick="navigate(-1)">← Previous</button>
+        <button class="btn-submit-exam" id="submit-exam-btn" style="display:none;" onclick="confirmSubmitExam()">📋 Submit Exam</button>
         <button class="btn btn-reset" onclick="resetProgress()">Reset Set</button>
         <button class="btn" id="next-btn" onclick="navigate(1)">Next →</button>
     </div>
@@ -280,6 +303,8 @@
         const STORAGE_KEY_RETRY = `fylsx_${currentSetKey}_retry_v25`;
         const STORAGE_KEY_HIGHLIGHTS = `fylsx_${currentSetKey}_text_highlights_v25`;
         const STORAGE_KEY_TIMER = `fylsx_${currentSetKey}_timer_v25`;
+        const STORAGE_KEY_EXAM_MODE = `fylsx_${currentSetKey}_exam_mode_v25`;
+        const STORAGE_KEY_SUBMITTED = `fylsx_${currentSetKey}_submitted_v25`;
 
         let currentIndex = 0;
         let userAnswers = {};
@@ -290,6 +315,8 @@
         let activeFilter = "all";
         let isEliminationMode = true;
         let userHighlights = {};
+        let isExamMode = false;
+        let isExamSubmitted = false;
         const letterLabels = ["A", "B", "C", "D"];
 
         const DEFAULT_SECONDS = 90 * 60;
@@ -299,13 +326,10 @@
 
         function initTimer() {
             const savedTime = localStorage.getItem(STORAGE_KEY_TIMER);
-            if (savedTime !== null) {
-                timeRemaining = parseInt(savedTime, 10);
-            } else {
-                timeRemaining = DEFAULT_SECONDS;
-            }
+            timeRemaining = (savedTime !== null) ? parseInt(savedTime, 10) : DEFAULT_SECONDS;
 
-            if (userAnswers && userAnswers[currentIndex] !== undefined) {
+            // In Study mode, pause if question was answered; in Exam mode, timer continues without auto-pausing per question
+            if (!isExamMode && userAnswers && userAnswers[currentIndex] !== undefined) {
                 isTimerPaused = true;
             } else {
                 isTimerPaused = false;
@@ -352,8 +376,7 @@
             const absSec = Math.abs(timeRemaining);
             const m = Math.floor(absSec / 60);
             const s = absSec % 60;
-            const formatted = `${isOvertime ? '-' : ''}${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-            displayEl.textContent = formatted;
+            displayEl.textContent = `${isOvertime ? '-' : ''}${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
 
             toggleBtn.textContent = isTimerPaused ? "▶" : "⏸";
             toggleBtn.title = isTimerPaused ? "Resume Timer" : "Pause Timer";
@@ -367,6 +390,63 @@
                 pillEl.textContent = "PAUSED";
             } else {
                 pillEl.textContent = "RUNNING";
+            }
+        }
+
+        function toggleExamMode() {
+            if (isExamMode && !isExamSubmitted) {
+                if (!confirm("Switch back to Study Mode? This will reveal explanations and your current score.")) return;
+            }
+            isExamMode = !isExamMode;
+            localStorage.setItem(STORAGE_KEY_EXAM_MODE, isExamMode ? "true" : "false");
+            updateModeSwitchUI();
+            updateScore();
+            renderQuestion();
+        }
+
+        function updateModeSwitchUI() {
+            const studyPill = document.getElementById("pill-mode-study");
+            const examPill = document.getElementById("pill-mode-exam");
+            const submitBtn = document.getElementById("submit-exam-btn");
+
+            if (isExamMode) {
+                studyPill.className = "mode-pill";
+                examPill.className = "mode-pill active exam";
+                submitBtn.style.display = isExamSubmitted ? "none" : "inline-block";
+            } else {
+                studyPill.className = "mode-pill active";
+                examPill.className = "mode-pill";
+                submitBtn.style.display = "none";
+            }
+        }
+
+        function confirmSubmitExam() {
+            const totalQ = examData.length;
+            const answeredCount = Object.keys(userAnswers).length;
+            const remaining = totalQ - answeredCount;
+
+            let promptMsg = `Are you ready to submit your exam?\n\n• Answered: ${answeredCount} / ${totalQ}\n• Unanswered: ${remaining}\n\nOnce confirmed, your score, answers, and legal explanations will be revealed.`;
+            if (remaining > 0) {
+                promptMsg = `⚠️ WARNING: You have ${remaining} unanswered question(s)!\n\n` + promptMsg;
+            }
+
+            if (confirm(promptMsg)) {
+                isExamSubmitted = true;
+                localStorage.setItem(STORAGE_KEY_SUBMITTED, "true");
+                pauseTimer();
+
+                totalCorrect = 0;
+                Object.keys(userAnswers).forEach(idx => {
+                    if (userAnswers[idx] === examData[idx].ans) totalCorrect++;
+                });
+
+                const percentage = Math.round((totalCorrect / totalQ) * 100);
+                saveStudentHistory(totalCorrect, totalQ, percentage);
+
+                updateModeSwitchUI();
+                updateScore();
+                renderQuestion();
+                alert(`🎉 Exam Submitted!\n\nFinal Score: ${totalCorrect} / ${totalQ} (${percentage}%)\n\nReview your full question analysis below.`);
             }
         }
 
@@ -421,6 +501,7 @@
             document.getElementById("bar-unattempted").textContent = examData.length;
             
             loadProgress();
+            updateModeSwitchUI();
             populateJumpMenu();
             renderQuestion();
             updateScore();
@@ -472,20 +553,27 @@
             populateJumpMenu(); 
             renderQuestion(); 
             updateDropdownLabels();
-            if (userAnswers[currentIndex] === undefined) resumeTimer();
+            if (!isExamMode && userAnswers[currentIndex] === undefined) resumeTimer();
         }
 
         function updateDropdownLabels() {
             const flagSelect = document.getElementById("flag-dropdown");
             const missedSelect = document.getElementById("missed-dropdown");
             flagSelect.options[0].textContent = `🚩 Flagged (${getFlaggedIndices().length}) ▾`;
-            missedSelect.options[0].textContent = `❌ Missed (${getMissedIndices().length}) ▾`;
+            
+            if (isExamMode && !isExamSubmitted) {
+                missedSelect.options[0].textContent = `❌ Missed (Hidden) ▾`;
+                missedSelect.disabled = true;
+            } else {
+                missedSelect.options[0].textContent = `❌ Missed (${getMissedIndices().length}) ▾`;
+                missedSelect.disabled = false;
+            }
             flagSelect.selectedIndex = 0; missedSelect.selectedIndex = 0;
         }
 
         function handleFlagDropdown(val) {
             if (val === "all") returnToFullSet();
-            else if (val === "filter") { activeFilter = (activeFilter === "flagged") ? "all" : "flagged"; populateJumpMenu(); renderQuestion(); updateFilterBanner(); if (userAnswers[currentIndex] === undefined) resumeTimer(); } 
+            else if (val === "filter") { activeFilter = (activeFilter === "flagged") ? "all" : "flagged"; populateJumpMenu(); renderQuestion(); updateFilterBanner(); if (!isExamMode && userAnswers[currentIndex] === undefined) resumeTimer(); } 
             else if (val === "retry") retryList(getFlaggedIndices(), "flagged");
             else if (val === "summary") showFlaggedSummary();
             updateDropdownLabels();
@@ -493,7 +581,7 @@
 
         function handleMissedDropdown(val) {
             if (val === "all") returnToFullSet();
-            else if (val === "filter") { activeFilter = (activeFilter === "missed") ? "all" : "missed"; populateJumpMenu(); renderQuestion(); updateFilterBanner(); if (userAnswers[currentIndex] === undefined) resumeTimer(); } 
+            else if (val === "filter") { activeFilter = (activeFilter === "missed") ? "all" : "missed"; populateJumpMenu(); renderQuestion(); updateFilterBanner(); if (!isExamMode && userAnswers[currentIndex] === undefined) resumeTimer(); } 
             else if (val === "retry") retryList(getMissedIndices(), "missed");
             else if (val === "summary") showMissedSummary();
             updateDropdownLabels();
@@ -524,9 +612,10 @@
             activeList.forEach((qIdx) => {
                 let opt = document.createElement("option"); opt.value = qIdx;
                 let flagMark = flaggedQuestions[qIdx] ? "🚩 " : "";
-                let missedMark = (userAnswers[qIdx] !== undefined && userAnswers[qIdx] !== examData[qIdx].ans) ? "❌ " : "";
+                let missedMark = (!isExamMode || isExamSubmitted) && (userAnswers[qIdx] !== undefined && userAnswers[qIdx] !== examData[qIdx].ans) ? "❌ " : "";
+                let answeredMark = (isExamMode && !isExamSubmitted && userAnswers[qIdx] !== undefined) ? "✓ " : "";
                 let topicName = examData[qIdx].topic ? examData[qIdx].topic.split('/')[0].trim() : "Law";
-                opt.textContent = `${flagMark}${missedMark}Q${qIdx + 1} [${topicName}]`;
+                opt.textContent = `${flagMark}${missedMark}${answeredMark}Q${qIdx + 1} [${topicName}]`;
                 select.appendChild(opt);
             });
         }
@@ -557,22 +646,37 @@
             html += `<div class="options-grid">`;
 
             const currentElimMap = eliminatedOptions[currentIndex] || {};
+            const isAnswered = userAnswers[currentIndex] !== undefined;
+
             (q.opts || []).forEach((optText, i) => {
-                let isAnswered = userAnswers[currentIndex] !== undefined;
                 let isEliminated = Boolean(currentElimMap[i]);
                 let btnClass = "option-btn";
-                if (isAnswered) { if (i === q.ans) btnClass += " correct"; else if (i === userAnswers[currentIndex]) btnClass += " incorrect"; }
+
+                if (isAnswered) {
+                    if (isExamMode && !isExamSubmitted) {
+                        // Exam Mode: Neutral blue highlight, no correct/wrong answers revealed
+                        if (i === userAnswers[currentIndex]) btnClass += " exam-selected";
+                    } else {
+                        // Study Mode or Exam Submitted: Full green/red answer key revealed
+                        if (i === q.ans) btnClass += " correct";
+                        else if (i === userAnswers[currentIndex]) btnClass += " incorrect";
+                    }
+                }
                 if (isEliminated) btnClass += " eliminated";
                 let cleanOptText = optText.replace(/^\([A-Da-d]\)\s*/, '');
-                let disabled = isAnswered ? "disabled" : "";
+                let disabled = (isAnswered && (!isExamMode || isExamSubmitted)) ? "disabled" : "";
                 let elimBtnClass = isEliminated ? "btn-eliminate-choice active" : "btn-eliminate-choice";
 
                 html += `<div class="option-container"><button class="${btnClass}" ${disabled} onclick="handleOptionClick(${i})"><span class="letter-circle">${letterLabels[i]}</span><span>${cleanOptText}</span></button>`;
-                if (isEliminationMode) html += `<button class="${elimBtnClass}" title="Toggle Elimination for choice ${letterLabels[i]}" onclick="toggleEliminateChoice(event, ${i})">✕</button>`;
+                if (isEliminationMode && (!isAnswered || (isExamMode && !isExamSubmitted))) {
+                    html += `<button class="${elimBtnClass}" title="Toggle Elimination for choice ${letterLabels[i]}" onclick="toggleEliminateChoice(event, ${i})">✕</button>`;
+                }
                 html += `</div>`;
             });
 
-            let expClass = userAnswers[currentIndex] !== undefined ? "explanation-box visible" : "explanation-box";
+            // Explanations: hidden in unsubmitted Exam Mode
+            let showExp = isAnswered && (!isExamMode || isExamSubmitted);
+            let expClass = showExp ? "explanation-box visible" : "explanation-box";
             html += `</div><div class="${expClass}"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.5rem;"><strong>Legal Analysis:</strong><select class="dropdown-analysis" onchange="handleAnalysisExport(this.value)"><option value="" disabled selected>📋 Export Rules ▾</option><option value="all">Export All Rules</option><option value="missed">Export Missed Rules</option><option value="flagged">Export Flagged Rules</option></select></div><div>${q.exp || 'No explanation provided.'}</div></div></div>`;
 
             document.getElementById("quiz-container").innerHTML = html;
@@ -604,25 +708,64 @@
             saveProgress();
         }
 
-        function handleOptionClick(optIndex) { const currentElimMap = eliminatedOptions[currentIndex] || {}; if (currentElimMap[optIndex]) { delete currentElimMap[optIndex]; saveProgress(); renderQuestion(); return; } selectAnswer(optIndex); }
+        function handleOptionClick(optIndex) { 
+            const currentElimMap = eliminatedOptions[currentIndex] || {}; 
+            if (currentElimMap[optIndex]) { delete currentElimMap[optIndex]; saveProgress(); renderQuestion(); return; } 
+            selectAnswer(optIndex); 
+        }
+
         function toggleEliminateChoice(event, optIndex) { event.stopPropagation(); if (!eliminatedOptions[currentIndex]) eliminatedOptions[currentIndex] = {}; if (eliminatedOptions[currentIndex][optIndex]) delete eliminatedOptions[currentIndex][optIndex]; else eliminatedOptions[currentIndex][optIndex] = true; saveProgress(); renderQuestion(); }
         function toggleFlagCurrentQuestion() { if (flaggedQuestions[currentIndex]) delete flaggedQuestions[currentIndex]; else flaggedQuestions[currentIndex] = true; updateDropdownLabels(); populateJumpMenu(); renderQuestion(); saveProgress(); }
 
         function selectAnswer(optIndex) {
             if (window.getSelection) window.getSelection().removeAllRanges();
             userAnswers[currentIndex] = optIndex; totalCorrect = 0; Object.keys(userAnswers).forEach(idx => { if (userAnswers[idx] === examData[idx].ans) totalCorrect++; });
-            updateScore(); updateDropdownLabels(); saveProgress(); renderQuestion();
-            pauseTimer();
-            if (Object.keys(userAnswers).length === examData.length) { let percentage = Math.round((totalCorrect / examData.length) * 100); saveStudentHistory(totalCorrect, examData.length, percentage); }
+            updateScore(); updateDropdownLabels(); populateJumpMenu(); saveProgress(); renderQuestion();
+
+            if (!isExamMode) {
+                pauseTimer();
+                if (Object.keys(userAnswers).length === examData.length) { 
+                    let percentage = Math.round((totalCorrect / examData.length) * 100); 
+                    saveStudentHistory(totalCorrect, examData.length, percentage); 
+                }
+            }
         }
 
         function updateScore() {
-            const totalExamQuestions = examData.length; const answeredCount = Object.keys(userAnswers).length; const missedCount = getMissedIndices().length; const unattemptedCount = totalExamQuestions - answeredCount;
-            const percentage = answeredCount > 0 ? Math.round((totalCorrect / answeredCount) * 100) : 0;
-            document.getElementById("score-badge").textContent = `Score: ${totalCorrect} / ${answeredCount} (${percentage}%)`;
-            const barCorrect = document.getElementById("bar-correct"); const barMissed = document.getElementById("bar-missed"); const barUnattempted = document.getElementById("bar-unattempted");
-            barCorrect.style.width = `${(totalCorrect / totalExamQuestions) * 100}%`; barMissed.style.width = `${(missedCount / totalExamQuestions) * 100}%`;
-            barCorrect.textContent = totalCorrect >= 1 ? totalCorrect : ""; barMissed.textContent = missedCount >= 1 ? missedCount : ""; barUnattempted.textContent = unattemptedCount >= 1 ? unattemptedCount : "";
+            const totalExamQuestions = examData.length; 
+            const answeredCount = Object.keys(userAnswers).length; 
+            const missedCount = getMissedIndices().length; 
+            const unattemptedCount = totalExamQuestions - answeredCount;
+            
+            const badgeEl = document.getElementById("score-badge");
+            const barCorrect = document.getElementById("bar-correct");
+            const barMissed = document.getElementById("bar-missed");
+            const barAttemptedExam = document.getElementById("bar-attempted-exam");
+            const barUnattempted = document.getElementById("bar-unattempted");
+
+            if (isExamMode && !isExamSubmitted) {
+                // EXAM MODE ACTIVE (Unsubmitted): Hide percentage & correct/missed split
+                badgeEl.textContent = `Answered: ${answeredCount} / ${totalExamQuestions}`;
+                barCorrect.style.width = "0%"; barCorrect.textContent = "";
+                barMissed.style.width = "0%"; barMissed.textContent = "";
+
+                barAttemptedExam.style.width = `${(answeredCount / totalExamQuestions) * 100}%`;
+                barAttemptedExam.textContent = answeredCount >= 1 ? `${answeredCount} Ans` : "";
+                
+                barUnattempted.textContent = unattemptedCount >= 1 ? `${unattemptedCount} Left` : "";
+            } else {
+                // STUDY MODE OR SUBMITTED EXAM: Show exact percentage and breakdown
+                const percentage = answeredCount > 0 ? Math.round((totalCorrect / answeredCount) * 100) : 0;
+                badgeEl.textContent = `Score: ${totalCorrect} / ${answeredCount} (${percentage}%)`;
+                
+                barAttemptedExam.style.width = "0%"; barAttemptedExam.textContent = "";
+                barCorrect.style.width = `${(totalCorrect / totalExamQuestions) * 100}%`; 
+                barMissed.style.width = `${(missedCount / totalExamQuestions) * 100}%`;
+                
+                barCorrect.textContent = totalCorrect >= 1 ? totalCorrect : ""; 
+                barMissed.textContent = missedCount >= 1 ? missedCount : ""; 
+                barUnattempted.textContent = unattemptedCount >= 1 ? unattemptedCount : "";
+            }
         }
 
         function navigate(dir) { 
@@ -632,69 +775,175 @@
             if (targetPos >= 0 && targetPos < activeList.length) { 
                 currentIndex = activeList[targetPos]; 
                 renderQuestion(); 
-                if (userAnswers[currentIndex] === undefined) resumeTimer();
-                else pauseTimer();
+                if (!isExamMode) {
+                    if (userAnswers[currentIndex] === undefined) resumeTimer();
+                    else pauseTimer();
+                }
             } 
         }
 
         function jumpToQuestion(index) { 
             currentIndex = parseInt(index); 
             renderQuestion(); 
-            if (userAnswers[currentIndex] === undefined) resumeTimer();
-            else pauseTimer();
+            if (!isExamMode) {
+                if (userAnswers[currentIndex] === undefined) resumeTimer();
+                else pauseTimer();
+            }
         }
 
         function saveProgress() {
-            localStorage.setItem(STORAGE_KEY_ANSWERS, JSON.stringify(userAnswers)); localStorage.setItem(STORAGE_KEY_FLAGS, JSON.stringify(flaggedQuestions)); localStorage.setItem(STORAGE_KEY_ELIM, JSON.stringify(eliminatedOptions)); localStorage.setItem(STORAGE_KEY_INDEX, currentIndex); localStorage.setItem(STORAGE_KEY_SCORE, totalCorrect); localStorage.setItem(STORAGE_KEY_FILTER, activeFilter); localStorage.setItem(STORAGE_KEY_RETRY, JSON.stringify(retrySessionList)); localStorage.setItem(STORAGE_KEY_HIGHLIGHTS, JSON.stringify(userHighlights));
+            localStorage.setItem(STORAGE_KEY_ANSWERS, JSON.stringify(userAnswers)); 
+            localStorage.setItem(STORAGE_KEY_FLAGS, JSON.stringify(flaggedQuestions)); 
+            localStorage.setItem(STORAGE_KEY_ELIM, JSON.stringify(eliminatedOptions)); 
+            localStorage.setItem(STORAGE_KEY_INDEX, currentIndex); 
+            localStorage.setItem(STORAGE_KEY_SCORE, totalCorrect); 
+            localStorage.setItem(STORAGE_KEY_FILTER, activeFilter); 
+            localStorage.setItem(STORAGE_KEY_RETRY, JSON.stringify(retrySessionList)); 
+            localStorage.setItem(STORAGE_KEY_HIGHLIGHTS, JSON.stringify(userHighlights));
+            localStorage.setItem(STORAGE_KEY_EXAM_MODE, isExamMode ? "true" : "false");
+            localStorage.setItem(STORAGE_KEY_SUBMITTED, isExamSubmitted ? "true" : "false");
         }
 
         function loadProgress() {
             try {
-                const savedAnswers = localStorage.getItem(STORAGE_KEY_ANSWERS); const savedFlags = localStorage.getItem(STORAGE_KEY_FLAGS); const savedElim = localStorage.getItem(STORAGE_KEY_ELIM); const savedIndex = localStorage.getItem(STORAGE_KEY_INDEX); const savedScore = localStorage.getItem(STORAGE_KEY_SCORE); const savedFilter = localStorage.getItem(STORAGE_KEY_FILTER); const savedRetry = localStorage.getItem(STORAGE_KEY_RETRY); const savedHighlights = localStorage.getItem(STORAGE_KEY_HIGHLIGHTS);
-                if (savedAnswers) userAnswers = JSON.parse(savedAnswers); if (savedFlags) flaggedQuestions = JSON.parse(savedFlags); if (savedElim) eliminatedOptions = JSON.parse(savedElim); if (savedIndex !== null) currentIndex = Math.min(parseInt(savedIndex), (examData.length - 1)); if (savedScore !== null) totalCorrect = parseInt(savedScore); if (savedFilter !== null) activeFilter = savedFilter; if (savedRetry) retrySessionList = JSON.parse(savedRetry); if (savedHighlights) userHighlights = JSON.parse(savedHighlights);
+                const savedAnswers = localStorage.getItem(STORAGE_KEY_ANSWERS); 
+                const savedFlags = localStorage.getItem(STORAGE_KEY_FLAGS); 
+                const savedElim = localStorage.getItem(STORAGE_KEY_ELIM); 
+                const savedIndex = localStorage.getItem(STORAGE_KEY_INDEX); 
+                const savedScore = localStorage.getItem(STORAGE_KEY_SCORE); 
+                const savedFilter = localStorage.getItem(STORAGE_KEY_FILTER); 
+                const savedRetry = localStorage.getItem(STORAGE_KEY_RETRY); 
+                const savedHighlights = localStorage.getItem(STORAGE_KEY_HIGHLIGHTS);
+                const savedExamMode = localStorage.getItem(STORAGE_KEY_EXAM_MODE);
+                const savedSubmitted = localStorage.getItem(STORAGE_KEY_SUBMITTED);
+
+                if (savedAnswers) userAnswers = JSON.parse(savedAnswers); 
+                if (savedFlags) flaggedQuestions = JSON.parse(savedFlags); 
+                if (savedElim) eliminatedOptions = JSON.parse(savedElim); 
+                if (savedIndex !== null) currentIndex = Math.min(parseInt(savedIndex), (examData.length - 1)); 
+                if (savedScore !== null) totalCorrect = parseInt(savedScore); 
+                if (savedFilter !== null) activeFilter = savedFilter; 
+                if (savedRetry) retrySessionList = JSON.parse(savedRetry); 
+                if (savedHighlights) userHighlights = JSON.parse(savedHighlights);
+                isExamMode = (savedExamMode === "true");
+                isExamSubmitted = (savedSubmitted === "true");
             } catch (e) { console.error("Could not load saved progress", e); }
         }
 
         function resetProgress() {
             if (confirm("Are you sure you want to clear your saved progress, answers, flags, and reset the 90-minute timer?")) {
-                localStorage.removeItem(STORAGE_KEY_ANSWERS); localStorage.removeItem(STORAGE_KEY_FLAGS); localStorage.removeItem(STORAGE_KEY_ELIM); localStorage.removeItem(STORAGE_KEY_INDEX); localStorage.removeItem(STORAGE_KEY_SCORE); localStorage.removeItem(STORAGE_KEY_FILTER); localStorage.removeItem(STORAGE_KEY_RETRY); localStorage.removeItem(STORAGE_KEY_HIGHLIGHTS);
+                localStorage.removeItem(STORAGE_KEY_ANSWERS); 
+                localStorage.removeItem(STORAGE_KEY_FLAGS); 
+                localStorage.removeItem(STORAGE_KEY_ELIM); 
+                localStorage.removeItem(STORAGE_KEY_INDEX); 
+                localStorage.removeItem(STORAGE_KEY_SCORE); 
+                localStorage.removeItem(STORAGE_KEY_FILTER); 
+                localStorage.removeItem(STORAGE_KEY_RETRY); 
+                localStorage.removeItem(STORAGE_KEY_HIGHLIGHTS);
                 localStorage.removeItem(STORAGE_KEY_TIMER);
-                userAnswers = {}; flaggedQuestions = {}; eliminatedOptions = {}; retrySessionList = []; userHighlights = {}; currentIndex = 0; totalCorrect = 0; activeFilter = "all";
+                localStorage.removeItem(STORAGE_KEY_SUBMITTED);
+                
+                userAnswers = {}; flaggedQuestions = {}; eliminatedOptions = {}; retrySessionList = []; userHighlights = {}; 
+                currentIndex = 0; totalCorrect = 0; activeFilter = "all"; isExamSubmitted = false;
                 timeRemaining = DEFAULT_SECONDS;
                 resumeTimer();
                 initApp();
             }
         }
 
-        function handleAnalysisExport(val) { if (!val) return; if (val === "all") exportRulesForFilter(examData.map((_, idx) => idx), "All Rules"); if (val === "missed") exportRulesForFilter(getMissedIndices(), "Missed Rules"); if (val === "flagged") exportRulesForFilter(getFlaggedIndices(), "Flagged Rules"); }
+        function handleAnalysisExport(val) { 
+            if (!val) return; 
+            if (val === "all") exportRulesForFilter(examData.map((_, idx) => idx), "All Rules"); 
+            if (val === "missed") exportRulesForFilter(getMissedIndices(), "Missed Rules"); 
+            if (val === "flagged") exportRulesForFilter(getFlaggedIndices(), "Flagged Rules"); 
+        }
 
         function exportRulesForFilter(indices, titleName) {
             if (indices.length === 0) { openModal(`Export ${titleName}`, `No questions match the criteria.`, `No rules to export.`); return; }
-            const uniqueMap = new Map(); indices.forEach(idx => { const item = examData[idx]; const cleanTopic = (item.topic || "General").trim(); const cleanExp = (item.exp || "").trim(); if (!uniqueMap.has(cleanTopic)) uniqueMap.set(cleanTopic, new Set()); uniqueMap.get(cleanTopic).add(cleanExp); });
+            const uniqueMap = new Map(); 
+            indices.forEach(idx => { 
+                const item = examData[idx]; 
+                const cleanTopic = (item.topic || "General").trim(); 
+                const cleanExp = (item.exp || "").trim(); 
+                if (!uniqueMap.has(cleanTopic)) uniqueMap.set(cleanTopic, new Set()); 
+                uniqueMap.get(cleanTopic).add(cleanExp); 
+            });
             const sortedTopics = Array.from(uniqueMap.keys()).sort((a, b) => a.localeCompare(b));
-            let tableOutput = "**Legal Topic Category**\t**Black Letter Law Analysis / Core Rule**\n"; let displayOutput = `${titleName.toUpperCase()}:\n========================================================================\n\n`;
-            sortedTopics.forEach(topic => { const rules = Array.from(uniqueMap.get(topic)); rules.forEach(rule => { let safeRule = rule.replace(/[\r\n]+/g, " "); tableOutput += `**${topic}**\t${safeRule}\n`; displayOutput += `• [**${topic}**]\n  ${safeRule}\n\n`; }); });
-            navigator.clipboard.writeText(tableOutput).then(() => { openModal(`${titleName} Exported!`, `Copied to clipboard in Tab-Delimited Table format.`, displayOutput); }).catch(err => { openModal(`${titleName} Export`, "Copy the text below manually:", tableOutput); });
+            let tableOutput = "**Legal Topic Category**\t**Black Letter Law Analysis / Core Rule**\n"; 
+            let displayOutput = `${titleName.toUpperCase()}:\n========================================================================\n\n`;
+            sortedTopics.forEach(topic => { 
+                const rules = Array.from(uniqueMap.get(topic)); 
+                rules.forEach(rule => { 
+                    let safeRule = rule.replace(/[\r\n]+/g, " "); 
+                    tableOutput += `**${topic}**\t${safeRule}\n`; 
+                    displayOutput += `• [**${topic}**]\n  ${safeRule}\n\n`; 
+                }); 
+            });
+            navigator.clipboard.writeText(tableOutput).then(() => { 
+                openModal(`${titleName} Exported!`, `Copied to clipboard in Tab-Delimited Table format.`, displayOutput); 
+            }).catch(err => { 
+                openModal(`${titleName} Export`, "Copy the text below manually:", tableOutput); 
+            });
         }
 
-        function showMissedSummary() { let summary = "MISSED QUESTIONS SUMMARY:\n========================================\n\n"; let missedIndices = getMissedIndices(); if (missedIndices.length === 0) summary += "No missed questions yet!"; else { missedIndices.forEach(qIdx => { let q = examData[qIdx]; let userChoice = userAnswers[qIdx]; summary += `• Question ${q.id} [Topic: **${q.topic}**]\n  Your Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n  Core Rule: ${q.exp}\n\n`; }); } openModal("Missed Questions Rule Analysis", "Review the legal rules for questions you answered incorrectly.", summary); }
-        function showFlaggedSummary() { let summary = "FLAGGED QUESTIONS SUMMARY:\n========================================\n\n"; let flaggedIndices = getFlaggedIndices(); if (flaggedIndices.length === 0) summary += "No flagged questions yet!"; else { flaggedIndices.forEach(qIdx => { let q = examData[qIdx]; let userChoice = userAnswers[qIdx]; summary += `• Question ${q.id} [Topic: **${q.topic}**]\n`; if (userChoice !== undefined) summary += `  Your Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n`; summary += `  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n  Core Rule: ${q.exp}\n\n`; }); } openModal("Flagged Questions Rule Analysis", "Review the legal rules for questions you flagged.", summary); }
+        function showMissedSummary() { 
+            let summary = "MISSED QUESTIONS SUMMARY:\n========================================\n\n"; 
+            let missedIndices = getMissedIndices(); 
+            if (missedIndices.length === 0) summary += "No missed questions yet!"; 
+            else { 
+                missedIndices.forEach(qIdx => { 
+                    let q = examData[qIdx]; 
+                    let userChoice = userAnswers[qIdx]; 
+                    summary += `• Question ${q.id} [Topic: **${q.topic}**]\n  Your Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n  Core Rule: ${q.exp}\n\n`; 
+                }); 
+            } 
+            openModal("Missed Questions Rule Analysis", "Review the legal rules for questions you answered incorrectly.", summary); 
+        }
+
+        function showFlaggedSummary() { 
+            let summary = "FLAGGED QUESTIONS SUMMARY:\n========================================\n\n"; 
+            let flaggedIndices = getFlaggedIndices(); 
+            if (flaggedIndices.length === 0) summary += "No flagged questions yet!"; 
+            else { 
+                flaggedIndices.forEach(qIdx => { 
+                    let q = examData[qIdx]; 
+                    let userChoice = userAnswers[qIdx]; 
+                    summary += `• Question ${q.id} [Topic: **${q.topic}**]\n`; 
+                    if (userChoice !== undefined) summary += `  Your Answer: (${letterLabels[userChoice]}) ${q.opts[userChoice]}\n`; 
+                    summary += `  Correct Answer: (${letterLabels[q.ans]}) ${q.opts[q.ans]}\n  Core Rule: ${q.exp}\n\n`; 
+                }); 
+            } 
+            openModal("Flagged Questions Rule Analysis", "Review the legal rules for questions you flagged.", summary); 
+        }
 
         function exportFullStudentSession() {
-            const sessionData = { version: "1.0", examSet: currentSetKey, exportDate: new Date().toLocaleString(), userAnswers: userAnswers, flaggedQuestions: flaggedQuestions, eliminatedOptions: eliminatedOptions, userHighlights: userHighlights, timeRemainingSeconds: timeRemaining, score: totalCorrect, totalAttempted: Object.keys(userAnswers).length, totalQuestions: examData.length };
+            const sessionData = { 
+                version: "1.0", examSet: currentSetKey, exportDate: new Date().toLocaleString(), 
+                userAnswers: userAnswers, flaggedQuestions: flaggedQuestions, eliminatedOptions: eliminatedOptions, 
+                userHighlights: userHighlights, timeRemainingSeconds: timeRemaining, isExamMode: isExamMode,
+                score: totalCorrect, totalAttempted: Object.keys(userAnswers).length, totalQuestions: examData.length 
+            };
             openModal("Export Test Session", "Copy this code block and send it to your partner. They can click '📥 Import' on their screen:", JSON.stringify(sessionData, null, 2));
         }
 
         function saveStudentHistory(score, total, percentage) {
-            let historyKey = `fylsx_history_${currentSetKey}`; let history = JSON.parse(localStorage.getItem(historyKey) || "[]");
+            let historyKey = `fylsx_history_${currentSetKey}`; 
+            let history = JSON.parse(localStorage.getItem(historyKey) || "[]");
             history.push({ date: new Date().toLocaleDateString(), time: new Date().toLocaleTimeString(), score: score, total: total, percentage: percentage });
-            if (history.length > 10) history.shift(); localStorage.setItem(historyKey, JSON.stringify(history));
+            if (history.length > 10) history.shift(); 
+            localStorage.setItem(historyKey, JSON.stringify(history));
         }
 
         function showStudentHistory() {
-            let historyKey = `fylsx_history_${currentSetKey}`; let history = JSON.parse(localStorage.getItem(historyKey) || "[]");
+            let historyKey = `fylsx_history_${currentSetKey}`; 
+            let history = JSON.parse(localStorage.getItem(historyKey) || "[]");
             let summary = `PAST TEST PERFORMANCE HISTORY:\n==================================================\n\n`;
-            if (history.length === 0) summary += "No completed past test history recorded."; else { history.forEach((record, idx) => { summary += `Attempt #${idx + 1} — Date: ${record.date} at ${record.time}\n  Score: ${record.score} / ${record.total} (${record.percentage}%)\n\n`; }); }
+            if (history.length === 0) summary += "No completed past test history recorded."; 
+            else { 
+                history.forEach((record, idx) => { 
+                    summary += `Attempt #${idx + 1} — Date: ${record.date} at ${record.time}\n  Score: ${record.score} / ${record.total} (${record.percentage}%)\n\n`; 
+                }); 
+            }
             openModal("Student Test History", "Review previous attempts and score progression:", summary);
         }
 
